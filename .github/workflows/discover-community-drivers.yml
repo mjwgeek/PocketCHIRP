@@ -12,6 +12,7 @@ permissions:
 jobs:
   discover:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -25,6 +26,26 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/discover_community_drivers.py
+
+      - name: Summarize discoveries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('community/candidates.json').read_text())
+          rows = p.get('candidates', [])
+          quansheng = [x for x in rows if 'quansheng' in (' '.join(x.get('vendors', [])) + ' ' + ' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uv-k' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uvk' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower()]
+          owned = [x for x in rows if x.get('repository', '').startswith('mjwgeek/')]
+          print(f"Total candidates: {len(rows)}")
+          print(f"Quansheng-related candidates: {len(quansheng)}")
+          print(f"mjwgeek repository candidates: {len(owned)}")
+          print('\nQuansheng-related:')
+          for x in quansheng:
+              print(f"- {x.get('repository')} :: {x.get('path')} :: {', '.join(x.get('models', []))}")
+          print('\nOwned repository candidates:')
+          for x in owned:
+              print(f"- {x.get('repository')} :: {x.get('path')} :: {', '.join(x.get('models', []))}")
+          PY
 
       - name: Commit candidate changes
         run: |
