@@ -1,8 +1,2129 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-08-20T20:45:39.585762Z",
-  "candidateCount": 18,
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-20T20:58:55.961205Z",
+  "candidateCount": 100,
   "candidates": [
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn.py",
+      "sha256": "bcf4496305a37efa7c7aa55cc4cdf75be00bda3a6b9f4751050da436df520af8",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_fr.py",
+      "sha256": "e8bbd5e7e804d4e943a434eac0ea7268bbc931bd6b65d89282552b3beab143e9",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_5_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_5_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_5_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_5_0.py",
+      "sha256": "3d11ea7b0367947bb3bce832dd5d229bbf723340d2292cdc71d1328743419157",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_5_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_5_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_5_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_5_0_fr.py",
+      "sha256": "74aa72d06ef9a0278238d085084cc2ed305f3e0ea35a4de2206144661bb74e50",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_6_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_6_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_6_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_6_0.py",
+      "sha256": "b8a955026a33370389d44b244c072f1a093c69e7e44801c4c419ac8d03191061",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_6_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_6_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_6_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_6_0_fr.py",
+      "sha256": "ef9d0efff95d399fb6de343aca6e2d0853b6ca83bbe74f1c89f76be35c1255d3",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_7_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_7_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_7_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_7_0.py",
+      "sha256": "30cb8822dae6d92ac040c1ba5b147c19607d11897b3cdabcceaefc9dd88e2f46",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_7_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_7_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_7_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_7_0_fr.py",
+      "sha256": "6bcfa4ea8fb08d39459b568b0cf2f69a86d54db66041fe98b320ee0212f1ca0b",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_8_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_8_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_8_0.py",
+      "sha256": "29b8d2499f68641440c2696aec2905ed422d8c1dbf5ef6d1864c63914b70a35b",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_8_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_8_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_8_0_fr.py",
+      "sha256": "7de37c6a0eada45bf78cf08fa97884750f4b80cb8ad8359fe9afad0202ba35e1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_8_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_8_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_8_1.py",
+      "sha256": "f986e85667f4aa6ea494423011160c466ca69b7438d2b6487f39f59c34441a1c",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_2_8_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_2_8_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_2_8_1_fr.py",
+      "sha256": "02c1bb6505fab3db80246ec86f1b9cd5ea47f265e0508190caa273feea1d69c5",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3.0.0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3.0.0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3.0.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3.0.0.py",
+      "sha256": "81ca2078d3ae9ba7828cf776db7a31db53684135bc9fa178c8218dc3183668f8",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_0_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_0_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_0_0_fr.py",
+      "sha256": "e4c53d9a610911c347fac12d10591fb64fdbde2f823c7933c5fcb75fa28be366",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_0_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_0_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_0_1.py",
+      "sha256": "6c14ce2481ce495ee187629c955c47fb637a559f6b866cfdf9507b31bf273bc7",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_0_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_0_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_0_1_fr.py",
+      "sha256": "361f3bb954cde1775b3d5b26f4c8bb1c0a5b5ac3d9ac751a85a39bd7ea4e8505",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_1_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_1_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_1_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_1_0.py",
+      "sha256": "61c4ff1ceba5f8a62ce04960b1487b53979093ceaf6de75bced71c59df275411",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_1_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_1_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_1_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_1_0_fr.py",
+      "sha256": "3fddc3b423f602c8e09541a2f2e43e22f620061735d3b72b077490c2b08b6415",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_2_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_2_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_2_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_2_0.py",
+      "sha256": "30775eb9ba4617eeda55baf7c5881b9ffb7ca8124456b8363f1b1b2d1752b081",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_2_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_2_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_2_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_2_0_fr.py",
+      "sha256": "c9670f44f3ecaa0f75e659588f620e01efd1b16355ba479e8b6ef6f91c74a27a",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_3_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_3_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_3_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_3_0.py",
+      "sha256": "3a16f957ad11465eef74fcc1a78d43fb3e880b502e36e4ae6fc8e79ed8c026ad",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_3_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_3_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_3_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_3_0_fr.py",
+      "sha256": "d2990edf58fcf5fb2de9b26ec6e83ce933b7b3493eace6aa900b71a2aeac3007",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_4_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0.py",
+      "sha256": "7a8a9ed5d57845a7493a6c5add9d437c2307909c93d5ad3ca147f1eb63945182",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_4_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0_fr.py",
+      "sha256": "d4ff3682ce97723770242827f16ee1dee30a0dc281a05ff7c441ec5d42ecf7e2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0_k.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_4_0_k.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0_k.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_4_0_k.py",
+      "sha256": "01d44517563045a68fbf6c73ab82ab19fbfa935c32613fbb926196b16fb8434a",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_0.py",
+      "sha256": "f913fedbcceeeb0c8a7ab2cf48d5f0c222ef8635d0c413fb98c5e74a7a458605",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_0_fr.py",
+      "sha256": "501fdd7889b605e5c408cd83aab4f515462f650ab729976d8de47553b19299d6",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_1.py",
+      "sha256": "089ff6f009044dd5250c6cf5da3528cd360350c1ba834c619f48b5d24e708dd9",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_1_fr.py",
+      "sha256": "9335009829e050e2e324166e17fd8dbf10ff6c49de996b4ed0885e9ccd434dc8",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_2.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_2.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_2.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_2.py",
+      "sha256": "4c6d895b3da437d03125194ab7f22686837c2af943611a6bf74ba50445cbc3ac",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_2_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_5_2_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_5_2_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_5_2_fr.py",
+      "sha256": "5657df91d0f227e2b8f5b530f2ece912542bedce9b2f80d22fce8f697304797a",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6.py",
+      "sha256": "54ec6e2a9f8b83859ac2c00edbd5274c2f3f6a6e21fabb2b72e5738055a4378f",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_1.py",
+      "sha256": "446a27b5e7b582437baa9a051a61b03ca575ec811b07c59dc2977ddff823ac01",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_1_fr.py",
+      "sha256": "d6aec3fe335ea7bce7c94e70ee6877802e205e0d8641505999c202bc93b8b6b3",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_2.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_2.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_2.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_2.py",
+      "sha256": "1b8ed9e9a33c99e4fac4c7daddc5d16529860a1f47bcee34a4acd72b2f5abfdc",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_2_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_2_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_2_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_2_fr.py",
+      "sha256": "c8e582a45d3ccc6e04a6b9288cdbc5ead528c095e751609ddb79eaf273beb6cf",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_3.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_3.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_3.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_3.py",
+      "sha256": "4c5838dbf43bf2f8885b29911a04d39c60c09ac589163e5981d8d0bcae17562d",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_3_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_3_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_3_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_3_fr.py",
+      "sha256": "4c71cbab7250eddf614762f88ff99e0f1953051ea00e871216a56e7ef71f3caa",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_6_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_6_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_6_fr.py",
+      "sha256": "bad7438b68f1328019caaaa67fa76ca4e13e630e3b8176147e634245edf70a7d",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_7_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_7_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_7_0.py",
+      "sha256": "e9f84b3e02569cb6d6706904901d4795b11b9705d7866a98c97fff5b8d3e9806",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_7_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_7_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_7_0_fr.py",
+      "sha256": "511e24d1ed8370f69bd1c594ab71b340240410e11863ee718423a97dd265bb89",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_7_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_7_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_7_1.py",
+      "sha256": "3dfa24063df7644affb47db832f560fc43cf05eaf931487253c3cb9a4c36669f",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_7_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_7_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_7_1_fr.py",
+      "sha256": "0b331469f72ded481e509d9f0b2a1c92bbd590cf79c6aba743f3e3a0fe58951f",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_8_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_8_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_8_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_8_0.py",
+      "sha256": "0a939aeebff4c1b98953c0105c8faa6b0e2973501ea7638b8492ed6fc2a64a81",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_8_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_8_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_8_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_8_0_fr.py",
+      "sha256": "b39cc1b3737eca065f687f828192a41effcac9d436b49cdc6e4076dde055fcdd",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_9_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_9_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_9_0.py",
+      "sha256": "48ac042a54e2d5682cd109ec7436038bd73aaa4e42f4789d3742c371816e9cd2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_9_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_9_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_9_0_fr.py",
+      "sha256": "c675c63dbb95ce5bfbd5ae11209e9cdbe0d376fc099445715be5eb6d5f7edae3",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_1.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_9_1.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_9_1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_9_1.py",
+      "sha256": "03a353ffe5a370f2aad351d3959432d0a3153a877cf171843112b339805eddf9",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_1_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_3_9_1_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_3_9_1_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_3_9_1_fr.py",
+      "sha256": "1dd8950724343424960da6f6a3fe18d0458778e83b15cb1579438b4457a2f86f",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_0_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_0_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_0_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_0_0.py",
+      "sha256": "16e603ab78ca74b443b84ac620d04aa00035501ef95da29e1f63150523d6a609",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_0_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_0_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_0_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_0_0_fr.py",
+      "sha256": "e68d721a15272328559a6427aca357fcd8f32ff050b8bfead7aaf31b852019ab",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_1_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_1_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_1_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_1_0.py",
+      "sha256": "499769a15d00d3d5f0fb7fb5bbee2edbe417b177003680e41c3a17b8e8c974fb",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_1_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_1_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_1_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_1_0_fr.py",
+      "sha256": "72a5278e412e90b14c76400b0a0fc254b3803b059732b78baeab45f0ffc354f4",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_2_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_2_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_2_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_2_0.py",
+      "sha256": "6de3eb9675234ab5c59e59994a411aa4291128a90e07101ec06568a555dab2f5",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_2_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "archive/uvk5_egzumer_f4hwn_ver_4_2_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/archive/uvk5_egzumer_f4hwn_ver_4_2_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/archive/uvk5_egzumer_f4hwn_ver_4_2_0_fr.py",
+      "sha256": "9dffc0e55b8468bf66ba0e2a10f21a1ee704d0692e585cced99a07cbd3381696",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "uvk5_egzumer_f4hwn_ver_4_3_0.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/uvk5_egzumer_f4hwn_ver_4_3_0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/uvk5_egzumer_f4hwn_ver_4_3_0.py",
+      "sha256": "024ff9d263d7aeb8be03414754c99dd696ee20cf322e6e20c6a72f0287cf42a1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 3 byte-identical duplicate source(s)",
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.1/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.1/f4hwn.chirp.v4.3.py"
+        },
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.2/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.2/f4hwn.chirp.v4.3.py"
+        },
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3/f4hwn.chirp.v4.3.py"
+        }
+      ]
+    },
+    {
+      "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
+      "type": "repository-file",
+      "repository": "armel/uv-k5-chirp-driver",
+      "path": "uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
+      "sourceUrl": "https://github.com/armel/uv-k5-chirp-driver/blob/main/uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
+      "downloadUrl": "https://raw.githubusercontent.com/armel/uv-k5-chirp-driver/main/uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
+      "sha256": "0a01a8244fb21fea281ed92ff2270288c6429ca4f699ea3516e1fbf60e67b74d",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn) FR"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Calypso/1.5.0/chirp_calypso_v1.5.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "Calypso/1.5.0/chirp_calypso_v1.5.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Calypso/1.5.0/chirp_calypso_v1.5.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Calypso/1.5.0/chirp_calypso_v1.5.0.py",
+      "sha256": "253caf45ba5e8e2a9dfbfb61224e76ff56f0e4357fb827892ae9851e466393a1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5 (egzumer + f4hwn)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "Calypso/1.7.0/chirp_calypso_v1.5.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Calypso/1.7.0/chirp_calypso_v1.5.0.py"
+        }
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "sha256": "09d23891a6dc44478cb3e8fd16e1f00fdf33673b4e2faffae765ad812b3a0ff2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "sha256": "adf4aa2c02a9a9c61a5e3c4d63088064e59c091b5a16ed649e3d28d15231d121",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "sha256": "7464bc109dc051c6f8c88ccfffba9d7068bd6a0ea1ce9ff2f553b89136c0f53b",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "sha256": "052315f4d2d268995b357b7f93734ba2095578e4a02bcee605b3fc3ee7721cd2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "sha256": "698c34470b199d42b995be46f3f144c710dcd165cd705721515836cb275f80c0",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "sha256": "df241243949a70920864b9284990287d4e7ba00280e1f36841a0b498c6cd203c",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "sha256": "3a8bde054b803f4287b03aab46a1c447d8e46d52110f5c64d979c4cad8ecf6bd",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "sha256": "2c742582237f38a4a021d72e07449543734a11aa08ce3c093c699a0ec04eb653",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "sha256": "927df9b31d1622b660da65df3c85a601d9cace371a2bced29ca4be2ff6b8b4a1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+      "sha256": "a5f87cc3781a908ae36ed9e479d3b7d0c59064cf8c53e2865e8ac8e1f89cac97",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
+      "sha256": "5402946efc79791e95700bdb11f958643111083c469f4df78f44243b0d455bbe",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 GOGUFW Messenger 1.0.1a"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:IJV/chirp/IJV V4.0 Unified.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "IJV/chirp/IJV V4.0 Unified.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/IJV/chirp/IJV V4.0 Unified.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/IJV/chirp/IJV%20V4.0%20Unified.py",
+      "sha256": "89f5bb69655b4202068d08f8580001151caaee1105189c615c35645758c2aa21",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "IJV"
+      ],
+      "variants": [
+        "V4.0.4 - Memory Only"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:IJV/chirp/IJV V5.0 Memory.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "IJV/chirp/IJV V5.0 Memory.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/IJV/chirp/IJV V5.0 Memory.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/IJV/chirp/IJV%20V5.0%20Memory.py",
+      "sha256": "f9fe602130f974604348c121c1c12e3d044d1011337757024e5658b14db2057e",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "IJV FW5"
+      ],
+      "variants": [
+        "V5.0 - Memory Only"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:KA50/Chirp_KA50_KA52.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "KA50/Chirp_KA50_KA52.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/KA50/Chirp_KA50_KA52.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/KA50/Chirp_KA50_KA52.py",
+      "sha256": "e66ac481fc6e6cc6b76c53ea68d2a10732729bc7c72593d5ce4baf29eb566ab4",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "CHIRP_KA-50/52"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "KA52/Chirp_KA50_KA52.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/KA52/Chirp_KA50_KA52.py"
+        }
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "sha256": "4e82b2c078e25d5af593a8469a400d4d3898f4c238b370b90e6776edbe8b44b2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "sha256": "b489dadf61e2504d45b456dee0cb80f05093e96dcc9328cdd56a439b040a62a9",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "sha256": "4bfe27852ec7af9680aceea2962f6465ca085d9e07a2c3f43894468b6e486951",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "NR7Y/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "sha256": "fb344ce66390ec7e6439e66f8774a3c09f006c2e63c8eb513aad223cb485403e",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [
+        "NR7Y"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "sha256": "76b6227413ccfeea9a52d3646147bdee7a3c6f8826e8a7d1cbad8c44633abbd7",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [
+        "NR7Y"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
     {
       "candidateKey": "pr:kk7ds/chirp#1609:chirp/drivers/alinco_djvx50.py",
       "type": "pull-request-file",
@@ -11,8 +2132,8 @@
       "pullRequestTitle": "alinco_djvx50: Add support for the Alinco DJ-VX50",
       "path": "chirp/drivers/alinco_djvx50.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1609",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8bf7d0bfe32e1512699cb8579d4ffef7d62d45e4/chirp%2Fdrivers%2Falinco_djvx50.py",
-      "sha256": "5ab55d2c230374c2bd6e7b1828deac400ea36ef152ae31a83224f3cf04942771",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ba5f845cecc12083c91c22fc6d9a0a50d098965a/chirp%2Fdrivers%2Falinco_djvx50.py",
+      "sha256": "b3620bbf21e39b5ef1ba79217d51e66a1d26f582084e51cbe4cf4e4423facf36",
       "vendors": [
         "Alinco"
       ],
@@ -23,7 +2144,6 @@
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
-        "RadioSetting",
         "sync_in",
         "sync_out"
       ],
@@ -40,8 +2160,8 @@
       "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
       "path": "chirp/drivers/baofeng_5rh_pro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/51b379053a5bf596c6623728a222de2ea9672028/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
-      "sha256": "8039d5a5dc50a51605509362965dc23ef4a9f83851c2a9b9d10916c0c7c7d79f",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a1406bfc4161d0f7c31d654a06a9a5caa6b55f91/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
+      "sha256": "70c2e24ec8e8e61d3e7f48e2ef0e59b39835e3fb22a8c76950b5e144a69b97b7",
       "vendors": [
         "Baofeng"
       ],
@@ -66,6 +2186,67 @@
       "status": "needs-review"
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1621:chirp/drivers/ft1d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1621,
+      "pullRequestTitle": "Yft5",
+      "path": "chirp/drivers/ft1d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1621",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fef9cdd8b8516852af32a90e4284160c5554260e/chirp%2Fdrivers%2Fft1d.py",
+      "sha256": "b221dfa88d9a56c37c9c16ae38fdaa0f192c3c58644648a412cce3c8f09a0dd5",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FT-1D"
+      ],
+      "variants": [
+        "R"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1621:chirp/drivers/ft2d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1621,
+      "pullRequestTitle": "Yft5",
+      "path": "chirp/drivers/ft2d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1621",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fef9cdd8b8516852af32a90e4284160c5554260e/chirp%2Fdrivers%2Fft2d.py",
+      "sha256": "7366292fbb3a369973dea9faa5f28d2922ce49048b41463d2cc1877ba73641be",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FT2D",
+        "FT3D",
+        "FT5D"
+      ],
+      "variants": [
+        "R",
+        "Rv2"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review"
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1025:chirp/drivers/ftm6000.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -73,8 +2254,8 @@
       "pullRequestTitle": "New Yaesu driver for FTM-6000 and FTM-200",
       "path": "chirp/drivers/ftm6000.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1025",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/9a5d40840d4627917009bff3c74d1ae923580c69/chirp%2Fdrivers%2Fftm6000.py",
-      "sha256": "95c4455d01bf9e4a70f97161096412147db55d01ae4a2ce6531d06427f161f07",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/adb3e1b173dc213093de3ffaa71996489fd16f65/chirp%2Fdrivers%2Fftm6000.py",
+      "sha256": "359efad8f82a44b8937511bb696c0843e9c93c7615d5e33a24af38b0d7cee026",
       "vendors": [
         "Yaesu"
       ],
@@ -103,8 +2284,8 @@
       "pullRequestTitle": "IC-R6 Initial Driver",
       "path": "chirp/drivers/icr6.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1082",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fd26ee39f86791c86d29cf9fc84c06baa6e7c7b2/chirp%2Fdrivers%2Ficr6.py",
-      "sha256": "7f7f8d5d6b9fdd8a895f9c372230d8f5da7e36ecb0dd7cc71412c0f881de0bc9",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/379352b376f86986dc54fee2e4f6fa592bfe323d/chirp%2Fdrivers%2Ficr6.py",
+      "sha256": "aaeedf127976f90263683e9d1bc2a8544ca4d1f35343400c7e10107f1af9f658",
       "vendors": [
         "Icom"
       ],
@@ -115,9 +2296,7 @@
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
+        "RadioSetting"
       ],
       "reasons": [
         "open pull request in watched repository"
@@ -132,8 +2311,8 @@
       "pullRequestTitle": "{WIP} iradio_dmuv4r: Add DM-UV4R support  { status: features I use working }",
       "path": "chirp/drivers/iradio_dmuv4r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1586",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/31a5af28371c796daf7c37ea8d9de2f400cfa189/chirp%2Fdrivers%2Firadio_dmuv4r.py",
-      "sha256": "d70d63c2e6a89cb97431ef47735823266de23073b8721fba7b6d31a7f62fc364",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2d4e05a8e0fcb31dacd0007227e74a63689c547b/chirp%2Fdrivers%2Firadio_dmuv4r.py",
+      "sha256": "081d90b7916040397fd9c129154221e4a4b6ba5eebd300d8d5520f068ef7224f",
       "vendors": [
         "Iradio"
       ],
@@ -161,8 +2340,8 @@
       "pullRequestTitle": "Add Wouxun KG-UV950P support",
       "path": "chirp/drivers/kguv980p.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/832",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5fe051a6e4e9e88038e609ea5595560fa727db08/chirp%2Fdrivers%2Fkguv980p.py",
-      "sha256": "8a90a5ea92311f1a4bca1900e25ed1df6871b19b96409b662ab9c82d17c01809",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cac8c88b4c04c775902e62c592dbc169b022ff9f/chirp%2Fdrivers%2Fkguv980p.py",
+      "sha256": "9a6a4abbd708e116f6b5e09bff319790b313fcfee5005b75f9948113657c5f7f",
       "vendors": [
         "Wouxun"
       ],
@@ -193,8 +2372,8 @@
       "pullRequestTitle": "ksun_m6_v2: Added support for KSUN M6-V2 radio (2024 hardware revision)",
       "path": "chirp/drivers/ksun_m6.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1455",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c79ffb49a1c0b4706bbd4fcab919298e11205f18/chirp%2Fdrivers%2Fksun_m6.py",
-      "sha256": "d5ee81cb20344d8a341f015aa6331325127cb0a49ac1bef3d1abe8b4cd197b88",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/186cac156d9799939d218314ab0e5f938e01cd2e/chirp%2Fdrivers%2Fksun_m6.py",
+      "sha256": "fae14c04351c9fc201691a9a3b502a01a7d329725924a19d983ba8c81b00bbe6",
       "vendors": [
         "KSUN"
       ],
@@ -224,8 +2403,8 @@
       "pullRequestTitle": "Add support for QYT KT-A16 airband radio",
       "path": "chirp/drivers/qyt_kta16.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1620",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/960db33860240957bd8286ae1995204626210a8f/chirp%2Fdrivers%2Fqyt_kta16.py",
-      "sha256": "54fa4d0d4a70f343ef2fb8a55cbc282187c1803b5fce0c4f6dccf1f62d8f0bd6",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/09785e67acdb1512d45e697cee1f0d96468e724e/chirp%2Fdrivers%2Fqyt_kta16.py",
+      "sha256": "eec33d6a496ecca16371df0bdfe8158268ffb64d513d02aefa4b61ca73e99fb5",
       "vendors": [
         "QYT"
       ],
@@ -253,8 +2432,8 @@
       "pullRequestTitle": "Add rt493 rt580g drivers",
       "path": "chirp/drivers/radtel_rt493.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1299",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0a26573a0826345162391a626b8260797242de31/chirp%2Fdrivers%2Fradtel_rt493.py",
-      "sha256": "89b95f06feb657c82e68a64ac0944413483004e3628c3603303e868e23229db6",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7ed9f7c8ff084dad26f3c4a760783361da96b64d/chirp%2Fdrivers%2Fradtel_rt493.py",
+      "sha256": "6cfe14f2f22cfa8b37b7283cfd7738e8ccad4334dca3bbceb3df6b41ce627055",
       "vendors": [
         "Radtel"
       ],
@@ -282,8 +2461,8 @@
       "pullRequestTitle": "Add rt493 rt580g drivers",
       "path": "chirp/drivers/radtel_rt580g.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1299",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0a26573a0826345162391a626b8260797242de31/chirp%2Fdrivers%2Fradtel_rt580g.py",
-      "sha256": "e827006d25d5e6e448bfa48c263801af7bd9ac0ba0f604273c7b42e87899f3ac",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7ed9f7c8ff084dad26f3c4a760783361da96b64d/chirp%2Fdrivers%2Fradtel_rt580g.py",
+      "sha256": "8f627767b3134fbd246cd5f6a984efcd1d58c4c3ea4a07e471a955c9b089f443",
       "vendors": [
         "Radtel"
       ],
@@ -311,8 +2490,8 @@
       "pullRequestTitle": "Add driver for Retevis H777D PMR variant",
       "path": "chirp/drivers/retevis_h777d_pmr.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1537",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3cff7eca35fa4a4bf75d1194463151425099a6f3/chirp%2Fdrivers%2Fretevis_h777d_pmr.py",
-      "sha256": "63a6c246e81e4c0896ac85dfcaab4c36a91fc7bc13bcbb8fab53ac2c1e4b53bd",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0cdd9a72f143c4b3f52bc6ef6341e02e64ce146e/chirp%2Fdrivers%2Fretevis_h777d_pmr.py",
+      "sha256": "57d360fa0e3028721942d1a609d384795f867dea33b45685b470c30a061a532f",
       "vendors": [
         "Retevis"
       ],
@@ -342,8 +2521,8 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/63714009ad840629444fe7c7b7eb05ad942f6a0c/chirp%2Fdrivers%2Fretevis_ra89r.py",
-      "sha256": "dd0a590d67f37142ed73b68b18ee8c649334cf37912543b6ae8afad04715c8bd",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0e40be884a0d66ceed3077285ceb5e2346995a62/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "sha256": "bda9bb80de066d1d96fa68d8624f7817cc4eb738fdac1da7fbe380c6169c35b4",
       "vendors": [
         "Retevis"
       ],
@@ -352,7 +2531,6 @@
       ],
       "variants": [],
       "hintsMatched": [
-        "CloneModeRadio",
         "directory.register",
         "RadioSetting",
         "sync_in",
@@ -361,8 +2539,7 @@
       "reasons": [
         "open pull request in watched repository"
       ],
-      "status": "needs-review",
-      "reviewNote": "New RA89R driver from PR #1598; review together with the companion th_uv88.py change for RA89G."
+      "status": "needs-review"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1605:chirp/drivers/retevis_rb669.py",
@@ -372,8 +2549,8 @@
       "pullRequestTitle": "Retevis RB669: Added Driver",
       "path": "chirp/drivers/retevis_rb669.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1605",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0f73b758cb24af0956056df9e4f12f6ddf540fd4/chirp%2Fdrivers%2Fretevis_rb669.py",
-      "sha256": "08c007992801c6192183716ff77b710d5389734366a185b8e097d2edc2cb697f",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/74b7e5e16269ef04a6d28aa205a5829eae3c3282/chirp%2Fdrivers%2Fretevis_rb669.py",
+      "sha256": "16b1410e8c991327a15184f29b4f9da694ad902fadf58abb3ede24c476d75a8c",
       "vendors": [
         "Retevis"
       ],
@@ -401,8 +2578,8 @@
       "pullRequestTitle": "Add TIDRADIO TD-H9 radio support",
       "path": "chirp/drivers/tdh8.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1533",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/590472e00169a56c7ec3c8feb5bb36e54aa2aa70/chirp%2Fdrivers%2Ftdh8.py",
-      "sha256": "87d2d2011f7faf9c03055faed907f6a01fa17ac2146b864685fa3de8b5964487",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/59f67f5566ee02b671107ab74de208bd7fe7182e/chirp%2Fdrivers%2Ftdh8.py",
+      "sha256": "0d02a76bf38ab7e01334375fb904c51c55aeb02074925b9e1847701703d604db",
       "vendors": [
         "Radtel",
         "TID",
@@ -434,8 +2611,7 @@
       "reasons": [
         "open pull request in watched repository"
       ],
-      "status": "needs-review",
-      "reviewNote": "Useful TD-H9 support, but this is a modified existing TD-H3/H8 family driver. Review for duplicate registrations against the bundled CHIRP version before approval."
+      "status": "needs-review"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#824:chirp/drivers/th8600.py",
@@ -445,8 +2621,8 @@
       "pullRequestTitle": "Add TYT TH8600 driver.  Issue 4851.",
       "path": "chirp/drivers/th8600.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/824",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d55586a3344a73176ed02293c3cbc373c8577ab5/chirp%2Fdrivers%2Fth8600.py",
-      "sha256": "b6c956b216b31f34d37be48e0b3ca19fd5a0543028424d1c2829e1420ff39959",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/aefc280fa918388e699144cbd986203dbeea9d81/chirp%2Fdrivers%2Fth8600.py",
+      "sha256": "5742ecf91b7f65884a3659088ccb722b9ae2838a8f80dc9c4420ed124f1910cd",
       "vendors": [
         "TYT"
       ],
@@ -474,8 +2650,8 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/63714009ad840629444fe7c7b7eb05ad942f6a0c/chirp%2Fdrivers%2Fth_uv88.py",
-      "sha256": "57f78f30bf04d108817dfbca0996da0c6efc82cd8427e42a58a19df2e1f9a441",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0e40be884a0d66ceed3077285ceb5e2346995a62/chirp%2Fdrivers%2Fth_uv88.py",
+      "sha256": "77693c9646bc5521fc9712135202472e3c21aaa7dabd3a3c31204a427222115d",
       "vendors": [
         "Explorer",
         "Retevis",
@@ -501,8 +2677,7 @@
       "reasons": [
         "open pull request in watched repository"
       ],
-      "status": "needs-review",
-      "reviewNote": "Companion family-driver change for RA89G support. Review together with PR #1598; this modifies an existing bundled driver family."
+      "status": "needs-review"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
@@ -512,8 +2687,8 @@
       "pullRequestTitle": "tidradio: add TD-H3 nicFW 2.5 driver",
       "path": "chirp/drivers/tidradio_h3_nicfw25.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1521",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5309ae25c913bd2a615fce480951ee767504fd33/chirp%2Fdrivers%2Ftidradio_h3_nicfw25.py",
-      "sha256": "0ce395634f9187ef2897a5fbdb027ae02f41012010d463364bc8fc4a1f524be1",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4ba56d7b0ef3ca8fbc0226e27a822e66f871ba51/chirp%2Fdrivers%2Ftidradio_h3_nicfw25.py",
+      "sha256": "d494256d0da9af23b59e59be88c3dab7098e58bd507fe0d73b57ee23383f59f2",
       "vendors": [
         "TIDRADIO"
       ],
@@ -541,13 +2716,81 @@
       "pullRequestTitle": "drivers: Add Quansheng UV-K1 / UV-K5 V3 F4HWN Fusion driver",
       "path": "chirp/drivers/uvk5_f4hwn.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1596",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/28dcc3f069e23d3779ff82995b54fbc31c589d34/chirp%2Fdrivers%2Fuvk5_f4hwn.py",
-      "sha256": "97b76752ccdd84ba96c0252a96fae38490d0d3a8461deba8c8833c7fb4ed4e28",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7e779483050f604bf50320b1580fcf37461e25c4/chirp%2Fdrivers%2Fuvk5_f4hwn.py",
+      "sha256": "94634ef636ba9b3124185682f566948f011cde42adbda5e2af4d9bdd6b3dbbaf",
       "vendors": [
         "Quansheng"
       ],
       "models": [
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:mjwgeek/Radioddity-GD-73a:gd73.py",
+      "type": "repository-file",
+      "repository": "mjwgeek/Radioddity-GD-73a",
+      "path": "gd73.py",
+      "sourceUrl": "https://github.com/mjwgeek/Radioddity-GD-73a/blob/main/gd73.py",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/Radioddity-GD-73a/main/gd73.py",
+      "sha256": "ccc9631ff963b809595d80fdd0fe01f30f1b73c403be730e53d3679936587118",
+      "vendors": [
+        "Radioddity"
+      ],
+      "models": [
+        "GD-73A"
+      ],
+      "variants": [
+        "Channels",
+        "Collection",
+        "DTMF Codes",
+        "Digital Contacts",
+        "Native USB read v4 / mmap parser fix",
+        "PTT Templates",
+        "Quick Text",
+        "RX Groups",
+        "Scan Lists",
+        "Zones"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830.py",
+      "type": "repository-file",
+      "repository": "mjwgeek/Radtel-RT830-Custom-Firmware",
+      "path": "chirp/radtel_rt830.py",
+      "sourceUrl": "https://github.com/mjwgeek/Radtel-RT830-Custom-Firmware/blob/main/chirp/radtel_rt830.py",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/Radtel-RT830-Custom-Firmware/main/chirp/radtel_rt830.py",
+      "sha256": "3709046a338ee61233f8929c0c5558e51f5fe2dfa4d3f5f4fd7681363e94812b",
+      "vendors": [
+        "Abbree",
+        "Radtel",
+        "iRadio"
+      ],
+      "models": [
+        "AR-830",
+        "RT-830",
+        "UV-83"
       ],
       "variants": [],
       "hintsMatched": [
@@ -558,7 +2801,38 @@
         "sync_out"
       ],
       "reasons": [
-        "open pull request in watched repository"
+        "explicit repository source"
+      ],
+      "status": "needs-review"
+    },
+    {
+      "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830_custom_driver.py",
+      "type": "repository-file",
+      "repository": "mjwgeek/Radtel-RT830-Custom-Firmware",
+      "path": "chirp/radtel_rt830_custom_driver.py",
+      "sourceUrl": "https://github.com/mjwgeek/Radtel-RT830-Custom-Firmware/blob/main/chirp/radtel_rt830_custom_driver.py",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/Radtel-RT830-Custom-Firmware/main/chirp/radtel_rt830_custom_driver.py",
+      "sha256": "a31e4095aefaa86b1bb36dfc76e41f582eface77cbdd7d9718f4402dd02c5f01",
+      "vendors": [
+        "Abbree",
+        "Radtel",
+        "iRadio"
+      ],
+      "models": [
+        "AR-830",
+        "RT-830",
+        "UV-83"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
       ],
       "status": "needs-review"
     }
