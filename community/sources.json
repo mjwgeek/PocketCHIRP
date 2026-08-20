@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "repositories": [
+    {
+      "repo": "kk7ds/chirp",
+      "watchOpenPullRequests": true,
+      "notes": "Official CHIRP repository; open PRs are a high-value source for drivers not yet merged."
+    }
+  ],
+  "repositorySearches": [
+    "chirp radio driver",
+    "chirp-driver radio",
+    "CHIRP CloneModeRadio",
+    "CHIRP directory.register radio"
+  ],
+  "codeSearchHints": [
+    "CloneModeRadio",
+    "directory.register",
+    "RadioSetting",
+    "sync_in",
+    "sync_out"
+  ],
+  "ignoredRepositories": [],
+  "ignoredPullRequests": [],
+  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog."
+}
