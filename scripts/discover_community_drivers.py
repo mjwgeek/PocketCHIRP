@@ -20,7 +20,7 @@ SOURCES = ROOT / "community" / "sources.json"
 OUT = ROOT / "community" / "candidates.json"
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
 API = "https://api.github.com"
-UA = "PocketCHIRP-Community-Driver-Discovery/2"
+UA = "PocketCHIRP-Community-Driver-Discovery/3"
 
 
 def api_json(path_or_url: str):
@@ -84,13 +84,11 @@ def add_candidate(store: dict, candidate: dict):
         existing["reasons"] = sorted(reasons)
 
 
-def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[str], store: dict, reason: str):
+def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[str], store: dict,
+                        reason: str, scan_all_python: bool = False):
     tree = api_json(f"/repos/{repo_full_name}/git/trees/{urllib.parse.quote(default_branch, safe='')}?recursive=1")
     items = tree.get("tree", [])
 
-    # Skip repositories which are obviously full copies/bundles of CHIRP rather
-    # than repositories containing community add-on drivers. This is what kept
-    # RadioDroid's embedded CHIRP tree from flooding the candidate list.
     paths = [str(item.get("path") or "").lower() for item in items if item.get("type") == "blob"]
     bundled_driver_count = sum(1 for p in paths if "/chirp/drivers/" in "/" + p and p.endswith(".py"))
     has_chirp_core = any(p.endswith("chirp/chirp_common.py") for p in paths)
@@ -103,9 +101,13 @@ def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[st
         if item.get("type") != "blob" or not path.endswith(".py"):
             continue
         pl = path.lower()
-        if not ("driver" in pl or pl.startswith("drivers/") or pl.startswith("chirp/drivers/")):
+        if not scan_all_python and not (
+            "driver" in pl or pl.startswith("drivers/") or pl.startswith("chirp/drivers/")
+        ):
             continue
-        if int(item.get("size") or 0) > 500_000:
+        if any(part in pl for part in ("/test", "tests/", "__pycache__", ".venv/", "venv/")):
+            continue
+        if int(item.get("size") or 0) > 750_000:
             continue
         raw_url = f"https://raw.githubusercontent.com/{repo_full_name}/{default_branch}/{urllib.parse.quote(path)}"
         try:
@@ -138,19 +140,94 @@ def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[st
         })
 
 
-def discover_repositories(cfg: dict, store: dict):
+def repo_meta(repo_full_name: str):
+    return api_json(f"/repos/{repo_full_name}")
+
+
+def discover_explicit_repositories(cfg: dict, store: dict, scanned: set[str]):
+    hints = cfg.get("codeSearchHints") or []
+    ignored = set(cfg.get("ignoredRepositories") or [])
+    for source in cfg.get("explicitRepositories") or []:
+        full = source.get("repo")
+        if not full or full in ignored or full in scanned:
+            continue
+        try:
+            meta = repo_meta(full)
+            if meta.get("archived"):
+                continue
+            inspect_repo_python(
+                full,
+                meta.get("default_branch") or "main",
+                hints,
+                store,
+                "explicit repository source",
+                bool(source.get("scanAllPython")),
+            )
+            scanned.add(full)
+        except Exception as exc:
+            print(f"warning: explicit repo inspection failed for {full}: {exc}", file=sys.stderr)
+
+
+def discover_owned_repositories(cfg: dict, store: dict, scanned: set[str]):
+    owner_cfg = cfg.get("ownedRepositoryScan") or {}
+    owner = owner_cfg.get("owner")
+    if not owner:
+        return
+    hints = cfg.get("codeSearchHints") or []
+    keywords = [str(x).lower() for x in owner_cfg.get("nameKeywords") or []]
+    ignored = set(owner_cfg.get("ignoredRepositories") or []) | set(cfg.get("ignoredRepositories") or [])
+    page = 1
+    while page <= 5:
+        repos = api_json(f"/users/{urllib.parse.quote(owner)}/repos?per_page=100&page={page}&sort=updated")
+        if not repos:
+            break
+        for repo in repos:
+            full = repo.get("full_name")
+            name = (repo.get("name") or "").lower()
+            desc = (repo.get("description") or "").lower()
+            if not full or full in ignored or full in scanned or repo.get("archived"):
+                continue
+            if keywords and not any(k in name or k in desc for k in keywords):
+                continue
+            try:
+                inspect_repo_python(
+                    full,
+                    repo.get("default_branch") or "main",
+                    hints,
+                    store,
+                    f"owned repository scan: {owner}",
+                    bool(owner_cfg.get("scanAllPython")),
+                )
+                scanned.add(full)
+            except Exception as exc:
+                print(f"warning: owned repo inspection failed for {full}: {exc}", file=sys.stderr)
+        if len(repos) < 100:
+            break
+        page += 1
+
+
+def discover_repositories(cfg: dict, store: dict, scanned: set[str]):
     hints = cfg.get("codeSearchHints") or []
     ignored = set(cfg.get("ignoredRepositories") or [])
     for query in cfg.get("repositorySearches") or []:
+        focused = any(k in query.lower() for k in ("quansheng", "uv-k", "uvk5", "uvk6", "f4hwn"))
         q = urllib.parse.quote(query)
-        result = api_json(f"/search/repositories?q={q}&sort=updated&order=desc&per_page=20")
+        result = api_json(f"/search/repositories?q={q}&sort=updated&order=desc&per_page=30")
         for repo in result.get("items", []):
             full = repo.get("full_name")
-            if not full or full in ignored or repo.get("archived"):
+            if not full or full in ignored or full in scanned or repo.get("archived"):
                 continue
             default_branch = repo.get("default_branch") or "main"
             try:
-                inspect_repo_python(full, default_branch, hints, store, f"repository search: {query}")
+                inspect_repo_python(
+                    full,
+                    default_branch,
+                    hints,
+                    store,
+                    f"repository search: {query}",
+                    focused,
+                )
+                scanned.add(full)
             except Exception as exc:
                 print(f"warning: repo inspection failed for {full}: {exc}", file=sys.stderr)
 
@@ -171,16 +248,10 @@ def discover_pull_requests(cfg: dict, store: dict):
             files = api_json(f"/repos/{repo}/pulls/{prn}/files?per_page=100")
             for f in files:
                 path = f.get("filename") or ""
-
-                # A PocketCHIRP community driver must actually be a CHIRP driver
-                # module. Do not collect chirp_common.py, CLI code, wx UI code,
-                # tests, helper modules, or other files merely because a radio PR
-                # happened to modify them.
                 if not path.startswith("chirp/drivers/") or not path.endswith(".py"):
                     continue
                 if path.endswith("/fake.py") or path.endswith("/generic_xml.py"):
                     continue
-
                 raw_url = f.get("raw_url")
                 if not raw_url:
                     continue
@@ -216,18 +287,58 @@ def discover_pull_requests(cfg: dict, store: dict):
                 })
 
 
+def dedupe_exact_files(candidates: list[dict]) -> list[dict]:
+    """Collapse exact byte-identical forks/copies while retaining source history."""
+    by_sha: dict[str, list[dict]] = {}
+    for candidate in candidates:
+        by_sha.setdefault(candidate.get("sha256") or candidate["candidateKey"], []).append(candidate)
+
+    out = []
+    preferred_sources = ("mjwgeek/", "egzumer/", "armel/", "kk7ds/")
+    for group in by_sha.values():
+        if len(group) == 1:
+            out.append(group[0])
+            continue
+
+        def rank(item):
+            repo = item.get("repository", "")
+            source_rank = next((i for i, p in enumerate(preferred_sources) if repo.startswith(p)), 99)
+            type_rank = 0 if item.get("type") == "pull-request-file" else 1
+            return (source_rank, type_rank, repo.lower(), item.get("path", "").lower())
+
+        group.sort(key=rank)
+        keep = group[0]
+        keep["duplicateSources"] = [
+            {
+                "repository": x.get("repository"),
+                "path": x.get("path"),
+                "sourceUrl": x.get("sourceUrl"),
+            }
+            for x in group[1:]
+        ]
+        reasons = set(keep.get("reasons", []))
+        reasons.add(f"collapsed {len(group) - 1} byte-identical duplicate source(s)")
+        keep["reasons"] = sorted(reasons)
+        out.append(keep)
+    return out
+
+
 def main():
     cfg = json.loads(SOURCES.read_text(encoding="utf-8"))
     found = {}
+    scanned: set[str] = set()
     discover_pull_requests(cfg, found)
-    discover_repositories(cfg, found)
-    candidates = sorted(found.values(), key=lambda x: (
+    discover_explicit_repositories(cfg, found, scanned)
+    discover_owned_repositories(cfg, found, scanned)
+    discover_repositories(cfg, found, scanned)
+    candidates = dedupe_exact_files(list(found.values()))
+    candidates.sort(key=lambda x: (
         x.get("repository", "").lower(),
         x.get("path", "").lower(),
         x.get("candidateKey", ""),
     ))
     payload = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "candidateCount": len(candidates),
         "candidates": candidates,
