@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "catalogRevision": 1,
+  "updated": "2026-08-20",
+  "drivers": [],
+  "policy": {
+    "autoPublishCandidates": false,
+    "requireManualApproval": true,
+    "verifySha256BeforeInstall": true
+  }
+}
