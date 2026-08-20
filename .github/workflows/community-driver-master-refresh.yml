@@ -31,9 +31,6 @@ jobs:
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
-      - name: Rebuild all vendor approval menus
-        run: python scripts/generate_approval_workflow.py
-
       - name: Summarize master refresh
         run: |
           python - <<'PY'
@@ -43,20 +40,25 @@ jobs:
           approved=json.loads(Path('community/community-drivers.json').read_text()).get('drivers',[])
           approved_keys={x.get('candidateKey') for x in approved}
           new=[x for x in candidates if x.get('candidateKey') not in approved_keys]
+          vendors={}
+          for row in new:
+              vendor=((row.get('vendors') or ['Other'])[0] or 'Other')
+              vendors[vendor]=vendors.get(vendor,0)+1
           print(f'Total candidates: {len(candidates)}')
           print(f'Approved: {len(approved)}')
           print(f'New/unapproved: {len(new)}')
+          for vendor,count in sorted(vendors.items()):
+              print(f'- {vendor}: {count} new')
           PY
 
-      - name: Commit refreshed catalogs and menus
+      - name: Commit refreshed candidate catalog
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add community/candidates.json community/community-drivers.json .github/workflows/community-driver-*.yml
-          git add -u .github/workflows
-          if git diff --cached --quiet; then
-            echo "No community-driver changes."
+          if git diff --quiet -- community/candidates.json; then
+            echo "No community-driver candidate changes."
             exit 0
           fi
-          git commit -m "Refresh all community driver sources and approval menus"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json
+          git commit -m "Refresh all community driver sources"
           git push
