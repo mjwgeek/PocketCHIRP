@@ -1,0 +1,83 @@
+name: Manage Community Driver Approval
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Approve or remove approval'
+        required: true
+        default: approve
+        type: choice
+        options:
+          - approve
+          - remove
+      candidate_keys:
+        description: 'Exact candidateKey. Multiple keys may be comma-separated.'
+        required: true
+        type: string
+      approval_note:
+        description: 'Optional note about testing/review'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Manage approval
+        env:
+          ACTION_NAME: ${{ inputs.action }}
+          CANDIDATE_KEYS: ${{ inputs.candidate_keys }}
+          APPROVAL_NOTE: ${{ inputs.approval_note }}
+        run: |
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+
+          cmd = [
+              sys.executable,
+              'scripts/manage_community_approvals.py',
+              os.environ['ACTION_NAME'],
+              os.environ['CANDIDATE_KEYS'],
+          ]
+          note = os.environ.get('APPROVAL_NOTE', '').strip()
+          if note:
+              cmd += ['--note', note]
+          subprocess.check_call(cmd)
+          PY
+
+      - name: Show resulting catalog
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('community/community-drivers.json').read_text())
+          print(f"Catalog revision: {data.get('catalogRevision')}")
+          print(f"Approved drivers: {len(data.get('drivers', []))}")
+          for driver in data.get('drivers', []):
+              print(f"- {driver.get('displayName') or driver.get('candidateKey')}")
+          PY
+
+      - name: Commit approval changes
+        run: |
+          if git diff --quiet -- community/community-drivers.json; then
+            echo "No approval catalog changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/community-drivers.json
+          git commit -m "${{ inputs.action }} community driver approval"
+          git push
