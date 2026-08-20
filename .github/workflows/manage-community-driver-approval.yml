@@ -11,9 +11,114 @@ on:
         options:
           - approve
           - remove
-      candidate_keys:
-        description: 'Exact candidateKey. Multiple keys may be comma-separated.'
+      driver_choice:
+        description: 'Community driver / firmware version'
         required: true
+        type: choice
+        options:
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v4.3.0 (FR) [0b8c73]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v4.2.0 (FR) [28332f]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v4.1.0 (FR) [d332b3]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v4.0.0 (FR) [21e9fb]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.9.1 (FR) [17b8ed]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.9.0 (FR) [759fa9]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.8.0 (FR) [f6010b]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.7.1 (FR) [a1e518]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.7.0 (FR) [d9a55f]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.6 (FR) [f2fed8]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.6.3 (FR) [41bb08]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.6.2 (FR) [09f74d]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.6.1 (FR) [439dbe]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.5.2 (FR) [bc38d7]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.5.1 (FR) [c9ab5a]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.5.0 (FR) [748709]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.4.0 (FR) [0df2ae]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.3.0 (FR) [1428f2]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.2.0 (FR) [84e6a2]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.1.0 (FR) [b43cfa]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.0.1 (FR) [45154e]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v3.0.0 (FR) [ff826a]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v2.8.1 (FR) [d2efd9]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v2.8.0 (FR) [b68a6a]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v2.7.0 (FR) [3382e5]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v2.6.0 (FR) [b460d1]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR v2.5.0 (FR) [13c27e]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) FR (FR) [483b36]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v4.3.0 [070c1c]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v4.2.0 [211347]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v4.1.0 [fe3618]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v4.0.0 [cdbdcc]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.9.1 [cf4f61]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.9.0 [417f35]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.8.0 [a48cc4]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.7.1 [c57aed]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.7.0 [f91578]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.6 [22f233]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.6.3 [d4ff4d]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.6.2 [62724b]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.6.1 [e9b213]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.5.2 [f1efee]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.5.1 [9d2f99]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.5.0 [60e161]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.4.0 [ac0dfb]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.4.0 [531007]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.3.0 [5c6550]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.2.0 [92c096]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.1.0 [f0936c]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.0.1 [e21ae6]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v3.0.0 [999340]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v2.8.1 [dc898d]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v2.8.0 [449a0a]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v2.7.0 [f11071]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v2.6.0 [beadd9]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v2.5.0 [0d5e3d]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) [d53813]'
+          - 'Quansheng CHIRP_KA-50/52 [ebf7e3]'
+          - 'Quansheng IJV FW5 [be904a]'
+          - 'Quansheng IJV v4.0 [11418c]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [c2eeea]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [6785c0]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [6ce741]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [6e5caa]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [afe6ea]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [7dabd7]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [0fa142]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [8ab79b]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [9b8ab2]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [44aa69]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [694339]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [15721c]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX) [9e18d6]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX) [f9a6bf]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX) [549a20]'
+          - 'Quansheng UV-K1 GOGUFW Messenger 1.0.1a v1.0 [76385c]'
+          - 'Quansheng UV-K5 (egzumer + f4hwn) v1.5.0 [973f9e]'
+          - 'Alinco DJ-VX50 [de20d6]'
+          - 'Baofeng 5RH Pro, UV-5RH Plus, UV-5RM Plus [61e855]'
+          - 'Explorer, Retevis, TYT P2, P62, QRZ-1, RA89, RT85, TH-UV88, TH-UV98 [7465dd]'
+          - 'Icom IC-R6 [54da65]'
+          - 'Iradio DM-UV4R [1e48b1]'
+          - 'KSUN M6 [25ff97]'
+          - 'Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion) [2ab144]'
+          - 'QYT KT-A16 [1a578f]'
+          - 'Radtel RT-493 [f7994b]'
+          - 'Radtel RT-580G [253db0]'
+          - 'Radtel, TID, TIDRADIO RT-730, TD-H3, TD-H3-GMRS, TD-H3-HAM, TD-H8, TD-H8-GMRS, TD-H8-HAM, TD-H9, TD-H9-GMRS, TD-H9-HAM, TD-UV68 [55aa36]'
+          - 'Retevis H777D [1d109b]'
+          - 'Retevis RA89R [09c5c4]'
+          - 'Retevis RB669 [b91ac7]'
+          - 'TIDRADIO TD-H3 nicFW 2.5 [6bb341]'
+          - 'TYT TH-8600 [edc18f]'
+          - 'Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P [9e370e]'
+          - 'Yaesu FT-1D [6da9ea]'
+          - 'Yaesu FT2D, FT3D, FT5D [3e88a4]'
+          - 'Yaesu FTM-200, FTM-6000 [8ced7b]'
+          - 'Radioddity GD-73A [aef633]'
+          - 'Abbree, Radtel, iRadio AR-830, RT-830, UV-83 [51eae5]'
+          - 'Abbree, Radtel, iRadio AR-830, RT-830, UV-83 [df9fbc]'
+      manual_candidate_key:
+        description: 'Optional exact candidateKey override/fallback'
+        required: false
         type: string
       approval_note:
         description: 'Optional note about testing/review'
@@ -38,7 +143,8 @@ jobs:
       - name: Manage approval
         env:
           ACTION_NAME: ${{ inputs.action }}
-          CANDIDATE_KEYS: ${{ inputs.candidate_keys }}
+          DRIVER_CHOICE: ${{ inputs.driver_choice }}
+          MANUAL_CANDIDATE_KEY: ${{ inputs.manual_candidate_key }}
           APPROVAL_NOTE: ${{ inputs.approval_note }}
         run: |
           python - <<'PY'
@@ -46,12 +152,16 @@ jobs:
           import subprocess
           import sys
 
-          cmd = [
-              sys.executable,
-              'scripts/manage_community_approvals.py',
-              os.environ['ACTION_NAME'],
-              os.environ['CANDIDATE_KEYS'],
-          ]
+          cmd = [sys.executable, 'scripts/manage_community_approvals.py', os.environ['ACTION_NAME']]
+          manual = os.environ.get('MANUAL_CANDIDATE_KEY', '').strip()
+          choice = os.environ.get('DRIVER_CHOICE', '').strip()
+          if manual:
+              cmd.append(manual)
+          elif choice:
+              cmd += ['--label', choice]
+          else:
+              raise SystemExit('Choose a community driver or provide manual_candidate_key')
+
           note = os.environ.get('APPROVAL_NOTE', '').strip()
           if note:
               cmd += ['--note', note]
