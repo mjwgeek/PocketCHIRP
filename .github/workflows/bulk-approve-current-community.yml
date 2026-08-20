@@ -1,17 +1,16 @@
 name: One-time Bulk Approve Current Community Drivers
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/bulk-approve-current-community.yml'
+  issues:
+    types: [opened]
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   bulk-approve:
+    if: github.event.issue.title == 'PocketCHIRP bulk approve current community baseline'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -77,3 +76,8 @@ jobs:
           git rm .github/workflows/bulk-approve-current-community.yml
           git commit -m "Bulk approve current community driver baseline"
           git push
+
+      - name: Close trigger issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close "${{ github.event.issue.number }}" --comment "Bulk community-driver baseline approval completed."
