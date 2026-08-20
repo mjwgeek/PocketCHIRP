@@ -1,0 +1,132 @@
+name: Manage Community Driver Approval
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Approval action'
+        required: true
+        default: approve-all-new
+        type: choice
+        options:
+          - approve-all-new
+          - approve-vendor-new
+          - approve-one
+          - remove-one
+      vendor:
+        description: 'Vendor for approve-vendor-new (example: Quansheng)'
+        required: false
+        type: string
+      candidate_key:
+        description: 'Exact candidateKey or approved id for approve-one/remove-one'
+        required: false
+        type: string
+      approval_note:
+        description: 'Optional approval note'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Resolve requested approvals
+        env:
+          ACTION_NAME: ${{ inputs.action }}
+          VENDOR_NAME: ${{ inputs.vendor }}
+          CANDIDATE_KEY: ${{ inputs.candidate_key }}
+          APPROVAL_NOTE: ${{ inputs.approval_note }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          action = os.environ['ACTION_NAME'].strip()
+          vendor = os.environ.get('VENDOR_NAME', '').strip()
+          candidate_key = os.environ.get('CANDIDATE_KEY', '').strip()
+          note = os.environ.get('APPROVAL_NOTE', '').strip()
+
+          candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
+          approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
+          approved_keys = {str(x.get('candidateKey') or '') for x in approved}
+
+          def row_vendor(row):
+              vendors = [str(v).strip() for v in (row.get('vendors') or []) if str(v).strip()]
+              if vendors:
+                  return vendors[0]
+              if str(row.get('repository') or '') == 'ijvradio.com':
+                  return 'Quansheng'
+              return 'Other'
+
+          if action == 'approve-all-new':
+              keys = [str(x.get('candidateKey')) for x in candidates if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys]
+              print(f'Approving all new candidates: {len(keys)}')
+              if not keys:
+                  raise SystemExit('There are no new candidates to approve.')
+              cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'approve', *keys]
+
+          elif action == 'approve-vendor-new':
+              if not vendor:
+                  raise SystemExit('vendor is required for approve-vendor-new')
+              keys = [str(x.get('candidateKey')) for x in candidates if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys and row_vendor(x).lower() == vendor.lower()]
+              print(f'Approving new {vendor} candidates: {len(keys)}')
+              if not keys:
+                  raise SystemExit(f'No new unapproved candidates found for vendor: {vendor}')
+              cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'approve', *keys]
+
+          elif action == 'approve-one':
+              if not candidate_key:
+                  raise SystemExit('candidate_key is required for approve-one')
+              cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'approve', candidate_key]
+
+          elif action == 'remove-one':
+              if not candidate_key:
+                  raise SystemExit('candidate_key or approved id is required for remove-one')
+              cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'remove', candidate_key]
+
+          else:
+              raise SystemExit(f'Unknown action: {action}')
+
+          if note and action.startswith('approve'):
+              cmd += ['--note', note]
+          subprocess.check_call(cmd)
+          PY
+
+      - name: Show approval summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          candidates=json.loads(Path('community/candidates.json').read_text()).get('candidates',[])
+          approved=json.loads(Path('community/community-drivers.json').read_text()).get('drivers',[])
+          approved_keys={x.get('candidateKey') for x in approved}
+          pending=[x for x in candidates if x.get('candidateKey') not in approved_keys]
+          print(f'Approved drivers: {len(approved)}')
+          print(f'Pending candidates: {len(pending)}')
+          PY
+
+      - name: Commit approval changes
+        run: |
+          if git diff --quiet -- community/community-drivers.json; then
+            echo "No approval catalog changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/community-drivers.json
+          git commit -m "Update community driver approvals"
+          git push
