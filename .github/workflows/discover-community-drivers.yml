@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 10 * * 1'
-      timezone: 'America/Chicago'
 
 permissions:
   contents: write
@@ -27,9 +26,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/discover_community_drivers.py
 
-      - name: Add official IJV drivers
-        run: python scripts/discover_ijv_official.py
-
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
@@ -45,7 +41,6 @@ jobs:
           rows = p.get('candidates', [])
           quansheng = [x for x in rows if 'quansheng' in (' '.join(x.get('vendors', [])) + ' ' + ' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uv-k' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uvk' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower()]
           owned = [x for x in rows if x.get('repository', '').startswith('mjwgeek/')]
-          ijv = [x for x in rows if x.get('repository') == 'ijvradio.com']
           current = [x for x in rows if not x.get('historical')]
           historical = [x for x in rows if x.get('historical')]
           versioned = [x for x in rows if x.get('version')]
@@ -54,23 +49,7 @@ jobs:
           print(f"Historical/version-specific candidates retained: {len(historical)}")
           print(f"Candidates with parsed version numbers: {len(versioned)}")
           print(f"Quansheng-related candidates: {len(quansheng)}")
-          print(f"Official IJV candidates: {len(ijv)}")
           print(f"mjwgeek repository candidates: {len(owned)}")
-          print('\nOfficial IJV:')
-          for x in ijv:
-              print(f"- {x.get('displayName')} :: {x.get('path')} :: {x.get('installPackaging')}")
-          print('\nQuansheng-related:')
-          for x in quansheng:
-              flags = []
-              if x.get('recommended'): flags.append('recommended')
-              if x.get('historical'): flags.append('historical')
-              version = f" v{x['version']}" if x.get('version') else ''
-              flag_text = f" [{' / '.join(flags)}]" if flags else ''
-              print(f"- {x.get('repository')} :: {x.get('path')} :: {', '.join(x.get('models', []))}{version}{flag_text}")
-          print('\nOwned repository candidates:')
-          for x in owned:
-              version = f" v{x['version']}" if x.get('version') else ''
-              print(f"- {x.get('repository')} :: {x.get('path')} :: {', '.join(x.get('models', []))}{version}")
           PY
 
       - name: Commit candidate and approval-choice changes
