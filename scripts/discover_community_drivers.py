@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Discover likely community CHIRP drivers without auto-publishing them.
-
-The script reads community/sources.json, queries GitHub's REST API using the
-workflow GITHUB_TOKEN, and writes community/candidates.json. Candidates are
-review-only. Promotion into community/community-drivers.json is intentionally
-manual.
-"""
+"""Discover likely community CHIRP drivers without auto-publishing them."""
 
 from __future__ import annotations
 
@@ -26,7 +20,7 @@ SOURCES = ROOT / "community" / "sources.json"
 OUT = ROOT / "community" / "candidates.json"
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
 API = "https://api.github.com"
-UA = "PocketCHIRP-Community-Driver-Discovery/1"
+UA = "PocketCHIRP-Community-Driver-Discovery/2"
 
 
 def api_json(path_or_url: str):
@@ -83,7 +77,6 @@ def add_candidate(store: dict, candidate: dict):
     if not existing:
         store[key] = candidate
         return
-    # Merge discovery reasons while preserving the richer record.
     reasons = set(existing.get("reasons", [])) | set(candidate.get("reasons", []))
     existing["reasons"] = sorted(reasons)
     if len(candidate.get("models", [])) > len(existing.get("models", [])):
@@ -93,13 +86,24 @@ def add_candidate(store: dict, candidate: dict):
 
 def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[str], store: dict, reason: str):
     tree = api_json(f"/repos/{repo_full_name}/git/trees/{urllib.parse.quote(default_branch, safe='')}?recursive=1")
-    for item in tree.get("tree", []):
+    items = tree.get("tree", [])
+
+    # Skip repositories which are obviously full copies/bundles of CHIRP rather
+    # than repositories containing community add-on drivers. This is what kept
+    # RadioDroid's embedded CHIRP tree from flooding the candidate list.
+    paths = [str(item.get("path") or "").lower() for item in items if item.get("type") == "blob"]
+    bundled_driver_count = sum(1 for p in paths if "/chirp/drivers/" in "/" + p and p.endswith(".py"))
+    has_chirp_core = any(p.endswith("chirp/chirp_common.py") for p in paths)
+    if has_chirp_core and bundled_driver_count >= 30:
+        print(f"skip bundled CHIRP copy: {repo_full_name} ({bundled_driver_count} driver files)")
+        return
+
+    for item in items:
         path = item.get("path", "")
         if item.get("type") != "blob" or not path.endswith(".py"):
             continue
-        # Keep discovery bounded and favor likely driver locations/names.
         pl = path.lower()
-        if not ("driver" in pl or "chirp" in pl or pl.startswith("chirp/") or pl.startswith("drivers/")):
+        if not ("driver" in pl or pl.startswith("drivers/") or pl.startswith("chirp/drivers/")):
             continue
         if int(item.get("size") or 0) > 500_000:
             continue
@@ -113,6 +117,8 @@ def inspect_repo_python(repo_full_name: str, default_branch: str, hints: list[st
         if not ok:
             continue
         meta = extract_models(text)
+        if not meta["models"]:
+            continue
         sha = hashlib.sha256(data).hexdigest()
         key = f"repo:{repo_full_name}:{path}"
         add_candidate(store, {
@@ -159,19 +165,22 @@ def discover_pull_requests(cfg: dict, store: dict):
         prs = api_json(f"/repos/{repo}/pulls?state=open&sort=updated&direction=desc&per_page=100")
         for pr in prs:
             prn = pr.get("number")
-            ignore_key = f"{repo}#{prn}"
-            if ignore_key in ignored_prs:
+            if f"{repo}#{prn}" in ignored_prs:
                 continue
             title = pr.get("title") or ""
-            body = pr.get("body") or ""
-            driverish_title = any(k in (title + " " + body).lower() for k in ("driver", "radio", "chirp"))
             files = api_json(f"/repos/{repo}/pulls/{prn}/files?per_page=100")
             for f in files:
                 path = f.get("filename") or ""
-                if not path.endswith(".py"):
+
+                # A PocketCHIRP community driver must actually be a CHIRP driver
+                # module. Do not collect chirp_common.py, CLI code, wx UI code,
+                # tests, helper modules, or other files merely because a radio PR
+                # happened to modify them.
+                if not path.startswith("chirp/drivers/") or not path.endswith(".py"):
                     continue
-                if not (path.startswith("chirp/drivers/") or "driver" in path.lower() or driverish_title):
+                if path.endswith("/fake.py") or path.endswith("/generic_xml.py"):
                     continue
+
                 raw_url = f.get("raw_url")
                 if not raw_url:
                     continue
@@ -184,6 +193,8 @@ def discover_pull_requests(cfg: dict, store: dict):
                 if not ok:
                     continue
                 meta = extract_models(text)
+                if not meta["models"]:
+                    continue
                 sha = hashlib.sha256(data).hexdigest()
                 key = f"pr:{repo}#{prn}:{path}"
                 add_candidate(store, {
@@ -211,7 +222,9 @@ def main():
     discover_pull_requests(cfg, found)
     discover_repositories(cfg, found)
     candidates = sorted(found.values(), key=lambda x: (
-        x.get("repository", "").lower(), x.get("path", "").lower(), x.get("candidateKey", "")
+        x.get("repository", "").lower(),
+        x.get("path", "").lower(),
+        x.get("candidateKey", ""),
     ))
     payload = {
         "schemaVersion": 1,
