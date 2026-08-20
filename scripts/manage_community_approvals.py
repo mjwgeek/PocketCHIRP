@@ -13,6 +13,7 @@ import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATES = ROOT / "community" / "candidates.json"
@@ -54,22 +55,43 @@ def candidate_label(candidate: dict) -> str:
     return f"{base} [{digest}]"
 
 
+def normalize_download_url(url: str) -> str:
+    url = str(url or "").strip()
+    m = re.match(r"^https://github\.com/([^/]+)/([^/]+)/raw/([^/]+)/(.+)$", url)
+    if m:
+        owner, repo, ref, path = m.groups()
+        return f"https://raw.githubusercontent.com/{owner}/{repo}/{ref}/{unquote(path)}"
+    return url
+
+
 def validate_candidate(candidate: dict) -> None:
     required = ("candidateKey", "downloadUrl", "sha256")
     missing = [k for k in required if not str(candidate.get(k) or "").strip()]
     if missing:
         raise SystemExit(f"Candidate is missing required field(s): {', '.join(missing)}")
+
     sha = str(candidate["sha256"]).lower()
     if not re.fullmatch(r"[0-9a-f]{64}", sha):
         raise SystemExit("Candidate SHA-256 is not a valid 64-character hex digest")
-    url = str(candidate["downloadUrl"])
-    if not url.startswith("https://raw.githubusercontent.com/"):
-        raise SystemExit("Candidate downloadUrl must use https://raw.githubusercontent.com/")
+
+    url = normalize_download_url(candidate["downloadUrl"])
+    parsed = urlparse(url)
+    if parsed.scheme != "https":
+        raise SystemExit("Candidate downloadUrl must use HTTPS")
+
+    allowed_hosts = {
+        "raw.githubusercontent.com",
+        "www.ijvradio.com",
+        "ijvradio.com",
+    }
+    if parsed.hostname not in allowed_hosts:
+        raise SystemExit(f"Candidate download host is not approved: {parsed.hostname}")
 
 
 def approved_entry(candidate: dict, note: str = "") -> dict:
     validate_candidate(candidate)
     entry = dict(candidate)
+    entry["downloadUrl"] = normalize_download_url(entry.get("downloadUrl"))
     entry["id"] = stable_id(candidate)
     entry["status"] = "approved"
     entry["approved"] = True
@@ -92,6 +114,14 @@ def find_candidate_by_label(payload: dict, label: str) -> dict | None:
     matches = [c for c in payload.get("candidates", []) if candidate_label(c) == label]
     if len(matches) > 1:
         raise SystemExit(f"Friendly driver label is ambiguous: {label}")
+    return matches[0] if matches else None
+
+
+def find_approved_by_label(payload: dict, label: str) -> dict | None:
+    label = label.strip()
+    matches = [d for d in payload.get("drivers", []) if candidate_label(d) == label]
+    if len(matches) > 1:
+        raise SystemExit(f"Approved driver label is ambiguous: {label}")
     return matches[0] if matches else None
 
 
@@ -133,10 +163,13 @@ def main() -> None:
 
     keys = split_keys(args.keys)
     if args.label.strip():
-        candidate = find_candidate_by_label(candidates_payload, args.label)
-        if candidate is None:
-            raise SystemExit(f"Candidate label not found: {args.label}")
-        label_key = str(candidate.get("candidateKey") or "").strip()
+        if args.action == "remove":
+            match = find_approved_by_label(approved_payload, args.label)
+        else:
+            match = find_candidate_by_label(candidates_payload, args.label)
+        if match is None:
+            raise SystemExit(f"Driver label not found: {args.label}")
+        label_key = str(match.get("candidateKey") or match.get("id") or "").strip()
         if label_key and label_key not in keys:
             keys.append(label_key)
 
