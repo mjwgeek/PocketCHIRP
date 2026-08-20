@@ -2,8 +2,9 @@
 """Regenerate the manual community-driver approval workflow choices.
 
 GitHub Actions workflow_dispatch choice inputs are static YAML. This script
-rebuilds the friendly driver dropdown from community/candidates.json after each
-discovery run so maintainers do not need to copy candidateKey values by hand.
+rebuilds two friendly dropdowns after each discovery run:
+- new/unapproved candidates for approval
+- currently approved drivers for removal
 """
 
 from __future__ import annotations
@@ -14,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATES = ROOT / "community" / "candidates.json"
+APPROVED = ROOT / "community" / "community-drivers.json"
 WORKFLOW = ROOT / ".github" / "workflows" / "manage-community-driver-approval.yml"
 
 
@@ -33,15 +35,30 @@ def yaml_single_quote(value: str) -> str:
     return "'" + str(value).replace("'", "''") + "'"
 
 
-def main() -> None:
-    payload = json.loads(CANDIDATES.read_text(encoding="utf-8"))
-    candidates = list(payload.get("candidates", []))
-
-    labels = [candidate_label(c) for c in candidates if c.get("candidateKey")]
+def option_block(labels: list[str], empty_label: str) -> str:
     if not labels:
-        labels = ["No candidates discovered yet"]
+        labels = [empty_label]
+    return "\n".join(f"          - {yaml_single_quote(label)}" for label in labels)
 
-    option_lines = "\n".join(f"          - {yaml_single_quote(label)}" for label in labels)
+
+def main() -> None:
+    candidate_payload = json.loads(CANDIDATES.read_text(encoding="utf-8"))
+    approved_payload = json.loads(APPROVED.read_text(encoding="utf-8"))
+
+    candidates = list(candidate_payload.get("candidates", []))
+    approved = list(approved_payload.get("drivers", []))
+    approved_keys = {str(d.get("candidateKey") or "") for d in approved}
+
+    new_candidates = [
+        c for c in candidates
+        if c.get("candidateKey") and str(c.get("candidateKey")) not in approved_keys
+    ]
+
+    new_labels = [candidate_label(c) for c in new_candidates]
+    approved_labels = [candidate_label(c) for c in approved if c.get("candidateKey")]
+
+    new_options = option_block(new_labels, "No new candidates to approve")
+    approved_options = option_block(approved_labels, "No approved drivers to remove")
 
     workflow = f"""name: Manage Community Driver Approval
 
@@ -49,19 +66,25 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'Approve or remove approval'
+        description: 'Approve a new candidate or remove an approval'
         required: true
         default: approve
         type: choice
         options:
           - approve
           - remove
-      driver_choice:
-        description: 'Community driver / firmware version'
-        required: true
+      new_driver_choice:
+        description: 'NEW candidate to approve (ignored when action=remove)'
+        required: false
         type: choice
         options:
-{option_lines}
+{new_options}
+      approved_driver_choice:
+        description: 'APPROVED driver to remove (ignored when action=approve)'
+        required: false
+        type: choice
+        options:
+{approved_options}
       manual_candidate_key:
         description: 'Optional exact candidateKey override/fallback'
         required: false
@@ -89,7 +112,8 @@ jobs:
       - name: Manage approval
         env:
           ACTION_NAME: ${{{{ inputs.action }}}}
-          DRIVER_CHOICE: ${{{{ inputs.driver_choice }}}}
+          NEW_DRIVER_CHOICE: ${{{{ inputs.new_driver_choice }}}}
+          APPROVED_DRIVER_CHOICE: ${{{{ inputs.approved_driver_choice }}}}
           MANUAL_CANDIDATE_KEY: ${{{{ inputs.manual_candidate_key }}}}
           APPROVAL_NOTE: ${{{{ inputs.approval_note }}}}
         run: |
@@ -98,15 +122,22 @@ jobs:
           import subprocess
           import sys
 
-          cmd = [sys.executable, 'scripts/manage_community_approvals.py', os.environ['ACTION_NAME']]
+          action = os.environ['ACTION_NAME'].strip()
+          cmd = [sys.executable, 'scripts/manage_community_approvals.py', action]
+
           manual = os.environ.get('MANUAL_CANDIDATE_KEY', '').strip()
-          choice = os.environ.get('DRIVER_CHOICE', '').strip()
           if manual:
               cmd.append(manual)
-          elif choice:
-              cmd += ['--label', choice]
           else:
-              raise SystemExit('Choose a community driver or provide manual_candidate_key')
+              if action == 'approve':
+                  choice = os.environ.get('NEW_DRIVER_CHOICE', '').strip()
+                  if not choice or choice == 'No new candidates to approve':
+                      raise SystemExit('There are no new candidates to approve.')
+              else:
+                  choice = os.environ.get('APPROVED_DRIVER_CHOICE', '').strip()
+                  if not choice or choice == 'No approved drivers to remove':
+                      raise SystemExit('There are no approved drivers to remove.')
+              cmd += ['--label', choice]
 
           note = os.environ.get('APPROVAL_NOTE', '').strip()
           if note:
@@ -114,33 +145,37 @@ jobs:
           subprocess.check_call(cmd)
           PY
 
+      - name: Refresh approval dropdown choices
+        run: python scripts/generate_approval_workflow.py
+
       - name: Show resulting catalog
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           data = json.loads(Path('community/community-drivers.json').read_text())
-          print(f\"Catalog revision: {{data.get('catalogRevision')}}\")
-          print(f\"Approved drivers: {{len(data.get('drivers', []))}}\")
-          for driver in data.get('drivers', []):
-              print(f\"- {{driver.get('displayName') or driver.get('candidateKey')}}\")
+          print(f"Catalog revision: {data.get('catalogRevision')}")
+          print(f"Approved drivers: {len(data.get('drivers', []))}")
           PY
 
       - name: Commit approval changes
         run: |
-          if git diff --quiet -- community/community-drivers.json; then
-            echo \"No approval catalog changes.\"
+          if git diff --quiet -- community/community-drivers.json .github/workflows/manage-community-driver-approval.yml; then
+            echo "No approval catalog changes."
             exit 0
           fi
-          git config user.name \"github-actions[bot]\"
-          git config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"
-          git add community/community-drivers.json
-          git commit -m \"${{{{ inputs.action }}}} community driver approval\"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/community-drivers.json .github/workflows/manage-community-driver-approval.yml
+          git commit -m "${{{{ inputs.action }}}} community driver approval"
           git push
 """
 
     WORKFLOW.write_text(workflow, encoding="utf-8")
-    print(f"Wrote {len(labels)} friendly approval choice(s) to {WORKFLOW.relative_to(ROOT)}")
+    print(
+        f"Wrote {len(new_labels)} new-candidate choice(s) and "
+        f"{len(approved_labels)} approved-driver removal choice(s)"
+    )
 
 
 if __name__ == "__main__":
