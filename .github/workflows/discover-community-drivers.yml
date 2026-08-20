@@ -29,9 +29,6 @@ jobs:
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
-      - name: Rebuild vendor approval menus
-        run: python scripts/generate_approval_workflow.py
-
       - name: Summarize discoveries
         run: |
           python - <<'PY'
@@ -52,15 +49,14 @@ jobs:
           print(f"mjwgeek repository candidates: {len(owned)}")
           PY
 
-      - name: Commit candidate and approval-menu changes
+      - name: Commit candidate changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add community/candidates.json .github/workflows/community-driver-*.yml
-          git add -u .github/workflows
-          if git diff --cached --quiet; then
-            echo "No candidate or approval-menu changes."
+          if git diff --quiet -- community/candidates.json; then
+            echo "No candidate changes."
             exit 0
           fi
-          git commit -m "Update community CHIRP candidates and vendor approval menus"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json
+          git commit -m "Update community CHIRP driver candidates"
           git push
