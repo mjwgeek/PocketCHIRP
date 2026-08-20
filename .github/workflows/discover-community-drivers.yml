@@ -30,6 +30,9 @@ jobs:
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
+      - name: Refresh approval dropdown choices
+        run: python scripts/generate_approval_workflow.py
+
       - name: Summarize discoveries
         run: |
           python - <<'PY'
@@ -62,14 +65,14 @@ jobs:
               print(f"- {x.get('repository')} :: {x.get('path')} :: {', '.join(x.get('models', []))}{version}")
           PY
 
-      - name: Commit candidate changes
+      - name: Commit candidate and approval-choice changes
         run: |
-          if git diff --quiet -- community/candidates.json; then
-            echo "No candidate changes."
+          if git diff --quiet -- community/candidates.json .github/workflows/manage-community-driver-approval.yml; then
+            echo "No candidate or approval-choice changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add community/candidates.json
-          git commit -m "Update community CHIRP driver candidates"
+          git add community/candidates.json .github/workflows/manage-community-driver-approval.yml
+          git commit -m "Update community CHIRP driver candidates and approval choices"
           git push
