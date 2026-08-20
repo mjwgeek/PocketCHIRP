@@ -1,0 +1,39 @@
+name: Discover Community CHIRP Drivers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 10 * * 1'
+      timezone: 'America/Chicago'
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover candidate drivers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/discover_community_drivers.py
+
+      - name: Commit candidate changes
+        run: |
+          if git diff --quiet -- community/candidates.json; then
+            echo "No candidate changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json
+          git commit -m "Update community CHIRP driver candidates"
+          git push
