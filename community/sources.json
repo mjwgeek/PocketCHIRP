@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "repositories": [
     {
       "repo": "kk7ds/chirp",
@@ -7,11 +7,70 @@
       "notes": "Official CHIRP repository; open PRs are a high-value source for drivers not yet merged."
     }
   ],
+  "explicitRepositories": [
+    {
+      "repo": "egzumer/uvk5-chirp-driver",
+      "scanAllPython": true,
+      "notes": "Primary Egzumer Quansheng UV-K5 community CHIRP driver."
+    },
+    {
+      "repo": "armel/uv-k5-chirp-driver",
+      "scanAllPython": true,
+      "notes": "F4HWN/Quansheng UV-K5 and UV-K1 community CHIRP driver repository."
+    },
+    {
+      "repo": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "scanAllPython": true,
+      "notes": "Large Quansheng firmware collection which can contain firmware-specific CHIRP modules."
+    },
+    {
+      "repo": "mjwgeek/Radtel-RT830-Custom-Firmware",
+      "scanAllPython": true,
+      "notes": "PocketCHIRP author's custom Radtel RT-830 driver repository."
+    },
+    {
+      "repo": "mjwgeek/uv-k5-firmware-custom",
+      "scanAllPython": true,
+      "notes": "PocketCHIRP author's Quansheng UV-K5 custom firmware repository."
+    },
+    {
+      "repo": "mjwgeek/Radioddity-GD-73a",
+      "scanAllPython": true,
+      "notes": "PocketCHIRP author's Radioddity GD-73A work; include future CHIRP drivers if present."
+    }
+  ],
+  "ownedRepositoryScan": {
+    "owner": "mjwgeek",
+    "nameKeywords": [
+      "chirp",
+      "radio",
+      "radioddity",
+      "radtel",
+      "quansheng",
+      "uv-k",
+      "uvk",
+      "firmware"
+    ],
+    "ignoredRepositories": [
+      "mjwgeek/PocketCHIRP",
+      "mjwgeek/chirp_back"
+    ],
+    "scanAllPython": true
+  },
   "repositorySearches": [
     "chirp radio driver",
     "chirp-driver radio",
     "CHIRP CloneModeRadio",
-    "CHIRP directory.register radio"
+    "CHIRP directory.register radio",
+    "quansheng chirp driver",
+    "quansheng uv-k5 chirp",
+    "quansheng uv-k6 chirp",
+    "uvk5 chirp driver",
+    "uv-k5 chirp driver",
+    "uv-k5 egzumer chirp",
+    "uv-k5 firmware chirp",
+    "uv-k1 chirp driver",
+    "F4HWN chirp driver"
   ],
   "codeSearchHints": [
     "CloneModeRadio",
@@ -36,5 +95,5 @@
     "kk7ds/chirp#1608",
     "kk7ds/chirp#1627"
   ],
-  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Full CHIRP forks/bundles and known non-driver PRs are excluded."
+  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Quansheng-focused searches and selected mjwgeek repositories receive deeper Python scanning. Full CHIRP forks/bundles and known non-driver PRs are excluded."
 }
