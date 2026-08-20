@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate the manual community-driver approval workflow choices.
 
-GitHub Actions workflow_dispatch choice inputs are static YAML. This script
-rebuilds two friendly dropdowns after each discovery run:
-- new/unapproved candidates for approval
-- currently approved drivers for removal
+GitHub workflow_dispatch choice lists are static and finite. Keep the friendly
+menus below GitHub's practical option ceiling; the exact candidateKey fallback
+remains available for anything not shown in a dropdown.
 """
 
 from __future__ import annotations
@@ -17,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CANDIDATES = ROOT / "community" / "candidates.json"
 APPROVED = ROOT / "community" / "community-drivers.json"
 WORKFLOW = ROOT / ".github" / "workflows" / "manage-community-driver-approval.yml"
+MAX_DROPDOWN_CHOICES = 95
 
 
 def candidate_label(candidate: dict) -> str:
@@ -35,10 +35,13 @@ def yaml_single_quote(value: str) -> str:
     return "'" + str(value).replace("'", "''") + "'"
 
 
-def option_block(labels: list[str], empty_label: str) -> str:
+def option_block(labels: list[str], empty_label: str) -> tuple[str, int]:
+    total = len(labels)
     if not labels:
         labels = [empty_label]
-    return "\n".join(f"          - {yaml_single_quote(label)}" for label in labels)
+    elif total > MAX_DROPDOWN_CHOICES:
+        labels = labels[:MAX_DROPDOWN_CHOICES]
+    return "\n".join(f"          - {yaml_single_quote(label)}" for label in labels), total
 
 
 def main() -> None:
@@ -53,12 +56,11 @@ def main() -> None:
         c for c in candidates
         if c.get("candidateKey") and str(c.get("candidateKey")) not in approved_keys
     ]
-
     new_labels = [candidate_label(c) for c in new_candidates]
     approved_labels = [candidate_label(c) for c in approved if c.get("candidateKey")]
 
-    new_options = option_block(new_labels, "No new candidates to approve")
-    approved_options = option_block(approved_labels, "No approved drivers to remove")
+    new_options, new_total = option_block(new_labels, "No new candidates to approve")
+    approved_options, approved_total = option_block(approved_labels, "No approved drivers to remove")
 
     workflow = f"""name: Manage Community Driver Approval
 
@@ -74,13 +76,13 @@ on:
           - approve
           - remove
       new_driver_choice:
-        description: 'NEW candidate to approve (ignored when action=remove)'
+        description: 'NEW candidate to approve (first {MAX_DROPDOWN_CHOICES}; use key fallback if needed)'
         required: false
         type: choice
         options:
 {new_options}
       approved_driver_choice:
-        description: 'APPROVED driver to remove (ignored when action=approve)'
+        description: 'APPROVED driver to remove (first {MAX_DROPDOWN_CHOICES}; use key fallback if needed)'
         required: false
         type: choice
         options:
@@ -118,27 +120,17 @@ jobs:
           APPROVAL_NOTE: ${{{{ inputs.approval_note }}}}
         run: |
           python - <<'PY'
-          import os
-          import subprocess
-          import sys
-
+          import os, subprocess, sys
           action = os.environ['ACTION_NAME'].strip()
           cmd = [sys.executable, 'scripts/manage_community_approvals.py', action]
-
           manual = os.environ.get('MANUAL_CANDIDATE_KEY', '').strip()
           if manual:
               cmd.append(manual)
           else:
-              if action == 'approve':
-                  choice = os.environ.get('NEW_DRIVER_CHOICE', '').strip()
-                  if not choice or choice == 'No new candidates to approve':
-                      raise SystemExit('There are no new candidates to approve.')
-              else:
-                  choice = os.environ.get('APPROVED_DRIVER_CHOICE', '').strip()
-                  if not choice or choice == 'No approved drivers to remove':
-                      raise SystemExit('There are no approved drivers to remove.')
+              choice = (os.environ.get('NEW_DRIVER_CHOICE', '') if action == 'approve' else os.environ.get('APPROVED_DRIVER_CHOICE', '')).strip()
+              if not choice or choice.startswith('No new candidates') or choice.startswith('No approved drivers'):
+                  raise SystemExit('Choose a driver or provide manual_candidate_key.')
               cmd += ['--label', choice]
-
           note = os.environ.get('APPROVAL_NOTE', '').strip()
           if note:
               cmd += ['--note', note]
@@ -147,16 +139,6 @@ jobs:
 
       - name: Refresh approval dropdown choices
         run: python scripts/generate_approval_workflow.py
-
-      - name: Show resulting catalog
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          data = json.loads(Path('community/community-drivers.json').read_text())
-          print(f"Catalog revision: {data.get('catalogRevision')}")
-          print(f"Approved drivers: {len(data.get('drivers', []))}")
-          PY
 
       - name: Commit approval changes
         run: |
@@ -172,10 +154,10 @@ jobs:
 """
 
     WORKFLOW.write_text(workflow, encoding="utf-8")
-    print(
-        f"Wrote {len(new_labels)} new-candidate choice(s) and "
-        f"{len(approved_labels)} approved-driver removal choice(s)"
-    )
+    print(f"New candidates: {new_total}; dropdown shows {min(new_total, MAX_DROPDOWN_CHOICES)}")
+    print(f"Approved drivers: {approved_total}; removal dropdown shows {min(approved_total, MAX_DROPDOWN_CHOICES)}")
+    if new_total > MAX_DROPDOWN_CHOICES or approved_total > MAX_DROPDOWN_CHOICES:
+        print("Dropdown truncated safely; manual_candidate_key remains available for hidden entries.")
 
 
 if __name__ == "__main__":
