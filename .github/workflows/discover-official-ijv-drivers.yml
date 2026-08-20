@@ -1,0 +1,43 @@
+name: Discover Official IJV Drivers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 10 * * 1'
+
+permissions:
+  contents: write
+
+jobs:
+  discover-ijv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover official IJV drivers
+        run: python scripts/discover_ijv_official.py
+
+      - name: Add version metadata
+        run: python scripts/version_community_drivers.py
+
+      - name: Refresh approval dropdown choices
+        run: python scripts/generate_approval_workflow.py
+
+      - name: Commit IJV candidate changes
+        run: |
+          if git diff --quiet -- community/candidates.json .github/workflows/manage-community-driver-approval.yml; then
+            echo "No official IJV candidate changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json .github/workflows/manage-community-driver-approval.yml
+          git commit -m "Update official IJV community driver candidates"
+          git push
