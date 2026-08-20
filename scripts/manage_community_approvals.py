@@ -42,6 +42,18 @@ def stable_id(candidate: dict) -> str:
     return f"{slug}-{digest}"
 
 
+def candidate_label(candidate: dict) -> str:
+    base = (
+        candidate.get("displayName")
+        or " / ".join(candidate.get("models") or [])
+        or candidate.get("path")
+        or candidate.get("candidateKey")
+        or "Community driver"
+    )
+    digest = hashlib.sha256(str(candidate.get("candidateKey") or base).encode("utf-8")).hexdigest()[:6]
+    return f"{base} [{digest}]"
+
+
 def validate_candidate(candidate: dict) -> None:
     required = ("candidateKey", "downloadUrl", "sha256")
     missing = [k for k in required if not str(candidate.get(k) or "").strip()]
@@ -75,6 +87,14 @@ def find_candidate(payload: dict, key: str) -> dict | None:
     return None
 
 
+def find_candidate_by_label(payload: dict, label: str) -> dict | None:
+    label = label.strip()
+    matches = [c for c in payload.get("candidates", []) if candidate_label(c) == label]
+    if len(matches) > 1:
+        raise SystemExit(f"Friendly driver label is ambiguous: {label}")
+    return matches[0] if matches else None
+
+
 def split_keys(raw_values: list[str]) -> list[str]:
     out: list[str] = []
     for raw in raw_values:
@@ -89,6 +109,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("action", choices=("approve", "remove", "list"))
     parser.add_argument("keys", nargs="*", help="candidateKey(s), comma/newline separated values also accepted")
+    parser.add_argument("--label", default="", help="friendly workflow driver label")
     parser.add_argument("--note", default="", help="optional approval note")
     args = parser.parse_args()
 
@@ -107,12 +128,20 @@ def main() -> None:
         approved_keys = {d.get("candidateKey") for d in approved_payload.get("drivers", [])}
         for candidate in candidates_payload.get("candidates", []):
             marker = "APPROVED" if candidate.get("candidateKey") in approved_keys else "review"
-            print(f"[{marker}] {candidate.get('candidateKey')} :: {candidate.get('displayName') or ', '.join(candidate.get('models', []))}")
+            print(f"[{marker}] {candidate_label(candidate)} :: {candidate.get('candidateKey')}")
         return
 
     keys = split_keys(args.keys)
+    if args.label.strip():
+        candidate = find_candidate_by_label(candidates_payload, args.label)
+        if candidate is None:
+            raise SystemExit(f"Candidate label not found: {args.label}")
+        label_key = str(candidate.get("candidateKey") or "").strip()
+        if label_key and label_key not in keys:
+            keys.append(label_key)
+
     if not keys:
-        raise SystemExit("At least one candidateKey is required")
+        raise SystemExit("Choose a driver label or provide at least one candidateKey")
 
     drivers = list(approved_payload.get("drivers", []))
     changed = False
@@ -126,15 +155,14 @@ def main() -> None:
             entry = approved_entry(candidate, args.note)
             if key in by_key:
                 old = drivers[by_key[key]]
-                # Keep original approval timestamp if the reviewed bytes did not change.
                 if old.get("sha256") == entry.get("sha256") and old.get("approvedAt"):
                     entry["approvedAt"] = old["approvedAt"]
                 drivers[by_key[key]] = entry
-                print(f"Refreshed approval: {key}")
+                print(f"Refreshed approval: {candidate_label(candidate)}")
             else:
                 drivers.append(entry)
                 by_key[key] = len(drivers) - 1
-                print(f"Approved: {key}")
+                print(f"Approved: {candidate_label(candidate)}")
             changed = True
 
     elif args.action == "remove":
@@ -143,7 +171,7 @@ def main() -> None:
         drivers = [d for d in drivers if d.get("candidateKey") not in wanted and d.get("id") not in wanted]
         removed = before - len(drivers)
         if removed == 0:
-            raise SystemExit("No approved entries matched the supplied key(s)")
+            raise SystemExit("No approved entries matched the selected driver/key")
         print(f"Removed {removed} approval(s)")
         changed = True
 
