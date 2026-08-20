@@ -24,6 +24,11 @@
       "notes": "Large Quansheng firmware collection which can contain firmware-specific CHIRP modules."
     },
     {
+      "repo": "Tokeloshe/vuurwerk-firmware",
+      "scanAllPython": true,
+      "notes": "VUURWERK custom firmware for Quansheng UV-K5 V1; includes the community-contributed uvk5_vuurwerk.py CHIRP driver."
+    },
+    {
       "repo": "mjwgeek/Radtel-RT830-Custom-Firmware",
       "scanAllPython": true,
       "notes": "PocketCHIRP author's custom Radtel RT-830 driver repository."
@@ -70,7 +75,8 @@
     "uv-k5 egzumer chirp",
     "uv-k5 firmware chirp",
     "uv-k1 chirp driver",
-    "F4HWN chirp driver"
+    "F4HWN chirp driver",
+    "VUURWERK chirp driver"
   ],
   "codeSearchHints": [
     "CloneModeRadio",
@@ -95,5 +101,5 @@
     "kk7ds/chirp#1608",
     "kk7ds/chirp#1627"
   ],
-  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Quansheng-focused searches and selected mjwgeek repositories receive deeper Python scanning. Full CHIRP forks/bundles and known non-driver PRs are excluded."
+  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Quansheng-focused searches and selected repositories receive deeper Python scanning. Full CHIRP forks/bundles and known non-driver PRs are excluded."
 }
