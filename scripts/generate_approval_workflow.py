@@ -1,96 +1,75 @@
 #!/usr/bin/env python3
-"""Regenerate the manual community-driver approval workflow choices.
+"""Generate scalable per-vendor community-driver approval workflows.
 
-GitHub workflow_dispatch choice lists are static and finite. Keep the friendly
-menus below GitHub's practical option ceiling; the exact candidateKey fallback
-remains available for anything not shown in a dropdown.
+GitHub workflow_dispatch choice inputs are finite. This generator groups
+unapproved candidates and approved drivers by vendor, then splits each group
+into pages safely below the choice ceiling. Generated workflows are disposable
+and rebuilt from candidates.json/community-drivers.json.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import re
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATES = ROOT / "community" / "candidates.json"
 APPROVED = ROOT / "community" / "community-drivers.json"
-WORKFLOW = ROOT / ".github" / "workflows" / "manage-community-driver-approval.yml"
-MAX_DROPDOWN_CHOICES = 95
+WORKFLOW_DIR = ROOT / ".github" / "workflows"
+PREFIX = "community-driver-"
+MAX_CHOICES = 90
 
 
 def candidate_label(candidate: dict) -> str:
-    base = (
-        candidate.get("displayName")
-        or " / ".join(candidate.get("models") or [])
-        or candidate.get("path")
-        or candidate.get("candidateKey")
-        or "Community driver"
-    )
-    digest = hashlib.sha256(str(candidate.get("candidateKey") or base).encode("utf-8")).hexdigest()[:6]
+    base = (candidate.get("displayName") or " / ".join(candidate.get("models") or [])
+            or candidate.get("path") or candidate.get("candidateKey") or "Community driver")
+    digest = hashlib.sha256(str(candidate.get("candidateKey") or base).encode()).hexdigest()[:6]
     return f"{base} [{digest}]"
 
 
-def yaml_single_quote(value: str) -> str:
-    return "'" + str(value).replace("'", "''") + "'"
+def vendor_name(row: dict) -> str:
+    vendors = [str(v).strip() for v in row.get("vendors") or [] if str(v).strip()]
+    if vendors:
+        return vendors[0]
+    repo = str(row.get("repository") or "")
+    if repo == "ijvradio.com":
+        return "Quansheng"
+    return "Other"
 
 
-def option_block(labels: list[str], empty_label: str) -> tuple[str, int]:
-    total = len(labels)
-    if not labels:
-        labels = [empty_label]
-    elif total > MAX_DROPDOWN_CHOICES:
-        labels = labels[:MAX_DROPDOWN_CHOICES]
-    return "\n".join(f"          - {yaml_single_quote(label)}" for label in labels), total
+def slug(value: str) -> str:
+    s = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+    return s or "other"
 
 
-def main() -> None:
-    candidate_payload = json.loads(CANDIDATES.read_text(encoding="utf-8"))
-    approved_payload = json.loads(APPROVED.read_text(encoding="utf-8"))
+def q(value: str) -> str:
+    return "'" + value.replace("'", "''") + "'"
 
-    candidates = list(candidate_payload.get("candidates", []))
-    approved = list(approved_payload.get("drivers", []))
-    approved_keys = {str(d.get("candidateKey") or "") for d in approved}
 
-    new_candidates = [
-        c for c in candidates
-        if c.get("candidateKey") and str(c.get("candidateKey")) not in approved_keys
-    ]
-    new_labels = [candidate_label(c) for c in new_candidates]
-    approved_labels = [candidate_label(c) for c in approved if c.get("candidateKey")]
+def chunks(rows: list[dict]):
+    for i in range(0, len(rows), MAX_CHOICES):
+        yield rows[i:i+MAX_CHOICES]
 
-    new_options, new_total = option_block(new_labels, "No new candidates to approve")
-    approved_options, approved_total = option_block(approved_labels, "No approved drivers to remove")
 
-    workflow = f"""name: Manage Community Driver Approval
+def workflow_text(action: str, vendor: str, page: int, pages: int, rows: list[dict]) -> str:
+    labels = [candidate_label(r) for r in rows]
+    title_action = "Approve New" if action == "approve" else "Remove Approval"
+    page_suffix = f" {page}/{pages}" if pages > 1 else ""
+    options = "\n".join(f"          - {q(x)}" for x in labels)
+    return f"""name: {title_action} — {vendor}{page_suffix}
 
 on:
   workflow_dispatch:
     inputs:
-      action:
-        description: 'Approve a new candidate or remove an approval'
+      driver_choice:
+        description: '{title_action}: {vendor}{page_suffix}'
         required: true
-        default: approve
         type: choice
         options:
-          - approve
-          - remove
-      new_driver_choice:
-        description: 'NEW candidate to approve (first {MAX_DROPDOWN_CHOICES}; use key fallback if needed)'
-        required: false
-        type: choice
-        options:
-{new_options}
-      approved_driver_choice:
-        description: 'APPROVED driver to remove (first {MAX_DROPDOWN_CHOICES}; use key fallback if needed)'
-        required: false
-        type: choice
-        options:
-{approved_options}
-      manual_candidate_key:
-        description: 'Optional exact candidateKey override/fallback'
-        required: false
-        type: string
+{options}
       approval_note:
         description: 'Optional note about testing/review'
         required: false
@@ -103,62 +82,81 @@ jobs:
   manage:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Manage approval
+      - name: {title_action}
         env:
-          ACTION_NAME: ${{{{ inputs.action }}}}
-          NEW_DRIVER_CHOICE: ${{{{ inputs.new_driver_choice }}}}
-          APPROVED_DRIVER_CHOICE: ${{{{ inputs.approved_driver_choice }}}}
-          MANUAL_CANDIDATE_KEY: ${{{{ inputs.manual_candidate_key }}}}
+          DRIVER_CHOICE: ${{{{ inputs.driver_choice }}}}
           APPROVAL_NOTE: ${{{{ inputs.approval_note }}}}
         run: |
           python - <<'PY'
           import os, subprocess, sys
-          action = os.environ['ACTION_NAME'].strip()
-          cmd = [sys.executable, 'scripts/manage_community_approvals.py', action]
-          manual = os.environ.get('MANUAL_CANDIDATE_KEY', '').strip()
-          if manual:
-              cmd.append(manual)
-          else:
-              choice = (os.environ.get('NEW_DRIVER_CHOICE', '') if action == 'approve' else os.environ.get('APPROVED_DRIVER_CHOICE', '')).strip()
-              if not choice or choice.startswith('No new candidates') or choice.startswith('No approved drivers'):
-                  raise SystemExit('Choose a driver or provide manual_candidate_key.')
-              cmd += ['--label', choice]
-          note = os.environ.get('APPROVAL_NOTE', '').strip()
+          cmd=[sys.executable,'scripts/manage_community_approvals.py','{action}','--label',os.environ['DRIVER_CHOICE']]
+          note=os.environ.get('APPROVAL_NOTE','').strip()
           if note:
               cmd += ['--note', note]
           subprocess.check_call(cmd)
           PY
-
-      - name: Refresh approval dropdown choices
+      - name: Rebuild approval menus
         run: python scripts/generate_approval_workflow.py
-
-      - name: Commit approval changes
+      - name: Commit approval and menus
         run: |
-          if git diff --quiet -- community/community-drivers.json .github/workflows/manage-community-driver-approval.yml; then
-            echo "No approval catalog changes."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add community/community-drivers.json .github/workflows/manage-community-driver-approval.yml
-          git commit -m "${{{{ inputs.action }}}} community driver approval"
+          git add community/community-drivers.json .github/workflows/community-driver-*.yml
+          git add -u .github/workflows
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "{action} community driver: {vendor}"
           git push
 """
 
-    WORKFLOW.write_text(workflow, encoding="utf-8")
-    print(f"New candidates: {new_total}; dropdown shows {min(new_total, MAX_DROPDOWN_CHOICES)}")
-    print(f"Approved drivers: {approved_total}; removal dropdown shows {min(approved_total, MAX_DROPDOWN_CHOICES)}")
-    if new_total > MAX_DROPDOWN_CHOICES or approved_total > MAX_DROPDOWN_CHOICES:
-        print("Dropdown truncated safely; manual_candidate_key remains available for hidden entries.")
+
+def main():
+    cp=json.loads(CANDIDATES.read_text(encoding='utf-8'))
+    ap=json.loads(APPROVED.read_text(encoding='utf-8'))
+    candidates=list(cp.get('candidates') or [])
+    approved=list(ap.get('drivers') or [])
+    approved_keys={str(x.get('candidateKey') or '') for x in approved}
+    new=[x for x in candidates if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys]
+
+    groups=defaultdict(lambda: {'approve':[], 'remove':[]})
+    for row in new:
+        groups[vendor_name(row)]['approve'].append(row)
+    for row in approved:
+        if row.get('candidateKey'):
+            groups[vendor_name(row)]['remove'].append(row)
+
+    for data in groups.values():
+        for key in ('approve','remove'):
+            data[key].sort(key=lambda r: candidate_label(r).lower())
+
+    expected=set()
+    for vendor in sorted(groups, key=str.lower):
+        for action in ('approve','remove'):
+            rows=groups[vendor][action]
+            if not rows:
+                continue
+            pages=(len(rows)+MAX_CHOICES-1)//MAX_CHOICES
+            for idx, chunk in enumerate(chunks(rows), start=1):
+                filename=f"{PREFIX}{action}-{slug(vendor)}-{idx:02d}.yml"
+                expected.add(filename)
+                (WORKFLOW_DIR/filename).write_text(workflow_text(action,vendor,idx,pages,chunk),encoding='utf-8')
+
+    for path in WORKFLOW_DIR.glob(f"{PREFIX}*.yml"):
+        if path.name not in expected:
+            path.unlink()
+
+    print(f"Generated {len(expected)} vendor/page workflow(s).")
+    print(f"Unapproved candidates: {len(new)}; approved drivers: {len(approved)}")
+    for vendor in sorted(groups, key=str.lower):
+        a=len(groups[vendor]['approve']); r=len(groups[vendor]['remove'])
+        print(f"- {vendor}: {a} to approve, {r} approved")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
