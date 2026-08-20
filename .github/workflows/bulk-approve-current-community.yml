@@ -1,16 +1,13 @@
-name: One-time Bulk Approve Current Community Drivers
+name: Bulk Approve Current Community Driver Baseline
 
 on:
-  issues:
-    types: [opened]
+  workflow_dispatch:
 
 permissions:
   contents: write
-  issues: write
 
 jobs:
   bulk-approve:
-    if: github.event.issue.title == 'PocketCHIRP bulk approve current community baseline'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -21,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Approve current candidate baseline
+      - name: Approve every current candidate
         run: |
           python - <<'PY'
           import json
@@ -68,7 +65,7 @@ jobs:
               raise SystemExit('Bulk approval incomplete')
           PY
 
-      - name: Commit baseline and remove one-time workflow
+      - name: Commit baseline and remove this one-time workflow
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -76,8 +73,3 @@ jobs:
           git rm .github/workflows/bulk-approve-current-community.yml
           git commit -m "Bulk approve current community driver baseline"
           git push
-
-      - name: Close trigger issue
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh issue close "${{ github.event.issue.number }}" --comment "Bulk community-driver baseline approval completed."
