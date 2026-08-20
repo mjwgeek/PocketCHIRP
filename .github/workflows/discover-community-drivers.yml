@@ -27,6 +27,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/discover_community_drivers.py
 
+      - name: Add official IJV drivers
+        run: python scripts/discover_ijv_official.py
+
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
@@ -42,6 +45,7 @@ jobs:
           rows = p.get('candidates', [])
           quansheng = [x for x in rows if 'quansheng' in (' '.join(x.get('vendors', [])) + ' ' + ' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uv-k' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uvk' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower()]
           owned = [x for x in rows if x.get('repository', '').startswith('mjwgeek/')]
+          ijv = [x for x in rows if x.get('repository') == 'ijvradio.com']
           current = [x for x in rows if not x.get('historical')]
           historical = [x for x in rows if x.get('historical')]
           versioned = [x for x in rows if x.get('version')]
@@ -50,7 +54,11 @@ jobs:
           print(f"Historical/version-specific candidates retained: {len(historical)}")
           print(f"Candidates with parsed version numbers: {len(versioned)}")
           print(f"Quansheng-related candidates: {len(quansheng)}")
+          print(f"Official IJV candidates: {len(ijv)}")
           print(f"mjwgeek repository candidates: {len(owned)}")
+          print('\nOfficial IJV:')
+          for x in ijv:
+              print(f"- {x.get('displayName')} :: {x.get('path')} :: {x.get('installPackaging')}")
           print('\nQuansheng-related:')
           for x in quansheng:
               flags = []
