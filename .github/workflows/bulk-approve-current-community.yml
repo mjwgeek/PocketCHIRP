@@ -46,9 +46,6 @@ jobs:
               ])
           PY
 
-      - name: Rebuild vendor approval/removal menus
-        run: python scripts/generate_approval_workflow.py
-
       - name: Verify baseline
         run: |
           python - <<'PY'
@@ -65,12 +62,14 @@ jobs:
               raise SystemExit('Bulk approval incomplete')
           PY
 
-      - name: Commit baseline and remove this one-time workflow
+      - name: Commit baseline
         run: |
+          if git diff --quiet -- community/community-drivers.json; then
+            echo "No approval catalog changes."
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add community/community-drivers.json .github/workflows/community-driver-*.yml
-          git add -u .github/workflows
-          git rm .github/workflows/bulk-approve-current-community.yml
+          git add community/community-drivers.json
           git commit -m "Bulk approve current community driver baseline"
           git push
