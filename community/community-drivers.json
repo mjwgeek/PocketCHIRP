@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 5,
-  "updated": "2026-08-20",
+  "catalogRevision": 6,
+  "updated": "2026-08-21",
   "drivers": [
     {
       "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830.py",
@@ -1238,6 +1238,186 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005123Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:f4611c031998",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV N3_60.py",
+      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20N3_60.py",
+      "sha256": "f4611c031998357735e29aca00c58414eac7f24225d8e882a0181a7ce6bd8e2c",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5"
+      ],
+      "variants": [
+        "Official IJV firmware 3.60"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng UV-K5",
+      "officialSource": true,
+      "officialFirmware": "3.60",
+      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "archiveMember": "IJV N3_60.py",
+      "installPackaging": "mirrored-zip-member",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv n",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-uv-k5-3218d09a13",
+      "approved": true,
+      "approvedAt": "2026-08-21T14:55:47.347579Z"
+    },
+    {
+      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 0.py:f11d24a65186",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV X3.60 - MBank 0.py",
+      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%200.py",
+      "sha256": "f11d24a651860f23efc5e623877922cd73f200b3403b0b31e29fa74e76892d82",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5"
+      ],
+      "variants": [
+        "Official IJV firmware 3.60"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng UV-K5",
+      "officialSource": true,
+      "officialFirmware": "3.60",
+      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "archiveMember": "IJV X3.60 - MBank 0.py",
+      "installPackaging": "mirrored-zip-member",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank 0",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-uv-k5-449813aca5",
+      "approved": true,
+      "approvedAt": "2026-08-21T14:55:47.347654Z"
+    },
+    {
+      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 1_2.py:6cc7699618fe",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV X3.60 - MBank 1_2.py",
+      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%201_2.py",
+      "sha256": "6cc7699618feaf398334e02d97a3822d3a4a209d922e99c123470096cf65e4a6",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5"
+      ],
+      "variants": [
+        "Official IJV firmware 3.60"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng UV-K5",
+      "officialSource": true,
+      "officialFirmware": "3.60",
+      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "archiveMember": "IJV X3.60 - MBank 1_2.py",
+      "installPackaging": "mirrored-zip-member",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank ",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-uv-k5-b0eaa627cf",
+      "approved": true,
+      "approvedAt": "2026-08-21T14:55:47.347628Z"
+    },
+    {
+      "candidateKey": "official:ijvradio:3.60:IJV X3.60 Settings.py:4bbe5d377fe7",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV X3.60 Settings.py",
+      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20Settings.py",
+      "sha256": "4bbe5d377fe7f4bd2a227ca2f92fd65b3522b8d4055bdd0cfa38a8bf9e3f7afb",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5"
+      ],
+      "variants": [
+        "Official IJV firmware 3.60"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng UV-K5",
+      "officialSource": true,
+      "officialFirmware": "3.60",
+      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "archiveMember": "IJV X3.60 Settings.py",
+      "installPackaging": "mirrored-zip-member",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x settings",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-uv-k5-fb0421f70e",
+      "approved": true,
+      "approvedAt": "2026-08-21T14:55:47.347674Z"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn.py",
@@ -5764,5 +5944,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 102
+  "approvedCount": 106
 }
