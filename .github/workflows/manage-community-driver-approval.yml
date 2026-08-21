@@ -44,10 +44,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -148,7 +148,12 @@ jobs:
 
           if action == 'approve-all-new':
               if confirm_bulk != 'APPROVE ALL NEW':
-                  raise SystemExit('approve-all-new requires confirm_bulk to be exactly: APPROVE ALL NEW')
+                  print('Bulk approval was not confirmed. Treating this as a safe preview-only run; no approvals will be changed.')
+                  summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
+                  if summary_path:
+                      with open(summary_path, 'a', encoding='utf-8') as f:
+                          f.write('\n> ℹ️ Bulk approval was not confirmed, so this run was preview-only. No drivers were approved.\n')
+                  raise SystemExit(0)
               keys = [
                   str(x.get('candidateKey'))
                   for x in candidates
@@ -156,7 +161,8 @@ jobs:
               ]
               print(f'Approving all new candidates: {len(keys)}')
               if not keys:
-                  raise SystemExit('There are no new candidates to approve.')
+                  print('There are no new candidates to approve.')
+                  raise SystemExit(0)
               cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'approve', *keys]
 
           elif action == 'approve-vendor-new':
