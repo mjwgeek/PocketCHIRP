@@ -29,8 +29,13 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: community-driver-approval-write
+  cancel-in-progress: false
+
 jobs:
   manage:
+    if: github.actor == 'mjwgeek'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
