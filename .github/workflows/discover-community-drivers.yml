@@ -3,13 +3,18 @@ name: Discover Community CHIRP Drivers
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 10 * * 1'
+    - cron: '17 10 * * *'
 
 permissions:
   contents: write
 
+concurrency:
+  group: community-driver-catalog-write
+  cancel-in-progress: false
+
 jobs:
   discover:
+    if: github.event_name != 'workflow_dispatch' || github.actor == 'mjwgeek'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
