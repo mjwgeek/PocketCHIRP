@@ -4,21 +4,26 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'Approval action'
+        description: 'Approval action (start with list-new to see current candidates)'
         required: true
-        default: approve-all-new
+        default: list-new
         type: choice
         options:
-          - approve-all-new
-          - approve-vendor-new
+          - list-new
           - approve-one
+          - approve-vendor-new
+          - approve-all-new
           - remove-one
       vendor:
         description: 'Vendor for approve-vendor-new (example: Quansheng)'
         required: false
         type: string
       candidate_key:
-        description: 'Exact candidateKey or approved id for approve-one/remove-one'
+        description: 'Copy candidateKey from the list-new run for approve-one/remove-one'
+        required: false
+        type: string
+      confirm_bulk:
+        description: 'For approve-all-new only, type exactly: APPROVE ALL NEW'
         required: false
         type: string
       approval_note:
@@ -46,11 +51,68 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Resolve requested approvals
+      - name: Show current new candidates
+        env:
+          ACTION_NAME: ${{ inputs.action }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
+          approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
+          approved_keys = {str(x.get('candidateKey') or '') for x in approved}
+          pending = [x for x in candidates if str(x.get('candidateKey') or '') and str(x.get('candidateKey') or '') not in approved_keys]
+
+          def vendor(row):
+              vendors = [str(v).strip() for v in (row.get('vendors') or []) if str(v).strip()]
+              if vendors:
+                  return vendors[0]
+              if str(row.get('repository') or '') == 'ijvradio.com':
+                  return 'Quansheng'
+              return 'Other'
+
+          def models(row):
+              vals = [str(v).strip() for v in (row.get('models') or []) if str(v).strip()]
+              return ', '.join(vals) if vals else '—'
+
+          def display(row):
+              return str(row.get('displayName') or row.get('name') or row.get('candidateKey') or 'Unnamed')
+
+          def esc(value):
+              return str(value).replace('|', '\\|').replace('\n', ' ')
+
+          pending.sort(key=lambda x: (vendor(x).lower(), display(x).lower(), str(x.get('candidateKey') or '')))
+
+          print(f'Current unapproved candidates: {len(pending)}')
+          for i, row in enumerate(pending, 1):
+              print(f"{i:3}. {vendor(row)} | {display(row)} | {models(row)} | {row.get('candidateKey')}")
+
+          summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary_path:
+              with open(summary_path, 'a', encoding='utf-8') as f:
+                  f.write('# Community Driver Approval\n\n')
+                  f.write(f'**Current new / unapproved candidates: {len(pending)}**\n\n')
+                  if pending:
+                      f.write('Run this workflow again with **approve-one**, then copy the exact `candidateKey` from the table below.\n\n')
+                      f.write('| # | Driver | Vendor | Model(s) | Version | candidateKey |\n')
+                      f.write('|---:|---|---|---|---|---|\n')
+                      for i, row in enumerate(pending, 1):
+                          f.write(
+                              f"| {i} | {esc(display(row))} | {esc(vendor(row))} | {esc(models(row))} | "
+                              f"{esc(row.get('version') or '—')} | `{esc(row.get('candidateKey') or '')}` |\n"
+                          )
+                  else:
+                      f.write('✅ There are currently no new drivers waiting for approval.\n')
+          PY
+
+      - name: Resolve requested approval action
         env:
           ACTION_NAME: ${{ inputs.action }}
           VENDOR_NAME: ${{ inputs.vendor }}
           CANDIDATE_KEY: ${{ inputs.candidate_key }}
+          CONFIRM_BULK: ${{ inputs.confirm_bulk }}
           APPROVAL_NOTE: ${{ inputs.approval_note }}
         run: |
           python - <<'PY'
@@ -63,11 +125,14 @@ jobs:
           action = os.environ['ACTION_NAME'].strip()
           vendor = os.environ.get('VENDOR_NAME', '').strip()
           candidate_key = os.environ.get('CANDIDATE_KEY', '').strip()
+          confirm_bulk = os.environ.get('CONFIRM_BULK', '').strip()
           note = os.environ.get('APPROVAL_NOTE', '').strip()
 
           candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
           approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
           approved_keys = {str(x.get('candidateKey') or '') for x in approved}
+          approved_ids = {str(x.get('id') or '') for x in approved}
+          candidate_by_key = {str(x.get('candidateKey') or ''): x for x in candidates if x.get('candidateKey')}
 
           def row_vendor(row):
               vendors = [str(v).strip() for v in (row.get('vendors') or []) if str(v).strip()]
@@ -77,8 +142,18 @@ jobs:
                   return 'Quansheng'
               return 'Other'
 
+          if action == 'list-new':
+              print('List-only run requested. No approval catalog changes will be made.')
+              raise SystemExit(0)
+
           if action == 'approve-all-new':
-              keys = [str(x.get('candidateKey')) for x in candidates if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys]
+              if confirm_bulk != 'APPROVE ALL NEW':
+                  raise SystemExit('approve-all-new requires confirm_bulk to be exactly: APPROVE ALL NEW')
+              keys = [
+                  str(x.get('candidateKey'))
+                  for x in candidates
+                  if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys
+              ]
               print(f'Approving all new candidates: {len(keys)}')
               if not keys:
                   raise SystemExit('There are no new candidates to approve.')
@@ -87,7 +162,13 @@ jobs:
           elif action == 'approve-vendor-new':
               if not vendor:
                   raise SystemExit('vendor is required for approve-vendor-new')
-              keys = [str(x.get('candidateKey')) for x in candidates if x.get('candidateKey') and str(x.get('candidateKey')) not in approved_keys and row_vendor(x).lower() == vendor.lower()]
+              keys = [
+                  str(x.get('candidateKey'))
+                  for x in candidates
+                  if x.get('candidateKey')
+                  and str(x.get('candidateKey')) not in approved_keys
+                  and row_vendor(x).lower() == vendor.lower()
+              ]
               print(f'Approving new {vendor} candidates: {len(keys)}')
               if not keys:
                   raise SystemExit(f'No new unapproved candidates found for vendor: {vendor}')
@@ -96,11 +177,19 @@ jobs:
           elif action == 'approve-one':
               if not candidate_key:
                   raise SystemExit('candidate_key is required for approve-one')
+              if candidate_key not in candidate_by_key:
+                  raise SystemExit(f'Unknown candidate_key: {candidate_key}')
+              if candidate_key in approved_keys:
+                  raise SystemExit(f'Candidate is already approved: {candidate_key}')
+              row = candidate_by_key[candidate_key]
+              print(f"Approving: {row.get('displayName') or candidate_key} ({candidate_key})")
               cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'approve', candidate_key]
 
           elif action == 'remove-one':
               if not candidate_key:
                   raise SystemExit('candidate_key or approved id is required for remove-one')
+              if candidate_key not in approved_keys and candidate_key not in approved_ids:
+                  raise SystemExit(f'No currently approved driver matches: {candidate_key}')
               cmd = [sys.executable, 'scripts/manage_community_approvals.py', 'remove', candidate_key]
 
           else:
@@ -112,19 +201,30 @@ jobs:
           PY
 
       - name: Show approval summary
+        if: always()
         run: |
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
-          candidates=json.loads(Path('community/candidates.json').read_text()).get('candidates',[])
-          approved=json.loads(Path('community/community-drivers.json').read_text()).get('drivers',[])
-          approved_keys={x.get('candidateKey') for x in approved}
-          pending=[x for x in candidates if x.get('candidateKey') not in approved_keys]
+
+          candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
+          approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
+          approved_keys = {str(x.get('candidateKey') or '') for x in approved}
+          pending = [x for x in candidates if str(x.get('candidateKey') or '') and str(x.get('candidateKey') or '') not in approved_keys]
           print(f'Approved drivers: {len(approved)}')
           print(f'Pending candidates: {len(pending)}')
+
+          summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
+          if summary_path:
+              with open(summary_path, 'a', encoding='utf-8') as f:
+                  f.write('\n---\n')
+                  f.write(f'**Approved drivers:** {len(approved)}  \n')
+                  f.write(f'**Pending candidates after this run:** {len(pending)}\n')
           PY
 
       - name: Commit approval changes
+        if: ${{ inputs.action != 'list-new' }}
         run: |
           if git diff --quiet -- community/community-drivers.json; then
             echo "No approval catalog changes."
