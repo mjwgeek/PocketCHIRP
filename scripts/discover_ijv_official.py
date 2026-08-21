@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Add official IJV CHIRP modules to PocketCHIRP community candidates.
 
-The IJV download page publishes two direct Python modules and one ZIP bundle for
-firmware 3.60. These are optional external sources: a temporary ijvradio.com
-failure must NEVER make the main PocketCHIRP community discovery workflow fail.
+The IJV download page publishes direct Python modules and ZIP bundles. Direct
+Python modules keep their official download URL. Python files found inside an
+official ZIP are mirrored into this repository so each candidate has a stable,
+direct HTTPS download whose SHA-256 matches the extracted driver bytes.
+
+These are optional external sources: a temporary ijvradio.com failure must
+NEVER make the main PocketCHIRP community discovery workflow fail.
 """
 
 from __future__ import annotations
@@ -15,11 +19,13 @@ import re
 import urllib.parse
 import urllib.request
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 CANDIDATES = ROOT / "community" / "candidates.json"
-UA = "Mozilla/5.0 PocketCHIRP-IJV-Discovery/1.1"
+IJV_MIRROR = ROOT / "community" / "ijv-mirror"
+RAW_MIRROR_BASE = "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror"
+UA = "Mozilla/5.0 PocketCHIRP-IJV-Discovery/1.2"
 MAX_DOWNLOAD = 8 * 1024 * 1024
 MAX_MEMBER = 2 * 1024 * 1024
 
@@ -88,8 +94,26 @@ def extract_models(text: str) -> list[str]:
     return models
 
 
+def mirror_zip_member(*, firmware: str, member_name: str, data: bytes) -> tuple[str, str]:
+    """Persist one extracted ZIP member and return (display filename, raw URL)."""
+    filename = PurePosixPath(member_name).name
+    if not filename or not filename.lower().endswith(".py"):
+        raise RuntimeError(f"Unsafe/non-Python IJV ZIP member name: {member_name}")
+
+    target_dir = IJV_MIRROR / firmware
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target = target_dir / filename
+    target.write_bytes(data)
+
+    quoted_firmware = urllib.parse.quote(firmware, safe="")
+    quoted_filename = urllib.parse.quote(filename, safe="")
+    raw_url = f"{RAW_MIRROR_BASE}/{quoted_firmware}/{quoted_filename}"
+    return filename, raw_url
+
+
 def make_candidate(*, url: str, firmware: str, label: str, filename: str,
-                   data: bytes, zip_source: str | None = None) -> dict:
+                   data: bytes, zip_source: str | None = None,
+                   download_url: str | None = None) -> dict:
     text = safe_text(data)
     hints = structural_hints(text)
     models = extract_models(text) or [f"UV-K5 V3 / UV-K1 (IJV {firmware})"]
@@ -102,7 +126,7 @@ def make_candidate(*, url: str, firmware: str, label: str, filename: str,
         "repository": "ijvradio.com",
         "path": filename,
         "sourceUrl": source_tag,
-        "downloadUrl": url if zip_source is None else "",
+        "downloadUrl": download_url or url,
         "sha256": digest,
         "vendors": ["Quansheng"],
         "models": models,
@@ -117,7 +141,7 @@ def make_candidate(*, url: str, firmware: str, label: str, filename: str,
         "officialFirmware": firmware,
         "archiveSourceUrl": zip_source or "",
         "archiveMember": filename if zip_source else "",
-        "installPackaging": "zip-member" if zip_source else "direct-python",
+        "installPackaging": "mirrored-zip-member" if zip_source else "direct-python",
     }
 
 
@@ -141,9 +165,13 @@ def discover_item(item: dict) -> list[dict]:
                 print(f"WARNING: skipping oversized IJV ZIP member: {member.filename}")
                 continue
             data = zf.read(member)
+            filename, raw_url = mirror_zip_member(
+                firmware=item["firmware"], member_name=member.filename, data=data,
+            )
             found.append(make_candidate(
                 url=item["url"], firmware=item["firmware"], label=item["label"],
-                filename=member.filename, data=data, zip_source=item["url"],
+                filename=filename, data=data, zip_source=item["url"],
+                download_url=raw_url,
             ))
     return found
 
