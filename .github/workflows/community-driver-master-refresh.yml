@@ -1,0 +1,69 @@
+name: Community Driver Master Refresh
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community-driver-catalog-write
+  cancel-in-progress: false
+
+jobs:
+  refresh-all:
+    if: github.actor == 'mjwgeek'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover GitHub community drivers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/discover_community_drivers.py
+
+      - name: Add official IJV drivers (best effort)
+        continue-on-error: true
+        run: python scripts/discover_ijv_official.py
+
+      - name: Add version metadata
+        run: python scripts/version_community_drivers.py
+
+      - name: Summarize master refresh
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          candidates=json.loads(Path('community/candidates.json').read_text()).get('candidates',[])
+          approved=json.loads(Path('community/community-drivers.json').read_text()).get('drivers',[])
+          approved_keys={x.get('candidateKey') for x in approved}
+          new=[x for x in candidates if x.get('candidateKey') not in approved_keys]
+          vendors={}
+          for row in new:
+              vendor=((row.get('vendors') or ['Other'])[0] or 'Other')
+              vendors[vendor]=vendors.get(vendor,0)+1
+          print(f'Total candidates: {len(candidates)}')
+          print(f'Approved: {len(approved)}')
+          print(f'New/unapproved: {len(new)}')
+          for vendor,count in sorted(vendors.items()):
+              print(f'- {vendor}: {count} new')
+          PY
+
+      - name: Commit refreshed candidate catalog
+        run: |
+          if git diff --quiet -- community/candidates.json; then
+            echo "No community-driver candidate changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json
+          git commit -m "Refresh all community driver sources"
+          git push

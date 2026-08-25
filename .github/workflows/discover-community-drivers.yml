@@ -1,0 +1,67 @@
+name: Discover Community CHIRP Drivers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 10 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community-driver-catalog-write
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    if: github.event_name != 'workflow_dispatch' || github.actor == 'mjwgeek'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Discover candidate drivers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/discover_community_drivers.py
+
+      - name: Add version metadata
+        run: python scripts/version_community_drivers.py
+
+      - name: Summarize discoveries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('community/candidates.json').read_text())
+          rows = p.get('candidates', [])
+          quansheng = [x for x in rows if 'quansheng' in (' '.join(x.get('vendors', [])) + ' ' + ' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uv-k' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower() or 'uvk' in (' '.join(x.get('models', [])) + ' ' + x.get('repository', '') + ' ' + x.get('path', '')).lower()]
+          owned = [x for x in rows if x.get('repository', '').startswith('mjwgeek/')]
+          current = [x for x in rows if not x.get('historical')]
+          historical = [x for x in rows if x.get('historical')]
+          versioned = [x for x in rows if x.get('version')]
+          print(f"Total candidates: {len(rows)}")
+          print(f"Current candidates: {len(current)}")
+          print(f"Historical/version-specific candidates retained: {len(historical)}")
+          print(f"Candidates with parsed version numbers: {len(versioned)}")
+          print(f"Quansheng-related candidates: {len(quansheng)}")
+          print(f"mjwgeek repository candidates: {len(owned)}")
+          PY
+
+      - name: Commit candidate changes
+        run: |
+          if git diff --quiet -- community/candidates.json; then
+            echo "No candidate changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/candidates.json
+          git commit -m "Update community CHIRP driver candidates"
+          git push

@@ -1,0 +1,123 @@
+name: Bulk Approve Current Community Driver Baseline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: community-driver-approval-write
+  cancel-in-progress: false
+
+jobs:
+  bulk-approve:
+    if: github.actor == 'mjwgeek'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Approve every installable current candidate
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import subprocess
+          import sys
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
+          approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
+          approved_keys = {str(x.get('candidateKey') or '') for x in approved}
+
+          allowed_hosts = {
+              'raw.githubusercontent.com',
+              'www.ijvradio.com',
+              'ijvradio.com',
+          }
+
+          def installable(row):
+              key = str(row.get('candidateKey') or '').strip()
+              url = str(row.get('downloadUrl') or '').strip()
+              sha = str(row.get('sha256') or '').strip().lower()
+              if not key or not url or not re.fullmatch(r'[0-9a-f]{64}', sha):
+                  return False
+              parsed = urlparse(url)
+              return parsed.scheme == 'https' and parsed.hostname in allowed_hosts
+
+          valid = [x for x in candidates if installable(x)]
+          skipped = [x for x in candidates if not installable(x)]
+          keys = [str(x['candidateKey']) for x in valid if str(x['candidateKey']) not in approved_keys]
+
+          print(f'Current candidates: {len(candidates)}')
+          print(f'Installable candidates: {len(valid)}')
+          print(f'Review-only / non-installable candidates skipped: {len(skipped)}')
+          print(f'Already approved: {len(approved_keys)}')
+          print(f'Approving now: {len(keys)}')
+
+          if skipped:
+              print('\nSkipped candidates:')
+              for x in skipped:
+                  print(f"- {x.get('displayName') or x.get('candidateKey')} :: packaging={x.get('installPackaging')} :: url={x.get('downloadUrl')!r}")
+
+          if keys:
+              subprocess.check_call([
+                  sys.executable,
+                  'scripts/manage_community_approvals.py',
+                  'approve',
+                  *keys,
+                  '--note',
+                  'Bulk-approved current installable discovery baseline',
+              ])
+          PY
+
+      - name: Verify installable baseline
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import urlparse
+
+          candidates = json.loads(Path('community/candidates.json').read_text()).get('candidates', [])
+          approved = json.loads(Path('community/community-drivers.json').read_text()).get('drivers', [])
+          approved_keys = {x.get('candidateKey') for x in approved}
+          allowed_hosts = {'raw.githubusercontent.com', 'www.ijvradio.com', 'ijvradio.com'}
+
+          def installable(row):
+              url = str(row.get('downloadUrl') or '').strip()
+              sha = str(row.get('sha256') or '').strip().lower()
+              parsed = urlparse(url)
+              return bool(row.get('candidateKey')) and bool(url) and bool(re.fullmatch(r'[0-9a-f]{64}', sha)) and parsed.scheme == 'https' and parsed.hostname in allowed_hosts
+
+          eligible = [x for x in candidates if installable(x)]
+          skipped = [x for x in candidates if not installable(x)]
+          missing = [x.get('candidateKey') for x in eligible if x.get('candidateKey') not in approved_keys]
+
+          print(f'Candidates: {len(candidates)}')
+          print(f'Installable baseline: {len(eligible)}')
+          print(f'Approved: {len(approved)}')
+          print(f'Review-only skipped: {len(skipped)}')
+          print(f'Unapproved installable candidates: {len(missing)}')
+          if missing:
+              raise SystemExit('Bulk approval incomplete for installable candidates')
+          PY
+
+      - name: Commit baseline
+        run: |
+          if git diff --quiet -- community/community-drivers.json; then
+            echo "No approval catalog changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add community/community-drivers.json
+          git commit -m "Bulk approve current installable community driver baseline"
+          git push
