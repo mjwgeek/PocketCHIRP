@@ -1,0 +1,472 @@
+# Copyright 2010 Dan Smith <dsmith@danplanet.com>
+# Copyright 2012 Tom Hayward <tom@tomh.us>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import glob
+import os
+import inspect
+import logging
+import sys
+
+from chirp import chirp_common, errors
+
+LOG = logging.getLogger(__name__)
+
+
+def radio_class_id(cls):
+    """Return a unique identification string for @cls"""
+    ident = "%s_%s" % (cls.VENDOR, cls.MODEL)
+    if cls.VARIANT:
+        ident += "_%s" % cls.VARIANT
+    ident = ident.replace("/", "_")
+    ident = ident.replace(" ", "_")
+    ident = ident.replace("(", "")
+    ident = ident.replace(")", "")
+    return ident
+
+
+def registered_class(cls):
+    """Find the first parent of @cls that is registered"""
+    bases = inspect.getmro(cls)
+    for base in bases:
+        try:
+            return get_driver(base)
+        except Exception:
+            pass
+    else:
+        raise KeyError('No parent radio class of %s is registered' % cls)
+
+
+ALLOW_DUPS = False
+
+
+def enable_reregistrations():
+    """Set the global flag ALLOW_DUPS=True, which will enable a driver
+    to re-register for a slot in the directory without triggering an
+    exception"""
+    global ALLOW_DUPS
+    if not ALLOW_DUPS:
+        LOG.info("driver re-registration enabled")
+    ALLOW_DUPS = True
+
+
+def register(cls):
+    """Register radio @cls with the directory"""
+    ident = radio_class_id(cls)
+    if ident in list(DRV_TO_RADIO.keys()):
+        if ALLOW_DUPS:
+            LOG.warn("Replacing existing driver id `%s'" % ident)
+        else:
+            raise Exception("Duplicate radio driver id `%s'" % ident)
+    elif ALLOW_DUPS:
+        LOG.info("Registered %s = %s" % (ident, cls.__name__))
+    DRV_TO_RADIO[ident] = cls
+    RADIO_TO_DRV[cls] = ident
+
+    if not hasattr(cls, '_DETECTED_BY'):
+        cls._DETECTED_BY = None
+    if not hasattr(cls, '_MINOR_VARIANT'):
+        cls._MINOR_VARIANT = False
+
+    return cls
+
+
+def detected_by(manager_class):
+    """Mark a class as detected by another class
+
+    This means it may not be offered directly as a choice and instead is added
+    to @manager_class's DETECTED_MODELS list and should be returned from
+    detect_from_serial() when appropriate.
+    """
+    assert issubclass(manager_class, chirp_common.CloneModeRadio)
+
+    def wrapper(cls):
+        assert issubclass(cls, chirp_common.CloneModeRadio)
+
+        cls._DETECTED_BY = manager_class
+        manager_class.detect_model(cls)
+        return cls
+
+    return wrapper
+
+
+def minorvariant(cls):
+    """Mark a class as too minor to distinguish from its parent.
+
+    Use this on registered classes that are very minor and used for
+    organization, but need not be exposed to the user as a separate offering.
+    Minor version differences of the same model, for example.
+    """
+    assert issubclass(cls, chirp_common.CloneModeRadio)
+
+    cls._MINOR_VARIANT = True
+    return cls
+
+
+DRV_TO_RADIO = {}
+RADIO_TO_DRV = {}
+AUX_FORMATS = set()
+
+
+def register_format(name, pattern, readonly=False):
+    """Register a named format and file pattern.
+
+    The name and pattern must not exist in the directory already
+    (except together). The name should be something like "CSV" or
+    "Icom ICF" and the pattern should be a glob like "*.icf".
+
+    Returns a unique name to go in Radio.FORMATS so the UI knows what
+    additional formats a driver can read (and write unless readonly is
+    set).
+    """
+    if (name, pattern) not in [(n, p) for n, p, r in AUX_FORMATS]:
+        if name in [x[0] for x in AUX_FORMATS]:
+            raise Exception('Duplicate format name %r' % name)
+    AUX_FORMATS.add((name, pattern, readonly))
+    return name
+
+
+def get_radio(driver):
+    """Get radio driver class by identification string"""
+    if driver in DRV_TO_RADIO:
+        return DRV_TO_RADIO[driver]
+    else:
+        raise Exception("Unknown radio type `%s'" % driver)
+
+
+def get_driver(rclass):
+    """Get the identification string for a given class"""
+    if rclass in RADIO_TO_DRV:
+        return RADIO_TO_DRV[rclass]
+    elif rclass.__bases__[0] in RADIO_TO_DRV:
+        return RADIO_TO_DRV[rclass.__bases__[0]]
+    else:
+        raise Exception("Unknown radio type `%s'" % rclass)
+
+
+# This is a mapping table of radio models that have changed in the past.
+# ideally we would never do this, but in the case where a radio was added
+# as the wrong model name, or a model has to be split, we need to be able
+# to open older files and do something intelligent with them.
+MODEL_COMPAT = {
+    ('Retevis', 'RT-5R'): ('Retevis', 'RT5R'),
+    ('Retevis', 'RT-5RV'): ('Retevis', 'RT5RV'),
+    ('Signus', 'XTR-5'): ('Cignus', 'XTR-5'),
+}
+
+
+def get_radio_by_image(image_file):
+    """Attempt to get the radio class that owns @image_file"""
+    if os.path.exists(image_file):
+        with open(image_file, "rb") as f:
+            filedata = f.read()
+    else:
+        filedata = b""
+
+    data, metadata = chirp_common.CloneModeRadio._strip_metadata(filedata)
+
+    for rclass in list(DRV_TO_RADIO.values()):
+        if not issubclass(rclass, chirp_common.FileBackedRadio):
+            continue
+
+        if not metadata:
+            # If no metadata, we do the old thing
+            try:
+                if rclass.match_model(filedata, image_file):
+                    return rclass(image_file)
+            except Exception as e:
+                LOG.error('Radio class %s failed during detection: %s' % (
+                    rclass.__name__, e))
+                pass
+
+        meta_vendor = metadata.get('vendor')
+        meta_model = metadata.get('model')
+        meta_variant = metadata.get('variant')
+
+        meta_vendor, meta_model = MODEL_COMPAT.get((meta_vendor, meta_model),
+                                                   (meta_vendor, meta_model))
+
+        # If metadata, then it has to match one of the aliases or the parent
+        for alias in rclass.ALIASES + [rclass]:
+            if (alias.VENDOR == meta_vendor and alias.MODEL == meta_model and
+                    (meta_variant is None or alias.VARIANT == meta_variant)):
+
+                class DynamicRadioAlias(rclass):
+                    _orig_rclass = rclass
+                    VENDOR = meta_vendor
+                    MODEL = meta_model
+                    VARIANT = metadata.get('variant')
+
+                    def __repr__(self):
+                        return repr(self._orig_rclass)
+
+                return DynamicRadioAlias(image_file)
+
+    if metadata:
+        ex = errors.ImageMetadataInvalidModel("Unsupported model %s %s" % (
+            metadata.get("vendor"), metadata.get("model")))
+        ex.metadata = metadata
+        raise ex
+    else:
+        # If we don't find anything else and the file appears to be a CSV
+        # file, then explicitly open it with the generic driver so we can
+        # get relevant errors instead of just "Unknown file format".
+        if image_file.lower().endswith('.csv'):
+            rclass = get_radio('Generic_CSV')
+            return rclass(image_file)
+        raise errors.ImageDetectFailed("Unknown file format")
+
+
+def import_drivers(limit=None):
+    frozen = getattr(sys, 'frozen', False)
+    if sys.platform == 'win32' and frozen:
+        # We are in a frozen win32 build, so we can not glob
+        # the driver files, but we do not need to anyway
+        import chirp.drivers
+        for module in chirp.drivers.__all__:
+            try:
+                __import__('chirp.drivers.%s' % module)
+            except Exception as e:
+                print('Failed to import %s: %s' % (module, e))
+        return
+
+    # Safe import of everything in chirp/drivers. We need to import them
+    # to get them to register, but should not abort if one import fails
+    chirp_module_base = os.path.dirname(os.path.abspath(__file__))
+    driver_files = glob.glob(os.path.join(chirp_module_base,
+                                          'drivers',
+                                          '*.py'))
+
+    # PocketCHIRP/Chaquopy compatibility fallback.
+    #
+    # In a normal CPython checkout the driver package is a real filesystem
+    # directory, so the upstream glob above is authoritative and this block is
+    # never used. Chaquopy packages Python sources inside the Android APK, where
+    # os.path/glob may legitimately see no chirp/drivers/*.py files even though
+    # every vendored module is importable. Keep the normal CHIRP path untouched
+    # and use this pinned-module manifest only when that exact condition occurs.
+    # The list below was generated from the vendored CHIRP tree pinned by
+    # PocketCHIRP's chirp-version.properties.
+    if not driver_files:
+        bundled_driver_modules = (
+        'alinco',
+        'alinco_dr735t',
+        'anytone',
+        'anytone778uv',
+        'anytone_ht',
+        'anytone_iii',
+        'ap510',
+        'ar8200',
+        'baofeng_common',
+        'baofeng_digital',
+        'baofeng_uv17',
+        'baofeng_uv17Pro',
+        'baofeng_uv3r',
+        'baofeng_wp970i',
+        'bf_t1',
+        'bf_t8',
+        'bj9900',
+        'bjuv55',
+        'boblov_x3plus',
+        'btech',
+        'fake',
+        'fd268',
+        'ft1500m',
+        'ft1802',
+        'ft1d',
+        'ft2800',
+        'ft2900',
+        'ft2d',
+        'ft4',
+        'ft450d',
+        'ft50',
+        'ft60',
+        'ft70',
+        'ft7100',
+        'ft7800',
+        'ft8100',
+        'ft817',
+        'ft818',
+        'ft857',
+        'ft90',
+        'ftm3200d',
+        'ftm350',
+        'ftm7250d',
+        'ga510',
+        'generic_csv',
+        'generic_tpe',
+        'gmrsuv1',
+        'gmrsv2',
+        'h777',
+        'hf90',
+        'hg_uv98',
+        'hobbypcb',
+        'ic208',
+        'ic2100',
+        'ic2200',
+        'ic2300',
+        'ic2720',
+        'ic2730',
+        'ic2820',
+        'ic9x',
+        'ic9x_icf',
+        'ic9x_icf_ll',
+        'ic9x_ll',
+        'icf',
+        'icf520',
+        'icm710',
+        'icomciv',
+        'icp7',
+        'icq7',
+        'ict10',
+        'ict70',
+        'ict7h',
+        'ict8',
+        'icv80',
+        'icv86',
+        'icw32',
+        'icx8x',
+        'icx90',
+        'id31',
+        'id51',
+        'id5100',
+        'id51plus',
+        'id800',
+        'id880',
+        'idrp',
+        'iradio_common',
+        'iradio_uv_5118',
+        'iradio_uv_5118plus',
+        'kenwood_d7',
+        'kenwood_hmk',
+        'kenwood_itm',
+        'kenwood_live',
+        'kg935g',
+        'kguv8d',
+        'kguv8dplus',
+        'kguv8e',
+        'kguv920pa',
+        'kguv980p',
+        'kguv9dplus',
+        'ksun_m6',
+        'kyd',
+        'kyd_IP620',
+        'leixen',
+        'lt725uv',
+        'mml_jc8810',
+        'mursv1',
+        'puxing',
+        'puxing_px888k',
+        'radioddity_db40g',
+        'radioddity_gm30',
+        'radioddity_r2',
+        'radtel_rt490',
+        'radtel_rt620',
+        'radtel_rt880g',
+        'radtel_rt900',
+        'radtel_t18',
+        'retevis_c2',
+        'retevis_h777v4',
+        'retevis_ha1g',
+        'retevis_ha2',
+        'retevis_ra25',
+        'retevis_ra86',
+        'retevis_ra87',
+        'retevis_rb15',
+        'retevis_rb17p',
+        'retevis_rb28',
+        'retevis_rt1',
+        'retevis_rt21',
+        'retevis_rt22',
+        'retevis_rt23',
+        'retevis_rt26',
+        'retevis_rt76p',
+        'retevis_rt87',
+        'retevis_rt98',
+        'rh5r_v2',
+        'tdh8',
+        'tdm11',
+        'tdxone_tdq8a',
+        'template',
+        'tg_uv2p',
+        'th350',
+        'th7800',
+        'th9000',
+        'th9800',
+        'th_uv3r',
+        'th_uv3r25',
+        'th_uv8000',
+        'th_uv88',
+        'th_uvf8d',
+        'thd72',
+        'thd74',
+        'thuv1f',
+        'tk11',
+        'tk270',
+        'tk280',
+        'tk3140',
+        'tk481',
+        'tk690',
+        'tk760',
+        'tk760g',
+        'tk8102',
+        'tk8160',
+        'tk8180',
+        'tmd710',
+        'tmv71',
+        'tmv71_ll',
+        'ts2000',
+        'ts480',
+        'ts590',
+        'ts790e',
+        'ts850',
+        'uv5r',
+        'uv5x3',
+        'uv6r',
+        'uvb5',
+        'uvk5',
+        'uvk5_egzumer',
+        'vgc',
+        'vx1',
+        'vx150',
+        'vx170',
+        'vx2',
+        'vx3',
+        'vx5',
+        'vx510',
+        'vx6',
+        'vx7',
+        'vx8',
+        'wouxun',
+        'wouxun_common',
+        'yaesu_clone',
+        )
+        for driver_module in bundled_driver_modules:
+            if limit and driver_module not in limit:
+                continue
+            try:
+                __import__('chirp.drivers.%s' % driver_module)
+            except Exception as e:
+                # Match CHIRP's frozen-build behavior: one optional/problematic
+                # driver must not prevent the rest of the radio catalog loading.
+                print('Failed to import %s: %s' % (driver_module, e))
+        return
+
+    for driver_file in driver_files:
+        module, ext = os.path.splitext(driver_file)
+        driver_module = os.path.basename(module)
+        if limit and driver_module not in limit:
+            continue
+        __import__('chirp.drivers.%s' % driver_module)

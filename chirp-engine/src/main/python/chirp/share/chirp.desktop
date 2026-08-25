@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=CHIRP
+GenericName=Radio Programming Tool
+Comment=Program amateur radios
+Icon=chirp
+Exec=chirp %F
+Terminal=false
+MimeType=x-scheme-handler/chirp
+Categories=Utility;HamRadio
+Keywords=Hamradio;Programming;Handheld;Radio;Amateur;Programmer
+StartupNotify=true
+StartupWMClass=chirpw

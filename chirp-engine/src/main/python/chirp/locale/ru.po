@@ -1,0 +1,4032 @@
+# SPDX-FileCopyrightText: 2023, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
+msgid ""
+msgstr ""
+"Project-Id-Version: CHIRP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-28 15:31-0700\n"
+"PO-Revision-Date: 2025-08-22 15:43+0300\n"
+"Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
+"Language-Team: Basealt Translation Team\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../wxui/query_sources.py:64
+#, python-format
+msgid "%(value)s must be between %(min)i and %(max)i"
+msgstr "%(value)s должно находиться в диапазоне от %(min)i до %(max)i"
+
+#: ../wxui/memedit.py:2247
+#, python-format
+msgid "%i Memories and shift all up"
+msgid_plural "%i Memories and shift all up"
+msgstr[0] "Ячейки памяти (%i) и сдвинуть все вверх"
+msgstr[1] "Ячейки памяти (%i) и сдвинуть все вверх"
+msgstr[2] "Ячейки памяти (%i) и сдвинуть все вверх"
+
+#: ../wxui/memedit.py:2238
+#, python-format
+msgid "%i Memory"
+msgid_plural "%i Memories"
+msgstr[0] "Ячейки памяти (%i)"
+msgstr[1] "Ячейки памяти (%i)"
+msgstr[2] "Ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:2242
+#, python-format
+msgid "%i Memory and shift block up"
+msgid_plural "%i Memories and shift block up"
+msgstr[0] "Ячейки памяти (%i) и сдвинуть блок вверх"
+msgstr[1] "Ячейки памяти (%i) и сдвинуть блок вверх"
+msgstr[2] "Ячейки памяти (%i) и сдвинуть блок вверх"
+
+#: ../wxui/accessibility.py:177
+#, python-format
+msgid "%s %s, row %d"
+msgstr ""
+
+#: ../wxui/main.py:1532
+#, python-format
+msgid "%s has not been saved. Save before closing?"
+msgstr "Сохранение %s не было выполнено. Сохранить перед закрытием?"
+
+#: ../wxui/bugreport.py:510
+msgid "(Describe what actually happened instead)"
+msgstr "(Опишите, что случилось на самом деле)"
+
+#: ../wxui/bugreport.py:508
+msgid "(Describe what you expected to happen)"
+msgstr "(Опишите, что должно было произойти)"
+
+#: ../wxui/bugreport.py:506
+msgid "(Describe what you were doing)"
+msgstr "(Опишите, что вы делали)"
+
+#: ../wxui/bugreport.py:512
+msgid "(Has this ever worked before? New radio? Does it work with OEM software?)"
+msgstr "(Работало ли это раньше? Новая станция? Работает ли с программным обеспечением OEM?)"
+
+#: ../wxui/radioinfo.py:52
+msgid "(none)"
+msgstr "(нет)"
+
+#: ../wxui/memedit.py:2643
+#, python-format
+msgid "...and %i more"
+msgstr "...и ещё %i"
+
+#: ../drivers/ft4.py:743
+msgid ""
+"1. Connect programming cable to MIC jack.\n"
+"2. Press OK."
+msgstr ""
+"1. Подключите кабель программирования к разъёму микрофона.\n"
+"2. Нажмите «OK»."
+
+#: ../drivers/alinco.py:605 ../drivers/alinco.py:614
+msgid ""
+"1. Ensure your firmware version is 4_10 or higher\n"
+"2. Turn radio off\n"
+"3. Connect your interface cable\n"
+"4. Turn radio on\n"
+"5. Press and release PTT 3 times while holding MONI key\n"
+"6. Supported baud rates: 57600 (default) and 19200\n"
+"   (rotate dial while holding MONI to change)\n"
+"7. Click OK\n"
+msgstr ""
+"1. Убедитесь, что у вас микропрограмма версии 4_10 или выше\n"
+"2. Выключите станцию\n"
+"3. Подключите ваш интерфейсный кабель\n"
+"4. Включите станцию\n"
+"5. Нажмите и отпустите PTT 3 раза, удерживая клавишу MONI\n"
+"6. Поддерживаемая скорость в бодах: 57600 (по умолчанию) и 19200\n"
+"   (чтобы изменить, поверните ручку настройки, удерживая MONI)\n"
+"7. Нажмите «OK»\n"
+
+#: ../drivers/ft2900.py:1253
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"A/N LOW\" button, turn radio on.\n"
+"4. <b>After clicking OK</b>, press \"SET MHz\" to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопку «A/N LOW», включите станцию.\n"
+"4. <b>После нажатия «ОК»</b> нажмите «SET MHz» для отправки образа.\n"
+
+#: ../drivers/ft2900.py:1258
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"A/N LOW\" button, turn radio on.\n"
+"4. Press \"MW D/MR\" to receive image.\n"
+"5. Make sure display says \"-WAIT-\" (see note below if not)\n"
+"6. Click OK to dismiss this dialog and start transfer.\n"
+"Note: if you don't see \"-WAIT-\" at step 5, try cycling\n"
+"      power and pressing and holding red \"*L\" button to unlock\n"
+"      radio, then start back at step 1.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопку «A/N LOW», включите станцию.\n"
+"4. Нажмите «MW D/MR» для получения образа.\n"
+"5. Убедитесь, что на экране написано «-WAIT-» (см. примечание ниже, если это не так)\n"
+"6. Нажмите «OK» для закрытия этого диалога и начала передачи.\n"
+"Примечание: если на шаге 5 на экране нет текста «-WAIT-», попробуйте выключить\n"
+"      и снова включить питание, потом нажать и удерживать красную кнопку «*L» для\n"
+"       разблокировки станции, а затем начните снова с шага 1.\n"
+
+#: ../drivers/ft8100.py:94
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"F/W\" button, turn radio on.\n"
+"4. <b>After clicking OK</b>, press \"RPT\" to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопку «F/W», включите станцию.\n"
+"4. <b>После нажатия «ОК»</b> нажмите «RPT» для отправки образа.\n"
+
+#: ../drivers/ft8100.py:99
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"F/W\" button, turn radio on.\n"
+"4. Press \"REV\" to receive image.\n"
+"5. Click OK to start transfer.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопку «F/W», включите станцию.\n"
+"4. Нажмите «REV» для получения образа.\n"
+"5. Нажмите «ОК» для начала передачи.\n"
+
+#: ../drivers/ft7100.py:1130
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"TONE\" and \"REV\" buttons, turn radio on.\n"
+"4. <b>After clicking OK</b>, press \"TONE\" to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопки «TONE» и «REV», включите станцию.\n"
+"4. <b>После нажатия «ОК»</b> нажмите «TONE» для отправки образа.\n"
+
+#: ../drivers/ft7100.py:1135
+msgid ""
+"1. Turn Radio off.\n"
+"2. Connect data cable.\n"
+"3. While holding \"TONE\" and \"REV\" buttons, turn radio on.\n"
+"4. Press \"REV\" to receive image.\n"
+"5. Make sure display says \"CLONE RX\" and green led is blinking\n"
+"6. Click OK to start transfer.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Удерживая кнопки «TONE» и «REV», включите станцию.\n"
+"4. Нажмите «REV» для получения образа.\n"
+"5. Убедитесь, что на экране написано «CLONE RX» и мигает зелёный светодиод.\n"
+"6. Нажмите «ОК» для начала передачи.\n"
+
+#: ../drivers/ft2800.py:206
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable\n"
+"3. Press and hold in the MHz, Low, and D/MR keys on the radio while turning it on\n"
+"4. Radio is in clone mode when TX/RX is flashing\n"
+"5. <b>After clicking OK</b>, press the MHz key on the radio to send image.\n"
+"    (\"TX\" will appear on the LCD). \n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель.\n"
+"3. Нажмите и удерживайте на станции клавиши «MHz», «Low» и «D/MR» во время\n"
+"её включения.\n"
+"4. Станция находится в режиме клонирования, когда мигает TX/RX.\n"
+"5. <b>После нажатия «ОК»</b> нажмите на станции клавишу «MHz» для отправки образа\n"
+"    (на экране появится «TX»). \n"
+
+#: ../drivers/ft2800.py:216
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable\n"
+"3. Press and hold in the MHz, Low, and D/MR keys on the radio while turning it on\n"
+"4. Radio is in clone mode when TX/RX is flashing\n"
+"5. Press the Low key on the radio (\"RX\" will appear on the LCD).\n"
+"6. Click OK."
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель.\n"
+"3. Нажмите и удерживайте на станции клавиши «MHz», «Low» и «D/MR» во время\n"
+"её включения.\n"
+"4. Станция находится в режиме клонирования, когда мигает TX/RX.\n"
+"5. Нажмите на станции клавишу «Low» (на экране появится «RX»).\n"
+"6. Нажмите «OK»."
+
+#: ../drivers/ft450d.py:430
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to ACC jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. <b>After clicking OK</b> here, press the [C.S.] key to\n"
+"    send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму ACC.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. <b>После нажатия «ОК»</b> в этом окне нажмите клавишу [C.S.] для\n"
+"    отправки образа.\n"
+
+#: ../drivers/ft817.py:281
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to ACC jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. <b>After clicking OK</b>, press the [A] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму ACC.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [A] для\n"
+"    отправки образа.\n"
+
+#: ../drivers/ft450d.py:439
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to ACC jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. Click OK here.\n"
+"    (\"Receiving\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму ACC.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. Нажмите «ОК» в этом окне (на экране появится «Receiving»).\n"
+
+#: ../drivers/ft857.py:450
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to ACC jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. Press the [A](RCV) key (\"receiving\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму ACC.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. Нажмите клавишу [A](RCV) (на экране появится «receiving»).\n"
+
+#: ../drivers/ft817.py:289
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to ACC jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. Press the [C] key (\"RX\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму ACC.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. Нажмите клавишу [C] (на экране появится «RX»).\n"
+
+#: ../drivers/ft857.py:441
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to CAT/LINEAR jack.\n"
+"3. Press and hold in the [MODE &lt;] and [MODE &gt;] keys while\n"
+"     turning the radio on (\"CLONE MODE\" will appear on the\n"
+"     display).\n"
+"4. <b>After clicking OK</b>,\n"
+"     press the [C](SEND) key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму CAT/LINEAR.\n"
+"3. Нажмите и удерживайте клавиши [MODE &lt;] и [MODE &gt;] во время\n"
+"    включения станции (на экране появится «CLONE MODE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [C](SEND) для\n"
+"    отправки образа.\n"
+
+#: ../drivers/ft7800.py:939 ../drivers/ft7800.py:1261
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the \"left\" [V/M] key while turning the\n"
+"     radio on.\n"
+"4. Rotate the \"right\" DIAL knob to select \"CLONE START\".\n"
+"5. Press the [SET] key. The display will disappear\n"
+"     for a moment, then the \"CLONE\" notation will appear.\n"
+"6. <b>After clicking OK</b>, press the \"left\" [V/M] key to\n"
+"     send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте «левую» клавишу [V/M] во время\n"
+"    включения станции.\n"
+"4. Поверните «правую» ручку DIAL для выбора «CLONE START».\n"
+"5. Нажмите клавишу [SET]. Экран на время станет пустым,\n"
+"    затем появится надпись «CLONE».\n"
+"6. <b>После нажатия «ОК»</b> нажмите «левую» клавишу [V/M]\n"
+"    для отправки образа.\n"
+
+#: ../drivers/ft7800.py:949 ../drivers/ft7800.py:1271
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the \"left\" [V/M] key while turning the\n"
+"     radio on.\n"
+"4. Rotate the \"right\" DIAL knob to select \"CLONE START\".\n"
+"5. Press the [SET] key. The display will disappear\n"
+"     for a moment, then the \"CLONE\" notation will appear.\n"
+"6. Press the \"left\" [LOW] key (\"CLONE -RX-\" will appear on\n"
+"     the display).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте «левую» клавишу [V/M] во время\n"
+"    включения станции.\n"
+"4. Поверните «правую» ручку DIAL для выбора «CLONE START».\n"
+"5. Нажмите клавишу [SET]. Экран на время станет пустым,\n"
+"    затем появится надпись «CLONE».\n"
+"6. Нажмите «левую» клавишу [LOW] (на экране появится\n"
+"    «CLONE -RX-»).\n"
+
+#: ../drivers/vx8.py:584
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the [FW] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [BAND] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [FW] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [BAND]\n"
+"    для отправки образа.\n"
+
+#: ../drivers/vx8.py:591
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the [FW] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. Press the [MODE] key (\"-WAIT-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [FW] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [MODE] (на экране появится «-WAIT-»).\n"
+
+#: ../drivers/ft7800.py:320
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the [MHz(PRI)] key while turning the\n"
+"     radio on.\n"
+"4. Rotate the DIAL job to select \"F-7 CLONE\".\n"
+"5. Press and hold in the [BAND(SET)] key. The display\n"
+"     will disappear for a moment, then the \"CLONE\" notation\n"
+"     will appear.\n"
+"6. Press the [LOW(ACC)] key (\"--RX--\" will appear on the display).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [MHz(PRI)] во время включения\n"
+"     станции.\n"
+"4. Поверните регулятор DIAL для выбора «F-7 CLONE».\n"
+"5. Нажмите и удерживайте клавишу [BAND(SET)]. Экран на время\n"
+"     станет пустым, затем появится надпись «CLONE».\n"
+"6. Нажмите клавишу [LOW(ACC)] (на экране появится «--RX--»).\n"
+
+#: ../drivers/ft7800.py:309
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA jack.\n"
+"3. Press and hold in the [MHz(PRI)] key while turning the\n"
+" radio on.\n"
+"4. Rotate the DIAL job to select \"F-7 CLONE\".\n"
+"5. Press and hold in the [BAND(SET)] key. The display\n"
+" will disappear for a moment, then the \"CLONE\" notation\n"
+" will appear.\n"
+"6. <b>After clicking OK</b>, press the [V/M(MW)] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [MHz(PRI)] во время включения\n"
+" станции.\n"
+"4. Поверните регулятор DIAL для выбора «F-7 CLONE».\n"
+"5. Нажмите и удерживайте клавишу [BAND(SET)]. Экран на время\n"
+" станет пустым, затем появится надпись «CLONE».\n"
+"6. <b>После нажатия «ОК»</b> нажмите клавишу [V/M(MW)] для\n"
+"    отправки образа.\n"
+
+#: ../drivers/ft2d.py:90
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold [DISP] key while turning on radio\n"
+"     (\"CLONE\" will appear on radio LCD).\n"
+"4. <b>After clicking OK here in Chirp</b>,\n"
+"     press the [Send] screen button.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [DISP] во время включения станции\n"
+"     (на экране станции появится надпись «CLONE»).\n"
+"4. <b>После нажатия «ОК» здесь в Chirp</b>\n"
+"     нажмите экранную кнопку [Send].\n"
+
+#: ../drivers/ft2d.py:97
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold in [DISP] key while turning on radio\n"
+"     (\"CLONE\" will appear on radio LCD).\n"
+"4. Press [RECEIVE] screen button\n"
+"     (\"-WAIT-\" will appear on radio LCD).\n"
+"5. Finally, press OK button below.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму DATA.\n"
+"3. Нажмите и удерживайте клавишу [DISP] во время включения станции\n"
+"     (на экране станции появится надпись «CLONE»).\n"
+"4. Нажмите экранную кнопку [RECEIVE]\n"
+"     (на экране станции появится «-WAIT-»).\n"
+"5. Нажмите расположенную ниже кнопку «ОК».\n"
+
+#: ../drivers/ft1d.py:902
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold in the [F] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [BAND] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Нажмите и удерживайте клавишу [F] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [BAND]\n"
+"    для отправки образа.\n"
+
+#: ../drivers/ft1d.py:909
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold in the [F] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. Press the [Dx] key (\"-WAIT-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Нажмите и удерживайте клавишу [F] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [Dx] (на экране появится «-WAIT-»).\n"
+
+#: ../drivers/ftm3200d.py:84
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold in the [MHz(SETUP)] key while turning the radio\n"
+"     on (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [REV(DW)] key\n"
+"     to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Нажмите и удерживайте клавишу [MHz(SETUP)] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [REV(DW)]\n"
+"    для отправки образа.\n"
+
+#: ../drivers/ftm3200d.py:92
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Press and hold in the [MHz(SETUP)] key while turning the radio\n"
+"     on (\"CLONE\" will appear on the display).\n"
+"4. Press the [MHz(SETUP)] key\n"
+"     (\"-WAIT-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Нажмите и удерживайте клавишу [MHz(SETUP)] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [MHz(SETUP)] (на экране появится «-WAIT-»).\n"
+
+#: ../drivers/ftm7250d.py:84
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC Jack.\n"
+"3. Press and hold in the [MHz(SETUP)] key while turning the radio\n"
+"     on (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [GM(AMS)] key\n"
+"     to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC.\n"
+"3. Нажмите и удерживайте клавишу [MHz(SETUP)] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [GM(AMS)]\n"
+"    для отправки образа.\n"
+
+#: ../drivers/ftm7250d.py:92
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC Jack.\n"
+"3. Press and hold in the [MHz(SETUP)] key while turning the radio\n"
+"     on (\"CLONE\" will appear on the display).\n"
+"4. Press the [MHz(SETUP)] key\n"
+"     (\"-WAIT-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC.\n"
+"3. Нажмите и удерживайте клавишу [MHz(SETUP)] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [MHz(SETUP)] (на экране появится «-WAIT-»).\n"
+
+#: ../drivers/vx5.py:317
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/EAR jack.\n"
+"3. Press and hold in the [F/W] key while turning the radio on\n"
+"    (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [VFO(DW)SC] key to receive\n"
+"    the image from the radio.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/EAR.\n"
+"3. Нажмите и удерживайте клавишу [F/W] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу\n"
+"      [VFO(DW)SC] для получения образа от станции.\n"
+
+#: ../drivers/vx5.py:325
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/EAR jack.\n"
+"3. Press and hold in the [F/W] key while turning the radio on\n"
+"    (\"CLONE\" will appear on the display).\n"
+"4. Press the [MR(SKP)SC] key (\"CLONE WAIT\" will appear\n"
+"    on the LCD).\n"
+"5. Click OK to send image to radio.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/EAR.\n"
+"3. Нажмите и удерживайте клавишу [F/W] во время\n"
+"    включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [MR(SKP)SC] (на экране появится\n"
+"    «CLONE WAIT»).\n"
+"5. Нажмите «ОК» для отправки образа на станцию.\n"
+
+#: ../drivers/vx1.py:399
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold [FW] while turning radio on to put into CLONE mode.\n"
+"4. Press OK on chirp prompt.\n"
+"5. <b>After clicking OK</b>, press the [DWN] button on radio to send image. The radio will say CLN OUT while downloading.\n"
+msgstr ""
+
+#: ../drivers/vx1.py:407
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold [FW] while turning radio on to put into CLONE mode.\n"
+"4. Press [UP] button on radio. The radio will say CLN IN.\n"
+"5. <b>After radio says CLN IN</b>, press OK on chirp prompt to upload.\n"
+msgstr ""
+
+#: ../drivers/ft50.py:195
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold [PTT] &amp; Knob while turning the\n"
+"     radio on.\n"
+"4. <b>After clicking OK</b>, press the [PTT] switch to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте ручку [PTT] во время включения\n"
+"     станции.\n"
+"4. <b>После нажатия «OK»</b> нажмите переключатель [PTT] для отправки образа.\n"
+
+#: ../drivers/ft50.py:202
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold [PTT] &amp; Knob while turning the\n"
+"     radio on.\n"
+"4. Press the [MONI] switch (\"WAIT\" will appear on the LCD).\n"
+"5. Press OK.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте ручку [PTT] во время включения\n"
+"     станции.\n"
+"4. Нажмите переключатель [MONI] (на экране появится «WAIT»).\n"
+"5. Нажмите «OK».\n"
+
+#: ../drivers/vx6.py:370 ../drivers/vx3.py:373
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [F/W] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [BAND] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте клавишу [F/W] во время включения станции\n"
+"     (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «OK»</b> нажмите клавишу [BAND] для отправки образа.\n"
+
+#: ../drivers/vx6.py:377 ../drivers/vx3.py:380
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [F/W] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. Press the [V/M] key (\"-WAIT-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте клавишу [F/W] во время\n"
+"     включения станции (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [V/M] (на экране появится «-WAIT-»).\n"
+
+#: ../drivers/vx7.py:192
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [MON-F] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. <b>After clicking OK</b>, press the [BAND] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте клавишу [MON-F] во время включения станции\n"
+"     (на экране появится «CLONE»).\n"
+"4. <b>После нажатия «OK»</b> нажмите клавишу [BAND] для отправки образа.\n"
+
+#: ../drivers/vx7.py:200
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [MON-F] key while turning the radio on\n"
+"     (\"CLONE\" will appear on the display).\n"
+"4. Press the [V/M] key (\"CLONE WAIT\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте клавишу [MON-F] во время включения станции\n"
+"     (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [V/M] (на экране появится «CLONE WAIT»).\n"
+
+#: ../drivers/ft60.py:360
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [MONI] switch while turning the\n"
+"     radio on.\n"
+"4. Rotate the DIAL job to select \"F8 CLONE\".\n"
+"5. Press the [F/W] key momentarily.\n"
+"6. <b>After clicking OK</b>, hold the [PTT] switch\n"
+"     for one second to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте переключатель [MONI] во время включения\n"
+"     станции.\n"
+"4. Поверните регулятор DIAL для выбора «F8 CLONE».\n"
+"5. Кратко нажмите клавишу [F/W].\n"
+"6. <b>После нажатия «OK»</b> удерживайте переключатель [PTT]\n"
+"     в течение одной секунды для отправки образа.\n"
+
+#: ../drivers/ft60.py:369
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [MONI] switch while turning the\n"
+"     radio on.\n"
+"4. Rotate the DIAL job to select \"F8 CLONE\".\n"
+"5. Press the [F/W] key momentarily.\n"
+"6. Press the [MONI] switch (\"--RX--\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте переключатель [MONI] во время включения\n"
+"     станции.\n"
+"4. Поверните регулятор DIAL для выбора «F8 CLONE».\n"
+"5. Кратко нажмите клавишу [F/W].\n"
+"6. Нажмите переключатель [MONI] (на экране появится «--RX--»).\n"
+
+#: ../drivers/vx170.py:105
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to MIC/SP jack.\n"
+"3. Press and hold in the [moni] key while turning the radio on.\n"
+"4. Select CLONE in menu, then press F. Radio restarts in clone mode.\n"
+"     (\"CLONE\" will appear on the display).\n"
+"5. <b>After clicking OK</b>, briefly hold [PTT] key to send image.\n"
+"    (\"-TX-\" will appear on the LCD). \n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму MIC/SP.\n"
+"3. Нажмите и удерживайте клавишу [moni] во время включения\n"
+"     станции.\n"
+"4. Выберите в меню CLONE, затем нажмите F. Станция перезагрузится\n"
+"     в режиме клонирования (на экране появится «CLONE»).\n"
+"5. <b>После нажатия «OK»</b> кратко удерживайте клавишу [PTT] для\n"
+"     отправки образа (на экране появится «-TX-»).\n"
+
+#: ../drivers/ft1802.py:96
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic jack.\n"
+"3. Press and hold in the [LOW(A/N)] key while turning the radio on.\n"
+"4. <b>After clicking OK</b>, press the [MHz(SET)] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму микрофона.\n"
+"3. Нажмите и удерживайте клавишу [LOW(A/N)] во время включения\n"
+"     станции.\n"
+"4. <b>После нажатия «OK»</b> нажмите клавишу [MHz(SET)] для\n"
+"     отправки образа.\n"
+
+#: ../drivers/ft1802.py:103
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic jack.\n"
+"3. Press and hold in the [LOW(A/N)] key while turning the radio on.\n"
+"4. Press the [D/MR(MW)] key (\"--WAIT--\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму микрофона.\n"
+"3. Нажмите и удерживайте клавишу [LOW(A/N)] во время включения\n"
+"     станции.\n"
+"4. Нажмите клавишу [D/MR(MW)] (на экране появится «--WAIT--»).\n"
+
+#: ../drivers/ft1500m.py:96
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic jack.\n"
+"3. Press and hold in the [MHz], [LOW], and [D/MR] keys\n"
+"   while turning the radio on.\n"
+"4. <b>After clicking OK</b>, press the [MHz(SET)] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму микрофона.\n"
+"3. Нажмите и удерживайте клавиши [MHz], [LOW] и [D/MR]\n"
+"     во время включения станции.\n"
+"4. <b>После нажатия «OK»</b> нажмите клавишу [MHz(SET)]\n"
+"     для отправки образа.\n"
+
+#: ../drivers/ft1500m.py:103
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic jack.\n"
+"3. Press and hold in the [MHz], [LOW], and [D/MR] keys\n"
+"   while turning the radio on.\n"
+"4. Press the [D/MR(MW)] key (\"--WAIT--\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к разъёму микрофона.\n"
+"3. Нажмите и удерживайте клавиши [MHz], [LOW] и [D/MR]\n"
+"   во время включения станции.\n"
+"4. Нажмите клавишу [D/MR(MW)] (на экране появится «--WAIT--»).\n"
+
+#: ../drivers/uv5r.py:834
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Turn radio on (volume may need to be set at 100%).\n"
+"5. Ensure that the radio is tuned to channel with no activity.\n"
+"6. Click OK to download image from device.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Включите станцию (может потребоваться установить громкость на 100%).\n"
+"5. Убедитесь, что станция настроена на неактивный канал.\n"
+"6. Нажмите «ОК» для загрузки образа с устройства.\n"
+
+#: ../drivers/uv5r.py:842
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Turn radio on (volume may need to be set at 100%).\n"
+"5. Ensure that the radio is tuned to channel with no activity.\n"
+"6. Click OK to upload image to device.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Включите станцию (может потребоваться установить громкость на 100%).\n"
+"5. Убедитесь, что станция настроена на неактивный канал.\n"
+"6. Нажмите «ОК» для отправки образа на устройство.\n"
+
+#: ../drivers/uvb5.py:293 ../drivers/wouxun.py:222 ../drivers/tg_uv2p.py:232
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Turn radio on.\n"
+"5. Ensure that the radio is tuned to channel with no activity.\n"
+"6. Click OK to download image from device.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Включите станцию.\n"
+"5. Убедитесь, что станция настроена на неактивный канал.\n"
+"6. Нажмите «ОК» для загрузки образа с устройства.\n"
+
+#: ../drivers/uvb5.py:301 ../drivers/wouxun.py:230 ../drivers/tg_uv2p.py:240
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Turn radio on.\n"
+"5. Ensure that the radio is tuned to channel with no activity.\n"
+"6. Click OK to upload image to device.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Включите станцию.\n"
+"5. Убедитесь, что станция настроена на неактивный канал.\n"
+"6. Нажмите «ОК» для отправки образа на устройство.\n"
+
+#: ../drivers/vx150.py:352
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect clone cable to the MIC/SP jack.\n"
+"3. Press and hold [PTT] and [Lamp] while turning the radio on.\n"
+"4. Rotate the dial to select \"CLONE\", then press [F].\n"
+"     (\"CLONE\" will appear on the display)\n"
+"5. <b>After clicking OK</b>, hold [PTT] briefly to transmit.\n"
+"     (\"SENDING\" will appear on the display)\n"
+msgstr ""
+
+#: ../drivers/vx150.py:360
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect clone cable to the MIC/SP jack.\n"
+"3. Press and hold [PTT] and [Lamp] while turning the radio on.\n"
+"4. Rotate the dial to select \"CLONE\", then press [F].\n"
+"     (\"CLONE\" will appear on the display)\n"
+"5. Press [MONI] to receive.\n"
+"     (\"SAVING\" will appear on the display)\n"
+msgstr ""
+
+#: ../drivers/yaesu_clone.py:247
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect data cable.\n"
+"3. Prepare radio for clone.\n"
+"4. <b>After clicking OK</b>, press the key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Подготовьте станцию для клонирования.\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу для отправки образа.\n"
+
+#: ../drivers/yaesu_clone.py:252
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect data cable.\n"
+"3. Prepare radio for clone.\n"
+"4. Press the key to receive the image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите кабель передачи данных.\n"
+"3. Подготовьте станцию для клонирования.\n"
+"4. Нажмите клавишу для получения образа.\n"
+
+#: ../drivers/ft90.py:194
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect mic and hold [ACC] on mic while powering on.\n"
+"    (\"CLONE\" will appear on the display)\n"
+"3. Replace mic with PC programming cable.\n"
+"4. <b>After clicking OK</b>, press the [SET] key to send image.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите микрофон и удерживайте на микрофоне [ACC]\n"
+"     во время включения станции (на экране появится «CLONE»).\n"
+"3. Замените микрофон на кабель программирования PC.\n"
+"4. <b>После нажатия «ОК»</b> нажмите клавишу [SET] для\n"
+"     отправки образа.\n"
+
+#: ../drivers/ft90.py:201
+msgid ""
+"1. Turn radio off.\n"
+"2. Connect mic and hold [ACC] on mic while powering on.\n"
+"    (\"CLONE\" will appear on the display)\n"
+"3. Replace mic with PC programming cable.\n"
+"4. Press the [DISP/SS] key\n"
+"    (\"R\" will appear on the lower left of LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Подключите микрофон и удерживайте на микрофоне [ACC]\n"
+"     во время включения станции (на экране появится «CLONE»).\n"
+"3. Замените микрофон на кабель программирования PC.\n"
+"4. Нажмите клавишу [DISP/SS] (в левой нижней части экрана\n"
+"     появится «R»).\n"
+
+#: ../drivers/bj9900.py:102
+msgid ""
+"1. Turn radio off.\n"
+"2. Remove front head.\n"
+"3. Connect data cable to radio, use the same connector where\n"
+"     head was connected to, <b>not the mic connector</b>.\n"
+"4. Click OK.\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Уберите переднюю головку.\n"
+"3. Подключите кабель передачи данных к станции, используя тот же коннектор,\n"
+"     к которому была подключена головка, а <b>на коннектор микрофона</b>.\n"
+"4. Нажмите «ОК».\n"
+
+#: ../drivers/vx170.py:116
+msgid ""
+"1. Turn radio off.\n"
+"3. Press and hold in the [moni] key while turning the radio on.\n"
+"4. Select CLONE in menu, then press F. Radio restarts in clone mode.\n"
+"     (\"CLONE\" will appear on the display).\n"
+"5. Press the [moni] key (\"-RX-\" will appear on the LCD).\n"
+msgstr ""
+"1. Выключите станцию.\n"
+"2. Нажмите и удерживайте клавишу [moni] во время включения станции.\n"
+"3. Выберите CLONE в меню, затем нажмите F. Станция перезагрузится\n"
+"     в режиме клонирования (на экране появится «CLONE»).\n"
+"4. Нажмите клавишу [moni] (на экране появится «-RX-»).\n"
+
+#: ../drivers/ft70.py:573
+msgid ""
+"1. Turn radio on.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Unclip battery.\n"
+"4. Press and hold in the [AMS] key and power key while clipping \n"
+" in back battery the (\"ADMS\" will appear on the display).\n"
+"5. Press the [MODE] key (\"-WAIT-\" will appear on the LCD).\n"
+"<b>Then click OK</b>"
+msgstr ""
+"1. Включите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Отсоедините батарею.\n"
+"4. Нажмите и удерживайте клавишу [AMS] и клавишу питания во время \n"
+" установки батареи обратно (на экране появится «ADMS»).\n"
+"5. Нажмите клавишу [MODE] (на экране появится «-WAIT-»).\n"
+"<b>Затем нажмите «ОК».</b>"
+
+#: ../drivers/ft70.py:565
+msgid ""
+"1. Turn radio on.\n"
+"2. Connect cable to DATA terminal.\n"
+"3. Unclip battery.\n"
+"4. Press and hold in the [AMS] key and power key while clipping \n"
+" in back battery the(\"ADMS\" will appear on the display).\n"
+"5. <b>After clicking OK</b>, press the [BAND] key.\n"
+msgstr ""
+"1. Включите станцию.\n"
+"2. Подключите кабель к терминалу DATA.\n"
+"3. Отсоедините батарею.\n"
+"4. Нажмите и удерживайте клавишу [AMS] и клавишу питания во время \n"
+" установки батареи обратно (на экране появится «ADMS»).\n"
+"5. <b>После нажатия «ОК»</b> нажмите клавишу [BAND].\n"
+
+#: ../drivers/uvk5.py:621
+msgid ""
+"1. Turn radio on.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Click OK to download image from device.\n"
+"\n"
+"It will may not work if you turn on the radio with the cable already attached\n"
+msgstr ""
+"1. Включите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Нажмите «ОК» для загрузки образа с устройства.\n"
+"\n"
+"Загрузка может не получиться, если вы включите станцию, когда кабель уже подключён\n"
+
+#: ../drivers/uvk5.py:628
+msgid ""
+"1. Turn radio on.\n"
+"2. Connect cable to mic/spkr connector.\n"
+"3. Make sure connector is firmly connected.\n"
+"4. Click OK to upload the image to device.\n"
+"\n"
+"It will may not work if you turn on the radio with the cable already attached"
+msgstr ""
+"1. Включите станцию.\n"
+"2. Подключите кабель к коннектору микрофона/spkr.\n"
+"3. Убедитесь, что коннектор плотно соединён.\n"
+"4. Нажмите «ОК» для отправки образа на устройство.\n"
+"\n"
+"Отправка может не получиться, если вы включите станцию, когда кабель уже подключён"
+
+#: ../wxui/main.py:2143
+msgid "A new CHIRP version is available. Please visit the website as soon as possible to download it!"
+msgstr "Доступная новая версия программы CHIRP. Как можно скорее загрузите её на веб-сайте!"
+
+#: ../drivers/ga510.py:1090
+msgid "AM mode does not allow duplex or tone"
+msgstr "AM-режим не позволяет использовать дуплекс или тон"
+
+#: ../wxui/main.py:976
+msgid "About"
+msgstr "О программе"
+
+#: ../wxui/main.py:1908
+msgid "About CHIRP"
+msgstr "О программе CHIRP"
+
+#: ../wxui/main.py:1963
+msgid "Agree"
+msgstr "Принять"
+
+#: ../chirp_common.py:1883
+msgid "Aircraft frequencies must be aligned to 25kHz, 8.33kHz, be or a valid channel"
+msgstr ""
+
+#: ../wxui/query_sources.py:452 ../wxui/query_sources.py:453
+msgid "All"
+msgstr "Все"
+
+#: ../wxui/main.py:1361
+msgid "All Files"
+msgstr "Все файлы"
+
+#: ../wxui/main.py:1372
+msgid "All supported formats"
+msgstr "Все поддерживаемые форматы"
+
+#: ../wxui/clone.py:626
+msgid "Always start with recent list"
+msgstr "Всегда использовать список недавних"
+
+#: ../wxui/query_sources.py:354 ../wxui/query_sources.py:444
+msgid "Amateur"
+msgstr "Любительская радиосвязь"
+
+#: ../wxui/bugreport.py:344 ../wxui/bugreport.py:478 ../wxui/common.py:781
+msgid "An error has occurred"
+msgstr "Ошибка"
+
+#: ../wxui/clone.py:145
+msgid "Applying settings"
+msgstr "Применение параметров"
+
+#: ../wxui/main.py:1629
+msgid "Automatic from system"
+msgstr "Автоматически из системы"
+
+#: ../wxui/developer.py:665
+msgid "Available modules"
+msgstr "Доступные модули"
+
+#: ../wxui/main.py:2072
+msgid "Bandplan"
+msgstr "Частотный план"
+
+#: ../wxui/query_sources.py:481 ../wxui/query_sources.py:700
+#: ../wxui/query_sources.py:858
+msgid "Bands"
+msgstr "Полосы частот"
+
+#: ../wxui/main.py:211
+msgid "Banks"
+msgstr "Банки"
+
+#: ../wxui/developer.py:282
+msgid "Bin"
+msgstr "Бинарный"
+
+#: ../wxui/main.py:222
+msgid "Browser"
+msgstr "Браузер"
+
+#: ../wxui/bugreport.py:488
+#, python-format
+msgid "Bug number %s is closed"
+msgstr "Ошибка с номером %s закрыта"
+
+#: ../wxui/bugreport.py:477
+msgid "Bug number not found"
+msgstr "Ошибка с этим номером не найдена"
+
+#: ../wxui/bugreport.py:454
+msgid "Bug number:"
+msgstr "Номер ошибки:"
+
+#: ../wxui/bugreport.py:387
+msgid "Bug subject:"
+msgstr "Тема ошибки:"
+
+#: ../wxui/developer.py:494
+msgid "Building Radio Browser"
+msgstr "Браузер станций"
+
+#: ../wxui/main.py:1658
+msgid "CHIRP must be restarted for the new selection to take effect"
+msgstr "Для применения изменений необходимо перезапустить CHIRP"
+
+#: ../wxui/query_sources.py:178
+#, python-format
+msgid "Cached results can only be included for a proximity query with Latitude, Longitude, and Distance set. Please uncheck \"%s\""
+msgstr "Когда выполняется запрос с учётом расположения, кэшированные результаты можно включить только при условии указания «Широты», «Долготы» и «Расстояния». Снимите флажок «%s»"
+
+#: ../wxui/query_sources.py:1067
+msgid "Canada"
+msgstr "Канада"
+
+#: ../wxui/common.py:652
+msgid "Changing this setting requires refreshing the settings from the image, which will happen now."
+msgstr "Для изменения этого параметра требуется обновить параметры из образа, что и будет сейчас выполнено."
+
+#: ../wxui/memedit.py:1884
+#, python-format
+msgid "Channels with equivalent TX and RX %s are represented by tone mode of \"%s\""
+msgstr "Каналы с эквивалентными TX и RX %s представлены видом субтона «%s»."
+
+#: ../wxui/main.py:1360
+msgid "Chirp Image Files"
+msgstr "Файлы образов Chirp"
+
+#: ../wxui/memedit.py:500
+msgid "Choice Required"
+msgstr "Необходимо сделать выбор"
+
+#: ../wxui/memedit.py:1863
+#, python-format
+msgid "Choose %s DTCS Code"
+msgstr "Выберите код DTCS %s"
+
+#: ../wxui/memedit.py:1860
+#, python-format
+msgid "Choose %s Tone"
+msgstr "Выберите тон %s"
+
+#: ../wxui/memedit.py:1894
+msgid "Choose Cross Mode"
+msgstr "Выберите кросс-режим"
+
+#: ../wxui/main.py:1197
+msgid "Choose Diff Target"
+msgstr "Выбор цели сравнения"
+
+#: ../wxui/clone.py:607
+msgid "Choose a recent model"
+msgstr "Выберите недавнюю модель"
+
+#: ../wxui/memedit.py:1924
+msgid "Choose duplex"
+msgstr "Выберите дуплекс"
+
+#: ../wxui/developer.py:664
+#, python-format
+msgid "Choose the module to load from issue %i:"
+msgstr "Выберите модуль для загрузки из задачи %i:"
+
+#: ../wxui/query_sources.py:563
+msgid "City"
+msgstr "Город"
+
+#: ../wxui/main.py:1949
+msgid "Click here for full license text"
+msgstr "Нажмите сюда для просмотра полного текста лицензии"
+
+#: ../wxui/main.py:1928
+msgid "Click here for online documentation"
+msgstr "Нажмите сюда для просмотра онлайн-документации"
+
+#: ../drivers/ts590.py:678
+msgid ""
+"Click on the \"Special Channels\" toggle-button of the memory\n"
+"editor to see/set the EXT channels. P-VFO channels 100-109\n"
+"are considered Settings.\n"
+"Only a subset of the over 200 available radio settings\n"
+"are supported in this release.\n"
+"Ignore the beeps from the radio on upload and download.\n"
+msgstr ""
+"Нажмите кнопку-переключатель «Special Channels» редактора ячеек\n"
+"памяти, чтобы просмотреть/задать каналы EXT. Каналы P-VFO 100-109\n"
+"считаются параметрами.\n"
+"В этой версии поддерживается только часть из более чем 200 доступных\n"
+"параметров станции.\n"
+"Игнорируйте звуковые сигналы от станции при отправке и загрузке.\n"
+
+#: ../drivers/ft817.py:360
+msgid "Clone completed, checking for spurious bytes"
+msgstr "Клонирование завершено, проверка наличия ложных байтов"
+
+#: ../wxui/common.py:125
+msgid "Cloning"
+msgstr "Клонирование"
+
+#: ../drivers/bj9900.py:133 ../drivers/ft450d.py:511 ../drivers/ft4.py:332
+#: ../drivers/ft817.py:343
+msgid "Cloning from radio"
+msgstr "Клонирование из станции"
+
+#: ../drivers/bj9900.py:165 ../drivers/ft450d.py:540 ../drivers/ft4.py:333
+#: ../drivers/ft817.py:381
+msgid "Cloning to radio"
+msgstr "Клонирование на станцию"
+
+#: ../wxui/main.py:1074 ../wxui/main.py:1964
+msgid "Close"
+msgstr "Закрыть"
+
+#: ../wxui/memquery.py:151
+msgid "Close String"
+msgstr "Закрыть строку"
+
+#: ../wxui/main.py:1075
+msgid "Close file"
+msgstr "Закрыть файл"
+
+#: ../wxui/memquery.py:209
+msgid "Close string value with double-quote (\")"
+msgstr "Закрыть строковое значение двойной кавычкой (\")"
+
+#: ../wxui/memedit.py:2306
+#, python-format
+msgid "Cluster %i memory"
+msgid_plural "Cluster %i memories"
+msgstr[0] "Объединить ячейки памяти (%i) в кластер"
+msgstr[1] "Объединить ячейки памяти (%i) в кластер"
+msgstr[2] "Объединить ячейки памяти (%i) в кластер"
+
+#: ../wxui/memedit.py:706
+msgid "Comment"
+msgstr "Комментарий"
+
+#: ../wxui/clone.py:319
+msgid "Communicate with radio"
+msgstr "Обмен данными со станцией"
+
+#: ../wxui/clone.py:153
+msgid "Complete"
+msgstr "Завершено"
+
+#: ../wxui/memedit.py:158
+msgid "Complex or non-standard tone squelch mode (starts the tone mode selection wizard)"
+msgstr "Сложный или нестандартный режим тонального шумоподавления (запускает мастер выбора вида субтона)"
+
+#: ../drivers/tmd710.py:184 ../drivers/tmd710.py:187
+msgid ""
+"Connect your interface cable to the PC Port on the\n"
+"back of the 'TX/RX' unit. NOT the Com Port on the head.\n"
+msgstr ""
+"Подключите ваш интерфейсный кабель к PC-порту на\n"
+"задней стороне модуля «TX/RX». НЕ к COM-порту на головке.\n"
+
+#: ../wxui/query_sources.py:407
+msgid "Convert to FM"
+msgstr "Преобразовать в FM"
+
+#: ../wxui/memedit.py:2217
+msgid "Copy"
+msgstr "Копировать"
+
+#: ../wxui/memedit.py:2221
+msgid "Copy portable"
+msgstr "Копировать портативно"
+
+#: ../wxui/query_sources.py:352 ../wxui/query_sources.py:569
+#: ../wxui/query_sources.py:659
+msgid "Country"
+msgstr "Страна"
+
+#: ../wxui/memedit.py:689
+msgid "Cross Mode"
+msgstr "Кросс-режим"
+
+#: ../wxui/clone.py:568
+msgid "Custom Port"
+msgstr "Пользовательский порт"
+
+#: ../wxui/clone.py:42
+msgid "Custom..."
+msgstr "Пользовательский..."
+
+#: ../wxui/memedit.py:2212
+msgid "Cut"
+msgstr "Вырезать"
+
+#: ../wxui/memedit.py:2486
+#, python-format
+msgid "Cut %i memories"
+msgstr "Вырезать ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:620
+msgid "DTCS"
+msgstr "DTCS"
+
+#: ../wxui/memedit.py:666
+msgid ""
+"DTCS\n"
+"Polarity"
+msgstr ""
+"Полярность\n"
+"DTCS"
+
+#: ../drivers/uvk5.py:845
+msgid "DTMF decode"
+msgstr "Расшифровка DTMF"
+
+#: ../wxui/memedit.py:2945
+msgid "DV Memory"
+msgstr "DV-память"
+
+#: ../wxui/main.py:1985
+msgid "Danger Ahead"
+msgstr "Впереди опасность"
+
+#: ../wxui/developer.py:281
+msgid "Dec"
+msgstr "Десятичный"
+
+#: ../wxui/memedit.py:2232
+msgid "Delete"
+msgstr "Удалить"
+
+#: ../wxui/memedit.py:2095
+msgid "Delete memories"
+msgstr "Удалить ячейки памяти"
+
+#: ../wxui/bugreport.py:568
+msgid "Detailed information"
+msgstr "Подробная информация"
+
+#: ../wxui/main.py:981
+msgid "Developer Mode"
+msgstr "Режим разработчика"
+
+#: ../wxui/main.py:1991
+#, python-format
+msgid "Developer state is now %s. CHIRP must be restarted to take effect"
+msgstr "Режим разработчика теперь %s. Для применения изменений необходимо перезапустить CHIRP"
+
+#: ../wxui/memedit.py:2343 ../wxui/developer.py:98
+msgid "Diff Raw Memories"
+msgstr "Сравнить необработанные ячейки памяти"
+
+#: ../wxui/memedit.py:2351
+msgid "Diff against another editor"
+msgstr "Сравнить с другим редактором"
+
+#: ../wxui/memedit.py:2862
+msgid "Digital Code"
+msgstr "Цифровой код"
+
+#: ../wxui/query_sources.py:411
+msgid "Digital Modes"
+msgstr "Цифровые режимы"
+
+#: ../wxui/main.py:2003
+msgid "Disable reporting"
+msgstr "Отключить отправку отчётов"
+
+#: ../wxui/memedit.py:596
+msgid "Disabled"
+msgstr "Отключено"
+
+#: ../wxui/query_sources.py:104 ../wxui/query_sources.py:383
+#: ../wxui/query_sources.py:682 ../wxui/query_sources.py:840
+msgid "Distance"
+msgstr "Расстояние"
+
+#: ../wxui/clone.py:207
+#, python-format
+msgid "Do not prompt again for %s"
+msgstr "Не запрашивать снова для %s"
+
+#: ../wxui/clone.py:204
+msgid "Do you accept the risk?"
+msgstr "Вы принимаете этот риск?"
+
+#: ../wxui/bankedit.py:190
+msgid "Double-click to change bank name"
+msgstr "Сделайте двойной щелчок, чтобы изменить имя банка"
+
+#: ../wxui/main.py:1076
+msgid "Download"
+msgstr "Загрузить"
+
+#: ../wxui/main.py:1077
+msgid "Download from radio"
+msgstr "Загрузить из станции"
+
+#: ../wxui/main.py:867
+msgid "Download from radio..."
+msgstr "Загрузить из станции..."
+
+#: ../wxui/clone.py:791
+msgid "Download instructions"
+msgstr "Инструкции по загрузке"
+
+#: ../wxui/radioinfo.py:66
+msgid "Driver"
+msgstr "Драйвер"
+
+#: ../drivers/uvk5.py:1263
+msgid "Driver information"
+msgstr "Сведения о драйвере"
+
+#: ../wxui/main.py:573
+msgid "Driver messages"
+msgstr "Сообщения драйвера"
+
+#: ../wxui/query_sources.py:409
+msgid "Dual-mode digital repeaters that support analog will be shown as FM"
+msgstr "Цифровые репитеры с двойным режимом, которые поддерживают аналоговый сигнал, будут показаны как FM"
+
+#: ../wxui/memedit.py:559
+msgid "Duplex"
+msgstr "Дуплекс"
+
+#: ../wxui/memedit.py:2373
+#, python-format
+msgid "Edit %i memories"
+msgstr "Изменить ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:2892
+#, python-format
+msgid "Edit details for %i memories"
+msgstr "Редактировать сведения о ячейках памяти (%i)"
+
+#: ../wxui/memedit.py:2890
+#, python-format
+msgid "Edit details for memory %i"
+msgstr "Редактировать сведения о ячейке памяти %i"
+
+#: ../wxui/main.py:925
+msgid "Enable Automatic Edits"
+msgstr "Включить автоматическое редактирование"
+
+#: ../wxui/memedit.py:596
+msgid "Enabled"
+msgstr "Включено"
+
+#: ../wxui/memedit.py:404
+msgid "Enter Frequency"
+msgstr "Введите частоту"
+
+#: ../wxui/memedit.py:1911
+msgid "Enter Offset (MHz)"
+msgstr "Введите смещение (МГц)"
+
+#: ../wxui/memedit.py:1903
+msgid "Enter TX Frequency (MHz)"
+msgstr "Введите частоту TX (МГц)"
+
+#: ../wxui/bankedit.py:203
+#, python-format
+msgid "Enter a new name for bank %s:"
+msgstr "Введите новое имя банка %s:"
+
+#: ../wxui/clone.py:567
+msgid "Enter custom port:"
+msgstr "Введите пользовательский порт:"
+
+#: ../wxui/bugreport.py:502
+msgid "Enter details about this update. Be descriptive about what you were doing, what you expected to happen, and what actually happened."
+msgstr "Введите подробные сведения об этом обновлении. В деталях расскажите о том, что вы делали, что должно было произойти и что случилось на самом деле. "
+
+#: ../wxui/bugreport.py:370
+msgid "Enter information about the bug including a short but meaningful subject and information about the radio model (if applicable) in question. In the next step you will have a chance to add more details about the problem. Before proceeding, please search for duplicate issues!"
+msgstr ""
+
+#: ../wxui/bugreport.py:521
+msgid "Enter information to add to the bug here"
+msgstr "Введите здесь сведения, которые будут добавлены к сообщению об ошибке"
+
+#: ../wxui/bugreport.py:445
+msgid "Enter the bug number that should be updated"
+msgstr "Введите номер ошибки, данные которой следует обновить"
+
+#: ../wxui/bugreport.py:248
+msgid "Enter your username and password for chirpmyradio.com. If you do not have an account click below to create one before proceeding."
+msgstr "Введите ваши имя пользователя и пароль на chirpmyradio.com. Если у вас нет учётной записи, нажмите ниже, чтобы создать её и продолжить."
+
+#: ../wxui/common.py:340
+#, python-format
+msgid "Erased memory %s"
+msgstr "Стёрта ячейка памяти %s"
+
+#: ../wxui/memquery.py:336
+msgid "Error applying filter"
+msgstr "Ошибка применения фильтра"
+
+#: ../wxui/settingsedit.py:156
+msgid "Error applying settings"
+msgstr "Ошибка применения параметров"
+
+#: ../wxui/clone.py:696
+msgid "Error communicating with radio"
+msgstr "Ошибка обмена данными со станцией"
+
+#: ../wxui/memquery.py:236
+msgid "Example: \"foo\""
+msgstr "Пример: \"foo\""
+
+#: ../wxui/memquery.py:244
+msgid "Example: ( expression )"
+msgstr "Пример: ( выражение )"
+
+#: ../wxui/memquery.py:238
+msgid "Example: 123"
+msgstr "Пример: 123"
+
+#: ../wxui/memquery.py:240
+msgid "Example: 146.52"
+msgstr "Пример: 146.52"
+
+#: ../wxui/memquery.py:242
+msgid "Example: AND, OR"
+msgstr "Пример: AND, OR"
+
+#: ../wxui/memquery.py:250
+msgid "Example: freq<146.0,148.0>"
+msgstr "Пример: freq<146.0,148.0>"
+
+#: ../wxui/memquery.py:248
+msgid "Example: name=\"myrepeater"
+msgstr "Пример: name=\"myrepeater"
+
+#: ../wxui/memquery.py:246
+msgid "Example: name~\"myrepea\""
+msgstr "Пример: name~\"myrepea\""
+
+#: ../wxui/query_sources.py:404
+msgid "Exclude private and closed repeaters"
+msgstr "Исключить приватные и закрытые ретрансляторы"
+
+#: ../wxui/clone.py:750
+msgid "Experimental driver"
+msgstr "Экспериментальный драйвер"
+
+#: ../wxui/memedit.py:2805
+msgid "Export can only write CSV files"
+msgstr "При экспорте можно выполнять запись только в файлы CSV"
+
+#: ../wxui/main.py:1517
+msgid "Export to CSV"
+msgstr "Экспорт в CSV"
+
+#: ../wxui/main.py:739
+msgid "Export to CSV..."
+msgstr "Экспорт в CSV..."
+
+#: ../wxui/memedit.py:2934
+msgid "Extra"
+msgstr "Дополнительно"
+
+#: ../drivers/uvk5.py:1261
+msgid "FM Radio"
+msgstr "FM-приёмник"
+
+#: ../wxui/query_sources.py:998
+msgid ""
+"FREE repeater database, which provides information\n"
+"about repeaters in Europe. No account is required."
+msgstr ""
+"БЕСПЛАТНАЯ база данных репитеров, которая предоставляет\n"
+"информацию о репитерах в Европе. Учётная запись не требуется."
+
+#: ../wxui/query_sources.py:714
+msgid ""
+"FREE repeater database, which provides most up-to-date\n"
+"information about repeaters in Europe. No account is\n"
+"required."
+msgstr ""
+"БЕСПЛАТНАЯ база данных репитеров, содержащая самые\n"
+"актуальные сведения о репитерах в Европе. Учётная запись\n"
+"не требуется."
+
+#: ../wxui/memedit.py:2843
+msgid "Failed to export some memories"
+msgstr ""
+
+#: ../wxui/developer.py:502
+msgid "Failed to load radio browser"
+msgstr "Не удалось загрузить браузер станций"
+
+#: ../sources/przemienniki_eu.py:57 ../sources/przemienniki_net.py:59
+#: ../sources/mapy73pl.py:61
+msgid "Failed to parse result"
+msgstr "Не удалось проанализировать результат"
+
+#: ../wxui/bugreport.py:729
+msgid "Failed to send bug report:"
+msgstr "Не удалось отправить отчёт об ошибке:"
+
+#: ../wxui/radioinfo.py:47
+msgid "Features"
+msgstr "Функции"
+
+#: ../wxui/bugreport.py:212
+msgid "File a new bug"
+msgstr "Отправить отчёт о новой ошибке"
+
+#: ../wxui/main.py:580
+#, python-format
+msgid "File does not exist: %s"
+msgstr "Файл не существует: %s"
+
+#: ../wxui/main.py:1364 ../wxui/main.py:1444 ../wxui/main.py:1454
+#: ../wxui/main.py:1513 ../wxui/main.py:1878 ../wxui/main.py:1879
+msgid "Files"
+msgstr "Файлы"
+
+#: ../wxui/bugreport.py:566
+msgid "Files:"
+msgstr "Файлы:"
+
+#: ../wxui/query_sources.py:389
+msgid "Filter"
+msgstr "Фильтр"
+
+#: ../wxui/query_sources.py:387
+msgid "Filter results with location matching this string"
+msgstr "Фильтровать результаты с расположением, соответствующим этой строке"
+
+#: ../wxui/memquery.py:270
+msgid "Filter..."
+msgstr "Фильтр…"
+
+#: ../wxui/main.py:1587
+msgid "Find"
+msgstr "Найти"
+
+#: ../wxui/main.py:807
+msgid "Find Next"
+msgstr "Найти далее"
+
+#: ../wxui/main.py:793
+msgid "Find..."
+msgstr "Найти..."
+
+#: ../wxui/memquery.py:155
+msgid "Finish Float"
+msgstr "Завершать float"
+
+#: ../wxui/memquery.py:211
+msgid "Finish float value like: 146.52"
+msgstr "Завершать значение типа float, например: 146.52"
+
+#: ../wxui/common.py:342
+#, python-format
+msgid "Finished radio job %s"
+msgstr "Завершено задание станции %s"
+
+#: ../drivers/ts590.py:685
+msgid ""
+"Follow these instructions to download the radio memory:\n"
+"1 - Connect your interface cable\n"
+"2 - Radio > Download from radio: DO NOT mess with the radio\n"
+"during download!\n"
+"3 - Disconnect your interface cable\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить память станции:\n"
+"1 - Подключите ваш интерфейсный кабель\n"
+"2 - Станция > Загрузить из станции: НЕ трогайте станцию\n"
+"во время загрузки!\n"
+"3 - Отключите ваш интерфейсный кабель\n"
+
+#: ../drivers/ts480.py:524
+msgid ""
+"Follow these instructions to download the radio memory:\n"
+"1 - Connect your interface cable\n"
+"2 - Radio > Download from radio: Don't adjust any settings\n"
+"on the radio head!\n"
+"3 - Disconnect your interface cable\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить память станции:\n"
+"1 - Подключите ваш интерфейсный кабель\n"
+"2 - Станция > Загрузить из станции: не настраивайте\n"
+"радиоголовку!\n"
+"3 - Отключите ваш интерфейсный кабель\n"
+
+#: ../drivers/th_uv8000.py:521
+msgid ""
+"Follow these instructions to download the radio memory:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio, volume @ 50%\n"
+"4 - CHIRP Menu - Radio - Download from radio\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить память станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию, громкость @ 50%\n"
+"4 - Меню CHIRP - Станция - Загрузить из станции\n"
+
+#: ../drivers/ic2730.py:306
+msgid ""
+"Follow these instructions to download your config:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable to the Speaker-2 jack\n"
+"3 - Turn on your radio\n"
+"4 - Radio > Download from radio\n"
+"5 - Disconnect the interface cable! Otherwise there will be\n"
+"    no right-side audio!\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить вашу конфигурацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель к разъему Speaker-2\n"
+"3 - Включите вашу станцию\n"
+"4 - Станция > Загрузить из станции\n"
+"5 - Отключите интерфейсный кабель! Иначе с правой стороны\n"
+"    не будет звука!\n"
+
+#: ../drivers/mursv1.py:341 ../drivers/baofeng_wp970i.py:327
+#: ../drivers/btech.py:666 ../drivers/gmrsuv1.py:391
+#: ../drivers/tdxone_tdq8a.py:444 ../drivers/uv6r.py:339
+#: ../drivers/uv5x3.py:417 ../drivers/gmrsv2.py:363
+#: ../drivers/baofeng_uv17Pro.py:514 ../drivers/bf_t1.py:484
+msgid ""
+"Follow these instructions to download your info:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the download of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить вашу информацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните загрузку ваших радиоданных\n"
+
+#: ../drivers/tk690.py:569 ../drivers/tk760g.py:686
+msgid ""
+"Follow these instructions to download your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio (unlock it if password protected)\n"
+"4 - Click OK to start\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию (разблокируйте её, если есть защита паролем)\n"
+"4 - Чтобы начать, нажмите «OK»\n"
+
+#: ../drivers/tk760.py:343
+msgid ""
+"Follow these instructions to read your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Click OK to start\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы прочитать данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Чтобы начать, нажмите «OK»\n"
+
+#: ../drivers/ts590.py:691
+msgid ""
+"Follow these instructions to upload the radio memory:\n"
+"1 - Connect your interface cable\n"
+"2 - Radio > Upload to radio: DO NOT mess with the radio\n"
+"during upload!\n"
+"3 - Disconnect your interface cable\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить память станции:\n"
+"1 - Подключите ваш интерфейсный кабель\n"
+"2 - Станция > Отправить на станцию: не трогайте\n"
+"станцию во время отправки!\n"
+"3 - Отключите ваш интерфейсный кабель\n"
+
+#: ../drivers/ts480.py:530
+msgid ""
+"Follow these instructions to upload the radio memory:\n"
+"1 - Connect your interface cable\n"
+"2 - Radio > Upload to radio: Don't adjust any settings\n"
+"on the radio head!\n"
+"3 - Disconnect your interface cable\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить память станции:\n"
+"1 - Подключите ваш интерфейсный кабель\n"
+"2 - Станция > Отправить на станцию: не настраивайте\n"
+"радиоголовку!\n"
+"3 - Отключите ваш интерфейсный кабель\n"
+
+#: ../drivers/th_uv8000.py:527
+msgid ""
+"Follow these instructions to upload the radio memory:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio, volume @ 50%\n"
+"4 - CHIRP Menu - Radio - Upload to radio\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить память станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию, громкость @ 50%\n"
+"4 - Меню CHIRP - Станция - Отправить на станцию\n"
+
+#: ../drivers/ic2730.py:314
+msgid ""
+"Follow these instructions to upload your config:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable to the Speaker-2 jack\n"
+"3 - Turn on your radio\n"
+"4 - Radio > Upload to radio\n"
+"5 - Disconnect the interface cable, otherwise there will be\n"
+"    no right-side audio!\n"
+"6 - Cycle power on the radio to exit clone mode\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить вашу конфигурацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель к разъему Speaker-2\n"
+"3 - Включите вашу станцию\n"
+"4 - Станция > Отправить на станцию\n"
+"5 - Отключите интерфейсный кабель, иначе с правой стороны\n"
+"    не будет звука!\n"
+"6 - Выключите и снова включите питание станции, чтобы выйти\n"
+"    из режима клонирования\n"
+
+#: ../drivers/btech.py:672 ../drivers/bf_t1.py:490
+msgid ""
+"Follow these instructions to upload your info:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the upload of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить вашу информацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните отправку ваших радиоданных\n"
+
+#: ../drivers/tk690.py:575 ../drivers/tk760g.py:692
+msgid ""
+"Follow these instructions to upload your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio (unlock it if password protected)\n"
+"4 - Click OK to start\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию (разблокируйте её, если есть защита паролем)\n"
+"4 - Чтобы начать, нажмите «ОК»\n"
+
+#: ../drivers/tk760.py:349
+msgid ""
+"Follow these instructions to write your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Click OK to start\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы записать данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Чтобы начать, нажмите «ОК»\n"
+
+#: ../drivers/vgc.py:586 ../drivers/lt725uv.py:486
+msgid ""
+"Follow this instructions to download your info:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the download of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы загрузить вашу информацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните загрузку ваших радиоданных\n"
+
+#: ../drivers/tk270.py:323
+msgid ""
+"Follow this instructions to read your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the download of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы прочитать данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните загрузку ваших радиоданных\n"
+
+#: ../drivers/vgc.py:592 ../drivers/mursv1.py:347
+#: ../drivers/baofeng_wp970i.py:333 ../drivers/gmrsuv1.py:397
+#: ../drivers/lt725uv.py:492 ../drivers/tdxone_tdq8a.py:450
+#: ../drivers/uv6r.py:345 ../drivers/uv5x3.py:423 ../drivers/gmrsv2.py:369
+#: ../drivers/baofeng_uv17Pro.py:520
+msgid ""
+"Follow this instructions to upload your info:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the upload of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы отправить вашу информацию:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните отправку ваших радиоданных\n"
+
+#: ../drivers/tk270.py:329
+msgid ""
+"Follow this instructions to write your radio:\n"
+"1 - Turn off your radio\n"
+"2 - Connect your interface cable\n"
+"3 - Turn on your radio\n"
+"4 - Do the upload of your radio data\n"
+msgstr ""
+"Следуйте этим инструкциям, чтобы записать данные вашей станции:\n"
+"1 - Выключите вашу станцию\n"
+"2 - Подключите ваш интерфейсный кабель\n"
+"3 - Включите вашу станцию\n"
+"4 - Выполните отправку ваших радиоданных\n"
+
+#: ../wxui/memedit.py:238
+#, python-format
+msgid "Found empty list value for %(name)s: %(value)r"
+msgstr "Найдено значение пустого списка для %(name)s: %(value)r"
+
+#: ../wxui/memedit.py:350
+msgid "Frequency"
+msgstr "Частота"
+
+#: ../import_logic.py:77
+#, python-format
+msgid "Frequency %s is out of supported ranges %s"
+msgstr ""
+
+#: ../wxui/memedit.py:162
+msgid "Frequency granularity in kHz"
+msgstr "Гранулярность по частоте (кГц)"
+
+#: ../drivers/ga510.py:1094 ../drivers/mml_jc8810.py:1383
+#: ../drivers/tdh8.py:2540 ../drivers/retevis_ha1g.py:1439
+#: ../drivers/uv5r.py:2244 ../drivers/baofeng_uv17Pro.py:1297
+msgid "Frequency in this range must not be AM mode"
+msgstr "Для частоты в этом диапазоне не должен использоваться AM-режим"
+
+#: ../drivers/retevis_ha1g.py:1430
+msgid "Frequency in this range not supported by firmware"
+msgstr ""
+
+#: ../drivers/ga510.py:1087 ../drivers/radtel_rt900.py:1623
+#: ../drivers/mml_jc8810.py:1380 ../drivers/tdh8.py:2537
+#: ../drivers/retevis_ha1g.py:1435 ../drivers/uv5r.py:2240
+#: ../drivers/baofeng_uv17Pro.py:1294
+msgid "Frequency in this range requires AM mode"
+msgstr "Для частоты в этом диапазоне должен использоваться AM-режим"
+
+#: ../drivers/tdh8.py:2544
+msgid "Frequency outside TX bands must be duplex=off"
+msgstr "Для частоты вне полос частот TX должно использоваться duplex=off"
+
+#: ../wxui/query_sources.py:355 ../wxui/query_sources.py:435
+#: ../wxui/query_sources.py:536
+msgid "GMRS"
+msgstr "GMRS"
+
+#: ../wxui/settingsedit.py:77
+msgid "Getting settings"
+msgstr "Получение параметров"
+
+#: ../wxui/memedit.py:1408
+msgid "Goto Memory"
+msgstr "Перейти к ячейке памяти"
+
+#: ../wxui/memedit.py:1407
+msgid "Goto Memory:"
+msgstr "Переход к ячейке памяти:"
+
+#: ../wxui/memedit.py:1354
+msgid "Goto..."
+msgstr "Переход..."
+
+#: ../wxui/common.py:516 ../wxui/accessibility.py:310
+#, python-format
+msgid "Group: %s"
+msgstr ""
+
+#: ../wxui/main.py:1042
+msgid "Help"
+msgstr "Справка"
+
+#: ../wxui/clone.py:41
+msgid "Help Me..."
+msgstr "Помощь..."
+
+#: ../wxui/developer.py:280
+msgid "Hex"
+msgstr "Шестнадцатеричный"
+
+#: ../wxui/memedit.py:1363
+msgid "Hide empty memories"
+msgstr "Скрыть пустые ячейки памяти"
+
+#: ../drivers/retevis_rt98.py:998
+msgid "Honor the CTCSS/DCS receive squelch configuration when enabled, else only carrier squelch"
+msgstr "Применять конфигурацию шумоподавления при получении тона CTCSS/DCS, когда соответствующий параметр включён, в ином случае — только шумоподавление по силе сигнала"
+
+#: ../wxui/memedit.py:165
+msgid "Human-readable comment (not stored in radio)"
+msgstr "Доступный для прочтения человеком комментарий (не хранится на станции)"
+
+#: ../wxui/bugreport.py:413
+msgid "I have"
+msgstr ""
+
+#: ../wxui/query_sources.py:366 ../wxui/query_sources.py:372
+#: ../wxui/query_sources.py:666 ../wxui/query_sources.py:672
+#: ../wxui/query_sources.py:818 ../wxui/query_sources.py:824
+msgid "If set, sort results by distance from these coordinates"
+msgstr "Если установлено, упорядочить результаты по расстоянию от этих координат"
+
+#: ../wxui/main.py:1499
+msgid "Import"
+msgstr "Импорт"
+
+#: ../wxui/memedit.py:2522
+#, python-format
+msgid "Import %i memories"
+msgstr "Импортировать ячейки памяти (%i)"
+
+#: ../wxui/main.py:733
+msgid "Import from file..."
+msgstr "Импорт из файла..."
+
+#: ../wxui/main.py:1503
+msgid "Import messages"
+msgstr "Сообщения импорта"
+
+#: ../wxui/main.py:1497
+msgid "Import not recommended"
+msgstr "Импорт не рекомендуется"
+
+#: ../wxui/query_sources.py:424
+msgid "Include Cached"
+msgstr "Включить кэшированные"
+
+#: ../wxui/bankedit.py:62
+msgid "Index"
+msgstr "Индекс"
+
+#: ../wxui/main.py:224
+msgid "Info"
+msgstr "Информация"
+
+#: ../wxui/memedit.py:1886
+msgid "Information"
+msgstr "Информация"
+
+#: ../wxui/memedit.py:2206
+msgid "Insert Row Above"
+msgstr "Вставить строку выше"
+
+#: ../wxui/__init__.py:60
+msgid "Install desktop icon?"
+msgstr "Создать значок на рабочем столе?"
+
+#: ../wxui/main.py:965
+msgid "Interact with driver"
+msgstr "Обмен данными с драйвером"
+
+#: ../wxui/clone.py:813
+msgid "Internal driver error"
+msgstr "Внутренняя ошибка драйвера"
+
+#: ../chirp_common.py:674
+msgid "Internal driver error: Attempt to modify frozen memory; Please report this as a bug using \"Report or update a bug\" in the Help menu"
+msgstr ""
+
+#: ../wxui/query_sources.py:62
+#, python-format
+msgid "Invalid %(value)s (use decimal degrees)"
+msgstr "%(value)s — неверно (используйте десятичные градусы)"
+
+#: ../wxui/query_sources.py:70 ../wxui/query_sources.py:124
+#: ../wxui/memedit.py:2049
+msgid "Invalid Entry"
+msgstr "Некорректная запись"
+
+#: ../wxui/query_sources.py:151
+msgid "Invalid ZIP code"
+msgstr "Неверный почтовый индекс"
+
+#: ../wxui/memedit.py:2048 ../wxui/memedit.py:3027
+#, python-format
+msgid "Invalid edit: %s"
+msgstr "Некорректное изменение: %s"
+
+#: ../wxui/query_sources.py:124
+msgid "Invalid locator"
+msgstr "Некорректный локатор"
+
+#: ../wxui/main.py:1875
+msgid "Invalid or unsupported module file"
+msgstr "Некорректный или неподдерживаемый файл модуля"
+
+#: ../wxui/memedit.py:296 ../wxui/memedit.py:302
+#, python-format
+msgid "Invalid value: %r"
+msgstr "Неверное значение: %r"
+
+#: ../wxui/developer.py:631
+#, python-format
+msgid "Issue %i is not in a valid state to load modules. It is highly recommended that you not attempt to manually load modules from this issue as it is likely to cause problems."
+msgstr ""
+
+#: ../wxui/developer.py:686
+msgid "Issue number:"
+msgstr "Номер задачи:"
+
+#: ../wxui/main.py:352
+msgid "LIVE"
+msgstr "В ЭФИРЕ"
+
+#: ../drivers/radtel_rt490.py:1028 ../wxui/main.py:853 ../wxui/main.py:1643
+msgid "Language"
+msgstr "Язык"
+
+#: ../wxui/query_sources.py:92 ../wxui/query_sources.py:374
+#: ../wxui/query_sources.py:674 ../wxui/query_sources.py:826
+msgid "Latitude"
+msgstr "Широта"
+
+#: ../wxui/developer.py:261
+#, python-format
+msgid "Length must be %i"
+msgstr "Длина должна составлять %i"
+
+#: ../wxui/query_sources.py:395 ../wxui/query_sources.py:634
+#: ../wxui/query_sources.py:787
+msgid "Limit Bands"
+msgstr "Ограничение полос частот"
+
+#: ../wxui/query_sources.py:400 ../wxui/query_sources.py:1287
+msgid "Limit Modes"
+msgstr "Ограничение режимов"
+
+#: ../wxui/query_sources.py:649 ../wxui/query_sources.py:802
+msgid "Limit Status"
+msgstr "Ограничение состояния"
+
+#: ../wxui/query_sources.py:811
+msgid "Limit prefixes"
+msgstr "Ограничение префиксов"
+
+#: ../wxui/query_sources.py:381 ../wxui/query_sources.py:680
+#: ../wxui/query_sources.py:838
+msgid "Limit results to this distance (km) from coordinates"
+msgstr "Ограничение результатов этим расстоянием (км) от координат"
+
+#: ../wxui/query_sources.py:405
+msgid "Limit use"
+msgstr "Ограничение использования"
+
+#: ../wxui/main.py:1730
+msgid "Live Radio"
+msgstr "Станция в эфире"
+
+#: ../wxui/main.py:745
+msgid "Load Module..."
+msgstr "Загрузить модуль..."
+
+#: ../wxui/developer.py:687
+msgid "Load module from issue"
+msgstr "Загрузить модуль из задачи"
+
+#: ../wxui/main.py:1018
+msgid "Load module from issue..."
+msgstr "Загрузить модуль из задачи..."
+
+#: ../wxui/main.py:2039
+msgid "Loading a module will not affect open tabs. It is recommended (unless instructed otherwise) to close all tabs before loading a module."
+msgstr "Загрузка модуля не повлияет на открытые вкладки. Рекомендуется (если в инструкции не указано иное) закрыть все вкладки перед загрузкой модуля."
+
+#: ../wxui/main.py:1882
+msgid "Loading modules can be extremely dangerous, leading to damage to your computer, radio, or both. NEVER load a module from a source you do not trust, and especially not from anywhere other than the main CHIRP website (chirpmyradio.com). Loading a module from another source is akin to giving them direct access to your computer and everything on it! Proceed despite this risk?"
+msgstr "Загрузка модулей может представлять опасность для вашего компьютера и/или станции. НИКОГДА не загружайте модуль из источника, которому вы не доверяете, в особенности — из любого источника, отличного от основного веб-сайта CHIRP (chirpmyradio.com). Загрузить модуль из другого источника — всё равно что предоставить прямой доступ к своему компьютеру и всему на нём! Продолжить несмотря на этот риск?"
+
+#: ../wxui/clone.py:147
+msgid "Loading settings"
+msgstr "Загрузка параметров"
+
+#: ../wxui/query_sources.py:110
+msgid "Locator"
+msgstr "Локатор"
+
+#: ../wxui/bugreport.py:342
+msgid "Login failed: Check your username and password"
+msgstr "Не удалось войти: проверьте правильность ваших имени пользователя и пароля"
+
+#: ../drivers/uvk5.py:1765
+msgid "Logo string 1 (12 characters)"
+msgstr "Строка логотипа 1 (12 символов)"
+
+#: ../drivers/uvk5.py:1772
+msgid "Logo string 2 (12 characters)"
+msgstr "Строка логотипа 2 (12 символов)"
+
+#: ../wxui/query_sources.py:98 ../wxui/query_sources.py:375
+#: ../wxui/query_sources.py:675 ../wxui/query_sources.py:827
+msgid "Longitude"
+msgstr "Долгота"
+
+#: ../wxui/memedit.py:2061
+#, python-format
+msgid "Manual edit of memory %i"
+msgstr "Изменение ячейки памяти %i вручную"
+
+#: ../wxui/main.py:203
+msgid "Memories"
+msgstr "Ячейки памяти"
+
+#: ../drivers/uvk5.py:2088
+msgid "Memories are read-only due to unsupported firmware version"
+msgstr "Ячейки памяти доступны только для чтения из-за неподдерживаемой версии микропрограммы"
+
+#: ../wxui/memedit.py:2090
+#, python-format
+msgid "Memory %i is not deletable"
+msgstr "Ячейку памяти %i нельзя удалить"
+
+#: ../wxui/memedit.py:120
+msgid "Memory List"
+msgstr ""
+
+#: ../wxui/memquery.py:203
+#, python-format
+msgid "Memory field name (one of %s)"
+msgstr "Название поля памяти (одно из следующих значений: %s)"
+
+#: ../wxui/memedit.py:150
+msgid "Memory label (stored in radio)"
+msgstr "Подпись ячейки памяти (хранится на станции)"
+
+#: ../wxui/bankedit.py:242
+msgid "Memory must be in a bank to be edited"
+msgstr "Чтобы редактировать ячейку памяти, необходимо поместить её в банк"
+
+#: ../drivers/vx5.py:133
+#, python-brace-format
+msgid "Memory {num} not in bank {bank}"
+msgstr "Ячейка памяти {num} отсутствует в банке {bank}"
+
+#: ../wxui/query_sources.py:626 ../wxui/query_sources.py:779
+#: ../wxui/memedit.py:675
+msgid "Mode"
+msgstr "Режим"
+
+#: ../wxui/clone.py:357
+msgid "Model"
+msgstr "Модель"
+
+#: ../wxui/query_sources.py:502 ../wxui/query_sources.py:1300
+msgid "Modes"
+msgstr "Режимы"
+
+#: ../wxui/main.py:1879
+msgid "Module"
+msgstr "Модуль"
+
+#: ../wxui/main.py:1851
+msgid "Module Loaded"
+msgstr "Модуль загружен"
+
+#: ../wxui/main.py:2050
+msgid "Module loaded successfully"
+msgstr "Модуль успешно загружен"
+
+#: ../wxui/common.py:797
+msgid "More Info"
+msgstr "Подробности"
+
+#: ../wxui/clone.py:515
+#, python-format
+msgid "More than one port found: %s"
+msgstr "Найдено более одного порта: %s"
+
+#: ../wxui/memedit.py:2743
+#, python-format
+msgid "Move %i memories"
+msgstr "Переместить ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:1350
+msgid "Move Down"
+msgstr "Переместить вниз"
+
+#: ../wxui/memedit.py:1340
+msgid "Move Up"
+msgstr "Переместить вверх"
+
+#: ../wxui/memedit.py:2713
+msgid "Move operations are disabled while the view is sorted"
+msgstr "Операции перемещения отключены, пока область просмотра упорядочена"
+
+#: ../wxui/main.py:691
+msgid "New Window"
+msgstr "Новое окно"
+
+#: ../wxui/main.py:2145
+msgid "New version available"
+msgstr "Доступна новая версия"
+
+#: ../wxui/memedit.py:2390
+msgid "No empty rows below!"
+msgstr "Ниже нет пустых строк!"
+
+#: ../wxui/memquery.py:254
+#, python-format
+msgid "No example for %s"
+msgstr "Нет примера для %s"
+
+#: ../wxui/developer.py:706
+msgid "No modules found"
+msgstr "Модули не найдены"
+
+#: ../wxui/developer.py:705
+#, python-format
+msgid "No modules found in issue %i"
+msgstr "В задаче %i не найдены модули"
+
+#: ../wxui/memedit.py:2576
+msgid "No more space available; some memories were not applied"
+msgstr "Свободного места больше нет; некоторые ячейки памяти не применены"
+
+#: ../sources/przemienniki_eu.py:53 ../sources/przemienniki_net.py:55
+#: ../sources/mapy73pl.py:57
+msgid "No results"
+msgstr "Нет результатов"
+
+#: ../sources/repeaterbook.py:371
+msgid "No results!"
+msgstr "Нет результатов!"
+
+#: ../wxui/main.py:2060
+msgid "No traces stored"
+msgstr ""
+
+#: ../wxui/query_sources.py:45 ../wxui/memedit.py:1407
+msgid "Number"
+msgstr "Число"
+
+#: ../wxui/memedit.py:346
+msgid "Offset"
+msgstr "Смещение"
+
+#: ../wxui/memedit.py:344
+msgid ""
+"Offset/\n"
+"TX Freq"
+msgstr ""
+"Смещение/\n"
+"Частота TX"
+
+#: ../wxui/memquery.py:252
+#, python-format
+msgid "One of: %s"
+msgstr "Одно из следующих значений: %s"
+
+#: ../wxui/query_sources.py:393 ../wxui/query_sources.py:632
+#: ../wxui/query_sources.py:785
+msgid "Only certain bands"
+msgstr "Только некоторые полосы частот"
+
+#: ../wxui/query_sources.py:398 ../wxui/query_sources.py:1283
+msgid "Only certain modes"
+msgstr "Только некоторые режимы"
+
+#: ../wxui/query_sources.py:809
+msgid "Only certain prefixes"
+msgstr "Только некоторые префиксы"
+
+#: ../wxui/main.py:333
+msgid "Only memory tabs may be exported"
+msgstr "Можно экспортировать только вкладки памяти"
+
+#: ../wxui/query_sources.py:643 ../wxui/query_sources.py:796
+msgid "Only working repeaters"
+msgstr "Только работающие репитеры"
+
+#: ../wxui/main.py:1070 ../wxui/main.py:1499
+msgid "Open"
+msgstr "Открыть"
+
+#: ../wxui/main.py:720
+msgid "Open Recent"
+msgstr "Открыть недавние"
+
+#: ../wxui/main.py:702
+msgid "Open Stock Config"
+msgstr "Открыть предустановленную конфигурацию"
+
+#: ../wxui/main.py:1071 ../wxui/main.py:1375
+msgid "Open a file"
+msgstr "Открыть файл"
+
+#: ../wxui/main.py:1897
+msgid "Open a module"
+msgstr "Открыть модуль"
+
+#: ../wxui/main.py:1002
+msgid "Open debug log"
+msgstr "Открыть журнал отладки"
+
+#: ../wxui/main.py:544
+msgid "Open in new window"
+msgstr "Открыть в новом окне"
+
+#: ../wxui/main.py:1033
+msgid "Open last serial trace"
+msgstr ""
+
+#: ../wxui/query_sources.py:402
+msgid "Open repeaters only"
+msgstr "Открыть только репитеры"
+
+#: ../wxui/main.py:649
+msgid "Open stock config directory"
+msgstr "Открыть каталог предустановленной конфигурации"
+
+#: ../wxui/memquery.py:143
+msgid "Operator"
+msgstr "Оператор"
+
+#: ../wxui/query_sources.py:994
+msgid "Option"
+msgstr "Опция"
+
+#: ../wxui/query_sources.py:371 ../wxui/query_sources.py:671
+msgid "Optional: -122.0000"
+msgstr "Опционально: -122.0000"
+
+#: ../wxui/query_sources.py:380 ../wxui/query_sources.py:679
+#: ../wxui/query_sources.py:837
+msgid "Optional: 100"
+msgstr "Опционально: 100"
+
+#: ../wxui/query_sources.py:823
+msgid "Optional: 20.0000"
+msgstr "Опционально: 20.0000"
+
+#: ../wxui/query_sources.py:365 ../wxui/query_sources.py:665
+msgid "Optional: 45.0000"
+msgstr "Опционально: 45.0000"
+
+#: ../wxui/query_sources.py:817
+msgid "Optional: 52.0000"
+msgstr "Опционально: 52.0000"
+
+#: ../wxui/query_sources.py:831
+msgid "Optional: AA00 - AA00aa11"
+msgstr "Опционально: AA00 - AA00aa11"
+
+#: ../wxui/query_sources.py:386
+msgid "Optional: County, Hospital, etc."
+msgstr "Опционально: округ, больница и т.д."
+
+#: ../wxui/memedit.py:2556
+msgid "Overwrite memories?"
+msgstr "Перезаписать ячейки памяти?"
+
+#: ../drivers/ts480.py:520
+msgid ""
+"P-VFO channels 100-109 are considered Settings.\n"
+"Only a subset of the over 130 available radio settings\n"
+"are supported in this release.\n"
+msgstr ""
+"Каналы P-VFO 100-109 считаются параметрами.\n"
+"В этой версии поддерживается только часть из\n"
+"более чем 130 доступных параметров станции.\n"
+
+#: ../sources/przemienniki_eu.py:48 ../sources/przemienniki_net.py:50
+#: ../sources/mapy73pl.py:52
+msgid "Parsing"
+msgstr "Анализ"
+
+#: ../wxui/bugreport.py:275
+msgid "Password"
+msgstr "Пароль"
+
+#: ../wxui/memedit.py:2226
+msgid "Paste"
+msgstr "Вставить"
+
+#: ../wxui/common.py:952
+msgid "Paste external memories"
+msgstr "Вставить внешние ячейки памяти"
+
+#: ../wxui/memedit.py:2656
+msgid "Paste memories"
+msgstr "Вставить ячейки памяти"
+
+#: ../wxui/memedit.py:2550
+#, python-format
+msgid "Pasted memories will overwrite %s existing memories"
+msgstr "Вставленные ячейки памяти перезапишут существующие ячейки памяти (%s)"
+
+#: ../wxui/memedit.py:2553
+#, python-format
+msgid "Pasted memories will overwrite memories %s"
+msgstr "Вставленные ячейки памяти перезапишут ячейки памяти (%s)"
+
+#: ../wxui/memedit.py:2547
+#, python-format
+msgid "Pasted memories will overwrite memory %s"
+msgstr "Вставленные ячейки памяти перезапишут ячейку памяти %s"
+
+#: ../wxui/memedit.py:2544
+#, python-format
+msgid "Pasted memory will overwrite memory %s"
+msgstr "Вставленная ячейка памяти перезапишет ячейку памяти %s"
+
+#: ../wxui/main.py:2149
+msgid "Please be sure to quit CHIRP before installing the new version!"
+msgstr "Обязательно выйдите из программы CHIRP перед установкой новой версии!"
+
+#: ../wxui/bugreport.py:485
+msgid "Please check the bug number and try again. If you do actually want to report against this bug, please comment on it via the website and ask for it to be re-opened."
+msgstr "Проверьте правильность номера ошибки и попробуйте снова. Если вы действительно хотите отправить касающуюся этой ошибки информацию, оставьте комментарий с помощью веб-сайта и попросите снова открыть соответствующую задачу."
+
+#: ../wxui/main.py:1979
+msgid "Please note that developer mode is intended for use by developers of the CHIRP project, or under the direction of a developer. It enables behaviors and functions that can damage your computer and your radio if not used with EXTREME care. You have been warned! Proceed anyway?"
+msgstr "Обратите внимание, что режим разработчика предназначен для использования разработчиками проекта CHIRP или под руководством разработчика. В этом режиме включаются поведение и функции, которые следует использовать КРАЙНЕ осторожно, чтобы не навредить вашему компьютеру и вашей станции. Вы были предупреждены. Всё равно продолжить?"
+
+#: ../wxui/common.py:205
+msgid "Please wait"
+msgstr "Подождите"
+
+#: ../wxui/clone.py:492
+msgid "Plug in your cable and then click OK"
+msgstr "Подключите кабель и нажмите «ОК»"
+
+#: ../wxui/query_sources.py:889
+msgid "Polish repeaters database"
+msgstr "Польская база данных репитеров"
+
+#: ../wxui/clone.py:342
+msgid "Port"
+msgstr "Порт"
+
+#: ../wxui/memedit.py:425
+msgid "Power"
+msgstr "Мощность"
+
+#: ../wxui/query_sources.py:877
+msgid "Prefixes"
+msgstr "Префиксы"
+
+#: ../wxui/developer.py:158
+msgid "Press enter to set this in memory"
+msgstr "Нажмите «Ввод» для добавления в память"
+
+#: ../wxui/main.py:756
+msgid "Print Preview"
+msgstr "Предпросмотр"
+
+#: ../wxui/printing.py:29
+msgid "Printing"
+msgstr "Печать"
+
+#: ../wxui/clone.py:526
+msgid "Prolific USB device"
+msgstr "USB-устройство Prolific"
+
+#: ../wxui/memedit.py:2199
+msgid "Properties"
+msgstr "Свойства"
+
+#: ../wxui/memquery.py:139
+msgid "Property Name"
+msgstr "Имя свойства"
+
+#: ../wxui/memquery.py:147
+msgid "Property Value"
+msgstr "Значение свойства"
+
+#: ../wxui/query_sources.py:833
+msgid "QTH Locator"
+msgstr "QTH-локатор"
+
+#: ../wxui/main.py:2088
+#, python-format
+msgid "Query %s"
+msgstr "Запрос %s"
+
+#: ../wxui/main.py:881
+msgid "Query Source"
+msgstr "Запрос источника"
+
+#: ../wxui/memquery.py:330
+msgid "Query string is invalid"
+msgstr "Некорректная строка запроса"
+
+#: ../wxui/memquery.py:186
+msgid "Query syntax OK"
+msgstr "В синтаксисе запроса нет ошибок"
+
+#: ../wxui/memquery.py:170
+msgid "Query syntax help"
+msgstr "Справка по синтаксису запроса"
+
+#: ../sources/przemienniki_eu.py:36 ../sources/przemienniki_net.py:36
+#: ../sources/mapy73pl.py:36
+msgid "Querying"
+msgstr "Выполняется запрос"
+
+#: ../wxui/memedit.py:622
+msgid "RX DTCS"
+msgstr "DTCS RX"
+
+#: ../wxui/main.py:1041
+msgid "Radio"
+msgstr "Станция"
+
+#: ../wxui/radioinfo.py:65
+msgid "Radio Info: Driver"
+msgstr ""
+
+#: ../wxui/radioinfo.py:46
+msgid "Radio Info: Features"
+msgstr ""
+
+#: ../wxui/radioinfo.py:92
+msgid "Radio Info: Icom"
+msgstr ""
+
+#: ../wxui/radioinfo.py:120
+msgid "Radio Info: Image Metadata"
+msgstr ""
+
+#: ../drivers/ft60.py:89 ../drivers/ft60.py:91 ../drivers/ft450d.py:576
+#: ../drivers/ft817.py:410
+#, python-format
+msgid "Radio did not ack block %i"
+msgstr "Станция не распознала блок %i"
+
+#: ../wxui/clone.py:783 ../wxui/clone.py:883
+msgid "Radio information"
+msgstr "Информация о станции"
+
+#: ../wxui/bugreport.py:397
+msgid "Radio model:"
+msgstr "Модель станции:"
+
+#: ../drivers/ft817.py:365
+msgid "Radio sent data after the last awaited block, this happens when the selected model is a non-US but the radio is a US one. Please choose the correct model and try again."
+msgstr "Станция отправила данные после последнего ожидаемого блока; это происходит, когда выбранная модель не является американской, а станция является. Выберите правильную модель и повторите попытку."
+
+#: ../wxui/query_sources.py:1214
+msgid "RadioReference Canada requires a login before you can query"
+msgstr "RadioReference Canada запрашивает вход перед выполнением запроса"
+
+#: ../wxui/query_sources.py:1025
+msgid ""
+"RadioReference.com is the world's largest\n"
+"radio communications data provider\n"
+"<small>Premium account required</small>"
+msgstr ""
+"RadioReference.com — самый крупный\n"
+"мировой поставщик данных радиосвязи\n"
+"<small>Необходима учётная запись уровня «Premium»</small>"
+
+#: ../wxui/memedit.py:156
+msgid "Receive DTCS code"
+msgstr "Код DTCS для получения"
+
+#: ../wxui/memedit.py:149
+msgid "Receive frequency"
+msgstr "Частота для получения"
+
+#: ../wxui/clone.py:608
+msgid "Recent"
+msgstr "Недавние"
+
+#: ../wxui/clone.py:349
+msgid "Recent..."
+msgstr "Недавние…"
+
+#: ../drivers/retevis_rt98.py:1219
+msgid "Recommend using 55.2"
+msgstr "Рекомендуется использовать 55.2"
+
+#: ../wxui/memedit.py:1035
+msgid "Redo"
+msgstr "Вернуть"
+
+#: ../wxui/common.py:654
+msgid "Refresh required"
+msgstr "Требуется обновление"
+
+#: ../wxui/common.py:332
+#, python-format
+msgid "Refreshed memory %s"
+msgstr "Обновлена ячейка памяти %s"
+
+#: ../wxui/main.py:942
+msgid "Reload Driver"
+msgstr "Перезагрузить драйвер"
+
+#: ../wxui/main.py:951
+msgid "Reload Driver and File"
+msgstr "Перезагрузить драйвер и файл"
+
+#: ../wxui/memedit.py:1395
+msgid "Reload required"
+msgstr "Требуется перезагрузка"
+
+#: ../wxui/clone.py:628
+msgid "Remove"
+msgstr "Удалить"
+
+#: ../wxui/clone.py:629
+msgid "Remove selected model from list"
+msgstr "Удалить выбранную модель из списка"
+
+#: ../wxui/bankedit.py:205
+msgid "Rename bank"
+msgstr "Переименовать банк"
+
+#: ../wxui/query_sources.py:329
+msgid ""
+"RepeaterBook is Amateur Radio's most comprehensive,\n"
+"worldwide, FREE repeater directory."
+msgstr ""
+"RepeaterBook — самый полный доступный радиолюбителям\n"
+"БЕСПЛАТНЫЙ каталог репитеров по всему миру."
+
+#: ../wxui/main.py:1024
+msgid "Report or update a bug..."
+msgstr "Отправить отчёт об ошибке или обновить его…"
+
+#: ../wxui/bugreport.py:563
+#, python-format
+msgid "Reporting a new bug: %r"
+msgstr "Отправка отчёта о новой ошибке: %r"
+
+#: ../wxui/main.py:990
+msgid "Reporting enabled"
+msgstr "Отправка отчётов включена"
+
+#: ../wxui/main.py:1999
+msgid "Reporting helps the CHIRP project know which radio models and OS platforms to spend our limited efforts on. We would really appreciate if you left it enabled. Really disable reporting?"
+msgstr "Отправка отчётов помогает проекту CHIRP получать информацию о том, какие модели станций и платформы ОС требуют нашего внимания. Мы будем очень признательны, если вы оставите эту функцию включённой. Действительно отключить отправку отчётов?"
+
+#: ../wxui/main.py:1660 ../wxui/main.py:1993
+msgid "Restart Required"
+msgstr "Требуется перезапуск"
+
+#: ../wxui/main.py:714
+#, python-format
+msgid "Restore %i tab"
+msgid_plural "Restore %i tabs"
+msgstr[0] "Восстановить вкладки (%i)"
+msgstr[1] "Восстановить вкладки (%i)"
+msgstr[2] "Восстановить вкладки (%i)"
+
+#: ../wxui/main.py:846
+msgid "Restore tabs on start"
+msgstr "Восстановить вкладки при запуске"
+
+#: ../wxui/query_sources.py:415
+msgid "Results from other areas"
+msgstr "Результаты из других областей"
+
+#: ../wxui/common.py:336
+msgid "Retrieved settings"
+msgstr "Полученные параметры"
+
+#: ../wxui/query_sources.py:1263
+msgid ""
+"SatNOGS DB provides a live, community-maintained database\n"
+"of satellite transmitter information. This source queries\n"
+"the SatNOGS API directly for the most granular and\n"
+"up-to-date transmitter data."
+msgstr ""
+
+#: ../wxui/main.py:1072
+msgid "Save"
+msgstr "Сохранить"
+
+#: ../wxui/main.py:1534
+msgid "Save before closing?"
+msgstr "Сохранить перед закрытием?"
+
+#: ../wxui/main.py:1073 ../wxui/main.py:1458
+msgid "Save file"
+msgstr "Сохранить файл"
+
+#: ../wxui/common.py:338
+msgid "Saved settings"
+msgstr "Сохранённые параметры"
+
+#: ../wxui/memedit.py:163
+msgid "Scan control (skip, include, priority, etc)"
+msgstr "Управление сканированием (пропуск, включение, приоритет и т.д.)"
+
+#: ../drivers/uvk5.py:859
+msgid "Scanlists"
+msgstr "Списки сканирования"
+
+#: ../drivers/ksun_m6.py:418 ../drivers/uvk5.py:855
+msgid "Scrambler"
+msgstr "Скремблер"
+
+#: ../wxui/developer.py:677
+msgid "Security Risk"
+msgstr "Угроза безопасности"
+
+#: ../wxui/main.py:932
+msgid "Select Bandplan..."
+msgstr "Выбрать частотный план..."
+
+#: ../wxui/query_sources.py:481 ../wxui/query_sources.py:700
+#: ../wxui/query_sources.py:858
+msgid "Select Bands"
+msgstr "Выбор полос частот"
+
+#: ../wxui/main.py:1643
+msgid "Select Language"
+msgstr "Выбор языка"
+
+#: ../wxui/query_sources.py:502
+msgid "Select Modes"
+msgstr "Выбор режимов"
+
+#: ../wxui/query_sources.py:1300
+msgid "Select Modes to Import"
+msgstr ""
+
+#: ../wxui/main.py:2071
+msgid "Select a bandplan"
+msgstr "Выбор частотного плана"
+
+#: ../wxui/main.py:1201
+msgid "Select a tab and memory to diff"
+msgstr "Выбор вкладки и ячейки памяти для сравнения"
+
+#: ../wxui/query_sources.py:877
+msgid "Select prefixes"
+msgstr "Выбор префиксов"
+
+#: ../wxui/query_sources.py:357
+msgid "Service"
+msgstr "Служба"
+
+#: ../wxui/main.py:216
+msgid "Settings"
+msgstr "Параметры"
+
+#: ../drivers/uvk5.py:2092
+msgid "Settings are read-only due to unsupported firmware version"
+msgstr "Параметры доступны только для чтения из-за неподдерживаемой версии микропрограммы"
+
+#: ../wxui/common.py:396
+#, python-format
+msgid "Settings: %s"
+msgstr ""
+
+#: ../wxui/memedit.py:161
+msgid "Shift amount (or transmit frequency) controlled by duplex"
+msgstr "Величина сдвига (или частота передачи), которой управляет дуплекс"
+
+#: ../wxui/memedit.py:2335 ../wxui/developer.py:101
+msgid "Show Raw Memory"
+msgstr "Показать необработанную ячейку памяти"
+
+#: ../wxui/main.py:1008
+msgid "Show debug log location"
+msgstr "Показать расположение журнала отладки"
+
+#: ../wxui/memedit.py:1359
+msgid "Show extra fields"
+msgstr "Показать дополнительные поля"
+
+#: ../wxui/main.py:1013
+msgid "Show image backup location"
+msgstr "Показать расположение резервной копии образа"
+
+#: ../wxui/memedit.py:697
+msgid "Skip"
+msgstr "Пропуск"
+
+#: ../wxui/memedit.py:2647
+msgid "Some memories are incompatible with this radio"
+msgstr "Некоторые ячейки памяти несовместимы с этой станцией"
+
+#: ../wxui/memedit.py:2485
+msgid "Some memories are not deletable"
+msgstr "Некоторые ячейки памяти нельзя удалить"
+
+#: ../wxui/memedit.py:2161
+#, python-format
+msgid "Sort %i memories"
+msgstr "Упорядочить ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:2291
+#, python-format
+msgid "Sort %i memory"
+msgid_plural "Sort %i memories"
+msgstr[0] "Упорядочить ячейки памяти (%i)"
+msgstr[1] "Упорядочить ячейки памяти (%i)"
+msgstr[2] "Упорядочить ячейки памяти (%i)"
+
+#: ../wxui/memedit.py:2295
+#, python-format
+msgid "Sort %i memory ascending"
+msgid_plural "Sort %i memories ascending"
+msgstr[0] "Упорядочить ячейки памяти (%i) по возрастанию"
+msgstr[1] "Упорядочить ячейки памяти (%i) по возрастанию"
+msgstr[2] "Упорядочить ячейки памяти (%i) по возрастанию"
+
+#: ../wxui/memedit.py:2317
+#, python-format
+msgid "Sort %i memory descending"
+msgid_plural "Sort %i memories descending"
+msgstr[0] "Упорядочить ячейки памяти (%i) по убыванию"
+msgstr[1] "Упорядочить ячейки памяти (%i) по убыванию"
+msgstr[2] "Упорядочить ячейки памяти (%i) по убыванию"
+
+#: ../wxui/memedit.py:2176
+msgid "Sort by column:"
+msgstr "Сортировать по столбцу:"
+
+#: ../wxui/memedit.py:2175
+msgid "Sort memories"
+msgstr "Упорядочить ячейки памяти"
+
+#: ../sources/przemienniki_eu.py:60 ../sources/przemienniki_net.py:62
+#: ../sources/mapy73pl.py:64
+msgid "Sorting"
+msgstr "Сортировка"
+
+#: ../wxui/query_sources.py:566
+msgid "State"
+msgstr "Область"
+
+#: ../wxui/query_sources.py:360
+msgid "State/Province"
+msgstr "Область/регион"
+
+#: ../wxui/main.py:2051
+msgid "Success"
+msgstr "Успешно"
+
+#: ../wxui/bugreport.py:732
+msgid "Successfully sent bug report:"
+msgstr "Отчёт об ошибке успешно отправлен:"
+
+#: ../wxui/memedit.py:348
+msgid "TX Frequency"
+msgstr "Частота TX"
+
+#: ../wxui/memedit.py:157
+msgid "TX-RX DTCS polarity (normal or reversed)"
+msgstr "Полярность TX-RX DTCS (обычная или обратная)"
+
+#: ../drivers/ft4.py:737
+msgid ""
+"Tested and mostly works, but may give you issues\n"
+"when using lesser common radio variants.\n"
+"Proceed at your own risk, and let us know about issues!"
+msgstr ""
+"Протестировано и в большинстве случаев работает, но при использовании\n"
+"малораспространённых моделей станций могут возникать ошибки.\n"
+"Используйте на свой страх и риск; если появятся проблемы, сообщите разработчикам!"
+
+#: ../wxui/query_sources.py:574
+msgid "The DMR-MARC Worldwide Network"
+msgstr "Мировая сеть DMR-MARC"
+
+#: ../drivers/ft450d.py:416
+msgid ""
+"The FT-450D radio driver loads the 'Special Channels' tab\n"
+"with the PMS scanning range memories (group 11), 60meter\n"
+"channels (group 12), the QMB (STO/RCL) memory, the HF and\n"
+"50m HOME memories and all the A and B VFO memories.\n"
+"There are VFO memories for the last frequency dialed in\n"
+"each band. The last mem-tune config is also stored.\n"
+"These Special Channels allow limited field editing.\n"
+"This driver also populates the 'Other' tab in the channel\n"
+"memory Properties window. This tab contains values for\n"
+"those channel memory settings that don't fall under the\n"
+"standard Chirp display columns. With FT450 support, the gui now\n"
+"uses the mode 'DIG' to represent data modes and a new column\n"
+"'DATA MODE' to select USER-U, USER-L and RTTY \n"
+msgstr ""
+"Драйвер станции FT-450D загружает вкладку «Special Channels» с ячейками\n"
+"памяти в диапазоне сканирования PMS (группа 11), 60-метровыми каналами\n"
+"(группа 12), памятью QMB (STO/RCL), ячейками памяти HOME для ВЧ- и\n"
+"50-метровых каналов, а также всеми ячейками памяти A и B VFO. Имеются ячейки\n"
+"памяти VFO для последней настроенной частоты в каждой полосе. Последняя\n"
+"конфигурация mem-tune также сохраняется. Вкладка «Special Channels»\n"
+"допускает ограниченное редактирование полей.\n"
+"Этот драйвер также заполняет данными вкладку «Other» в окне «Properties»\n"
+"памяти каналов. Эта вкладка содержит значения тех параметров памяти\n"
+"каналов, которые не подпадают под стандартные столбцы экрана Chirp.\n"
+"Поддержка FT-450D означает, что в графическом интерфейсе пользователя\n"
+"теперь используется режим 'DIG' для представления режимов данных и новый\n"
+"столбец 'DATA MODE' для выбора USER-U, USER-L и RTTY \n"
+
+#: ../drivers/boblov_x3plus.py:119
+msgid ""
+"The X3Plus driver is currently experimental.\n"
+"There are no known issues but you should proceed with caution.\n"
+"Please save an unedited copy of your first successful\n"
+"download to a CHIRP Radio Images (*.img) file.\n"
+msgstr ""
+"Драйвер X3Plus является экспериментальным.\n"
+"Известных ошибок нет, но следует действовать осмотрительно.\n"
+"Сохраните нередактированную копию первой успешной\n"
+"загрузки в файл CHIRP Radio Images (*.img).\n"
+
+#: ../wxui/developer.py:674
+msgid "The author of this module is not a recognized CHIRP developer. It is recommended that you not load this module as it could pose a security risk. Proceed anyway?"
+msgstr "Автора этого модуля нет среди разработчиков CHIRP. Рекомендуется не загружать этот модуль, так как возможна угроза безопасности. Всё равно продолжить?"
+
+#: ../wxui/bugreport.py:229
+msgid "The debug log file is not available when CHIRP is run interactively from the command-line. Thus, this tool will not upload what you expect. It is recommended that you quit now and run CHIRP non-interactively (or with stdin redirected to /dev/null)"
+msgstr "Файл журнала отладки недоступен, когда CHIRP запускается в интерактивном режиме из командной строки. Следовательно, этот инструмент не выполнит отправку тех данных, которые вам нужны. Рекомендуется выполнить выход из программы и запустить CHIRP без использования интерактивного режима (или с перенаправлением stdin в /dev/null)"
+
+#: ../wxui/bugreport.py:548
+msgid "The following information will be submitted:"
+msgstr "Будет отправлена следующая информация:"
+
+#: ../wxui/memedit.py:1391
+msgid "The memory editor requires a reload in order to change the workflow. That will happen now. Any other open tabs will be updated the next time they are loaded."
+msgstr "Редактору памяти требуется перезагрузка для изменения рабочего процесса. Она будет выполнена сейчас. Все другие открытые вкладки будут обновлены при их следующей загрузке."
+
+#: ../wxui/main.py:1490
+#, python-format
+msgid "The recommended procedure for importing memories is to open the source file and copy/paste memories from it into your target image. If you continue with this import function, CHIRP will replace all memories in your currently-open file with those in %(file)s. Would you like to open this file to copy/paste memories across, or proceed with the import?"
+msgstr "Рекомендуемая процедура импорта ячеек памяти: открыть исходный файл и скопировать/вставить ячейки памяти из него в ваш целевой образ. Если продолжить работу с этой функцией импорта, CHIRP заменит все ячейки памяти в текущем открытом файле на ячейки из %(file)s. Открыть этот файл для копирования/вставки ячеек памяти или продолжить импорт?"
+
+#: ../wxui/memedit.py:2252
+msgid "This Memory"
+msgstr "Эта ячейка памяти"
+
+#: ../drivers/id5100.py:332
+msgid "This driver has been tested with v3 of the ID-5100. If your radio is not fully updated please help by opening a bug report with a debug log so we can add support for the other revisions."
+msgstr "Этот драйвер был протестирован с ID-5100 v3. Если ваша станция обновлена не полностью, создайте отчёт об ошибке и приложите к нему журнал отладки, чтобы мы могли добавить соответствующую поддержку для других версий."
+
+#: ../drivers/radtel_rt490.py:1360 ../drivers/radtel_rt490.py:1362
+#: ../drivers/radtel_rt490.py:1364
+msgid "This driver is in development and should be considered as experimental."
+msgstr "Этот драйвер находится в разработке, он считается экспериментальным."
+
+#: ../drivers/uvk5.py:686
+msgid "This image is missing firmware information. It may have been generated with an old or modified version of CHIRP. It is advised that you download a fresh image from your radio and use that going forward for the best safety and compatibility."
+msgstr "В этом образе отсутствует информация о микропрограмме. Возможно, он был создан с помощью устаревшей или модифицированной версии CHIRP. Рекомендуется загрузить свежий образ с вашей станции и в дальнейшем использовать его (это обеспечит максимальный уровень безопасности и совместимости)."
+
+#: ../drivers/uvk5.py:2096
+msgid "This image is read-only due to being from a radio with unsupported firmware"
+msgstr ""
+
+#: ../wxui/main.py:1727
+msgid "This is a live-mode radio, which means changes are sent to the radio in real-time as you make them. Upload is not necessary!"
+msgstr "Эта станция работает в режиме прямого эфира, поэтому выполняемые вами изменения отправляются на станцию в реальном времени. Специально выполнять отправку данных не требуется!"
+
+#: ../wxui/main.py:1733
+msgid "This is a radio-independent file and cannot be uploaded directly to a radio. Open a radio image (or download one from a radio) and then copy/paste items from this tab into that one in order to upload"
+msgstr "Это независимый от станции файл, его нельзя отправить на станцию напрямую. Откройте образ станции (или загрузите образ со станции), а затем скопируйте и вставьте туда элементы с этой вкладки для выполнения отправки"
+
+#: ../drivers/th_uv88.py:571
+msgid "This is an early stage beta driver\n"
+msgstr "Это ранняя бета-версия драйвера\n"
+
+#: ../drivers/th_uv88.py:573
+msgid "This is an early stage beta driver - upload at your own risk\n"
+msgstr "Это ранняя бета-версия драйвера — отправляйте на свой страх и риск\n"
+
+#: ../drivers/uvk5.py:613
+msgid ""
+"This is an experimental driver for the Quansheng UV-K5. It may harm your radio, or worse. Use at your own risk.\n"
+"\n"
+"Before attempting to do any changes please download the memory image from the radio with chirp and keep it. This can be later used to recover the original settings. \n"
+"\n"
+"some details are not yet implemented"
+msgstr ""
+"Это экспериментальный драйвер для Quansheng UV-K5. Он может как минимум повредить вашу станцию. Используйте на свой страх и риск.\n"
+"\n"
+"Прежде чем пытаться внести изменения, загрузите образ памяти со станции с помощью chirp и сохраните его. В дальнейшем этот образ будет можно использовать для восстановления исходных параметров. \n"
+"\n"
+"реализованы ещё не все возможности"
+
+#: ../drivers/bj9900.py:108
+msgid ""
+"This is experimental support for BJ-9900 which is still under development.\n"
+"Please ensure you have a good backup with OEM software.\n"
+"Also please send in bug and enhancement requests!\n"
+"You have been warned. Proceed at your own risk!"
+msgstr ""
+"Это экспериментальная поддержка для BJ-9900, она всё ещё в разработке.\n"
+"Обязательно сделайте резервную копию с помощью OEM-программы.\n"
+"Также присылайте отчёты об ошибках и предложения по улучшению.\n"
+"Вы были предупреждены; продолжайте на свой страх и риск!"
+
+#: ../wxui/bugreport.py:459
+msgid "This is the ticket number for an already-created issue on the chirpmyradio.com website"
+msgstr "Это номер для уже созданной задачи на веб-сайте chirpmyradio.com"
+
+#: ../wxui/memedit.py:2256
+msgid "This memory and shift all up"
+msgstr "Эта ячейка памяти и сдвинуть все вверх"
+
+#: ../wxui/memedit.py:2254
+msgid "This memory and shift block up"
+msgstr "Эта ячейка памяти и сдвинуть блок вверх"
+
+#: ../drivers/uvk5_egzumer.py:1468
+msgid "This option may break your radio! Each radio has a unique set of calibration data and uploading the data from the image will cause physical harm to the radio if it is from a different piece of hardware. Do not use this unless you know what you are doing and accept the risk of destroying your radio!"
+msgstr "Использование этой опции может привести к повреждению вашей станции! У каждой станции имеется уникальных набор калибровочных данных; отправка на станцию данных из образа вызовет физическое повреждение станции, если он был создан на основе другого оборудования. Используйте эту опцию только в том случае, если вы полностью уверены в своих действиях и принимаете риск повреждения вашей станции!"
+
+#: ../drivers/fd268.py:303 ../drivers/fd268.py:309
+msgid ""
+"This radio has a tricky way of enter into program mode,\n"
+"even the original software has a few tries to get inside.\n"
+"I will try 8 times (most of the time ~3 will doit) and this\n"
+"can take a few seconds, if don't work, try again a few times.\n"
+"If you can get into it, please check the radio and cable.\n"
+msgstr ""
+"На этой станции сложно войти в режим программирования, нужно\n"
+"несколько попыток даже при использовании оригинального ПО.\n"
+"Попробуйте 8 раз (в большинстве случаев достаточно ~3 раз). Вход\n"
+"может занять несколько секунд. Если не получается, сделайте ещё\n"
+"несколько попыток. Если удалось войти, проверьте станцию и кабель.\n"
+
+#: ../drivers/uvk5.py:1850
+msgid "This should only be enabled if you are using modified firmware that supports wider frequency coverage. Enabling this will cause CHIRP not to enforce OEM restrictions and may lead to undefined or unregulated behavior. Use at your own risk!"
+msgstr "Эту опцию следует включать только в том случае, если вы используете модифицированную микропрограмму, которая поддерживает более широкий диапазон частот. Если включить эту опцию, CHIRP не будет применять OEM-ограничения, что может привести к неопределённому или нерегулируемому поведению. Используйте на свой страх и риск!"
+
+#: ../wxui/query_sources.py:1235
+msgid ""
+"This source provides a curated list of active amateur radio\n"
+"satellites, mirrored from the JE9PEL database via GitHub.\n"
+"It is a stable, simplified list of popular frequencies."
+msgstr ""
+
+#: ../wxui/bugreport.py:197
+msgid "This tool will upload details about your system to an existing issue on the CHIRP tracker. It requires your username and password for chirpmyradio.com in order to work. Information about your system, including your debug log, config file, and any open image files will be uploaded. An attempt will be made to redact any personal information before it leaves your system."
+msgstr "Этот инструмент отправит сведения о вашей системе в существующую задачу в системе отслеживания ошибок CHIRP. Для этого потребуется указать ваши имя пользователя и пароль на chirpmyradio.com. После этого будет отправлена информация о вашей системе, включая журнал отладки, файл конфигурации и все открытые файлы образов (перед отправкой данные будут обезличены)."
+
+#: ../wxui/developer.py:684
+msgid "This will load a module from a website issue"
+msgstr "Будет выполнена загрузка модуля из задачи на веб-сайте"
+
+#: ../wxui/memedit.py:525
+msgid "Tone"
+msgstr "ТонПРД"
+
+#: ../wxui/memedit.py:1452
+msgid "Tone Mode"
+msgstr "Вид субтона"
+
+#: ../wxui/memedit.py:527
+msgid "Tone Squelch"
+msgstr "ТонШПД"
+
+#: ../wxui/memedit.py:151
+msgid "Tone squelch mode"
+msgstr "Режим тонального шумоподавления"
+
+#: ../wxui/memedit.py:164
+msgid "Transmit Power"
+msgstr "Мощность передачи"
+
+#: ../wxui/memedit.py:160
+msgid "Transmit shift, split mode, or transmit inhibit"
+msgstr "Сдвиг передачи, режим разделения или блокировка передачи"
+
+#: ../wxui/memedit.py:152
+msgid "Transmit tone"
+msgstr "Тон для передачи"
+
+#: ../wxui/memedit.py:155
+msgid "Transmit/receive DTCS code for DTCS mode, else transmit code"
+msgstr "Код DTCS для передачи/получения в режиме DTCS, в ином случае — код для передачи"
+
+#: ../wxui/memedit.py:154
+msgid "Transmit/receive modulation (FM, AM, SSB, etc)"
+msgstr "Модуляция для передачи/получения (FM, AM, SSB и т.д.)"
+
+#: ../wxui/memedit.py:153
+msgid "Transmit/receive tone for TSQL mode, else receive tone"
+msgstr "Тон для передачи/получения в режиме TSQL, в ином случае — тон для получения"
+
+#: ../wxui/memedit.py:462 ../wxui/memedit.py:1464
+msgid "Tuning Step"
+msgstr "Шаг настройки"
+
+#: ../wxui/memquery.py:188
+msgid "Type a simple search string or a formatted query and press enter"
+msgstr "Наберите простую строку для поиска или форматированный запрос и нажмите клавишу ввода"
+
+#: ../wxui/clone.py:486 ../wxui/clone.py:493 ../wxui/clone.py:504
+#: ../wxui/clone.py:512 ../wxui/clone.py:516
+msgid "USB Port Finder"
+msgstr "Поиск USB-портов"
+
+#: ../wxui/clone.py:502
+msgid "Unable to determine port for your cable. Check your drivers and connections."
+msgstr "Не удалось определить порт для вашего кабеля. Проверьте драйверы и подключения."
+
+#: ../wxui/memedit.py:1969
+msgid "Unable to edit memory before radio is loaded"
+msgstr "Перед редактированием ячейки памяти необходимо загрузить станцию"
+
+#: ../wxui/main.py:1416
+#, python-format
+msgid "Unable to find stock config %r"
+msgstr "Не удалось найти предустановленную конфигурацию %r"
+
+#: ../wxui/memedit.py:2502
+msgid "Unable to import while the view is sorted"
+msgstr "Невозможно выполнить импорт, пока область просмотра упорядочена"
+
+#: ../wxui/common.py:238
+msgid "Unable to open the clipboard"
+msgstr "Не удалось открыть буфер обмена"
+
+#: ../sources/przemienniki_eu.py:46 ../sources/przemienniki_net.py:48
+#: ../sources/mapy73pl.py:50
+msgid "Unable to query"
+msgstr "Не удалось выполнить запрос"
+
+#: ../drivers/ft817.py:322
+msgid "Unable to read last block. This often happens when the selected model is US but the radio is a non-US one (or widebanded). Please choose the correct model and try again."
+msgstr "Невозможно прочитать последний блок. Это часто случается, когда выбрана американская модель, но станция не является американской (или широкополосной). Выберите правильную модель и повторите попытку."
+
+#: ../wxui/common.py:849
+#, python-format
+msgid "Unable to reveal %s on this system"
+msgstr "Невозможно обнаружить %s в этой системе"
+
+#: ../wxui/memedit.py:274
+#, python-format
+msgid "Unable to set %s on this memory"
+msgstr "Невозможно установить %s для этой ячейки памяти"
+
+#: ../wxui/main.py:1737
+msgid "Unable to upload this file"
+msgstr "Невозможно отправить этот файл"
+
+#: ../wxui/memedit.py:1034
+msgid "Undo"
+msgstr "Отменить"
+
+#: ../wxui/query_sources.py:1066
+msgid "United States"
+msgstr "Соединённые Штаты"
+
+#: ../wxui/clone.py:485
+msgid "Unplug your cable (if needed) and then click OK"
+msgstr "Отключите кабель (если требуется) и нажмите «ОК»"
+
+#: ../drivers/thd74.py:337
+#, python-format
+msgid "Unsupported model %r"
+msgstr "Неподдерживаемая модель %r"
+
+#: ../wxui/bugreport.py:218
+msgid "Update an existing bug"
+msgstr "Обновить существующий отчёт об ошибке"
+
+#: ../wxui/bugreport.py:565
+#, python-format
+msgid "Updating bug %s"
+msgstr "Обновление ошибки %s"
+
+#: ../wxui/clone.py:898
+msgid "Upload instructions"
+msgstr "Отправка инструкций"
+
+#: ../drivers/uvk5.py:2084
+msgid "Upload is disabled due to unsupported firmware version"
+msgstr "Отправка отключена из-за неподдерживаемой версии микропрограммы"
+
+#: ../wxui/main.py:1079
+msgid "Upload to radio"
+msgstr "Отправка на станцию"
+
+#: ../wxui/main.py:875
+msgid "Upload to radio..."
+msgstr "Отправка на станцию..."
+
+#: ../wxui/common.py:334
+#, python-format
+msgid "Uploaded memory %s"
+msgstr "Отправлена ячейка памяти %s"
+
+#: ../wxui/memedit.py:1367
+msgid "Use TX Frequency Workflow"
+msgstr "Использовать рабочий процесс «Частота TX»"
+
+#: ../wxui/main.py:831
+msgid "Use fixed-width font"
+msgstr "Использовать моноширинный шрифт"
+
+#: ../wxui/main.py:839
+msgid "Use larger font"
+msgstr "Использовать более крупный шрифт"
+
+#: ../wxui/bugreport.py:265
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: ../wxui/developer.py:314
+#, python-format
+msgid "Value does not fit in %i bits"
+msgstr "Значение не помещается в %i бит"
+
+#: ../wxui/common.py:691
+#, python-format
+msgid "Value must be at least %.4f"
+msgstr "Значение не должно быть меньше %.4f"
+
+#: ../wxui/common.py:695
+#, python-format
+msgid "Value must be at most %.4f"
+msgstr "Значение не должно превышать %.4f"
+
+#: ../wxui/developer.py:358
+#, python-format
+msgid "Value must be exactly %i decimal digits"
+msgstr "Значение должно содержать десятичные цифры, ровно %i"
+
+#: ../wxui/developer.py:312 ../wxui/developer.py:356
+msgid "Value must be zero or greater"
+msgstr "Значение должно быть больше или равно нулю"
+
+#: ../wxui/memquery.py:206
+msgid "Value to search memory field for"
+msgstr "Значение, которое следует найти в поле памяти"
+
+#: ../wxui/memedit.py:2925
+msgid "Values"
+msgstr "Значения"
+
+#: ../wxui/clone.py:353
+msgid "Vendor"
+msgstr "Изготовитель"
+
+#: ../wxui/main.py:1040
+msgid "View"
+msgstr "Вид"
+
+#: ../wxui/common.py:639
+msgid "WARNING!"
+msgstr "ПРЕДУПРЕЖДЕНИЕ!"
+
+#: ../wxui/bugreport.py:234 ../wxui/memedit.py:2055 ../wxui/main.py:1891
+#: ../wxui/main.py:2043
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: ../wxui/memedit.py:2054
+#, python-format
+msgid "Warning: %s"
+msgstr "Предупреждение: %s"
+
+#: ../wxui/main.py:461
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: ../wxui/query_sources.py:418
+msgid "With this option checked, a proximity search will include cached results from other localities if they are in range, match other filter parameters, and have been downloaded before."
+msgstr "Если этот флажок установлен, поиск с учётом расположения будет включать кэшированные результаты из других расположений, если они в пределах диапазона, соответствуют другим параметрам фильтра и были загружены ранее."
+
+#: ../wxui/__init__.py:59
+msgid "Would you like CHIRP to install a desktop icon for you?"
+msgstr "Следует ли программе CHIRP создать значок на рабочем столе?"
+
+#: ../wxui/bugreport.py:325
+msgid "You have opened multiple issues within the last week. CHIRP limits the number of issues you can open to avoid abuse. If you really need to open another, please do so via the website."
+msgstr "На прошлой неделе вы создали несколько задач в системе отслеживания ошибок. CHIRP ограничивает количество создаваемых пользователями задач во избежание возможных злоупотреблений. Если вам действительно очень нужно создать ещё одну задачу, это можно сделать с помощью веб-сайта."
+
+#: ../wxui/clone.py:523
+msgid "Your Prolific-based USB device will not work without reverting to an older version of the driver. Visit the CHIRP website to read more about how to resolve this?"
+msgstr "Ваше USB-устройство на базе Prolific будет работать только при условии возврата к более ранней версии драйвера. Перейти на веб-сайт CHIRP для получения более подробной информации о решении этой проблемы?"
+
+#: ../wxui/query_sources.py:832
+msgid "Your QTH Locator"
+msgstr "Ваш QTH-локатор"
+
+#: ../wxui/clone.py:510
+msgid "Your cable appears to be on port:"
+msgstr "Похоже, ваш кабель вставлен в порт:"
+
+#: ../wxui/developer.py:194
+msgid "bits"
+msgstr "бит"
+
+#: ../wxui/developer.py:190
+msgid "bytes"
+msgstr "байт"
+
+#: ../wxui/developer.py:185
+msgid "bytes each"
+msgstr "байт каждый"
+
+#: ../wxui/common.py:477
+msgid "checkbox"
+msgstr ""
+
+#: ../wxui/common.py:453
+msgid "checked"
+msgstr ""
+
+#: ../wxui/main.py:1976
+msgid "disabled"
+msgstr "отключён"
+
+#: ../wxui/accessibility.py:176
+msgid "empty"
+msgstr ""
+
+#: ../wxui/main.py:1976
+msgid "enabled"
+msgstr "включён"
+
+#: ../wxui/common.py:479
+msgid "list"
+msgstr ""
+
+#: ../wxui/common.py:498
+msgid "locked"
+msgstr ""
+
+#: ../wxui/common.py:482
+msgid "number"
+msgstr ""
+
+#: ../wxui/bugreport.py:420
+msgid "searched for duplicate issues"
+msgstr ""
+
+#: ../wxui/common.py:484
+msgid "text"
+msgstr ""
+
+#: ../wxui/common.py:453
+msgid "unchecked"
+msgstr ""
+
+#: ../wxui/common.py:496
+msgid "unspecified"
+msgstr ""
+
+#: ../drivers/vx5.py:116
+#, python-brace-format
+msgid "{bank} is full"
+msgstr "{bank} полон"
+
+#~ msgid ""
+#~ " 1. Turn radio off.\n"
+#~ " 2. Connect cable to DATA terminal.\n"
+#~ " 3. Press and hold in [DISP] key while turning on radio\n"
+#~ "      (\"CLONE\" will appear on radio LCD).\n"
+#~ " 4. Press [RECEIVE] screen button\n"
+#~ "      (\"-WAIT-\" will appear on radio LCD).\n"
+#~ "5. Finally, press OK button below.\n"
+#~ msgstr ""
+#~ " 1. Выключите станцию.\n"
+#~ " 2. Подключите кабель к терминалу DATA.\n"
+#~ " 3. Нажмите и удерживайте клавишу [DISP] во время включения станции\n"
+#~ "      (на экране станции появится «CLONE»).\n"
+#~ " 4. Нажмите экранную кнопку [RECEIVE]\n"
+#~ "      (на экране станции появится «-WAIT-»).\n"
+#~ "5. Нажмите кнопку «ОК» ниже.\n"
+
+#~ msgid ""
+#~ "1. Turn radio off.\n"
+#~ "2. Connect cable to DATA terminal.\n"
+#~ "3. Press and hold [DISP] key while turning on radio\n"
+#~ "     (\"CLONE\" will appear on the display).\n"
+#~ "4. <b>After clicking OK here in chirp</b>,\n"
+#~ "     press the [Send] screen button.\n"
+#~ msgstr ""
+#~ "1. Выключите станцию.\n"
+#~ "2. Подключите кабель к терминалу DATA.\n"
+#~ "3. Нажмите и удерживайте клавишу [DISP] во время\n"
+#~ "    включения станции (на экране появится «CLONE»).\n"
+#~ "4. <b>После нажатия «ОК» в этом окне chirp</b>\n"
+#~ "    нажмите экранную кнопку [Send].\n"
+
+#~ msgid "Adding memory {number}"
+#~ msgstr "Добавление памяти {number}"
+
+#~ msgid "Adjust New Location"
+#~ msgstr "Новая позиция"
+
+#~ msgid "Auto"
+#~ msgstr "Авто"
+
+#~ msgid "Bad value for {col}: {val}"
+#~ msgstr "Некорректное значение для {col}: {val}"
+
+#~ msgid "Bank"
+#~ msgstr "Банк"
+
+#~ msgid "Bank Names"
+#~ msgstr "Имена банков"
+
+#~ msgid "CHIRP Files"
+#~ msgstr "CHIRP"
+
+#~ msgid "CHIRP Native File"
+#~ msgstr "Файл CHIRP"
+
+#~ msgid "CHIRP Radio Images"
+#~ msgstr "Образы памяти Chirp"
+
+#~ msgid "CSV File"
+#~ msgstr "CSV"
+
+#~ msgid "Callsign"
+#~ msgstr "Позывной"
+
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgid "Cancelled"
+#~ msgstr "Отменено"
+
+#~ msgid "Cannot be imported because"
+#~ msgstr "Невозможно импортировать, поскольку"
+
+#~ msgid "Choose a language or Auto to use the operating system default. You will need to restart the application before the change will take effect"
+#~ msgstr "Выберите язык или Авто для использования языка операционной системы. Вам нужно будет перезапустить приложение, прежде чем изменения вступят в силу."
+
+#~ msgid "Clone Progress"
+#~ msgstr "Загрузка"
+
+#~ msgid "Clone failed: {error}"
+#~ msgstr "Ошибка загрузки {error}"
+
+#~ msgid "Columns"
+#~ msgstr "Столбцы"
+
+#~ msgid "Confirm overwrites"
+#~ msgstr "Подтверждение перезаписи"
+
+#~ msgid "Cutting memory {number}"
+#~ msgstr "Обрезка памяти {number}"
+
+#~ msgid "D-STAR"
+#~ msgstr "D-STAR"
+
+#, fuzzy
+#~ msgid "Delete all"
+#~ msgstr "_Удалить всё"
+
+#, fuzzy
+#~ msgid "Delete and shift all up"
+#~ msgstr "Удалить (и сдвинуть вверх)"
+
+#, fuzzy
+#~ msgid "Delete and shift block up"
+#~ msgstr "Удалить (и сдвинуть вверх)"
+
+#~ msgid "Diff of {a} and {b}"
+#~ msgstr "Diff of {a} and {b}"
+
+#~ msgid "Diff raw memories"
+#~ msgstr "Diff raw memories"
+
+#~ msgid "Diff tabs"
+#~ msgstr "Diff tabs"
+
+#~ msgid "Discard Changes?"
+#~ msgstr "Не сохранять изменения?"
+
+#~ msgid "Don't show this again"
+#~ msgstr "Не отображать снова"
+
+#~ msgid "Downloading MYCALL list"
+#~ msgstr "Загрузка MYCALL"
+
+#~ msgid "Downloading RPTCALL list"
+#~ msgstr "Загрузка RPTCALL"
+
+#~ msgid "Downloading URCALL list"
+#~ msgstr "Загрузка URCALL"
+
+#~ msgid "E_xchange"
+#~ msgstr "Обмен_"
+
+#~ msgid "Editing new item, taking defaults"
+#~ msgstr "Для новой позиции настройки по умолчанию"
+
+#~ msgid "Enable Developer Functions"
+#~ msgstr "Режим разработчика"
+
+#~ msgid "Enter information about the bug including a short but meaningful subject and information about the radio model (if applicable) in question. In the next step you will have a chance to add more details about the problem."
+#~ msgstr "Введите информацию об ошибке, включая краткое, но ёмкое описание её сути, а также сведения о модели станции (если применимо). На следующем этапе у вас будет возможность предоставить более подробное описание проблемы."
+
+#~ msgid "Erasing memory {number}"
+#~ msgstr "Стирание памяти {number}"
+
+#, fuzzy
+#~ msgid "Error importing memories:"
+#~ msgstr "Ошибка импорта памяти:"
+
+#~ msgid "Error reporting is enabled"
+#~ msgstr "Отчёты об ошибках включены"
+
+#, fuzzy
+#~ msgid "Exchange memories"
+#~ msgstr "Обмен памяти"
+
+#~ msgid "Export"
+#~ msgstr "Экспорт"
+
+#, fuzzy, python-format
+#~ msgid "Failed to upload details: %s"
+#~ msgstr "Не удалось загрузить браузер станций"
+
+#~ msgid "File Exists"
+#~ msgstr "Файл существует"
+
+#, python-format
+#~ msgid "Frequency %s is out of supported range"
+#~ msgstr "Частота %s находится за пределами поддерживаемого диапазона"
+
+#~ msgid "From"
+#~ msgstr "От"
+
+#~ msgid "Getting bank for memory {num}"
+#~ msgstr "Получение банка памяти {num}"
+
+#~ msgid "Getting bank information"
+#~ msgstr "Получение информации из банка"
+
+#~ msgid "Getting bank information for memory {num}"
+#~ msgstr "Получение информации банка для памяти {num}"
+
+#~ msgid "Getting channel {chan}"
+#~ msgstr "Получение канала {chan}"
+
+#~ msgid "Getting memory {number}"
+#~ msgstr "Получение памяти {number}"
+
+#~ msgid "Getting memory {num}"
+#~ msgstr "Получение из памяти {num}"
+
+#~ msgid "Getting raw memory {number}"
+#~ msgstr "Получение бинарной памяти {number}"
+
+#~ msgid "Go"
+#~ msgstr "Ок"
+
+#~ msgid "Hide Unused Fields"
+#~ msgstr "Скрыть неиспользуемые поля"
+
+#~ msgid "ICF Files"
+#~ msgstr "ICF"
+
+#~ msgid "ICF files cannot be edited, only displayed or imported into another file. Open in read-only mode?"
+#~ msgstr "Файлы ICF не могут быть отредактированы, возможно только показать или импортировать в другой файл. Открыть только для чтения?"
+
+#~ msgid "If you wish to disable this feature you may do so in the <u>Help</u> menu"
+#~ msgstr "Отключить эту функцию можно в меню <u>Справка</u>"
+
+#~ msgid "Import from RepeaterBook"
+#~ msgstr "Импорт из RepeaterBook"
+
+#, fuzzy
+#~ msgid "Import from stock config"
+#~ msgstr "Импорт из предустановленных конфигураций"
+
+#~ msgid "Import stock configuration {name}"
+#~ msgstr "Импорт предустановленную конфигурацию {name}"
+
+#~ msgid "Importing bank information"
+#~ msgstr "Импорт информации банка"
+
+#~ msgid "Incompatible Memory"
+#~ msgstr "Несовместимая память"
+
+#~ msgid "Internal Error: Column {name} not found"
+#~ msgstr "Ошибка: Столбец {name} не найден"
+
+#~ msgid "Internal Error: Invalid limit {number}"
+#~ msgstr "Ошибка: недопустимый предел {number}"
+
+#~ msgid "Internal error: Unable to upload to {model}"
+#~ msgstr "Ошибка: Невозможно загрузить в {model}"
+
+#~ msgid "Inverse"
+#~ msgstr "Инверсия"
+
+#, fuzzy
+#~ msgid "Issue Number"
+#~ msgstr "Номер задачи:"
+
+#, fuzzy
+#~ msgid "Issue must be a number!"
+#~ msgstr "Номер задачи:"
+
+#~ msgid "Loc"
+#~ msgstr "№"
+
+#~ msgid "Location memory will be imported into"
+#~ msgstr "Позиция памяти будет импортирована в"
+
+#~ msgid "Location of memory in the file being imported"
+#~ msgstr "Позиция памяти в файле импортируется"
+
+#~ msgid "Location {number} is already being imported"
+#~ msgstr "Позиция {number} уже импортирована"
+
+#~ msgid "Location {number} is already being imported. Choose another value for 'New Location' before selection 'Import'"
+#~ msgstr "Позиция {number} уже импортирована. Выберите другое значение для \"Новая позиция\" перед выбором \"Импорт\""
+
+#~ msgid "Looking for a free spot ({number})"
+#~ msgstr "Поиск свободной точки ({number})"
+
+#~ msgid "Memories must be contiguous"
+#~ msgstr "Память должна быть непрерывной"
+
+#~ msgid "Memory range:"
+#~ msgstr "Диапазон каналов"
+
+#~ msgid "Memory {number}"
+#~ msgstr "Память {number}"
+
+#, fuzzy
+#~ msgid "Move down"
+#~ msgstr "Вниз"
+
+#, fuzzy
+#~ msgid "Move up"
+#~ msgstr "Вверх"
+
+#~ msgid "Moved {count} memories"
+#~ msgstr "Перемещенно {count} памяти"
+
+#~ msgid "Moving memory from {old} to {new}"
+#~ msgstr "Перемещение памяти из {old} в {new}"
+
+#~ msgid "Moving {src} to {dst}"
+#~ msgstr "Перемещение {src} до {dst}"
+
+#~ msgid "My callsign"
+#~ msgstr "Мой позывной"
+
+#~ msgid "Name"
+#~ msgstr "Имя"
+
+#~ msgid "None"
+#~ msgstr "Ничего"
+
+#, fuzzy
+#~ msgid "Notes"
+#~ msgstr "Заметка:"
+
+#~ msgid "Open recent file {name}"
+#~ msgstr "Открыть недавний файл {name}"
+
+#~ msgid "Overwrite"
+#~ msgstr "Перезаписать"
+
+#~ msgid "Overwrite location {number}?"
+#~ msgstr "Перезаписать расположение {number}?"
+
+#, python-format
+#~ msgid "Path %s does not exist"
+#~ msgstr "Путь %s не существует"
+
+#~ msgid ""
+#~ "Please follow this steps carefully:\n"
+#~ "1 - Turn on your radio\n"
+#~ "2 - Connect the interface cable to your radio\n"
+#~ "3 - Click the button on this window to start download\n"
+#~ "    (you may see another dialog, click ok)\n"
+#~ "4 - Radio will beep and led will flash\n"
+#~ "5 - You will get a 10 seconds timeout to press \"MON\" before\n"
+#~ "    data upload start\n"
+#~ "6 - If all goes right radio will beep at end.\n"
+#~ "After cloning remove the cable and power cycle your radio to\n"
+#~ "get into normal mode.\n"
+#~ msgstr ""
+#~ "Выполните следующие действия:\n"
+#~ "1 - Включите вашу станцию.\n"
+#~ "2 - Подключите интерфейсный кабель к вашей станции.\n"
+#~ "3 - Нажмите кнопку в этом окне для начала загрузки.\n"
+#~ "    (может появится другой диалог, нажмите «ОК»).\n"
+#~ "4 - Станция подаст звуковой сигнал, светодиод замигает.\n"
+#~ "5 - У вас будет 10 секунд для того, чтобы нажать «MON» перед\n"
+#~ "    началом отправки данных.\n"
+#~ "6 - Если всё пройдёт хорошо, по завершении станция подаст звуковой сигнал.\n"
+#~ "После выполнения клонирования уберите кабель и выключите и снова включите\n"
+#~ " питание станции для перехода в обычный режим.\n"
+
+#~ msgid ""
+#~ "Please follow this steps carefully:\n"
+#~ "1 - Turn on your radio\n"
+#~ "2 - Connect the interface cable to your radio.\n"
+#~ "3 - Click the button on this window to start download\n"
+#~ "    (Radio will beep and led will flash)\n"
+#~ "4 - Then press the \"A\" button in your radio to start cloning.\n"
+#~ "    (At the end radio will beep)\n"
+#~ msgstr ""
+#~ "Выполните следующие действия:\n"
+#~ "1 - Включите вашу станцию.\n"
+#~ "2 - Подключите интерфейсный кабель к вашей станции.\n"
+#~ "3 - Нажмите кнопку в этом окне для начала загрузки.\n"
+#~ "    (Станция подаст звуковой сигнал, светодиод замигает.)\n"
+#~ "4 - Затем нажмите кнопку «A» на вашей станции для начала клонирования.\n"
+#~ "    (По завершении станция подаст звуковой сигнал.)\n"
+
+#~ msgid "Preparing memory list..."
+#~ msgstr "Подготовка списка памяти..."
+
+#~ msgid "Priming memory"
+#~ msgstr "Первичная память"
+
+#~ msgid "RPT1CALL"
+#~ msgstr "RPT1CALL"
+
+#~ msgid "RPT2CALL"
+#~ msgstr "RPT2CALL"
+
+#~ msgid "Raw memory {number}"
+#~ msgstr "Бинарная память {number}"
+
+#~ msgid "Repeater callsign"
+#~ msgstr "Позывной репитера"
+
+#~ msgid "Report statistics"
+#~ msgstr "Отправка статистики"
+
+#~ msgid "Reverse"
+#~ msgstr "Обратный"
+
+#, fuzzy
+#~ msgid "Select"
+#~ msgstr "Выбор"
+
+#~ msgid "Setting index for memory {num}"
+#~ msgstr "Установка индекса для памяти {num}"
+
+#~ msgid "Setting memory {number}"
+#~ msgstr "Установка памяти {number}"
+
+#~ msgid "Shift"
+#~ msgstr "Сдвиг"
+
+#~ msgid "Show Empty"
+#~ msgstr "Показывать пустые"
+
+#~ msgid "Show raw memory"
+#~ msgstr "Show raw memory"
+
+#~ msgid "Special Channels"
+#~ msgstr "Специальные каналы"
+
+#, fuzzy
+#~ msgid "Status"
+#~ msgstr "Область"
+
+#~ msgid "The file {name} already exists. Do you want to overwrite it?"
+#~ msgstr "Файл {name} уже существует. Перезаписать его?"
+
+#~ msgid ""
+#~ "The reporting feature of CHIRP is designed to help <u>improve quality</u> by allowing the authors to focus on the radio drivers used most often and errors experienced by the users. The reports contain no identifying information and are used only for statistical purposes by the authors. Your privacy is extremely important, but <u>please consider leaving this feature enabled to help make CHIRP better!</u>\n"
+#~ "\n"
+#~ "<b>Are you sure you want to disable this feature?</b>"
+#~ msgstr ""
+#~ "Функция отправки отчётов позволяет авторам получать информацию об ошибках программы, чтобы своевремменно улучшать её для Вас. Никакой персональной информации при этом не собирается и не отправляется. Позволяя программе отправлять отчёты вы помогаете авторам в дальнейшем усовершенствовании программы.\n"
+#~ "\n"
+#~ "\n"
+#~ "<b>Вы действительно хотите отключить эту функцию?</b>"
+
+#~ msgid "The {vendor} {model} has multiple independent sub-devices"
+#~ msgstr "{vendor} {model} имеет несколько различных подустройства"
+
+#~ msgid "The {vendor} {model} operates in <b>live mode</b>. This means that any changes you make are immediately sent to the radio. Because of this, you cannot perform the <u>Save</u> or <u>Upload</u> operations. If you wish to edit the contents offline, please <u>Export</u> to a CSV file, using the <b>File menu</b>."
+#~ msgstr "{vendor} {model} программируется в режиме <b>онлайн</b>. Это означает, что любые изменения немедленно загружаются в станцию. По этой причине невозможно использовать операции <u>Сохранить</u> или <u>Загрузить</u>. Если вы хотите редактировать данные офлайн, то используйте <u>Экспорт</u> в файл CSV из меню <b>Файл</b>."
+
+#, fuzzy
+#~ msgid "There was an error during export: {error}"
+#~ msgstr "Ошибка открытия {fname}: {error}"
+
+#, fuzzy
+#~ msgid "There was an error during import: {error}"
+#~ msgstr "Ошибка открытия{fname}: {error}"
+
+#~ msgid "There was an error opening {fname}: {error}"
+#~ msgstr "Ошибка открытия {fname}: {error}"
+
+#~ msgid "There were errors while opening {file}. The affected memories will not be importable!"
+#~ msgstr "Были обнаружены ошибки при открытии. Затронутая память не сможет быть импортирована."
+
+#~ msgid "This operation requires moving all subsequent channels by one spot until an empty location is reached.  This can take a LONG time.  Are you sure you want to do this?"
+#~ msgstr "Эта операция потребует перемещения всех последующих каналов в одно место, пока свободное место не дудет достигнуто. Это может занять ОЧЕНЬ много времени. Вы уверены, что хотите это сделать?"
+
+#~ msgid "To"
+#~ msgstr "Для"
+
+#~ msgid "URCALL"
+#~ msgstr "URCALL"
+
+#~ msgid "Untitled"
+#~ msgstr "Новый"
+
+#~ msgid "Updating RPTCALL list"
+#~ msgstr "Обновление RPTCALL"
+
+#~ msgid "Updating bank index for memory {num}"
+#~ msgstr "Обновление индекса банка в памяти {num}"
+
+#~ msgid "Updating bank information for memory {num}"
+#~ msgstr "Обновление информации банка в памяти {num}"
+
+#~ msgid "VX7 Commander"
+#~ msgstr "VX7 Commander"
+
+#~ msgid "VX7 Commander Files"
+#~ msgstr "VX7 Commander"
+
+#~ msgid "Visible columns for {radio}"
+#~ msgstr "Видимые столбцы для  {radio}"
+
+#~ msgid "With significant contributions by:"
+#~ msgstr "При значительном участии:"
+
+#~ msgid "Writing memory {number}"
+#~ msgstr "запись памяти {number}"
+
+#~ msgid "You can only diff two memories!"
+#~ msgstr "You can only diff two memories!"
+
+#~ msgid "Your callsign"
+#~ msgstr "Ваш позывной"
+
+#~ msgid "_Copy"
+#~ msgstr "_Копировать"
+
+#~ msgid "_Cut"
+#~ msgstr "_Вырезать"
+
+#~ msgid "_Delete"
+#~ msgstr "_Удалить"
+
+#~ msgid "_Edit"
+#~ msgstr "_Правка"
+
+#~ msgid "_Paste"
+#~ msgstr "_Вставить"
+
+#~ msgid "_Radio"
+#~ msgstr "_Станция"
+
+#~ msgid "idle"
+#~ msgstr "ожидание"
+
+#~ msgid "{num} errors during open:"
+#~ msgstr "{num} ошибки(ок) во время открытия:"
+
+#~ msgid "{vendor} {model} image file"
+#~ msgstr "Изображение {vendor} {model}"
+
+#, fuzzy
+#~ msgid "{vendor} {model} on {port}"
+#~ msgstr "{vendor} {model} на {port}"

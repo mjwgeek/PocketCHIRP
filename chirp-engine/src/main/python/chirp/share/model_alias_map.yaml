@@ -1,0 +1,383 @@
+Abbree:
+- alt: Baofeng UV-82III
+  model: AR-F3
+- alt: Wouxun KG-UV8D
+  model: AR-F8
+Anysecu:
+- alt: Quansheng UV-K5
+  model: UV-K5
+Arcshell:
+- alt: Radtel T18
+  model: AR-7
+Baiston:
+- alt: Baofeng BF-888
+  model: BST-2100
+Baofeng/Pofung:
+- alt: K6
+  model: K61
+- alt: K6
+  model: K63
+- alt: K6
+  model: K6A
+- alt: 5RM
+  model: Baofeng AR-5RM
+- alt: BF-1901
+  model: Baofeng BF-1902
+- alt: BF-1901
+  model: Baofeng BF-1903
+- alt: Baofeng BF-888
+  model: Baofeng BF-777S
+- alt: UV-13Pro
+  model: P15UV
+- alt: UV-5R
+  model: 997-S (Foscam Digital Technologies)
+- alt: UV-5R
+  model: AR-152
+- alt: UV-5R
+  model: B-580T
+- alt: UV-17Pro
+  model: UV-17R
+- alt: UV-17R-Plus
+  model: UV-17M
+- alt: UV-25
+  model: BF-18H
+- alt: UV-25
+  model: BF-18L
+- alt: BF-888
+  model: BF-88E
+  #- alt: BF/T1
+  #  model: BF-9100
+- alt: BF-888
+  model: BF-C2/C5
+- alt: UV-5R
+  model: BF-E500S
+- alt: UV-5R
+  model: BF-F8, F8+
+- alt: Radioddity UV-5RX3
+  model: BF-F8+III
+- alt: BF-A58S
+  model: BF-F8X3
+- alt: UV-5R
+  model: BF-F9
+- alt: BF-F8HP
+  model: BF-F9V2+
+- alt: BF-A58S
+  model: BF-F11
+- alt: TIDRADIO TD-H6
+  model: BF-H6
+- alt: Radioddity UV-5RX3
+  model: BF-R3
+- alt: BF-888
+  model: BF-R5 Mini
+- alt: UV-82III
+  model: BF-S5 Plus
+- alt: UV-82WP
+  model: BF-UV9R+HP
+- alt: BF-F8HP
+  model: BF-UV10R
+- alt: BF-A58S
+  model: BF-UVF10
+- alt: UV-5R
+  model: BF-UVB2+
+- alt: BF-888
+  model: BF-V9
+- alt: UV-B5
+  model: BF-V85
+- alt: BF-A58S
+  model: BF-X3 Plus
+- alt: Radioddity UV-5RX3
+  model: BF-X9
+- alt: UV-5R
+  model: FF-12P
+- alt: Retevis RB27
+  model: G11S
+- alt: BF-888
+  model: GT-1
+- alt: UV-5R
+  model: GT-3, GT-3 MK II
+- alt: BF-F8HP
+  model: GT-3TP
+- alt: UV-82
+  model: GT-5
+- alt: UV-82HP
+  model: GT-5TP
+- alt: 5RX
+  model: M-5R
+  #- alt: BF-T1
+  #  model: Mini
+- alt: Radioddity UV-5G
+  model: P8UV
+- alt: Radioddity GA-510
+  model: P10UV
+- alt: Retevis RB27
+  model: P11UV
+- alt: Radioddity UV-5G
+  model: UV-5G
+- alt: Radioddity UV-5G Plus
+  model: UV-5G Plus
+- alt: BF-F8HP
+  model: UV-5R HTQ
+- alt: BF-F8HP
+  model: UV-5R MK4, MK5
+- alt: UV-5R
+  model: UV-5R V2+, UV-5R2
+- alt: BF-F8HP
+  model: UV-5R+
+- alt: UV-5R
+  model: UV-5R++
+- alt: BF-F8HP
+  model: UV-5R7W, UV-5R8W
+- alt: UV-5R
+  model: UV-5RA, UV-5RA+, UV-5RAX, UV-5RAX+
+- alt: Radioddity UV-5RX3
+  model: UV-5RA3
+- alt: UV-5R
+  model: UV-5RB
+- alt: UV-5R
+  model: UV-5RC, UV-5RC, UV-5RCX+
+- alt: UV-5R
+  model: UV-5RD
+- alt: UV-5R
+  model: UV-5RE, UV-5RE+
+- alt: UV-5R
+  model: UV-5RG, RK, RQ, RS, RT, RU
+- alt: Baofeng 5RM
+  model: UV-5RH Pro Max
+- alt: Baofeng UV-5RH
+  model: BF-5RH
+- alt: BF-F8HP
+  model: UV-5RHP
+- alt: Radioddity UV-5RX3
+  model: UV-5RIII
+- alt: BF-F8HP
+  model: UV-5RM HP
+- alt: BF-F8HP
+  model: UV-5RTP
+- alt: UV-82WP
+  model: UV-5RWP
+- alt: Radioddity UV-5RX3
+  model: UV-5RX3
+- alt: UV-5R
+  model: UV-5S
+- alt: UV-5R
+  model: UV-5X (original 2014 model)
+- alt: Radioddity UV-5G
+  model: UV-5X (GMRS version)
+- alt: UV-82HP
+  model: UV-8R
+- alt: Radioddity UV-5RX3
+  model: UV-9S
+- alt: UV-82HP
+  model: UV-9X+
+- alt: BF-F8HP
+  model: UV-10R
+- alt: Radioddity UV-5RX3
+  model: UV-59T
+- alt: Radioddity UV-82X3
+  model: UV-82III (2 x PTT)
+- alt: Radioddity UV-82X3
+  model: UV-82T
+- alt: Radioddity UV-82X3
+  model: UV-82X3
+- alt: BF-888
+  model: TH-888S
+- alt: UV-5R
+  model: UV-860
+- alt: UV-5R
+  model: UV-920
+- alt: UV-82
+  model: UV-B2
+- alt: UV-5R
+  model: UV-B2+, B3+
+- alt: BF-F8HP
+  model: UV-S9
+  variant: 'tri-power: '
+- alt: UV-S9X3
+  model: UV-S9/S9T
+  variant: 'tri-band: '
+- alt: UV-82HP
+  model: UV-X9
+BTECH:
+- alt: Baofeng BF-F8HP-PRO
+  model: BF-F8HP-PRO
+Cignus:
+- alt: Baofeng UV-5R
+  model: UV-85
+- alt: TYT TH-UV88
+  model: UV-87
+CRT:
+- alt: QYT KT8900D
+  model: CRT 279 UV
+Hesenate:
+- alt: Radioddity UV-5RX3
+  model: HT-5RX3
+- alt: Retevis RT22
+  model: HT-U222
+Hiroyasu:
+- alt: Abbree AR-518
+  model: UV-5118
+Iradio:
+- alt: Abbree AR-518
+  model: UV-5118
+Jianpai:
+- alt: Abbree AR-518
+  model: FT-UV78
+- alt: Abbree AR-63
+  model: G63
+KSUN:
+- alt: Quansheng UV-K5
+  model: UV60D
+Marui:
+- alt: TYT TH-UV88
+  model: MR-UV1
+Midland:
+- alt: Puxing PX-777
+  model: CT-210
+My Emergency Radio:
+- alt: TYT TH-UV88
+  model: MYEMR1
+NKTech:
+- alt: Retevis RT6
+  model: UV-7RX
+QYT:
+- alt: KT-WP12
+  model: KT-9900
+R&L Electronics:
+- alt: Radioddity UV-5RX3
+  model: UV-5R 3 band
+Radioddity:
+- alt: Radioddity UV-5G
+  model: UV-5X
+- alt: AnyTone 5888UV
+  model: DB50
+Radtel:
+- alt: Retevis RT22
+  model: RT-10
+- alt: Abbree AR-730
+  model: RT-420
+- alt: Quansheng UV-K5
+  model: RT-590
+- alt: Quansheng UV-K5
+  model: RT-600
+- alt: Abbree AR-F5
+  model: RT-610
+- alt: Abbree AR-518
+  model: RT-850
+- alt: Ruyage UV58Plus
+  model: RT-890
+Retevis:
+- alt: Retevis H777 Plus
+  model: H777 (FRS)
+- alt: Baofeng UV-5R
+  model: RT5 with 2 power levels
+- alt: Baofeng UV-B5
+  model: RT-B6
+- alt: Retevis RB27
+  model: RB27B (full band support)
+- alt: Retevis RB27
+  model: RB27V (full band support)
+- alt: Retevis RB27
+  model: RB627B (full band support)
+Ruyage:
+- alt: Abbree AR-518
+  model: UV58
+Sainsonic:
+- alt: Baofeng BF-F8HP
+  model: GT-3TP
+Socotran:
+- alt: Abbree AR-518
+  model: UV-5118
+TIDRADIO:
+- alt: TIDRADIO TD-UV5R TriPower
+  model: BF-F8TD
+- alt: Baofeng UV-82HP
+  model: UV-82
+- alt: Baofeng BF-888
+  model: TD-V2
+TXQ:
+- alt: Abbree AR-63
+  model: G63
+TYT:
+- alt: Explorer QRZ-1
+  model: QRZ-1
+- alt: TH-7800
+  model: TH-7900
+Tacklife:
+- alt: Radioddity R2
+  model: MTR01
+Talinfone:
+- alt: Abbree AR-63
+  model: G63
+TechSide:
+- alt: Retevis RB26
+  model: TS-T1
+Tonfa:
+- alt: Baofeng UV-5R
+  model: UV-985
+Vero:
+- alt: Baofeng UV-5R
+  model: UV-E5, UV-E5 MK II
+Wouxun:
+- alt: KG-UVD1P
+  model: KG-UV2D
+- alt: KG-UVD1P
+  model: KG-UV3D
+- alt: KG-UVD1P
+  model: KG-UV5D
+- alt: KG-UV6
+  model: KG-UV7D
+- alt: Wouxun KG-UV9D Plus
+  model: KG-UV9P
+- alt: Wouxun KG-UV9D Plus
+  model: KG-UV9D Mate
+- alt: Wouxun KG-UV9PX
+  model: KG-UV9PX Plus
+- alt: Wouxun KG-UV9PX
+  model: KG-UV9DX
+- alt: Wouxun KG-UV9GX
+  model: KG-UV9GX Plus
+Wurui:
+- alt: Abbree AR-63
+  model: G63
+Yaesu:
+- alt: FTM-3200DR
+  model: FTM-3100
+- alt: VX-170
+  model: FT-270
+Zastone:
+- alt: QYT KT8900D
+  model: MP-380
+- alt: TYT TH-9800
+  model: MP-800
+- alt: Baofeng UV-5R
+  model: ZT-V8
+- alt: Baofeng UV-5R
+  model: V8A
+- alt: Baofeng UV-5R
+  model: V8A+
+youRUSH:
+- alt: Baofeng UV-5R
+  model: UV-5RUSH
+- alt: Baofeng BF-A58
+  model: UV-9RUSH PLUS
+- alt: Radioddity GA-510
+  model: UV-9RUSH PRO
+- alt: Baofeng UV-82
+  model: UV-82RUSH
+Quansheng:
+- alt: TG-UV2+
+  model: TG-UV2
+- alt: UV-K5
+  model: UV-K6
+- alt: UV-K5
+  model: UV-K5(8)
+- alt: UV-K5
+  model: UV-K5(99)
+- alt: UV-K5
+  model: UV-5R Plus
+Powerful:
+- alt: Quansheng UV-K5
+  model: UV-S5
+Pxton:
+- alt: Baofeng MP31
+  model: 999S

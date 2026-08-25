@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission
+        android:name="com.wg5eek.pocketchirp.permission.CHIRP_ENGINE"
+        android:protectionLevel="signature" />
+
+    <application
+        android:allowBackup="false"
+        android:label="PocketCHIRP CHIRP Engine"
+        android:usesCleartextTraffic="false">
+        <service
+            android:name=".PocketChirpEngineService"
+            android:exported="true"
+            android:permission="com.wg5eek.pocketchirp.permission.CHIRP_ENGINE">
+            <intent-filter>
+                <action android:name="com.wg5eek.pocketchirp.CHIRP_ENGINE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

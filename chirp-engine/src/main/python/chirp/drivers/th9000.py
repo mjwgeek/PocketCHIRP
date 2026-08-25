@@ -1,0 +1,1127 @@
+# Copyright 2015 David Fannin KK6DF  <kk6df@arrl.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import struct
+import logging
+
+from chirp import bitwise
+from chirp import chirp_common
+from chirp import checksum
+from chirp import directory
+from chirp import errors
+from chirp import memmap
+from chirp import util
+from chirp.settings import RadioSettingGroup, RadioSetting, RadioSettings, \
+    RadioSettingValueList, RadioSettingValueString, RadioSettingValueInteger
+
+LOG = logging.getLogger(__name__)
+
+#
+#  Chirp Driver for TYT TH-9000D (models: 2M (144 MHz), 1.25M (220 MHz)
+#                                 and 70 cm (440 MHz) radios)
+#
+#  Version 1.0
+#
+#         - Skip channels
+#
+# Global Parameters
+#
+MMAPSIZE = 16384
+TONES = [62.5] + list(chirp_common.TONES)
+TMODES = ['', 'Tone', 'DTCS', '']
+DUPLEXES = ['', 'err', '-', '+']  # index 2 not used
+MODES = ['WFM', 'FM', 'NFM']  # 25k, 20k,15k bw
+TUNING_STEPS = [5.0, 6.25, 8.33, 10.0, 12.5, 15.0, 20.0, 25.0, 30.0, 50.0]
+#               index 0-9
+POWER_LEVELS = [chirp_common.PowerLevel("High", watts=65),
+                chirp_common.PowerLevel("Mid", watts=25),
+                chirp_common.PowerLevel("Low", watts=10)]
+
+CROSS_MODES = chirp_common.CROSS_MODES
+
+APO_LIST = ["Off", "30 min", "1 hr", "2 hrs"]
+BGCOLOR_LIST = ["Blue", "Orange", "Purple"]
+BGBRIGHT_LIST = ["%s" % x for x in range(1, 32)]
+SQUELCH_LIST = ["Off"] + ["Level %s" % x for x in range(1, 20)]
+TIMEOUT_LIST = ["Off"] + ["%s min" % x for x in range(1, 30)]
+TXPWR_LIST = ["60W", "25W"]  # maximum power for Hi setting
+TBSTFREQ_LIST = ["1750 Hz", "2100 Hz", "1000 Hz", "1450 Hz"]
+BEEP_LIST = ["Off", "On"]
+VFO_LIST = ["VFO", "MEM"]
+BUTTONS_LIST = ["Off", "Call", "VFO/MEM", "CTCSS/DCS", "MHz Step", "Squelch",
+                "Transmit Power", "Repeater Shift", "Scan", "Lock", "Monitor",
+                "Copy Channel", "Delete Channel", "Reverse",
+                "Display Brightness", "Compander", "Priority",
+                "DTMF Autodialer", "Show Voltage", "Clone"]
+
+MEM_FORMAT = """
+#seekto 0x0000;
+struct {
+   u8 unknown0000[16];
+   char idhdr[16];
+   u8 unknown0001[16];
+} fidhdr;
+"""
+# Overall Memory Map:
+#
+#    Memory Map (Range 0x0100-3FF0, step 0x10):
+#
+#        Field                   Start  End  Size
+#                                (hex)  (hex) (hex)
+#
+#        1 Channel Set Flag        0100  011F   20
+#        2 Channel Skip Flag       0120  013F   20
+#        3 Blank/Unknown           0140  01EF   B0
+#        4 Button Functions        01F0  01FF   10
+#        5 TX/RX Range             0200  020F   10
+#        6 Bootup Passwd           0210  021F   10
+#        7 Options, Radio          0220  023F   20
+#        8 Unknown                 0240  019F
+#            8B Startup Label      03E0  03E7   07
+#        9 Channel Bank            2000  38FF 1900
+#             Channel 000          2000  201F   20
+#             Channel 001          2020  202F   20
+#             ...
+#             Channel 199          38E0  38FF   20
+#        10 Blank/Unknown          3900  3FFF  6FF  14592  16383    1792
+#            Total Map Size           16128 (2^8 = 16384)
+#
+#  TH9000/220  memory map
+#  section: 1 and 2:  Channel Set/Skip Flags
+#
+#    Channel Set (starts 0x100) : Channel Set  bit is value 0 if a memory
+#                                 location in the channel bank is active.
+#    Channel Skip (starts 0x120): Channel Skip bit is value 0 if a memory
+#                                 location in the channel bank is active.
+#
+#    Both flag maps are a total 24 bytes in length, aligned on 32 byte records.
+#    bit = 0 channel set/no skip,  1 is channel not set/skip
+#
+#    to index a channel:
+#        cbyte = channel / 8 ;
+#        cbit  = channel % 8 ;
+#        setflag  = csetflag[cbyte].c[cbit] ;
+#        skipflag = cskipflag[cbyte].c[cbit] ;
+#
+#    channel range is 0-199, range is 32 bytes (last 7 unknown)
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x0100;
+struct {
+   bit c[8];
+} csetflag[32];
+
+struct {
+   u8 unknown0100[7];
+} ropt0100;
+
+#seekto 0x0120;
+struct {
+   bit c[8];
+} cskipflag[32];
+
+struct {
+   u8 unknown0120[7];
+} ropt0120;
+"""
+#  TH9000  memory map
+#  section: 4  Programmable Buttons
+#       used to configure the functions of the programmable buttons
+#
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  1           u8 btn_p3;           Function for P3 press, range 0-19
+#  1           u8 btn_p4;           Function for P4 press, range 0-19
+#  1           u8 btn_p5;           Function for P5 press, range 0-19
+#  1           u8 btn_p1;           Function for P1 press, range 0-19
+#  1           u8 btn_p2;           Function for P2 press, range 0-19
+#  1           u8 btn_p3_long;      Function for P3 long press, range 0-19
+#  1           u8 btn_p4_long;      Function for P4 long press, range 0-19
+#  1           u8 btn_p5_long;      Function for P5 long press, range 0-19
+#  1           u8 btn_p1_long;      Function for P1 long press, range 0-19
+#  1           u8 btn_p2_long;      Function for P2 long press, range 0-19
+#  1           u8 btn_p3_func;      Function for F + P3 press, range 0-19
+#  1           u8 btn_p4_func;      Function for F + P4 press, range 0-19
+#  1           u8 btn_p5_func;      Function for F + P5 press, range 0-19
+#  1           u8 btn_p1_func;      Function for F + P1 press, range 0-19
+#  1           u8 btn_p2_func;      Function for F + P2 press, range 0-19
+#  1           u8 unknown01FF;
+#
+#  Button Functions:
+#   0=Off, 1=Call, 2=VFO/MEM, 3=CTCSS/DCS
+#   4=MHz Step, 5=Squelch, 6=TX Power, 7=Repeater Shift
+#   8=Scan, 9=Lock, 10=Monitor, 11=Copy CH
+#   12=Delete CH, 13=Reverse, 14=Brightness, 15=Compander
+#   16=Priority, 17=DTMF Dialer, 18=Show Voltage, 19=Clone
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x01F0;
+struct {
+   u8 btn_p3;
+   u8 btn_p4;
+   u8 btn_p5;
+   u8 btn_p1;
+   u8 btn_p2;
+   u8 btn_p3_long;
+   u8 btn_p4_long;
+   u8 btn_p5_long;
+   u8 btn_p1_long;
+   u8 btn_p2_long;
+   u8 btn_p3_func;
+   u8 btn_p4_func;
+   u8 btn_p5_func;
+   u8 btn_p1_func;
+   u8 btn_p2_func;
+   u8 unknown01FF;
+} buttons;
+"""
+#  TH9000  memory map
+#  section: 5  TX/RX Range
+#     used to set the TX/RX range of the radio (e.g. 222-228 MHz for 220 meter)
+#     possible to set range for tx/rx
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x0200;
+struct {
+    bbcd txrangelow[4];
+    bbcd txrangehi[4];
+    bbcd rxrangelow[4];
+    bbcd rxrangehi[4];
+} freqrange;
+"""
+# TH9000  memory map
+# section: 6  bootup_passwd
+#    used to set bootup passwd (see boot_passwd checkbox option)
+#
+#  options - bootup password
+#
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  6         u8 bootup_passwd[6]     bootup passwd, 6 chars, numeric chars
+#                                    30-39 , see boot_passwd checkbox to set
+#  10        u8 unknown;
+#
+
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x0210;
+struct {
+   u8 bootup_passwd[6];
+   u8 unknown2010[10];
+} ropt0210;
+"""
+#  TH9000/220  memory map
+#  section: 7  Radio Options
+#        used to set a number of radio options
+#
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  1         u8 display_mode     display mode, range 0-2, 0=freq,1=channel,
+#                                2=name (selecting name affects vfo_mr)
+#  1         u8 vfo_mr;          vfo_mr , 0=vfo, mr=1
+#  1         u8 unknown;
+#  1         u8 squelch;         squelch level, range 0-19, hex for menu
+#  1         u8 unknown[2];
+#  1         u8 channel_lock;    if display_mode[channel] selected, then
+#                                lock=1,no lock =0
+#  1         u8 unknown;
+#  1         u8 bg_brightness ;  background brightness, range 0-21, hex,
+#                                menu index
+#  1         u8 unknown;
+#  1         u8 bg_color ;       bg color, menu index,  blue 0 , orange 1,
+#                                purple 2
+#  1         u8 tbst_freq ;      tbst freq, menu 0=1750 Hz, 1=2100,
+#                                2=1000, 3=1450 Hz
+#  1         u8 timeout_timer;   timeout timer, hex, value = minutes,
+#                                0= no timeout
+#  1         u8 unknown;
+#  1         u8 auto_power_off;   auto power off, range 0-3, off,30min, 1hr,
+#                                 2hr, hex menu index
+#  1         u8 voice_prompt;     voice prompt, value 0,1 , Beep ON = 1,
+#                                 Beep Off = 2
+#
+# description of function setup options, starting at 0x0230
+#
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  1         u8  // 0
+#   :4       unknown:6
+#   :1       elim_sql_tail:1   eliminate squelsh tail when no ctcss checkbox
+#                              (1=checked)
+#   :1       sql_key_function  "squelch off" 1 , "squelch momentary off" 0 ,
+#                              menu index
+#  2         u8 unknown[2] /1-2
+#  1         u8 // 3
+#   :4       unknown:4
+#   :1       inhibit_init_ops:1 //bit 5
+#   :1       unknownD:1
+#   :1       inhibit_setup_bg_chk:1 //bit 7
+#   :1       unknown:1
+#  1         u8 tail_elim_type    menu , (off=0,120=1,180=2),  // 4
+#  1         u8 choose_tx_power    menu , (60w=0,25w=1) // 5
+#  2         u8 unknown[2]; // 6-7
+#  1         u8 bootup_passwd_flag  checkbox 1=on, 0=off // 8
+#  7         u8 unknown[7]; // 9-F
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x0220;
+struct {
+   u8 display_mode;
+   u8 vfo_mr;
+   u8 unknown0220A;
+   u8 squelch;
+   u8 unknown0220B[2];
+   u8 channel_lock;
+   u8 unknown0220C;
+   u8 bg_brightness;
+   u8 unknown0220D;
+   u8 bg_color;
+   u8 tbst_freq;
+   u8 timeout_timer;
+   u8 unknown0220E;
+   u8 auto_power_off;
+   u8 voice_prompt;
+   u8 unknown0230A:6,
+      elim_sql_tail:1,
+      sql_key_function:1;
+   u8 unknown0230B[2];
+   u8 unknown0230C:4,
+      inhibit_init_ops:1,
+      unknown0230D:1,
+      inhibit_setup_bg_chk:1,
+      unknown0230E:1;
+   u8 tail_elim_type;
+   u8 choose_tx_power;
+   u8 unknown0230F[2];
+   u8 bootup_passwd_flag;
+   u8 unknown0230G[7];
+} settings;
+"""
+#  TH9000  memory map
+#  section: 8B  Startup Label
+#
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  7     char start_label[7]    label displayed at startup (usually your call
+#                               sign)
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x03E0;
+struct {
+    char startname[7];
+} slabel;
+"""
+#  TH9000/220  memory map
+#  section: 9  Channel Bank
+#         description of channel bank (200 channels , range 0-199)
+#         Each 32 Byte (0x20 hex)  record:
+#  bytes:bit   type                 description
+#  ---------------------------------------------------------------------------
+#  4         bbcd freq[4]        receive frequency in packed binary coded
+#                                decimal
+#  4         bbcd offset[4]      transmit offset in packed binary coded decimal
+#                                (note: plus/minus direction set by 'duplex'
+#                                field)
+#  1         u8
+#   :4       unknown:4
+#   :4       tuning_step:4         tuning step, menu index value from 0-9
+#            5,6.25,8.33,10,12.5,15,20,25,30,50
+#  1         u8
+#   :4       unknown:4          not yet decoded, used for DCS coding?
+#   :2       channel_width:2     channel spacing, menu index value from 0-3
+#            25,20,12.5
+#   :1       reverse:1           reverse flag, 0=off, 1=on (reverses tx and
+#                                rx freqs)
+#   :1       txoff:1             transmitt off flag, 0=transmit ,
+#                                1=do not transmit
+#  1         u8
+#   :1       talkaround:1        talkaround flag, 0=off, 1=on (bypasses
+#                                repeater)
+#   :1       compander:1         compander flag, 0=off, 1=on (turns on/off
+#                                voice compander option)
+#   :2       unknown:2
+#   :2       power:2             tx power setting, value range 0-2, 0=hi,
+#                                1=med, 2=lo
+#   :2       duplex:2            duplex settings, 0=simplex,
+#                                2= minus(-) offset, 3= plus (+) offset
+#                               (see offset field)
+#
+#  1         u8
+#   :4       unknown:4
+#   :2       rxtmode:2           rx tone mode, value range 0-2, 0=none,
+#                                1=CTCSS, 2=DCS  (ctcss tone in field rxtone)
+#   :2       txtmode:2           tx tone mode, value range 0-2, 0=none,
+#                                1=CTCSS, 3=DCS  (ctcss tone in field txtone)
+#  1         u8
+#   :2       unknown:2
+#   :6       txtone:6            tx ctcss tone, menu index
+#  1         u8
+#   :2       unknown:2
+#   :6       rxtone:6            rx ctcss tone, menu index
+#  1         u8 txcode           ?, not used for ctcss
+#  1         u8 rxcode           ?, not used for ctcss
+#  3         u8 unknown[3]
+#  7         char name[7]        7 byte char string for channel name
+#  1         u8
+#   :6       unknown:6,
+#   :2       busychannellockout:2 busy channel lockout option ,
+#                                 0=off, 1=repeater, 2=busy
+#                                 (lock out tx if channel busy)
+#  4         u8 unknownI[4];
+#  1         u8
+#   :7       unknown:7
+#   :1       scrambler:1         scrambler flag, 0=off, 1=on (turns on tyt
+#                                scrambler option)
+#
+MEM_FORMAT = MEM_FORMAT + """
+#seekto 0x2000;
+struct {
+  bbcd freq[4];
+  bbcd offset[4];
+  u8 unknown2000A:4,
+     tuning_step:4;
+  u8 rxdcsextra:1,
+     txdcsextra:1,
+     rxinv:1,
+     txinv:1,
+     channel_width:2,
+     reverse:1,
+     txoff:1;
+  u8 talkaround:1,
+     compander:1,
+     unknown2000C:2,
+     power:2,
+     duplex:2;
+  u8 unknown2000D:4,
+     rxtmode:2,
+     txtmode:2;
+  u8 unknown2000E:2,
+     txtone:6;
+  u8 unknown2000F:2,
+     rxtone:6;
+  u8 txcode;
+  u8 rxcode;
+  u8 unknown2000G[3];
+  char name[7];
+  u8 unknown2000H:6,
+     busychannellockout:2;
+  u8 unknown2000I[4];
+  u8 unknown2000J:7,
+     scrambler:1;
+} memory[200] ;
+"""
+
+
+def _echo_write(radio, data):
+    try:
+        radio.pipe.write(data)
+        radio.pipe.read(len(data))
+    except Exception as e:
+        LOG.error("Error writing to radio: %s" % e)
+        raise errors.RadioError("Unable to write to radio")
+
+
+def _read(radio, length):
+    try:
+        data = radio.pipe.read(length)
+    except Exception as e:
+        LOG.error("Error reading from radio: %s" % e)
+        raise errors.RadioError("Unable to read from radio")
+
+    if len(data) != length:
+        LOG.error("Short read from radio (%i, expected %i)" % (len(data),
+                  length))
+        LOG.debug(util.hexprint(data))
+        raise errors.RadioError("Short read from radio")
+    return data
+
+
+def _ident(radio):
+    radio.pipe.timeout = 1
+    exito = False
+    for i in range(0, 5):
+        _echo_write(radio, b"PROGRAM")
+        response = radio.pipe.read(3)
+
+        if response == b"QX\06":
+            exito = True
+            break
+
+    # check if we had EXITO
+    if exito is False:
+        if not response:
+            raise errors.RadioNoResponse()
+        msg = "The radio did not accept program mode after five tries.\n"
+        msg += "Check you interface cable and power cycle your radio."
+        raise errors.RadioError(msg)
+
+    _echo_write(radio, b"\x02")
+    response = radio.pipe.read(16)
+    LOG.debug(util.hexprint(response))
+    if response[1:8] != b"TH-9000":
+        LOG.error("Looking  for:\n%s" % util.hexprint("TH-9000"))
+        LOG.error("Response was:\n%s" % util.hexprint(response))
+        raise errors.RadioError("Unsupported model")
+
+
+def _send(radio, cmd, addr, length, data=None):
+    frame = struct.pack(">cHb", cmd, addr, length)
+    if data:
+        frame += data
+        frame += bytes([checksum.checksum_8bit(frame[1:])])
+        frame += b"\x06"
+    _echo_write(radio, frame)
+    LOG.debug("Sent:\n%s" % util.hexprint(frame))
+    if data:
+        result = radio.pipe.read(1)
+        if result != b"\x06":
+            LOG.debug("Ack was: %s" % repr(result))
+            raise errors.RadioError(
+                "Radio did not accept block at %04x" % addr)
+        return
+    result = _read(radio, length + 6)
+    LOG.debug("Got:\n%s" % util.hexprint(result))
+    header = result[:4]
+    data = result[4:-2]
+    ack = result[-1:]
+    if ack != b"\x06":
+        LOG.debug("Ack was: %s" % repr(ack))
+        raise errors.RadioError("Radio NAK'd block at %04x" % addr)
+    _cmd, _addr, _length = struct.unpack(">cHb", header)
+    if _addr != addr or _length != _length:
+        LOG.debug("Expected/Received:")
+        LOG.debug(" Length: %02x/%02x" % (length, _length))
+        LOG.debug(" Addr: %04x/%04x" % (addr, _addr))
+        raise errors.RadioError("Radio send unexpected block")
+    cs = checksum.checksum_8bit(result[1:-2])
+    if cs != result[-2]:
+        LOG.debug("Calculated: %02x" % cs)
+        LOG.debug("Actual:     %02x" % result[-2])
+        raise errors.RadioError("Block at 0x%04x failed checksum" % addr)
+    return data
+
+
+def _finish(radio):
+    endframe = b"\x45\x4E\x44"
+    _echo_write(radio, endframe)
+    result = radio.pipe.read(1)
+    # TYT radios acknowledge the "endframe" command, Luiton radios do not.
+    if result != b"" and result != b"\x06":
+        LOG.error("Got:\n%s" % util.hexprint(result))
+        raise errors.RadioError("Radio did not finish cleanly")
+
+
+def do_download(radio):
+
+    _ident(radio)
+
+    _memobj = None
+    data = b""
+
+    for start, end in radio._ranges:
+        for addr in range(start, end, 0x10):
+            block = _send(radio, b'R', addr, 0x10)
+            data += block
+            status = chirp_common.Status()
+            status.cur = len(data)
+            status.max = end
+            status.msg = "Downloading from radio"
+            radio.status_fn(status)
+
+    _finish(radio)
+
+    return memmap.MemoryMapBytes(data)
+
+
+def do_upload(radio):
+
+    _ident(radio)
+
+    for start, end in radio._ranges:
+        for addr in range(start, end, 0x10):
+            if addr < 0x0100:
+                continue
+            block = radio._mmap[addr:addr + 0x10]
+            _send(radio, b'W', addr, len(block), block)
+            status = chirp_common.Status()
+            status.cur = addr
+            status.max = end
+            status.msg = "Uploading to Radio"
+            radio.status_fn(status)
+
+    _finish(radio)
+
+
+#
+# The base class, extended for use with other models
+#
+class Th9000Radio(chirp_common.CloneModeRadio,
+                  chirp_common.ExperimentalRadio):
+    """TYT TH-9000"""
+    VENDOR = "TYT"
+    MODEL = "TH9000 Base"
+    BAUD_RATE = 9600
+    valid_freq = [(900000000, 999000000)]
+
+    _memsize = MMAPSIZE
+    _ranges = [(0x0000, 0x4000)]
+
+    @classmethod
+    def get_prompts(cls):
+        rp = chirp_common.RadioPrompts()
+        rp.experimental = ("The TYT TH-9000 driver is an beta version."
+                           "Proceed with Caution and backup your data")
+        return rp
+
+    def get_features(self):
+        rf = chirp_common.RadioFeatures()
+        rf.has_settings = True
+        rf.has_bank = False
+        rf.has_cross = True
+        rf.has_tuning_step = False
+        rf.has_rx_dtcs = True
+        rf.valid_skips = ["", "S"]
+        rf.memory_bounds = (0, 199)
+        rf.valid_name_length = 7
+        rf.valid_characters = chirp_common.CHARSET_UPPER_NUMERIC + "-"
+        rf.valid_modes = MODES
+        rf.valid_tmodes = ['', 'Tone', 'TSQL', 'DTCS', 'Cross']
+        rf.valid_cross_modes = ['Tone->DTCS', 'DTCS->Tone',
+                                '->Tone', '->DTCS', 'Tone->Tone']
+        rf.valid_power_levels = POWER_LEVELS
+        rf.valid_tones = TONES
+        rf.valid_dtcs_codes = chirp_common.ALL_DTCS_CODES
+        rf.valid_bands = self.valid_freq
+        rf.valid_tuning_steps = TUNING_STEPS
+        return rf
+
+    # Do a download of the radio from the serial port
+    def sync_in(self):
+        self._mmap = do_download(self)
+        self.process_mmap()
+
+    # Do an upload of the radio to the serial port
+    def sync_out(self):
+        do_upload(self)
+
+    def process_mmap(self):
+        self._memobj = bitwise.parse(MEM_FORMAT, self._mmap)
+
+    # Return a raw representation of the memory object, which
+    # is very helpful for development
+    def get_raw_memory(self, number):
+        return repr(self._memobj.memory[number])
+
+    # not working yet
+    def _get_dcs_index(self, _mem, which):
+        base = getattr(_mem, '%scode' % which)
+        extra = getattr(_mem, '%sdcsextra' % which)
+        return (int(extra) << 8) | int(base)
+
+    def _set_dcs_index(self, _mem, which, index):
+        base = getattr(_mem, '%scode' % which)
+        extra = getattr(_mem, '%sdcsextra' % which)
+        base.set_value(index & 0xFF)
+        extra.set_value(index >> 8)
+
+    # Extract a high-level memory object from the low-level memory map
+    # This is called to populate a memory in the UI
+    def get_memory(self, number):
+        # Get a low-level memory object mapped to the image
+        _mem = self._memobj.memory[number]
+
+        # get flag info
+        cbyte = number // 8
+        cbit = 7 - (number % 8)
+        setflag = self._memobj.csetflag[cbyte].c[cbit]
+        skipflag = self._memobj.cskipflag[cbyte].c[cbit]
+
+        mem = chirp_common.Memory()
+
+        mem.number = number  # Set the memory number
+
+        if setflag == 1:
+            mem.empty = True
+            return mem
+
+        mem.freq = int(_mem.freq) * 100
+
+        # compensate for 6.25 and 12.5 kHz tuning steps, add 500 Hz if needed
+        lastdigit = int(_mem.freq) % 10
+        if (lastdigit == 2 or lastdigit == 7):
+            mem.freq += 50
+
+        mem.offset = int(_mem.offset) * 100
+        # Set the alpha tag
+        mem.name = self.filter_name(str(_mem.name).rstrip())
+        mem.duplex = DUPLEXES[_mem.duplex]
+        mem.mode = MODES[_mem.channel_width]
+        mem.power = POWER_LEVELS[_mem.power]
+
+        rxtone = txtone = None
+
+        rxmode = TMODES[_mem.rxtmode]
+        txmode = TMODES[_mem.txtmode]
+
+        # doesn't work
+        if rxmode == "Tone":
+            rxtone = TONES[_mem.rxtone]
+        elif rxmode == "DTCS":
+            rxtone = chirp_common.ALL_DTCS_CODES[self._get_dcs_index(
+                                                 _mem, 'rx')]
+
+        if txmode == "Tone":
+            txtone = TONES[_mem.txtone]
+        elif txmode == "DTCS":
+            txtone = chirp_common.ALL_DTCS_CODES[self._get_dcs_index(
+                                                 _mem, 'tx')]
+
+        rxpol = _mem.rxinv and "R" or "N"
+        txpol = _mem.txinv and "R" or "N"
+
+        chirp_common.split_tone_decode(mem,
+                                       (txmode, txtone, txpol),
+                                       (rxmode, rxtone, rxpol))
+
+        mem.skip = "S" if skipflag == 1 else ""
+
+        # We'll consider any blank (i.e. 0 MHz frequency) to be empty
+        if mem.freq == 0:
+            mem.empty = True
+
+        return mem
+
+    # Store details about a high-level memory to the memory map
+    # This is called when a user edits a memory in the UI
+    def set_memory(self, mem):
+        # Get a low-level memory object mapped to the image
+
+        _mem = self._memobj.memory[mem.number]
+
+        cbyte = mem.number // 8
+        cbit = 7 - (mem.number % 8)
+
+        if mem.empty:
+            self._memobj.csetflag[cbyte].c[cbit] = 1
+            self._memobj.cskipflag[cbyte].c[cbit] = 1
+            return
+
+        self._memobj.csetflag[cbyte].c[cbit] = 0
+        self._memobj.cskipflag[cbyte].c[cbit] = 1 if (mem.skip == "S") else 0
+
+        _mem.set_raw("\x00" * 32)
+
+        _mem.freq = mem.freq / 100         # Convert to low-level frequency
+        _mem.offset = mem.offset / 100         # Convert to low-level frequency
+
+        _mem.name = mem.name.ljust(7)[:7]  # Store the alpha tag
+        _mem.duplex = DUPLEXES.index(mem.duplex)
+
+        try:
+            _mem.channel_width = MODES.index(mem.mode)
+        except ValueError:
+            _mem.channel_width = 0
+
+        ((txmode, txtone, txpol),
+         (rxmode, rxtone, rxpol)) = chirp_common.split_tone_encode(mem)
+
+        _mem.txtmode = TMODES.index(txmode)
+
+        _mem.rxtmode = TMODES.index(rxmode)
+
+        if txmode == "Tone":
+            _mem.txtone = TONES.index(txtone)
+        elif txmode == "DTCS":
+            self._set_dcs_index(_mem, 'tx',
+                                chirp_common.ALL_DTCS_CODES.index(txtone))
+
+        if rxmode == "Tone":
+            _mem.rxtone = TONES.index(rxtone)
+        elif rxmode == "DTCS":
+            self._set_dcs_index(_mem, 'rx',
+                                chirp_common.ALL_DTCS_CODES.index(rxtone))
+
+        _mem.txinv = txpol == "R"
+        _mem.rxinv = rxpol == "R"
+
+        if mem.power:
+            _mem.power = POWER_LEVELS.index(mem.power)
+        else:
+            _mem.power = 0
+
+    def _get_settings(self):
+        _settings = self._memobj.settings
+        _freqrange = self._memobj.freqrange
+        _slabel = self._memobj.slabel
+        _buttons = self._memobj.buttons
+
+        basic = RadioSettingGroup("basic", "Global Settings")
+        freqrange = RadioSettingGroup("freqrange", "Frequency Ranges")
+        buttons = RadioSettingGroup("buttons", "Programmable Buttons")
+        top = RadioSettingGroup("top", "All Settings", basic, freqrange,
+                                buttons)
+        settings = RadioSettings(top)
+
+        def _filter(name):
+            filtered = ""
+            for char in str(name):
+                if char in chirp_common.CHARSET_ASCII:
+                    filtered += char
+                else:
+                    filtered += ""
+            return filtered
+
+        val = RadioSettingValueString(0, 7, _filter(_slabel.startname))
+        rs = RadioSetting("startname", "Startup Label", val)
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "bg_color", "LCD Color",
+            RadioSettingValueList(
+                BGCOLOR_LIST, current_index=_settings.bg_color))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "bg_brightness", "LCD Brightness",
+            RadioSettingValueList(
+                BGBRIGHT_LIST, current_index=_settings.bg_brightness))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "squelch", "Squelch Level",
+            RadioSettingValueList(
+                SQUELCH_LIST, current_index=_settings.squelch))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "timeout_timer", "Timeout Timer (TOT)",
+            RadioSettingValueList(
+                TIMEOUT_LIST, current_index=_settings.timeout_timer))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "auto_power_off", "Auto Power Off (APO)",
+            RadioSettingValueList(
+                APO_LIST, current_index=_settings.auto_power_off))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "voice_prompt", "Beep Prompt",
+            RadioSettingValueList(
+                BEEP_LIST, current_index=_settings.voice_prompt))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "tbst_freq", "Tone Burst Frequency",
+            RadioSettingValueList(
+                TBSTFREQ_LIST, current_index=_settings.tbst_freq))
+        basic.append(rs)
+
+        rs = RadioSetting(
+            "choose_tx_power", "Max Level of TX Power",
+            RadioSettingValueList(
+                TXPWR_LIST, current_index=_settings.choose_tx_power))
+        basic.append(rs)
+
+        (flow, fhigh) = self.valid_freq[0]
+        flow /= 1000
+        fhigh /= 1000
+        fmidrange = (fhigh - flow) / 2
+
+        rs = RadioSetting("txrangelow", "TX Freq, Lower Limit (kHz)",
+                          RadioSettingValueInteger(
+                              flow, flow + fmidrange,
+                              int(_freqrange.txrangelow) / 10))
+        freqrange.append(rs)
+
+        rs = RadioSetting("txrangehi", "TX Freq, Upper Limit (kHz)",
+                          RadioSettingValueInteger(
+                              fhigh-fmidrange, fhigh,
+                              int(_freqrange.txrangehi) / 10))
+        freqrange.append(rs)
+
+        rs = RadioSetting("rxrangelow", "RX Freq, Lower Limit (kHz)",
+                          RadioSettingValueInteger(
+                              flow, flow+fmidrange,
+                              int(_freqrange.rxrangelow) / 10))
+        freqrange.append(rs)
+
+        rs = RadioSetting("rxrangehi", "RX Freq, Upper Limit (kHz)",
+                          RadioSettingValueInteger(
+                              fhigh-fmidrange, fhigh,
+                              int(_freqrange.rxrangehi) / 10))
+        freqrange.append(rs)
+
+        rs = RadioSetting(
+            "btn_p1", "P1 Short Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p1))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p2", "P2 Short Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p2))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p3", "P3 Short Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p3))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p4", "P4 Short Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p4))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p5", "P5 Short Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p5))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p1_long", "P1 Long Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p1_long))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p2_long", "P2 Long Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p2_long))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p3_long", "P3 Long Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p3_long))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p4_long", "P4 Long Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p4_long))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p5_long", "P5 Long Press",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p5_long))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p1_func", "Function + P1",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p1_func))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p2_func", "Function + P2",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p2_func))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p3_func", "Function + P3",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p3_func))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p4_func", "Function + P4",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p4_func))
+        buttons.append(rs)
+
+        rs = RadioSetting(
+            "btn_p5_func", "Function + P5",
+            RadioSettingValueList(
+                BUTTONS_LIST, current_index=_buttons.btn_p5_func))
+        buttons.append(rs)
+
+        return settings
+
+    def get_settings(self):
+        try:
+            return self._get_settings()
+        except:
+            import traceback
+            LOG.error("failed to parse settings")
+            traceback.print_exc()
+            return None
+
+    def set_settings(self, settings):
+        _settings = self._memobj.settings
+        for element in settings:
+            if not isinstance(element, RadioSetting):
+                self.set_settings(element)
+                continue
+            else:
+                try:
+                    name = element.get_name()
+
+                    if name in ["txrangelow", "txrangehi", "rxrangelow",
+                                "rxrangehi"]:
+                        LOG.debug("setting %s = %s" % (name,
+                                  int(element.value) * 10))
+                        setattr(self._memobj.freqrange, name,
+                                int(element.value) * 10)
+                        continue
+
+                    if name in ["startname"]:
+                        LOG.debug("setting %s = %s" % (name, element.value))
+                        setattr(self._memobj.slabel, name, element.value)
+                        continue
+
+                    if name in ["btn_p3", "btn_p4", "btn_p5", "btn_p1",
+                                "btn_p2", "btn_p3_long", "btn_p4_long",
+                                "btn_p5_long", "btn_p1_long", "btn_p2_long",
+                                "btn_p3_func", "btn_p4_func", "btn_p5_func",
+                                "btn_p1_func", "btn_p2_func"]:
+                        LOG.debug("setting %s = %s" % (name, element.value))
+                        setattr(self._memobj.buttons, name, element.value)
+                        continue
+
+                    obj = _settings
+                    setting = element.get_name()
+
+                    if element.has_apply_callback():
+                        LOG.debug("using apply callback")
+                        element.run_apply_callback()
+                    else:
+                        LOG.debug("Setting %s = %s" % (setting,
+                                  element.value))
+                        setattr(obj, setting, element.value)
+                except Exception:
+                    LOG.debug(element.get_name())
+                    raise
+
+    @classmethod
+    def match_model(cls, filedata, filename):
+        return False
+
+
+def match_orig_model(cls, filedata, filename):
+    # This old-style file detection should only be used for the
+    # original TYT TH9000 classes for compatibility
+    if cls.VENDOR != 'TYT' or 'TH9000_' not in cls.MODEL:
+        return False
+
+    if MMAPSIZE == len(filedata):
+        (flow, fhigh) = cls.valid_freq[0]
+        flow /= 1000000
+        fhigh /= 1000000
+
+        txmin = filedata[0x200] * 100 + (filedata[0x201] >> 4) \
+            * 10 + filedata[0x201] % 16
+        txmax = filedata[0x204] * 100 + (filedata[0x205] >> 4) \
+            * 10 + filedata[0x205] % 16
+        rxmin = filedata[0x208] * 100 + (filedata[0x209] >> 4) \
+            * 10 + filedata[0x209] % 16
+        rxmax = filedata[0x20C] * 100 + (filedata[0x20D] >> 4) \
+            * 10 + filedata[0x20D] % 16
+
+        if (rxmin >= flow and rxmax <= fhigh and txmin >= flow and
+                txmax <= fhigh):
+            return True
+
+    return False
+
+
+@directory.register
+class Th9000220Radio(Th9000Radio):
+    """TYT TH-9000 220"""
+    VENDOR = "TYT"
+    MODEL = "TH9000_220"
+    BAUD_RATE = 9600
+    valid_freq = [(220000000, 260000000)]
+
+    @classmethod
+    def match_model(cls, filedata, filename):
+        return match_orig_model(cls, filedata, filename)
+
+
+@directory.register
+class Th9000144Radio(Th9000220Radio):
+    """TYT TH-9000 144"""
+    VENDOR = "TYT"
+    MODEL = "TH9000_144"
+    BAUD_RATE = 9600
+    valid_freq = [(136000000, 174000000)]
+
+    @classmethod
+    def match_model(cls, filedata, filename):
+        return match_orig_model(cls, filedata, filename)
+
+
+@directory.register
+class Th9000440Radio(Th9000220Radio):
+    """TYT TH-9000 440"""
+    VENDOR = "TYT"
+    MODEL = "TH9000_440"
+    BAUD_RATE = 9600
+    valid_freq = [(400000000, 490000000)]
+
+    @classmethod
+    def match_model(cls, filedata, filename):
+        return match_orig_model(cls, filedata, filename)
+
+
+@directory.register
+class Lt580VHFRadio(Th9000144Radio):
+    """Luiton LT-580 VHF"""
+    VENDOR = "LUITON"
+    MODEL = "LT-580_VHF"
+
+
+@directory.register
+class Lt580UHFRadio(Th9000440Radio):
+    """Luiton LT-580 UHF"""
+    VENDOR = "LUITON"
+    MODEL = "LT-580_UHF"
+
+
+@directory.register
+class RT9000DVHFRadio(Th9000Radio):
+    """Retevis RT9000D VHF"""
+    VENDOR = "Retevis"
+    MODEL = "RT9000D_136-174"
+    valid_freq = [(136000000, 174000000)]
+
+
+@directory.register
+class RT9000D220Radio(Th9000Radio):
+    """Retevis RT9000D 220"""
+    VENDOR = "Retevis"
+    MODEL = "RT9000D_220-260"
+    valid_freq = [(220000000, 260000000)]
+
+
+@directory.register
+class RT9000DUHFRadio(Th9000Radio):
+    """Retevis RT9000D UHF"""
+    VENDOR = "Retevis"
+    MODEL = "RT9000D_400-490"
+    valid_freq = [(400000000, 490000000)]
+
+
+@directory.register
+class RT9000D6688Radio(Th9000Radio):
+    """Retevis RT9000D 66-88"""
+    VENDOR = "Retevis"
+    MODEL = "RT9000D_66-88"
+    valid_freq = [(66000000, 88000000)]

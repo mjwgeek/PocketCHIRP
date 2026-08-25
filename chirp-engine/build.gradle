@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+}
+
+// PocketCHIRP 2.x architecture:
+// The proprietary Android application and GPL CHIRP runtime are distributed
+// as separate APKs/packages. Do not re-embed the CHIRP Python runtime into
+// the PocketCHIRP application module.
+//
+// GPL CHIRP ENGINE BUILD
+// ======================
+// CHIRP is NOT installed by pip during Gradle builds. The exact pinned
+// upstream source is vendored once into src/main/python/chirp by
+// tools/vendor-chirp.ps1. This makes normal/clean builds local and repeatable.
+
+def chirpProps = new java.util.Properties()
+def chirpPropsFile = rootProject.file('chirp-version.properties')
+if (!chirpPropsFile.exists()) {
+    throw new GradleException('Missing chirp-version.properties')
+}
+chirpPropsFile.withInputStream { chirpProps.load(it) }
+
+def chirpCommit = (chirpProps.getProperty('CHIRP_COMMIT') ?: '').trim()
+if (!(chirpCommit ==~ /[0-9a-fA-F]{40}/)) {
+    throw new GradleException('Invalid CHIRP_COMMIT in chirp-version.properties')
+}
+
+def vendoredChirpDir = file('src/main/python/chirp')
+def vendoredCommitFile = file('third_party/chirp/UPSTREAM_COMMIT.txt')
+
+android {
+    namespace = 'com.wg5eek.pocketchirp.engine'
+    compileSdk 36
+
+    buildFeatures {
+        aidl = true
+    }
+
+    defaultConfig {
+        applicationId 'com.wg5eek.pocketchirp.engine'
+        minSdk 24
+        targetSdk 36
+        versionCode 2
+        versionName '2.0.0'
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+chaquopy {
+    defaultConfig {
+        version = '3.10'
+        pyc { src = false }
+
+        // Intentionally NO pip { install(...) } block here.
+        // bridge.py and the vendored chirp/ package are ordinary local
+        // src/main/python sources and are packaged directly by Chaquopy.
+    }
+}
+
+tasks.register('verifyVendoredChirp') {
+    doLast {
+        if (!vendoredChirpDir.isDirectory()) {
+            throw new GradleException(
+                    'Vendored CHIRP source is missing. Run .\\tools\\vendor-chirp.ps1'
+            )
+        }
+
+        def required = [
+                file('src/main/python/chirp/__init__.py'),
+                file('src/main/python/chirp/chirp_common.py'),
+                file('src/main/python/chirp/directory.py'),
+                file('src/main/python/chirp/drivers/__init__.py'),
+                vendoredCommitFile,
+                file('third_party/chirp/COPYING')
+        ]
+        def missing = required.findAll { !it.exists() }
+        if (!missing.isEmpty()) {
+            throw new GradleException(
+                    'Vendored CHIRP source is incomplete: ' +
+                            missing.collect { it.path }.join(', ') +
+                            '. Run .\\tools\\vendor-chirp.ps1'
+            )
+        }
+
+        def vendoredCommit = vendoredCommitFile.getText('UTF-8').trim()
+        if (!vendoredCommit.equalsIgnoreCase(chirpCommit)) {
+            throw new GradleException(
+                    "Vendored CHIRP is ${vendoredCommit}, but chirp-version.properties " +
+                            "pins ${chirpCommit}. Run .\\tools\\vendor-chirp.ps1"
+            )
+        }
+
+        def drivers = fileTree('src/main/python/chirp/drivers') {
+            include '*.py'
+        }.files.size()
+        if (drivers < 50) {
+            throw new GradleException(
+                    "Vendored CHIRP driver tree looks incomplete (${drivers} Python files). " +
+                            'Run .\\tools\\vendor-chirp.ps1'
+            )
+        }
+
+        logger.lifecycle(
+                "PocketCHIRP CHIRP Engine: using vendored CHIRP ${vendoredCommit} " +
+                        "(${drivers} driver files); no pip/GitHub build dependency"
+        )
+    }
+}
+
+preBuild.dependsOn('verifyVendoredChirp')

@@ -1,0 +1,5 @@
+CHIRP upstream repository: https://github.com/kk7ds/chirp
+Vendored commit: a229fae793154b10f602f7ea3d57d42dfa06e8f3
+Archive used: https://github.com/kk7ds/chirp/archive/a229fae793154b10f602f7ea3d57d42dfa06e8f3.zip
+The runtime package is copied verbatim from upstream chirp/ into:
+  chirp-engine/src/main/python/chirp
