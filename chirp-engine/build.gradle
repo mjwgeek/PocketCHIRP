@@ -12,7 +12,7 @@ plugins {
 // ======================
 // CHIRP is NOT installed by pip during Gradle builds. The exact pinned
 // upstream source is vendored once into src/main/python/chirp by
-// tools/vendor-chirp.ps1. This makes normal/clean builds local and repeatable.
+// tools/vendor-chirp.ps1. Normal builds therefore use local files only.
 
 def chirpProps = new java.util.Properties()
 def chirpPropsFile = rootProject.file('chirp-version.properties')
@@ -41,11 +41,17 @@ android {
         applicationId 'com.wg5eek.pocketchirp.engine'
         minSdk 24
         targetSdk 36
-        versionCode 2
+        versionCode 5
         versionName '2.0.0'
 
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
         }
     }
 
@@ -60,9 +66,8 @@ chaquopy {
         version = '3.10'
         pyc { src = false }
 
-        // Intentionally NO pip { install(...) } block here.
-        // bridge.py and the vendored chirp/ package are ordinary local
-        // src/main/python sources and are packaged directly by Chaquopy.
+        // CHIRP and bridge.py are packaged directly from this LOCAL engine tree.
+        // There is intentionally no pip/Git/GitHub dependency here.
     }
 }
 
@@ -110,10 +115,15 @@ tasks.register('verifyVendoredChirp') {
         }
 
         logger.lifecycle(
-                "PocketCHIRP CHIRP Engine: using vendored CHIRP ${vendoredCommit} " +
-                        "(${drivers} driver files); no pip/GitHub build dependency"
+                "PocketCHIRP CHIRP Engine: using LOCAL vendored CHIRP ${vendoredCommit} " +
+                        "(${drivers} driver files); no pip/Git/GitHub build dependency"
         )
     }
 }
 
-preBuild.dependsOn('verifyVendoredChirp')
+// BUILD-SPEED SAFEGUARD:
+// Do not rescan the full vendored CHIRP tree on every debug/incremental build.
+// The integrity check is required for release builds, where it matters.
+tasks.matching { it.name == 'preReleaseBuild' }.configureEach {
+    dependsOn('verifyVendoredChirp')
+}
