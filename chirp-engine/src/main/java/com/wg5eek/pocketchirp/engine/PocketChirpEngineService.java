@@ -24,9 +24,10 @@ import java.util.Locale;
 
 /** GPL companion service. No PocketCHIRP UI, billing, cloud, USB or BLE code. */
 public final class PocketChirpEngineService extends Service {
-    public static final int IPC_VERSION = 4;
+    public static final int IPC_VERSION = 5;
     private static final int MAX_IMAGE_BYTES = 32 * 1024 * 1024;
     private static final int MAX_DRIVER_BYTES = 2 * 1024 * 1024;
+    private static final int MAX_EDIT_BUNDLE_BYTES = 16 * 1024 * 1024;
 
     /*
      * PocketCHIRP and the CHIRP Engine are separate Google Play packages and
@@ -82,19 +83,35 @@ public final class PocketChirpEngineService extends Service {
             return callString("pocketchirp_engine_request_json", requestJson);
         }
 
+        @Override public ParcelFileDescriptor requestJsonStream(String requestJson) {
+            enforcePocketChirpCaller();
+            // LARGE-DOCUMENT IPC REGRESSION GUARD:
+            // Never return radio documents or other bulk JSON as a Binder String.
+            // Android's Binder transaction buffer is shared and finite; large
+            // radios can exceed it even though the underlying radio read succeeds.
+            String result = callString("pocketchirp_engine_request_json", requestJson);
+            return pipeForBytes(result.getBytes(StandardCharsets.UTF_8));
+        }
+
         @Override public ParcelFileDescriptor getWorkingImage() {
             enforcePocketChirpCaller();
             return pipeForBytes(callBytes("get_last_image_bytes"));
         }
 
-        @Override public String loadImage(ParcelFileDescriptor image) {
+        @Override public ParcelFileDescriptor loadImage(ParcelFileDescriptor image) {
             enforcePocketChirpCaller();
-            return callString("load_editor_image_bytes", readAll(image, MAX_IMAGE_BYTES));
+            // load_editor_image_bytes returns the complete neutral Radio Document.
+            // Stream that document instead of returning it as a Binder String.
+            String document = callString(
+                    "load_editor_image_bytes", readAll(image, MAX_IMAGE_BYTES));
+            return pipeForBytes(document.getBytes(StandardCharsets.UTF_8));
         }
 
-        @Override public String previewImageConversion(ParcelFileDescriptor image) {
+        @Override public ParcelFileDescriptor previewImageConversion(ParcelFileDescriptor image) {
             enforcePocketChirpCaller();
-            return callString("preview_image_conversion_bytes", readAll(image, MAX_IMAGE_BYTES));
+            String preview = callString(
+                    "preview_image_conversion_bytes", readAll(image, MAX_IMAGE_BYTES));
+            return pipeForBytes(preview.getBytes(StandardCharsets.UTF_8));
         }
 
         @Override public String validateImage(ParcelFileDescriptor image) {
@@ -110,6 +127,18 @@ public final class PocketChirpEngineService extends Service {
         @Override public String imageCompatibility(ParcelFileDescriptor image) {
             enforcePocketChirpCaller();
             return callString("image_compatibility_bytes_json", readAll(image, MAX_IMAGE_BYTES));
+        }
+
+        @Override public ParcelFileDescriptor materializeEditorEdits(
+                ParcelFileDescriptor baseImage, ParcelFileDescriptor editBundle) {
+            enforcePocketChirpCaller();
+            // Local PocketCHIRP edits cross the process boundary only at an
+            // explicit materialization point (Save / Write / driver operation).
+            // Both payloads use file descriptors so Binder never carries the
+            // potentially-large editor state or image inline.
+            return pipeForBytes(callBytes("materialize_editor_edits_bytes",
+                    readAll(baseImage, MAX_IMAGE_BYTES),
+                    readAll(editBundle, MAX_EDIT_BUNDLE_BYTES)));
         }
 
         @Override public String registerCustomDriver(ParcelFileDescriptor source, String filename,

@@ -20,7 +20,7 @@ _last_raw_bytes = b""
 _last_hash_info = ""
 
 
-POCKETCHIRP_BRIDGE_REVISION = "229-p210-engine-owned-chirp-catalog"
+POCKETCHIRP_BRIDGE_REVISION = "232-p213-chirp-serial-open-contract"
 POCKETCHIRP_APP_VERSION = "2.0.0"
 POCKETCHIRP_INTERFACE_COMPAT = 1
 
@@ -609,11 +609,43 @@ def _pipe_for_class(cls, java_transport):
         return LegacyAndroidSerialPipe(java_transport)
     return AndroidSerialPipe(java_transport)
 
+def _apply_driver_serial_open_contract(cls, pipe):
+    """Apply CHIRP's exact driver-declared USB serial control-line contract.
+
+    HARD REGRESSION GUARD -- never replace this with blanket RTS/DTR values.
+    Some interfaces require asserted DTR/RTS for level-converter power or
+    handshaking, while other drivers intentionally request RTS low (notably
+    Icom CI-V, where an interface may use RTS as PTT). BLE is untouched.
+    """
+    if getattr(pipe, "is_ble", False):
+        return
+    wants_dtr = bool(getattr(cls, "WANTS_DTR", True))
+    wants_rts = bool(getattr(cls, "WANTS_RTS", True))
+    hardware_flow = bool(getattr(cls, "HARDWARE_FLOW", False))
+    try:
+        pipe.rtscts = hardware_flow
+    except Exception:
+        pass
+    try:
+        pipe.rts = wants_rts
+    except Exception:
+        pass
+    try:
+        pipe.dtr = wants_dtr
+    except Exception:
+        pass
+    _transport_note(
+        pipe,
+        "CHIRP SERIAL OPEN CONTRACT: DTR=%s RTS=%s RTS/CTS=%s" %
+        (wants_dtr, wants_rts, hardware_flow))
+
+
 def _prepare_clone_pipe(cls, java_transport):
     """Create a clean pyserial-like session for one CHIRP clone operation.
 
     Proprietary PocketCHIRP configures any Android BLE profile before this
-    one-attempt CHIRP clone session. USB keeps the historical behavior exactly.
+    one-attempt CHIRP clone session. Ordinary USB serial uses only the exact
+    selected CHIRP driver's declared serial-open contract.
     """
     pipe = _pipe_for_class(cls, java_transport)
     pipe.timeout = 1.5
@@ -621,6 +653,7 @@ def _prepare_clone_pipe(cls, java_transport):
         pipe.write_timeout = 1.5
     if not getattr(pipe, "is_ble", False):
         pipe.baudrate = int(getattr(cls, "BAUD_RATE", 9600) or 9600)
+        _apply_driver_serial_open_contract(cls, pipe)
     pipe.reset_input_buffer()
     time.sleep(0.05)
     return pipe
@@ -642,6 +675,8 @@ def _configure_pipe_for_driver(cls, pipe):
     pipe.timeout = 1.5
     if hasattr(pipe, "write_timeout"):
         pipe.write_timeout = 1.5
+    if not getattr(pipe, "is_ble", False):
+        _apply_driver_serial_open_contract(cls, pipe)
     pipe.reset_input_buffer()
     time.sleep(0.06)
 
@@ -654,6 +689,26 @@ def _configure_pipe_for_driver(cls, pipe):
 # sync_in attempt. Candidate ordering, direct/external role, write mode, MTU,
 # retries and resolver resets must NOT be reintroduced here.
 # =============================================================================
+def selected_serial_driver_facts_json():
+    """Return the exact selected CHIRP driver's small serial-open fact contract."""
+    from chirp import chirp_common
+    cls = _selected_class()
+    return _json.dumps({
+        "schemaVersion": 1,
+        "vendor": str(getattr(cls, "VENDOR", "") or "").strip(),
+        "model": str(getattr(cls, "MODEL", "") or "").strip(),
+        "variant": str(getattr(cls, "VARIANT", "") or "").strip(),
+        "className": str(getattr(cls, "__name__", "") or ""),
+        "moduleName": str(getattr(cls, "__module__", "") or ""),
+        "baudRate": int(getattr(cls, "BAUD_RATE", 9600) or 9600),
+        "wantsDtr": bool(getattr(cls, "WANTS_DTR", True)),
+        "wantsRts": bool(getattr(cls, "WANTS_RTS", True)),
+        "hardwareFlow": bool(getattr(cls, "HARDWARE_FLOW", False)),
+        "cloneMode": bool(issubclass(cls, chirp_common.CloneModeRadio)),
+        "liveRadio": bool(issubclass(cls, chirp_common.LiveRadio)),
+    }, separators=(",", ":"))
+
+
 def selected_ble_driver_facts_json():
     """Return raw neutral facts from the currently selected CHIRP class."""
     from chirp import chirp_common
@@ -6047,10 +6102,7 @@ def _prepare_live_pipe(cls, java_transport):
     # commands/framing/handshakes.
     if not getattr(pipe, "is_ble", False):
         pipe.baudrate = int(getattr(cls, "BAUD_RATE", 9600) or 9600)
-    try:
-        pipe.rtscts = bool(getattr(cls, "HARDWARE_FLOW", False))
-    except Exception:
-        pass
+        _apply_driver_serial_open_contract(cls, pipe)
     pipe.reset_input_buffer()
     time.sleep(0.05)
     return pipe
@@ -6862,6 +6914,111 @@ def load_editor_image_bytes(data):
     _save_working_radio(radio)
     return pocketchirp_radio_document_json()
 
+
+
+
+# =============================================================================
+# POCKETCHIRP 2.0 LOCAL-EDIT MATERIALIZER
+# =============================================================================
+# Ordinary edits now remain in the proprietary PocketCHIRP application as a
+# neutral operation journal.  The separate GPL Engine sees those edits only
+# when PocketCHIRP needs a concrete CHIRP .img (Save / Write / an explicitly
+# driver-specific operation).
+#
+# REGRESSION GUARD:
+# - This function operates only on an in-memory image and edit journal.
+# - It never opens BLE/USB and never changes clone timing, MTU, baud, resolver,
+#   radio prompts, or any transport policy.
+# - The Engine's previous working image/selection is restored before return,
+#   even when a driver rejects an edit.
+# - Only the explicitly-listed editor mutation entry points may be replayed.
+# =============================================================================
+def materialize_editor_edits_bytes(base_image_bytes, edit_bundle_bytes):
+    global _last_image_bytes, _last_raw_bytes, _last_hash_info
+    global _selected_radio_key, _selected_radio_class
+
+    base = bytes(base_image_bytes or b"")
+    if not base:
+        raise ValueError("No base radio image was supplied for edit materialization.")
+
+    bundle_raw = bytes(edit_bundle_bytes or b"")
+    if not bundle_raw:
+        bundle = {"schemaVersion": 1, "operations": []}
+    else:
+        bundle = _json.loads(bundle_raw.decode("utf-8-sig"))
+    if not isinstance(bundle, dict):
+        raise ValueError("PocketCHIRP edit bundle must be a JSON object.")
+    if int(bundle.get("schemaVersion", 1) or 1) != 1:
+        raise ValueError("Unsupported PocketCHIRP edit-bundle schema version.")
+
+    operations = bundle.get("operations") or []
+    if not isinstance(operations, list):
+        raise ValueError("PocketCHIRP edit-bundle operations must be an array.")
+
+    old_image = _last_image_bytes
+    old_raw = _last_raw_bytes
+    old_hash_info = _last_hash_info
+    old_key = _selected_radio_key
+    old_class = _selected_radio_class
+
+    try:
+        raw, metadata = _metadata_for_image(base)
+        expected_hash = str(bundle.get("baseRawSha256") or "").strip().lower()
+        actual_hash = hashlib.sha256(raw).hexdigest()
+        if expected_hash and expected_hash != actual_hash:
+            raise ValueError(
+                "PocketCHIRP edit bundle does not match its base image "
+                f"(expected {expected_hash}, got {actual_hash}).")
+
+        # Resolve exactly as the normal explicit .img loader does, but do not
+        # build/return the large Radio Document here. That document belongs on
+        # the streamed read/load boundary, not inside Save/Write materialization.
+        expected_key = str(bundle.get("selectedRadioKey") or "").strip()
+        # The selected WRITE TARGET and the image's parser identity are separate.
+        # Do not reject a compatible cross-model/variant workflow merely because
+        # the base .img metadata names its originating model. We only verify that
+        # the app and Engine still agree on the selected target before temporarily
+        # switching to the base image's parser class for edit replay.
+        if expected_key and old_key and expected_key != old_key:
+            raise ValueError(
+                "PocketCHIRP and CHIRP Engine disagree about the selected target radio.")
+
+        entry = _entry_for_metadata(metadata)
+        if entry is not None:
+            _selected_radio_key = entry["key"]
+            _selected_radio_class = _find_loaded_radio_class(entry)
+
+        radio = _radio_from_image_bytes(base)
+        _save_working_radio(radio)
+
+        allowed = {
+            "update_memory_json": update_memory_json,
+            "delete_memories_json": delete_memories_json,
+            "update_setting_json": update_setting_json,
+            "rearrange_memories_json": rearrange_memories_json,
+            "set_bank_json": set_bank_json,
+        }
+
+        for index, item in enumerate(operations):
+            if not isinstance(item, dict):
+                raise ValueError(f"Edit operation {index + 1} is not a JSON object.")
+            name = str(item.get("operation") or "")
+            fn = allowed.get(name)
+            if fn is None:
+                raise ValueError("Unsupported PocketCHIRP edit operation: " + name)
+            args = item.get("args") or []
+            if not isinstance(args, list):
+                raise ValueError("Edit operation arguments must be an array: " + name)
+            fn(*args)
+
+        # Copy before restoring the Engine's pre-existing working state.
+        return bytes(_last_image_bytes or b"")
+    finally:
+        _last_image_bytes = old_image
+        _last_raw_bytes = old_raw
+        _last_hash_info = old_hash_info
+        _selected_radio_key = old_key
+        _selected_radio_class = old_class
 
 
 def validate_current_image_bytes(data):
@@ -7888,6 +8045,7 @@ POCKETCHIRP_ENGINE_RPC_INTERFACE = 1
 _POCKETCHIRP_ENGINE_RPC_OPERATIONS = frozenset({
     "selected_driver_identification_payloads_json",
     "selected_radio_prompt_contract_json",
+    "selected_serial_driver_facts_json",
     "update_memory_json",
     "delete_memories_json",
     "update_setting_json",

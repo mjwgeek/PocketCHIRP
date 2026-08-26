@@ -8,12 +8,29 @@ interface IPocketChirpEngine {
     int getPocketChirpApiVersion();
     String requestJson(String requestJson);
 
+    /**
+     * Stream a potentially large neutral JSON response through a file descriptor.
+     * This avoids Android Binder transaction-size limits for radio documents,
+     * large previews, and other bulk JSON while preserving requestJson() for
+     * small control messages.
+     */
+    ParcelFileDescriptor requestJsonStream(String requestJson);
+
     ParcelFileDescriptor getWorkingImage();
-    String loadImage(in ParcelFileDescriptor image);
-    String previewImageConversion(in ParcelFileDescriptor image);
+    /** Load an image and stream the resulting radio document back to the app. */
+    ParcelFileDescriptor loadImage(in ParcelFileDescriptor image);
+    /** Stream potentially large image-conversion previews. */
+    ParcelFileDescriptor previewImageConversion(in ParcelFileDescriptor image);
     String validateImage(in ParcelFileDescriptor image);
     String identifyImage(in ParcelFileDescriptor image);
     String imageCompatibility(in ParcelFileDescriptor image);
+
+    /**
+     * Apply PocketCHIRP-owned local editor mutations to a base image and stream
+     * the resulting concrete CHIRP image back. No radio hardware is touched.
+     */
+    ParcelFileDescriptor materializeEditorEdits(in ParcelFileDescriptor baseImage,
+                                                in ParcelFileDescriptor editBundle);
 
     String registerCustomDriver(in ParcelFileDescriptor source,
                                 String filename,

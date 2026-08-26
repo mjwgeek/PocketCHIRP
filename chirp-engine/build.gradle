@@ -3,16 +3,15 @@ plugins {
     id 'com.chaquo.python'
 }
 
-// PocketCHIRP 2.x architecture:
-// The proprietary Android application and GPL CHIRP runtime are distributed
-// as separate APKs/packages. Do not re-embed the CHIRP Python runtime into
-// the PocketCHIRP application module.
+// PocketCHIRP CHIRP Engine 2.0.0 - RELEASE build.
 //
-// GPL CHIRP ENGINE BUILD
-// ======================
-// CHIRP is NOT installed by pip during Gradle builds. The exact pinned
-// upstream source is vendored once into src/main/python/chirp by
-// tools/vendor-chirp.ps1. This makes normal/clean builds local and repeatable.
+// IMPORTANT:
+// This is the MODULE build file:
+//     <project>\chirp-engine\build.gradle
+//
+// It is NOT the project-root build.gradle.
+//
+// This module is the separately distributed GPL CHIRP Engine package.
 
 def chirpProps = new java.util.Properties()
 def chirpPropsFile = rootProject.file('chirp-version.properties')
@@ -29,6 +28,21 @@ if (!(chirpCommit ==~ /[0-9a-fA-F]{40}/)) {
 def vendoredChirpDir = file('src/main/python/chirp')
 def vendoredCommitFile = file('third_party/chirp/UPSTREAM_COMMIT.txt')
 
+// Release signing values are stored in the PROJECT ROOT local.properties.
+def localProps = new java.util.Properties()
+def localPropsFile = rootProject.file('local.properties')
+if (localPropsFile.exists()) {
+    localPropsFile.withInputStream { localProps.load(it) }
+}
+
+def releaseStorePassword =
+        (localProps.getProperty('POCKETCHIRP_RELEASE_STORE_PASSWORD') ?: '').trim()
+
+def releaseKeyPassword =
+        (localProps.getProperty('POCKETCHIRP_RELEASE_KEY_PASSWORD') ?: '').trim()
+
+def releaseKeystore = file('C:/Users/xtrem/Documents/Android Keys/PocketCHIRP-upload')
+
 android {
     namespace = 'com.wg5eek.pocketchirp.engine'
     compileSdk 36
@@ -41,11 +55,29 @@ android {
         applicationId 'com.wg5eek.pocketchirp.engine'
         minSdk 24
         targetSdk 36
-        versionCode 2
+
+        // Previous Google Play Engine build was versionCode 3.
+        versionCode 6
         versionName '2.0.0'
 
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile releaseKeystore
+            storePassword releaseStorePassword
+            keyAlias 'pocketchirp-upload'
+            keyPassword releaseKeyPassword
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
         }
     }
 
@@ -60,9 +92,28 @@ chaquopy {
         version = '3.10'
         pyc { src = false }
 
-        // Intentionally NO pip { install(...) } block here.
-        // bridge.py and the vendored chirp/ package are ordinary local
-        // src/main/python sources and are packaged directly by Chaquopy.
+        // CHIRP and bridge.py are packaged directly from the LOCAL engine tree.
+        // There is intentionally no pip/Git/GitHub dependency here.
+    }
+}
+
+tasks.register('verifyReleaseSigning') {
+    doLast {
+        if (!releaseKeystore.exists()) {
+            throw new GradleException(
+                    "PocketCHIRP release keystore not found: ${releaseKeystore}"
+            )
+        }
+        if (releaseStorePassword.isEmpty()) {
+            throw new GradleException(
+                    'Missing POCKETCHIRP_RELEASE_STORE_PASSWORD in root local.properties'
+            )
+        }
+        if (releaseKeyPassword.isEmpty()) {
+            throw new GradleException(
+                    'Missing POCKETCHIRP_RELEASE_KEY_PASSWORD in root local.properties'
+            )
+        }
     }
 }
 
@@ -82,6 +133,7 @@ tasks.register('verifyVendoredChirp') {
                 vendoredCommitFile,
                 file('third_party/chirp/COPYING')
         ]
+
         def missing = required.findAll { !it.exists() }
         if (!missing.isEmpty()) {
             throw new GradleException(
@@ -102,18 +154,26 @@ tasks.register('verifyVendoredChirp') {
         def drivers = fileTree('src/main/python/chirp/drivers') {
             include '*.py'
         }.files.size()
+
         if (drivers < 50) {
             throw new GradleException(
                     "Vendored CHIRP driver tree looks incomplete (${drivers} Python files). " +
-                            'Run .\\tools\\vendor-chirp.ps1'
+                            '. Run .\\tools\\vendor-chirp.ps1'
             )
         }
 
         logger.lifecycle(
-                "PocketCHIRP CHIRP Engine: using vendored CHIRP ${vendoredCommit} " +
-                        "(${drivers} driver files); no pip/GitHub build dependency"
+                "PocketCHIRP CHIRP Engine: using LOCAL vendored CHIRP ${vendoredCommit} " +
+                        "(${drivers} driver files); no pip/Git/GitHub build dependency"
         )
     }
 }
 
-preBuild.dependsOn('verifyVendoredChirp')
+// BUILD-SPEED SAFEGUARD:
+// Do not scan the full vendored CHIRP tree on every debug/incremental build.
+// The integrity check is required for RELEASE builds, where it matters.
+// Normal development builds use the already-vendored local files directly.
+tasks.matching { it.name == 'preReleaseBuild' }.configureEach {
+    dependsOn('verifyVendoredChirp')
+    dependsOn('verifyReleaseSigning')
+}
