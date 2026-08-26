@@ -999,7 +999,24 @@ def do_upload(radio):
         radio.FIRMWARE_VERSION = f
     else:
         return False
-#---------------Scrittura setting 1  
+#---------------Bonifica canali fantasma
+#   La radio considera libero un canale solo se il byte attributi (byte 15
+#   del record) vale 0xFF; CHIRP invece lo mostra vuoto quando freq==0.
+#   Un record azzerato (residuo del firmware precedente in EEPROM) per CHIRP
+#   "non esiste" e non viene mai riscritto, ma per la radio e' un canale
+#   occupato a 0.00 MHz. Qui, prima di scrivere, ogni record che CHIRP vede
+#   vuoto ma non e' gia' a 0xFF viene riportato a canale davvero libero.
+    mmap = radio.get_mmap()
+    for ch in range(CHAN_MAX):
+        base = START_MEM + ch * 32
+        rec = mmap[base:base + 32]
+        freq = rec[16] | (rec[17] << 8) | (rec[18] << 16) | (rec[19] << 24)
+        attr = rec[15]
+        if (freq == 0 or freq == 0xFFFFFFFF or (attr & 0x0F) == 0x0F) and attr != 0xFF:
+            clean = bytearray(b"\xFF" * 32)
+            clean[10:15] = b"\xEE" * 5     # selettive "vuote", come set_memory
+            mmap[base] = bytes(clean)
+#---------------Scrittura setting 1
     addr = 0
     while addr < PROG_SIZE_V:
         o = radio.get_mmap()[addr:addr+MEM_BLOCK]
