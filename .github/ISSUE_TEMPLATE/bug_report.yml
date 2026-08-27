@@ -1,0 +1,125 @@
+name: Bug report
+description: Report a reproducible PocketCHIRP app, radio, USB, BLE, editor, or CHIRP Engine problem.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve PocketCHIRP. Please include enough detail for the problem to be reproduced.
+
+        **Do not post activation codes, purchase links, email addresses, passwords, API keys, precise home addresses, or other private information.**
+
+  - type: input
+    id: pocketchirp_version
+    attributes:
+      label: PocketCHIRP version
+      description: Example: 2.0.0
+      placeholder: 2.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: engine_version
+    attributes:
+      label: PocketCHIRP CHIRP Engine version
+      description: Enter the Engine version if available. If PocketCHIRP cannot start far enough to show it, enter Unknown.
+      placeholder: 2.0.0 or Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: android_device
+    attributes:
+      label: Android device and Android version
+      placeholder: Pixel 9 Pro — Android 16
+    validations:
+      required: true
+
+  - type: input
+    id: radio
+    attributes:
+      label: Radio manufacturer and model
+      description: Enter N/A if the problem does not involve a radio.
+      placeholder: Baofeng UV-5RH Pro
+    validations:
+      required: true
+
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection method
+      options:
+        - Direct Bluetooth LE (BLE)
+        - TIDRADIO Bluetooth programming dongle
+        - Baofeng Writer / other Bluetooth programming dongle
+        - USB programming cable
+        - Direct USB radio connection
+        - File / image / editor only
+        - Not applicable
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: cable_programmer
+    attributes:
+      label: Cable, programmer, or USB chipset
+      description: If known, include details such as CH340/CH341, FTDI, CP210x, TIDRADIO Kit, or the BLE device name.
+      placeholder: CH340 USB cable / TIDRADIO Kit / Unknown
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the failure as precisely as possible, including any visible error message.
+      placeholder: PocketCHIRP connects to the radio, begins reading, then...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the shortest sequence that reliably causes the problem.
+      placeholder: |
+        1. Open PocketCHIRP
+        2. Select ...
+        3. Tap Read From Radio
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: The radio image should finish reading and open in the editor.
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: PocketCHIRP log
+      description: Paste the relevant PocketCHIRP log here. Remove any private information first.
+      render: text
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Optional files or screenshots
+      description: Drag screenshots, diagnostic files, or a radio .img file into this box if they help reproduce the problem. Do not upload anything containing private information.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing open and closed issues for this problem.
+          required: true
+        - label: I removed activation codes, purchase links, email addresses, API keys, passwords, and other private information from this report.
+          required: true
+        - label: I understand that radio compatibility can vary by model revision, cable, programmer, connection method, and firmware.
+          required: true
