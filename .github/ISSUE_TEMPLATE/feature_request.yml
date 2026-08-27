@@ -1,0 +1,48 @@
+name: Feature request
+description: Suggest an improvement to PocketCHIRP that is not a radio compatibility request.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. For a new radio, cable, programmer, or connection path, please use the **Radio compatibility request** form instead.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Explain the workflow or limitation you want PocketCHIRP to improve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed feature or behavior
+      description: Describe what you would like PocketCHIRP to do.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or examples
+      description: Include examples from other software or alternate approaches if useful.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Add screenshots, links, or other details that help explain the request.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for the same or a very similar request.
+          required: true
+        - label: I have not included activation codes, purchase links, credentials, or other private information.
+          required: true
