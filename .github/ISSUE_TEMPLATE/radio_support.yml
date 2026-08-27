@@ -1,0 +1,87 @@
+name: Radio compatibility request
+description: Request support for a radio, cable, programmer, or connection method that PocketCHIRP does not currently handle.
+title: "[Radio Support] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when PocketCHIRP does not currently support your radio or connection path.
+
+        If the radio is already supposed to work but fails, use the **Bug report** form instead.
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      placeholder: Baofeng, Radtel, Yaesu, Icom, TYT, etc.
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Exact radio model
+      description: Include suffixes such as Plus, Pro, GPS, V2, or regional variants.
+      placeholder: UV-5RH Pro
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Radio firmware or hardware revision
+      description: Enter Unknown if you cannot determine it.
+      placeholder: 1.0.3 / PCB V2 / Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: desired_connection
+    attributes:
+      label: Desired connection method
+      options:
+        - USB programming cable
+        - Direct USB radio connection
+        - Direct Bluetooth LE (BLE)
+        - Bluetooth programming dongle
+        - More than one of these
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: cable_programmer
+    attributes:
+      label: Cable, programmer, or USB chipset
+      placeholder: CH340/CH341, FTDI, CP210x, TIDRADIO Kit, Baofeng Writer, Unknown
+
+  - type: textarea
+    id: known_software
+    attributes:
+      label: Known working software
+      description: List official CPS, CHIRP, ODMaster, walkie-talkie apps, Windows tools, or other software that can already program the radio.
+      placeholder: Official CPS version..., ODMaster..., CHIRP driver...
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Helpful technical information
+      description: Include links to manufacturer software, manuals, protocol documentation, CHIRP drivers, open-source tools, or other useful references.
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Include anything unusual about the radio, cable, BLE name, clone procedure, or programming behavior.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues to make sure this radio or connection request is not already tracked.
+          required: true
+        - label: I have not included activation codes, purchase links, credentials, or other private information.
+          required: true
