@@ -1,3 +1,4 @@
+# one-time trigger
 name: Approve New Installable Drivers Once
 
 on:
