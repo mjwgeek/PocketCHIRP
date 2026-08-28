@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 6,
-  "updated": "2026-08-21",
+  "catalogRevision": 7,
+  "updated": "2026-08-28",
   "drivers": [
     {
       "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830.py",
@@ -481,6 +481,52 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004753Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:5b15b495ae47",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV V5.0 Memory.py",
+      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
+      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
+      "sha256": "5b15b495ae472c06c1fed018d4a1554c5ff11e99289a5bae66307f929c9245e1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "IJV FW5"
+      ],
+      "variants": [
+        "Official IJV firmware 5.0"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng IJV FW5",
+      "officialSource": true,
+      "officialFirmware": "5.0",
+      "archiveSourceUrl": "",
+      "archiveMember": "",
+      "installPackaging": "direct-python",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::ijv fw5::ijv  memory",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-ijv-fw5-b5762f6a3a",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857423Z",
+      "approvalNote": "Approved new installable driver discovery"
     },
     {
       "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:f9fe602130f9",
@@ -1199,6 +1245,172 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "sha256": "38b334e8065b7e2613e0b6e628ccb57abd68c3806c3c7fae0bf17506e4e0574e",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "1.3.0"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": "1.3.0",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
+      "availableVersions": [
+        "1.3.0"
+      ],
+      "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-v1-3-0-093c9739cb",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857371Z",
+      "approvalNote": "Approved new installable driver discovery"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "sha256": "b325d87e95984090849ba9daccae22d1fb2b40bb069ad3e1d047a59378b6266c",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": "1.2.0",
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger 1.2.0::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0 v1.2.0",
+      "availableVersions": [
+        "1.2.0"
+      ],
+      "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-0-v1-2-0-1f1bc993d8",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857239Z",
+      "approvalNote": "Approved new installable driver discovery"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "sha256": "52072a23cde6aad57f6a7afacce74969f6559cc37b867911d56dadd67526c1ec",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": "1.2.1",
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger 1.2.1::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1 v1.2.1",
+      "availableVersions": [
+        "1.2.1"
+      ],
+      "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-1-v1-2-1-4b45a57a4d",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857303Z",
+      "approvalNote": "Approved new installable driver discovery"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "sha256": "cc0e9a2bc4ecc3d846eabf1c42bb54fc0019b5572fff3d35377810bd25d93ab5",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": "1.2.2",
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger 1.2.2::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2 v1.2.2",
+      "availableVersions": [
+        "1.2.2"
+      ],
+      "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-2-v1-2-2-87979d928a",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857344Z",
+      "approvalNote": "Approved new installable driver discovery"
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -1238,6 +1450,93 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005123Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "sha256": "5402946efc79791e95700bdb11f958643111083c469f4df78f44243b0d455bbe",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 GOGUFW Messenger 1.0.1a"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": "1.0",
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 gogufw messenger 1.0.1a::gogufw_uvk1_chirpa",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 GOGUFW Messenger 1.0.1a v1.0",
+      "availableVersions": [
+        "1.0"
+      ],
+      "id": "quansheng-uv-k1-gogufw-messenger-1-0-1a-v1-0-a6ad9e9df3",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857400Z",
+      "approvalNote": "Approved new installable driver discovery"
+    },
+    {
+      "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:2ef25e03ac5d",
+      "type": "official-site-file",
+      "repository": "ijvradio.com",
+      "path": "IJV N3_60.py",
+      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20N3_60.py",
+      "sha256": "2ef25e03ac5dbd18a061c8e89e2874f36eca687ff58a529b10a953465c80fc30",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K5"
+      ],
+      "variants": [
+        "Official IJV firmware 3.60"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "official IJV download source"
+      ],
+      "status": "approved",
+      "historical": false,
+      "releaseTier": "current",
+      "displayName": "Quansheng UV-K5",
+      "officialSource": true,
+      "officialFirmware": "3.60",
+      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
+      "archiveMember": "IJV N3_60.py",
+      "installPackaging": "mirrored-zip-member",
+      "version": null,
+      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv n",
+      "latestInFamily": true,
+      "recommended": true,
+      "availableVersions": [],
+      "id": "quansheng-uv-k5-fc7f6e5f97",
+      "approved": true,
+      "approvedAt": "2026-08-28T04:31:50.857447Z",
+      "approvalNote": "Approved new installable driver discovery"
     },
     {
       "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:f4611c031998",
@@ -5944,5 +6243,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 106
+  "approvedCount": 113
 }
