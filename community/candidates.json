@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-02T14:32:50.664958Z",
-  "candidateCount": 111,
+  "generatedAt": "2026-09-03T14:37:23.755924Z",
+  "candidateCount": 105,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -3795,6 +3795,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "sha256": "a5f87cc3781a908ae36ed9e479d3b7d0c59064cf8c53e2865e8ac8e1f89cac97",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py"
+        }
+      ],
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn fusion)::f4hwn_fusion_chirp",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -4047,41 +4090,6 @@
       "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
       "sha256": "927df9b31d1622b660da65df3c85a601d9cace371a2bced29ca4be2ff6b8b4a1",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
-      ],
-      "variants": [],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "explicit repository source"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": true,
-      "releaseTier": "historical",
-      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn fusion)::f4hwn_fusion_chirp",
-      "latestInFamily": false,
-      "recommended": false,
-      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion)",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
-      "type": "repository-file",
-      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
-      "sha256": "a5f87cc3781a908ae36ed9e479d3b7d0c59064cf8c53e2865e8ac8e1f89cac97",
       "vendors": [
         "Quansheng"
       ],
@@ -4554,258 +4562,6 @@
       "availableVersions": [
         "1.5.0"
       ]
-    },
-    {
-      "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:5b15b495ae47",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V5.0 Memory.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "sha256": "5b15b495ae472c06c1fed018d4a1554c5ff11e99289a5bae66307f929c9245e1",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "IJV FW5"
-      ],
-      "variants": [
-        "Official IJV firmware 5.0"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng IJV FW5",
-      "officialSource": true,
-      "officialFirmware": "5.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv fw5::ijv  memory",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:4.0:IJV V4.0 Unified.py:89f5bb69655b",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V4.0 Unified.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "sha256": "89f5bb69655b4202068d08f8580001151caaee1105189c615c35645758c2aa21",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "IJV"
-      ],
-      "variants": [
-        "Official IJV firmware 4.0"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng IJV",
-      "officialSource": true,
-      "officialFirmware": "4.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv::ijv  unified",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:2ef25e03ac5d",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV N3_60.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20N3_60.py",
-      "sha256": "2ef25e03ac5dbd18a061c8e89e2874f36eca687ff58a529b10a953465c80fc30",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV N3_60.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv n",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 1_2.py:6cc7699618fe",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 1_2.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%201_2.py",
-      "sha256": "6cc7699618feaf398334e02d97a3822d3a4a209d922e99c123470096cf65e4a6",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 1_2.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank ",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 0.py:f11d24a65186",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 0.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%200.py",
-      "sha256": "f11d24a651860f23efc5e623877922cd73f200b3403b0b31e29fa74e76892d82",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 0.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank 0",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 Settings.py:4bbe5d377fe7",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 Settings.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20Settings.py",
-      "sha256": "4bbe5d377fe7f4bd2a227ca2f92fd65b3522b8d4055bdd0cfa38a8bf9e3f7afb",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 Settings.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x settings",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1609:chirp/drivers/alinco_djvx50.py",
@@ -5706,10 +5462,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 39,
-  "historicalCount": 72,
-  "versionedCount": 62,
-  "officialIjvSource": true,
-  "officialIjvCandidateCount": 6,
-  "officialIjvLastRunFailures": 0
+  "currentCount": 34,
+  "historicalCount": 71,
+  "versionedCount": 62
 }
