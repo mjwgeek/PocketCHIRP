@@ -20,7 +20,7 @@ _last_raw_bytes = b""
 _last_hash_info = ""
 
 
-POCKETCHIRP_BRIDGE_REVISION = "229-p210-engine-owned-chirp-catalog"
+POCKETCHIRP_BRIDGE_REVISION = "264-p245-driver-roundtrip-uppercase-fallback"
 POCKETCHIRP_APP_VERSION = "2.0.0"
 POCKETCHIRP_INTERFACE_COMPAT = 1
 
@@ -122,6 +122,20 @@ def get_last_image_bytes():
 
 
 
+
+def _set_transport_timeout_ms(transport, milliseconds):
+    """Best-effort timeout hint for older/alternate transport shims.
+
+    Some PocketCHIRP transport objects do not expose setTimeoutMs(). Timeout
+    tuning is advisory; lack of that optional method must not abort a radio
+    handshake before the driver gets a chance to communicate.
+    """
+    setter = getattr(transport, "setTimeoutMs", None)
+    if callable(setter):
+        setter(max(1, int(milliseconds)))
+        return True
+    return False
+
 class AndroidSerialPipe:
     """pyserial-compatible wrapper around PocketCHIRP's Android transport."""
 
@@ -158,14 +172,21 @@ class AndroidSerialPipe:
             is_ble = False
 
         self.is_ble = is_ble
-        if is_ble:
+
+        # isBleTransport() is already normalized by the proprietary Binder:
+        # true means CHIRP should use native/direct-BLE semantics; false means
+        # ordinary serial semantics. No programmer/profile identity crosses here.
+        self.is_direct_ble = bool(is_ble)
+        if self.is_direct_ble:
             self.port = "/tmp/ttyBLE-PocketCHIRP"
             self.name = "/tmp/ttyBLE-PocketCHIRP"
         else:
             self.port = "PocketCHIRP"
             self.name = "PocketCHIRP"
         self.is_open = True
-        self._timeout = 1.5
+        # Match CHIRP desktop's serial-open contract. Drivers which require a
+        # different timeout change pipe.timeout themselves.
+        self._timeout = 0.25
         self._write_timeout = 1.5
         self._baudrate = 9600
         self._bytesize = 8
@@ -175,7 +196,7 @@ class AndroidSerialPipe:
         self._dtr = False
         self._rtscts = False
         self._dsrdtr = False
-        self._transport.setTimeoutMs(1500)
+        _set_transport_timeout_ms(self._transport, 250)
         try:
             self._transport.setWriteTimeoutMs(1500)
         except Exception:
@@ -201,7 +222,7 @@ class AndroidSerialPipe:
         # (blocking forever) as a generous finite timeout rather than hanging
         # the Android worker thread indefinitely.
         ms = 30000 if self._timeout is None else max(1, int(self._timeout * 1000))
-        self._transport.setTimeoutMs(ms)
+        _set_transport_timeout_ms(self._transport, ms)
 
     @property
     def write_timeout(self):
@@ -235,6 +256,17 @@ class AndroidSerialPipe:
             raise ValueError("Unsupported serial byte size: %r" % value)
         self._bytesize = value
         self._apply_serial_parameters()
+
+    # Some older CHIRP drivers use ``databits`` rather than pyserial's
+    # modern ``bytesize`` spelling. Keep both names backed by the exact same
+    # framing state so the adapter does not need driver-specific exceptions.
+    @property
+    def databits(self):
+        return self.bytesize
+
+    @databits.setter
+    def databits(self, value):
+        self.bytesize = value
 
     @property
     def parity(self):
@@ -351,10 +383,45 @@ class AndroidSerialPipe:
     def setParity(self, parity):
         self.parity = parity
 
+    def setRTS(self, level=True):
+        """Legacy pyserial API; omitted level means assert RTS."""
+        self.rts = level
+
+    def setDTR(self, level=True):
+        """Legacy pyserial API; omitted level means assert DTR."""
+        self.dtr = level
+
+    def isOpen(self):
+        """pyserial 2.x compatibility alias."""
+        return bool(self.is_open)
+
+    def open(self):
+        # The Android transport is physically opened by the proprietary app
+        # before it is handed across IPC. This mirrors pyserial's state API
+        # without trying to take transport ownership inside the GPL engine.
+        self.is_open = True
+        return None
+
     def read(self, size=1):
+        # Universal READ rule: pass through the bytes the radio actually supplied.
+        # No generic length/content rejection belongs in this transport wrapper.
         size = int(size)
         if size <= 0:
             return b""
+
+        # pyserial timeout=0 means a genuinely non-blocking read: return only
+        # bytes which are already queued. Android transports require a finite
+        # millisecond timeout internally, so preserve the semantic distinction
+        # here instead of turning zero into an accidental 1 ms blocking read.
+        if self._timeout == 0:
+            getter = getattr(self._transport, "availableBytes", None)
+            if not callable(getter):
+                return b""
+            available = max(0, int(getter()))
+            if available <= 0:
+                return b""
+            return bytes(self._transport.readBytes(min(size, available)))
+
         return bytes(self._transport.readBytes(size))
 
     def readline(self, size=-1):
@@ -412,16 +479,14 @@ class AndroidSerialPipe:
             _logging.getLogger("PocketCHIRP.serial").debug("%s", message)
         except Exception:
             pass
-        # BLE driver-specific diagnostics (for example CHIRP's selected clone
-        # block size) are valuable during field testing. Route them to the
-        # persistent PocketCHIRP log without changing USB log volume.
-        if getattr(self, "is_ble", False):
-            try:
-                cb = getattr(self._transport, "onChirpProgress", None)
-                if callable(cb):
-                    cb(str(message), 0, 0)
-            except Exception:
-                pass
+        # Never turn BLE per-block diagnostics into UI progress callbacks.
+        # CHIRP drivers commonly pipe.log() inside the clone hot loop. Sending
+        # those lines over Python->Java as progress=(0,0) adds synchronous IPC
+        # between radio transactions and can make the progress bar disappear.
+        #
+        # The diagnostic is still emitted to Python logging above. USB behavior
+        # is otherwise unchanged; BLE transport/profile diagnostics that matter
+        # operationally are emitted explicitly by MainActivity.
         return None
 
     def flush(self):
@@ -448,7 +513,7 @@ class LegacyAndroidSerialPipe:
         self._baudrate = 9600
         self._rts = False
         self._dtr = False
-        self._transport.setTimeoutMs(1500)
+        _set_transport_timeout_ms(self._transport, 1500)
 
     @property
     def timeout(self):
@@ -457,7 +522,7 @@ class LegacyAndroidSerialPipe:
     @timeout.setter
     def timeout(self, value):
         self._timeout = float(value)
-        self._transport.setTimeoutMs(max(1, int(self._timeout * 1000)))
+        _set_transport_timeout_ms(self._transport, max(1, int(self._timeout * 1000)))
 
     @property
     def baudrate(self):
@@ -528,8 +593,8 @@ class AndroidNativeUsbDevice:
         self._transport = java_transport
 
     def write(self, endpoint, data, timeout=None):
-        if int(endpoint) != 0x02:
-            raise IOError("GD-73A Android backend only permits bulk OUT endpoint 0x02")
+        if int(endpoint) & 0x80:
+            raise IOError("Android native USB bulk write requires an OUT endpoint")
         if timeout is not None:
             try:
                 self._transport.setWriteTimeoutMs(max(1, int(timeout)))
@@ -538,19 +603,23 @@ class AndroidNativeUsbDevice:
         return int(self._transport.writeBytes(bytes(data)))
 
     def read(self, endpoint, size, timeout=None):
-        if int(endpoint) != 0x81:
-            raise IOError("GD-73A Android backend only permits bulk IN endpoint 0x81")
+        if not (int(endpoint) & 0x80):
+            raise IOError("Android native USB bulk read requires an IN endpoint")
         if timeout is not None:
             try:
-                self._transport.setTimeoutMs(max(1, int(timeout)))
+                _set_transport_timeout_ms(self._transport, max(1, int(timeout)))
             except Exception:
                 pass
         return bytes(self._transport.readBytes(int(size)))
 
     def close(self):
-        closer = getattr(self._transport, "closeTransport", None)
-        if callable(closer):
-            closer()
+        # PocketCHIRP owns the physical Android USB connection lifecycle.
+        # CHIRP may close its PyUSB-like handle, but the GPL engine must not
+        # reach across Binder to tear down the proprietary app's transport.
+        # This intentionally matches AndroidSerialPipe.close(): release of the
+        # concrete UsbDeviceConnection happens when PocketCHIRP closes/recycles
+        # the clone session.
+        return None
 
 
 def _is_native_usb_bulk_transport(java_transport):
@@ -561,38 +630,235 @@ def _is_native_usb_bulk_transport(java_transport):
         return False
 
 
-def _prepare_native_usb_class_adapter(cls, pipe):
-    """Bind a known native-USB CHIRP driver to Android bulk USB.
+def _native_usb_identity(java_transport):
+    """Return optional physical USB ID facts; never use them as a hard allow-list."""
+    try:
+        vid = int(java_transport.getNativeUsbVendorId())
+        pid = int(java_transport.getNativeUsbProductId())
+        return vid, pid
+    except Exception:
+        return -1, -1
 
-    Fail closed for every other radio. This guarantees that a C7000 attached
-    over native USB can never receive serial clone bytes from an unrelated
-    selected driver.
+
+def _native_usb_transport_kind(java_transport):
+    """Classify the app-selected native USB transport using existing neutral facts.
+
+    Bulk remains explicit in the v6 Binder contract. A non-bulk transport which
+    nevertheless reports a physical USB VID/PID is the app-side FE/01/02 DFU
+    transport. Ordinary serial/BLE transports report -1/-1 here.
+    """
+    if java_transport is None:
+        return ""
+    if _is_native_usb_bulk_transport(java_transport):
+        return "bulk"
+    vid, pid = _native_usb_identity(java_transport)
+    return "dfu" if vid >= 0 and pid >= 0 else ""
+
+
+def selected_native_usb_driver_facts_json():
+    """Neutral native-USB capability contract for the currently selected driver."""
+    cls = _selected_class()
+    preferred = []
+    for item in (getattr(cls, "POCKETCHIRP_USB_PREFERRED_IDS", ()) or ()):
+        try:
+            preferred.append({"vid": int(item[0]), "pid": int(item[1])})
+        except Exception:
+            continue
+    transport = str(getattr(cls, "POCKETCHIRP_USB_TRANSPORT", "") or "").strip().casefold()
+    if transport not in ("bulk", "dfu"):
+        transport = ""
+    return _json.dumps({
+        "schemaVersion": 1,
+        "vendor": str(getattr(cls, "VENDOR", "") or ""),
+        "model": str(getattr(cls, "MODEL", "") or ""),
+        "variant": str(getattr(cls, "VARIANT", "") or ""),
+        "transport": transport,
+        "preferredIds": preferred,
+    }, separators=(",", ":"))
+
+
+def _driver_usb_preferred_ids(cls):
+    out = []
+    for item in (getattr(cls, "POCKETCHIRP_USB_PREFERRED_IDS", ()) or ()):
+        try:
+            out.append((int(item[0]), int(item[1])))
+        except Exception:
+            continue
+    return tuple(out)
+
+
+def _dfu_frame(java_transport, direction, request, value=0,
+               data=b"", length=None, timeout_ms=5000):
+    """Execute one standard DFU class-interface request through the v6 byte IPC.
+
+    The proprietary app validates/claims an FE/01/02 interface and interprets
+    this private frame. The GPL side keeps all DfuSe/radio command sequencing.
+    """
+    import struct as _pc_struct
+    direction = int(direction)
+    request = int(request) & 0xFF
+    value = int(value) & 0xFFFF
+    payload = bytes(data or b"")
+    if length is None:
+        length = len(payload)
+    length = int(length)
+    if length < 0 or length > 65536:
+        raise IOError("DFU control length is outside PocketCHIRP bounds")
+    if direction == 0 and len(payload) != length:
+        raise IOError("DFU OUT payload length mismatch")
+    if direction == 1 and payload:
+        raise IOError("DFU IN request cannot carry an OUT payload")
+
+    # P C D F | version | direction | request | value:u16 | length:u32 | timeout:u32
+    frame = (b"PCDF" + bytes((1, direction, request))
+             + _pc_struct.pack("<HII", value, length,
+                               max(1, min(60000, int(timeout_ms)))))
+    java_transport.writeBytes(frame + (payload if direction == 0 else b""))
+    if direction == 0:
+        return b""
+    # Transport policy: return exactly what Android says the device returned.
+    # Do not interpret radio response length/content here.  USB control-IN
+    # wLength is a maximum, and protocol-specific validation/retry belongs to
+    # the selected radio driver.
+    return bytes(java_transport.readBytes(length))
+
+
+def _install_android_dfu_factory(cls, java_transport):
+    """Inject Android control-transfer I/O into a driver's native DFU backend.
+
+    This intentionally works with both newer PocketCHIRP-aware drivers and older
+    native DfuSe drivers.  A driver does not need an Android-specific factory hook:
+    if it exposes its native DFU backend class, PocketCHIRP can instantiate that
+    class without running the OS-specific constructor and replace _open_native_dfu
+    for this Android runtime only.
+    """
+    import types as _pc_types
+    module = sys.modules.get(getattr(cls, "__module__", ""))
+    if module is None:
+        raise ValueError("Selected DFU driver module is not loaded.")
+
+    backend_name = str(getattr(
+        cls, "POCKETCHIRP_DFU_BACKEND_CLASS", "_NativeSTTubDFU") or
+        "_NativeSTTubDFU")
+    native_cls = getattr(module, backend_name, None)
+    if native_cls is None:
+        raise ValueError(
+            "Selected DFU driver does not expose a usable native DFU backend.")
+
+    def factory():
+        # Skip the backend's OS-specific constructor (for example Windows
+        # STTub30), but retain every driver-owned high-level DFU/radio method.
+        dev = object.__new__(native_cls)
+
+        def android_control(self, direction, request, value=0, index=0,
+                            data=b"", length=None):
+            # Driver direction constants use 0=OUT, 1=IN. Interface selection is
+            # app-owned; the supplied index cannot redirect to another interface.
+            return _dfu_frame(
+                java_transport, int(direction), int(request), int(value),
+                data=data, length=length, timeout_ms=5000)
+
+        def android_close(self):
+            # PocketCHIRP owns the physical UsbDeviceConnection lifecycle.
+            return None
+
+        dev._control = _pc_types.MethodType(android_control, dev)
+        dev.close = _pc_types.MethodType(android_close, dev)
+        return dev
+
+    # Newer drivers may consult this hook themselves.
+    setattr(module, "_POCKETCHIRP_ANDROID_DFU_FACTORY", factory)
+
+    # Older native DfuSe drivers often have _open_native_dfu() which directly
+    # constructs the Windows backend. Replace it for this Android runtime so they
+    # gain Android DFU support without requiring a source-level radio patch.
+    setattr(module, "_open_native_dfu", factory)
+
+
+def _infer_native_usb_transport_from_driver(cls):
+    """Infer a native USB family from concrete driver backend capabilities.
+
+    Explicit POCKETCHIRP_USB_TRANSPORT remains authoritative. Structural inference
+    is only used when that declaration is absent.
+    """
+    module = sys.modules.get(getattr(cls, "__module__", ""))
+
+    # Native DfuSe/ST DFU backend: class exists in the selected driver's module.
+    backend_name = str(getattr(
+        cls, "POCKETCHIRP_DFU_BACKEND_CLASS", "_NativeSTTubDFU") or
+        "_NativeSTTubDFU")
+    if module is not None and isinstance(getattr(module, backend_name, None), type):
+        return "dfu"
+
+    # Native bulk drivers conventionally expose an instance _open_usb hook.
+    if callable(getattr(cls, "_open_usb", None)):
+        return "bulk"
+
+    return ""
+
+def _prepare_native_usb_class_adapter(cls, pipe):
+    """Bind a driver-declared native-USB transport to Android by capability.
+
+    The app selects USB_SERIAL/BULK/DFU from Android interface descriptors.
+    The CHIRP driver must explicitly declare the native family it accepts.
+    VID/PID values are optional confidence hints only; the driver's own protocol
+    identity checks remain authoritative.
     """
     java_transport = getattr(pipe, "_transport", None)
-    if not _is_native_usb_bulk_transport(java_transport):
+    kind = _native_usb_transport_kind(java_transport)
+    if not kind:
         return
 
-    vendor = str(getattr(cls, "VENDOR", "") or "").strip().casefold()
-    model = str(getattr(cls, "MODEL", "") or "").strip().casefold()
-    vid = int(java_transport.getNativeUsbVendorId())
-    pid = int(java_transport.getNativeUsbProductId())
-    if (vendor, model, vid, pid) != ("radioddity", "gd-73a", 0x1206, 0x0227):
+    declared = str(getattr(cls, "POCKETCHIRP_USB_TRANSPORT", "") or "").strip().casefold()
+    effective = declared
+    inferred = False
+    if not effective:
+        effective = _infer_native_usb_transport_from_driver(cls)
+        inferred = bool(effective)
+        if inferred:
+            _transport_note(
+                pipe,
+                "NATIVE USB: selected driver has no explicit PocketCHIRP USB declaration; "
+                "inferred %s from its native backend capabilities." % effective.upper())
+
+    # An explicit declaration is authoritative. Structural inference is only a
+    # compatibility fallback for drivers which predate the declaration contract.
+    if effective != kind:
+        if declared:
+            reason = "declares %s" % declared.upper()
+        elif effective:
+            reason = "exposes a %s backend" % effective.upper()
+        else:
+            reason = "does not expose a compatible native USB backend"
         raise ValueError(
-            "Native USB device %04X:%04X is reserved for the Radioddity GD-73A; "
-            "selected driver is %s %s. No radio commands were sent." % (
-                vid, pid, getattr(cls, "VENDOR", ""), getattr(cls, "MODEL", "")))
+            "Attached radio exposes USB %s, but selected driver %s %s %s. "
+            "No radio commands were sent." %
+            (kind.upper(), getattr(cls, "VENDOR", ""), getattr(cls, "MODEL", ""), reason))
 
-    if not hasattr(cls, "_open_usb"):
-        raise ValueError(
-            "Selected GD-73A driver does not expose its native USB backend hook.")
+    vid, pid = _native_usb_identity(java_transport)
+    preferred = _driver_usb_preferred_ids(cls)
+    if preferred and (vid, pid) not in preferred:
+        _transport_note(
+            pipe,
+            "NATIVE USB: device %04X:%04X is not in the driver's preferred-ID "
+            "hints; continuing because interface capability matches %s. Driver "
+            "protocol identity checks remain authoritative." %
+            (vid, pid, kind.upper()))
 
-    # Instance method replacement is intentionally narrow and idempotent. The
-    # driver's C7000 protocol, block sequencing, checksum and 850 us pacing all
-    # remain exactly as published/tested; only _open_usb() is redirected.
-    def _android_open_usb(self):
-        return AndroidNativeUsbDevice(java_transport)
+    if kind == "bulk":
+        if not hasattr(cls, "_open_usb"):
+            raise ValueError(
+                "Selected native-bulk driver does not expose its USB backend hook.")
+        def _android_open_usb(self):
+            return AndroidNativeUsbDevice(java_transport)
+        cls._open_usb = _android_open_usb
+        return
 
-    cls._open_usb = _android_open_usb
+    if kind == "dfu":
+        _install_android_dfu_factory(cls, java_transport)
+        return
+
+    raise ValueError("Unsupported native USB transport family %r" % kind)
 
 
 def _uses_legacy_icom_pipe(cls):
@@ -609,20 +875,53 @@ def _pipe_for_class(cls, java_transport):
         return LegacyAndroidSerialPipe(java_transport)
     return AndroidSerialPipe(java_transport)
 
-def _prepare_clone_pipe(cls, java_transport):
-    """Create a clean pyserial-like session for one CHIRP clone operation.
+def _apply_driver_serial_open_contract(cls, pipe):
+    """Apply CHIRP's exact driver-declared USB serial control-line contract.
 
-    Proprietary PocketCHIRP configures any Android BLE profile before this
-    one-attempt CHIRP clone session. USB keeps the historical behavior exactly.
+    HARD REGRESSION GUARD -- never replace this with blanket RTS/DTR values.
+    Some interfaces require asserted DTR/RTS for level-converter power or
+    handshaking, while other drivers intentionally request RTS low (notably
+    Icom CI-V, where an interface may use RTS as PTT). BLE is untouched.
+    """
+    if getattr(pipe, "is_ble", False):
+        return
+    wants_dtr = bool(getattr(cls, "WANTS_DTR", True))
+    wants_rts = bool(getattr(cls, "WANTS_RTS", True))
+    hardware_flow = bool(getattr(cls, "HARDWARE_FLOW", False))
+    try:
+        pipe.rtscts = hardware_flow
+    except Exception:
+        pass
+    try:
+        pipe.rts = wants_rts
+    except Exception:
+        pass
+    try:
+        pipe.dtr = wants_dtr
+    except Exception:
+        pass
+    _transport_note(
+        pipe,
+        "CHIRP SERIAL OPEN CONTRACT: DTR=%s RTS=%s RTS/CTS=%s" %
+        (wants_dtr, wants_rts, hardware_flow))
+
+
+def _prepare_clone_pipe(cls, java_transport):
+    """Open the Android transport with the same serial contract CHIRP uses.
+
+    The proprietary app owns only the physical Android transport. The GPL
+    engine owns CHIRP's serial parameters and clone lifecycle. In particular,
+    do not perform a blanket RX purge here: desktop CHIRP opens the port, sets
+    its driver-declared controls/baud/timeout, then lets detect_from_serial()
+    and sync_in()/sync_out() own every protocol byte.
     """
     pipe = _pipe_for_class(cls, java_transport)
-    pipe.timeout = 1.5
+    pipe.timeout = 0.25
     if hasattr(pipe, "write_timeout"):
         pipe.write_timeout = 1.5
     if not getattr(pipe, "is_ble", False):
         pipe.baudrate = int(getattr(cls, "BAUD_RATE", 9600) or 9600)
-    pipe.reset_input_buffer()
-    time.sleep(0.05)
+        _apply_driver_serial_open_contract(cls, pipe)
     return pipe
 
 
@@ -638,12 +937,13 @@ def _transport_note(pipe, message):
 
 
 def _configure_pipe_for_driver(cls, pipe):
+    """Apply CHIRP's serial-open defaults without touching protocol bytes."""
     pipe.baudrate = int(getattr(cls, "BAUD_RATE", 9600) or 9600)
-    pipe.timeout = 1.5
+    pipe.timeout = 0.25
     if hasattr(pipe, "write_timeout"):
         pipe.write_timeout = 1.5
-    pipe.reset_input_buffer()
-    time.sleep(0.06)
+    if not getattr(pipe, "is_ble", False):
+        _apply_driver_serial_open_contract(cls, pipe)
 
 
 # =============================================================================
@@ -654,6 +954,26 @@ def _configure_pipe_for_driver(cls, pipe):
 # sync_in attempt. Candidate ordering, direct/external role, write mode, MTU,
 # retries and resolver resets must NOT be reintroduced here.
 # =============================================================================
+def selected_serial_driver_facts_json():
+    """Return the exact selected CHIRP driver's small serial-open fact contract."""
+    from chirp import chirp_common
+    cls = _selected_class()
+    return _json.dumps({
+        "schemaVersion": 1,
+        "vendor": str(getattr(cls, "VENDOR", "") or "").strip(),
+        "model": str(getattr(cls, "MODEL", "") or "").strip(),
+        "variant": str(getattr(cls, "VARIANT", "") or "").strip(),
+        "className": str(getattr(cls, "__name__", "") or ""),
+        "moduleName": str(getattr(cls, "__module__", "") or ""),
+        "baudRate": int(getattr(cls, "BAUD_RATE", 9600) or 9600),
+        "wantsDtr": bool(getattr(cls, "WANTS_DTR", True)),
+        "wantsRts": bool(getattr(cls, "WANTS_RTS", True)),
+        "hardwareFlow": bool(getattr(cls, "HARDWARE_FLOW", False)),
+        "cloneMode": bool(issubclass(cls, chirp_common.CloneModeRadio)),
+        "liveRadio": bool(issubclass(cls, chirp_common.LiveRadio)),
+    }, separators=(",", ":"))
+
+
 def selected_ble_driver_facts_json():
     """Return raw neutral facts from the currently selected CHIRP class."""
     from chirp import chirp_common
@@ -671,17 +991,278 @@ def selected_ble_driver_facts_json():
     }, separators=(",", ":"))
 
 
-def _sync_in_once(cls, pipe, java_transport):
-    """Run exactly one selected CHIRP driver sync_in attempt.
+def _unwrap_runtime_class(cls):
+    """Return the registered CHIRP implementation behind a dynamic alias."""
+    seen = set()
+    current = cls
+    while isinstance(current, type) and current not in seen:
+        seen.add(current)
+        original = getattr(current, "_orig_rclass", None)
+        if not isinstance(original, type) or original is current:
+            break
+        current = original
+    return current
 
-    Android BLE profile selection/retry policy is applied by proprietary
-    PocketCHIRP before this call. This function only configures the selected
-    driver's serial parameters and lets CHIRP validate the radio protocol.
+
+def _detected_manager_class(cls):
+    """Return CHIRP's visible manager for a detected-only runtime class."""
+    current = _unwrap_runtime_class(cls)
+    manager = getattr(current, "_DETECTED_BY", None)
+    return manager if isinstance(manager, type) else None
+
+
+def _detect_selected_clone_class(selected_cls, pipe):
+    """Run CHIRP's native serial detector exactly where desktop CHIRP does.
+
+    A visible manager may return a registered detected-only subclass. Those
+    subclasses are intentionally hidden from the chooser but are the classes
+    which must perform sync_in(), be saved in image metadata, and later perform
+    sync_out().
     """
-    _configure_pipe_for_driver(cls, pipe)
-    radio = _radio_for_live_download(cls, pipe)
+    # Desktop CHIRP's dynamic marketed aliases execute the registered parent
+    # implementation. Use that parent for detection so detected_models() sees
+    # the manager's registered DETECTED_MODELS_<ClassName> list.
+    detector_cls = _unwrap_runtime_class(selected_cls)
+    detector = getattr(detector_cls, "detect_from_serial", None)
+    if not callable(detector):
+        return selected_cls
+
+    try:
+        detected_cls = detector(pipe)
+    except NotImplementedError:
+        return selected_cls
+
+    if not isinstance(detected_cls, type):
+        raise ValueError("CHIRP detect_from_serial() did not return a radio class")
+
+    # Keep the exact public alias only when CHIRP found no different runtime
+    # class. If a manager selected a detected-only subclass, use that subclass
+    # exactly; this is CHIRP's normal lifecycle.
+    if detected_cls is detector_cls:
+        return selected_cls
+
+    manager = _detected_manager_class(detected_cls)
+    if manager is not None and manager is not detector_cls:
+        raise ValueError(
+            "CHIRP detector returned a model outside the selected manager family: "
+            "%s -> %s" % (detector_cls.__name__, detected_cls.__name__))
+
+    _transport_note(
+        pipe,
+        "CHIRP detected runtime driver: %s.%s (%s %s%s)" % (
+            getattr(detected_cls, "__module__", "?"),
+            getattr(detected_cls, "__name__", "?"),
+            str(getattr(detected_cls, "VENDOR", "") or ""),
+            str(getattr(detected_cls, "MODEL", "") or ""),
+            (" [%s]" % getattr(detected_cls, "VARIANT", ""))
+            if getattr(detected_cls, "VARIANT", "") else "",
+        ))
+    return detected_cls
+
+
+
+# =============================================================================
+# CENTRAL NATIVE/DIRECT-BLE PROTOCOL CAPABILITIES
+# =============================================================================
+# Generic BLE transport policy belongs in proprietary Android. This table is
+# deliberately small and engine-side: it records only CHIRP/radio protocol facts
+# which are not expressible by the stock driver today.
+#
+# IMPORTANT:
+# - No replacement/forked CHIRP driver files are required.
+# - Ordinary serial transports never use these native-BLE overrides.
+# - Add an entry only after an OEM app / radio trace proves the protocol fact.
+# =============================================================================
+_DIRECT_BLE_CAPABILITIES = {
+    ("baofeng", "uv-5r mini", ""): {
+        # Ola Radio direct-BLE HCI trace: Mini download requests 0x80-byte
+        # protocol blocks. Stock CHIRP already uses 0x80 for BLE upload.
+        "download_adapter": "baofeng_uv17pro_framed",
+        "download_block_size": 0x80,
+    },
+}
+
+
+def _direct_ble_capability_for_radio(radio):
+    key = (
+        str(getattr(radio, "VENDOR", "") or "").strip().casefold(),
+        str(getattr(radio, "MODEL", "") or "").strip().casefold(),
+        str(getattr(radio, "VARIANT", "") or "").strip().casefold(),
+    )
+    return _DIRECT_BLE_CAPABILITIES.get(key)
+
+
+def _direct_ble_baofeng_uv17pro_download(radio):
+    """Central 0x80-capable framed download adapter for the UV17Pro family."""
+    from chirp import chirp_common
+
+    capability = getattr(radio, "_pocketchirp_direct_ble_capability", None) or {}
+    block_size = int(capability.get("download_block_size", 0) or 0)
+    if block_size <= 0:
+        raise RuntimeError("Direct-BLE download capability has no block size")
+
+    impl_cls = _unwrap_runtime_class(radio.__class__)
+    module_name = str(getattr(impl_cls, "__module__", "") or "")
+    module = sys.modules.get(module_name)
+    if module is None:
+        module = __import__(module_name, fromlist=["*"])
+
+    do_ident = getattr(module, "_do_ident", None)
+    bfc = getattr(module, "bfc", None)
+    crypt = getattr(module, "_crypt", None)
+    if not callable(do_ident) or bfc is None:
+        raise RuntimeError(
+            "Direct-BLE framed adapter is incompatible with %s" % module_name)
+
+    do_ident(radio)
+
+    data = b""
+    status = chirp_common.Status()
+    status.cur = 0
+    status.max = sum(
+        (int(size) + block_size - 1) // block_size
+        for size in radio.MEM_SIZES)
+    status.msg = "Cloning from radio on BLE..."
+    radio.status_fn(status)
+
+    completed = 0
+    for mem_start, mem_size in zip(radio.MEM_STARTS, radio.MEM_SIZES):
+        mem_start = int(mem_start)
+        mem_size = int(mem_size)
+        mem_end = mem_start + mem_size
+
+        for addr in range(mem_start, mem_end, block_size):
+            # Some Mini regions end on a 0x40 tail. The OEM BLE protocol still
+            # returns one full 0x80 block; append only the logical region bytes.
+            byte_count = min(block_size, mem_end - addr)
+            frame = radio._make_read_frame(addr, block_size)
+
+            bfc._rawsend(radio, frame)
+            block = bfc._rawrecv(radio, block_size + 4)
+
+            if bool(getattr(radio, "_uses_encr", False)):
+                if not callable(crypt):
+                    raise RuntimeError(
+                        "Encrypted direct-BLE framed adapter has no _crypt helper")
+                block = crypt(radio._encrsym, block[4:])
+            else:
+                block = block[4:]
+
+            data += block[:byte_count]
+            completed += 1
+            status.cur = completed
+            radio.status_fn(status)
+
+    return data
+
+
+def _apply_direct_ble_protocol_capabilities(radio, pipe):
+    """Apply proven protocol facts to one native/direct-BLE radio instance."""
+    if not bool(getattr(pipe, "is_direct_ble", False)):
+        return None
+
+    capability = _direct_ble_capability_for_radio(radio)
+    if not capability:
+        return None
+
+    adapter = str(capability.get("download_adapter", "") or "")
+    if adapter == "baofeng_uv17pro_framed":
+        import types as _pc_types
+        radio._pocketchirp_direct_ble_capability = dict(capability)
+        radio.download_function = _pc_types.MethodType(
+            _direct_ble_baofeng_uv17pro_download, radio)
+    elif adapter:
+        raise RuntimeError("Unknown direct-BLE download adapter: " + adapter)
+
+    return capability
+
+
+
+class _PocketChirpUv82x3BleUv5rTimeProxy:
+    """Module-local time proxy for the exact UV-82X3 CHIRP BLE READ path.
+
+    CHIRP's uv5r._read_block() deliberately sleeps 50 ms after each host ACK.
+    PocketCHIRP owns BLE serialization/pacing. This experiment
+    shortens only that exact 0.050-second CHIRP settle to 5 ms, only for the
+    Radioddity UV-82X3 over BLE.
+
+    USB and writes are untouched. Every other sleep duration is delegated.
+    """
+
+    def __init__(self, real_time):
+        self._real_time = real_time
+
+    def sleep(self, seconds):
+        try:
+            value = float(seconds)
+        except Exception:
+            return self._real_time.sleep(seconds)
+
+        if abs(value - 0.050) < 0.000001:
+            return self._real_time.sleep(0.005)
+        return self._real_time.sleep(seconds)
+
+    def __getattr__(self, name):
+        return getattr(self._real_time, name)
+
+
+def _is_exact_uv82x3_radio(radio):
+    impl_cls = _unwrap_runtime_class(radio.__class__)
+    return (
+        str(getattr(radio, "VENDOR", "") or "").strip().casefold() == "radioddity"
+        and str(getattr(radio, "MODEL", "") or "").strip().casefold() == "uv-82x3"
+        and str(getattr(impl_cls, "__module__", "") or "").strip().casefold().endswith(".uv5r")
+        and str(getattr(impl_cls, "__name__", "") or "") == "Radioddity82X3Radio"
+    )
+
+
+def _sync_in_with_transport_read_capabilities(
+        radio, pipe, physical_transport_kind="unknown"):
+    """Run sync_in with temporary, fail-restored protocol timing capability.
+
+    CHIRP-facing BLE semantics are intentionally normalized by proprietary
+    PocketCHIRP before Binder. An external BLE-to-serial programmer therefore
+    looks like ordinary serial here, which is correct for CHIRP framing.
+
+    The already-existing neutral physical transport kind is carried separately
+    only so exact radio-protocol timing accommodations can distinguish a physical
+    BLE hop from USB without learning anything about adapter brands/profiles.
+    """
+    physical_ble = (
+        str(physical_transport_kind or "").strip().casefold() == "ble")
+    if not physical_ble or not _is_exact_uv82x3_radio(radio):
+        radio.sync_in()
+        return
+
+    # This is the one part which must remain engine-side because CHIRP itself
+    # owns the 50 ms sleep. The UV-82X3 uses chirp.drivers.uv5r._read_block(),
+    # whose module-local `time.sleep(0.05)` runs after every host ACK.
+    # Keep it exact-radio + physical-BLE + READ only.
+    # No programmer/device/profile identity is used or exposed here.
+    from chirp.drivers import uv5r as _pc_uv5r
+
+    original_time = getattr(_pc_uv5r, "time", None)
+    if original_time is None or not hasattr(original_time, "sleep"):
+        radio.sync_in()
+        return
+
+    _pc_uv5r.time = _PocketChirpUv82x3BleUv5rTimeProxy(original_time)
+    try:
+        radio.sync_in()
+    finally:
+        _pc_uv5r.time = original_time
+
+
+def _sync_in_once(cls, pipe, java_transport,
+                  physical_transport_kind="unknown"):
+    """Run one CHIRP clone download using CHIRP's native class lifecycle."""
+    detected_cls = _detect_selected_clone_class(cls, pipe)
+    _prepare_native_usb_class_adapter(detected_cls, pipe)
+    radio = detected_cls(pipe)
+    _apply_direct_ble_protocol_capabilities(radio, pipe)
     _status_callback(radio, java_transport)
-    radio.sync_in()
+    _sync_in_with_transport_read_capabilities(
+        radio, pipe, physical_transport_kind)
     return radio
 
 # =============================================================================
@@ -714,139 +1295,10 @@ def _enforce_ble_write_requirements(cls, pipe, radio, transport_context_json=Non
                 "TD-H9 BLE write requires ATT payload >=37; proprietary "
                 "PocketCHIRP BLE policy reported payload %d" % mtu_payload)
 
-# PROVEN TD-H9/H3/H8 FAMILY REQUIREMENT:
-# DO NOT remove/bypass this hook when refactoring BLE.  These drivers may split
-# identification from _do_download(); sync_in() alone can start with a memory-read
-# command before the radio has entered programming mode and will fail.  This hook
-# deliberately preserves the EXACT selected custom driver class/variant.
-def _prime_exact_selected_download_if_required(cls, pipe):
-    """Run a driver's required pre-download identification without remapping it.
+# CHIRP's detectable-driver lifecycle is implemented in _detect_selected_clone_class().
+# Do not reintroduce family-specific pre-identification hooks here; managers such
+# as TD-H3/TD-H8 intentionally perform that handshake in detect_from_serial().
 
-    Some CHIRP driver families deliberately split the clone sequence:
-      * detect/identify first (which leaves the radio in programming mode)
-      * sync_in() then starts directly with memory block reads
-
-    TIDRADIO TD-H3/H3-Plus/H8/H9 is one such family. Its _do_download()
-    explicitly assumes identification already happened. Calling sync_in()
-    directly therefore sends an R block to a radio which is not yet in clone
-    mode and produces RadioNoResponse.
-
-    PocketCHIRP must preserve the exact selected Vendor/Model/Variant, so we
-    cannot use detect_from_serial() as a class selector here. Instead, when a
-    module exposes the conventional _do_ident + _do_download split, perform the
-    same identification handshake and validate it against THIS selected class.
-
-    The heuristic is deliberately structural, not vendor/model based:
-      - module has callable _do_ident and _do_download
-      - selected class has _idents and ident_mode
-      - sync_in calls _do_download
-      - _do_download itself does NOT call _do_ident
-
-    Thus any vendor using the same CHIRP driver pattern is supported, with no
-    variant-count limit and no silent sibling substitution.
-    """
-    try:
-        module = _sys.modules.get(getattr(cls, "__module__", ""))
-        if module is None:
-            module = _importlib.import_module(getattr(cls, "__module__", ""))
-
-        do_ident = getattr(module, "_do_ident", None)
-        do_download = getattr(module, "_do_download", None)
-        idents = list(getattr(cls, "_idents", []) or [])
-        expected = getattr(cls, "ident_mode", None)
-
-        # Walk the full MRO, because many CHIRP variants override sync_in()
-        # only to do transport-specific setup and then call super().sync_in().
-        # The actual _do_download reference may therefore live several parent
-        # classes lower (TD-H9 -> TDH3_Plus -> TDH3 -> TDH8 is one example).
-        sync_names = set()
-        sync_owners = []
-        for owner in getattr(cls, "__mro__", (cls,)):
-            own_sync = owner.__dict__.get("sync_in")
-            own_code = getattr(own_sync, "__code__", None)
-            if own_code is None:
-                continue
-            names = set(getattr(own_code, "co_names", ()) or ())
-            sync_names.update(names)
-            if "_do_download" in names:
-                sync_owners.append(owner.__name__)
-
-        download_code = getattr(do_download, "__code__", None)
-        download_names = set(getattr(download_code, "co_names", ()) or ())
-
-        split_clone_flow = (
-            callable(do_ident)
-            and callable(do_download)
-            and bool(idents)
-            and isinstance(expected, (bytes, bytearray))
-            and bool(sync_owners)
-            and "_do_ident" not in download_names
-        )
-
-        if not split_clone_flow:
-            return False
-
-        magic = bytes(idents[0])
-        _transport_note(
-            pipe,
-            "Driver requires pre-download identification; priming exact selected "
-            "model %s with %d-byte magic (download owner: %s)" %
-            (
-                _describe_public_identity_tuple(_radio_identity(cls)),
-                len(magic),
-                ",".join(sync_owners) if sync_owners else "?",
-            )
-        )
-
-        ident = do_ident(pipe, magic)
-
-        if bytes(ident) != bytes(expected):
-            raise ValueError(
-                "Radio identity does not match selected model: expected %s, got %s. "
-                "PocketCHIRP will not substitute another variant." % (
-                    bytes(expected).hex(" "),
-                    bytes(ident).hex(" "),
-                )
-            )
-
-        _transport_note(
-            pipe,
-            "Pre-download identity verified for exact selected model: %s" %
-            _describe_public_identity_tuple(_radio_identity(cls))
-        )
-        return True
-
-    except (ValueError,):
-        raise
-    except Exception:
-        # If the module matched the split-flow pattern, errors from its
-        # identification handshake are real clone errors and must surface.
-        try:
-            if split_clone_flow:
-                raise
-        except UnboundLocalError:
-            pass
-        return False
-
-
-def _radio_for_live_download(cls, pipe):
-    """Instantiate exactly the radio class selected in PocketCHIRP.
-
-    This rule is vendor-independent.
-
-    CHIRP drivers frequently expose several related entries which differ by
-    MODEL and/or VARIANT: Normal/unlocked, HAM, GMRS, regional versions,
-    hardware revisions, firmware families, aliases, and other derivatives.
-    Once the user explicitly selects one catalog entry, that selection is
-    authoritative for a normal read/write session.
-
-    Detection/remapping belongs only in explicit auto-detect/probe workflows,
-    never in a normal read/write after the user selected a specific entry.
-    """
-    _note_exact_selected_driver(pipe, cls)
-    _prepare_native_usb_class_adapter(cls, pipe)
-    _prime_exact_selected_download_if_required(cls, pipe)
-    return cls(pipe)
 
 
 
@@ -940,6 +1392,7 @@ def _save_working_radio(radio):
     try:
         with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as tmp:
             name = tmp.name
+        _stamp_custom_image_metadata(radio)
         radio.save(name)
         with open(name, "rb") as f:
             _last_image_bytes = f.read()
@@ -976,27 +1429,54 @@ def _safe_float(value, default=0.0):
 
 
 def _memory_extra_dict(mem):
-    """Serialize driver-specific per-memory RadioSetting values."""
+    """Serialize driver-specific per-memory RadioSetting values.
+
+    CHIRP RadioSetting is a real class hierarchy: MemSetting and other
+    subclasses are still settings, and one RadioSetting may contain multiple
+    RadioSettingValue objects. Preserve those semantics instead of testing a
+    literal class name or assuming every setting is scalar.
+    """
+    from chirp import settings as chirp_settings
+
     extra = _safe_attr(mem, "extra", None)
     if not extra:
         return []
-    out = []
-    try:
-        items = list(extra)
-    except Exception:
-        return out
-    for item in items:
-        try:
-            if item.__class__.__name__ == "RadioSetting":
-                out.append(_setting_to_dict(item, "Memory"))
-            else:
-                for child in list(item):
-                    if child.__class__.__name__ == "RadioSetting":
-                        out.append(_setting_to_dict(child, "Memory"))
-        except Exception:
-            continue
-    return out
 
+    out = []
+    seen_groups = set()
+
+    def walk(group, group_label="Memory", group_path=()):
+        oid = id(group)
+        if oid in seen_groups:
+            return
+        seen_groups.add(oid)
+        try:
+            items = list(group)
+        except Exception:
+            return
+        for index, item in enumerate(items):
+            if isinstance(item, chirp_settings.RadioSetting):
+                keys = list(item.keys())
+                for component_index in keys:
+                    try:
+                        out.append(_setting_to_dict(
+                            item,
+                            group_label,
+                            group_path=group_path,
+                            component_index=int(component_index),
+                            component_count=len(keys),
+                        ))
+                    except Exception:
+                        continue
+            elif isinstance(item, chirp_settings.RadioSettingGroup):
+                walk(
+                    item,
+                    _setting_group_label(item, group_label),
+                    group_path + (_setting_group_name(item, "group-%d" % index),),
+                )
+
+    walk(extra)
+    return out
 
 def _memory_dict(radio, n):
     """Serialize a CHIRP Memory while preserving native/special identity."""
@@ -1014,6 +1494,10 @@ def _memory_dict(radio, n):
                     else ("number:" + str(native_number)),
         "empty": bool(_safe_attr(mem, "empty", False)),
         "immutable": list(_safe_attr(mem, "immutable", []) or []),
+        # Some CHIRP drivers expose per-memory controls even on an unused slot.
+        # Preserve them so creating a new channel does not discard driver-owned
+        # options such as signaling/scrambler/scan behavior.
+        "extra": _memory_extra_dict(mem),
     }
     if d["empty"]:
         return d
@@ -1037,7 +1521,6 @@ def _memory_dict(radio, n):
         "skip": str(_safe_attr(mem, "skip", "") or ""),
         "tuning_step": _safe_float(_safe_attr(mem, "tuning_step", None), 0.0),
         "comment": str(_safe_attr(mem, "comment", "") or ""),
-        "extra": _memory_extra_dict(mem),
     })
     # Digital/D-STAR memories use these optional CHIRP fields. Do not invent
     # them on analog memories; emit only attributes the driver supplies.
@@ -1067,36 +1550,74 @@ def _setting_group_label(group, fallback="Settings"):
             return str(fallback)
 
 
-def _setting_id(index_path):
+def _setting_id(index_path, component_index=None):
     # Structural identity is intentionally based on CHIRP's actual nested tree,
     # not merely RadioSetting.get_name(). Multiple drivers legitimately reuse a
-    # setting name in different groups.
-    return "v1:" + "/".join(str(int(x)) for x in index_path)
-
+    # setting name in different groups. Multi-value RadioSetting objects append
+    # a component suffix so each desktop-CHIRP value remains independently
+    # editable without inventing a new setting name.
+    base = "v1:" + "/".join(str(int(x)) for x in index_path)
+    if component_index is not None:
+        base += "#" + str(int(component_index))
+    return base
 
 def _walk_settings_tree(root):
-    """Yield (RadioSetting, index_path, group_names, group_label) faithfully."""
-    def walk(node, index_path=(), group_names=(), group_label="Settings"):
+    """Yield (RadioSetting, index_path, group_names, group_label) faithfully.
+
+    Use CHIRP's type hierarchy, not literal class names. MemSetting and other
+    RadioSetting subclasses are leaf settings even though they are iterable.
+    The ancestry guard prevents a malformed/custom driver from creating an
+    infinite settings cycle that can crash the neutral document serializer.
+    """
+    from chirp import settings as chirp_settings
+
+    def walk(node, index_path=(), group_names=(), group_label="Settings",
+             ancestors=frozenset()):
+        oid = id(node)
+        if oid in ancestors:
+            return
+        branch = ancestors | {oid}
         try:
             items = list(node)
         except Exception:
             return
         for index, item in enumerate(items):
             path = index_path + (index,)
-            if item.__class__.__name__ == "RadioSetting":
+            if isinstance(item, chirp_settings.RadioSetting):
                 yield item, path, group_names, group_label
+                continue
+            if not isinstance(item, chirp_settings.RadioSettingGroup):
                 continue
             child_name = _setting_group_name(item, "group-%d" % index)
             child_label = _setting_group_label(item, group_label)
-            yield from walk(item, path, group_names + (child_name,), child_label)
+            yield from walk(
+                item,
+                path,
+                group_names + (child_name,),
+                child_label,
+                branch,
+            )
     yield from walk(root)
 
-
 def _resolve_setting(settings, setting_id=None, expected_name=None):
-    """Resolve the exact CHIRP RadioSetting; legacy name lookup is fail-closed."""
+    """Resolve one exact CHIRP RadioSettingValue component.
+
+    Returns (RadioSetting, component_index, RadioSettingValue). Current
+    PocketCHIRP IDs use ``v1:path`` for scalar settings and ``v1:path#N`` for
+    CHIRP multi-value settings. Legacy name lookup remains fail-closed.
+    """
     sid = str(setting_id or "")
+    component_index = None
     if sid.startswith("v1:"):
-        tail = sid[3:]
+        body = sid[3:]
+        if "#" in body:
+            tail, component_text = body.rsplit("#", 1)
+            try:
+                component_index = int(component_text)
+            except Exception as exc:
+                raise ValueError("Invalid radio-setting component identity") from exc
+        else:
+            tail = body
         try:
             indexes = [int(x) for x in tail.split("/") if x != ""]
         except Exception as exc:
@@ -1108,15 +1629,28 @@ def _resolve_setting(settings, setting_id=None, expected_name=None):
             for index in indexes:
                 node = list(node)[index]
         except Exception as exc:
-            raise ValueError("Radio setting moved or is no longer available; reload the image") from exc
-        if node.__class__.__name__ != "RadioSetting":
-            raise ValueError("Radio-setting identity no longer points to a setting; reload the image")
+            raise ValueError(
+                "Radio setting moved or is no longer available; reload the image") from exc
+        from chirp import settings as chirp_settings
+        if not isinstance(node, chirp_settings.RadioSetting):
+            raise ValueError(
+                "Radio-setting identity no longer points to a setting; reload the image")
         if expected_name is not None and str(node.get_name()) != str(expected_name):
-            raise ValueError("Radio setting changed identity; reload the image before editing")
-        return node
+            raise ValueError(
+                "Radio setting changed identity; reload the image before editing")
+        keys = [int(x) for x in node.keys()]
+        if component_index is None:
+            if len(keys) != 1:
+                raise ValueError(
+                    "This radio setting contains multiple values. Reload with the current PocketCHIRP editor.")
+            component_index = keys[0]
+        if component_index not in keys:
+            raise ValueError(
+                "Radio-setting component moved or is no longer available; reload the image")
+        return node, component_index, node[component_index]
 
     # Backward compatibility for an older editor. Never silently choose the
-    # first duplicate: desktop CHIRP keeps those settings distinct by tree.
+    # first duplicate or the first value of a multi-value setting.
     matches = []
     for item, *_ in _walk_settings_tree(settings):
         if str(item.get_name()) == str(expected_name):
@@ -1127,34 +1661,135 @@ def _resolve_setting(settings, setting_id=None, expected_name=None):
         raise ValueError(
             "This driver has multiple settings named %s. Reload with the current PocketCHIRP editor."
             % expected_name)
-    return matches[0]
+    found = matches[0]
+    keys = [int(x) for x in found.keys()]
+    if len(keys) != 1:
+        raise ValueError(
+            "This radio setting contains multiple values. Reload with the current PocketCHIRP editor.")
+    component_index = keys[0]
+    return found, component_index, found[component_index]
+
+def _setting_value_for_ui(value):
+    """Return a neutral scalar for one CHIRP RadioSettingValue.
+
+    Desktop CHIRP can display an uninitialized value as unspecified. Do not
+    force ``str(value)`` in that state: RadioSettingValueString may legally
+    return None internally after a driver rejected an invalid image value.
+    """
+    initialized = bool(_safe_attr(value, "initialized", True))
+    if not initialized:
+        return None
+    cls = value.__class__.__name__
+    try:
+        if "Boolean" in cls:
+            return bool(value.get_value())
+        if "Integer" in cls:
+            return _safe_int(value.get_value(), 0)
+        if "Float" in cls:
+            return _safe_float(value.get_value(), 0.0)
+        if "List" in cls or "Map" in cls:
+            return str(value)
+        return str(value).rstrip()
+    except Exception:
+        raw = _safe_attr(value, "get_value", lambda: None)()
+        return None if raw is None else str(raw).rstrip()
 
 
-def _setting_value_for_ui(setting):
-    val = setting.value
-    cls = val.__class__.__name__
-    if "Boolean" in cls:
-        return bool(_safe_attr(val, "get_value", lambda: False)())
-    if "Integer" in cls:
-        return _safe_int(val.get_value(), 0)
-    if "Float" in cls:
-        return _safe_float(val.get_value(), 0.0)
-    if "List" in cls or "Map" in cls:
-        return str(val)
-    return str(val).rstrip()
+def _charset_text(value):
+    """Return one CHIRP RadioSettingValue charset as a plain string."""
+    charset = _safe_attr(value, "_charset", None)
+    if charset is None:
+        getter = getattr(value, "get_charset", None)
+        if callable(getter):
+            try:
+                charset = getter()
+            except Exception:
+                charset = None
+    if charset is None:
+        return ""
+    if isinstance(charset, str):
+        return charset
+    try:
+        return "".join(str(ch) for ch in charset)
+    except Exception:
+        return str(charset)
 
 
-def _setting_to_dict(setting, group, setting_id=None, group_path=()):
-    val = setting.value
-    cls = val.__class__.__name__
+def _feature_valid_characters_text(rf):
+    """Return RadioFeatures.valid_characters without inventing a charset."""
+    charset = _safe_attr(rf, "valid_characters", "")
+    if charset is None:
+        return ""
+    if isinstance(charset, str):
+        return charset
+    try:
+        return "".join(str(ch) for ch in charset)
+    except Exception:
+        return str(charset)
+
+
+def _normalize_case_to_charset(value, charset):
+    """Map an unsupported character to its uppercase form only when allowed.
+
+    This is deliberately narrower than filtering/replacement: characters which
+    are not accepted in either case are left untouched for CHIRP's normal
+    validation path. Radios which already allow lowercase are unchanged.
+    """
+    text = str(value)
+    allowed = set(str(charset or ""))
+    if not allowed:
+        return text
+    out = []
+    for ch in text:
+        if ch in allowed:
+            out.append(ch)
+            continue
+        upper = ch.upper()
+        if len(upper) == 1 and upper in allowed:
+            out.append(upper)
+        else:
+            out.append(ch)
+    return "".join(out)
+
+
+
+def _radio_text_for_compare(value):
+    """Normalize only radio padding for an exact stored-text comparison."""
+    if value is None:
+        return ""
+    return str(value).rstrip(" \x00\xff")
+
+
+def _has_lowercase_text(value):
+    text = "" if value is None else str(value)
+    return any(ch.islower() for ch in text)
+
+
+def _setting_to_dict(setting, group, setting_id=None, group_path=(),
+                     component_index=0, component_count=None):
+    """Serialize one CHIRP RadioSettingValue component to the neutral schema."""
+    keys = [int(x) for x in setting.keys()]
+    if not keys:
+        raise ValueError("CHIRP RadioSetting contains no values")
+    if component_index not in keys:
+        raise ValueError("CHIRP RadioSetting component is unavailable")
+    value = setting[component_index]
+    total = int(component_count if component_count is not None else len(keys))
+    cls = value.__class__.__name__
+    base_label = str(getattr(setting, "get_shortname", lambda: setting.get_name())())
+    label = base_label if total <= 1 else "%s %d" % (base_label, keys.index(component_index) + 1)
+    initialized = bool(_safe_attr(value, "initialized", True))
     out = {
         "id": str(setting_id or ""),
         "name": setting.get_name(),
-        "label": getattr(setting, "get_shortname", lambda: setting.get_name())(),
+        "label": label,
         "group": group,
         "groupPath": list(group_path or ()),
-        "value": str(val),
-        "mutable": bool(val.get_mutable()),
+        "componentIndex": int(component_index),
+        "componentCount": total,
+        "initialized": initialized,
+        "value": _setting_value_for_ui(value),
+        "mutable": bool(value.get_mutable()),
         "kind": "string",
     }
     try:
@@ -1163,42 +1798,42 @@ def _setting_to_dict(setting, group, setting_id=None, group_path=()):
         out["doc"] = ""
     if "Boolean" in cls:
         out["kind"] = "boolean"
-        out["value"] = bool(_safe_attr(val, "get_value", lambda: False)())
     elif "List" in cls or "Map" in cls:
         out["kind"] = "list"
         try:
-            out["options"] = [str(x) for x in (val.get_options() or [])]
+            out["options"] = [str(x) for x in (value.get_options() or [])]
         except Exception:
             out["options"] = []
-        out["value"] = str(val)
     elif "Integer" in cls:
         out["kind"] = "integer"
-        out["value"] = _safe_int(val.get_value(), 0)
-        out["min"] = _safe_int(val.get_min(), 0)
-        out["max"] = _safe_int(val.get_max(), 0)
-        step = _safe_attr(val, "get_step", None)
+        out["min"] = _safe_int(value.get_min(), 0)
+        out["max"] = _safe_int(value.get_max(), 0)
+        step = _safe_attr(value, "get_step", None)
         out["step"] = _safe_int(step(), 1) if callable(step) else 1
     elif "Float" in cls:
         out["kind"] = "number"
-        out["value"] = _safe_float(val.get_value(), 0.0)
-        out["min"] = _safe_float(val.get_min(), 0.0)
-        out["max"] = _safe_float(val.get_max(), 0.0)
+        out["min"] = _safe_float(value.get_min(), 0.0)
+        out["max"] = _safe_float(value.get_max(), 0.0)
     else:
-        out["value"] = str(val).rstrip()
-        # Preserve CHIRP string constraints when the value class exposes them.
         try:
-            out["minLength"] = int(val.minlength)
+            out["minLength"] = int(value.minlength)
         except Exception:
             pass
         try:
-            out["maxLength"] = int(val.maxlength)
+            out["maxLength"] = int(value.maxlength)
         except Exception:
             pass
+        charset = _charset_text(value)
+        if charset:
+            out["validCharacters"] = charset
     return out
 
-
 def _settings_list(radio):
-    """Flatten settings for display while retaining CHIRP's exact tree identity."""
+    """Flatten settings for display while retaining CHIRP's exact tree identity.
+
+    Multi-value RadioSetting objects become multiple neutral rows, matching
+    desktop CHIRP's one-property-per-RadioSettingValue behavior.
+    """
     try:
         root = radio.get_settings()
     except Exception:
@@ -1208,19 +1843,26 @@ def _settings_list(radio):
 
     result = []
     for setting, index_path, group_names, group_label in _walk_settings_tree(root):
-        try:
-            result.append(_setting_to_dict(
-                setting,
-                group_label,
-                setting_id=_setting_id(index_path),
-                group_path=group_names,
-            ))
-        except Exception:
-            # One firmware-specific/invalid setting must not hide the rest of
-            # the driver's settings, matching CHIRP's tolerant display intent.
-            continue
+        keys = [int(x) for x in setting.keys()]
+        for component_index in keys:
+            try:
+                sid = _setting_id(
+                    index_path,
+                    component_index if len(keys) > 1 else None,
+                )
+                result.append(_setting_to_dict(
+                    setting,
+                    group_label,
+                    setting_id=sid,
+                    group_path=group_names,
+                    component_index=component_index,
+                    component_count=len(keys),
+                ))
+            except Exception:
+                # One firmware-specific/unsupported value must not hide the rest
+                # of the driver's settings, matching CHIRP's tolerant UI intent.
+                continue
     return result
-
 
 def _mapping_id(mapping):
     try:
@@ -1265,9 +1907,32 @@ def _bank_state_for_radio(radio, rf=None):
             index_bounds = None
 
     banks = []
-    for mapping in mappings:
+    for mapping_index, mapping in enumerate(mappings):
         try:
             members = model.get_mapping_memories(mapping) or []
+        except TypeError:
+            # CHIRP StaticBankModel in this pinned revision uses Python-2 style
+            # `/` when calculating the integer bank size, so Python 3 produces
+            # a float and range(count) fails. Recreate that model's intended
+            # fixed mapping here without modifying vendored CHIRP core.
+            if model_name != "StaticBankModel" or not mappings:
+                members = []
+            else:
+                try:
+                    lo, hi = [int(x) for x in rf.memory_bounds]
+                    num_banks = int(getattr(model, "_num_banks", 0) or len(mappings))
+                    if num_banks <= 0:
+                        raise ValueError("Static bank model has no banks")
+                    count = (hi - lo + 1) // num_banks
+                    try:
+                        bank_index = int(mapping.get_index())
+                    except Exception:
+                        bank_index = mapping_index + 1
+                    offset = lo + ((bank_index - 1) * count)
+                    members = [radio.get_memory(offset + i)
+                               for i in range(int(count))]
+                except Exception:
+                    members = []
         except Exception:
             members = []
         nums = []
@@ -1832,9 +2497,6 @@ def preview_stock_config_json(filename):
     from importlib import resources
     from chirp.drivers.generic_csv import CSVRadio
 
-    if not _last_image_bytes:
-        raise ValueError("Read a radio or load a .img before importing a preset.")
-
     name = str(filename or "")
     if "/" in name or "\\" in name or not name.lower().endswith(".csv"):
         raise ValueError("Invalid stock configuration name.")
@@ -1851,6 +2513,14 @@ def preview_stock_config_json(filename):
         raise ValueError("This preset contains no programmed memories.")
 
     label = name[:-4].replace("_", " ").replace("-", " ")
+    if not _last_image_bytes:
+        return _build_unvalidated_import_preview(
+            f"Preset: {label}",
+            memories,
+            metadata=[{"preset": name, "presetLocation": int(m.number)}
+                      for m in memories],
+            limit=1000,
+        )
     return _build_import_preview(
         f"Preset: {label}",
         memories,
@@ -1880,38 +2550,52 @@ def preview_stock_config_json(filename):
 
 
 def _apply_memory_extra(mem, values):
+    from chirp import settings as chirp_settings
+
     if not values:
         return
     wanted = {}
     if isinstance(values, dict):
-        wanted = values
+        for name, value in values.items():
+            wanted[(str(name), 0)] = value
     else:
         for row in values:
             if isinstance(row, dict) and row.get("name") is not None:
-                wanted[str(row["name"])] = row.get("value")
+                wanted[(str(row["name"]), int(row.get("componentIndex", 0) or 0))] = row
     extra = _safe_attr(mem, "extra", None)
     if not extra:
         return
+
+    seen = set()
     def walk(group):
+        oid = id(group)
+        if oid in seen:
+            return
+        seen.add(oid)
         try:
             items = list(group)
         except Exception:
             return
         for item in items:
-            if item.__class__.__name__ == "RadioSetting":
+            if isinstance(item, chirp_settings.RadioSetting):
                 name = str(item.get_name())
-                if name in wanted:
-                    val = wanted[name]
-                    current = _safe_attr(item.value, "get_value", lambda: str(item.value))()
-                    if isinstance(current, bool): val = bool(val)
-                    elif isinstance(current, int) and not isinstance(current, bool): val = int(val)
-                    elif isinstance(current, float): val = float(val)
-                    else: val = str(val)
-                    item.value.set_value(val)
-            else:
+                for component_index in [int(x) for x in item.keys()]:
+                    key = (name, component_index)
+                    if key not in wanted:
+                        continue
+                    supplied = wanted[key]
+                    if isinstance(supplied, dict):
+                        if supplied.get("initialized") is False:
+                            continue
+                        supplied = supplied.get("value")
+                    value_obj = item[component_index]
+                    if not value_obj.get_mutable():
+                        continue
+                    requested = _coerce_setting_value(value_obj, supplied)
+                    value_obj.set_value(requested)
+            elif isinstance(item, chirp_settings.RadioSettingGroup):
                 walk(item)
     walk(extra)
-
 
 def update_memory_json(memory_json):
     """Update only fields the loaded CHIRP driver says it supports."""
@@ -1936,14 +2620,19 @@ def update_memory_json(memory_json):
     if can("empty"):
         mem.empty = want_empty
 
+    requested_name = None
     if not want_empty:
         if "freq" not in immutable and "freq" in data:
             mem.freq = int(round(float(data["freq"]) * 1_000_000))
 
         if can("name", "has_name", True) and "name" in data:
             limit = _safe_int(_safe_attr(rf, "valid_name_length", 0), 0)
-            text = str(data.get("name", ""))
-            mem.name = text[:limit] if limit > 0 else text
+            text = _normalize_case_to_charset(
+                str(data.get("name", "")),
+                _feature_valid_characters_text(rf),
+            )
+            requested_name = text[:limit] if limit > 0 else text
+            mem.name = requested_name
 
         if "duplex" not in immutable and "duplex" in data:
             mem.duplex = str(data.get("duplex", ""))
@@ -2008,6 +2697,44 @@ def update_memory_json(memory_json):
 
     radio.check_set_memory_immutable_policy(radio.get_memory(n), mem)
     radio.set_memory(mem)
+
+    # Some drivers advertise a broad/default valid_characters set even though
+    # their actual image encoder only has uppercase glyph codes. In that case
+    # lowercase passes validation but set_memory() silently stores blanks.
+    # Detect the driver's real behavior from its own in-memory round trip and
+    # retry uppercase only when that fixes the loss.
+    if requested_name is not None and _has_lowercase_text(requested_name):
+        stored_name = _radio_text_for_compare(
+            _safe_attr(radio.get_memory(n), "name", "")
+        )
+        wanted_name = _radio_text_for_compare(requested_name)
+        if stored_name != wanted_name:
+            uppercase_name = str(requested_name).upper()
+            if uppercase_name != requested_name:
+                mem.name = uppercase_name
+                retry_problems = radio.validate_memory(mem)
+                retry_errors = [
+                    str(x) for x in retry_problems
+                    if x.__class__.__name__ == "ValidationError"
+                ]
+                if not retry_errors:
+                    radio.set_memory(mem)
+                    uppercase_stored = _radio_text_for_compare(
+                        _safe_attr(radio.get_memory(n), "name", "")
+                    )
+                    if uppercase_stored != _radio_text_for_compare(uppercase_name):
+                        raise ValueError(
+                            "Driver cannot preserve channel name %r; lowercase was "
+                            "lost and uppercase retry read back as %r."
+                            % (requested_name, uppercase_stored)
+                        )
+                    LOG.info(
+                        "PocketCHIRP normalized channel name to uppercase after "
+                        "driver round-trip loss: %r -> %r",
+                        requested_name, uppercase_name)
+                else:
+                    raise ValueError("; ".join(retry_errors))
+
     _save_working_radio(root_radio)
     return pocketchirp_radio_document_json()
 
@@ -2165,9 +2892,9 @@ def preview_image_conversion_bytes(source_bytes):
 
 
 
-def _coerce_setting_value(setting, supplied):
-    """Coerce according to the driver's CHIRP RadioSettingValue subclass."""
-    cls = setting.value.__class__.__name__
+def _coerce_setting_value(value, supplied):
+    """Coerce according to one CHIRP RadioSettingValue subclass."""
+    cls = value.__class__.__name__
     if "Boolean" in cls:
         if isinstance(supplied, str):
             return supplied.strip().lower() in ("1", "true", "yes", "on")
@@ -2177,10 +2904,11 @@ def _coerce_setting_value(setting, supplied):
     if "Float" in cls:
         return float(supplied)
     # RadioSettingValueList and RadioSettingValueMap intentionally accept their
-    # user-facing option string. String values likewise go through CHIRP's own
-    # validation/autopadding in set_value().
-    return str(supplied)
-
+    # user-facing option string. String values also honor a driver-declared
+    # character set: if lowercase is forbidden but the uppercase counterpart is
+    # allowed, normalize the case before CHIRP validates/autopads the value.
+    text = str(supplied)
+    return _normalize_case_to_charset(text, _charset_text(value))
 
 def _setting_values_equivalent(a, b, kind):
     if kind == "number":
@@ -2191,16 +2919,8 @@ def _setting_values_equivalent(a, b, kind):
     return a == b
 
 
-def update_setting_json(setting_json):
-    """Apply one or more staged radio settings as one CHIRP settings transaction.
-
-    Desktop CHIRP keeps a complete RadioSettings tree and lets multiple values
-    become changed before handing that tree back to the driver's set_settings().
-    PocketCHIRP mirrors that behavior here: every requested value is applied to
-    one freshly-decoded tree first, then set_settings() is called exactly once.
-    """
-    global _last_image_bytes, _last_raw_bytes, _last_hash_info
-
+def _setting_changes_from_json(setting_json):
+    """Decode one PocketCHIRP settings request into CHIRP-neutral changes."""
     data = _json.loads(setting_json)
     raw_changes = data.get("changes") if isinstance(data, dict) else None
     if raw_changes is None:
@@ -2208,6 +2928,74 @@ def update_setting_json(setting_json):
         raw_changes = [data]
     if not isinstance(raw_changes, list) or not raw_changes:
         raise ValueError("No radio setting changes were supplied")
+    for change in raw_changes:
+        if not isinstance(change, dict):
+            raise ValueError("Invalid radio setting change")
+    return raw_changes
+
+
+def _prune_uninitialized_immutable_settings(root):
+    """Mirror CHIRP wxui SettingsEdit._remove_dead_settings().
+
+    Desktop CHIRP does not pass immutable or uninitialized RadioSetting values
+    to a driver's set_settings(). Some drivers (including KG-UV8E) convert
+    every received value with int()/float() and will crash on an untouched
+    uninitialized value whose backing value is None.
+    """
+    from chirp import settings as chirp_settings
+
+    removed = []
+
+    def walk(group):
+        # CHIRP's values() returns a stable list-like snapshot, but force list()
+        # so deletion during traversal is safe across CHIRP versions.
+        try:
+            children = list(group.values())
+        except Exception:
+            children = list(group)
+        for element in children:
+            if isinstance(element, chirp_settings.RadioSetting):
+                drop = False
+                reason = ""
+                for value in element:
+                    if not value.get_mutable():
+                        drop = True
+                        reason = "immutable"
+                        break
+                    if not bool(_safe_attr(value, "initialized", True)):
+                        drop = True
+                        reason = "uninitialized"
+                        break
+                if drop:
+                    removed.append((str(element.get_name()), reason))
+                    try:
+                        del group[element]
+                    except Exception:
+                        # Match the intent of desktop CHIRP even if a future
+                        # container implementation exposes remove() instead.
+                        remover = getattr(group, "remove", None)
+                        if callable(remover):
+                            remover(element)
+                        else:
+                            raise
+            elif isinstance(element, chirp_settings.RadioSettingGroup):
+                walk(element)
+
+    walk(root)
+    return removed
+
+
+def _apply_setting_changes_json(setting_json, return_document=True, _allow_case_retry=True):
+    """Apply one desktop-CHIRP-style RadioSettings transaction.
+
+    Save/Write materialization calls this with return_document=False so replaying
+    a settings journal never builds a huge Radio Document that is immediately
+    discarded.  Interactive legacy callers retain the historical document
+    return value.
+    """
+    global _last_image_bytes, _last_raw_bytes, _last_hash_info
+
+    raw_changes = _setting_changes_from_json(setting_json)
 
     old_image = _last_image_bytes
     old_raw = _last_raw_bytes
@@ -2222,11 +3010,9 @@ def update_setting_json(setting_json):
     seen_ids = set()
     try:
         # Stage every change onto the SAME CHIRP RadioSettings tree before the
-        # driver sees it. This preserves cross-setting dependencies and changed()
-        # state just like desktop CHIRP's settings dialog.
+        # driver sees it. This preserves callbacks, cross-setting dependencies,
+        # and RadioSettingValue.changed() semantics like desktop CHIRP.
         for change in raw_changes:
-            if not isinstance(change, dict):
-                raise ValueError("Invalid radio setting change")
             target_name = str(change.get("name", ""))
             target_id = str(change.get("id", "") or "")
             if not target_name:
@@ -2236,18 +3022,19 @@ def update_setting_json(setting_json):
                 raise ValueError("Radio setting was supplied more than once: " + target_name)
             seen_ids.add(dedupe_key)
 
-            found = _resolve_setting(settings, target_id, target_name)
-            if not found.value.get_mutable():
+            found, component_index, value_obj = _resolve_setting(
+                settings, target_id, target_name)
+            if not value_obj.get_mutable():
                 raise ValueError("This setting is read-only: " + target_name)
 
             kind = str(change.get("kind", "string"))
-            before_value = _setting_value_for_ui(found)
-            requested = _coerce_setting_value(found, change.get("value"))
+            before_value = _setting_value_for_ui(value_obj)
+            requested = _coerce_setting_value(value_obj, change.get("value"))
 
-            # CHIRP's own value object owns validation, maps/lists, character
-            # sets, ranges, mutability and the changed() flag.
-            found.value.set_value(requested)
-            expected_value = _setting_value_for_ui(found)
+            # CHIRP's value object owns validation, maps/lists, character sets,
+            # ranges, mutability, and the changed() flag.
+            value_obj.set_value(requested)
+            expected_value = _setting_value_for_ui(value_obj)
             applied.append({
                 "id": target_id,
                 "name": target_name,
@@ -2256,10 +3043,25 @@ def update_setting_json(setting_json):
                 "expected": expected_value,
             })
 
-        # One complete tree, one driver call: this is the important desktop-CHIRP
-        # batch semantic. Apply callbacks can now observe all staged changes.
-        radio.set_settings(settings)
+        # Desktop CHIRP removes immutable and uninitialized values before
+        # calling the driver. This is essential for drivers such as KG-UV8E,
+        # which walk the entire supplied tree and may call int(None) on an
+        # untouched uninitialized frequency field.
+        pruned_settings = _prune_uninitialized_immutable_settings(settings)
+
+        # One complete, CHIRP-sanitized tree, one driver call.
+        try:
+            radio.set_settings(settings)
+        except Exception as exc:
+            names = ", ".join(row["name"] for row in applied)
+            raise ValueError(
+                "CHIRP driver rejected radio setting change(s) %s: %s: %s"
+                % (names or "(unknown)", exc.__class__.__name__, exc)) from exc
         _save_working_radio(radio)
+        if not _last_image_bytes:
+            names = ", ".join(row["name"] for row in applied)
+            raise ValueError(
+                "CHIRP driver produced an empty image after setting change(s): " + names)
 
         # Re-open exactly what would be written and verify EVERY staged setting.
         verify_radio = _radio_from_image_bytes()
@@ -2268,14 +3070,56 @@ def update_setting_json(setting_json):
             raise ValueError("Driver could not read settings back from the saved image")
 
         failures = []
+        failed_rows = []
         for row in applied:
-            verify_found = _resolve_setting(verify_settings, row["id"], row["name"])
-            actual_value = _setting_value_for_ui(verify_found)
+            _verify_setting, _verify_index, verify_value = _resolve_setting(
+                verify_settings, row["id"], row["name"])
+            actual_value = _setting_value_for_ui(verify_value)
             if not _setting_values_equivalent(row["expected"], actual_value, row["kind"]):
                 failures.append(
                     "%s (requested %r, read back %r)" %
                     (row["name"], row["expected"], actual_value))
+                failed_rows.append((row, actual_value))
         if failures:
+            # A few drivers expose string settings whose value object/default
+            # charset accepts lowercase even though the driver's image encoder
+            # does not. Retry ONLY failed lowercase string values, from the
+            # original pre-edit image, and only once.
+            retry_keys = set()
+            if _allow_case_retry:
+                for row, _actual in failed_rows:
+                    expected = row.get("expected")
+                    if (row.get("kind") == "string"
+                            and isinstance(expected, str)
+                            and _has_lowercase_text(expected)
+                            and expected.upper() != expected):
+                        retry_keys.add(row.get("id") or ("name:" + row.get("name", "")))
+
+            if retry_keys:
+                retry_changes = []
+                for change in raw_changes:
+                    retry = dict(change)
+                    key = str(retry.get("id", "") or "") or (
+                        "name:" + str(retry.get("name", "")))
+                    value = retry.get("value")
+                    if key in retry_keys and isinstance(value, str):
+                        retry["value"] = value.upper()
+                    retry_changes.append(retry)
+
+                # Restore the exact image that existed before this settings
+                # transaction, then replay the complete batch with only the
+                # proven-failing lowercase strings uppercased.
+                _last_image_bytes = old_image
+                _last_raw_bytes = old_raw
+                _last_hash_info = old_hash_info
+                LOG.info(
+                    "PocketCHIRP retrying %d radio setting string(s) as uppercase "
+                    "after driver round-trip loss", len(retry_keys))
+                return _apply_setting_changes_json(
+                    _json.dumps({"changes": retry_changes}, separators=(",", ":")),
+                    return_document=return_document,
+                    _allow_case_retry=False)
+
             raise ValueError("Driver did not preserve setting change(s): " + "; ".join(failures))
 
         genuinely_changed = any(row["before"] != row["expected"] for row in applied)
@@ -2284,12 +3128,23 @@ def update_setting_json(setting_json):
             raise ValueError(
                 "Driver accepted the setting change(s) but the radio image did not change: " + names)
 
-        return pocketchirp_radio_document_json()
+        if return_document:
+            return pocketchirp_radio_document_json()
+        return _json.dumps({
+            "applied": len(applied),
+            "names": [row["name"] for row in applied],
+            "rawChanged": bool(_last_raw_bytes != old_raw),
+            "rawSha256": hashlib.sha256(_last_raw_bytes).hexdigest(),
+        }, separators=(",", ":"))
     except Exception:
         _last_image_bytes = old_image
         _last_raw_bytes = old_raw
         _last_hash_info = old_hash_info
         raise
+
+
+def update_setting_json(setting_json):
+    return _apply_setting_changes_json(setting_json, return_document=True)
 
 
 
@@ -2311,6 +3166,51 @@ _selected_radio_class = None
 _custom_radio_classes = {}
 _custom_driver_entries = {}
 _custom_driver_modules = {}
+
+
+def _custom_entry_for_runtime_radio(radio):
+    """Return the exact loaded custom-driver entry for a runtime radio.
+
+    Runtime custom drivers are intentionally outside CHIRP's global registry.
+    Public VENDOR/MODEL/VARIANT therefore cannot be the parser identity. Match
+    the actual runtime class to PocketCHIRP's loaded custom-driver table.
+    """
+    if radio is None:
+        return None
+    runtime_cls = _unwrap_runtime_class(radio.__class__)
+
+    selected = _custom_driver_entries.get(_selected_radio_key) if _selected_radio_key else None
+    if selected is not None:
+        selected_cls = _custom_radio_classes.get(selected.get("key"))
+        if isinstance(selected_cls, type) and _unwrap_runtime_class(selected_cls) is runtime_cls:
+            return selected
+
+    matches = []
+    for key, cls in (_custom_radio_classes or {}).items():
+        if isinstance(cls, type) and _unwrap_runtime_class(cls) is runtime_cls:
+            entry = _custom_driver_entries.get(key)
+            if entry is not None:
+                matches.append(entry)
+    return matches[0] if len(matches) == 1 else None
+
+
+def _stamp_custom_image_metadata(radio):
+    """Persist exact custom-parser identity in CHIRP's extensible .img metadata.
+
+    These fields live after CHIRP's MAGIC marker and never alter the raw radio
+    payload. CHIRP preserves arbitrary metadata keys across load/save while it
+    refreshes its own standard rclass/vendor/model/variant/chirp_version keys.
+    """
+    entry = _custom_entry_for_runtime_radio(radio)
+    if entry is None:
+        return False
+
+    radio.metadata = {
+        "pocketchirp_custom_driver_key": str(entry.get("key") or ""),
+        "pocketchirp_custom_driver_sha256": str(entry.get("sha256") or ""),
+        "pocketchirp_custom_driver_class": str(entry.get("class") or ""),
+    }
+    return True
 
 
 # ---------------------------------------------------------------------------
@@ -2458,6 +3358,198 @@ def _build_bundled_catalog_from_chirp():
                       getattr(alias, "VENDOR", ""), getattr(alias, "MODEL", ""),
                       getattr(alias, "VARIANT", ""), "alias",
                       getattr(cls, "__name__", ""))
+
+    # CHIRP also publishes marketed/compatibility names in
+    # chirp/share/model_alias_map.yaml. These are NOT Python ALIASES and
+    # therefore are absent from directory.DRV_TO_RADIO. The engine-side catalog
+    # must merge them explicitly or marketed radios such as the Baofeng AR-5RM
+    # disappear from PocketCHIRP even though their executable driver (5RM) is
+    # still present.
+    #
+    # Keep this engine-owned: it only reflects data shipped by the GPL CHIRP
+    # package and changes no transport or radio protocol behavior.
+    try:
+        import chirp as _chirp_pkg
+
+        # The Android Chaquopy build stores Python sources/resources inside
+        # assets/chaquopy/app.imy.  A pathlib path derived from chirp.__file__
+        # therefore is not necessarily a real filesystem path.  Read the CHIRP
+        # package resource through importlib.resources first (works for zip/IMY
+        # package loaders), then pkgutil, and use pathlib only as a final desktop
+        # fallback.  All three paths are standard-library-only.
+        _alias_text = None
+        try:
+            from importlib import resources as _resources
+            _alias_text = (
+                _resources.files(_chirp_pkg)
+                .joinpath("share")
+                .joinpath("model_alias_map.yaml")
+                .read_text(encoding="utf-8-sig")
+            )
+        except Exception:
+            try:
+                import pkgutil as _pkgutil
+                _alias_bytes = _pkgutil.get_data(
+                    _chirp_pkg.__name__, "share/model_alias_map.yaml")
+                if _alias_bytes is not None:
+                    _alias_text = _alias_bytes.decode("utf-8-sig")
+            except Exception:
+                _alias_text = None
+
+        if _alias_text is None:
+            import pathlib as _pathlib
+            _alias_path = (_pathlib.Path(_chirp_pkg.__file__).resolve().parent /
+                           "share" / "model_alias_map.yaml")
+            with _alias_path.open("r", encoding="utf-8-sig") as _f:
+                _alias_text = _f.read()
+
+        # Desktop/development Python may have PyYAML, but the Android Chaquopy
+        # engine intentionally ships no pip dependencies.  model_alias_map.yaml
+        # uses a deliberately small YAML subset (top-level vendor keys followed
+        # by list records containing alt/model/variant).  Prefer PyYAML when it
+        # is available, and otherwise parse that exact upstream subset using only
+        # the Python standard library.  This keeps marketed aliases such as
+        # Baofeng AR-5RM visible on Android without adding any transport/runtime
+        # dependency or changing CHIRP driver behavior.
+        try:
+            import yaml as _yaml
+            _alias_map = _yaml.load(_alias_text, Loader=_yaml.FullLoader) or {}
+        except Exception:
+            def _alias_scalar(_value):
+                _value = str(_value or "").strip()
+                if len(_value) >= 2 and _value[0] == _value[-1] and _value[0] in ("'", '"'):
+                    _quote = _value[0]
+                    _value = _value[1:-1]
+                    if _quote == "'":
+                        _value = _value.replace("''", "'")
+                    else:
+                        _value = bytes(_value, "utf-8").decode("unicode_escape")
+                return _value
+
+            _alias_map = {}
+            _vendor_group = None
+            _record = None
+            for _raw_line in _alias_text.splitlines():
+                if not _raw_line.strip() or _raw_line.lstrip().startswith("#"):
+                    continue
+                if not _raw_line[0].isspace() and not _raw_line.startswith("-") and _raw_line.rstrip().endswith(":"):
+                    _vendor_group = _alias_scalar(_raw_line.rstrip()[:-1])
+                    _alias_map.setdefault(_vendor_group, [])
+                    _record = None
+                    continue
+                _stripped = _raw_line.strip()
+                if _stripped.startswith("- "):
+                    if _vendor_group is None:
+                        continue
+                    _field = _stripped[2:]
+                    if ":" not in _field:
+                        continue
+                    _key, _value = _field.split(":", 1)
+                    _record = {_key.strip(): _alias_scalar(_value)}
+                    _alias_map[_vendor_group].append(_record)
+                    continue
+                if _record is not None and ":" in _stripped:
+                    _key, _value = _stripped.split(":", 1)
+                    _record[_key.strip()] = _alias_scalar(_value)
+
+        _pending = []
+        for _vendor_group, _models in _alias_map.items():
+            _display_vendor = str(_vendor_group or "").split("/", 1)[0].strip()
+            for _item in (_models or []):
+                _display_model = str(_item.get("model", "") or "").strip()
+                _variant = str(_item.get("variant", "") or "").strip()
+                _alt = str(_item.get("alt", "") or "").strip()
+                if not _display_vendor or not _display_model or not _alt:
+                    continue
+
+                # CHIRP's map contains a few model labels that redundantly carry
+                # their vendor prefix (notably "Baofeng AR-5RM"). PocketCHIRP
+                # already displays the vendor separately, and older PocketCHIRP
+                # AR-5RM images were stamped MODEL="AR-5RM". Normalize only an
+                # exact leading vendor token so the public identity stays stable.
+                _prefix = _display_vendor + " "
+                if _display_model.casefold().startswith(_prefix.casefold()):
+                    _display_model = _display_model[len(_prefix):].strip()
+
+                _pending.append({
+                    "vendor": _display_vendor,
+                    "model": _display_model,
+                    "variant": _variant,
+                    "alt": _alt,
+                })
+
+        # Resolve aliases iteratively because CHIRP permits aliases to point to
+        # other aliases. Match the same vendor/model(+variant) forms used by the
+        # historical development-PC generator.
+        _progress = True
+        while _pending and _progress:
+            _progress = False
+            _next_pending = []
+            for _item in _pending:
+                _vendor = _item["vendor"]
+                _alt = _item["alt"]
+                if " " in _alt:
+                    _alt_vendor, _alt_model = _alt.split(" ", 1)
+                else:
+                    _alt_vendor, _alt_model = _vendor, _alt
+
+                _target = None
+                for _e in entries:
+                    if (_e.get("vendor") == _alt_vendor and
+                            _e.get("model") == _alt_model and
+                            not (_e.get("variant") or "")):
+                        _target = _e
+                        break
+
+                if _target is None:
+                    _candidates = [
+                        _e for _e in entries
+                        if _e.get("vendor") == _alt_vendor and
+                        (str(_e.get("model") or "") +
+                         str(_e.get("variant") or "")) == _alt_model
+                    ]
+                    if len(_candidates) == 1:
+                        _target = _candidates[0]
+
+                if _target is None:
+                    _candidates = [
+                        _e for _e in entries
+                        if _e.get("vendor") == _alt_vendor and
+                        _e.get("model") == _alt_model
+                    ]
+                    if len(_candidates) == 1:
+                        _target = _candidates[0]
+
+                if _target is None:
+                    _next_pending.append(_item)
+                    continue
+
+                # Preserve the target's public/alias class name for stable
+                # catalog identity, but carry its registered parent backend
+                # through alias chains. Some model_alias_map rows point at a
+                # CHIRP Alias class (label-only, not a Radio); the executable
+                # backend in that case is the target alias entry's parentClass.
+                add_entry(
+                    _target.get("module", ""),
+                    _target.get("class", ""),
+                    _item["vendor"],
+                    _item["model"],
+                    _item["variant"],
+                    "map-alias",
+                    (_target.get("parentClass", "") or
+                     _target.get("class", "")),
+                )
+                _progress = True
+
+            _pending = _next_pending
+    except Exception as _alias_exc:
+        # A missing/broken alias map must not take down the entire CHIRP engine;
+        # canonical registered drivers remain usable. Surface the problem in the
+        # engine log so update validation can catch it.
+        try:
+            LOG.warning("Could not merge CHIRP model alias map: %s", _alias_exc)
+        except Exception:
+            pass
 
     entries.sort(key=lambda x: (
         x["vendor"].casefold(), x["model"].casefold(), x["variant"].casefold()))
@@ -2890,13 +3982,22 @@ def _find_loaded_radio_class(entry):
     # The development-PC catalog export has already flattened each one to
     # CHIRP's executable driver module/class. Use that class while preserving the marketed
     # vendor/model in the UI and saved-image metadata.
-    executable_class = entry.get("class") or entry.get("parentClass") or ""
+    # Map aliases can target another CHIRP alias. In that case class is the
+    # label-only Alias type while parentClass is the registered Radio backend.
+    # Prefer parentClass for map aliases, and never construct an executable
+    # DynamicMappedAlias from a non-Radio label class.
+    from chirp import chirp_common as _chirp_common
+    if entry.get("kind") == "map-alias":
+        executable_class = entry.get("parentClass") or entry.get("class") or ""
+    else:
+        executable_class = entry.get("class") or entry.get("parentClass") or ""
     cls = getattr(module_obj, executable_class, None)
 
-    if not isinstance(cls, type) and entry.get("parentClass"):
+    if (not isinstance(cls, type) or
+            not issubclass(cls, _chirp_common.Radio)) and entry.get("parentClass"):
         cls = getattr(module_obj, entry["parentClass"], None)
 
-    if isinstance(cls, type):
+    if isinstance(cls, type) and issubclass(cls, _chirp_common.Radio):
         class DynamicMappedAlias(cls):
             _orig_rclass = cls
             VENDOR = entry["vendor"]
@@ -2969,13 +4070,31 @@ def _note_exact_selected_driver(pipe, cls):
         )
     )
 
-    # Dynamic aliases intentionally inherit another implementation class but
-    # expose the selected public VENDOR/MODEL/VARIANT. Compare public identity,
-    # not Python ancestry.
+    # Exact public identity remains preferred, but marketed aliases and sibling
+    # labels may intentionally execute the exact same CHIRP implementation.
+    # Do not reject those solely because VENDOR/MODEL text differs.  Equivalence
+    # is deliberately narrow: after unwrapping PocketCHIRP's dynamic alias class,
+    # the runtime implementation must be the exact same Python class object.
     if actual != selected:
+        try:
+            selected_impl = _unwrap_runtime_class(_selected_class())
+            actual_impl = _unwrap_runtime_class(cls)
+        except Exception:
+            selected_impl = None
+            actual_impl = None
+        if selected_impl is actual_impl and selected_impl is not None:
+            _transport_note(
+                pipe,
+                "Compatible marketed identity accepted: %s uses the same backend %s.%s" % (
+                    _describe_public_identity_tuple(actual),
+                    getattr(selected_impl, "__module__", "?"),
+                    getattr(selected_impl, "__name__", "?"),
+                )
+            )
+            return
         raise ValueError(
-            "Selected radio identity mismatch: catalog=%s class=%s. "
-            "PocketCHIRP will not silently substitute a different variant." % (
+            "Selected radio identity mismatch: catalog=%s class=%s and backend classes differ. "
+            "PocketCHIRP will not silently substitute an unrelated driver." % (
                 _describe_public_identity_tuple(selected),
                 _describe_public_identity_tuple(actual),
             )
@@ -2983,13 +4102,48 @@ def _note_exact_selected_driver(pipe, cls):
 
 
 def _status_callback(radio, java_transport):
+    """Bridge CHIRP status without putting UI IPC in BLE protocol hot loops."""
+    pipe = getattr(radio, "pipe", None)
+
+    # Native/direct BLE benefits from keeping synchronous Python->Java UI work
+    # out of the protocol hot loop. Ordinary serial transports retain the driver's
+    # normal callback cadence; PocketCHIRP applies its own app-side UI throttling.
+    throttle = bool(getattr(pipe, "is_ble", False))
+    last_sent_cur = None
+    last_sent_max = None
+    last_sent_msg = None
+
     def cb(status):
+        nonlocal last_sent_cur, last_sent_max, last_sent_msg
         try:
-            java_transport.onChirpProgress(
-                str(status.msg), int(status.cur), int(status.max)
-            )
+            message = str(status.msg)
+            current = int(status.cur)
+            maximum = int(status.max)
+
+            if throttle:
+                # Always forward starts, completion, message/range changes and
+                # resets. Ordinary clone-loop progress is coalesced to every
+                # eight units. This was fluid on the UV-5R Mini while removing
+                # hundreds of synchronous Python->Java callbacks.
+                send = (
+                    last_sent_cur is None
+                    or current <= 0
+                    or (maximum > 0 and current >= maximum)
+                    or message != last_sent_msg
+                    or maximum != last_sent_max
+                    or current < last_sent_cur
+                    or (current - last_sent_cur) >= 8
+                )
+                if not send:
+                    return
+
+            java_transport.onChirpProgress(message, current, maximum)
+            last_sent_cur = current
+            last_sent_max = maximum
+            last_sent_msg = message
         except Exception:
             pass
+
     radio.status_fn = cb
 
 
@@ -2999,6 +4153,7 @@ def _store_downloaded_radio(radio):
     try:
         with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as tmp:
             name = tmp.name
+        _stamp_custom_image_metadata(radio)
         radio.save(name)
         with open(name, "rb") as f:
             _last_image_bytes = f.read()
@@ -3712,7 +4867,7 @@ def _fast_family_probe_result(java_transport):
     ))
 
     try:
-        java_transport.setTimeoutMs(180)
+        _set_transport_timeout_ms(java_transport, 180)
         java_transport.setWriteTimeoutMs(400)
     except Exception:
         pass
@@ -3949,7 +5104,7 @@ def _safe_discriminate_uv5r(java_transport, fast):
         reset_mode = _probe_reset(
             java_transport, 9600, "uv5r:model-discriminator")
         java_transport.setSerialParameters(9600, 8, 1.0, "N")
-        java_transport.setTimeoutMs(500)
+        _set_transport_timeout_ms(java_transport, 500)
         java_transport.setWriteTimeoutMs(500)
         java_transport.clearInputBuffer()
 
@@ -3964,7 +5119,7 @@ def _safe_discriminate_uv5r(java_transport, fast):
                 "UV5R discriminator did not receive program ACK")
         entry_mode = "fresh-reentry"
 
-    java_transport.setTimeoutMs(500)
+    _set_transport_timeout_ms(java_transport, 500)
     java_transport.setWriteTimeoutMs(500)
     java_transport.writeBytes(b"\x02")
     ident = _transport_read_until(java_transport, 0xDD, 12, 0.85)
@@ -4098,7 +5253,7 @@ def _safe_discriminate_kenwood(java_transport, fast):
         return None
 
     reset_mode = _probe_reset(java_transport, 9600, module + ":model-discriminator")
-    java_transport.setTimeoutMs(600)
+    _set_transport_timeout_ms(java_transport, 600)
     java_transport.setWriteTimeoutMs(500)
 
     if module == "tk8102":
@@ -4176,7 +5331,7 @@ def _safe_discriminate_rh5r(java_transport, fast):
     candidates = fast.get("candidates") or []
     reset_mode = _probe_reset(java_transport, 9600, "rh5r_v2:model-discriminator")
     java_transport.setSerialParameters(9600, 8, 1.0, "N")
-    java_transport.setTimeoutMs(700)
+    _set_transport_timeout_ms(java_transport, 700)
     java_transport.writeBytes(b"PGM2015")
     if _transport_read_exact(java_transport, 2, 0.70) != b"\x06\x30":
         raise RuntimeError("RH5R-v2 program ACK failed")
@@ -4250,7 +5405,7 @@ def _safe_probe_uv5r_priority(java_transport):
     try:
         reset_mode = _probe_reset(java_transport, 9600, "uv5r:priority-family")
         java_transport.setSerialParameters(9600, 8, 1.0, "N")
-        java_transport.setTimeoutMs(350)
+        _set_transport_timeout_ms(java_transport, 350)
         java_transport.setWriteTimeoutMs(350)
         java_transport.clearInputBuffer()
         java_transport.writeBytes(payload)
@@ -4402,7 +5557,7 @@ def _safe_probe_wouxun(java_transport):
         try:
             reset_mode = _probe_reset(java_transport, baud, "wouxun:model-query")
             java_transport.setSerialParameters(baud, 8, 1.0, "N")
-            java_transport.setTimeoutMs(650)
+            _set_transport_timeout_ms(java_transport, 650)
             java_transport.setWriteTimeoutMs(450)
             java_transport.clearInputBuffer()
             resp, echo_info = _probe_write_read(
@@ -4519,7 +5674,7 @@ def _safe_probe_radioddity_gm30(java_transport):
             reset_mode = _probe_reset(
                 java_transport, baud, "radioddity_gm30:p13gmrs-ident")
             java_transport.setSerialParameters(baud, 8, 1.0, "N")
-            java_transport.setTimeoutMs(650)
+            _set_transport_timeout_ms(java_transport, 650)
             java_transport.setWriteTimeoutMs(450)
             java_transport.clearInputBuffer()
 
@@ -4620,7 +5775,7 @@ def _safe_probe_kguv8e(java_transport):
             reset_mode = _probe_reset(
                 java_transport, baud, "wouxun:kguv8e-ident")
             java_transport.setSerialParameters(baud, 8, 1.0, "N")
-            java_transport.setTimeoutMs(700)
+            _set_transport_timeout_ms(java_transport, 700)
             java_transport.setWriteTimeoutMs(450)
             java_transport.clearInputBuffer()
 
@@ -4866,7 +6021,7 @@ def _safe_probe_radtel_t18(java_transport):
         try:
             reset_mode = _probe_reset(java_transport, baud, "radtel_t18:model-ident")
             java_transport.setSerialParameters(baud, 8, 1.0, "N")
-            java_transport.setTimeoutMs(550)
+            _set_transport_timeout_ms(java_transport, 550)
             java_transport.setWriteTimeoutMs(450)
             java_transport.clearInputBuffer()
 
@@ -4978,7 +6133,7 @@ def _safe_probe_radtel_rt490(java_transport):
         try:
             reset_mode = _probe_reset(java_transport, baud, "radtel_rt490:model-ident")
             java_transport.setSerialParameters(baud, 8, 1.0, "N")
-            java_transport.setTimeoutMs(550)
+            _set_transport_timeout_ms(java_transport, 550)
             java_transport.setWriteTimeoutMs(450)
             java_transport.clearInputBuffer()
 
@@ -5071,7 +6226,7 @@ def _safe_probe_program_qx_family(java_transport):
     try:
         reset_mode = _probe_reset(java_transport, 9600, "program-qx:identity")
         java_transport.setSerialParameters(9600, 8, 1.0, "N")
-        java_transport.setTimeoutMs(650)
+        _set_transport_timeout_ms(java_transport, 650)
         java_transport.setWriteTimeoutMs(450)
         java_transport.clearInputBuffer()
 
@@ -5563,7 +6718,8 @@ def download_selected_editor_once_result_json(java_transport, attempt=1,
     vendor = str(getattr(cls, "VENDOR", "") or "")
     model = str(getattr(cls, "MODEL", "") or "")
     try:
-        result = download_selected_editor(java_transport)
+        result = download_selected_editor(
+            java_transport, physical_transport_kind=transport_kind)
         return _json.dumps({
             "ok": True,
             "attempt": int(attempt or 1),
@@ -6037,22 +7193,16 @@ class _PocketChirpLiveSnapshotRadio:
 
 
 def _prepare_live_pipe(cls, java_transport):
-    """Create only a serial-like pipe; no clone-family resolver is entered."""
+    """Create CHIRP's serial-like LiveRadio pipe without consuming input."""
     pipe = _pipe_for_class(cls, java_transport)
-    pipe.timeout = 1.5
+    pipe.timeout = 0.25
     if hasattr(pipe, "write_timeout"):
         pipe.write_timeout = 1.5
-    # Driver-declared serial attributes are safe transport configuration, not a
-    # second radio protocol. The real LiveRadio remains responsible for all
-    # commands/framing/handshakes.
+    # Driver-declared serial attributes are transport configuration; all radio
+    # commands and handshakes remain owned by the CHIRP LiveRadio driver.
     if not getattr(pipe, "is_ble", False):
         pipe.baudrate = int(getattr(cls, "BAUD_RATE", 9600) or 9600)
-    try:
-        pipe.rtscts = bool(getattr(cls, "HARDWARE_FLOW", False))
-    except Exception:
-        pass
-    pipe.reset_input_buffer()
-    time.sleep(0.05)
+        _apply_driver_serial_open_contract(cls, pipe)
     return pipe
 
 
@@ -6432,7 +7582,7 @@ def _controlled_write_live_snapshot(java_transport, image_bytes):
         + "\nWrite policy: changed memories only"
     )
 
-def download_selected_editor(java_transport):
+def download_selected_editor(java_transport, physical_transport_kind="unknown"):
     from chirp import chirp_common
     cls = _selected_class()
     if issubclass(cls, chirp_common.LiveRadio):
@@ -6442,7 +7592,8 @@ def download_selected_editor(java_transport):
 
     pipe = _prepare_clone_pipe(cls, java_transport)
 
-    radio = _sync_in_once(cls, pipe, java_transport)
+    radio = _sync_in_once(
+        cls, pipe, java_transport, physical_transport_kind)
     _store_downloaded_radio(radio)
 
     rf = radio.get_features()
@@ -6469,10 +7620,12 @@ def _metadata_for_image(data):
 
 
 def _entry_for_metadata(metadata):
+    """Map standard CHIRP image metadata to a visible PocketCHIRP catalog row."""
+    _ensure_radio_catalog()
     vendor = metadata.get("vendor")
     model = metadata.get("model")
     variant = metadata.get("variant") or ""
-    if not vendor or not model or _radio_catalog_cache is None:
+    if not vendor or not model:
         return None
 
     wanted = _fold_radio_identity((vendor, model, variant))
@@ -6488,6 +7641,113 @@ def _entry_for_metadata(metadata):
                 return e
     return None
 
+
+def _chirp_radio_from_image_bytes(data):
+    """Open image bytes using CHIRP's own image-class detection machinery.
+
+    Image operations must not depend on PocketCHIRP having requested the radio
+    catalog first.  Initializing the engine catalog registers CHIRP's bundled
+    drivers through directory.import_drivers(), so get_radio_by_image() works
+    correctly even when an Open Image request races the app's async catalog load.
+    """
+    _ensure_radio_catalog()
+    from chirp import directory
+
+    raw = bytes(data or b"")
+    if not raw:
+        raise ValueError("No radio image bytes were supplied")
+
+    # model_alias_map.yaml identities are marketed names, not registered CHIRP
+    # classes. PocketCHIRP intentionally preserves those names in image metadata
+    # (for example Baofeng AR-5RM), so resolve a known map alias to its exact
+    # executable class before asking CHIRP's generic detector to match the model
+    # string. This restores older PocketCHIRP alias-stamped saves without
+    # modifying their bytes or weakening normal image validation.
+    try:
+        _, _metadata = _metadata_for_image(raw)
+        _mapped_entry = _entry_for_metadata(_metadata or {})
+        if _mapped_entry is not None and _mapped_entry.get("kind") == "map-alias":
+            return _radio_from_exact_class_image_bytes(
+                _find_loaded_radio_class(_mapped_entry), raw)
+    except Exception:
+        # Fall through to CHIRP's normal detector. If the image is genuinely
+        # invalid it will raise the original authoritative error below.
+        pass
+
+    name = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as tmp:
+            name = tmp.name
+            tmp.write(raw)
+        return directory.get_radio_by_image(name)
+    finally:
+        if name:
+            try:
+                os.unlink(name)
+            except OSError:
+                pass
+
+
+def _entry_for_radio_runtime(radio, metadata=None):
+    """Return the visible chooser entry for a CHIRP runtime image class.
+
+    Detected-only subclasses deliberately have no chooser row. Map those back
+    to CHIRP's _DETECTED_BY manager while retaining the exact runtime class in
+    the image itself. Marketed aliases still map by their image metadata first.
+    """
+    _ensure_radio_catalog()
+
+    if metadata:
+        direct = _entry_for_metadata(metadata)
+        if direct is not None:
+            return direct
+
+    runtime_cls = _unwrap_runtime_class(radio.__class__)
+    visible_cls = _detected_manager_class(runtime_cls) or runtime_cls
+
+    candidates = []
+    visible_identity = _fold_radio_identity(_custom_public_identity(visible_cls))
+    for e in _radio_catalog_cache.get("radios", []):
+        try:
+            entry_cls = _unwrap_runtime_class(_find_loaded_radio_class(e))
+        except Exception:
+            continue
+
+        score = None
+        if (e.get("kind") == "driver" and entry_cls is visible_cls and
+                _fold_radio_identity(_custom_public_identity(e)) == visible_identity):
+            score = 0
+        elif (entry_cls is visible_cls and
+              _fold_radio_identity(_custom_public_identity(e)) == visible_identity):
+            score = 1
+        elif entry_cls is visible_cls:
+            score = 2
+        if score is not None:
+            candidates.append((score, str(e.get("key") or ""), e))
+
+    if candidates:
+        candidates.sort(key=lambda item: (item[0], item[1]))
+        return candidates[0][2]
+    return None
+
+
+def _runtime_image_identity(radio, metadata=None):
+    impl = _unwrap_runtime_class(radio.__class__)
+    manager = _detected_manager_class(impl)
+    visible_entry = _entry_for_radio_runtime(radio, metadata)
+    return {
+        "vendor": str(getattr(radio, "VENDOR", "") or ""),
+        "model": str(getattr(radio, "MODEL", "") or ""),
+        "variant": str(getattr(radio, "VARIANT", "") or ""),
+        "rclass": str(getattr(impl, "__name__", "") or ""),
+        "module": str(getattr(impl, "__module__", "") or ""),
+        "detectedOnly": bool(manager is not None),
+        "detectedByClass": str(getattr(manager, "__name__", "") or "") if manager else "",
+        "radioKey": str(visible_entry.get("key") or "") if visible_entry else "",
+        "visibleVendor": str(visible_entry.get("vendor") or "") if visible_entry else "",
+        "visibleModel": str(visible_entry.get("model") or "") if visible_entry else "",
+        "visibleVariant": str(visible_entry.get("variant") or "") if visible_entry else "",
+    }
 
 
 def _entry_class_identity(entry):
@@ -6517,6 +7777,23 @@ def _selected_identity():
     return _entry_class_identity(_radio_catalog_by_key.get(_selected_radio_key))
 
 
+def _entries_share_backend_driver(first, second):
+    """True only when two catalog identities execute the exact same backend class.
+
+    This is intentionally stricter than inheritance/duck-typing. It exists for
+    CHIRP marketed aliases (for example Baofeng 5RM and AR-5RM) and equivalent
+    custom aliases which are merely alternate labels for one implementation.
+    """
+    if not first or not second:
+        return False
+    try:
+        first_cls = _unwrap_runtime_class(_find_loaded_radio_class(first))
+        second_cls = _unwrap_runtime_class(_find_loaded_radio_class(second))
+        return first_cls is second_cls
+    except Exception:
+        return False
+
+
 def _metadata_identity(metadata):
     if not metadata:
         return None
@@ -6530,7 +7807,7 @@ def _metadata_identity(metadata):
 
 
 def identify_image_bytes_json(data):
-    """Return neutral CHIRP-derived identity facts for image bytes."""
+    """Identify image bytes using the same CHIRP image loader as desktop CHIRP."""
     data = bytes(data or b"")
     if not data:
         return _json.dumps({
@@ -6539,70 +7816,36 @@ def identify_image_bytes_json(data):
         }, separators=(",", ":"))
 
     raw, metadata = _metadata_for_image(data)
-    metadata = metadata or {}
-
-    vendor = str(metadata.get("vendor") or "")
-    model = str(metadata.get("model") or "")
-    variant = str(metadata.get("variant") or "")
-    rclass = str(metadata.get("rclass") or "")
-    radio_key = ""
-
-    if vendor and model:
-        # Recover the current catalog key from standard CHIRP metadata when possible.
-        entry = _entry_for_metadata({
-            "vendor": vendor,
-            "model": model,
-            "variant": variant,
-            "rclass": rclass,
-        })
-        if entry and not radio_key:
-            radio_key = str(entry.get("key") or "")
-        return _json.dumps({
-            "vendor": vendor,
-            "model": model,
-            "variant": variant,
-            "rclass": rclass,
-            "radioKey": radio_key,
-            "source": "embedded-metadata",
+    if _is_live_snapshot_bytes(data):
+        ident = _metadata_identity(metadata) or {}
+        entry = _entry_for_metadata(metadata or {})
+        ident.update({
+            "radioKey": str(entry.get("key") or "") if entry else "",
+            "source": "live-snapshot-metadata",
             "confidence": "authoritative",
             "metadataPresent": True,
             "rawBytes": len(raw),
-        }, separators=(",", ":"))
+        })
+        return _json.dumps(ident, separators=(",", ":"))
 
-    # For metadata-less legacy images, only accept match_model() when exactly
-    # one distinct driver identity claims the raw payload. Many CHIRP drivers
-    # match by size alone, so multiple candidates remain intentionally unknown.
-    matches = _candidate_match_entries(raw)
-    unique = {}
-    for candidate in matches:
-        key = (
-            str(candidate.get("vendor") or ""),
-            str(candidate.get("model") or ""),
-            str(candidate.get("variant") or ""),
-            str(candidate.get("rclass") or ""),
-        )
-        unique[key] = candidate
-    candidates = list(unique.values())
-    if len(candidates) == 1:
-        candidate = candidates[0]
+    try:
+        radio = _chirp_radio_from_image_bytes(data)
+    except Exception as exc:
         return _json.dumps({
-            "vendor": str(candidate.get("vendor") or ""),
-            "model": str(candidate.get("model") or ""),
-            "variant": str(candidate.get("variant") or ""),
-            "rclass": str(candidate.get("rclass") or ""),
-            "radioKey": str(candidate.get("key") or ""),
-            "source": "unique-match-model",
-            "confidence": "best-effort",
-            "metadataPresent": False,
-            "rawBytes": len(raw),
+            "vendor": "", "model": "", "variant": "", "rclass": "",
+            "radioKey": "", "source": "unknown", "confidence": "none",
+            "metadataPresent": bool(metadata), "rawBytes": len(raw),
+            "error": "%s: %s" % (exc.__class__.__name__, exc),
         }, separators=(",", ":"))
 
-    return _json.dumps({
-        "vendor": "", "model": "", "variant": "", "rclass": "",
-        "radioKey": "", "source": "unknown", "confidence": "none",
-        "metadataPresent": False, "rawBytes": len(raw),
-        "candidateCount": len(candidates),
-    }, separators=(",", ":"))
+    ident = _runtime_image_identity(radio, metadata)
+    ident.update({
+        "source": "chirp-get-radio-by-image",
+        "confidence": "authoritative" if metadata else "chirp-detected",
+        "metadataPresent": bool(metadata),
+        "rawBytes": len(raw),
+    })
+    return _json.dumps(ident, separators=(",", ":"))
 
 
 
@@ -6663,7 +7906,7 @@ def _candidate_match_entries(raw):
 
 
 def image_compatibility_bytes_json(data):
-    """Identify raw image bytes and compare them with the selected target radio."""
+    """Compare CHIRP's actual image runtime class with the selected target."""
     data = bytes(data or b"")
     if not data:
         return _json.dumps({
@@ -6673,108 +7916,111 @@ def image_compatibility_bytes_json(data):
             "reason": "empty-image",
         }, separators=(",", ":"))
 
+    _ensure_radio_catalog()
     raw, metadata = _metadata_for_image(data)
+    selected_entry = _entry() if _selected_radio_key else None
     selected = _selected_identity()
-    meta_ident = _metadata_identity(metadata)
-    image_entry = _entry_for_metadata(metadata)
-    image_catalog_ident = _entry_class_identity(image_entry) if image_entry else None
 
     result = {
         "rawBytes": len(raw),
         "rawSha256": hashlib.sha256(raw).hexdigest(),
-        "metadataPresent": bool(meta_ident and meta_ident.get("vendor")
-                                and meta_ident.get("model")),
-        "image": meta_ident,
+        "metadataPresent": bool(metadata),
         "selected": selected,
-        "candidates": [],
         "level": "unknown",
         "reason": "unidentified-image",
-        "writeAllowed": True,
+        "writeAllowed": False,
         "requiresExtraConfirmation": True,
     }
 
-    if not selected:
-        result.update({
-            "level": "no_target",
-            "reason": "no-selected-target",
-            "writeAllowed": False,
-        })
-        return _json.dumps(result)
+    if selected_entry is None:
+        result.update({"level": "no_target", "reason": "no-selected-target"})
+        return _json.dumps(result, separators=(",", ":"))
 
-    if result["metadataPresent"]:
-        comparison_identity = image_catalog_ident or meta_ident
-        if _canonical_identity_match(comparison_identity, selected):
+    if _is_live_snapshot_bytes(data):
+        image_entry = _entry_for_metadata(metadata or {})
+        result["image"] = _metadata_identity(metadata)
+        if image_entry and image_entry.get("key") == selected_entry.get("key"):
             result.update({
-                "level": "exact",
-                "reason": "metadata-exact-match",
+                "level": "exact", "reason": "live-snapshot-target-match",
+                "writeAllowed": True, "requiresExtraConfirmation": False,
+            })
+        elif image_entry and _entries_share_backend_driver(image_entry, selected_entry):
+            result.update({
+                "level": "compatible",
+                "reason": "live-snapshot-same-backend-driver",
                 "writeAllowed": True,
-                "requiresExtraConfirmation": False,
+                "requiresExtraConfirmation": True,
             })
         else:
-            result.update({
-                "level": "mismatch",
-                "reason": "metadata-target-mismatch",
-                "writeAllowed": False,
-            })
-        return _json.dumps(result)
+            result.update({"level": "mismatch", "reason": "live-snapshot-target-mismatch"})
+        return _json.dumps(result, separators=(",", ":"))
 
-    candidates = _candidate_match_entries(raw)
-    result["candidates"] = candidates[:25]
-    selected_matches = [
-        x for x in candidates if _canonical_identity_match(x, selected)
-    ]
+    # Use the same custom-aware image ownership path used by editor projection
+    # and the actual upload. Runtime custom drivers are intentionally not left in
+    # CHIRP's global directory, so bundled-only detection can misidentify a valid
+    # custom image (for example UV-K5 VUURWERK) and incorrectly block writing.
+    custom_entry = _custom_entry_for_image_metadata(metadata)
+    try:
+        radio = _radio_from_image_bytes(data)
+    except Exception as exc:
+        result["error"] = "%s: %s" % (exc.__class__.__name__, exc)
+        result["reason"] = "chirp-image-detection-failed"
+        return _json.dumps(result, separators=(",", ":"))
 
-    if len(candidates) == 1 and selected_matches:
-        result.update({
-            "level": "likely",
-            "reason": "unique-match-model-selected",
-            "writeAllowed": True,
+    image_identity = _runtime_image_identity(radio, metadata)
+    if custom_entry is not None:
+        # Preserve the exact runtime custom entry in the safety report instead of
+        # allowing a same-identity bundled class to win catalog ordering.
+        image_identity.update({
+            "radioKey": str(custom_entry.get("key") or ""),
+            "visibleVendor": str(custom_entry.get("vendor") or ""),
+            "visibleModel": str(custom_entry.get("model") or ""),
+            "visibleVariant": str(custom_entry.get("variant") or ""),
+            "customDriver": True,
         })
-    elif selected_matches:
+    result["image"] = image_identity
+    image_entry = custom_entry if custom_entry is not None else _entry_for_radio_runtime(radio, metadata)
+    selected_cls = _unwrap_runtime_class(_selected_class())
+    image_cls = _unwrap_runtime_class(radio.__class__)
+    image_manager = _detected_manager_class(image_cls)
+
+    if image_entry and image_entry.get("key") == selected_entry.get("key"):
         result.update({
-            "level": "ambiguous",
-            "reason": "ambiguous-selected-among-candidates",
+            "level": "exact",
+            "reason": "detected-subclass-target-match" if image_manager else "chirp-image-target-match",
             "writeAllowed": True,
+            "requiresExtraConfirmation": False,
         })
-    elif candidates:
+    elif image_manager is selected_cls:
+        # Fallback for a detected-only class if a future CHIRP manager is not
+        # represented in the visible catalog exactly as expected.
         result.update({
-            "level": "mismatch",
-            "reason": "selected-not-among-candidates",
-            "writeAllowed": False,
+            "level": "exact",
+            "reason": "chirp-detected-manager-match",
+            "writeAllowed": True,
+            "requiresExtraConfirmation": False,
+        })
+    elif ((image_entry and _entries_share_backend_driver(image_entry, selected_entry))
+          or image_cls is selected_cls):
+        # A CHIRP marketed alias may carry different vendor/model metadata while
+        # using the exact same parser/writer class.  Permit that relationship
+        # instead of hard-blocking it, but keep the user's extra confirmation so
+        # a sibling marketed label is visible before a destructive write.
+        result.update({
+            "level": "compatible",
+            "reason": "chirp-same-backend-driver",
+            "writeAllowed": True,
+            "requiresExtraConfirmation": True,
         })
     else:
-        try:
-            cls = _selected_class()
-            matcher = getattr(cls, "match_model", None)
-            if callable(matcher):
-                try:
-                    ok = bool(matcher(raw, "candidate.img"))
-                except TypeError:
-                    ok = bool(matcher(raw))
-            else:
-                ok = False
-        except Exception:
-            ok = False
+        result.update({
+            "level": "mismatch",
+            "reason": "chirp-image-target-mismatch",
+            "writeAllowed": False,
+            "requiresExtraConfirmation": True,
+        })
 
-        if ok:
-            result.update({
-                "level": "likely",
-                "reason": "selected-match-model-only",
-                "writeAllowed": True,
-            })
-        else:
-            result.update({
-                "level": "unknown",
-                "reason": "no-driver-match",
-                "writeAllowed": False,
-            })
-
-    return _json.dumps(result)
-
-
-
-
-
+    return _json.dumps(result, separators=(",", ":"))
 def backup_connected_radio_once_bytes(java_transport):
     """Read connected radio and return a CHIRP .img backup without replacing work."""
     from chirp import chirp_common
@@ -6812,30 +8058,79 @@ def backup_connected_radio_once_bytes(java_transport):
 
 
 
-def _radio_from_image_bytes(image_bytes=None):
-    data = _last_image_bytes if image_bytes is None else image_bytes
-    if not data:
-        raise ValueError("No working radio image is loaded")
+def _custom_entry_for_image_metadata(metadata):
+    """Return the exact loaded custom-driver entry for image metadata, if any.
 
-    if _is_live_snapshot_bytes(data):
-        return _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
+    New PocketCHIRP images carry exact custom-driver key/SHA/class metadata.
+    That identity is authoritative for parser selection and survives Save ->
+    close -> reopen. Legacy images retain the prior public-identity fallback.
+    """
+    if not metadata:
+        return None
 
-    _, metadata = _metadata_for_image(data)
-    entry = _entry_for_metadata(metadata)
+    exact_key = str(metadata.get("pocketchirp_custom_driver_key") or "").strip()
+    if exact_key:
+        entry = _custom_driver_entries.get(exact_key)
+        if entry is None:
+            raise ValueError(
+                "This image requires a PocketCHIRP custom driver that is not loaded "
+                f"({exact_key}). Reload the matching Python driver before opening or writing it."
+            )
 
-    # Saved image metadata determines the parser class, but it must never
-    # silently change the user's selected target radio. Those are separate
-    # concepts so write-safety comparison remains meaningful.
-    if entry is not None:
-        cls = _find_loaded_radio_class(entry)
-    else:
-        cls = _selected_class()
+        expected_sha = str(metadata.get("pocketchirp_custom_driver_sha256") or "").strip().lower()
+        actual_sha = str(entry.get("sha256") or "").strip().lower()
+        if expected_sha and actual_sha and expected_sha != actual_sha:
+            raise ValueError(
+                "PocketCHIRP custom-driver metadata SHA-256 does not match the loaded driver."
+            )
 
+        expected_class = str(metadata.get("pocketchirp_custom_driver_class") or "").strip()
+        actual_class = str(entry.get("class") or "").strip()
+        if expected_class and actual_class and expected_class != actual_class:
+            raise ValueError(
+                "PocketCHIRP custom-driver metadata class does not match the loaded driver."
+            )
+
+        wanted = _fold_radio_identity((
+            metadata.get("vendor"),
+            metadata.get("model"),
+            metadata.get("variant") or "",
+        ))
+        actual_identity = _fold_radio_identity(_custom_public_identity(entry))
+        if wanted and wanted[0] and wanted[1] and actual_identity != wanted:
+            raise ValueError(
+                "PocketCHIRP custom-driver metadata identity does not match the loaded driver."
+            )
+        return entry
+
+    # Migration for images created before exact custom provenance was embedded.
+    wanted = _fold_radio_identity((
+        metadata.get("vendor"),
+        metadata.get("model"),
+        metadata.get("variant") or "",
+    ))
+    if not wanted or not wanted[0] or not wanted[1]:
+        return None
+
+    selected = _radio_catalog_by_key.get(_selected_radio_key) if _selected_radio_key else None
+    if (selected and (selected.get("customDriver") or selected.get("kind") == "custom")
+            and _fold_radio_identity(_custom_public_identity(selected)) == wanted):
+        return selected
+
+    matches = [
+        entry for entry in (_radio_catalog_cache or {}).get("radios", [])
+        if (entry.get("customDriver") or entry.get("kind") == "custom")
+        and _fold_radio_identity(_custom_public_identity(entry)) == wanted
+    ]
+    return matches[0] if len(matches) == 1 else None
+
+def _radio_from_exact_class_image_bytes(cls, data):
+    """Instantiate one already-resolved CHIRP class from saved image bytes."""
     name = None
     try:
         with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as tmp:
             name = tmp.name
-            tmp.write(data)
+            tmp.write(bytes(data or b""))
         return cls(name)
     finally:
         if name:
@@ -6844,24 +8139,234 @@ def _radio_from_image_bytes(image_bytes=None):
             except OSError:
                 pass
 
+
+def _radio_from_image_bytes(image_bytes=None):
+    data = _last_image_bytes if image_bytes is None else image_bytes
+    if not data:
+        raise ValueError("No working radio image is loaded")
+
+    if _is_live_snapshot_bytes(data):
+        return _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
+
+    # Custom drivers are intentionally NOT left in CHIRP's global directory
+    # registry.  Reopen a custom image with the exact registered custom class
+    # before falling back to CHIRP's normal image detector.  This is critical for
+    # post-read editor projection: the physical clone may succeed while the
+    # bundled detector chooses a different/base class and yields empty or wrong
+    # memories (for example UV-K5 VUURWERK).
+    _, metadata = _metadata_for_image(data)
+    custom_entry = _custom_entry_for_image_metadata(metadata)
+    if custom_entry is not None:
+        return _radio_from_exact_class_image_bytes(
+            _find_loaded_radio_class(custom_entry), data)
+
+    # Bundled drivers retain the newer CHIRP-native ownership/detection path,
+    # preserving aliases, MODEL_COMPAT, match_model(), and detected-only classes.
+    return _chirp_radio_from_image_bytes(data)
+
+
 def load_editor_image_bytes(data):
     global _selected_radio_key, _selected_radio_class
 
     data = bytes(data or b"")
-    _, metadata = _metadata_for_image(data)
-    entry = _entry_for_metadata(metadata)
+    if not data:
+        raise ValueError("No radio image bytes were supplied")
 
-    # A CHIRP image with explicit vendor/model metadata is authoritative
-    # enough to update the visible radio selection. This is NOT a startup
-    # default: it happens only after the user explicitly loads an image.
+    if _is_live_snapshot_bytes(data):
+        _, metadata = _metadata_for_image(data)
+        entry = _entry_for_metadata(metadata)
+        radio = _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
+    else:
+        _, metadata = _metadata_for_image(data)
+        custom_entry = _custom_entry_for_image_metadata(metadata)
+        if custom_entry is not None:
+            radio = _radio_from_exact_class_image_bytes(
+                _find_loaded_radio_class(custom_entry), data)
+            entry = custom_entry
+        else:
+            radio = _chirp_radio_from_image_bytes(data)
+            entry = _entry_for_radio_runtime(radio, metadata)
+
+    # Keep the chooser on CHIRP's visible manager/marketed alias. For custom
+    # images, preserve the exact loaded custom entry selected above.
     if entry is not None:
         _selected_radio_key = entry["key"]
         _selected_radio_class = _find_loaded_radio_class(entry)
 
-    radio = _radio_from_image_bytes(data)
     _save_working_radio(radio)
     return pocketchirp_radio_document_json()
 
+
+
+
+# =============================================================================
+# POCKETCHIRP 2.0 LOCAL-EDIT MATERIALIZER
+# =============================================================================
+# Ordinary edits now remain in the proprietary PocketCHIRP application as a
+# neutral operation journal.  The separate GPL Engine sees those edits only
+# when PocketCHIRP needs a concrete CHIRP .img (Save / Write / an explicitly
+# driver-specific operation).
+#
+# REGRESSION GUARD:
+# - This function operates only on an in-memory image and edit journal.
+# - It never opens BLE/USB and never changes clone timing, MTU, baud, resolver,
+#   radio prompts, or any transport policy.
+# - The Engine's previous working image/selection is restored before return,
+#   even when a driver rejects an edit.
+# - Only the explicitly-listed editor mutation entry points may be replayed.
+# =============================================================================
+def materialize_editor_edits_bytes(base_image_bytes, edit_bundle_bytes):
+    global _last_image_bytes, _last_raw_bytes, _last_hash_info
+    global _selected_radio_key, _selected_radio_class
+
+    base = bytes(base_image_bytes or b"")
+    if not base:
+        raise ValueError("No base radio image was supplied for edit materialization.")
+
+    bundle_raw = bytes(edit_bundle_bytes or b"")
+    if not bundle_raw:
+        bundle = {"schemaVersion": 1, "operations": []}
+    else:
+        bundle = _json.loads(bundle_raw.decode("utf-8-sig"))
+    if not isinstance(bundle, dict):
+        raise ValueError("PocketCHIRP edit bundle must be a JSON object.")
+    if int(bundle.get("schemaVersion", 1) or 1) != 1:
+        raise ValueError("Unsupported PocketCHIRP edit-bundle schema version.")
+
+    operations = bundle.get("operations") or []
+    if not isinstance(operations, list):
+        raise ValueError("PocketCHIRP edit-bundle operations must be an array.")
+
+    old_image = _last_image_bytes
+    old_raw = _last_raw_bytes
+    old_hash_info = _last_hash_info
+    old_key = _selected_radio_key
+    old_class = _selected_radio_class
+
+    try:
+        raw, metadata = _metadata_for_image(base)
+        expected_hash = str(bundle.get("baseRawSha256") or "").strip().lower()
+        actual_hash = hashlib.sha256(raw).hexdigest()
+        if expected_hash and expected_hash != actual_hash:
+            raise ValueError(
+                "PocketCHIRP edit bundle does not match its base image "
+                f"(expected {expected_hash}, got {actual_hash}).")
+
+        # Resolve exactly as the normal explicit .img loader does, but do not
+        # build/return the large Radio Document here. That document belongs on
+        # the streamed read/load boundary, not inside Save/Write materialization.
+        expected_key = str(bundle.get("selectedRadioKey") or "").strip()
+        # The selected WRITE TARGET and the image's parser identity are separate.
+        # Do not reject a compatible cross-model/variant workflow merely because
+        # the base .img metadata names its originating model. We only verify that
+        # the app and Engine still agree on the selected target before temporarily
+        # switching to the base image's parser class for edit replay.
+        if expected_key and old_key and expected_key != old_key:
+            raise ValueError(
+                "PocketCHIRP and CHIRP Engine disagree about the selected target radio.")
+
+        # CHIRP's image loader determines the parser/runtime class. The
+        # proprietary app's selected write target remains untouched.
+        radio = _radio_from_image_bytes(base)
+        _save_working_radio(radio)
+
+        allowed = {
+            "update_memory_json": update_memory_json,
+            "delete_memories_json": delete_memories_json,
+            "update_setting_json": update_setting_json,
+            "rearrange_memories_json": rearrange_memories_json,
+            "set_bank_json": set_bank_json,
+        }
+
+        index = 0
+        while index < len(operations):
+            item = operations[index]
+            if not isinstance(item, dict):
+                raise ValueError(f"Edit operation {index + 1} is not a JSON object.")
+            name = str(item.get("operation") or "")
+
+            if name == "update_setting_json":
+                # PocketCHIRP's UI may journal several setting controls as separate
+                # operations. Desktop CHIRP does not call set_settings() once per
+                # control: it mutates one RadioSettings tree and commits it once.
+                # Coalesce each contiguous settings run to the FINAL requested value
+                # for each stable setting identity, then make one driver call.
+                final_changes = {}
+                while index < len(operations):
+                    candidate = operations[index]
+                    if not isinstance(candidate, dict) or str(candidate.get("operation") or "") != "update_setting_json":
+                        break
+                    args = candidate.get("args") or []
+                    if not isinstance(args, list) or len(args) != 1:
+                        raise ValueError("Edit operation arguments must contain one settings JSON payload: update_setting_json")
+                    for change in _setting_changes_from_json(args[0]):
+                        target_name = str(change.get("name", ""))
+                        target_id = str(change.get("id", "") or "")
+                        if not target_name:
+                            raise ValueError("Radio setting name is missing")
+                        key = target_id or ("name:" + target_name)
+                        # Reinsert so the final occurrence also determines ordering.
+                        if key in final_changes:
+                            del final_changes[key]
+                        final_changes[key] = dict(change)
+                    index += 1
+                _apply_setting_changes_json(
+                    _json.dumps({"changes": list(final_changes.values())}, separators=(",", ":")),
+                    return_document=False)
+                continue
+
+            fn = allowed.get(name)
+            if fn is None:
+                raise ValueError("Unsupported PocketCHIRP edit operation: " + name)
+            args = item.get("args") or []
+            if not isinstance(args, list):
+                raise ValueError("Edit operation arguments must be an array: " + name)
+            fn(*args)
+            index += 1
+
+        # Copy before restoring the Engine's pre-existing working state.
+        result = bytes(_last_image_bytes or b"")
+        if not result:
+            raise ValueError("CHIRP edit materialization produced an empty image")
+        return result
+    finally:
+        _last_image_bytes = old_image
+        _last_raw_bytes = old_raw
+        _last_hash_info = old_hash_info
+        _selected_radio_key = old_key
+        _selected_radio_class = old_class
+
+
+def materialize_editor_edits_b64(base_image_bytes, edit_bundle_bytes):
+    """String fallback for the Android/Chaquopy bytes conversion boundary.
+
+    The normal AIDL path returns raw bytes through a ParcelFileDescriptor.  This
+    fallback is used only if Chaquopy unexpectedly converts a non-empty Python
+    bytes result to a null/empty Java byte array.
+    """
+    result = materialize_editor_edits_bytes(base_image_bytes, edit_bundle_bytes)
+    if not result:
+        raise ValueError("CHIRP edit materialization produced an empty image")
+    return base64.b64encode(result).decode("ascii")
+
+
+def materialize_editor_edits_b64_json(base_image_b64, edit_bundle_json):
+    """Neutral JSON/stream RPC wrapper for edit materialization.
+
+    The app sends the base .img as base64 plus the edit bundle as UTF-8 JSON
+    through requestJsonStream(). This deliberately bypasses the dedicated
+    materializeEditorEdits AIDL transaction while preserving the same Python
+    materializer and validation logic.
+    """
+    encoded = str(base_image_b64 or "").strip()
+    if not encoded:
+        raise ValueError("No base radio image was supplied for edit materialization.")
+    try:
+        base = base64.b64decode(encoded, validate=True)
+    except Exception as exc:
+        raise ValueError("Base radio image is not valid base64") from exc
+    edits = str(edit_bundle_json or "").encode("utf-8")
+    return materialize_editor_edits_b64(base, edits)
 
 
 def validate_current_image_bytes(data):
@@ -6898,30 +8403,20 @@ def controlled_write_current_once_bytes(java_transport, image_bytes, transport_c
     if _is_live_snapshot_bytes(image_bytes):
         return _controlled_write_live_snapshot(java_transport, image_bytes)
 
-    cls = _selected_class()
+    # The image's CHIRP runtime class owns upload. For detected-only subclasses
+    # this is intentionally different from the visible chooser manager.
+    radio = _radio_from_image_bytes(image_bytes)
+    cls = radio.__class__
     raw_before, _ = _metadata_for_image(image_bytes)
     expected_hash = hashlib.sha256(raw_before).hexdigest()
 
-    name = None
-    try:
-        with tempfile.NamedTemporaryFile(suffix=".img", delete=False) as tmp:
-            name = tmp.name
-            tmp.write(image_bytes)
-        radio = cls(name)
-    finally:
-        if name:
-            try:
-                os.unlink(name)
-            except OSError:
-                pass
+    # Do not add a PocketCHIRP-wide memory-validation veto before sync_out().
+    # Individual edits have already passed the driver's validate_memory(); the
+    # CHIRP driver owns any whole-image/radio-specific upload restrictions.
 
-    # Final fail-closed CHIRP validation before opening/using the transport.
-    validation = _validate_radio_memories_for_write(radio)
-
-    # Use the same clean clone-session preparation as downloads and
-    # write+verify. Some high-speed Baofeng-family drivers (including the
-    # UV-5R Mini at 115200 baud) are sensitive to stale input before the
-    # identification/upload handshake.
+    # Use the same neutral clone-session preparation as downloads and
+    # write+verify. Driver-specific purge/handshake behavior remains owned by
+    # the selected CHIRP runtime class rather than imposed globally here.
     pipe = _prepare_clone_pipe(cls, java_transport)
     _prepare_native_usb_class_adapter(cls, pipe)
     _enforce_ble_write_requirements(cls, pipe, radio, transport_context_json)
@@ -7186,6 +8681,14 @@ def _editor_memory_target_from_data(root_radio, data):
     memory_id = str(data.get("memoryId", "") or "")
     is_special = bool(data.get("special", False)) or ":special:" in memory_id or memory_id.startswith("special:")
     if not is_special:
+        # Stable sub-device identity must win over flattened display numbering.
+        # Flattened offsets can legitimately move while a multi-record edit adds
+        # contacts/groups/zones/scans and expands a child view's visible bounds.
+        # Using the view:N:number:M id keeps every queued edit bound to the exact
+        # destination sub-device/native slot. This is generic editor plumbing,
+        # not DMR-specific policy.
+        if memory_id.startswith("view:") and ":number:" in memory_id:
+            return _editor_memory_target_from_id(root_radio, memory_id)
         display_n = int(data["number"])
         return _editor_memory_target(root_radio, display_n)
 
@@ -7506,6 +9009,44 @@ def _is_destination_slot_policy_error(exc):
     return any(marker in text for marker in markers)
 
 
+def _build_unvalidated_import_preview(source_name, memories, metadata=None, limit=1000):
+    """Return source rows without claiming destination compatibility.
+
+    This deliberately does not populate _import_candidates. Placement remains
+    impossible until the same neutral plan is previewed again with a loaded
+    destination image.
+    """
+    rows = []
+    metadata = metadata or []
+    display_limit = max(1, min(int(limit or 1000), 5000))
+    for i, src in enumerate(memories[:display_limit]):
+        meta = metadata[i] if i < len(metadata) else {}
+        row = _memory_export_dict(src)
+        row.update({
+            "id": i,
+            "sourceNumber": int(getattr(src, "number", i)),
+            "status": "pending",
+            "reason": "",
+            "changes": [],
+            "source": source_name,
+            "meta": meta,
+            "previewTarget": None,
+        })
+        rows.append(row)
+    return _json.dumps({
+        "source": source_name,
+        "count": len(rows),
+        "compatible": 0,
+        "convertible": 0,
+        "unsupported": 0,
+        "items": rows,
+        "totalResultCount": len(memories),
+        "displayLimit": display_limit,
+        "truncated": len(memories) > len(rows),
+        "destinationValidated": False,
+    })
+
+
 def _build_import_preview(source_name, memories, source_features, metadata=None, limit=1000):
     global _import_candidates, _import_source_name
     from chirp import import_logic
@@ -7610,6 +9151,7 @@ def _build_import_preview(source_name, memories, source_features, metadata=None,
         "totalResultCount": len(memories),
         "displayLimit": display_limit,
         "truncated": len(memories) > len(rows),
+        "destinationValidated": True,
     })
 
 
@@ -7888,6 +9430,8 @@ POCKETCHIRP_ENGINE_RPC_INTERFACE = 1
 _POCKETCHIRP_ENGINE_RPC_OPERATIONS = frozenset({
     "selected_driver_identification_payloads_json",
     "selected_radio_prompt_contract_json",
+    "selected_serial_driver_facts_json",
+    "selected_native_usb_driver_facts_json",
     "update_memory_json",
     "delete_memories_json",
     "update_setting_json",
@@ -7904,6 +9448,7 @@ _POCKETCHIRP_ENGINE_RPC_OPERATIONS = frozenset({
     "pocketchirp_radio_constraints_json",
     "preview_pocketchirp_memories_json",
     "pocketchirp_radio_document_json",
+    "materialize_editor_edits_b64_json",
 })
 
 
@@ -7980,6 +9525,7 @@ def pocketchirp_radio_constraints_json():
         "validBandsHz": bands,
         "validModes": [str(x) for x in list(getattr(rf, "valid_modes", []) or [])],
         "nameLength": int(getattr(rf, "valid_name_length", 0) or 0),
+        "validCharacters": _feature_valid_characters_text(rf),
     }, separators=(",", ":"))
 
 
@@ -8081,8 +9627,6 @@ def preview_pocketchirp_memories_json(plan_json):
     """Preview PocketCHIRP-owned neutral memories against the selected radio."""
     from chirp.drivers.generic_csv import CSVRadio
 
-    if not _last_image_bytes:
-        raise ValueError("Read a radio or load a .img before importing memories.")
     plan = _json.loads(str(plan_json).lstrip("\ufeff"))
     if not isinstance(plan, dict):
         raise ValueError("PocketCHIRP memory plan must be a JSON object.")
@@ -8105,6 +9649,17 @@ def preview_pocketchirp_memories_json(plan_json):
     source_name = str(plan.get("sourceName") or "PocketCHIRP")
     limit = int(plan.get("limit", 1000) or 1000)
     limit = max(1, min(limit, 5000))
+
+    if not _last_image_bytes:
+        preview = _json.loads(_build_unvalidated_import_preview(
+            source_name, memories, metadata=metadata, limit=limit))
+        extra = plan.get("extraPreview") or {}
+        if isinstance(extra, dict):
+            for key, value in extra.items():
+                preview[str(key)] = value
+        if bool(plan.get("markTruncated", False)):
+            preview["truncated"] = len(memories) > int(preview.get("count", 0) or 0)
+        return _json.dumps(preview)
 
     preview = _json.loads(_build_import_preview(
         source_name,
@@ -8138,6 +9693,10 @@ def _neutral_memory_document_row(row):
         "immutable": list(row.get("immutable") or []),
         "subDeviceIndex": row.get("subDeviceIndex"),
         "subDevice": str(row.get("subDevice") or ""),
+        # Per-memory CHIRP options are part of the neutral channel record even
+        # when the slot is empty. The proprietary UI need not know their CHIRP
+        # semantics; it simply renders the neutral field descriptors.
+        "extraFields": row.get("extra") or [],
     }
     if row.get("readError"):
         neutral["readError"] = str(row.get("readError"))
@@ -8178,7 +9737,6 @@ def _neutral_memory_document_row(row):
         "dvRpt1Call": str(row.get("dv_rpt1call") or ""),
         "dvRpt2Call": str(row.get("dv_rpt2call") or ""),
         "dvCode": row.get("dv_code"),
-        "extraFields": row.get("extra") or [],
     })
     return neutral
 
@@ -8200,10 +9758,19 @@ def _neutral_constraints_for_views(root_radio, views):
 
     low = min((v[1] for v in views), default=0)
     high = max((v[2] for v in views), default=-1)
+    name_charsets = [
+        _feature_valid_characters_text(v[0].get_features()) for v in views
+    ]
+    common_name_charset = (
+        name_charsets[0]
+        if name_charsets and all(value == name_charsets[0] for value in name_charsets)
+        else ""
+    )
     return {
         "nameLength": max([_safe_int(_safe_attr(v[0].get_features(),
                                                 "valid_name_length", 0), 0)
                            for v in views] or [0]),
+        "validCharacters": common_name_charset,
         "modes": [str(x) for x in union_feature("valid_modes")],
         "tmodes": [str(x) for x in union_feature("valid_tmodes")],
         "duplexes": [str(x) for x in union_feature("valid_duplexes")],
@@ -8263,6 +9830,32 @@ def pocketchirp_radio_document_json():
 
     memories = []
     sub_devices = []
+
+    def export_native_numbers(view, nlo, nhi):
+        """Return the native rows which need materializing in the neutral document.
+
+        Drivers may optionally provide pocketchirp_export_native_numbers() to avoid
+        serializing thousands of unused creation slots. The advertised CHIRP
+        memory_bounds remain unchanged, so the app can still synthesize targets
+        anywhere inside the driver's real/editor capacity.
+        """
+        hook = getattr(view, "pocketchirp_export_native_numbers", None)
+        if callable(hook):
+            try:
+                out = []
+                seen = set()
+                for value in hook() or []:
+                    number = int(value)
+                    if nlo <= number <= nhi and number not in seen:
+                        seen.add(number)
+                        out.append(number)
+                if out:
+                    return sorted(out)
+            except Exception as exc:
+                LOG.warning("Driver export-row hint failed for %s: %s",
+                            type(view).__name__, exc)
+        return range(nlo, nhi + 1)
+
     for view_index, (view, dlo, dhi, nlo, nhi, variant) in enumerate(views):
         vrf = view.get_features()
         specials = [str(x) for x in _feature_seq(vrf, "valid_special_chans")]
@@ -8273,11 +9866,12 @@ def pocketchirp_radio_document_json():
             "displayBounds": [dlo, dhi],
             "nativeBounds": [nlo, nhi],
             "validBandsHz": [[int(lo), int(hi)] for lo, hi in bands],
+            "validCharacters": _feature_valid_characters_text(vrf),
             "integritySensitive": _subdevice_integrity_sensitive(root_radio),
             "specialChannels": specials,
         })
-        for display_n in range(dlo, dhi + 1):
-            native_n = nlo + (display_n - dlo)
+        for native_n in export_native_numbers(view, nlo, nhi):
+            display_n = dlo + (native_n - nlo)
             try:
                 row = _editor_memory_dict(view, native_n, display_n, variant, view_index)
             except Exception as exc:
