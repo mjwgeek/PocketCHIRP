@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 8,
+  "catalogRevision": 9,
   "updated": "2026-09-05",
   "drivers": [
     {
@@ -22,6 +22,20 @@
         "UV-83"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-830"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-830"
+        },
+        {
+          "vendor": "iRadio",
+          "model": "UV-83"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -44,7 +58,7 @@
       "id": "abbree-radtel-iradio-ar-830-rt-830-uv-83-51eae55ab3",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.006086Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830_custom_driver.py",
@@ -65,6 +79,20 @@
         "UV-83"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-830"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-830"
+        },
+        {
+          "vendor": "iRadio",
+          "model": "UV-83"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -87,7 +115,7 @@
       "id": "abbree-radtel-iradio-ar-830-rt-830-uv-83-df9fbc3b8d",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.006108Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1609:chirp/drivers/alinco_djvx50.py",
@@ -361,6 +389,12 @@
         "CHIRP_KA-50/52"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "CHIRP_KA-50/52"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -391,7 +425,7 @@
       "id": "quansheng-chirp-ka-50-52-ebf7e3c105",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004711Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:4.0:IJV V4.0 Unified.py:89f5bb69655b",
@@ -437,7 +471,7 @@
       "id": "quansheng-ijv-7f6090b5cc",
       "approved": true,
       "approvedAt": "2026-08-20T22:43:17.635955Z",
-      "approvalNote": "Bulk-approved current installable discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:IJV/chirp/IJV V4.0 Unified.py",
@@ -455,6 +489,13 @@
       ],
       "variants": [
         "V4.0.4 - Memory Only"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "IJV",
+          "variant": "V4.0.4 - Memory Only"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -480,7 +521,7 @@
       "id": "quansheng-ijv-v4-0-11418c0648",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004753Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:5b15b495ae47",
@@ -526,7 +567,7 @@
       "id": "quansheng-ijv-fw5-b5762f6a3a",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857423Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:f9fe602130f9",
@@ -591,6 +632,13 @@
       "variants": [
         "V5.0 - Memory Only"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "IJV FW5",
+          "variant": "V5.0 - Memory Only"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -613,7 +661,7 @@
       "id": "quansheng-ijv-fw5-be904acbf6",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004733Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1596:chirp/drivers/uvk5_f4hwn.py",
@@ -706,7 +754,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-252e157241",
       "approved": true,
       "approvedAt": "2026-09-05T01:36:31.268133Z",
-      "approvalNote": "Bulk-approved current installable discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
@@ -723,6 +771,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -745,7 +799,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-c2eeea5e42",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004773Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
@@ -762,6 +816,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -784,7 +844,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-6785c091ac",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004799Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
@@ -801,6 +861,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -823,7 +889,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-6ce741be6f",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004821Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
@@ -840,6 +906,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -862,7 +934,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-6e5caa14b1",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004841Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
@@ -879,6 +951,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -901,7 +979,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-afe6ea9c75",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004862Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
@@ -918,6 +996,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -940,7 +1024,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-7dabd75bd7",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004885Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
@@ -957,6 +1041,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -979,7 +1069,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-0fa142964d",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004906Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
@@ -996,6 +1086,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1018,7 +1114,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-8ab79b9f0e",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004928Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
@@ -1035,6 +1131,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1057,7 +1159,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-9b8ab29a00",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004949Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
@@ -1115,6 +1217,17 @@
       "variants": [
         "NR7Y"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+          "variant": "NR7Y"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1137,7 +1250,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-694339b1c0",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005010Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/старые версии/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
@@ -1155,6 +1268,17 @@
       ],
       "variants": [
         "NR7Y"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+          "variant": "NR7Y"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -1178,7 +1302,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-15721c5767",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005033Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
@@ -1262,7 +1386,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-473a1263f5",
       "approved": true,
       "approvedAt": "2026-09-05T01:36:31.268245Z",
-      "approvalNote": "Bulk-approved current installable discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
@@ -1279,6 +1403,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1301,7 +1431,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-9e18d6c195",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005054Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
@@ -1318,6 +1448,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1340,7 +1476,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-f9a6bf87e0",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005077Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
@@ -1385,7 +1521,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-b76c23801a",
       "approved": true,
       "approvedAt": "2026-09-05T01:36:31.268207Z",
-      "approvalNote": "Bulk-approved current installable discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
@@ -1403,6 +1539,13 @@
       ],
       "variants": [
         "1.3.0"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "1.3.0"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -1428,7 +1571,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-v1-3-0-093c9739cb",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857371Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
@@ -1445,6 +1588,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1469,7 +1618,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-0-v1-2-0-1f1bc993d8",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857239Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
@@ -1486,6 +1635,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1510,7 +1665,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-1-v1-2-1-4b45a57a4d",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857303Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
@@ -1527,6 +1682,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1551,7 +1712,7 @@
       "id": "quansheng-uv-k1-uv-k5-v3-gogufw-messenger-1-2-2-v1-2-2-87979d928a",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857344Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/gogufw_uvk1_chirp_v1_0_1a.py",
@@ -1609,6 +1770,12 @@
         "UV-K1 GOGUFW Messenger 1.0.1a"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 GOGUFW Messenger 1.0.1a"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1633,7 +1800,7 @@
       "id": "quansheng-uv-k1-gogufw-messenger-1-0-1a-v1-0-a6ad9e9df3",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857400Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:2ef25e03ac5d",
@@ -1679,7 +1846,7 @@
       "id": "quansheng-uv-k5-fc7f6e5f97",
       "approved": true,
       "approvedAt": "2026-08-28T04:31:50.857447Z",
-      "approvalNote": "Approved new installable driver discovery"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:f4611c031998",
@@ -1769,7 +1936,8 @@
       "availableVersions": [],
       "id": "quansheng-uv-k5-449813aca5",
       "approved": true,
-      "approvedAt": "2026-08-21T14:55:47.347654Z"
+      "approvedAt": "2026-08-21T14:55:47.347654Z",
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 1_2.py:6cc7699618fe",
@@ -1814,7 +1982,8 @@
       "availableVersions": [],
       "id": "quansheng-uv-k5-b0eaa627cf",
       "approved": true,
-      "approvedAt": "2026-08-21T14:55:47.347628Z"
+      "approvedAt": "2026-08-21T14:55:47.347628Z",
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "official:ijvradio:3.60:IJV X3.60 Settings.py:4bbe5d377fe7",
@@ -1859,7 +2028,8 @@
       "availableVersions": [],
       "id": "quansheng-uv-k5-fb0421f70e",
       "approved": true,
-      "approvedAt": "2026-08-21T14:55:47.347674Z"
+      "approvedAt": "2026-08-21T14:55:47.347674Z",
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn.py",
@@ -1876,6 +2046,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1926,7 +2102,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-d538136c85",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004690Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Calypso/1.5.0/chirp_calypso_v1.5.0.py",
@@ -1943,6 +2119,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1975,7 +2157,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v1-5-0-973f9e7dc9",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005147Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_5_0.py",
@@ -1992,6 +2174,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2042,7 +2230,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v2-5-0-0d5e3db829",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004669Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_6_0.py",
@@ -2059,6 +2247,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2109,7 +2303,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v2-6-0-beadd92451",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004641Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_7_0.py",
@@ -2126,6 +2320,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2176,7 +2376,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v2-7-0-f11071d043",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004622Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_0.py",
@@ -2193,6 +2393,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2243,7 +2449,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v2-8-0-449a0aff44",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004602Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_1.py",
@@ -2260,6 +2466,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2310,7 +2522,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v2-8-1-dc898dd8eb",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004583Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3.0.0.py",
@@ -2327,6 +2539,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2377,7 +2595,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-0-0-9993407a89",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004561Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_1.py",
@@ -2394,6 +2612,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2444,7 +2668,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-0-1-e21ae60498",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004541Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_1_0.py",
@@ -2461,6 +2685,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2511,7 +2741,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-1-0-f0936c84a7",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004522Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_2_0.py",
@@ -2528,6 +2758,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2578,7 +2814,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-2-0-92c0966a0f",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004501Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_3_0.py",
@@ -2595,6 +2831,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2645,7 +2887,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-3-0-5c65503825",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004477Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0.py",
@@ -2662,6 +2904,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2712,7 +2960,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-4-0-ac0dfb025e",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004436Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0_k.py",
@@ -2729,6 +2977,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2779,7 +3033,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-4-0-531007008c",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004455Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_0.py",
@@ -2796,6 +3050,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2846,7 +3106,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-5-0-60e161c1c6",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004413Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_1.py",
@@ -2863,6 +3123,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2913,7 +3179,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-5-1-9d2f99083a",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004389Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_2.py",
@@ -2930,6 +3196,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2980,7 +3252,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-5-2-f1efeee460",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004367Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6.py",
@@ -2997,6 +3269,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3047,7 +3325,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-6-22f233feac",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004289Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_1.py",
@@ -3064,6 +3342,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3114,7 +3398,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-6-1-e9b213708f",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004348Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_2.py",
@@ -3131,6 +3415,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3181,7 +3471,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-6-2-62724b5f2d",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004329Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_3.py",
@@ -3198,6 +3488,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3248,7 +3544,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-6-3-d4ff4da17d",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004308Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_0.py",
@@ -3265,6 +3561,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3315,7 +3617,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-7-0-f915787023",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004270Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_1.py",
@@ -3332,6 +3634,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3382,7 +3690,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-7-1-c57aed1ec3",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004252Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_8_0.py",
@@ -3399,6 +3707,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3449,7 +3763,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-8-0-a48cc4005c",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004233Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_0.py",
@@ -3466,6 +3780,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3516,7 +3836,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-9-0-417f35fcca",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004212Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_1.py",
@@ -3533,6 +3853,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3583,7 +3909,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v3-9-1-cf4f614bae",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004194Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_0_0.py",
@@ -3600,6 +3926,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3650,7 +3982,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v4-0-0-cdbdcce39d",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004175Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_1_0.py",
@@ -3667,6 +3999,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3717,7 +4055,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v4-1-0-fe36182536",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004156Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_2_0.py",
@@ -3734,6 +4072,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3784,7 +4128,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v4-2-0-211347dc67",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004135Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0.py",
@@ -3801,6 +4145,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3869,7 +4219,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-v4-3-0-070c1c7960",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004115Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_fr.py",
@@ -3886,6 +4236,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3937,7 +4293,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-fr-483b362285",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004091Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_5_0_fr.py",
@@ -3954,6 +4310,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4005,7 +4367,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v2-5-0-fr-13c27eb2cf",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004069Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_6_0_fr.py",
@@ -4022,6 +4384,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4073,7 +4441,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v2-6-0-fr-b460d1c4e9",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004050Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_7_0_fr.py",
@@ -4090,6 +4458,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4141,7 +4515,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v2-7-0-fr-3382e59e4f",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004030Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_0_fr.py",
@@ -4158,6 +4532,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4209,7 +4589,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v2-8-0-fr-b68a6a4bcd",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.004012Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_2_8_1_fr.py",
@@ -4226,6 +4606,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4277,7 +4663,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v2-8-1-fr-d2efd9f9c3",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003989Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_0_fr.py",
@@ -4294,6 +4680,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4345,7 +4737,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-0-0-fr-ff826a1a35",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003952Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_0_1_fr.py",
@@ -4362,6 +4754,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4413,7 +4811,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-0-1-fr-45154e0390",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003931Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_1_0_fr.py",
@@ -4430,6 +4828,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4481,7 +4885,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-1-0-fr-b43cfa2be6",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003910Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_2_0_fr.py",
@@ -4498,6 +4902,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4549,7 +4959,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-2-0-fr-84e6a248ea",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003891Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_3_0_fr.py",
@@ -4566,6 +4976,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4617,7 +5033,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-3-0-fr-1428f2727c",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003858Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_4_0_fr.py",
@@ -4634,6 +5050,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4685,7 +5107,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-4-0-fr-0df2ae2894",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003839Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_0_fr.py",
@@ -4702,6 +5124,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4753,7 +5181,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-5-0-fr-748709fcd6",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003818Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_1_fr.py",
@@ -4770,6 +5198,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4821,7 +5255,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-5-1-fr-c9ab5a5266",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003794Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_5_2_fr.py",
@@ -4838,6 +5272,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4889,7 +5329,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-5-2-fr-bc38d700e1",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003776Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_fr.py",
@@ -4906,6 +5346,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4957,7 +5403,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-6-fr-f2fed8a326",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003697Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_1_fr.py",
@@ -4974,6 +5420,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5025,7 +5477,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-6-1-fr-439dbe8a24",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003757Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_2_fr.py",
@@ -5042,6 +5494,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5093,7 +5551,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-6-2-fr-09f74dc8b1",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003739Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_6_3_fr.py",
@@ -5110,6 +5568,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5161,7 +5625,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-6-3-fr-41bb083201",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003719Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_0_fr.py",
@@ -5178,6 +5642,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5229,7 +5699,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-7-0-fr-d9a55ff5a4",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003678Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_7_1_fr.py",
@@ -5246,6 +5716,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5297,7 +5773,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-7-1-fr-a1e5180fc1",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003659Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_8_0_fr.py",
@@ -5314,6 +5790,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5365,7 +5847,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-8-0-fr-f6010b1844",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003639Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_0_fr.py",
@@ -5382,6 +5864,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5433,7 +5921,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-9-0-fr-759fa91aef",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003618Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_3_9_1_fr.py",
@@ -5450,6 +5938,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5501,7 +5995,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v3-9-1-fr-17b8edaa37",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003592Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_0_0_fr.py",
@@ -5518,6 +6012,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5569,7 +6069,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v4-0-0-fr-21e9fb63b0",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003566Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_1_0_fr.py",
@@ -5586,6 +6086,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5637,7 +6143,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v4-1-0-fr-d332b39412",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003541Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:archive/uvk5_egzumer_f4hwn_ver_4_2_0_fr.py",
@@ -5654,6 +6160,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5705,7 +6217,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v4-2-0-fr-28332f9bf4",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003505Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5722,6 +6234,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5773,7 +6291,7 @@
       "id": "quansheng-uv-k5-egzumer-f4hwn-fr-v4-3-0-fr-0b8c73f35b",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.003446Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1620:chirp/drivers/qyt_kta16.py",
@@ -5842,6 +6360,13 @@
         "Scan Lists",
         "Zones"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Radioddity",
+          "model": "GD-73A",
+          "variant": "Native USB read v4 / mmap parser fix"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5864,7 +6389,7 @@
       "id": "radioddity-gd-73a-aef6332a7c",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.006063Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
+      "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1299:chirp/drivers/radtel_rt493.py",
@@ -5946,59 +6471,6 @@
       "id": "radtel-rt-580g-253db03dfd",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005689Z",
-      "approvalNote": "Bulk-approved current discovery baseline"
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1533:chirp/drivers/tdh8.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1533,
-      "pullRequestTitle": "Add TIDRADIO TD-H9 radio support",
-      "path": "chirp/drivers/tdh8.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1533",
-      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/59f67f5566ee02b671107ab74de208bd7fe7182e/chirp/drivers/tdh8.py",
-      "sha256": "0d02a76bf38ab7e01334375fb904c51c55aeb02074925b9e1847701703d604db",
-      "vendors": [
-        "TID",
-        "TIDRADIO"
-      ],
-      "models": [
-        "TD-H3",
-        "TD-H3-GMRS",
-        "TD-H3-HAM",
-        "TD-H8",
-        "TD-H8-GMRS",
-        "TD-H8-HAM",
-        "TD-H9",
-        "TD-H9-GMRS",
-        "TD-H9-HAM",
-        "TD-UV68"
-      ],
-      "variants": [
-        "G3"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "approved",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::radtel|tid|tidradio::rt-730|td-h3|td-h3-gmrs|td-h3-ham|td-h8|td-h8-gmrs|td-h8-ham|td-h9|td-h9-gmrs|td-h9-ham|td-uv68::tdh8",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Radtel, TID, TIDRADIO RT-730, TD-H3, TD-H3-GMRS, TD-H3-HAM, TD-H8, TD-H8-GMRS, TD-H8-HAM, TD-H9, TD-H9-GMRS, TD-H9-HAM, TD-UV68",
-      "availableVersions": [],
-      "id": "radtel-tid-tidradio-rt-730-td-h3-td-h3-gmrs-td-h3-ham-td-h8-td-h8-gmrs-t-55aa36a02c",
-      "approved": true,
-      "approvedAt": "2026-08-20T22:35:03.005728Z",
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
@@ -6123,6 +6595,59 @@
       "id": "retevis-rb669-b91ac7c039",
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005820Z",
+      "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1533:chirp/drivers/tdh8.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1533,
+      "pullRequestTitle": "Add TIDRADIO TD-H9 radio support",
+      "path": "chirp/drivers/tdh8.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1533",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/59f67f5566ee02b671107ab74de208bd7fe7182e/chirp/drivers/tdh8.py",
+      "sha256": "0d02a76bf38ab7e01334375fb904c51c55aeb02074925b9e1847701703d604db",
+      "vendors": [
+        "TID",
+        "TIDRADIO"
+      ],
+      "models": [
+        "TD-H3",
+        "TD-H3-GMRS",
+        "TD-H3-HAM",
+        "TD-H8",
+        "TD-H8-GMRS",
+        "TD-H8-HAM",
+        "TD-H9",
+        "TD-H9-GMRS",
+        "TD-H9-HAM",
+        "TD-UV68"
+      ],
+      "variants": [
+        "G3"
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::radtel|tid|tidradio::rt-730|td-h3|td-h3-gmrs|td-h3-ham|td-h8|td-h8-gmrs|td-h8-ham|td-h9|td-h9-gmrs|td-h9-ham|td-uv68::tdh8",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Radtel, TID, TIDRADIO RT-730, TD-H3, TD-H3-GMRS, TD-H3-HAM, TD-H8, TD-H8-GMRS, TD-H8-HAM, TD-H9, TD-H9-GMRS, TD-H9-HAM, TD-UV68",
+      "availableVersions": [],
+      "id": "radtel-tid-tidradio-rt-730-td-h3-td-h3-gmrs-td-h3-ham-td-h8-td-h8-gmrs-t-55aa36a02c",
+      "approved": true,
+      "approvedAt": "2026-08-20T22:35:03.005728Z",
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
