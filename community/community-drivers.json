@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 7,
-  "updated": "2026-08-28",
+  "catalogRevision": 8,
+  "updated": "2026-09-05",
   "drivers": [
     {
       "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830.py",
@@ -656,6 +656,59 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/BD1AHN/f4hwn.fusion.chirp.v5.8.0.py",
+      "sha256": "a5f87cc3781a908ae36ed9e479d3b7d0c59064cf8c53e2865e8ac8e1f89cac97",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "F4HWN/старые версии/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.8.0/f4hwn.fusion.chirp.v5.8.0.py"
+        }
+      ],
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn fusion)::f4hwn_fusion_chirp",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+      "availableVersions": [],
+      "id": "quansheng-uv-k1-uv-k5-v3-f4hwn-fusion-252e157241",
+      "approved": true,
+      "approvedAt": "2026-09-05T01:36:31.268133Z",
+      "approvalNote": "Bulk-approved current installable discovery baseline"
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -1167,6 +1220,51 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "sha256": "365bd2971173b33431d30861df57d63ce3ac72a6985d075b10d49c9641b7a81f",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six apex)::n7six_apex_chirp_c",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX)",
+      "availableVersions": [],
+      "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-473a1263f5",
+      "approved": true,
+      "approvedAt": "2026-09-05T01:36:31.268245Z",
+      "approvalNote": "Bulk-approved current installable discovery baseline"
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -1243,6 +1341,51 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005077Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "sha256": "4e82b2c078e25d5af593a8469a400d4d3898f4c238b370b90e6776edbe8b44b2",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six apex)::n7six_apex_chirp_b",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX)",
+      "availableVersions": [],
+      "id": "quansheng-uv-k1-uv-k5-v3-n7six-apex-b76c23801a",
+      "approved": true,
+      "approvedAt": "2026-09-05T01:36:31.268207Z",
+      "approvalNote": "Bulk-approved current installable discovery baseline"
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v1.3.0/Gogufw_1.3.0_chirp_module.py",
@@ -6243,5 +6386,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 113
+  "approvedCount": 116
 }
