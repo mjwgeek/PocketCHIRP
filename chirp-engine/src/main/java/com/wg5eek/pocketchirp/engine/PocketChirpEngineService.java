@@ -7,6 +7,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
+import android.util.Base64;
 
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
@@ -15,6 +16,7 @@ import com.wg5eek.pocketchirp.IPocketChirpEngine;
 import com.wg5eek.pocketchirp.IPocketChirpTransport;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -24,7 +26,7 @@ import java.util.Locale;
 
 /** GPL companion service. No PocketCHIRP UI, billing, cloud, USB or BLE code. */
 public final class PocketChirpEngineService extends Service {
-    public static final int IPC_VERSION = 5;
+    public static final int IPC_VERSION = 6;
     private static final int MAX_IMAGE_BYTES = 32 * 1024 * 1024;
     private static final int MAX_DRIVER_BYTES = 2 * 1024 * 1024;
     private static final int MAX_EDIT_BUNDLE_BYTES = 16 * 1024 * 1024;
@@ -136,9 +138,27 @@ public final class PocketChirpEngineService extends Service {
             // explicit materialization point (Save / Write / driver operation).
             // Both payloads use file descriptors so Binder never carries the
             // potentially-large editor state or image inline.
-            return pipeForBytes(callBytes("materialize_editor_edits_bytes",
-                    readAll(baseImage, MAX_IMAGE_BYTES),
-                    readAll(editBundle, MAX_EDIT_BUNDLE_BYTES)));
+            byte[] base = readAll(baseImage, MAX_IMAGE_BYTES);
+            byte[] edits = readAll(editBundle, MAX_EDIT_BUNDLE_BYTES);
+            byte[] materialized = callBytes("materialize_editor_edits_bytes", base, edits);
+
+            // MATERIALIZATION IPC REGRESSION GUARD:
+            // A valid base image can never legitimately materialize to zero bytes.
+            // callBytes historically mapped a null Chaquopy byte[] conversion to an
+            // empty Java array, hiding the distinction between an engine result and
+            // an interop conversion failure. Retry through a string-only base64
+            // boundary before failing closed. This fallback never touches radio I/O.
+            if (materialized.length == 0 && base.length != 0) {
+                String encoded = callString("materialize_editor_edits_b64", base, edits);
+                if (encoded != null && !encoded.isEmpty()) {
+                    materialized = Base64.decode(encoded, Base64.DEFAULT);
+                }
+            }
+            if (materialized.length == 0) {
+                throw new IllegalStateException(
+                        "CHIRP Engine materialized an empty image from a non-empty base image");
+            }
+            return fileForBytes(materialized);
         }
 
         @Override public String registerCustomDriver(ParcelFileDescriptor source, String filename,
@@ -232,6 +252,49 @@ public final class PocketChirpEngineService extends Service {
         } catch (Exception e) {
             throw new IllegalStateException(
                     "Could not read engine input stream: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Return materialized image bytes through a synchronous file-backed PFD.
+     *
+     * Unlike pipeForBytes(), this does not depend on an asynchronous writer
+     * thread after the Binder method returns, so a writer failure cannot be
+     * mistaken by the app for a legitimate zero-byte materialized image.
+     */
+    private ParcelFileDescriptor fileForBytes(byte[] bytes) {
+        byte[] copy = bytes == null ? new byte[0] : bytes.clone();
+        if (copy.length == 0) {
+            throw new IllegalStateException(
+                    "Cannot return an empty materialized image");
+        }
+
+        File temp = null;
+        try {
+            temp = File.createTempFile(
+                    "pc-engine-materialized-", ".img", getCacheDir());
+            try (FileOutputStream out = new FileOutputStream(temp)) {
+                out.write(copy);
+                out.flush();
+                out.getFD().sync();
+            }
+
+            ParcelFileDescriptor pfd = ParcelFileDescriptor.open(
+                    temp, ParcelFileDescriptor.MODE_READ_ONLY);
+
+            // Android/Linux keeps the opened descriptor valid after unlink.
+            // If unlink fails, leaving one cache file is preferable to losing
+            // the materialized image; Android may reclaim cache files later.
+            //noinspection ResultOfMethodCallIgnored
+            temp.delete();
+            return pfd;
+        } catch (Exception e) {
+            if (temp != null) {
+                //noinspection ResultOfMethodCallIgnored
+                temp.delete();
+            }
+            throw new IllegalStateException(
+                    "Could not create materialized-image output descriptor", e);
         }
     }
 
