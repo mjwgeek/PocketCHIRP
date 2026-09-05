@@ -39,6 +39,12 @@ final class PocketChirpBinderTransportProxy {
     public void onChirpProgress(String message, int current, int maximum) {
         run(() -> remote.onChirpProgress(message, current, maximum));
     }
+    public String resetProbeSession(int baudRate, String family) throws java.io.IOException {
+        return call(() -> remote.resetProbeSession(baudRate, family));
+    }
+    public int getProbeResetCount() { return safe(0, remote::getProbeResetCount); }
+    public String getProbeResetMode() { return safe("unknown", remote::getProbeResetMode); }
+    public boolean hasHardProbeReset() { return safe(false, remote::hasHardProbeReset); }
 
     public boolean isBleTransport() { return safe(false, remote::isBleTransport); }
     public boolean isNativeUsbBulkTransport() { return safe(false, remote::isNativeUsbBulkTransport); }
