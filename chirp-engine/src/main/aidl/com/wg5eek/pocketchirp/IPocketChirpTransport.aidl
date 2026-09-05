@@ -22,6 +22,15 @@ interface IPocketChirpTransport {
     void flushOutput();
     void onChirpProgress(String message, int current, int maximum);
 
+    // Auto-detect requires a clean transport session between independent CHIRP
+    // detector families. The proprietary app owns how that reset is performed
+    // (hard USB reopen vs bounded logical reset); the GPL engine receives only
+    // this neutral transport-session primitive and diagnostic facts.
+    String resetProbeSession(int baudRate, String family);
+    int getProbeResetCount();
+    String getProbeResetMode();
+    boolean hasHardProbeReset();
+
     // These are transport-shape facts needed by CHIRP compatibility adapters,
     // not Android BLE policy controls.
     boolean isBleTransport();
