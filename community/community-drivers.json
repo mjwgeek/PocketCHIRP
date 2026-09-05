@@ -5959,12 +5959,10 @@
       "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/59f67f5566ee02b671107ab74de208bd7fe7182e/chirp/drivers/tdh8.py",
       "sha256": "0d02a76bf38ab7e01334375fb904c51c55aeb02074925b9e1847701703d604db",
       "vendors": [
-        "Radtel",
         "TID",
         "TIDRADIO"
       ],
       "models": [
-        "RT-730",
         "TD-H3",
         "TD-H3-GMRS",
         "TD-H3-HAM",
