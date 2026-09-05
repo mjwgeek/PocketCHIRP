@@ -1,0 +1,51 @@
+name: Apply CHIRP Engine 264 bridge update
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-engine-264.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply verified bridge patch
+        shell: bash
+        run: |
+          cat \
+            .github/bridge264-temp/part00.txt \
+            .github/bridge264-temp/f01a.txt \
+            .github/bridge264-temp/f01b.txt \
+            .github/bridge264-temp/f02a.txt \
+            .github/bridge264-temp/f02b.txt \
+            .github/bridge264-temp/part03.txt \
+            .github/bridge264-temp/part04.txt \
+            .github/bridge264-temp/part05.txt \
+            .github/bridge264-temp/part06.txt > /tmp/patch.b64
+
+          python - <<'PY'
+          import base64, gzip, pathlib
+          data = pathlib.Path('/tmp/patch.b64').read_text()
+          patch = gzip.decompress(base64.b64decode(data))
+          pathlib.Path('/tmp/bridge.patch').write_bytes(patch)
+          PY
+
+          git apply --check /tmp/bridge.patch
+          git apply /tmp/bridge.patch
+
+          test "$(git hash-object chirp-engine/src/main/python/bridge.py)" = "fc36db5e5bbdbc2616661266ab035233477ed00e"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chirp-engine/src/main/python/bridge.py
+          git commit -m "Update CHIRP Engine bridge to 264"
+          git push origin HEAD:main
