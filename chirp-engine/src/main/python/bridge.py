@@ -20,7 +20,7 @@ _last_raw_bytes = b""
 _last_hash_info = ""
 
 
-POCKETCHIRP_BRIDGE_REVISION = "264-p245-driver-roundtrip-uppercase-fallback"
+POCKETCHIRP_BRIDGE_REVISION = "266-p247-universal-read-settings-capability"
 POCKETCHIRP_APP_VERSION = "2.0.0"
 POCKETCHIRP_INTERFACE_COMPAT = 1
 
@@ -135,6 +135,65 @@ def _set_transport_timeout_ms(transport, milliseconds):
         setter(max(1, int(milliseconds)))
         return True
     return False
+
+
+def _serial_read_with_pyserial_semantics(transport, size, timeout):
+    """Return up to ``size`` bytes, accumulating partial transport chunks.
+
+    CHIRP drivers are written against pyserial. ``Serial.read(size)`` may return
+    fewer than ``size`` bytes only when its timeout expires; a packet boundary,
+    USB transfer boundary, Binder transaction, or BLE notification is *not* a
+    serial read boundary. Android backends normally already accumulate, but this
+    engine-side guard makes that contract true for every current/future transport
+    and prevents radio drivers from rejecting a valid response merely because it
+    arrived in multiple chunks.
+
+    This deliberately does not validate, pad, synthesize, or reinterpret protocol
+    bytes. Driver framing/checksum/length rules remain authoritative.
+    """
+    size = int(size)
+    if size <= 0:
+        return b""
+
+    # Preserve true pyserial non-blocking behavior.
+    if timeout == 0:
+        getter = getattr(transport, "availableBytes", None)
+        if not callable(getter):
+            return b""
+        available = max(0, int(getter()))
+        if available <= 0:
+            return b""
+        return bytes(transport.readBytes(min(size, available)))
+
+    timeout_s = 30.0 if timeout is None else max(0.0, float(timeout))
+    deadline = time.monotonic() + timeout_s
+    original_ms = max(1, int(timeout_s * 1000))
+    out = bytearray()
+
+    try:
+        while len(out) < size:
+            remaining_s = deadline - time.monotonic()
+            if remaining_s <= 0:
+                break
+
+            # Give each lower-layer call only the time remaining in this one
+            # logical pyserial read, so partial chunks never multiply timeouts.
+            _set_transport_timeout_ms(
+                transport, max(1, int(remaining_s * 1000)))
+            chunk = bytes(transport.readBytes(size - len(out)))
+            if chunk:
+                out.extend(chunk[:size - len(out)])
+                continue
+
+            # A backend may transiently report no bytes before its advertised
+            # timeout. Do not turn that implementation detail into EOF/failure.
+            if time.monotonic() < deadline:
+                time.sleep(0.001)
+    finally:
+        # Keep the driver's configured timeout authoritative for the next read.
+        _set_transport_timeout_ms(transport, original_ms)
+
+    return bytes(out)
 
 class AndroidSerialPipe:
     """pyserial-compatible wrapper around PocketCHIRP's Android transport."""
@@ -403,26 +462,8 @@ class AndroidSerialPipe:
         return None
 
     def read(self, size=1):
-        # Universal READ rule: pass through the bytes the radio actually supplied.
-        # No generic length/content rejection belongs in this transport wrapper.
-        size = int(size)
-        if size <= 0:
-            return b""
-
-        # pyserial timeout=0 means a genuinely non-blocking read: return only
-        # bytes which are already queued. Android transports require a finite
-        # millisecond timeout internally, so preserve the semantic distinction
-        # here instead of turning zero into an accidental 1 ms blocking read.
-        if self._timeout == 0:
-            getter = getattr(self._transport, "availableBytes", None)
-            if not callable(getter):
-                return b""
-            available = max(0, int(getter()))
-            if available <= 0:
-                return b""
-            return bytes(self._transport.readBytes(min(size, available)))
-
-        return bytes(self._transport.readBytes(size))
+        return _serial_read_with_pyserial_semantics(
+            self._transport, size, self._timeout)
 
     def readline(self, size=-1):
         limit = int(size) if size is not None else -1
@@ -552,7 +593,8 @@ class LegacyAndroidSerialPipe:
         self._transport.setDtr(self._dtr)
 
     def read(self, size=1):
-        return bytes(self._transport.readBytes(int(size)))
+        return _serial_read_with_pyserial_semantics(
+            self._transport, size, self._timeout)
 
     def write(self, data):
         raw = bytes(data)
@@ -9904,6 +9946,15 @@ def pocketchirp_radio_document_json():
                 }
             memories.append(_neutral_memory_document_row(row))
 
+    # Do not use RadioFeatures.has_settings as a hard gate. Custom/derived
+    # drivers can legitimately inherit a working get_settings() implementation
+    # while carrying stale or incomplete feature metadata. The actual driver
+    # settings tree is the authoritative capability signal for a detached clone
+    # image. _settings_list() is tolerant and returns [] when unsupported.
+    settings_rows = _settings_list(root_radio)
+    if settings_rows:
+        constraints["hasSettings"] = True
+
     doc = {
         "schemaVersion": 1,
         "loaded": True,
@@ -9913,7 +9964,7 @@ def pocketchirp_radio_document_json():
             "variant": str(_safe_attr(root_radio, "VARIANT", "") or ""),
         },
         "memories": memories,
-        "settings": _settings_list(root_radio) if constraints["hasSettings"] else [],
+        "settings": settings_rows,
         "banks": [] if len(views) > 1 else _bank_state_for_radio(
             root_radio, (views[0][0] if views else root_radio).get_features()),
         "constraints": constraints,
