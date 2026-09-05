@@ -26,7 +26,7 @@ POCKETCHIRP_INTERFACE_COMPAT = 1
 
 
 # =============================================================================
-# POCKETCHIRP PYSERIAL IMPORT-COMPATIBILITY SHIM - WEBCHIRP IMPROVEMENT #2
+
 # =============================================================================
 # WHY:
 # A small number of CHIRP drivers import "serial" (pyserial) at module-import
@@ -376,7 +376,7 @@ class AndroidSerialPipe:
     @rtscts.setter
     def rtscts(self, value):
         # =====================================================================
-        # POCKETCHIRP REAL RTS/CTS FLOW CONTROL - WEBCHIRP IMPROVEMENT #4
+        
         # =====================================================================
         # CHIRP drivers use pyserial's ``pipe.rtscts`` flag when the radio
         # expects hardware RTS/CTS flow control.
@@ -1113,11 +1113,11 @@ def _detect_selected_clone_class(selected_cls, pipe):
 # IMPORTANT:
 # - No replacement/forked CHIRP driver files are required.
 # - Ordinary serial transports never use these native-BLE overrides.
-# - Add an entry only after an OEM app / radio trace proves the protocol fact.
+
 # =============================================================================
 _DIRECT_BLE_CAPABILITIES = {
     ("baofeng", "uv-5r mini", ""): {
-        # Ola Radio direct-BLE HCI trace: Mini download requests 0x80-byte
+        
         # protocol blocks. Stock CHIRP already uses 0x80 for BLE upload.
         "download_adapter": "baofeng_uv17pro_framed",
         "download_block_size": 0x80,
@@ -6817,8 +6817,8 @@ def download_selected_editor_once_result_json(java_transport, attempt=1,
 #   * Per-memory `extra` objects that cannot be represented losslessly are
 #     preserved as a write-safety marker; editing such a memory is fail-closed.
 #
-# WEBCHIRP NOTE:
-# WebCHIRP already classifies catalog entries with isLiveRadio but currently
+
+
 # disables its connect/read/write controls for them.  PocketCHIRP uses the same
 # CHIRP class distinction, but adds the detached snapshot/commit layer here.
 #

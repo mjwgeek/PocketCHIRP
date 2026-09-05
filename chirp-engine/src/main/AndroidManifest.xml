@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <permission
-        android:name="com.wg5eek.pocketchirp.permission.CHIRP_ENGINE"
-        android:protectionLevel="signature" />
+
+    <!--
+      PocketCHIRP 2.x architecture:
+      The proprietary PocketCHIRP application and GPL CHIRP runtime are
+      distributed as separate APKs/packages. The CHIRP runtime and bundled
+      radio drivers belong in this engine package and must not be re-embedded
+      into the PocketCHIRP application module.
+
+      IMPORTANT:
+      PocketCHIRP and PocketCHIRP CHIRP Engine are separate Google Play
+      listings and may be signed by different Play App Signing certificates.
+      Do NOT protect this service with a signature-level manifest permission:
+      Android would reject the bind before our Binder code can authenticate
+      PocketCHIRP.
+
+      Access control is enforced inside PocketChirpEngineService on every
+      Binder call by verifying that the calling UID owns the exact package
+      com.wg5eek.pocketchirp.
+    -->
 
     <application
         android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="PocketCHIRP CHIRP Engine"
         android:usesCleartextTraffic="false">
+
+        <!--
+          Launcher stub only. The Engine has no standalone user interface.
+          If launched directly, EngineInfoActivity immediately finishes and
+          removes its task without starting or changing the CHIRP Engine service.
+
+          The launcher remains present so the companion APK retains a normal
+          launchable Play Store-visible application entry.
+        -->
+        <activity
+            android:name=".EngineInfoActivity"
+            android:exported="true"
+            android:label="PocketCHIRP CHIRP Engine"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:noHistory="true"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          Exported so the separately signed PocketCHIRP package can bind.
+          Authorization is deliberately performed by PocketChirpEngineService
+          at the Binder transaction boundary, where Binder.getCallingUid()
+          identifies the real caller.
+        -->
         <service
             android:name=".PocketChirpEngineService"
-            android:exported="true"
-            android:permission="com.wg5eek.pocketchirp.permission.CHIRP_ENGINE">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.wg5eek.pocketchirp.CHIRP_ENGINE" />
             </intent-filter>
         </service>
+
     </application>
 </manifest>

@@ -192,7 +192,7 @@ def _r2_enter_programming_mode(radio):
     # longer acknowledge the CMD_ACK above so the 'ack' will be empty and
     # fail the check causing cloning to fail.
     #
-    # The factory CPS continues with or without an ack so CHIRP will
+    
     # behave the same way.
     if ack and ack != CMD_ACK:
         _r2_exit_programming_mode(radio)

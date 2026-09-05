@@ -644,14 +644,14 @@ class TDM11_22(chirp_common.CloneModeRadio):
         rset.set_doc('Radio Sidekey 2 Long Press assigned action value')
         basic.append(rset)
 
-        # Selected default channel (setting not in factory CPS)
+        
         rs = RadioSettingValueList(self._channel_list,
                                    current_index=_settings.channel)
         rset = MemSetting('settings.channel', 'Default Channel', rs)
         rset.set_doc('Radio Channel that is selected by Default at power-on')
         basic.append(rset)
 
-        # Selected default WX channel (setting not in factory CPS)
+        
         rs = RadioSettingValueList(self._wxchannel_list,
                                    current_index=_settings.wxchannel)
         rset = MemSetting('settings.wxchannel', 'Default WX Channel', rs)
@@ -871,7 +871,7 @@ class TDM11_16(TDM11_22):
     MODEL = 'TD-M11'
     VARIANT = '16 PMR'
 
-    # same freq range as ODMaster allows
+    
     VALID_BANDS = [(136000000, 174000000), (400000000, 520000000),]
     _power_levels = [
         chirp_common.PowerLevel('Low', watts=0.50),

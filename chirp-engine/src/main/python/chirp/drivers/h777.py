@@ -494,7 +494,7 @@ class H777Radio(chirp_common.CloneModeRadio):
             # NOTE: Only two settings right now, both are inverted
             setattr(_mem, setting.get_name(), not int(setting.value))
 
-        # When set to one, official programming software (BF-480) shows always
+        
         # "WFM", even if we choose "NFM". Therefore, for compatibility
         # purposes, we will set these to zero.
         _mem.unknown1 = 0

@@ -35,7 +35,7 @@ BLOCK_LEN = 32
 
 
 def _send(pipe, data):
-    time.sleep(0.035)   # Same delay as "FT7100 Programmer" from RT Systems
+    time.sleep(0.035)   
     # pipe.write(data) --> It seems, that the single bytes are sent too fast
     # so send character per character with a delay
     for ch in data:

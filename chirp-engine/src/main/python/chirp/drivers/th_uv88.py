@@ -538,8 +538,8 @@ class THUV88Radio(chirp_common.CloneModeRadio):
     VENDOR = "TYT"
     MODEL = "TH-UV88"
     MODES = ['WFM', 'FM', 'NFM']
-    # 62.5 is a non standard tone listed in the official programming software
-    # 169.9 is a non standard tone listed in the official programming software
+    
+    
     # probably by mistake instead of 167.9
     TONES = (62.5,) + chirp_common.TONES + (169.9,)
     DTCS_CODES = chirp_common.DTCS_CODES

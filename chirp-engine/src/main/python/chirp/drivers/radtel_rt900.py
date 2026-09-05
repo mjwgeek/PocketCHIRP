@@ -54,7 +54,7 @@ import struct
 
 LOG = logging.getLogger(__name__)
 
-# FHSS Code is a 24-bit per-channel value. The OEM CPS represents an
+
 # unset code as 0xFFFFFF in raw memory and as a blank field in the UI.
 # When a code is set, the OEM also writes 0xA0 into the adjacent flag
 # byte; when the code is cleared, that flag byte is restored to 0xFF.
@@ -1497,7 +1497,7 @@ class RT900BT(chirp_common.CloneModeRadio):
                      "when the current channel is busy.")
         mem.extra.append(rset)
 
-        # LearnFHSS (per-channel learn / FHSS flag). The OEM CPS labels
+        
         # this column "LearnFHSS"; the open-source firmware reads the
         # same bit as chFlag3.b0 / fhssFlag (Core/Radio.c).
         rs = RadioSettingValueBoolean(_mem.learning)
@@ -1600,7 +1600,7 @@ class RT900BT(chirp_common.CloneModeRadio):
 
         for setting in mem.extra:
             if setting.get_name() == 'fhss_code':
-                # Mirror OEM CPS: blank input clears Code (0xFFFFFF) and
+                
                 # restores the adjacent flag byte to 0xFF; any value
                 # writes Code and sets the flag byte to 0xA0.
                 s = str(setting.value).strip()
@@ -2348,6 +2348,41 @@ class RadioddityGS10B(RT900BT):
              'download to a CHIRP Radio Images(*.img) file.\n\n'
              'PROCEED AT YOUR OWN RISK!'
              )
+        return rp
+
+
+@directory.register
+class ZastoneZTM8(RadioddityGS10B):
+    # =====================================================================
+    # NO-REGRESSION CONTRACT — ZASTONE ZT-M8
+    # =====================================================================
+    # ZT-M8 is an isolated retail-model registration on the already proven
+    # 256-channel BT8000/GS-10B clone family. Do NOT move any of these values
+    # into RT900BT/RadioddityGS10B or alter their common read/write functions:
+    # RT-900/910/920, BJ7800 and GS-10B are known-good and must keep their
+    # existing paths byte-for-byte.
+    #
+    # Recovered vendor evidence identifies ZT-M8 as PROGRAMBT80U / BT8000
+    # family with 256 channels. The proven serial clone rate for the CHIRP
+    # transport is 57600 baud. PocketCHIRP applies its ZT-M8 read-before-write
+    # safety token in the app; this driver injects no model-specific write bytes.
+    # =====================================================================
+    """Zastone ZT-M8 — 256-channel BT8000-family radio."""
+    VENDOR = "Zastone"
+    MODEL = "ZT-M8"
+    BAUD_RATE = 57600
+
+    @classmethod
+    def get_prompts(cls):
+        rp = super().get_prompts()
+        rp.experimental = (
+            'Experimental Zastone ZT-M8 support using the proven 256-channel '
+            'PROGRAMBT80U / BT8000-family clone protocol.\n\n'
+            'Download from the radio first and keep the unedited backup before '
+            'writing. PocketCHIRP will block ZT-M8 writes until a successful '
+            'physical read has completed for the selected radio.\n\n'
+            'PROCEED AT YOUR OWN RISK!'
+        )
         return rp
 
 

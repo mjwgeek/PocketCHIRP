@@ -742,7 +742,7 @@ class AlincoDJG7(AlincoStyleRadio):
                 # fields. They contain bytes of value if the channel is empty
                 # and thus those bytes remain 0xff when the channel is put to
                 # use. The radio is totally fine with this but the Alinco
-                # programming software is not (see #5275). Here, we check for
+                
                 # this and report if it is encountered.
                 LOG.warning("Channel %d is inconsistent: Found 0xff in "
                             "non-empty channel. Touch channel to fix."

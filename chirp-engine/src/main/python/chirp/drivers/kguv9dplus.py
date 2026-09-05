@@ -1399,7 +1399,7 @@ class KGUV9DPlusRadio(chirp_common.CloneModeRadio,
         _valid = _mem.state
 
         # This code attempts to robustly decipher what Wouxun considers valid
-        # memory locations on the 9 series radios and the factory CPS.
+        
         # It appears they use a combination of State and Rx Freq to determine
         # validity rather than just the State value.
         # It is possible the State value is not even used at all.

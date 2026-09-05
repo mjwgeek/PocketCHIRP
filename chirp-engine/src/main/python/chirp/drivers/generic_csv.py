@@ -545,13 +545,13 @@ class RTCSVRadio(CSVRadio):
         return mem
 
     def _clean_ctone(self, headers, line, mem):
-        # RT Systems only stores a single tone value
+        
         mem.ctone = mem.rtone
         return mem
 
     def _clean_number(self, headers, line, mem):
         if 'Channel Number' not in headers and self.memories:
-            # Some RTSystems software generates this with an empty header name?
+            
             self._last_loaded += 1
             mem.number = self._last_loaded
             LOG.debug('No location column, calculated %i from %r',
@@ -567,7 +567,7 @@ class RTCSVRadio(CSVRadio):
     @classmethod
     def match_model(cls, filedata, filename):
         """Match files ending in .csv and using RT Systems column names."""
-        # RT Systems provides a different set of columns for each radio.
+        
         # We attempt to match only the first few columns, hoping they are
         # consistent across radio models.
         try:
