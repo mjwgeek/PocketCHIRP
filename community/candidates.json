@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-04T14:23:55.109856Z",
-  "candidateCount": 111,
+  "generatedAt": "2026-09-05T01:33:40.900240Z",
+  "candidateCount": 105,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -18,6 +18,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -82,6 +88,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -146,6 +158,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -210,6 +228,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -274,6 +298,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -338,6 +368,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -402,6 +438,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -466,6 +508,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -530,6 +578,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -594,6 +648,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -658,6 +718,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -722,6 +788,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -786,6 +858,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -850,6 +928,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -914,6 +998,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -978,6 +1068,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1042,6 +1138,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1106,6 +1208,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1170,6 +1278,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1234,6 +1348,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1298,6 +1418,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1362,6 +1488,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1426,6 +1558,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1490,6 +1628,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1554,6 +1698,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1618,6 +1768,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1682,6 +1838,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1746,6 +1908,12 @@
         "UV-K5 (egzumer + f4hwn) FR"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn) FR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1810,6 +1978,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1891,6 +2065,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -1954,6 +2134,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2017,6 +2203,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2080,6 +2272,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2143,6 +2341,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2206,6 +2410,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2269,6 +2479,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2332,6 +2548,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2395,6 +2617,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2458,6 +2686,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2521,6 +2755,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2584,6 +2824,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2647,6 +2893,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2710,6 +2962,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2773,6 +3031,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2836,6 +3100,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2899,6 +3169,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -2962,6 +3238,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3025,6 +3307,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3088,6 +3376,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3151,6 +3445,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3214,6 +3514,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3277,6 +3583,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3340,6 +3652,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3403,6 +3721,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3466,6 +3790,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3529,6 +3859,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3592,6 +3928,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3655,6 +3997,12 @@
         "CHIRP_KA-50/52"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "CHIRP_KA-50/52"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3700,6 +4048,13 @@
       "variants": [
         "V5.0 - Memory Only"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "IJV FW5",
+          "variant": "V5.0 - Memory Only"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3736,6 +4091,13 @@
       ],
       "variants": [
         "V4.0.4 - Memory Only"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "IJV",
+          "variant": "V4.0.4 - Memory Only"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -3774,6 +4136,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3809,6 +4177,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3852,6 +4226,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3887,6 +4267,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3922,6 +4308,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3957,6 +4349,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -3992,6 +4390,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4027,6 +4431,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4062,6 +4472,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4097,6 +4513,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4133,6 +4555,17 @@
       ],
       "variants": [
         "NR7Y"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+          "variant": "NR7Y"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -4171,6 +4604,17 @@
       "variants": [
         "NR7Y"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)",
+          "variant": "NR7Y"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4206,6 +4650,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4241,6 +4691,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4276,6 +4732,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4311,6 +4773,12 @@
         "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX ApeX)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4346,6 +4814,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.0"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4383,6 +4857,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.1"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4420,6 +4900,12 @@
         "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger 1.2.2"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4459,6 +4945,13 @@
       "variants": [
         "1.3.0"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "1.3.0"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4496,6 +4989,12 @@
         "UV-K1 GOGUFW Messenger 1.0.1a"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 GOGUFW Messenger 1.0.1a"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4533,6 +5032,12 @@
         "UV-K5 (egzumer + f4hwn)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5 (egzumer + f4hwn)"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4564,21 +5069,38 @@
       ]
     },
     {
-      "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:5b15b495ae47",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V5.0 Memory.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "sha256": "5b15b495ae472c06c1fed018d4a1554c5ff11e99289a5bae66307f929c9245e1",
-      "vendors": [
-        "Quansheng"
-      ],
+      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/baofeng_5rh_pro.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1625,
+      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
+      "path": "chirp/drivers/baofeng_5rh_pro.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6c6ba7658b3d470f3c44dafd6379352b00edcee2/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
+      "sha256": "e0fd0f36f048b4754052f331e48068f7d1b98cb6c836cd98e8424d62b3a65dc1",
+      "vendors": [],
       "models": [
-        "IJV FW5"
+        "5RH Pro",
+        "UV-5RH Plus",
+        "UV-5RM Plus"
       ],
       "variants": [
-        "Official IJV firmware 5.0"
+        "v2"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "5RH Pro"
+        },
+        {
+          "vendor": "",
+          "model": "UV-5RH Plus"
+        },
+        {
+          "vendor": "",
+          "model": "UV-5RM Plus",
+          "variant": "v2"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -4588,231 +5110,16 @@
         "sync_out"
       ],
       "reasons": [
-        "official IJV download source"
+        "open pull request in watched repository"
       ],
       "status": "needs-review",
+      "version": null,
       "historical": false,
       "releaseTier": "current",
-      "displayName": "Quansheng IJV FW5",
-      "officialSource": true,
-      "officialFirmware": "5.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv fw5::ijv  memory",
+      "versionFamily": "kk7ds/chirp::::5rh pro|uv-5rh plus|uv-5rm plus::baofeng_5rh_pro",
       "latestInFamily": true,
       "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:4.0:IJV V4.0 Unified.py:89f5bb69655b",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V4.0 Unified.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "sha256": "89f5bb69655b4202068d08f8580001151caaee1105189c615c35645758c2aa21",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "IJV"
-      ],
-      "variants": [
-        "Official IJV firmware 4.0"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng IJV",
-      "officialSource": true,
-      "officialFirmware": "4.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv::ijv  unified",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:2ef25e03ac5d",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV N3_60.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20N3_60.py",
-      "sha256": "2ef25e03ac5dbd18a061c8e89e2874f36eca687ff58a529b10a953465c80fc30",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV N3_60.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv n",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 1_2.py:6cc7699618fe",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 1_2.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%201_2.py",
-      "sha256": "6cc7699618feaf398334e02d97a3822d3a4a209d922e99c123470096cf65e4a6",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 1_2.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank ",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 0.py:f11d24a65186",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 0.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%200.py",
-      "sha256": "f11d24a651860f23efc5e623877922cd73f200b3403b0b31e29fa74e76892d82",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 0.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank 0",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 Settings.py:4bbe5d377fe7",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 Settings.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20Settings.py",
-      "sha256": "4bbe5d377fe7f4bd2a227ca2f92fd65b3522b8d4055bdd0cfa38a8bf9e3f7afb",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 Settings.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x settings",
-      "latestInFamily": true,
-      "recommended": true,
+      "displayName": "Community 5RH Pro, UV-5RH Plus, UV-5RM Plus",
       "availableVersions": []
     },
     {
@@ -4832,6 +5139,12 @@
         "DJ-VX50"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Alinco",
+          "model": "DJ-VX50"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4849,47 +5162,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Alinco DJ-VX50",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/baofeng_5rh_pro.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1625,
-      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
-      "path": "chirp/drivers/baofeng_5rh_pro.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6c6ba7658b3d470f3c44dafd6379352b00edcee2/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
-      "sha256": "e0fd0f36f048b4754052f331e48068f7d1b98cb6c836cd98e8424d62b3a65dc1",
-      "vendors": [
-        "Baofeng"
-      ],
-      "models": [
-        "5RH Pro",
-        "UV-5RH Plus",
-        "UV-5RM Plus"
-      ],
-      "variants": [
-        "v2"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng::5rh pro|uv-5rh plus|uv-5rm plus::baofeng_5rh_pro",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Baofeng 5RH Pro, UV-5RH Plus, UV-5RM Plus",
       "availableVersions": []
     },
     {
@@ -4917,6 +5189,36 @@
         "TH-UV98"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TYT",
+          "model": "TH-UV88"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT85"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA89"
+        },
+        {
+          "vendor": "Explorer",
+          "model": "QRZ-1"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "P2"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "P62"
+        },
+        {
+          "vendor": "TYT",
+          "model": "TH-UV98"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4954,6 +5256,12 @@
         "IC-R6"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Icom",
+          "model": "IC-R6"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -4989,6 +5297,12 @@
         "DM-UV4R"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Iradio",
+          "model": "DM-UV4R"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5028,6 +5342,17 @@
       "variants": [
         "V2"
       ],
+      "modelEntries": [
+        {
+          "vendor": "KSUN",
+          "model": "M6"
+        },
+        {
+          "vendor": "KSUN",
+          "model": "M6",
+          "variant": "V2"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5065,6 +5390,12 @@
         "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+        }
+      ],
       "hintsMatched": [
         "directory.register",
         "RadioSetting",
@@ -5101,6 +5432,12 @@
         "KT-A16"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "QYT",
+          "model": "KT-A16"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5138,6 +5475,12 @@
         "RT-493"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-493"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5175,6 +5518,12 @@
         "RT-580G"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-580G"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5226,6 +5575,57 @@
       "variants": [
         "G3"
       ],
+      "modelEntries": [
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H8"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H8-HAM"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H8-GMRS"
+        },
+        {
+          "vendor": "TID",
+          "model": "TD-UV68"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H3"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H3-HAM"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H3-GMRS"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-730"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H8",
+          "variant": "G3"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H9"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H9-HAM"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H9-GMRS"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5265,6 +5665,13 @@
       "variants": [
         "PMR"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "H777D",
+          "variant": "PMR"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5302,6 +5709,12 @@
         "RA89R"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RA89R"
+        }
+      ],
       "hintsMatched": [
         "directory.register",
         "RadioSetting",
@@ -5338,6 +5751,12 @@
         "RB669"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RB669"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5375,6 +5794,12 @@
         "TD-H3 nicFW 2.5"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H3 nicFW 2.5"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5412,6 +5837,12 @@
         "TH-8600"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TYT",
+          "model": "TH-8600"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5452,6 +5883,24 @@
         "KG-UV980P"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV980P"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-1000G"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-1000G Plus"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV950P"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5490,6 +5939,13 @@
       ],
       "variants": [
         "R"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FT-1D",
+          "variant": "R"
+        }
       ],
       "hintsMatched": [
         "CloneModeRadio",
@@ -5531,6 +5987,23 @@
         "R",
         "Rv2"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FT2D",
+          "variant": "R"
+        },
+        {
+          "vendor": "",
+          "model": "FT3D",
+          "variant": "R"
+        },
+        {
+          "vendor": "",
+          "model": "FT5D",
+          "variant": "R"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5567,6 +6040,16 @@
         "FTM-6000"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FTM-6000"
+        },
+        {
+          "vendor": "",
+          "model": "FTM-200"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5613,6 +6096,13 @@
         "Scan Lists",
         "Zones"
       ],
+      "modelEntries": [
+        {
+          "vendor": "Radioddity",
+          "model": "GD-73A",
+          "variant": "Native USB read v4 / mmap parser fix"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5652,6 +6142,20 @@
         "UV-83"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-830"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-830"
+        },
+        {
+          "vendor": "iRadio",
+          "model": "UV-83"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5691,6 +6195,20 @@
         "UV-83"
       ],
       "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-830"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-830"
+        },
+        {
+          "vendor": "iRadio",
+          "model": "UV-83"
+        }
+      ],
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
@@ -5714,10 +6232,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 40,
+  "currentCount": 34,
   "historicalCount": 71,
-  "versionedCount": 62,
-  "officialIjvSource": true,
-  "officialIjvCandidateCount": 6,
-  "officialIjvLastRunFailures": 0
+  "versionedCount": 62
 }
