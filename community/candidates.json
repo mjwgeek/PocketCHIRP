@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-06T13:42:44.356044Z",
-  "candidateCount": 111,
+  "generatedAt": "2026-09-07T15:53:47.759868Z",
+  "candidateCount": 108,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4765,7 +4765,7 @@
       "path": "N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
       "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
-      "sha256": "365bd2971173b33431d30861df57d63ce3ac72a6985d075b10d49c9641b7a81f",
+      "sha256": "a93c31addb92e2c2289368e7ac7f81c8b372d960f778ad79d2362cc8c526ae55",
       "vendors": [
         "Quansheng"
       ],
@@ -5069,258 +5069,6 @@
       ]
     },
     {
-      "candidateKey": "official:ijvradio:5.0:IJV V5.0 Memory.py:5b15b495ae47",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V5.0 Memory.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V5.0%20Memory.py",
-      "sha256": "5b15b495ae472c06c1fed018d4a1554c5ff11e99289a5bae66307f929c9245e1",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "IJV FW5"
-      ],
-      "variants": [
-        "Official IJV firmware 5.0"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng IJV FW5",
-      "officialSource": true,
-      "officialFirmware": "5.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv fw5::ijv  memory",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:4.0:IJV V4.0 Unified.py:89f5bb69655b",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV V4.0 Unified.py",
-      "sourceUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "downloadUrl": "https://www.ijvradio.com/Chirp%20plugin/IJV%20V4.0%20Unified.py",
-      "sha256": "89f5bb69655b4202068d08f8580001151caaee1105189c615c35645758c2aa21",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "IJV"
-      ],
-      "variants": [
-        "Official IJV firmware 4.0"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng IJV",
-      "officialSource": true,
-      "officialFirmware": "4.0",
-      "archiveSourceUrl": "",
-      "archiveMember": "",
-      "installPackaging": "direct-python",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::ijv::ijv  unified",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV N3_60.py:2ef25e03ac5d",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV N3_60.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20N3_60.py",
-      "sha256": "2ef25e03ac5dbd18a061c8e89e2874f36eca687ff58a529b10a953465c80fc30",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV N3_60.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv n",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 1_2.py:6cc7699618fe",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 1_2.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%201_2.py",
-      "sha256": "6cc7699618feaf398334e02d97a3822d3a4a209d922e99c123470096cf65e4a6",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 1_2.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank ",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 - MBank 0.py:f11d24a65186",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 - MBank 0.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20-%20MBank%200.py",
-      "sha256": "f11d24a651860f23efc5e623877922cd73f200b3403b0b31e29fa74e76892d82",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 - MBank 0.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x _ mbank 0",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "official:ijvradio:3.60:IJV X3.60 Settings.py:4bbe5d377fe7",
-      "type": "official-site-file",
-      "repository": "ijvradio.com",
-      "path": "IJV X3.60 Settings.py",
-      "sourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/main/community/ijv-mirror/3.60/IJV%20X3.60%20Settings.py",
-      "sha256": "4bbe5d377fe7f4bd2a227ca2f92fd65b3522b8d4055bdd0cfa38a8bf9e3f7afb",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "Official IJV firmware 3.60"
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "official IJV download source"
-      ],
-      "status": "needs-review",
-      "historical": false,
-      "releaseTier": "current",
-      "displayName": "Quansheng UV-K5",
-      "officialSource": true,
-      "officialFirmware": "3.60",
-      "archiveSourceUrl": "https://www.ijvradio.com/download/IJV_3.60_Chirp.zip",
-      "archiveMember": "IJV X3.60 Settings.py",
-      "installPackaging": "mirrored-zip-member",
-      "version": null,
-      "versionFamily": "ijvradio.com::quansheng::uv-k5::ijv x settings",
-      "latestInFamily": true,
-      "recommended": true,
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/baofeng_5rh_pro.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -5375,6 +5123,57 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1635:chirp/drivers/baofeng_digital.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1635,
+      "pullRequestTitle": "Unify Baofeng setting descriptions across drivers",
+      "path": "chirp/drivers/baofeng_digital.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1635",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a53df6a1d2789414ef8408fa7fe9a2f9b77b72e4/chirp%2Fdrivers%2Fbaofeng_digital.py",
+      "sha256": "b99c2d6e18bf74ee01b6ca3bc57f8b4bc9ab24d3c52ca5a9e622da06033b05b7",
+      "vendors": [],
+      "models": [
+        "BF-T20D",
+        "BF-V12D",
+        "W31D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "W31D"
+        },
+        {
+          "vendor": "",
+          "model": "BF-T20D"
+        },
+        {
+          "vendor": "",
+          "model": "BF-V12D"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::bf-t20d|bf-v12d|w31d::baofeng_digital",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community BF-T20D, BF-V12D, W31D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1609:chirp/drivers/alinco_djvx50.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -5414,6 +5213,587 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Alinco DJ-VX50",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1635:chirp/drivers/h777.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1635,
+      "pullRequestTitle": "Unify Baofeng setting descriptions across drivers",
+      "path": "chirp/drivers/h777.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1635",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a53df6a1d2789414ef8408fa7fe9a2f9b77b72e4/chirp%2Fdrivers%2Fh777.py",
+      "sha256": "9abc65104ecc3bd2c4cf4a4101778c6ab595888afc95482febba66589fbda0da",
+      "vendors": [
+        "Ansoko",
+        "Arcshell",
+        "Baofeng",
+        "Greaval",
+        "Maverick",
+        "MaxTalker",
+        "Radioddity",
+        "Retevis",
+        "Tenway"
+      ],
+      "models": [
+        "A-8S",
+        "AR-5",
+        "AR-6",
+        "BF-1901",
+        "BF-1904",
+        "BF-1909",
+        "BF-888",
+        "BF-M4",
+        "GA-2S",
+        "GV-8S",
+        "GV-9S",
+        "H777",
+        "H777 Plus",
+        "MP31",
+        "MT-8S",
+        "RA-100",
+        "RA-425",
+        "TW-325"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Arcshell",
+          "model": "AR-5"
+        },
+        {
+          "vendor": "Arcshell",
+          "model": "AR-6"
+        },
+        {
+          "vendor": "Greaval",
+          "model": "GV-8S"
+        },
+        {
+          "vendor": "Greaval",
+          "model": "GV-9S"
+        },
+        {
+          "vendor": "Ansoko",
+          "model": "A-8S"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "TW-325"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-888"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "MP31"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-2S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777 Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-M4"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "MT-8S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1901"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1904"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1909"
+        },
+        {
+          "vendor": "Maverick",
+          "model": "RA-100"
+        },
+        {
+          "vendor": "Maverick",
+          "model": "RA-425"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::ansoko|arcshell|baofeng|greaval|maverick|maxtalker|radioddity|retevis|tenway::a-8s|ar-5|ar-6|bf-1901|bf-1904|bf-1909|bf-888|bf-m4|ga-2s|gv-8s|gv-9s|h777|h777 plus|mp31|mt-8s|ra-100|ra-425|tw-325::h777",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Ansoko, Arcshell, Baofeng, Greaval, Maverick, MaxTalker, Radioddity, Retevis, Tenway A-8S, AR-5, AR-6, BF-1901, BF-1904, BF-1909, BF-888, BF-M4, GA-2S, GV-8S, GV-9S, H777, H777 Plus, MP31, MT-8S, RA-100, RA-425, TW-325",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1635:chirp/drivers/uv5r.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1635,
+      "pullRequestTitle": "Unify Baofeng setting descriptions across drivers",
+      "path": "chirp/drivers/uv5r.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1635",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a53df6a1d2789414ef8408fa7fe9a2f9b77b72e4/chirp%2Fdrivers%2Fuv5r.py",
+      "sha256": "53425f3b644d091993700e5ce2b67c3d1a0ea99dbb87467509a08ef940591da2",
+      "vendors": [
+        "Ansoko",
+        "Baofeng",
+        "Intek",
+        "Radioddity",
+        "Retevis",
+        "Rugged",
+        "TIDRADIO",
+        "TechSide",
+        "Tenway"
+      ],
+      "models": [
+        "A-5R",
+        "BF-F8HP",
+        "F-11",
+        "GA-5S",
+        "GT-5R",
+        "KT-980HP",
+        "RH5R",
+        "RT5",
+        "RT5(tri-power)",
+        "RT5R",
+        "RT5RV",
+        "TD-UV5R TriPower",
+        "TI-F8+",
+        "TS-T9+",
+        "UV-5G",
+        "UV-5G Pro",
+        "UV-5R",
+        "UV-5R EX",
+        "UV-5R Pro",
+        "UV-5RX3",
+        "UV-5X",
+        "UV-5XP",
+        "UV-6",
+        "UV-82",
+        "UV-82 Pro",
+        "UV-82HP",
+        "UV-82X3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5X"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5R"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5RV"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5(tri-power)"
+        },
+        {
+          "vendor": "Rugged",
+          "model": "RH5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5R EX"
+        },
+        {
+          "vendor": "Ansoko",
+          "model": "A-5R"
+        },
+        {
+          "vendor": "",
+          "model": "UV-5G Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "F-11"
+        },
+        {
+          "vendor": "",
+          "model": "UV-82"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-82X3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-6"
+        },
+        {
+          "vendor": "Intek",
+          "model": "KT-980HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-5S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5XP"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TI-F8+"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-5R Pro"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TS-T9+"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-UV5R TriPower"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-82 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5RX3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GT-5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::ansoko|baofeng|intek|radioddity|retevis|rugged|techside|tenway|tidradio::a-5r|bf-f8hp|f-11|ga-5s|gt-5r|kt-980hp|rh5r|rt5|rt5(tri-power)|rt5r|rt5rv|td-uv5r tripower|ti-f8+|ts-t9+|uv-5g|uv-5g pro|uv-5r|uv-5r ex|uv-5r pro|uv-5rx3|uv-5x|uv-5xp|uv-6|uv-82|uv-82 pro|uv-82hp|uv-82x3::uv5r",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1635:chirp/drivers/radtel_t18.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1635,
+      "pullRequestTitle": "Unify Baofeng setting descriptions across drivers",
+      "path": "chirp/drivers/radtel_t18.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1635",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a53df6a1d2789414ef8408fa7fe9a2f9b77b72e4/chirp%2Fdrivers%2Fradtel_t18.py",
+      "sha256": "da8f9c0053c4287b45b6b0ac27b9bcb13fb6e712f4e99fc4bf3dddcb929fb47a",
+      "vendors": [
+        "BTECH",
+        "Baofeng",
+        "Radtel",
+        "Retevis"
+      ],
+      "models": [
+        "BF-T20FRS",
+        "BF-V8A",
+        "FRS-B1",
+        "H777H_FRS",
+        "H777H_PMR",
+        "RB17",
+        "RB17V",
+        "RB18",
+        "RB19",
+        "RB19P",
+        "RB29",
+        "RB617",
+        "RB618",
+        "RB619",
+        "RB629",
+        "RB75",
+        "RB85",
+        "RB87",
+        "RT15",
+        "RT20",
+        "RT22S",
+        "RT47",
+        "RT47V",
+        "RT647",
+        "RT668",
+        "RT68",
+        "T18"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "T18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT20"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT22S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB618"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT68"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT668"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB617"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB85"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB75"
+        },
+        {
+          "vendor": "BTECH",
+          "model": "FRS-B1"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19P"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB619"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT647"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-V8A"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB29"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB629"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT15"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB87"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-T20FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_PMR"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|btech|radtel|retevis::bf-t20frs|bf-v8a|frs-b1|h777h_frs|h777h_pmr|rb17|rb17v|rb18|rb19|rb19p|rb29|rb617|rb618|rb619|rb629|rb75|rb85|rb87|rt15|rt20|rt22s|rt47|rt47v|rt647|rt668|rt68|t18::radtel_t18",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "BTECH, Baofeng, Radtel, Retevis BF-T20FRS, BF-V8A, FRS-B1, H777H_FRS, H777H_PMR, RB17, RB17V, RB18, RB19, RB19P, RB29, RB617, RB618, RB619, RB629, RB75, RB85, RB87, RT15, RT20, RT22S, RT47, RT47V, RT647, RT668, RT68, T18",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1635:chirp/drivers/retevis_rt22.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1635,
+      "pullRequestTitle": "Unify Baofeng setting descriptions across drivers",
+      "path": "chirp/drivers/retevis_rt22.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1635",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a53df6a1d2789414ef8408fa7fe9a2f9b77b72e4/chirp%2Fdrivers%2Fretevis_rt22.py",
+      "sha256": "e4c7c3dc49df3984ef2e002c6b084b118a05b0979c9e7451ab5f1e6256229179",
+      "vendors": [
+        "Baofeng",
+        "LUITON",
+        "Retevis",
+        "TID",
+        "WLN",
+        "Zastone"
+      ],
+      "models": [
+        "BF-T20",
+        "KD-C1",
+        "LT-316",
+        "RT22",
+        "RT22FRS",
+        "RT622",
+        "TD-M8",
+        "W31E",
+        "ZT-X6"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RT22"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1"
+        },
+        {
+          "vendor": "Zastone",
+          "model": "ZT-X6"
+        },
+        {
+          "vendor": "LUITON",
+          "model": "LT-316"
+        },
+        {
+          "vendor": "TID",
+          "model": "TD-M8"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT22FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT622"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "W31E"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-T20"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|luiton|retevis|tid|wln|zastone::bf-t20|kd-c1|lt-316|rt22|rt22frs|rt622|td-m8|w31e|zt-x6::retevis_rt22",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, LUITON, Retevis, TID, WLN, Zastone BF-T20, KD-C1, LT-316, RT22, RT22FRS, RT622, TD-M8, W31E, ZT-X6",
       "availableVersions": []
     },
     {
@@ -6174,107 +6554,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1621:chirp/drivers/ft1d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1621,
-      "pullRequestTitle": "Yft5",
-      "path": "chirp/drivers/ft1d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1621",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/409609675ec6dcca91f9e28180e621af2c62714b/chirp%2Fdrivers%2Fft1d.py",
-      "sha256": "b221dfa88d9a56c37c9c16ae38fdaa0f192c3c58644648a412cce3c8f09a0dd5",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FT-1D"
-      ],
-      "variants": [
-        "R"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FT-1D",
-          "variant": "R"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ft-1d::ft1d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FT-1D",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1621:chirp/drivers/ft2d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1621,
-      "pullRequestTitle": "Yft5",
-      "path": "chirp/drivers/ft2d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1621",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/409609675ec6dcca91f9e28180e621af2c62714b/chirp%2Fdrivers%2Fft2d.py",
-      "sha256": "bb36479ba532407feaf2f8d01f3ef39108fb3b7905a7e1367b71924b48aaa3c9",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FT2D",
-        "FT3D",
-        "FT5D"
-      ],
-      "variants": [
-        "R",
-        "Rv2"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FT2D",
-          "variant": "R"
-        },
-        {
-          "vendor": "",
-          "model": "FT3D",
-          "variant": "R"
-        },
-        {
-          "vendor": "",
-          "model": "FT5D",
-          "variant": "R"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ft2d|ft3d|ft5d::ft2d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FT2D, FT3D, FT5D",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1025:chirp/drivers/ftm6000.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6484,10 +6763,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 40,
+  "currentCount": 37,
   "historicalCount": 71,
-  "versionedCount": 62,
-  "officialIjvSource": true,
-  "officialIjvCandidateCount": 6,
-  "officialIjvLastRunFailures": 0
+  "versionedCount": 62
 }
