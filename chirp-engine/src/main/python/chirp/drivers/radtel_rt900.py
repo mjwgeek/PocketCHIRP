@@ -54,7 +54,7 @@ import struct
 
 LOG = logging.getLogger(__name__)
 
-
+# FHSS Code is a 24-bit per-channel value. The OEM CPS represents an
 # unset code as 0xFFFFFF in raw memory and as a blank field in the UI.
 # When a code is set, the OEM also writes 0xA0 into the adjacent flag
 # byte; when the code is cleared, that flag byte is restored to 0xFF.
@@ -1497,7 +1497,7 @@ class RT900BT(chirp_common.CloneModeRadio):
                      "when the current channel is busy.")
         mem.extra.append(rset)
 
-        
+        # LearnFHSS (per-channel learn / FHSS flag). The OEM CPS labels
         # this column "LearnFHSS"; the open-source firmware reads the
         # same bit as chFlag3.b0 / fhssFlag (Core/Radio.c).
         rs = RadioSettingValueBoolean(_mem.learning)
@@ -1600,7 +1600,7 @@ class RT900BT(chirp_common.CloneModeRadio):
 
         for setting in mem.extra:
             if setting.get_name() == 'fhss_code':
-                
+                # Mirror OEM CPS: blank input clears Code (0xFFFFFF) and
                 # restores the adjacent flag byte to 0xFF; any value
                 # writes Code and sets the flag byte to 0xA0.
                 s = str(setting.value).strip()

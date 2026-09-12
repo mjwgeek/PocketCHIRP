@@ -20,13 +20,13 @@ _last_raw_bytes = b""
 _last_hash_info = ""
 
 
-POCKETCHIRP_BRIDGE_REVISION = "266-p247-universal-read-settings-capability"
+POCKETCHIRP_BRIDGE_REVISION = "276-p257-explicit-usb-control-lines"
 POCKETCHIRP_APP_VERSION = "2.0.0"
 POCKETCHIRP_INTERFACE_COMPAT = 1
 
 
 # =============================================================================
-
+# POCKETCHIRP PYSERIAL IMPORT-COMPATIBILITY SHIM
 # =============================================================================
 # WHY:
 # A small number of CHIRP drivers import "serial" (pyserial) at module-import
@@ -117,6 +117,29 @@ def get_last_image_bytes():
     return bytes(_last_image_bytes or b"")
 
 
+def get_last_raw_bytes():
+    """Return only the CHIRP raw mmap, excluding standard .img metadata."""
+    return bytes(_last_raw_bytes or b"")
+
+def get_last_raw_size():
+    """Return the exact raw mmap byte count for Field Programmer recipe mapping."""
+    return int(len(_last_raw_bytes or b""))
+
+def get_last_image_layout_json():
+    """Describe the current raw/full CHIRP image boundary without exposing contents."""
+    import json
+    image = bytes(_last_image_bytes or b"")
+    raw = bytes(_last_raw_bytes or b"")
+    metadata = image[len(raw):] if len(raw) <= len(image) else b""
+    return json.dumps({
+        "rawSize": len(raw),
+        "imageSize": len(image),
+        "metadataSize": len(metadata),
+        "rawSha256": hashlib.sha256(raw).hexdigest() if raw else "",
+        "metadataSha256": hashlib.sha256(metadata).hexdigest() if metadata else "",
+    })
+
+
 
 
 
@@ -135,65 +158,6 @@ def _set_transport_timeout_ms(transport, milliseconds):
         setter(max(1, int(milliseconds)))
         return True
     return False
-
-
-def _serial_read_with_pyserial_semantics(transport, size, timeout):
-    """Return up to ``size`` bytes, accumulating partial transport chunks.
-
-    CHIRP drivers are written against pyserial. ``Serial.read(size)`` may return
-    fewer than ``size`` bytes only when its timeout expires; a packet boundary,
-    USB transfer boundary, Binder transaction, or BLE notification is *not* a
-    serial read boundary. Android backends normally already accumulate, but this
-    engine-side guard makes that contract true for every current/future transport
-    and prevents radio drivers from rejecting a valid response merely because it
-    arrived in multiple chunks.
-
-    This deliberately does not validate, pad, synthesize, or reinterpret protocol
-    bytes. Driver framing/checksum/length rules remain authoritative.
-    """
-    size = int(size)
-    if size <= 0:
-        return b""
-
-    # Preserve true pyserial non-blocking behavior.
-    if timeout == 0:
-        getter = getattr(transport, "availableBytes", None)
-        if not callable(getter):
-            return b""
-        available = max(0, int(getter()))
-        if available <= 0:
-            return b""
-        return bytes(transport.readBytes(min(size, available)))
-
-    timeout_s = 30.0 if timeout is None else max(0.0, float(timeout))
-    deadline = time.monotonic() + timeout_s
-    original_ms = max(1, int(timeout_s * 1000))
-    out = bytearray()
-
-    try:
-        while len(out) < size:
-            remaining_s = deadline - time.monotonic()
-            if remaining_s <= 0:
-                break
-
-            # Give each lower-layer call only the time remaining in this one
-            # logical pyserial read, so partial chunks never multiply timeouts.
-            _set_transport_timeout_ms(
-                transport, max(1, int(remaining_s * 1000)))
-            chunk = bytes(transport.readBytes(size - len(out)))
-            if chunk:
-                out.extend(chunk[:size - len(out)])
-                continue
-
-            # A backend may transiently report no bytes before its advertised
-            # timeout. Do not turn that implementation detail into EOF/failure.
-            if time.monotonic() < deadline:
-                time.sleep(0.001)
-    finally:
-        # Keep the driver's configured timeout authoritative for the next read.
-        _set_transport_timeout_ms(transport, original_ms)
-
-    return bytes(out)
 
 class AndroidSerialPipe:
     """pyserial-compatible wrapper around PocketCHIRP's Android transport."""
@@ -236,6 +200,13 @@ class AndroidSerialPipe:
         # true means CHIRP should use native/direct-BLE semantics; false means
         # ordinary serial semantics. No programmer/profile identity crosses here.
         self.is_direct_ble = bool(is_ble)
+        try:
+            cdc_checker = getattr(java_transport, "isCdcAcmTransport", None)
+            self.is_cdc_acm = bool(cdc_checker()) if callable(cdc_checker) else False
+        except Exception:
+            self.is_cdc_acm = False
+        self._f4hwn_fusion_cdc_write_exception = False
+
         if self.is_direct_ble:
             self.port = "/tmp/ttyBLE-PocketCHIRP"
             self.name = "/tmp/ttyBLE-PocketCHIRP"
@@ -376,7 +347,7 @@ class AndroidSerialPipe:
     @rtscts.setter
     def rtscts(self, value):
         # =====================================================================
-        
+        # POCKETCHIRP REAL RTS/CTS FLOW CONTROL
         # =====================================================================
         # CHIRP drivers use pyserial's ``pipe.rtscts`` flag when the radio
         # expects hardware RTS/CTS flow control.
@@ -462,8 +433,24 @@ class AndroidSerialPipe:
         return None
 
     def read(self, size=1):
-        return _serial_read_with_pyserial_semantics(
-            self._transport, size, self._timeout)
+        size = int(size)
+        if size <= 0:
+            return b""
+
+        # pyserial timeout=0 means a genuinely non-blocking read: return only
+        # bytes which are already queued. Android transports require a finite
+        # millisecond timeout internally, so preserve the semantic distinction
+        # here instead of turning zero into an accidental 1 ms blocking read.
+        if self._timeout == 0:
+            getter = getattr(self._transport, "availableBytes", None)
+            if not callable(getter):
+                return b""
+            available = max(0, int(getter()))
+            if available <= 0:
+                return b""
+            return bytes(self._transport.readBytes(min(size, available)))
+
+        return bytes(self._transport.readBytes(size))
 
     def readline(self, size=-1):
         limit = int(size) if size is not None else -1
@@ -492,6 +479,33 @@ class AndroidSerialPipe:
 
     def write(self, data):
         raw = bytes(data)
+
+        # Exact radio/transport exception only. Every other driver and transport
+        # follows the historical one-call write path below unchanged.
+        if self._f4hwn_fusion_cdc_write_exception and raw:
+            total = 0
+            chunk_size = 64
+            while total < len(raw):
+                chunk = raw[total:total + chunk_size]
+                sent = 0
+                while sent < len(chunk):
+                    n = int(self._transport.writeBytes(chunk[sent:]))
+                    if n <= 0:
+                        raise IOError(
+                            "F4HWN Fusion CDC write made no progress (%d/%d bytes sent)" %
+                            (total + sent, len(raw)))
+                    if n > (len(chunk) - sent):
+                        raise IOError(
+                            "F4HWN Fusion CDC write reported impossible length %d > %d" %
+                            (n, len(chunk) - sent))
+                    sent += n
+
+                total += len(chunk)
+                baud = max(300, int(self._baudrate or 38400))
+                time.sleep((len(chunk) * 10.0) / float(baud))
+
+            return total
+
         return int(self._transport.writeBytes(raw))
 
     def reset_input_buffer(self):
@@ -593,8 +607,7 @@ class LegacyAndroidSerialPipe:
         self._transport.setDtr(self._dtr)
 
     def read(self, size=1):
-        return _serial_read_with_pyserial_semantics(
-            self._transport, size, self._timeout)
+        return bytes(self._transport.readBytes(int(size)))
 
     def write(self, data):
         raw = bytes(data)
@@ -912,40 +925,100 @@ def _uses_legacy_icom_pipe(cls):
         return False
 
 
+def _uses_f4hwn_fusion_cdc_write_exception(cls, pipe):
+    """True only for the exact F4HWN Fusion driver over Android CDC/ACM USB."""
+    try:
+        return (
+            not bool(getattr(pipe, "is_ble", False))
+            and bool(getattr(pipe, "is_cdc_acm", False))
+            and str(getattr(cls, "VENDOR", "") or "").strip() == "Quansheng"
+            and str(getattr(cls, "MODEL", "") or "").strip()
+                == "UV-K1 & UV-K5 V3 (F4HWN Fusion)"
+            and str(getattr(cls, "__name__", "") or "").strip() == "UVK5RadioEgzumer"
+        )
+    except Exception:
+        return False
+
+
 def _pipe_for_class(cls, java_transport):
     if _uses_legacy_icom_pipe(cls):
         return LegacyAndroidSerialPipe(java_transport)
-    return AndroidSerialPipe(java_transport)
+
+    pipe = AndroidSerialPipe(java_transport)
+    pipe._f4hwn_fusion_cdc_write_exception = (
+        _uses_f4hwn_fusion_cdc_write_exception(cls, pipe))
+    if pipe._f4hwn_fusion_cdc_write_exception:
+        _transport_note(
+            pipe,
+            "F4HWN FUSION DIRECT USB-C: scoped CDC write exception enabled; "
+            "all other drivers/transports unchanged")
+    return pipe
+
+def _driver_explicit_serial_control(cls, name, default):
+    """Return (value, explicit, source) for a CHIRP serial control attribute.
+
+    CHIRP's generic radio base classes provide desktop-oriented defaults for
+    WANTS_DTR/WANTS_RTS/HARDWARE_FLOW.  On Android USB those inherited defaults
+    are not evidence that a radio or interface actually requires PocketCHIRP to
+    drive a modem-control line.  Only a declaration made by a driver/family
+    class outside chirp.chirp_common is treated as an explicit requirement.
+    """
+    for owner in getattr(cls, "__mro__", (cls,)):
+        namespace = getattr(owner, "__dict__", {})
+        if name not in namespace:
+            continue
+        value = bool(namespace[name])
+        module = str(getattr(owner, "__module__", "") or "")
+        source = "%s.%s" % (module, getattr(owner, "__name__", ""))
+        return value, module != "chirp.chirp_common", source
+    return bool(default), False, "inherited-default"
+
 
 def _apply_driver_serial_open_contract(cls, pipe):
-    """Apply CHIRP's exact driver-declared USB serial control-line contract.
+    """Apply only explicit CHIRP driver USB serial control-line requirements.
 
-    HARD REGRESSION GUARD -- never replace this with blanket RTS/DTR values.
-    Some interfaces require asserted DTR/RTS for level-converter power or
-    handshaking, while other drivers intentionally request RTS low (notably
-    Icom CI-V, where an interface may use RTS as PTT). BLE is untouched.
+    Inherited chirp_common defaults are intentionally control-line neutral on
+    Android.  This preserves the proven historical PocketCHIRP behavior for
+    radios such as the TH-D74 while retaining RTS/DTR/RTS-CTS support for a
+    driver or driver-family class which explicitly declares a requirement.
+    BLE is untouched, and drivers remain free to manipulate pipe.rts/pipe.dtr
+    themselves during their protocol lifecycle.
     """
     if getattr(pipe, "is_ble", False):
         return
-    wants_dtr = bool(getattr(cls, "WANTS_DTR", True))
-    wants_rts = bool(getattr(cls, "WANTS_RTS", True))
-    hardware_flow = bool(getattr(cls, "HARDWARE_FLOW", False))
-    try:
-        pipe.rtscts = hardware_flow
-    except Exception:
-        pass
-    try:
-        pipe.rts = wants_rts
-    except Exception:
-        pass
-    try:
-        pipe.dtr = wants_dtr
-    except Exception:
-        pass
+
+    wants_dtr, dtr_explicit, dtr_source = _driver_explicit_serial_control(
+        cls, "WANTS_DTR", True)
+    wants_rts, rts_explicit, rts_source = _driver_explicit_serial_control(
+        cls, "WANTS_RTS", True)
+    hardware_flow, flow_explicit, flow_source = _driver_explicit_serial_control(
+        cls, "HARDWARE_FLOW", False)
+
+    if flow_explicit:
+        try:
+            pipe.rtscts = hardware_flow
+        except Exception:
+            pass
+    if rts_explicit:
+        try:
+            pipe.rts = wants_rts
+        except Exception:
+            pass
+    if dtr_explicit:
+        try:
+            pipe.dtr = wants_dtr
+        except Exception:
+            pass
+
     _transport_note(
         pipe,
-        "CHIRP SERIAL OPEN CONTRACT: DTR=%s RTS=%s RTS/CTS=%s" %
-        (wants_dtr, wants_rts, hardware_flow))
+        "CHIRP SERIAL OPEN CONTRACT: DTR=%s%s RTS=%s%s RTS/CTS=%s%s" % (
+            wants_dtr, (" explicit(%s)" % dtr_source)
+            if dtr_explicit else " inherited/untouched",
+            wants_rts, (" explicit(%s)" % rts_source)
+            if rts_explicit else " inherited/untouched",
+            hardware_flow, (" explicit(%s)" % flow_source)
+            if flow_explicit else " inherited/untouched"))
 
 
 def _prepare_clone_pipe(cls, java_transport):
@@ -1008,9 +1081,12 @@ def selected_serial_driver_facts_json():
         "className": str(getattr(cls, "__name__", "") or ""),
         "moduleName": str(getattr(cls, "__module__", "") or ""),
         "baudRate": int(getattr(cls, "BAUD_RATE", 9600) or 9600),
-        "wantsDtr": bool(getattr(cls, "WANTS_DTR", True)),
-        "wantsRts": bool(getattr(cls, "WANTS_RTS", True)),
-        "hardwareFlow": bool(getattr(cls, "HARDWARE_FLOW", False)),
+        "wantsDtr": _driver_explicit_serial_control(cls, "WANTS_DTR", True)[0],
+        "wantsDtrExplicit": _driver_explicit_serial_control(cls, "WANTS_DTR", True)[1],
+        "wantsRts": _driver_explicit_serial_control(cls, "WANTS_RTS", True)[0],
+        "wantsRtsExplicit": _driver_explicit_serial_control(cls, "WANTS_RTS", True)[1],
+        "hardwareFlow": _driver_explicit_serial_control(cls, "HARDWARE_FLOW", False)[0],
+        "hardwareFlowExplicit": _driver_explicit_serial_control(cls, "HARDWARE_FLOW", False)[1],
         "cloneMode": bool(issubclass(cls, chirp_common.CloneModeRadio)),
         "liveRadio": bool(issubclass(cls, chirp_common.LiveRadio)),
     }, separators=(",", ":"))
@@ -1113,11 +1189,11 @@ def _detect_selected_clone_class(selected_cls, pipe):
 # IMPORTANT:
 # - No replacement/forked CHIRP driver files are required.
 # - Ordinary serial transports never use these native-BLE overrides.
-
+# - Add an entry only after an OEM app / radio trace proves the protocol fact.
 # =============================================================================
 _DIRECT_BLE_CAPABILITIES = {
     ("baofeng", "uv-5r mini", ""): {
-        
+        # Ola Radio direct-BLE HCI trace: Mini download requests 0x80-byte
         # protocol blocks. Stock CHIRP already uses 0x80 for BLE upload.
         "download_adapter": "baofeng_uv17pro_framed",
         "download_block_size": 0x80,
@@ -1736,77 +1812,6 @@ def _setting_value_for_ui(value):
         raw = _safe_attr(value, "get_value", lambda: None)()
         return None if raw is None else str(raw).rstrip()
 
-
-def _charset_text(value):
-    """Return one CHIRP RadioSettingValue charset as a plain string."""
-    charset = _safe_attr(value, "_charset", None)
-    if charset is None:
-        getter = getattr(value, "get_charset", None)
-        if callable(getter):
-            try:
-                charset = getter()
-            except Exception:
-                charset = None
-    if charset is None:
-        return ""
-    if isinstance(charset, str):
-        return charset
-    try:
-        return "".join(str(ch) for ch in charset)
-    except Exception:
-        return str(charset)
-
-
-def _feature_valid_characters_text(rf):
-    """Return RadioFeatures.valid_characters without inventing a charset."""
-    charset = _safe_attr(rf, "valid_characters", "")
-    if charset is None:
-        return ""
-    if isinstance(charset, str):
-        return charset
-    try:
-        return "".join(str(ch) for ch in charset)
-    except Exception:
-        return str(charset)
-
-
-def _normalize_case_to_charset(value, charset):
-    """Map an unsupported character to its uppercase form only when allowed.
-
-    This is deliberately narrower than filtering/replacement: characters which
-    are not accepted in either case are left untouched for CHIRP's normal
-    validation path. Radios which already allow lowercase are unchanged.
-    """
-    text = str(value)
-    allowed = set(str(charset or ""))
-    if not allowed:
-        return text
-    out = []
-    for ch in text:
-        if ch in allowed:
-            out.append(ch)
-            continue
-        upper = ch.upper()
-        if len(upper) == 1 and upper in allowed:
-            out.append(upper)
-        else:
-            out.append(ch)
-    return "".join(out)
-
-
-
-def _radio_text_for_compare(value):
-    """Normalize only radio padding for an exact stored-text comparison."""
-    if value is None:
-        return ""
-    return str(value).rstrip(" \x00\xff")
-
-
-def _has_lowercase_text(value):
-    text = "" if value is None else str(value)
-    return any(ch.islower() for ch in text)
-
-
 def _setting_to_dict(setting, group, setting_id=None, group_path=(),
                      component_index=0, component_count=None):
     """Serialize one CHIRP RadioSettingValue component to the neutral schema."""
@@ -1865,9 +1870,6 @@ def _setting_to_dict(setting, group, setting_id=None, group_path=(),
             out["maxLength"] = int(value.maxlength)
         except Exception:
             pass
-        charset = _charset_text(value)
-        if charset:
-            out["validCharacters"] = charset
     return out
 
 def _settings_list(radio):
@@ -1878,8 +1880,21 @@ def _settings_list(radio):
     """
     try:
         root = radio.get_settings()
-    except Exception:
+    except Exception as exc:
+        # Settings are UI/editor data, not part of clone transport. Never hide
+        # the reason a driver failed to expose them. Keep radio reads usable,
+        # but retain the exact diagnostic for the document/logging layer.
+        try:
+            radio._pocketchirp_settings_error = "%s: %s" % (
+                type(exc).__name__, str(exc))
+        except Exception:
+            pass
         return []
+    else:
+        try:
+            radio._pocketchirp_settings_error = ""
+        except Exception:
+            pass
     if root is None:
         return []
 
@@ -2662,19 +2677,14 @@ def update_memory_json(memory_json):
     if can("empty"):
         mem.empty = want_empty
 
-    requested_name = None
     if not want_empty:
         if "freq" not in immutable and "freq" in data:
             mem.freq = int(round(float(data["freq"]) * 1_000_000))
 
         if can("name", "has_name", True) and "name" in data:
             limit = _safe_int(_safe_attr(rf, "valid_name_length", 0), 0)
-            text = _normalize_case_to_charset(
-                str(data.get("name", "")),
-                _feature_valid_characters_text(rf),
-            )
-            requested_name = text[:limit] if limit > 0 else text
-            mem.name = requested_name
+            text = str(data.get("name", ""))
+            mem.name = text[:limit] if limit > 0 else text
 
         if "duplex" not in immutable and "duplex" in data:
             mem.duplex = str(data.get("duplex", ""))
@@ -2739,44 +2749,6 @@ def update_memory_json(memory_json):
 
     radio.check_set_memory_immutable_policy(radio.get_memory(n), mem)
     radio.set_memory(mem)
-
-    # Some drivers advertise a broad/default valid_characters set even though
-    # their actual image encoder only has uppercase glyph codes. In that case
-    # lowercase passes validation but set_memory() silently stores blanks.
-    # Detect the driver's real behavior from its own in-memory round trip and
-    # retry uppercase only when that fixes the loss.
-    if requested_name is not None and _has_lowercase_text(requested_name):
-        stored_name = _radio_text_for_compare(
-            _safe_attr(radio.get_memory(n), "name", "")
-        )
-        wanted_name = _radio_text_for_compare(requested_name)
-        if stored_name != wanted_name:
-            uppercase_name = str(requested_name).upper()
-            if uppercase_name != requested_name:
-                mem.name = uppercase_name
-                retry_problems = radio.validate_memory(mem)
-                retry_errors = [
-                    str(x) for x in retry_problems
-                    if x.__class__.__name__ == "ValidationError"
-                ]
-                if not retry_errors:
-                    radio.set_memory(mem)
-                    uppercase_stored = _radio_text_for_compare(
-                        _safe_attr(radio.get_memory(n), "name", "")
-                    )
-                    if uppercase_stored != _radio_text_for_compare(uppercase_name):
-                        raise ValueError(
-                            "Driver cannot preserve channel name %r; lowercase was "
-                            "lost and uppercase retry read back as %r."
-                            % (requested_name, uppercase_stored)
-                        )
-                    LOG.info(
-                        "PocketCHIRP normalized channel name to uppercase after "
-                        "driver round-trip loss: %r -> %r",
-                        requested_name, uppercase_name)
-                else:
-                    raise ValueError("; ".join(retry_errors))
-
     _save_working_radio(root_radio)
     return pocketchirp_radio_document_json()
 
@@ -2946,11 +2918,9 @@ def _coerce_setting_value(value, supplied):
     if "Float" in cls:
         return float(supplied)
     # RadioSettingValueList and RadioSettingValueMap intentionally accept their
-    # user-facing option string. String values also honor a driver-declared
-    # character set: if lowercase is forbidden but the uppercase counterpart is
-    # allowed, normalize the case before CHIRP validates/autopads the value.
-    text = str(supplied)
-    return _normalize_case_to_charset(text, _charset_text(value))
+    # user-facing option string. String values likewise go through CHIRP's own
+    # validation/autopadding in set_value().
+    return str(supplied)
 
 def _setting_values_equivalent(a, b, kind):
     if kind == "number":
@@ -3027,7 +2997,7 @@ def _prune_uninitialized_immutable_settings(root):
     return removed
 
 
-def _apply_setting_changes_json(setting_json, return_document=True, _allow_case_retry=True):
+def _apply_setting_changes_json(setting_json, return_document=True):
     """Apply one desktop-CHIRP-style RadioSettings transaction.
 
     Save/Write materialization calls this with return_document=False so replaying
@@ -3112,7 +3082,6 @@ def _apply_setting_changes_json(setting_json, return_document=True, _allow_case_
             raise ValueError("Driver could not read settings back from the saved image")
 
         failures = []
-        failed_rows = []
         for row in applied:
             _verify_setting, _verify_index, verify_value = _resolve_setting(
                 verify_settings, row["id"], row["name"])
@@ -3121,47 +3090,7 @@ def _apply_setting_changes_json(setting_json, return_document=True, _allow_case_
                 failures.append(
                     "%s (requested %r, read back %r)" %
                     (row["name"], row["expected"], actual_value))
-                failed_rows.append((row, actual_value))
         if failures:
-            # A few drivers expose string settings whose value object/default
-            # charset accepts lowercase even though the driver's image encoder
-            # does not. Retry ONLY failed lowercase string values, from the
-            # original pre-edit image, and only once.
-            retry_keys = set()
-            if _allow_case_retry:
-                for row, _actual in failed_rows:
-                    expected = row.get("expected")
-                    if (row.get("kind") == "string"
-                            and isinstance(expected, str)
-                            and _has_lowercase_text(expected)
-                            and expected.upper() != expected):
-                        retry_keys.add(row.get("id") or ("name:" + row.get("name", "")))
-
-            if retry_keys:
-                retry_changes = []
-                for change in raw_changes:
-                    retry = dict(change)
-                    key = str(retry.get("id", "") or "") or (
-                        "name:" + str(retry.get("name", "")))
-                    value = retry.get("value")
-                    if key in retry_keys and isinstance(value, str):
-                        retry["value"] = value.upper()
-                    retry_changes.append(retry)
-
-                # Restore the exact image that existed before this settings
-                # transaction, then replay the complete batch with only the
-                # proven-failing lowercase strings uppercased.
-                _last_image_bytes = old_image
-                _last_raw_bytes = old_raw
-                _last_hash_info = old_hash_info
-                LOG.info(
-                    "PocketCHIRP retrying %d radio setting string(s) as uppercase "
-                    "after driver round-trip loss", len(retry_keys))
-                return _apply_setting_changes_json(
-                    _json.dumps({"changes": retry_changes}, separators=(",", ":")),
-                    return_document=return_document,
-                    _allow_case_retry=False)
-
             raise ValueError("Driver did not preserve setting change(s): " + "; ".join(failures))
 
         genuinely_changed = any(row["before"] != row["expected"] for row in applied)
@@ -3618,6 +3547,46 @@ def _build_bundled_catalog_from_chirp():
         "customDriverCount": len(_custom_driver_entries),
         "radios": entries,
     }
+
+
+def _prebuilt_radio_catalog_path():
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "prebuilt_radio_catalog.json")
+
+
+def radio_catalog_bootstrap_json():
+    """Return the build-time neutral chooser catalog without importing drivers.
+
+    This is presentation/bootstrap data only. radio_catalog_json() remains the
+    authoritative live catalog and preserves the existing import/registration
+    behavior used by image detection, custom drivers, and radio operations.
+    """
+    path = _prebuilt_radio_catalog_path()
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            root = _json.load(fh)
+        radios = root.get("radios") if isinstance(root, dict) else None
+        if not isinstance(radios, list) or not radios:
+            raise ValueError("prebuilt catalog contains no radios")
+        # Defensive normalization: bootstrap must never carry runtime custom rows.
+        clean = [row for row in radios
+                 if isinstance(row, dict) and not row.get("customDriver")]
+        if not clean:
+            raise ValueError("prebuilt catalog contains no bundled radios")
+        root["radios"] = clean
+        root["loadedCount"] = len(clean)
+        root["customDriverCount"] = 0
+        root["prebuiltBootstrap"] = True
+        return _json.dumps(root, separators=(",", ":"))
+    except Exception as exc:
+        return _json.dumps({
+            "formatVersion": 1,
+            "loadedCount": 0,
+            "customDriverCount": 0,
+            "prebuiltBootstrap": False,
+            "error": "%s: %s" % (exc.__class__.__name__, exc),
+            "radios": [],
+        }, separators=(",", ":"))
 
 
 def _ensure_radio_catalog():
@@ -4144,7 +4113,12 @@ def _note_exact_selected_driver(pipe, cls):
 
 
 def _status_callback(radio, java_transport):
-    """Bridge CHIRP status without putting UI IPC in BLE protocol hot loops."""
+    """Bridge CHIRP status without putting UI IPC in BLE protocol hot loops.
+
+    REGRESSION LOCK: CHIRP status text is diagnostic-only. A missing/None status
+    message must NEVER abort sync_in()/sync_out() or become a radio READ/WRITE
+    failure. Normalize it before any Python->Java/Binder call.
+    """
     pipe = getattr(radio, "pipe", None)
 
     # Native/direct BLE benefits from keeping synchronous Python->Java UI work
@@ -4158,9 +4132,10 @@ def _status_callback(radio, java_transport):
     def cb(status):
         nonlocal last_sent_cur, last_sent_max, last_sent_msg
         try:
-            message = str(status.msg)
-            current = int(status.cur)
-            maximum = int(status.max)
+            raw_message = getattr(status, "msg", "")
+            message = "" if raw_message is None else str(raw_message)
+            current = int(getattr(status, "cur", 0) or 0)
+            maximum = int(getattr(status, "max", 0) or 0)
 
             if throttle:
                 # Always forward starts, completion, message/range changes and
@@ -4187,6 +4162,68 @@ def _status_callback(radio, java_transport):
             pass
 
     radio.status_fn = cb
+
+
+
+def _run_sync_out_with_diagnostic_guard(radio, java_transport):
+    """Run the driver's sync_out() with diagnostics made explicitly non-fatal.
+
+    HARD REGRESSION GUARD:
+    - Real CHIRP/radio/transport exceptions from sync_out() MUST propagate unchanged.
+    - Progress/status/logging callbacks are diagnostic-only and MUST NOT abort a
+      write after the driver has started uploading the image.
+    - Android's ``NullPointerException: println needs a message`` is a logging
+      failure, not a radio protocol failure. Suppress that exact exception only
+      when CHIRP has already reported the write data complete.
+
+    This deliberately preserves driver ownership of every radio protocol byte.
+    """
+    sync_out = getattr(radio, "sync_out", None)
+    if not callable(sync_out):
+        raise AttributeError("Selected CHIRP driver does not implement sync_out()")
+
+    # _status_callback already installs a null-safe/non-throwing callback. Wrap
+    # it once more at the write boundary so future callback refactors cannot
+    # accidentally make diagnostics fatal again.
+    current_status = getattr(radio, "status_fn", None)
+
+    def nonfatal_status(status):
+        try:
+            if callable(current_status):
+                current_status(status)
+        except Exception:
+            # Diagnostic transport/UI failures are intentionally ignored here.
+            # The actual sync_out() continues and remains authoritative.
+            pass
+
+    radio.status_fn = nonfatal_status
+
+    try:
+        return sync_out()
+    except Exception as exc:
+        # Android Log.println_native rejects a null message and can surface back
+        # through Chaquopy as "println needs a message". Never reinterpret a
+        # genuine driver/radio failure. Only neutralize this exact diagnostic
+        # failure after the driver has already reported all WRITE units complete.
+        text = str(exc or "").strip().lower()
+        is_println_null = "println needs a message" in text
+        if is_println_null:
+            try:
+                current = int(java_transport.getTransferProgressCurrent() or 0)
+                maximum = int(java_transport.getTransferProgressMaximum() or 0)
+            except Exception:
+                current = 0
+                maximum = 0
+            if maximum > 0 and current >= maximum:
+                try:
+                    import logging as _logging
+                    _logging.getLogger("PocketCHIRP.write").warning(
+                        "Ignored non-fatal Android logging exception after write completion: %s",
+                        exc)
+                except Exception:
+                    pass
+                return None
+        raise
 
 
 def _store_downloaded_radio(radio):
@@ -6817,10 +6854,9 @@ def download_selected_editor_once_result_json(java_transport, attempt=1,
 #   * Per-memory `extra` objects that cannot be represented losslessly are
 #     preserved as a write-safety marker; editing such a memory is fail-closed.
 #
-
-
-# disables its connect/read/write controls for them.  PocketCHIRP uses the same
-# CHIRP class distinction, but adds the detached snapshot/commit layer here.
+# POCKETCHIRP NOTE:
+# CHIRP distinguishes LiveRadio classes from clone-mode radios. PocketCHIRP uses
+# that distinction and adds the detached snapshot/commit layer here.
 #
 # EASY REVERT:
 # Remove this entire section and the small LiveRadio branches in
@@ -7871,7 +7907,10 @@ def identify_image_bytes_json(data):
         return _json.dumps(ident, separators=(",", ":"))
 
     try:
-        radio = _chirp_radio_from_image_bytes(data)
+        # Use the exact same custom-aware/migration-aware resolver as Load .img.
+        # This ensures metadata inspection, backup labeling, and explicit image
+        # loading all agree on the current radio/driver identity.
+        radio = _radio_from_image_bytes(data)
     except Exception as exc:
         return _json.dumps({
             "vendor": "", "model": "", "variant": "", "rclass": "",
@@ -7882,7 +7921,7 @@ def identify_image_bytes_json(data):
 
     ident = _runtime_image_identity(radio, metadata)
     ident.update({
-        "source": "chirp-get-radio-by-image",
+        "source": "pocketchirp-image-resolver",
         "confidence": "authoritative" if metadata else "chirp-detected",
         "metadataPresent": bool(metadata),
         "rawBytes": len(raw),
@@ -8001,7 +8040,7 @@ def image_compatibility_bytes_json(data):
     # and the actual upload. Runtime custom drivers are intentionally not left in
     # CHIRP's global directory, so bundled-only detection can misidentify a valid
     # custom image (for example UV-K5 VUURWERK) and incorrectly block writing.
-    custom_entry = _custom_entry_for_image_metadata(metadata)
+    custom_entry = _custom_entry_for_image_metadata(metadata, raw, data)
     try:
         radio = _radio_from_image_bytes(data)
     except Exception as exc:
@@ -8100,71 +8139,473 @@ def backup_connected_radio_once_bytes(java_transport):
 
 
 
-def _custom_entry_for_image_metadata(metadata):
-    """Return the exact loaded custom-driver entry for image metadata, if any.
+def _entry_structurally_matches_image(entry, raw):
+    """Ask one resolved driver whether raw bytes belong to it.
 
-    New PocketCHIRP images carry exact custom-driver key/SHA/class metadata.
-    That identity is authoritative for parser selection and survives Save ->
-    close -> reopen. Legacy images retain the prior public-identity fallback.
+    This is used only for saved-image migration. A historical metadata alias is
+    never enough by itself: the current driver must also accept the raw payload
+    through its own match_model() contract.
     """
-    if not metadata:
-        return None
+    if not entry:
+        return False
+    try:
+        cls = _find_loaded_radio_class(entry)
+    except Exception:
+        return False
+    matcher = getattr(cls, "match_model", None)
+    if not callable(matcher):
+        return False
+    try:
+        return bool(matcher(bytes(raw or b""), "pocketchirp-migrate.img"))
+    except TypeError:
+        try:
+            return bool(matcher(bytes(raw or b"")))
+        except Exception:
+            return False
+    except Exception:
+        return False
 
-    exact_key = str(metadata.get("pocketchirp_custom_driver_key") or "").strip()
-    if exact_key:
-        entry = _custom_driver_entries.get(exact_key)
-        if entry is None:
-            raise ValueError(
-                "This image requires a PocketCHIRP custom driver that is not loaded "
-                f"({exact_key}). Reload the matching Python driver before opening or writing it."
-            )
 
-        expected_sha = str(metadata.get("pocketchirp_custom_driver_sha256") or "").strip().lower()
-        actual_sha = str(entry.get("sha256") or "").strip().lower()
-        if expected_sha and actual_sha and expected_sha != actual_sha:
-            raise ValueError(
-                "PocketCHIRP custom-driver metadata SHA-256 does not match the loaded driver."
-            )
+def _entry_can_instantiate_image(entry, data):
+    """Best-effort OPEN-only proof that one current driver can parse an image.
 
-        expected_class = str(metadata.get("pocketchirp_custom_driver_class") or "").strip()
-        actual_class = str(entry.get("class") or "").strip()
-        if expected_class and actual_class and expected_class != actual_class:
-            raise ValueError(
-                "PocketCHIRP custom-driver metadata class does not match the loaded driver."
-            )
+    Some CHIRP drivers intentionally return False from match_model() for .img
+    files because CHIRP metadata, not byte signatures, is their identification
+    mechanism. For those drivers, requiring match_model() makes valid saved
+    images impossible to migrate after a driver update.
 
-        wanted = _fold_radio_identity((
-            metadata.get("vendor"),
-            metadata.get("model"),
-            metadata.get("variant") or "",
-        ))
-        actual_identity = _fold_radio_identity(_custom_public_identity(entry))
-        if wanted and wanted[0] and wanted[1] and actual_identity != wanted:
-            raise ValueError(
-                "PocketCHIRP custom-driver metadata identity does not match the loaded driver."
-            )
-        return entry
+    This probe instantiates the current class against the COMPLETE image bytes
+    (including CHIRP metadata) and asks for basic features. It performs no radio
+    I/O and does not change the Engine working image.
+    """
+    if not entry or not data:
+        return False
+    try:
+        cls = _find_loaded_radio_class(entry)
+        radio = _radio_from_exact_class_image_bytes(cls, bytes(data))
+        # get_features() is intentionally lightweight and catches many malformed
+        # or incompatible image layouts without touching any hardware.
+        radio.get_features()
+        return True
+    except Exception:
+        return False
 
-    # Migration for images created before exact custom provenance was embedded.
+
+def _entry_accepts_saved_image(entry, raw, data, metadata=None,
+                               allow_metadata_constructor=False):
+    """Return True when a current driver has enough proof to OPEN saved bytes.
+
+    Proof order:
+      1) driver's match_model(raw) accepts the payload;
+      2) for authoritative/strong metadata candidates only, the current driver
+         can instantiate the complete .img and expose its features.
+
+    Constructor probing is never used as broad auto-detection across unrelated
+    radios. It is enabled only after metadata/selection has narrowed the target.
+    """
+    if _entry_structurally_matches_image(entry, raw):
+        return True
+    if allow_metadata_constructor:
+        return _entry_can_instantiate_image(entry, data)
+    return False
+
+
+def _entry_declares_image_metadata_alias(entry, metadata):
+    """True when a current driver explicitly claims one historical identity."""
+    if not entry or not metadata:
+        return False
+    try:
+        cls = _find_loaded_radio_class(entry)
+    except Exception:
+        return False
+
+    aliases = getattr(cls, "POCKETCHIRP_IMAGE_IDENTITY_ALIASES", ()) or ()
     wanted = _fold_radio_identity((
         metadata.get("vendor"),
         metadata.get("model"),
         metadata.get("variant") or "",
     ))
     if not wanted or not wanted[0] or not wanted[1]:
+        return False
+
+    for alias in aliases:
+        try:
+            if isinstance(alias, dict):
+                candidate = _fold_radio_identity((
+                    alias.get("vendor"),
+                    alias.get("model"),
+                    alias.get("variant") or "",
+                ))
+            else:
+                parts = tuple(alias)
+                candidate = _fold_radio_identity((
+                    parts[0] if len(parts) > 0 else "",
+                    parts[1] if len(parts) > 1 else "",
+                    parts[2] if len(parts) > 2 else "",
+                ))
+        except Exception:
+            continue
+        if candidate == wanted:
+            return True
+    return False
+
+
+def _normalized_radio_token(value):
+    """Normalize a public radio label for migration comparisons only."""
+    return "".join(
+        ch for ch in str(value or "").strip().casefold()
+        if ch.isalnum()
+    )
+
+
+def _image_migration_candidate_score(entry, metadata, selected_key=""):
+    """Score one already-structurally-matching image parser candidate.
+
+    The score is used only to choose among drivers whose own match_model()
+    already accepted the raw bytes. Historical custom-driver provenance is
+    therefore a hint, never the only proof that a parser may open the image.
+    """
+    if not entry:
+        return 0
+
+    public = _custom_public_identity(entry)
+    candidate = _fold_radio_identity(public)
+    wanted = _fold_radio_identity((
+        metadata.get("vendor"),
+        metadata.get("model"),
+        metadata.get("variant") or "",
+    )) if metadata else None
+
+    score = 0
+
+    # Explicit historical aliases remain the strongest migration hint.
+    if _entry_declares_image_metadata_alias(entry, metadata):
+        score = max(score, 500)
+
+    if wanted and wanted[0] and wanted[1]:
+        if candidate == wanted:
+            score = max(score, 450)
+
+        # Driver revisions frequently change VARIANT while retaining the exact
+        # radio. Ignore VARIANT for this migration tier.
+        if candidate and candidate[:2] == wanted[:2]:
+            score = max(score, 425)
+
+        old_vendor = _normalized_radio_token(wanted[0])
+        old_model = _normalized_radio_token(wanted[1])
+        new_vendor = _normalized_radio_token(public[0])
+        new_model = _normalized_radio_token(public[1])
+
+        if old_vendor and new_vendor and old_vendor == new_vendor:
+            if old_model and new_model and old_model == new_model:
+                score = max(score, 410)
+            # Accommodate a driver revision which moves a firmware/edition tag
+            # between MODEL and VARIANT, e.g. "UV-K5" -> "UV-K5 VUURWERK".
+            elif (old_model and new_model
+                  and (old_model.startswith(new_model)
+                       or new_model.startswith(old_model))):
+                score = max(score, 360)
+            else:
+                # Same vendor is useful only as a weak tie-breaker. It can never
+                # override a better radio/model match.
+                score = max(score, 100)
+
+    # If the user explicitly selected a current driver and that driver's own
+    # match_model() accepted these raw bytes, strongly prefer it. This is
+    # especially important for runtime custom drivers which are deliberately not
+    # left in CHIRP's global directory.
+    if selected_key and str(entry.get("key") or "") == str(selected_key):
+        score += 75
+
+    return score
+
+
+def _fast_image_metadata_score(entry, metadata, selected_key=""):
+    """Rank a CURRENT catalog row against saved image metadata without loading it.
+
+    This deliberately uses only catalog strings. It must stay cheap: image open
+    should never instantiate or probe hundreds of drivers.
+    """
+    if not entry or not metadata:
+        return 0
+
+    vendor = str(metadata.get("vendor") or "").strip()
+    model = str(metadata.get("model") or "").strip()
+    variant = str(metadata.get("variant") or "").strip()
+    if not vendor or not model:
+        return 0
+
+    public = _custom_public_identity(entry)
+    wanted = _fold_radio_identity((vendor, model, variant))
+    actual = _fold_radio_identity(public)
+
+    score = 0
+
+    # Exact displayed identity.
+    if actual == wanted:
+        score = 700
+
+    # Same radio, changed driver/firmware variant string.
+    if actual and actual[:2] == wanted[:2]:
+        score = max(score, 650)
+
+    old_vendor = _normalized_radio_token(vendor)
+    old_model = _normalized_radio_token(model)
+    new_vendor = _normalized_radio_token(public[0])
+    new_model = _normalized_radio_token(public[1])
+
+    # Current driver retained the same executable class name.
+    old_class = str(
+        metadata.get("pocketchirp_custom_driver_class")
+        or metadata.get("rclass") or "").strip()
+    new_class = str(entry.get("class") or "").strip()
+    if (old_class and new_class and old_class == new_class
+            and old_vendor and new_vendor and old_vendor == new_vendor):
+        score = max(score, 625)
+
+    # A driver update may move firmware/edition text between MODEL and VARIANT,
+    # e.g. UV-K5 <-> UV-K5 VUURWERK or MD-UV390 <-> MD-UV390 FAST v6.
+    if old_vendor and new_vendor and old_vendor == new_vendor:
+        if old_model and new_model and old_model == new_model:
+            score = max(score, 620)
+        elif (old_model and new_model
+              and (old_model.startswith(new_model)
+                   or new_model.startswith(old_model))):
+            score = max(score, 560)
+
+    if selected_key and str(entry.get("key") or "") == str(selected_key):
+        # Selection is only a tie-breaker among metadata-compatible candidates.
+        if score > 0:
+            score += 50
+
+    return score
+
+
+def _fast_metadata_migration_entry(metadata):
+    """Resolve metadata to ONE current parser without probing the full catalog.
+
+    No match_model(), constructor, get_features(), or temp-file work occurs in
+    this function. That is intentional: the previous broad probing path caused
+    long image-load stalls and could choose a parser which merely constructed
+    successfully but produced empty channels.
+    """
+    _ensure_radio_catalog()
+    if not metadata:
         return None
 
-    selected = _radio_catalog_by_key.get(_selected_radio_key) if _selected_radio_key else None
-    if (selected and (selected.get("customDriver") or selected.get("kind") == "custom")
-            and _fold_radio_identity(_custom_public_identity(selected)) == wanted):
-        return selected
+    selected_key = str(_selected_radio_key or "")
+    ranked = []
 
-    matches = [
-        entry for entry in (_radio_catalog_cache or {}).get("radios", [])
-        if (entry.get("customDriver") or entry.get("kind") == "custom")
-        and _fold_radio_identity(_custom_public_identity(entry)) == wanted
-    ]
-    return matches[0] if len(matches) == 1 else None
+    for entry in (_radio_catalog_cache or {}).get("radios", []):
+        score = _fast_image_metadata_score(entry, metadata, selected_key)
+        if score <= 0:
+            continue
+
+        # Prefer canonical current driver rows over compatibility labels only
+        # after identity score has been established.
+        kind = str(entry.get("kind") or "")
+        kind_rank = {
+            "driver": 0,
+            "custom": 1,
+            "map-alias": 2,
+        }.get(kind, 3)
+
+        backend_id = (
+            str(entry.get("module") or ""),
+            str(entry.get("class") or ""),
+        )
+        ranked.append((score, kind_rank, str(entry.get("key") or ""),
+                       backend_id, entry))
+
+    if not ranked:
+        return None
+
+    # Collapse visible aliases which point to the same catalog backend strings.
+    best_by_backend = {}
+    for item in ranked:
+        score, kind_rank, key, backend_id, entry = item
+        current = best_by_backend.get(backend_id)
+        if current is None:
+            best_by_backend[backend_id] = item
+            continue
+        if (-score, kind_rank, key) < (-current[0], current[1], current[2]):
+            best_by_backend[backend_id] = item
+
+    ranked = list(best_by_backend.values())
+    ranked.sort(key=lambda item: (-item[0], item[1], item[2]))
+
+    best_score = ranked[0][0]
+    best = [item for item in ranked if item[0] == best_score]
+
+    if len(best) == 1:
+        return best[0][4]
+
+    # An explicit current selection may break a genuine same-score tie.
+    if selected_key:
+        selected = [
+            item[4] for item in best
+            if str(item[4].get("key") or "") == selected_key
+        ]
+        if len(selected) == 1:
+            return selected[0]
+
+    # Do not choose by catalog order when two genuinely different parsers are
+    # equally plausible.
+    return None
+
+
+def _raw_custom_match_entry(raw):
+    """Fast auto-match for runtime custom drivers on raw/no-metadata images.
+
+    Runtime custom drivers are intentionally outside CHIRP's global directory,
+    so scan ONLY the small custom-driver table, never the full 700+ catalog.
+    """
+    raw = bytes(raw or b"")
+    if not raw:
+        return None
+
+    candidates = []
+    seen = set()
+    for entry in (_custom_driver_entries or {}).values():
+        key = str(entry.get("key") or "")
+        if not key:
+            continue
+        if not _entry_structurally_matches_image(entry, raw):
+            continue
+        backend_id = (
+            str(entry.get("module") or ""),
+            str(entry.get("class") or ""),
+        )
+        if backend_id in seen:
+            continue
+        seen.add(backend_id)
+        candidates.append(entry)
+
+    if not candidates:
+        return None
+
+    selected_key = str(_selected_radio_key or "")
+    if selected_key:
+        selected = [
+            entry for entry in candidates
+            if str(entry.get("key") or "") == selected_key
+        ]
+        if len(selected) == 1:
+            return selected[0]
+
+    return candidates[0] if len(candidates) == 1 else None
+
+
+def _replacement_entry_for_stale_custom_metadata(metadata, raw, data=None):
+    """Resolve obsolete driver provenance without broad parser probing.
+
+    For metadata-bearing images, metadata is the radio identity. We first choose
+    a single current same-radio catalog row using cheap identity matching. The
+    chosen class is instantiated exactly once by the caller.
+
+    For raw/no-metadata images, only runtime custom drivers are match_model()
+    scanned here; bundled CHIRP drivers remain owned by CHIRP's normal detector.
+    """
+    if metadata:
+        return _fast_metadata_migration_entry(metadata)
+    return _raw_custom_match_entry(raw)
+
+
+def _custom_entry_for_image_metadata(metadata, raw=None, data=None):
+    """Resolve only PocketCHIRP custom provenance (plus raw custom match).
+
+    Standard CHIRP metadata deliberately returns None here so
+    directory.get_radio_by_image() gets first chance, exactly like the older
+    fast working loader. Migration is attempted only if CHIRP later fails.
+    """
+    raw = bytes(raw or b"")
+
+    if not metadata:
+        return _raw_custom_match_entry(raw)
+
+    exact_key = str(
+        metadata.get("pocketchirp_custom_driver_key") or "").strip()
+    if not exact_key:
+        return None
+
+    # Exact currently-loaded custom driver wins immediately. SHA/class metadata
+    # is provenance; updated code under the same current identity may still open
+    # the old bytes.
+    entry = _custom_driver_entries.get(exact_key)
+    if entry is not None:
+        return entry
+
+    # Custom driver was replaced, renamed, or became bundled.
+    return _fast_metadata_migration_entry(metadata)
+
+
+def _simple_image_metadata_entry(metadata):
+    """Resolve saved-image metadata to ONE current catalog row.
+
+    This intentionally mirrors PocketCHIRP's older fast image loader:
+    metadata chooses the parser directly. There is no full-catalog parser
+    probing, match_model sweep, constructor probing, or previous-radio fallback.
+
+    Order:
+      1. exact current PocketCHIRP custom-driver key, when present;
+      2. exact vendor/model/variant catalog identity;
+      3. unique current vendor/model identity when only the variant changed.
+    """
+    _ensure_radio_catalog()
+    metadata = metadata or {}
+
+    exact_key = str(
+        metadata.get("pocketchirp_custom_driver_key") or "").strip()
+    if exact_key:
+        exact_custom = _custom_driver_entries.get(exact_key)
+        if exact_custom is not None:
+            return exact_custom
+
+    direct = _entry_for_metadata(metadata)
+    if direct is not None:
+        return direct
+
+    vendor = str(metadata.get("vendor") or "").strip()
+    model = str(metadata.get("model") or "").strip()
+    if not vendor or not model:
+        return None
+
+    wanted_vm = (
+        vendor.casefold(),
+        model.casefold(),
+    )
+
+    # A newer driver may only have changed VARIANT. Collapse visible aliases
+    # which still point at the same catalog backend strings.
+    by_backend = {}
+    for entry in (_radio_catalog_cache or {}).get("radios", []):
+        actual_vm = (
+            str(entry.get("vendor") or "").strip().casefold(),
+            str(entry.get("model") or "").strip().casefold(),
+        )
+        if actual_vm != wanted_vm:
+            continue
+
+        backend_id = (
+            str(entry.get("module") or ""),
+            str(entry.get("class") or ""),
+        )
+        current = by_backend.get(backend_id)
+        if current is None:
+            by_backend[backend_id] = entry
+            continue
+
+        # Prefer the canonical normal driver row over aliases/custom display rows.
+        rank = {"driver": 0, "custom": 1, "map-alias": 2}
+        old_rank = rank.get(str(current.get("kind") or ""), 9)
+        new_rank = rank.get(str(entry.get("kind") or ""), 9)
+        if (new_rank, str(entry.get("key") or "")) < (
+                old_rank, str(current.get("key") or "")):
+            by_backend[backend_id] = entry
+
+    candidates = list(by_backend.values())
+    return candidates[0] if len(candidates) == 1 else None
+
 
 def _radio_from_exact_class_image_bytes(cls, data):
     """Instantiate one already-resolved CHIRP class from saved image bytes."""
@@ -8182,62 +8623,128 @@ def _radio_from_exact_class_image_bytes(cls, data):
                 pass
 
 
+def _radio_from_selected_image_bytes(data):
+    """Open bytes with EXACTLY the currently selected radio driver.
+
+    Load Image must never auto-detect, migrate, or reuse a different radio.
+    The user-selected Vendor/Radio is authoritative for parsing the image.
+    """
+    data = bytes(data or b"")
+    if not data:
+        raise ValueError("No radio image bytes were supplied")
+    if not _selected_radio_key or _selected_radio_class is None:
+        raise ValueError(
+            "Select the correct Vendor and Radio before loading an image.")
+    if _is_live_snapshot_bytes(data):
+        return _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
+    return _radio_from_exact_class_image_bytes(_selected_class(), data)
+
+
 def _radio_from_image_bytes(image_bytes=None):
     data = _last_image_bytes if image_bytes is None else image_bytes
     if not data:
         raise ValueError("No working radio image is loaded")
 
+    # The current editor working image always belongs to the user-selected
+    # parser. Explicit foreign/source bytes (e.g. DMR transfer source) retain
+    # the existing external-image identification path below.
+    if image_bytes is None:
+        return _radio_from_selected_image_bytes(data)
+
     if _is_live_snapshot_bytes(data):
         return _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
 
-    # Custom drivers are intentionally NOT left in CHIRP's global directory
-    # registry.  Reopen a custom image with the exact registered custom class
-    # before falling back to CHIRP's normal image detector.  This is critical for
-    # post-read editor projection: the physical clone may succeed while the
-    # bundled detector chooses a different/base class and yields empty or wrong
-    # memories (for example UV-K5 VUURWERK).
-    _, metadata = _metadata_for_image(data)
-    custom_entry = _custom_entry_for_image_metadata(metadata)
+    raw, metadata = _metadata_for_image(data)
+
+    # Runtime custom provenance/raw custom match is the only pre-CHIRP branch.
+    custom_entry = _custom_entry_for_image_metadata(metadata, raw, data)
     if custom_entry is not None:
         return _radio_from_exact_class_image_bytes(
             _find_loaded_radio_class(custom_entry), data)
 
-    # Bundled drivers retain the newer CHIRP-native ownership/detection path,
-    # preserving aliases, MODEL_COMPAT, match_model(), and detected-only classes.
-    return _chirp_radio_from_image_bytes(data)
+    # NORMAL FAST PATH: let CHIRP open standard images using its own metadata /
+    # detection machinery before PocketCHIRP attempts any migration.
+    try:
+        return _chirp_radio_from_image_bytes(data)
+    except Exception as auto_exc:
+        pass
+
+    # Driver identity changed since this image was saved. Resolve ONE candidate
+    # from metadata, then instantiate that class exactly once.
+    migrated = _fast_metadata_migration_entry(metadata)
+    if migrated is not None:
+        try:
+            return _radio_from_exact_class_image_bytes(
+                _find_loaded_radio_class(migrated), data)
+        except Exception:
+            # Fall through to an explicit user selection, if any.
+            pass
+
+    # Never reinterpret an unknown image with whatever radio happened to be
+    # selected previously. If metadata/current custom provenance and CHIRP's own
+    # detector cannot identify it, fail cleanly instead of making an assumption.
+    raise auto_exc
+
 
 
 def load_editor_image_bytes(data):
     global _selected_radio_key, _selected_radio_class
+    global _last_image_bytes, _last_raw_bytes, _last_hash_info
 
     data = bytes(data or b"")
     if not data:
         raise ValueError("No radio image bytes were supplied")
 
-    if _is_live_snapshot_bytes(data):
-        _, metadata = _metadata_for_image(data)
-        entry = _entry_for_metadata(metadata)
-        radio = _PocketChirpLiveSnapshotRadio(_live_snapshot_decode(data))
-    else:
-        _, metadata = _metadata_for_image(data)
-        custom_entry = _custom_entry_for_image_metadata(metadata)
-        if custom_entry is not None:
-            radio = _radio_from_exact_class_image_bytes(
-                _find_loaded_radio_class(custom_entry), data)
-            entry = custom_entry
-        else:
-            radio = _chirp_radio_from_image_bytes(data)
-            entry = _entry_for_radio_runtime(radio, metadata)
+    # Any failed load is transactional. A bad image must not poison the next
+    # attempt or leave a newly-selected parser behind.
+    old_key = _selected_radio_key
+    old_class = _selected_radio_class
+    old_image = _last_image_bytes
+    old_raw = _last_raw_bytes
+    old_hash = _last_hash_info
 
-    # Keep the chooser on CHIRP's visible manager/marketed alias. For custom
-    # images, preserve the exact loaded custom entry selected above.
-    if entry is not None:
+    try:
+        if _is_live_snapshot_bytes(data):
+            _, metadata = _metadata_for_image(data)
+            entry = _simple_image_metadata_entry(metadata)
+            radio = _PocketChirpLiveSnapshotRadio(
+                _live_snapshot_decode(data))
+        else:
+            _, metadata = _metadata_for_image(data)
+
+            # ORIGINAL SIMPLE FAST PATH:
+            # Saved metadata names one current parser. Instantiate that class
+            # exactly once. No 700-driver scan and no previous-radio fallback.
+            entry = _simple_image_metadata_entry(metadata)
+            if entry is not None:
+                radio = _radio_from_exact_class_image_bytes(
+                    _find_loaded_radio_class(entry), data)
+            else:
+                # Legacy/raw images without usable metadata still get CHIRP's
+                # own authoritative image detector, just as desktop CHIRP does.
+                radio = _chirp_radio_from_image_bytes(data)
+                entry = _entry_for_radio_runtime(radio, metadata)
+
+        if entry is None:
+            raise ValueError(
+                "The image parser was identified, but no unique current "
+                "PocketCHIRP radio entry matches it.")
+
+        # Loading an image is the one operation allowed to update the visible
+        # Vendor/Radio from the image identity. This is NOT a write target guess.
         _selected_radio_key = entry["key"]
         _selected_radio_class = _find_loaded_radio_class(entry)
 
-    _save_working_radio(radio)
-    return pocketchirp_radio_document_json()
+        _save_working_radio(radio)
+        return pocketchirp_radio_document_json()
 
+    except Exception:
+        _selected_radio_key = old_key
+        _selected_radio_class = old_class
+        _last_image_bytes = old_image
+        _last_raw_bytes = old_raw
+        _last_hash_info = old_hash
+        raise
 
 
 
@@ -8309,7 +8816,7 @@ def materialize_editor_edits_bytes(base_image_bytes, edit_bundle_bytes):
 
         # CHIRP's image loader determines the parser/runtime class. The
         # proprietary app's selected write target remains untouched.
-        radio = _radio_from_image_bytes(base)
+        radio = _radio_from_selected_image_bytes(base)
         _save_working_radio(radio)
 
         allowed = {
@@ -8447,7 +8954,7 @@ def controlled_write_current_once_bytes(java_transport, image_bytes, transport_c
 
     # The image's CHIRP runtime class owns upload. For detected-only subclasses
     # this is intentionally different from the visible chooser manager.
-    radio = _radio_from_image_bytes(image_bytes)
+    radio = _radio_from_selected_image_bytes(image_bytes)
     cls = radio.__class__
     raw_before, _ = _metadata_for_image(image_bytes)
     expected_hash = hashlib.sha256(raw_before).hexdigest()
@@ -8464,7 +8971,7 @@ def controlled_write_current_once_bytes(java_transport, image_bytes, transport_c
     _enforce_ble_write_requirements(cls, pipe, radio, transport_context_json)
     radio.pipe = pipe
     _status_callback(radio, java_transport)
-    radio.sync_out()
+    _run_sync_out_with_diagnostic_guard(radio, java_transport)
 
     return (
         "CONTROLLED WRITE COMPLETE\n"
@@ -8724,11 +9231,7 @@ def _editor_memory_target_from_data(root_radio, data):
     is_special = bool(data.get("special", False)) or ":special:" in memory_id or memory_id.startswith("special:")
     if not is_special:
         # Stable sub-device identity must win over flattened display numbering.
-        # Flattened offsets can legitimately move while a multi-record edit adds
-        # contacts/groups/zones/scans and expands a child view's visible bounds.
-        # Using the view:N:number:M id keeps every queued edit bound to the exact
-        # destination sub-device/native slot. This is generic editor plumbing,
-        # not DMR-specific policy.
+        # Flattened offsets can move while multi-record edits expand a child view.
         if memory_id.startswith("view:") and ":number:" in memory_id:
             return _editor_memory_target_from_id(root_radio, memory_id)
         display_n = int(data["number"])
@@ -9484,6 +9987,7 @@ _POCKETCHIRP_ENGINE_RPC_OPERATIONS = frozenset({
         "unregister_custom_driver_runtime_json",
         "select_radio",
     "apply_import_candidates_json",
+    "radio_catalog_bootstrap_json",
     "radio_catalog_json",
     "pocketchirp_bridge_revision",
     "pocketchirp_bridge_compat_version",
@@ -9567,7 +10071,6 @@ def pocketchirp_radio_constraints_json():
         "validBandsHz": bands,
         "validModes": [str(x) for x in list(getattr(rf, "valid_modes", []) or [])],
         "nameLength": int(getattr(rf, "valid_name_length", 0) or 0),
-        "validCharacters": _feature_valid_characters_text(rf),
     }, separators=(",", ":"))
 
 
@@ -9800,19 +10303,10 @@ def _neutral_constraints_for_views(root_radio, views):
 
     low = min((v[1] for v in views), default=0)
     high = max((v[2] for v in views), default=-1)
-    name_charsets = [
-        _feature_valid_characters_text(v[0].get_features()) for v in views
-    ]
-    common_name_charset = (
-        name_charsets[0]
-        if name_charsets and all(value == name_charsets[0] for value in name_charsets)
-        else ""
-    )
     return {
         "nameLength": max([_safe_int(_safe_attr(v[0].get_features(),
                                                 "valid_name_length", 0), 0)
                            for v in views] or [0]),
-        "validCharacters": common_name_charset,
         "modes": [str(x) for x in union_feature("valid_modes")],
         "tmodes": [str(x) for x in union_feature("valid_tmodes")],
         "duplexes": [str(x) for x in union_feature("valid_duplexes")],
@@ -9845,6 +10339,86 @@ def _neutral_constraints_for_views(root_radio, views):
     }
 
 
+def _enforce_pocketchirp_editor_contract(root_radio, doc):
+    """Fail loudly when a driver-declared editor surface is incomplete.
+
+    This is opt-in. Ordinary CHIRP drivers without POCKETCHIRP_REQUIRED_* class
+    declarations are completely unaffected. PocketCHIRP-specific drivers can use
+    the contract to prevent a transport-success/editor-projection failure from
+    masquerading as a successful memories-only read.
+    """
+    required_settings_min = _safe_int(
+        _safe_attr(root_radio, "POCKETCHIRP_REQUIRED_SETTINGS_MIN", 0), 0)
+    required_groups = tuple(_safe_attr(
+        root_radio, "POCKETCHIRP_REQUIRED_SETTING_GROUPS", ()) or ())
+    required_subdevices = tuple(_safe_attr(
+        root_radio, "POCKETCHIRP_REQUIRED_SUBDEVICES", ()) or ())
+    required_channel_extras = tuple(_safe_attr(
+        root_radio, "POCKETCHIRP_REQUIRED_CHANNEL_EXTRAS", ()) or ())
+
+    if not (required_settings_min or required_groups or required_subdevices
+            or required_channel_extras):
+        return
+
+    settings = list(doc.get("settings") or [])
+    settings_error = str(doc.get("settingsError") or "").strip()
+    if settings_error:
+        raise ValueError("Driver settings projection failed: " + settings_error)
+    if required_settings_min and len(settings) < required_settings_min:
+        raise ValueError(
+            "Driver editor contract incomplete: expected at least %d radio-setting "
+            "values, got %d." % (required_settings_min, len(settings)))
+
+    if required_groups:
+        actual_groups = set()
+        for row in settings:
+            group = str(row.get("group") or "").strip()
+            if group:
+                actual_groups.add(group)
+            for value in row.get("groupPath") or []:
+                value = str(value or "").strip()
+                if value:
+                    actual_groups.add(value)
+        missing = [str(x) for x in required_groups if str(x) not in actual_groups]
+        if missing:
+            raise ValueError(
+                "Driver editor contract incomplete: missing radio-setting group(s): "
+                + ", ".join(missing))
+
+    subdevices = list(doc.get("subDevices") or [])
+    if required_subdevices:
+        actual_subdevices = {
+            str(row.get("variant") or "").strip() for row in subdevices
+        }
+        missing = [str(x) for x in required_subdevices
+                   if str(x) not in actual_subdevices]
+        if missing:
+            raise ValueError(
+                "Driver editor contract incomplete: missing DMR/codeplug section(s): "
+                + ", ".join(missing))
+
+    if required_channel_extras:
+        channel_indexes = {
+            _safe_int(row.get("index"), -1)
+            for row in subdevices
+            if str(row.get("variant") or "").strip() == "Channels"
+        }
+        extra_names = set()
+        for row in doc.get("memories") or []:
+            if _safe_int(row.get("subDeviceIndex"), -2) not in channel_indexes:
+                continue
+            for extra in row.get("extraFields") or []:
+                name = str(extra.get("name") or "").strip()
+                if name:
+                    extra_names.add(name)
+        missing = [str(x) for x in required_channel_extras
+                   if str(x) not in extra_names]
+        if missing:
+            raise ValueError(
+                "Driver editor contract incomplete: missing digital-channel field(s): "
+                + ", ".join(missing))
+
+
 def pocketchirp_radio_document_json():
     """Export the current CHIRP image directly as neutral Radio Document v1.
 
@@ -9874,12 +10448,11 @@ def pocketchirp_radio_document_json():
     sub_devices = []
 
     def export_native_numbers(view, nlo, nhi):
-        """Return the native rows which need materializing in the neutral document.
+        """Return native rows which need materializing in the neutral document.
 
         Drivers may optionally provide pocketchirp_export_native_numbers() to avoid
-        serializing thousands of unused creation slots. The advertised CHIRP
-        memory_bounds remain unchanged, so the app can still synthesize targets
-        anywhere inside the driver's real/editor capacity.
+        serializing thousands of unused creation slots. Advertised CHIRP bounds stay
+        unchanged, so editing/import logic can still target the driver's full capacity.
         """
         hook = getattr(view, "pocketchirp_export_native_numbers", None)
         if callable(hook):
@@ -9908,7 +10481,6 @@ def pocketchirp_radio_document_json():
             "displayBounds": [dlo, dhi],
             "nativeBounds": [nlo, nhi],
             "validBandsHz": [[int(lo), int(hi)] for lo, hi in bands],
-            "validCharacters": _feature_valid_characters_text(vrf),
             "integritySensitive": _subdevice_integrity_sensitive(root_radio),
             "specialChannels": specials,
         })
@@ -9946,15 +10518,6 @@ def pocketchirp_radio_document_json():
                 }
             memories.append(_neutral_memory_document_row(row))
 
-    # Do not use RadioFeatures.has_settings as a hard gate. Custom/derived
-    # drivers can legitimately inherit a working get_settings() implementation
-    # while carrying stale or incomplete feature metadata. The actual driver
-    # settings tree is the authoritative capability signal for a detached clone
-    # image. _settings_list() is tolerant and returns [] when unsupported.
-    settings_rows = _settings_list(root_radio)
-    if settings_rows:
-        constraints["hasSettings"] = True
-
     doc = {
         "schemaVersion": 1,
         "loaded": True,
@@ -9964,7 +10527,8 @@ def pocketchirp_radio_document_json():
             "variant": str(_safe_attr(root_radio, "VARIANT", "") or ""),
         },
         "memories": memories,
-        "settings": settings_rows,
+        "settings": _settings_list(root_radio) if constraints["hasSettings"] else [],
+        "settingsError": str(getattr(root_radio, "_pocketchirp_settings_error", "") or ""),
         "banks": [] if len(views) > 1 else _bank_state_for_radio(
             root_radio, (views[0][0] if views else root_radio).get_features()),
         "constraints": constraints,
@@ -9975,4 +10539,5 @@ def pocketchirp_radio_document_json():
             "selectedRadioKey": _selected_radio_key,
         },
     }
+    _enforce_pocketchirp_editor_contract(root_radio, doc)
     return _json.dumps(doc, separators=(",", ":"))

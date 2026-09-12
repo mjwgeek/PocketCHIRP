@@ -28,18 +28,16 @@
         android:usesCleartextTraffic="false">
 
         <!--
-          Launcher stub only. The Engine has no standalone user interface.
-          If launched directly, EngineInfoActivity immediately finishes and
-          removes its task without starting or changing the CHIRP Engine service.
-
-          The launcher remains present so the companion APK retains a normal
-          launchable Play Store-visible application entry.
+          Launcher information screen only. The Engine remains a companion/service
+          APK and has no standalone radio-programming interface. Direct launches
+          show a minimal explanation and Close button without starting, stopping,
+          binding, or otherwise changing the CHIRP Engine service.
         -->
         <activity
             android:name=".EngineInfoActivity"
             android:exported="true"
             android:label="PocketCHIRP CHIRP Engine"
-            android:theme="@android:style/Theme.NoDisplay"
+            android:theme="@android:style/Theme.Material.Light.NoActionBar"
             android:noHistory="true"
             android:excludeFromRecents="true">
             <intent-filter>

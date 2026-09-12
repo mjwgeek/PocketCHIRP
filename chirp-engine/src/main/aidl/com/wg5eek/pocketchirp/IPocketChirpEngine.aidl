@@ -30,7 +30,7 @@ interface IPocketChirpEngine {
      * the resulting concrete CHIRP image back. No radio hardware is touched.
      */
     ParcelFileDescriptor materializeEditorEdits(in ParcelFileDescriptor baseImage,
-                                                 in ParcelFileDescriptor editBundle);
+                                                in ParcelFileDescriptor editBundle);
 
     String registerCustomDriver(in ParcelFileDescriptor source,
                                 String filename,

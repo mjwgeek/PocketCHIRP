@@ -3,7 +3,7 @@ plugins {
     id 'com.chaquo.python'
 }
 
-// PocketCHIRP CHIRP Engine 2.0.5 - public corresponding-source build.
+// PocketCHIRP CHIRP Engine 2.0.2 - RELEASE build.
 //
 // IMPORTANT:
 // This is the MODULE build file:
@@ -28,8 +28,20 @@ if (!(chirpCommit ==~ /[0-9a-fA-F]{40}/)) {
 def vendoredChirpDir = file('src/main/python/chirp')
 def vendoredCommitFile = file('third_party/chirp/UPSTREAM_COMMIT.txt')
 
-// Release signing is intentionally not part of the public source tree.
-// Build an unsigned APK/AAB from source, or supply your own signing configuration.
+// Release signing values are stored in the PROJECT ROOT local.properties.
+def localProps = new java.util.Properties()
+def localPropsFile = rootProject.file('local.properties')
+if (localPropsFile.exists()) {
+    localPropsFile.withInputStream { localProps.load(it) }
+}
+
+def releaseStorePassword =
+        (localProps.getProperty('POCKETCHIRP_RELEASE_STORE_PASSWORD') ?: '').trim()
+
+def releaseKeyPassword =
+        (localProps.getProperty('POCKETCHIRP_RELEASE_KEY_PASSWORD') ?: '').trim()
+
+def releaseKeystore = file('C:/Users/xtrem/Documents/Android Keys/PocketCHIRP-upload')
 
 android {
     namespace = 'com.wg5eek.pocketchirp.engine'
@@ -45,19 +57,30 @@ android {
         targetSdk 36
 
         // Previous Google Play Engine build was versionCode 3.
-        versionCode 18
-        versionName '2.0.5'
+        versionCode 27
+        versionName '2.0.8'
 
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
     }
 
+    signingConfigs {
+        release {
+            storeFile releaseKeystore
+            storePassword releaseStorePassword
+            keyAlias 'pocketchirp-upload'
+            keyPassword releaseKeyPassword
+        }
+    }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
         }
     }
 
@@ -74,6 +97,26 @@ chaquopy {
 
         // CHIRP and bridge.py are packaged directly from the LOCAL engine tree.
         // There is intentionally no pip/Git/GitHub dependency here.
+    }
+}
+
+tasks.register('verifyReleaseSigning') {
+    doLast {
+        if (!releaseKeystore.exists()) {
+            throw new GradleException(
+                    "PocketCHIRP release keystore not found: ${releaseKeystore}"
+            )
+        }
+        if (releaseStorePassword.isEmpty()) {
+            throw new GradleException(
+                    'Missing POCKETCHIRP_RELEASE_STORE_PASSWORD in root local.properties'
+            )
+        }
+        if (releaseKeyPassword.isEmpty()) {
+            throw new GradleException(
+                    'Missing POCKETCHIRP_RELEASE_KEY_PASSWORD in root local.properties'
+            )
+        }
     }
 }
 
@@ -135,4 +178,86 @@ tasks.register('verifyVendoredChirp') {
 // Normal development builds use the already-vendored local files directly.
 tasks.matching { it.name == 'preReleaseBuild' }.configureEach {
     dependsOn('verifyVendoredChirp')
+    dependsOn('verifyReleaseSigning')
+}
+
+// ---------------------------------------------------------------------------
+// FAST FIRST-LAUNCH RADIO CATALOG
+// ---------------------------------------------------------------------------
+// Generate a neutral chooser catalog into the GPL Engine's Python package at
+// build time. Runtime radio operations still use bridge.radio_catalog_json(),
+// which remains authoritative and imports/registers CHIRP normally.
+def prebuiltCatalogFile = file('src/main/python/prebuilt_radio_catalog.json')
+def catalogGenerator = file('tools/generate-radio-catalog.py')
+
+tasks.register('generatePrebuiltRadioCatalog') {
+    inputs.file(catalogGenerator)
+    inputs.file(file('src/main/python/bridge.py'))
+    inputs.dir(vendoredChirpDir)
+    inputs.property('chirpCommit', chirpCommit)
+    outputs.file(prebuiltCatalogFile)
+
+    doLast {
+        if (!catalogGenerator.isFile()) {
+            throw new GradleException('Missing chirp-engine/tools/generate-radio-catalog.py')
+        }
+
+        def isWindows = System.getProperty('os.name', '')
+                .toLowerCase(java.util.Locale.ROOT)
+                .contains('windows')
+        def candidates = isWindows
+                ? [['py', '-3'], ['python'], ['python3']]
+                : [['python3'], ['python']]
+
+        Exception lastFailure = null
+        boolean generated = false
+
+        for (def prefix : candidates) {
+            try {
+                def command = []
+                command.addAll(prefix)
+                command.add(catalogGenerator.absolutePath)
+                command.add('--python-root')
+                command.add(file('src/main/python').absolutePath)
+                command.add('--output')
+                command.add(prebuiltCatalogFile.absolutePath)
+                command.add('--chirp-commit')
+                command.add(chirpCommit)
+
+                def result = providers.exec {
+                    commandLine command
+                    ignoreExitValue = true
+                }.result.get()
+
+                if (result.exitValue == 0 && prebuiltCatalogFile.isFile()) {
+                    generated = true
+                    break
+                }
+            } catch (Exception e) {
+                lastFailure = e
+            }
+        }
+
+        if (!generated) {
+            throw new GradleException(
+                    'Could not generate the Engine prebuilt radio catalog. ' +
+                    'Install Python 3 on the build machine and ensure the vendored ' +
+                    'CHIRP tree can be imported.' +
+                    (lastFailure == null ? '' : ' Last error: ' + lastFailure.message)
+            )
+        }
+    }
+}
+
+// Inputs/outputs keep normal incremental builds fast: the catalog regenerates
+// only when bridge.py, the vendored CHIRP tree, generator, or CHIRP pin changes.
+tasks.matching { it.name == 'preDebugBuild' || it.name == 'preReleaseBuild' }.configureEach {
+    dependsOn('generatePrebuiltRadioCatalog')
+}
+
+// Chaquopy reads src/main/python when it merges Python sources. The generated
+// catalog is written into that same source tree, so Gradle 9.x requires the
+// merge task to declare the generator as an explicit dependency.
+tasks.matching { it.name == 'mergeDebugPythonSources' || it.name == 'mergeReleasePythonSources' }.configureEach {
+    dependsOn('generatePrebuiltRadioCatalog')
 }
