@@ -3,7 +3,7 @@ plugins {
     id 'com.chaquo.python'
 }
 
-// PocketCHIRP CHIRP Engine 2.0.2 - RELEASE build.
+// PocketCHIRP CHIRP Engine 2.0.8a - RELEASE build.
 //
 // IMPORTANT:
 // This is the MODULE build file:
