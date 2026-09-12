@@ -29,10 +29,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python scripts/discover_community_drivers.py
 
-      - name: Add official IJV drivers (best effort)
-        continue-on-error: true
-        run: python scripts/discover_ijv_official.py
-
       - name: Add version metadata
         run: python scripts/version_community_drivers.py
 
