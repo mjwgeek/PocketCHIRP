@@ -1,0 +1,45 @@
+name: CardputerCHIRP M1 Launcher Build
+
+on:
+  push:
+    branches:
+      - cardputer-chirp-m1-build
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout build branch
+        uses: actions/checkout@v4
+
+      - name: Reconstruct M1 source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat cardputer-chirp-m1-build/m1chunk_*.b64 > /tmp/CardputerCHIRP-M1.tar.gz.b64
+          base64 -d /tmp/CardputerCHIRP-M1.tar.gz.b64 > /tmp/CardputerCHIRP-M1.tar.gz
+          echo "425be19eabdc8d84fc553ea24d7aa4061516b212c962e456fb7295b8f4541b04  /tmp/CardputerCHIRP-M1.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/CardputerCHIRP-M1.tar.gz -C /tmp
+
+      - name: Install PlatformIO
+        run: python3 -m pip install --upgrade platformio
+
+      - name: Build Cardputer ADV app image
+        working-directory: /tmp/CardputerCHIRP-M1
+        run: |
+          set -euo pipefail
+          pio run -e cardputer-adv
+          test -f .pio/build/cardputer-adv/firmware.bin
+          cp .pio/build/cardputer-adv/firmware.bin "$GITHUB_WORKSPACE/CardputerCHIRP-M1.bin"
+          sha256sum "$GITHUB_WORKSPACE/CardputerCHIRP-M1.bin" | tee "$GITHUB_WORKSPACE/CardputerCHIRP-M1.bin.sha256"
+          ls -lh "$GITHUB_WORKSPACE/CardputerCHIRP-M1.bin"
+
+      - name: Upload Launcher-ready binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: CardputerCHIRP-M1-Launcher
+          path: |
+            CardputerCHIRP-M1.bin
+            CardputerCHIRP-M1.bin.sha256
+          if-no-files-found: error
