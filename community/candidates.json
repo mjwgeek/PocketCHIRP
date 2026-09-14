@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-13T14:25:40.090103Z",
-  "candidateCount": 107,
+  "generatedAt": "2026-09-14T16:24:17.534813Z",
+  "candidateCount": 108,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5954,6 +5954,48 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1643:chirp/drivers/retevis_rt18.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1643,
+      "pullRequestTitle": "retevis_rt18: Experimental Retevis RT18 driver",
+      "path": "chirp/drivers/retevis_rt18.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1643",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5fcf7fe83fbf5da266d431fc18cf8ec8dec6df93/chirp%2Fdrivers%2Fretevis_rt18.py",
+      "sha256": "12421e5febd56e6a05da06ca01b0f87469f620d33ca07acb9531cac68c429241",
+      "vendors": [
+        "Retevis"
+      ],
+      "models": [
+        "RT18"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RT18"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::retevis::rt18::retevis_rt18",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Retevis RT18",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6307,7 +6349,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 33,
+  "currentCount": 34,
   "historicalCount": 74,
   "versionedCount": 63
 }
