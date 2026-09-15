@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-14T16:24:17.534813Z",
+  "generatedAt": "2026-09-15T15:03:17.507205Z",
   "candidateCount": 108,
   "candidates": [
     {
@@ -5206,8 +5206,8 @@
       "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
       "path": "chirp/drivers/baofeng_5rh_pro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6c6ba7658b3d470f3c44dafd6379352b00edcee2/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
-      "sha256": "e0fd0f36f048b4754052f331e48068f7d1b98cb6c836cd98e8424d62b3a65dc1",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5a9398231b580e2125f0f2b8fa9ffa612f586b6e/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
+      "sha256": "bb8fcd7027e7b9cd03e673b0fa96c45f35e01bed70a3e0ee9c3477abc768b818",
       "vendors": [],
       "models": [
         "5RH Pro",
@@ -5338,6 +5338,182 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Alinco DJ-VX50",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1643:chirp/drivers/radtel_t18.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1643,
+      "pullRequestTitle": "retevis_rt18: Experimental Retevis RT18 driver",
+      "path": "chirp/drivers/radtel_t18.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1643",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/646f1ab950c747f7e84a81dbe798de8f8051b84c/chirp%2Fdrivers%2Fradtel_t18.py",
+      "sha256": "db550362cdf11d6fd04b7df6df04f48fbd1e0227af0d8006d7ba51b65b98bcda",
+      "vendors": [
+        "BTECH",
+        "Baofeng",
+        "Radtel",
+        "Retevis"
+      ],
+      "models": [
+        "BF-T20FRS",
+        "BF-V8A",
+        "FRS-B1",
+        "H777H_FRS",
+        "H777H_PMR",
+        "RB17",
+        "RB17V",
+        "RB18",
+        "RB19",
+        "RB19P",
+        "RB29",
+        "RB617",
+        "RB618",
+        "RB619",
+        "RB629",
+        "RB75",
+        "RB85",
+        "RB87",
+        "RT15",
+        "RT20",
+        "RT22S",
+        "RT47",
+        "RT47V",
+        "RT647",
+        "RT668",
+        "RT68",
+        "T18"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "T18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT20"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT22S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB618"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT68"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT668"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB617"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB85"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB75"
+        },
+        {
+          "vendor": "BTECH",
+          "model": "FRS-B1"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19P"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB619"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT647"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-V8A"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB29"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB629"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT15"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB87"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-T20FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_PMR"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|btech|radtel|retevis::bf-t20frs|bf-v8a|frs-b1|h777h_frs|h777h_pmr|rb17|rb17v|rb18|rb19|rb19p|rb29|rb617|rb618|rb619|rb629|rb75|rb85|rb87|rt15|rt20|rt22s|rt47|rt47v|rt647|rt668|rt68|t18::radtel_t18",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "BTECH, Baofeng, Radtel, Retevis BF-T20FRS, BF-V8A, FRS-B1, H777H_FRS, H777H_PMR, RB17, RB17V, RB18, RB19, RB19P, RB29, RB617, RB618, RB619, RB629, RB75, RB85, RB87, RT15, RT20, RT22S, RT47, RT47V, RT647, RT668, RT68, T18",
       "availableVersions": []
     },
     {
@@ -5951,48 +6127,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Retevis RB669",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1643:chirp/drivers/retevis_rt18.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1643,
-      "pullRequestTitle": "retevis_rt18: Experimental Retevis RT18 driver",
-      "path": "chirp/drivers/retevis_rt18.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1643",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5fcf7fe83fbf5da266d431fc18cf8ec8dec6df93/chirp%2Fdrivers%2Fretevis_rt18.py",
-      "sha256": "12421e5febd56e6a05da06ca01b0f87469f620d33ca07acb9531cac68c429241",
-      "vendors": [
-        "Retevis"
-      ],
-      "models": [
-        "RT18"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Retevis",
-          "model": "RT18"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::retevis::rt18::retevis_rt18",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Retevis RT18",
       "availableVersions": []
     },
     {
