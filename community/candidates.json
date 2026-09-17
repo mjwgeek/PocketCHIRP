@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-16T15:01:16.686133Z",
+  "generatedAt": "2026-09-17T15:03:01.766374Z",
   "candidateCount": 110,
   "candidates": [
     {
@@ -6049,93 +6049,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1645:chirp/drivers/tdh8.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1645,
-      "pullRequestTitle": "tdh8: Convert to `MemSetting` objects to reduce size and repetition",
-      "path": "chirp/drivers/tdh8.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1645",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f9d0508c95815bd27988459d90fd95c240188da8/chirp%2Fdrivers%2Ftdh8.py",
-      "sha256": "c139dd86cbf09cfb254fdc8db17a899887164e1c191985f087095bdd3f065502",
-      "vendors": [
-        "Radtel",
-        "TID",
-        "TIDRADIO"
-      ],
-      "models": [
-        "RT-730",
-        "TD-H3",
-        "TD-H3-GMRS",
-        "TD-H3-HAM",
-        "TD-H8",
-        "TD-H8-GMRS",
-        "TD-H8-HAM",
-        "TD-UV68"
-      ],
-      "variants": [
-        "G3"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H8"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H8-HAM"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H8-GMRS"
-        },
-        {
-          "vendor": "TID",
-          "model": "TD-UV68"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H3"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H3-HAM"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H3-GMRS"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-730"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H8",
-          "variant": "G3"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::radtel|tid|tidradio::rt-730|td-h3|td-h3-gmrs|td-h3-ham|td-h8|td-h8-gmrs|td-h8-ham|td-uv68::tdh8",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Radtel, TID, TIDRADIO RT-730, TD-H3, TD-H3-GMRS, TD-H3-HAM, TD-H8, TD-H8-GMRS, TD-H8-HAM, TD-UV68",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1537:chirp/drivers/retevis_h777d_pmr.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6456,6 +6369,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1646:chirp/drivers/ftm300d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1646,
+      "pullRequestTitle": "ftm300d: more settings",
+      "path": "chirp/drivers/ftm300d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1646",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2c8cee281a84a20d4da66b15e1df9e0b56328a50/chirp%2Fdrivers%2Fftm300d.py",
+      "sha256": "443b2c545ce3c8553f7063bd647ff661176cfac3df259b80d8acf09dbecf78c0",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FTM-300DR"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FTM-300DR"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::yaesu::ftm-300dr::ftm300d",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Yaesu FTM-300DR",
       "availableVersions": []
     },
     {
