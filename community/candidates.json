@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-17T15:03:01.766374Z",
-  "candidateCount": 110,
+  "generatedAt": "2026-09-18T14:32:51.175561Z",
+  "candidateCount": 111,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5011,12 +5011,112 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v2.0.1/Gogufw_2.0.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.0.1/Gogufw_2.0.1_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "path": "GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "sha256": "c0529b4fcc19ae269bb06f30f6c004436c4c8dfb5e8b738e8b8a7137169f74aa",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "2.0.3"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "2.0.3"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "2.0.3",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.3",
+      "availableVersions": [
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "sha256": "4c5d88bb44d930e986a1dfc83a4fc8ec7477a73e840267992afdb078fd955796",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "2.0.2"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "2.0.2"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "2.0.2",
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.2",
+      "availableVersions": [
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.1/Gogufw_2.0.1_chirp_module.py",
       "sha256": "15cd1803d578248f9b20c41e334d0da4af149425adf83848435be0bdba923a43",
       "vendors": [
         "Quansheng"
@@ -5046,13 +5146,15 @@
       ],
       "status": "needs-review",
       "version": "2.0.1",
-      "historical": false,
-      "releaseTier": "current",
+      "historical": true,
+      "releaseTier": "historical",
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
-      "latestInFamily": true,
-      "recommended": true,
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.1",
       "availableVersions": [
+        "2.0.3",
+        "2.0.2",
         "2.0.1",
         "2.0.0",
         "1.3.0"
@@ -5101,6 +5203,8 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.0",
       "availableVersions": [
+        "2.0.3",
+        "2.0.2",
         "2.0.1",
         "2.0.0",
         "1.3.0"
@@ -5149,6 +5253,8 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
       "availableVersions": [
+        "2.0.3",
+        "2.0.2",
         "2.0.1",
         "2.0.0",
         "1.3.0"
@@ -5574,7 +5680,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/76b1386a541a7a1680a595e23a0bec11a9bfce58/chirp%2Fdrivers%2Fth_uv88.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1484fdc20a42fa6524c67540ea74fdbea997a9f4/chirp%2Fdrivers%2Fth_uv88.py",
       "sha256": "9f92427788def68118fe5eb96a3a030d8f66586908f039bea23327f45961fab6",
       "vendors": [
         "Explorer",
@@ -6102,7 +6208,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/76b1386a541a7a1680a595e23a0bec11a9bfce58/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1484fdc20a42fa6524c67540ea74fdbea997a9f4/chirp%2Fdrivers%2Fretevis_ra89r.py",
       "sha256": "0f964fbced1c2f656d7730470e7ac1a95b6587f670fbfe5135cf0ca16fc45f83",
       "vendors": [
         "Retevis"
@@ -6372,49 +6478,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1646:chirp/drivers/ftm300d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1646,
-      "pullRequestTitle": "ftm300d: more settings",
-      "path": "chirp/drivers/ftm300d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1646",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2c8cee281a84a20d4da66b15e1df9e0b56328a50/chirp%2Fdrivers%2Fftm300d.py",
-      "sha256": "443b2c545ce3c8553f7063bd647ff661176cfac3df259b80d8acf09dbecf78c0",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FTM-300DR"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FTM-300DR"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ftm-300dr::ftm300d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FTM-300DR",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "repo:mjwgeek/Radioddity-GD-73a:gd73.py",
       "type": "repository-file",
       "repository": "mjwgeek/Radioddity-GD-73a",
@@ -6576,7 +6639,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 35,
-  "historicalCount": 75,
-  "versionedCount": 64
+  "currentCount": 34,
+  "historicalCount": 77,
+  "versionedCount": 66
 }
