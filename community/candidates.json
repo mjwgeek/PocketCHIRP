@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-18T14:32:51.175561Z",
+  "generatedAt": "2026-09-19T13:56:48.131080Z",
   "candidateCount": 111,
   "candidates": [
     {
@@ -5011,12 +5011,63 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "path": "GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "sha256": "474f3ae9d3ada26bb6c3310750edb07dc20bc8591a6c4da1e1a5885c345b6ae9",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "2.0.5"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "2.0.5"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "2.0.5",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.5",
+      "availableVersions": [
+        "2.0.5",
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.3/Gogufw_2.0.3_chirp_module.py",
       "sha256": "c0529b4fcc19ae269bb06f30f6c004436c4c8dfb5e8b738e8b8a7137169f74aa",
       "vendors": [
         "Quansheng"
@@ -5046,13 +5097,14 @@
       ],
       "status": "needs-review",
       "version": "2.0.3",
-      "historical": false,
-      "releaseTier": "current",
+      "historical": true,
+      "releaseTier": "historical",
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
-      "latestInFamily": true,
-      "recommended": true,
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.3",
       "availableVersions": [
+        "2.0.5",
         "2.0.3",
         "2.0.2",
         "2.0.1",
@@ -5103,6 +5155,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.2",
       "availableVersions": [
+        "2.0.5",
         "2.0.3",
         "2.0.2",
         "2.0.1",
@@ -5153,6 +5206,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.1",
       "availableVersions": [
+        "2.0.5",
         "2.0.3",
         "2.0.2",
         "2.0.1",
@@ -5203,6 +5257,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.0",
       "availableVersions": [
+        "2.0.5",
         "2.0.3",
         "2.0.2",
         "2.0.1",
@@ -5253,6 +5308,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
       "availableVersions": [
+        "2.0.5",
         "2.0.3",
         "2.0.2",
         "2.0.1",
@@ -5494,182 +5550,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Alinco DJ-VX50",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1643:chirp/drivers/radtel_t18.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1643,
-      "pullRequestTitle": "retevis_rt18: Experimental Retevis RT18 driver",
-      "path": "chirp/drivers/radtel_t18.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1643",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/646f1ab950c747f7e84a81dbe798de8f8051b84c/chirp%2Fdrivers%2Fradtel_t18.py",
-      "sha256": "db550362cdf11d6fd04b7df6df04f48fbd1e0227af0d8006d7ba51b65b98bcda",
-      "vendors": [
-        "BTECH",
-        "Baofeng",
-        "Radtel",
-        "Retevis"
-      ],
-      "models": [
-        "BF-T20FRS",
-        "BF-V8A",
-        "FRS-B1",
-        "H777H_FRS",
-        "H777H_PMR",
-        "RB17",
-        "RB17V",
-        "RB18",
-        "RB19",
-        "RB19P",
-        "RB29",
-        "RB617",
-        "RB618",
-        "RB619",
-        "RB629",
-        "RB75",
-        "RB85",
-        "RB87",
-        "RT15",
-        "RT20",
-        "RT22S",
-        "RT47",
-        "RT47V",
-        "RT647",
-        "RT668",
-        "RT68",
-        "T18"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Radtel",
-          "model": "T18"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT20"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT22S"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB18"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB618"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT68"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT668"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB17"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB617"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB17V"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB85"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB75"
-        },
-        {
-          "vendor": "BTECH",
-          "model": "FRS-B1"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB19"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB19P"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB619"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT47"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT47V"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT647"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "BF-V8A"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB29"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB629"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT15"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB87"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "BF-T20FRS"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "H777H_FRS"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "H777H_PMR"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng|btech|radtel|retevis::bf-t20frs|bf-v8a|frs-b1|h777h_frs|h777h_pmr|rb17|rb17v|rb18|rb19|rb19p|rb29|rb617|rb618|rb619|rb629|rb75|rb85|rb87|rt15|rt20|rt22s|rt47|rt47v|rt647|rt668|rt68|t18::radtel_t18",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "BTECH, Baofeng, Radtel, Retevis BF-T20FRS, BF-V8A, FRS-B1, H777H_FRS, H777H_PMR, RB17, RB17V, RB18, RB19, RB19P, RB29, RB617, RB618, RB619, RB629, RB75, RB85, RB87, RT15, RT20, RT22S, RT47, RT47V, RT647, RT668, RT68, T18",
       "availableVersions": []
     },
     {
@@ -6639,7 +6519,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 34,
-  "historicalCount": 77,
-  "versionedCount": 66
+  "currentCount": 33,
+  "historicalCount": 78,
+  "versionedCount": 67
 }
