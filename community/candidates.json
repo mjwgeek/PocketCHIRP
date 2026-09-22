@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-21T16:30:25.107694Z",
+  "generatedAt": "2026-09-22T14:58:07.633330Z",
   "candidateCount": 111,
   "candidates": [
     {
@@ -5560,7 +5560,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1484fdc20a42fa6524c67540ea74fdbea997a9f4/chirp%2Fdrivers%2Fth_uv88.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/00ee7390a6b2878c7c7ad8b64e98e9382fdc080a/chirp%2Fdrivers%2Fth_uv88.py",
       "sha256": "9f92427788def68118fe5eb96a3a030d8f66586908f039bea23327f45961fab6",
       "vendors": [
         "Explorer",
@@ -6088,7 +6088,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1484fdc20a42fa6524c67540ea74fdbea997a9f4/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/00ee7390a6b2878c7c7ad8b64e98e9382fdc080a/chirp%2Fdrivers%2Fretevis_ra89r.py",
       "sha256": "0f964fbced1c2f656d7730470e7ac1a95b6587f670fbfe5135cf0ca16fc45f83",
       "vendors": [
         "Retevis"
