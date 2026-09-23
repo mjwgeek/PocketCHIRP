@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-22T14:58:07.633330Z",
-  "candidateCount": 111,
+  "generatedAt": "2026-09-23T15:03:32.172546Z",
+  "candidateCount": 112,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5011,12 +5011,64 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.1.0/Gogufw_2.1.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "path": "GOGU/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "sha256": "73c9849811c5dba31e33681b150c10e6986e0d5f6b07877407d70a23bece638c",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "2.1.0"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "2.1.0"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "2.1.0",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.1.0",
+      "availableVersions": [
+        "2.1.0",
+        "2.0.5",
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.5/Gogufw_2.0.5_chirp_module.py",
       "sha256": "474f3ae9d3ada26bb6c3310750edb07dc20bc8591a6c4da1e1a5885c345b6ae9",
       "vendors": [
         "Quansheng"
@@ -5046,13 +5098,14 @@
       ],
       "status": "needs-review",
       "version": "2.0.5",
-      "historical": false,
-      "releaseTier": "current",
+      "historical": true,
+      "releaseTier": "historical",
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
-      "latestInFamily": true,
-      "recommended": true,
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.5",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -5104,6 +5157,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.3",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -5155,6 +5209,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.2",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -5206,6 +5261,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.1",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -5257,6 +5313,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.0",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -5308,6 +5365,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
       "availableVersions": [
+        "2.1.0",
         "2.0.5",
         "2.0.3",
         "2.0.2",
@@ -6520,6 +6578,6 @@
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
   "currentCount": 33,
-  "historicalCount": 78,
-  "versionedCount": 67
+  "historicalCount": 79,
+  "versionedCount": 68
 }
