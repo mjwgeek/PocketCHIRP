@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-26T14:32:34.310418Z",
-  "candidateCount": 113,
+  "generatedAt": "2026-09-27T15:11:53.686986Z",
+  "candidateCount": 116,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5671,6 +5671,57 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1656:chirp/drivers/baofeng_dm32uv.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1656,
+      "pullRequestTitle": "dm32uv: Add Baofeng DM-32UV driver",
+      "path": "chirp/drivers/baofeng_dm32uv.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1656",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/9210d51b1c6c2d0d67e2783cfc09b8a806dc7023/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "9192ac224d37c496fae335248abe55e27f72f30c7d627b7159064a247cdf3c38",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "DM-32UV"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "DM-32UV"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "chaffed/CHiRP-DM32UV-Support",
+          "path": "driver/baofeng_dm32uv.py",
+          "sourceUrl": "https://github.com/chaffed/CHiRP-DM32UV-Support/blob/main/driver/baofeng_dm32uv.py"
+        }
+      ],
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng::dm-32uv::baofeng_dm32uv",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng DM-32UV",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6284,6 +6335,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1655:chirp/drivers/retevis_rt97s.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1655,
+      "pullRequestTitle": "retevis_rt97s: Retevis RT97S driver",
+      "path": "chirp/drivers/retevis_rt97s.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1655",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/12897dcccae523d55226ceca4bffba8efb246c0b/chirp%2Fdrivers%2Fretevis_rt97s.py",
+      "sha256": "157b03212ccfdf7e207af4a4423b19c88ee2cc9315abbc5c5588a9ba202ed454",
+      "vendors": [
+        "Retevis"
+      ],
+      "models": [
+        "RT97S"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RT97S"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::retevis::rt97s::retevis_rt97s",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Retevis RT97S",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6425,6 +6519,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1654:chirp/drivers/kguv920pa.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1654,
+      "pullRequestTitle": "kguv920pa: Fix checksum calculation, Fixes #12542",
+      "path": "chirp/drivers/kguv920pa.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1654",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3c2f05ff71f98aaffb5b91da522e976e83073dd3/chirp%2Fdrivers%2Fkguv920pa.py",
+      "sha256": "f51c7dfd7d496a9ddcacfd5ef530958a1e671347f211db4f92ab343b711a1241",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV920P-A"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV920P-A"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv920p-a::kguv920pa",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV920P-A",
       "availableVersions": []
     },
     {
@@ -6637,7 +6774,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 33,
+  "currentCount": 36,
   "historicalCount": 80,
   "versionedCount": 69
 }
