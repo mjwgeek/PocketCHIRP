@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-27T15:11:53.686986Z",
-  "candidateCount": 116,
+  "generatedAt": "2026-09-28T18:11:49.820124Z",
+  "candidateCount": 115,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5011,12 +5011,12 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v2.3.1/Gogufw_2.3.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v2.3.0/Gogufw_2.3.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.3.0/Gogufw_2.3.0_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+      "path": "GOGU/v2.3.1/Gogufw_2.3.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v2.3.1/Gogufw_2.3.0_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v2.3.1/Gogufw_2.3.0_chirp_module.py",
       "sha256": "71ee0633e2aa29e7f5851aea56655e5460d5496509f5206d6221db615002d7c7",
       "vendors": [
         "Quansheng"
@@ -5042,9 +5042,17 @@
         "sync_out"
       ],
       "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
         "explicit repository source"
       ],
       "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.0/Gogufw_2.3.0_chirp_module.py"
+        }
+      ],
       "version": "2.3.0",
       "historical": false,
       "releaseTier": "current",
@@ -5678,8 +5686,8 @@
       "pullRequestTitle": "dm32uv: Add Baofeng DM-32UV driver",
       "path": "chirp/drivers/baofeng_dm32uv.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1656",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/9210d51b1c6c2d0d67e2783cfc09b8a806dc7023/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
-      "sha256": "9192ac224d37c496fae335248abe55e27f72f30c7d627b7159064a247cdf3c38",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/94038ad7638c623ac7e9da60079fd0aa7643ff40/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "2ecb840072d1dd7337baea5b42deaf99ca9477475127cd2d6464f78bf0f563ad",
       "vendors": [
         "Baofeng"
       ],
@@ -5729,8 +5737,8 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/00ee7390a6b2878c7c7ad8b64e98e9382fdc080a/chirp%2Fdrivers%2Fth_uv88.py",
-      "sha256": "9f92427788def68118fe5eb96a3a030d8f66586908f039bea23327f45961fab6",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c9fd7cb72f2f67bfc06e480ad001f0984fb2b9c9/chirp%2Fdrivers%2Fth_uv88.py",
+      "sha256": "9cb96b26c3a2537a1b24a1a7aa74f502b375aa49522d5bb104e58677a402e3a1",
       "vendors": [
         "Explorer",
         "Retevis",
@@ -6257,8 +6265,8 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/00ee7390a6b2878c7c7ad8b64e98e9382fdc080a/chirp%2Fdrivers%2Fretevis_ra89r.py",
-      "sha256": "0f964fbced1c2f656d7730470e7ac1a95b6587f670fbfe5135cf0ca16fc45f83",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c9fd7cb72f2f67bfc06e480ad001f0984fb2b9c9/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "sha256": "ed6eedc6cd8bd2a053bd2362e6ea78990f2536a4c88cd36752df3421b2947d63",
       "vendors": [
         "Retevis"
       ],
@@ -6342,8 +6350,8 @@
       "pullRequestTitle": "retevis_rt97s: Retevis RT97S driver",
       "path": "chirp/drivers/retevis_rt97s.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1655",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/12897dcccae523d55226ceca4bffba8efb246c0b/chirp%2Fdrivers%2Fretevis_rt97s.py",
-      "sha256": "157b03212ccfdf7e207af4a4423b19c88ee2cc9315abbc5c5588a9ba202ed454",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/30ceb6262e9e3eda4318f9fe3a5001218e5bbac1/chirp%2Fdrivers%2Fretevis_rt97s.py",
+      "sha256": "203c5a52b5c8122447ae0b1744a94880e4949207ce6c7a2fed7c78399aaa1d34",
       "vendors": [
         "Retevis"
       ],
@@ -6519,49 +6527,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1654:chirp/drivers/kguv920pa.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1654,
-      "pullRequestTitle": "kguv920pa: Fix checksum calculation, Fixes #12542",
-      "path": "chirp/drivers/kguv920pa.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1654",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3c2f05ff71f98aaffb5b91da522e976e83073dd3/chirp%2Fdrivers%2Fkguv920pa.py",
-      "sha256": "f51c7dfd7d496a9ddcacfd5ef530958a1e671347f211db4f92ab343b711a1241",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-UV920P-A"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV920P-A"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-uv920p-a::kguv920pa",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-UV920P-A",
       "availableVersions": []
     },
     {
@@ -6774,7 +6739,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 36,
+  "currentCount": 35,
   "historicalCount": 80,
   "versionedCount": 69
 }
