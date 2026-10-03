@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-02T16:18:52.731849Z",
-  "candidateCount": 115,
+  "generatedAt": "2026-10-03T14:45:27.343545Z",
+  "candidateCount": 116,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5748,8 +5748,8 @@
       "pullRequestTitle": "dm32uv: Add Baofeng DM-32UV driver",
       "path": "chirp/drivers/baofeng_dm32uv.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1656",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/94038ad7638c623ac7e9da60079fd0aa7643ff40/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
-      "sha256": "2ecb840072d1dd7337baea5b42deaf99ca9477475127cd2d6464f78bf0f563ad",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/aace83e03c5ab0cd1ff5f9e5fbd63acf449aeb21/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "538c968d047a08bac30c848c304ed4b83da8b78c2bca15b0beffea529b706fa7",
       "vendors": [
         "Baofeng"
       ],
@@ -5998,6 +5998,96 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "KSUN M6",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1661:chirp/drivers/th9000.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1661,
+      "pullRequestTitle": "th9000: Accept Plus PROGRAM ERR ident",
+      "path": "chirp/drivers/th9000.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1661",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c71eef6887e69e1e5b608d44832a9d90787b8841/chirp%2Fdrivers%2Fth9000.py",
+      "sha256": "bdfa6eeb04b52de6bf33d70f7731d8605ea9572c6a9238fad74f8ca7ffb047b4",
+      "vendors": [
+        "LUITON",
+        "Retevis",
+        "TYT"
+      ],
+      "models": [
+        "LT-580_UHF",
+        "LT-580_VHF",
+        "RT9000D_136-174",
+        "RT9000D_220-260",
+        "RT9000D_400-490",
+        "RT9000D_66-88",
+        "TH9000 Base",
+        "TH9000_144",
+        "TH9000_220",
+        "TH9000_440"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TYT",
+          "model": "TH9000 Base"
+        },
+        {
+          "vendor": "TYT",
+          "model": "TH9000_220"
+        },
+        {
+          "vendor": "TYT",
+          "model": "TH9000_144"
+        },
+        {
+          "vendor": "TYT",
+          "model": "TH9000_440"
+        },
+        {
+          "vendor": "LUITON",
+          "model": "LT-580_VHF"
+        },
+        {
+          "vendor": "LUITON",
+          "model": "LT-580_UHF"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT9000D_136-174"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT9000D_220-260"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT9000D_400-490"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT9000D_66-88"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::luiton|retevis|tyt::lt-580_uhf|lt-580_vhf|rt9000d_136-174|rt9000d_220-260|rt9000d_400-490|rt9000d_66-88|th9000 base|th9000_144|th9000_220|th9000_440::th9000",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "LUITON, Retevis, TYT LT-580_UHF, LT-580_VHF, RT9000D_136-174, RT9000D_220-260, RT9000D_400-490, RT9000D_66-88, TH9000 Base, TH9000_144, TH9000_220, TH9000_440",
       "availableVersions": []
     },
     {
@@ -6758,7 +6848,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 34,
+  "currentCount": 35,
   "historicalCount": 81,
   "versionedCount": 70
 }
