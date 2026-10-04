@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-03T14:45:27.343545Z",
+  "generatedAt": "2026-10-04T15:24:55.432247Z",
   "candidateCount": 116,
   "candidates": [
     {
@@ -5748,8 +5748,8 @@
       "pullRequestTitle": "dm32uv: Add Baofeng DM-32UV driver",
       "path": "chirp/drivers/baofeng_dm32uv.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1656",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/aace83e03c5ab0cd1ff5f9e5fbd63acf449aeb21/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
-      "sha256": "538c968d047a08bac30c848c304ed4b83da8b78c2bca15b0beffea529b706fa7",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e8f14582280ef33c0bfd12bae148e82082f32b08/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "b68c8f2e855da89ac1004b6cbacaf2816af1db2570f44ec3701ebdff2aaaef79",
       "vendors": [
         "Baofeng"
       ],
@@ -6008,8 +6008,8 @@
       "pullRequestTitle": "th9000: Accept Plus PROGRAM ERR ident",
       "path": "chirp/drivers/th9000.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1661",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c71eef6887e69e1e5b608d44832a9d90787b8841/chirp%2Fdrivers%2Fth9000.py",
-      "sha256": "bdfa6eeb04b52de6bf33d70f7731d8605ea9572c6a9238fad74f8ca7ffb047b4",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4dc30475ef752a92c007ae7fda5ad68032f34d61/chirp%2Fdrivers%2Fth9000.py",
+      "sha256": "434e4e61d36aa187a4e172c0a981921252998cdc6d854d5ecf2a2363daeaf611",
       "vendors": [
         "LUITON",
         "Retevis",
@@ -6027,7 +6027,9 @@
         "TH9000_220",
         "TH9000_440"
       ],
-      "variants": [],
+      "variants": [
+        "Plus"
+      ],
       "modelEntries": [
         {
           "vendor": "TYT",
@@ -6044,6 +6046,21 @@
         {
           "vendor": "TYT",
           "model": "TH9000_440"
+        },
+        {
+          "vendor": "",
+          "model": "TH9000_220",
+          "variant": "Plus"
+        },
+        {
+          "vendor": "",
+          "model": "TH9000_144",
+          "variant": "Plus"
+        },
+        {
+          "vendor": "",
+          "model": "TH9000_440",
+          "variant": "Plus"
         },
         {
           "vendor": "LUITON",
