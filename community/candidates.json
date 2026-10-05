@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-04T15:24:55.432247Z",
-  "candidateCount": 116,
+  "generatedAt": "2026-10-05T19:20:04.384688Z",
+  "candidateCount": 115,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -1992,11 +1992,16 @@
         "sync_out"
       ],
       "reasons": [
-        "collapsed 3 byte-identical duplicate source(s)",
+        "collapsed 4 byte-identical duplicate source(s)",
         "explicit repository source"
       ],
       "status": "needs-review",
       "duplicateSources": [
+        {
+          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+          "path": "Delta/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Delta/f4hwn.chirp.v4.3.py"
+        },
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
           "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.1/f4hwn.chirp.v4.3.py",
@@ -6001,113 +6006,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1661:chirp/drivers/th9000.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1661,
-      "pullRequestTitle": "th9000: Accept Plus PROGRAM ERR ident",
-      "path": "chirp/drivers/th9000.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1661",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4dc30475ef752a92c007ae7fda5ad68032f34d61/chirp%2Fdrivers%2Fth9000.py",
-      "sha256": "434e4e61d36aa187a4e172c0a981921252998cdc6d854d5ecf2a2363daeaf611",
-      "vendors": [
-        "LUITON",
-        "Retevis",
-        "TYT"
-      ],
-      "models": [
-        "LT-580_UHF",
-        "LT-580_VHF",
-        "RT9000D_136-174",
-        "RT9000D_220-260",
-        "RT9000D_400-490",
-        "RT9000D_66-88",
-        "TH9000 Base",
-        "TH9000_144",
-        "TH9000_220",
-        "TH9000_440"
-      ],
-      "variants": [
-        "Plus"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "TYT",
-          "model": "TH9000 Base"
-        },
-        {
-          "vendor": "TYT",
-          "model": "TH9000_220"
-        },
-        {
-          "vendor": "TYT",
-          "model": "TH9000_144"
-        },
-        {
-          "vendor": "TYT",
-          "model": "TH9000_440"
-        },
-        {
-          "vendor": "",
-          "model": "TH9000_220",
-          "variant": "Plus"
-        },
-        {
-          "vendor": "",
-          "model": "TH9000_144",
-          "variant": "Plus"
-        },
-        {
-          "vendor": "",
-          "model": "TH9000_440",
-          "variant": "Plus"
-        },
-        {
-          "vendor": "LUITON",
-          "model": "LT-580_VHF"
-        },
-        {
-          "vendor": "LUITON",
-          "model": "LT-580_UHF"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT9000D_136-174"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT9000D_220-260"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT9000D_400-490"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RT9000D_66-88"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::luiton|retevis|tyt::lt-580_uhf|lt-580_vhf|rt9000d_136-174|rt9000d_220-260|rt9000d_400-490|rt9000d_66-88|th9000 base|th9000_144|th9000_220|th9000_440::th9000",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "LUITON, Retevis, TYT LT-580_UHF, LT-580_VHF, RT9000D_136-174, RT9000D_220-260, RT9000D_400-490, RT9000D_66-88, TH9000 Base, TH9000_144, TH9000_220, TH9000_440",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1596:chirp/drivers/uvk5_f4hwn.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6865,7 +6763,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 35,
+  "currentCount": 34,
   "historicalCount": 81,
   "versionedCount": 70
 }
