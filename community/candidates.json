@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-06T16:51:25.444700Z",
-  "candidateCount": 115,
+  "generatedAt": "2026-10-07T17:27:49.885243Z",
+  "candidateCount": 116,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4641,13 +4641,13 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/6.0.0/f4hwn.chirp.v6.0.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v6.1.0/f4hwn.chirp.v6.1.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/6.0.0/f4hwn.chirp.v6.0.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/6.0.0/f4hwn.chirp.v6.0.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/6.0.0/f4hwn.chirp.v6.0.0.py",
-      "sha256": "c1c560ae081a40ea7aee0cd1e71b47641e63d64aea8886412c1041bda14f5156",
+      "path": "F4HWN/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "sha256": "ccbf2ec24c5bfb49ab089a2ae0289a305f3ed6812f2de90a36e6186961913462",
       "vendors": [
         "Quansheng"
       ],
@@ -4678,6 +4678,47 @@
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn)::f4hwn_chirp",
       "latestInFamily": true,
       "recommended": true,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN)",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "sha256": "c1c560ae081a40ea7aee0cd1e71b47641e63d64aea8886412c1041bda14f5156",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn)::f4hwn_chirp",
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN)",
       "availableVersions": []
     },
@@ -6764,6 +6805,6 @@
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
   "currentCount": 34,
-  "historicalCount": 81,
+  "historicalCount": 82,
   "versionedCount": 70
 }
