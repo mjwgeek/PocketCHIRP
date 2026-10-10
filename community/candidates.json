@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-09T17:02:06.696391Z",
-  "candidateCount": 117,
+  "generatedAt": "2026-10-10T15:53:36.318843Z",
+  "candidateCount": 119,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5763,6 +5763,67 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1666:chirp/drivers/tk8160.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1666,
+      "pullRequestTitle": "tk8160: Keep unsupported memory settings when editing a memory",
+      "path": "chirp/drivers/tk8160.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1666",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3bc888629e610a105c67836fe06f79f9042882d9/chirp%2Fdrivers%2Ftk8160.py",
+      "sha256": "8a9c3cf6f6128900d1b7e06d5d8ecd53680826b5961561c83264080663433f09",
+      "vendors": [],
+      "models": [
+        "TK-7160K",
+        "TK-7160M",
+        "TK-7162",
+        "TK-8160K",
+        "TK-8160M"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TK-7160M"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7160K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8160K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8160M"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7162"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::tk-7160k|tk-7160m|tk-7162|tk-8160k|tk-8160m::tk8160",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community TK-7160K, TK-7160M, TK-7162, TK-8160K, TK-8160M",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6058,6 +6119,89 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Iradio DM-UV4R",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1669:chirp/drivers/tk8180.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1669,
+      "pullRequestTitle": "tk8180: Show and keep each key's hold time, including none",
+      "path": "chirp/drivers/tk8180.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1669",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/dc714ea4cdf3c8f707baa5886e38c29b4af8d5ef/chirp%2Fdrivers%2Ftk8180.py",
+      "sha256": "14b5df7a3555550ae0ff3ca1a451782cb3e52b1de5ade68ac039115effacb936",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TK-2180",
+        "TK-3180E",
+        "TK-3180K",
+        "TK-3180K2",
+        "TK-7180",
+        "TK-7180E",
+        "TK-8180",
+        "TK-8180E",
+        "TK-x180"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TK-x180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-2180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180K2"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8180E"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7180E"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180E"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::tk-2180|tk-3180e|tk-3180k|tk-3180k2|tk-7180|tk-7180e|tk-8180|tk-8180e|tk-x180::tk8180",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TK-2180, TK-3180E, TK-3180K, TK-3180K2, TK-7180, TK-7180E, TK-8180, TK-8180E, TK-x180",
       "availableVersions": []
     },
     {
@@ -6868,7 +7012,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 34,
+  "currentCount": 36,
   "historicalCount": 83,
   "versionedCount": 71
 }
