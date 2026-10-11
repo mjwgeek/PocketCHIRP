@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-10T15:53:36.318843Z",
+  "generatedAt": "2026-10-11T16:21:03.960061Z",
   "candidateCount": 119,
   "candidates": [
     {
@@ -5763,67 +5763,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1666:chirp/drivers/tk8160.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1666,
-      "pullRequestTitle": "tk8160: Keep unsupported memory settings when editing a memory",
-      "path": "chirp/drivers/tk8160.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1666",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3bc888629e610a105c67836fe06f79f9042882d9/chirp%2Fdrivers%2Ftk8160.py",
-      "sha256": "8a9c3cf6f6128900d1b7e06d5d8ecd53680826b5961561c83264080663433f09",
-      "vendors": [],
-      "models": [
-        "TK-7160K",
-        "TK-7160M",
-        "TK-7162",
-        "TK-8160K",
-        "TK-8160M"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "TK-7160M"
-        },
-        {
-          "vendor": "",
-          "model": "TK-7160K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-8160K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-8160M"
-        },
-        {
-          "vendor": "",
-          "model": "TK-7162"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::tk-7160k|tk-7160m|tk-7162|tk-8160k|tk-8160m::tk8160",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community TK-7160K, TK-7160M, TK-7162, TK-8160K, TK-8160M",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6076,6 +6015,51 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Icom IC-R6",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1671:chirp/drivers/id880.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1671,
+      "pullRequestTitle": "id880: Fix cloning over the RS-232 [DATA] jack",
+      "path": "chirp/drivers/id880.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1671",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8009bf45e4d5b7c894b30954e89dc732a3eef593/chirp%2Fdrivers%2Fid880.py",
+      "sha256": "7ce52b4ccd9ca68d39690c5dff58f73c5bb1c9e44231fb7c514930818ec9b24c",
+      "vendors": [
+        "Icom"
+      ],
+      "models": [
+        "ID-80H",
+        "ID-880H"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Icom",
+          "model": "ID-880H"
+        },
+        {
+          "vendor": "",
+          "model": "ID-80H"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::icom::id-80h|id-880h::id880",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Icom ID-80H, ID-880H",
       "availableVersions": []
     },
     {
