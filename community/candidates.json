@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-11T16:21:03.960061Z",
-  "candidateCount": 119,
+  "generatedAt": "2026-10-12T19:50:12.759552Z",
+  "candidateCount": 120,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6835,6 +6835,48 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1672:chirp/drivers/d9000.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1672,
+      "pullRequestTitle": "Add Zastone ZT-D9000 driver",
+      "path": "chirp/drivers/d9000.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1672",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/b3bb971334f28523243921265346707981840abb/chirp%2Fdrivers%2Fd9000.py",
+      "sha256": "802d035a63102a49d46f0bc8378adf00cf5877a3aa0cd903f74ea4941a8780c1",
+      "vendors": [
+        "Zastone"
+      ],
+      "models": [
+        "ZT-D9000"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Zastone",
+          "model": "ZT-D9000"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::zastone::zt-d9000::d9000",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Zastone ZT-D9000",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "repo:mjwgeek/Radioddity-GD-73a:gd73.py",
       "type": "repository-file",
       "repository": "mjwgeek/Radioddity-GD-73a",
@@ -6996,7 +7038,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 36,
+  "currentCount": 37,
   "historicalCount": 83,
   "versionedCount": 71
 }
