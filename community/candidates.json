@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-14T15:12:26.474856Z",
+  "generatedAt": "2026-10-15T15:04:59.743592Z",
   "candidateCount": 123,
   "candidates": [
     {
@@ -3988,6 +3988,47 @@
       ]
     },
     {
+      "candidateKey": "repo:chaffed/CHiRP-DM32UV-Support:driver/baofeng_dm32uv.py",
+      "type": "repository-file",
+      "repository": "chaffed/CHiRP-DM32UV-Support",
+      "path": "driver/baofeng_dm32uv.py",
+      "sourceUrl": "https://github.com/chaffed/CHiRP-DM32UV-Support/blob/main/driver/baofeng_dm32uv.py",
+      "downloadUrl": "https://raw.githubusercontent.com/chaffed/CHiRP-DM32UV-Support/main/driver/baofeng_dm32uv.py",
+      "sha256": "b2f78dc36bde2d9088786e473773055ff1d325994a2ff4ae45d7bc373c1efea7",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "DM-32UV"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "DM-32UV"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "repository search: chirp radio driver"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "chaffed/chirp-dm32uv-support::baofeng::dm-32uv::baofeng_dm32uv",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng DM-32UV",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:KA50/Chirp_KA50_KA52.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -5925,57 +5966,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1656:chirp/drivers/baofeng_dm32uv.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1656,
-      "pullRequestTitle": "dm32uv: Add Baofeng DM-32UV driver",
-      "path": "chirp/drivers/baofeng_dm32uv.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1656",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5c86d593e349350bff7c8170b0e560528a9813a8/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
-      "sha256": "b2f78dc36bde2d9088786e473773055ff1d325994a2ff4ae45d7bc373c1efea7",
-      "vendors": [
-        "Baofeng"
-      ],
-      "models": [
-        "DM-32UV"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Baofeng",
-          "model": "DM-32UV"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "collapsed 1 byte-identical duplicate source(s)",
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "duplicateSources": [
-        {
-          "repository": "chaffed/CHiRP-DM32UV-Support",
-          "path": "driver/baofeng_dm32uv.py",
-          "sourceUrl": "https://github.com/chaffed/CHiRP-DM32UV-Support/blob/main/driver/baofeng_dm32uv.py"
-        }
-      ],
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng::dm-32uv::baofeng_dm32uv",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Baofeng DM-32UV",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6362,8 +6352,8 @@
       "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
       "path": "chirp/drivers/uvk5_cn.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7c701920524b92ff06749356ee66f99536f08474/chirp%2Fdrivers%2Fuvk5_cn.py",
-      "sha256": "8f96cbc7fe97c679172adc9d8c97cef70f90337020258aa490907cc4c3a0799c",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/09c00e465d1550fe5091a6a686cb40fe0d30a6e1/chirp%2Fdrivers%2Fuvk5_cn.py",
+      "sha256": "42b9aebdb4631ec0f0652ea220f12e182a0df5a8dd96c028ffe720d42e3b3275",
       "vendors": [
         "Quansheng"
       ],
