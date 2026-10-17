@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-16T14:53:34.520103Z",
-  "candidateCount": 124,
+  "generatedAt": "2026-10-17T13:46:40.280751Z",
+  "candidateCount": 129,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6007,6 +6007,510 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1680:chirp/drivers/h777.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1680,
+      "pullRequestTitle": "h777: Add support for Zartek ZA-758",
+      "path": "chirp/drivers/h777.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1680",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/45a14407b7f18647699975dcbaa534a283ba8e39/chirp%2Fdrivers%2Fh777.py",
+      "sha256": "f5299170914f5154c20148d67a4af41f8564980989aed5bd91ce15c2d1cc116b",
+      "vendors": [
+        "Ansoko",
+        "Arcshell",
+        "Baofeng",
+        "Greaval",
+        "Maverick",
+        "MaxTalker",
+        "Radioddity",
+        "Retevis",
+        "Tenway",
+        "Zartek"
+      ],
+      "models": [
+        "A-8S",
+        "AR-5",
+        "AR-6",
+        "BF-1901",
+        "BF-1904",
+        "BF-1909",
+        "BF-888",
+        "BF-M4",
+        "GA-2S",
+        "GV-8S",
+        "GV-9S",
+        "H777",
+        "H777 Plus",
+        "MP31",
+        "MT-8S",
+        "RA-100",
+        "RA-425",
+        "TW-325",
+        "ZA-758"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Arcshell",
+          "model": "AR-5"
+        },
+        {
+          "vendor": "Arcshell",
+          "model": "AR-6"
+        },
+        {
+          "vendor": "Greaval",
+          "model": "GV-8S"
+        },
+        {
+          "vendor": "Greaval",
+          "model": "GV-9S"
+        },
+        {
+          "vendor": "Ansoko",
+          "model": "A-8S"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "TW-325"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-888"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "MP31"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-2S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777 Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-M4"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "MT-8S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1901"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1904"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-1909"
+        },
+        {
+          "vendor": "Maverick",
+          "model": "RA-100"
+        },
+        {
+          "vendor": "Maverick",
+          "model": "RA-425"
+        },
+        {
+          "vendor": "Zartek",
+          "model": "ZA-758"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::ansoko|arcshell|baofeng|greaval|maverick|maxtalker|radioddity|retevis|tenway|zartek::a-8s|ar-5|ar-6|bf-1901|bf-1904|bf-1909|bf-888|bf-m4|ga-2s|gv-8s|gv-9s|h777|h777 plus|mp31|mt-8s|ra-100|ra-425|tw-325|za-758::h777",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Ansoko, Arcshell, Baofeng, Greaval, Maverick, MaxTalker, Radioddity, Retevis, Tenway, Zartek A-8S, AR-5, AR-6, BF-1901, BF-1904, BF-1909, BF-888, BF-M4, GA-2S, GV-8S, GV-9S, H777, H777 Plus, MP31, MT-8S, RA-100, RA-425, TW-325, ZA-758",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1677:chirp/drivers/uv5r.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1677,
+      "pullRequestTitle": "uv5r: Stop reporting Range Override uploads as errors",
+      "path": "chirp/drivers/uv5r.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1677",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/21f5791a78cac3c66c92044f2894035451259618/chirp%2Fdrivers%2Fuv5r.py",
+      "sha256": "c03f1d846097a685f1b252b12fc2d44c1dfbd0ef73e3006cd1ba0959e5a7ce94",
+      "vendors": [
+        "Ansoko",
+        "Baofeng",
+        "Intek",
+        "Radioddity",
+        "Retevis",
+        "Rugged",
+        "TIDRADIO",
+        "TechSide",
+        "Tenway"
+      ],
+      "models": [
+        "A-5R",
+        "BF-F8HP",
+        "F-11",
+        "GA-5S",
+        "GT-5R",
+        "KT-980HP",
+        "RH5R",
+        "RT5",
+        "RT5(tri-power)",
+        "RT5R",
+        "RT5RV",
+        "TD-UV5R TriPower",
+        "TI-F8+",
+        "TS-T9+",
+        "UV-5G",
+        "UV-5G Pro",
+        "UV-5R",
+        "UV-5R EX",
+        "UV-5R Pro",
+        "UV-5RX3",
+        "UV-5X",
+        "UV-5XP",
+        "UV-6",
+        "UV-82",
+        "UV-82 Pro",
+        "UV-82HP",
+        "UV-82X3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5X"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5R"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5RV"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5(tri-power)"
+        },
+        {
+          "vendor": "Rugged",
+          "model": "RH5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5R EX"
+        },
+        {
+          "vendor": "Ansoko",
+          "model": "A-5R"
+        },
+        {
+          "vendor": "",
+          "model": "UV-5G Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "F-11"
+        },
+        {
+          "vendor": "",
+          "model": "UV-82"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-82X3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-6"
+        },
+        {
+          "vendor": "Intek",
+          "model": "KT-980HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-5S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5XP"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TI-F8+"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-5R Pro"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TS-T9+"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-UV5R TriPower"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-82 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5RX3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GT-5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::ansoko|baofeng|intek|radioddity|retevis|rugged|techside|tenway|tidradio::a-5r|bf-f8hp|f-11|ga-5s|gt-5r|kt-980hp|rh5r|rt5|rt5(tri-power)|rt5r|rt5rv|td-uv5r tripower|ti-f8+|ts-t9+|uv-5g|uv-5g pro|uv-5r|uv-5r ex|uv-5r pro|uv-5rx3|uv-5x|uv-5xp|uv-6|uv-82|uv-82 pro|uv-82hp|uv-82x3::uv5r",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1678:chirp/drivers/uv5r.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1678,
+      "pullRequestTitle": "bjuv55: Fix download and upload",
+      "path": "chirp/drivers/uv5r.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1678",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0cad7dd87e2125984d122700592c4e44164afea2/chirp%2Fdrivers%2Fuv5r.py",
+      "sha256": "ec6815f2992f1aa363da7733e2f1ba6e5fe8770162576e07dcb8d2f7b65d75ed",
+      "vendors": [
+        "Ansoko",
+        "Baofeng",
+        "Intek",
+        "Radioddity",
+        "Retevis",
+        "Rugged",
+        "TIDRADIO",
+        "TechSide",
+        "Tenway"
+      ],
+      "models": [
+        "A-5R",
+        "BF-F8HP",
+        "F-11",
+        "GA-5S",
+        "GT-5R",
+        "KT-980HP",
+        "RH5R",
+        "RT5",
+        "RT5(tri-power)",
+        "RT5R",
+        "RT5RV",
+        "TD-UV5R TriPower",
+        "TI-F8+",
+        "TS-T9+",
+        "UV-5G",
+        "UV-5G Pro",
+        "UV-5R",
+        "UV-5R EX",
+        "UV-5R Pro",
+        "UV-5RX3",
+        "UV-5X",
+        "UV-5XP",
+        "UV-6",
+        "UV-82",
+        "UV-82 Pro",
+        "UV-82HP",
+        "UV-82X3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5X"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5R"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5RV"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT5(tri-power)"
+        },
+        {
+          "vendor": "Rugged",
+          "model": "RH5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5R EX"
+        },
+        {
+          "vendor": "Ansoko",
+          "model": "A-5R"
+        },
+        {
+          "vendor": "",
+          "model": "UV-5G Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "F-11"
+        },
+        {
+          "vendor": "",
+          "model": "UV-82"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-82X3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-6"
+        },
+        {
+          "vendor": "Intek",
+          "model": "KT-980HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-5S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5XP"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TI-F8+"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-5R Pro"
+        },
+        {
+          "vendor": "TechSide",
+          "model": "TS-T9+"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-UV5R TriPower"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP"
+        },
+        {
+          "vendor": "Tenway",
+          "model": "UV-82 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82HP"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5RX3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GT-5R"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::ansoko|baofeng|intek|radioddity|retevis|rugged|techside|tenway|tidradio::a-5r|bf-f8hp|f-11|ga-5s|gt-5r|kt-980hp|rh5r|rt5|rt5(tri-power)|rt5r|rt5rv|td-uv5r tripower|ti-f8+|ts-t9+|uv-5g|uv-5g pro|uv-5r|uv-5r ex|uv-5r pro|uv-5rx3|uv-5x|uv-5xp|uv-6|uv-82|uv-82 pro|uv-82hp|uv-82x3::uv5r",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6079,6 +6583,55 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Explorer, Retevis, TYT P2, P62, QRZ-1, RA89, RT85, TH-UV88, TH-UV98",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1676:chirp/drivers/hyt_f3.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1676,
+      "pullRequestTitle": "hyt_f3: Add support for the HYT F3 P32073 clone of the Kenwood TK-3207",
+      "path": "chirp/drivers/hyt_f3.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1676",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/59c56968450422bec00da908cc4a3eee06f25112/chirp%2Fdrivers%2Fhyt_f3.py",
+      "sha256": "217769f035c3d456f8201355f02977a297e22d076f279c4fab59114e7dcf2a24",
+      "vendors": [
+        "HYT",
+        "Kenwood"
+      ],
+      "models": [
+        "F3",
+        "TK-3207"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TK-3207"
+        },
+        {
+          "vendor": "HYT",
+          "model": "F3"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::hyt|kenwood::f3|tk-3207::hyt_f3",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "HYT, Kenwood F3, TK-3207",
       "availableVersions": []
     },
     {
@@ -6949,6 +7502,57 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1679:chirp/drivers/ft8000r.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1679,
+      "pullRequestTitle": "ft8000r: Add driver for the Yaesu FT-8000R",
+      "path": "chirp/drivers/ft8000r.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1679",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a574968b64a541a772dfe41c24075d01f07b5840/chirp%2Fdrivers%2Fft8000r.py",
+      "sha256": "5c138b9d9324430aebf9b23881c8eae3a2925fd6f2065e3e53476944bc1d07ba",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FT-8000",
+        "FT-8000R"
+      ],
+      "variants": [
+        "Left",
+        "Right"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FT-8000"
+        },
+        {
+          "vendor": "Yaesu",
+          "model": "FT-8000R"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::yaesu::ft-8000|ft-8000r::ft8000r",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Yaesu FT-8000, FT-8000R",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1673:chirp/drivers/ft991a.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7240,7 +7844,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 38,
+  "currentCount": 43,
   "historicalCount": 86,
   "versionedCount": 72
 }
