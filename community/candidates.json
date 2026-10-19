@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-18T14:03:37.130013Z",
-  "candidateCount": 127,
+  "generatedAt": "2026-10-19T17:00:33.465597Z",
+  "candidateCount": 132,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5919,6 +5919,98 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1687:chirp/drivers/ft450d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1687,
+      "pullRequestTitle": "ft450d: Add setting descriptions from the FT-450D manual",
+      "path": "chirp/drivers/ft450d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1687",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2ba32953a4e1a58b67e038d86f4afedc68c9073c/chirp%2Fdrivers%2Fft450d.py",
+      "sha256": "eeb6f2d8e417a78257ce1e50881e6b647fcb06423b67092ed29c701319042c1d",
+      "vendors": [],
+      "models": [
+        "FT-450",
+        "FT-450D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "FT-450D"
+        },
+        {
+          "vendor": "",
+          "model": "FT-450"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::ft-450|ft-450d::ft450d",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community FT-450, FT-450D",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/ft450d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1688,
+      "pullRequestTitle": "ft450d: Match setting values to the FT-450D manual",
+      "path": "chirp/drivers/ft450d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3aae7dd6f7762e8b9ad14df264f0ecebb3a2f697/chirp%2Fdrivers%2Fft450d.py",
+      "sha256": "a7c6bbf38fb1fb8d59c1a811b1ac33a837f77c4a2abc338fbb1cf1b5e5dc16b6",
+      "vendors": [],
+      "models": [
+        "FT-450",
+        "FT-450D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "FT-450D"
+        },
+        {
+          "vendor": "",
+          "model": "FT-450"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::ft-450|ft-450d::ft450d",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Community FT-450, FT-450D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6188,6 +6280,160 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1689:chirp/drivers/baofeng_uv17Pro.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1689,
+      "pullRequestTitle": "baofeng_uv17Pro: Add setting descriptions from the UV-5R Mini manual",
+      "path": "chirp/drivers/baofeng_uv17Pro.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1689",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7c06dad792a67eadc4a436f145190601f1be409e/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
+      "sha256": "bdfb4449bea9d109ef15c6876d5406b7aa6fd1465810fbc39baeb002e6257314",
+      "vendors": [
+        "Baofeng",
+        "MaxTalker",
+        "Radioddity"
+      ],
+      "models": [
+        "5RM",
+        "BF-F8HP-PRO",
+        "GM-21",
+        "GM-30 Plus",
+        "GM-30 Pro",
+        "GM-5RH",
+        "K5-Plus",
+        "K6",
+        "MT-5RM",
+        "P15",
+        "UV-17Pro",
+        "UV-17ProGPS",
+        "UV-17R-Plus",
+        "UV-21ProGPS",
+        "UV-21ProV2",
+        "UV-25",
+        "UV-28Plus",
+        "UV-32",
+        "UV-5G Mini",
+        "UV-5G Plus",
+        "UV-5R Mini",
+        "UV-5RH",
+        "UV-5RM Plus"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProV2"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-25"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17ProGPS"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Plus"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-21"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-32"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProGPS"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-28Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "5RM"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "P15"
+        },
+        {
+          "vendor": "",
+          "model": "MT-5RM"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K5-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RM Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-5RH"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17R-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP-PRO"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RH"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K6"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R Mini"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5G Mini"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6270,7 +6516,7 @@
       "pullRequestTitle": "hyt_f3: Add support for the HYT F3 P32073 clone of the Kenwood TK-3207",
       "path": "chirp/drivers/hyt_f3.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1676",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/59c56968450422bec00da908cc4a3eee06f25112/chirp%2Fdrivers%2Fhyt_f3.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/33f82814f77f38c145d0eb0fbafae4f81344c8ba/chirp%2Fdrivers%2Fhyt_f3.py",
       "sha256": "217769f035c3d456f8201355f02977a297e22d076f279c4fab59114e7dcf2a24",
       "vendors": [
         "HYT",
@@ -6574,6 +6820,132 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1674:chirp/drivers/uvk5.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1674,
+      "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
+      "path": "chirp/drivers/uvk5.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2dc63a34f73e4bd6a9e4d5960a5320f0b8d83385/chirp%2Fdrivers%2Fuvk5.py",
+      "sha256": "1d74a2c6def22a14f71dd3bdc5485b612d45b8d3b047d95affeeb894204b77d5",
+      "vendors": [
+        "MaxTalker",
+        "Quansheng",
+        "Retevis"
+      ],
+      "models": [
+        "RA79",
+        "TK-6",
+        "UV-K1",
+        "UV-K5"
+      ],
+      "variants": [
+        "OSFW",
+        "unsupported"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA79"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "TK-6"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1690:chirp/drivers/uvk5.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1690,
+      "pullRequestTitle": "uvk5: Add setting descriptions from the UV-K5 manual",
+      "path": "chirp/drivers/uvk5.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1690",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/26da020f79f55f2b57cffb09a5a51a7305dc6b12/chirp%2Fdrivers%2Fuvk5.py",
+      "sha256": "d74f810d86f3ab40a01a9b3c4597544141dfbef6396c3cd30e77da72a4f6adf2",
+      "vendors": [
+        "MaxTalker",
+        "Quansheng",
+        "Retevis"
+      ],
+      "models": [
+        "RA79",
+        "TK-6",
+        "UV-K1",
+        "UV-K5"
+      ],
+      "variants": [
+        "OSFW",
+        "unsupported"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA79"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "TK-6"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1596:chirp/drivers/uvk5_f4hwn.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6623,8 +6995,8 @@
       "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
       "path": "chirp/drivers/uvk5_cn.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/09c00e465d1550fe5091a6a686cb40fe0d30a6e1/chirp%2Fdrivers%2Fuvk5_cn.py",
-      "sha256": "42b9aebdb4631ec0f0652ea220f12e182a0df5a8dd96c028ffe720d42e3b3275",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2dc63a34f73e4bd6a9e4d5960a5320f0b8d83385/chirp%2Fdrivers%2Fuvk5_cn.py",
+      "sha256": "e135e6c7f2f2396be0fc86764fd675d5ccb1c14e9228834becca0b2b9582aa62",
       "vendors": [
         "Quansheng"
       ],
@@ -6632,25 +7004,13 @@
         "UV-K5"
       ],
       "variants": [
-        "cn",
-        "font",
         "losehu"
       ],
       "modelEntries": [
         {
           "vendor": "Quansheng",
           "model": "UV-K5",
-          "variant": "cn"
-        },
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K5",
           "variant": "losehu"
-        },
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K5",
-          "variant": "font"
         }
       ],
       "hintsMatched": [
@@ -6904,52 +7264,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1537:chirp/drivers/retevis_h777d_pmr.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1537,
-      "pullRequestTitle": "Add driver for Retevis H777D PMR variant",
-      "path": "chirp/drivers/retevis_h777d_pmr.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1537",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0cdd9a72f143c4b3f52bc6ef6341e02e64ce146e/chirp%2Fdrivers%2Fretevis_h777d_pmr.py",
-      "sha256": "57d360fa0e3028721942d1a609d384795f867dea33b45685b470c30a061a532f",
-      "vendors": [
-        "Retevis"
-      ],
-      "models": [
-        "H777D"
-      ],
-      "variants": [
-        "PMR"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Retevis",
-          "model": "H777D",
-          "variant": "PMR"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::retevis::h777d::retevis_h777d_pmr",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Retevis H777D",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/retevis_ra89r.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7179,6 +7493,69 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1691,
+      "pullRequestTitle": "kguv9dplus: Add setting descriptions from the KG-UV9PX manual",
+      "path": "chirp/drivers/kguv9dplus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1691",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/b53bb4e76e286306a18d15d34b5e4305419eac51/chirp%2Fdrivers%2Fkguv9dplus.py",
+      "sha256": "97d00971855d3df10de83fce5b2fd3ea42a5f2a56b647eeaa75e5b983455efdd",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV9D Plus",
+        "KG-UV9G Pro",
+        "KG-UV9GX",
+        "KG-UV9K",
+        "KG-UV9PX"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9D Plus"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9PX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9GX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9K"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9G Pro"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv9d plus|kg-uv9g pro|kg-uv9gx|kg-uv9k|kg-uv9px::kguv9dplus",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1679:chirp/drivers/ft8000r.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7186,8 +7563,8 @@
       "pullRequestTitle": "ft8000r: Add driver for the Yaesu FT-8000R",
       "path": "chirp/drivers/ft8000r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1679",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5519ca24e2aee49e944315e3832603f807d4f553/chirp%2Fdrivers%2Fft8000r.py",
-      "sha256": "bc819f61b2af79b7019ead5d6021dd1948406131f663f6505351ae29724ce6fd",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/aa9ffa7a2ca94b9ecccb6bd3490e28a6ef9af5d6/chirp%2Fdrivers%2Fft8000r.py",
+      "sha256": "5cffb50032c15061d6a8b772189111ca0ddc36f6b35d9db4e856d13e012774b1",
       "vendors": [
         "Yaesu"
       ],
@@ -7516,7 +7893,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 41,
+  "currentCount": 46,
   "historicalCount": 86,
   "versionedCount": 72
 }
