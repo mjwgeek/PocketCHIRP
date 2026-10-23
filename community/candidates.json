@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-22T15:19:32.187135Z",
-  "candidateCount": 135,
+  "generatedAt": "2026-10-23T15:08:13.173821Z",
+  "candidateCount": 137,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4730,13 +4730,13 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/v6.2.0/f4hwn.chirp.v6.2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v6.2.0/f4hwn.chirp.v6.2.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v6.2.0/f4hwn.chirp.v6.2.0.py",
-      "sha256": "89334fcc60d1730bf41f35664609540896889100a7d90cc855c0450311a26008",
+      "path": "F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "sha256": "a307886d90b6481b441c2cd34b622c8dacfc2080a34fc1e0ea2377054ee4ef96",
       "vendors": [
         "Quansheng"
       ],
@@ -4851,6 +4851,47 @@
           "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.11/f4hwn.chirp.v6.1.0.py"
         }
       ],
+      "version": null,
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn)::f4hwn_chirp",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN)",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "sha256": "89334fcc60d1730bf41f35664609540896889100a7d90cc855c0450311a26008",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
       "version": null,
       "historical": true,
       "releaseTier": "historical",
@@ -7021,11 +7062,11 @@
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1690,
-      "pullRequestTitle": "uvk5: Add setting descriptions from the UV-K5 manual",
+      "pullRequestTitle": "uvk5: Add setting descriptions and value fixes from the UV-K5 manual",
       "path": "chirp/drivers/uvk5.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1690",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5196ff6ef49a94181d2bb73bee0e8563c69dbc07/chirp%2Fdrivers%2Fuvk5.py",
-      "sha256": "d74f810d86f3ab40a01a9b3c4597544141dfbef6396c3cd30e77da72a4f6adf2",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5b5cf362cc87a1167634150d07ee71ec64bbcdc3/chirp%2Fdrivers%2Fuvk5.py",
+      "sha256": "5fe80621f673d26d4688375810c6c0a916b2a9cf0246e200f96fac67214b1c11",
       "vendors": [
         "MaxTalker",
         "Quansheng",
@@ -7440,6 +7481,64 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1694:chirp/drivers/retevis_rb28.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1694,
+      "pullRequestTitle": "Add retevis rb48 series models",
+      "path": "chirp/drivers/retevis_rb28.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1694",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/bd28391fadf752334ee50b7ed3256afa8974dd39/chirp%2Fdrivers%2Fretevis_rb28.py",
+      "sha256": "eadd45fdea7b9bc6558f2e6948757e1f87633d8246c29531af361f85cb1f602c",
+      "vendors": [
+        "Retevis"
+      ],
+      "models": [
+        "RB28",
+        "RB48",
+        "RB628",
+        "RB648"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RB28"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB628"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB48"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB648"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::retevis::rb28|rb48|rb628|rb648::retevis_rb28",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Retevis RB28, RB48, RB628, RB648",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1605:chirp/drivers/retevis_rb669.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7674,11 +7773,11 @@
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1691,
-      "pullRequestTitle": "kguv9dplus: Add setting descriptions from the KG-UV9PX manual",
+      "pullRequestTitle": "kguv9dplus: Add setting descriptions and fix values from the KG-UV9PX manual",
       "path": "chirp/drivers/kguv9dplus.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1691",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/b53bb4e76e286306a18d15d34b5e4305419eac51/chirp%2Fdrivers%2Fkguv9dplus.py",
-      "sha256": "97d00971855d3df10de83fce5b2fd3ea42a5f2a56b647eeaa75e5b983455efdd",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/b59078df771b3c4842f88c1b5eb73a348e7a2331/chirp%2Fdrivers%2Fkguv9dplus.py",
+      "sha256": "94968958fcaf8a0e7659b6a76d978d4d137e801604449ddd8b464a7b887179a5",
       "vendors": [
         "Wouxun"
       ],
@@ -8070,7 +8169,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 46,
-  "historicalCount": 89,
+  "currentCount": 47,
+  "historicalCount": 90,
   "versionedCount": 74
 }
