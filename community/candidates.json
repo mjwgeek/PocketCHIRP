@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-23T15:08:13.173821Z",
-  "candidateCount": 137,
+  "generatedAt": "2026-10-24T14:02:27.295491Z",
+  "candidateCount": 136,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6150,10 +6150,10 @@
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1688,
-      "pullRequestTitle": "ft450d: Match setting values to the FT-450D manual",
+      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
       "path": "chirp/drivers/ft450d.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0d9a65e80b7ad6c5a1f8f29d5f2c8618e759693b/chirp%2Fdrivers%2Fft450d.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fft450d.py",
       "sha256": "a7c6bbf38fb1fb8d59c1a811b1ac33a837f77c4a2abc338fbb1cf1b5e5dc16b6",
       "vendors": [],
       "models": [
@@ -6458,160 +6458,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1689:chirp/drivers/baofeng_uv17Pro.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1689,
-      "pullRequestTitle": "baofeng_uv17Pro: Add setting descriptions from the UV-5R Mini manual",
-      "path": "chirp/drivers/baofeng_uv17Pro.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1689",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2c4b3dae66a9ba37cf0c06b3a5faac12f5c46138/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
-      "sha256": "bdfb4449bea9d109ef15c6876d5406b7aa6fd1465810fbc39baeb002e6257314",
-      "vendors": [
-        "Baofeng",
-        "MaxTalker",
-        "Radioddity"
-      ],
-      "models": [
-        "5RM",
-        "BF-F8HP-PRO",
-        "GM-21",
-        "GM-30 Plus",
-        "GM-30 Pro",
-        "GM-5RH",
-        "K5-Plus",
-        "K6",
-        "MT-5RM",
-        "P15",
-        "UV-17Pro",
-        "UV-17ProGPS",
-        "UV-17R-Plus",
-        "UV-21ProGPS",
-        "UV-21ProV2",
-        "UV-25",
-        "UV-28Plus",
-        "UV-32",
-        "UV-5G Mini",
-        "UV-5G Plus",
-        "UV-5R Mini",
-        "UV-5RH",
-        "UV-5RM Plus"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProV2"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-25"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17ProGPS"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Plus"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-21"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-32"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProGPS"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-28Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "5RM"
-        },
-        {
-          "vendor": "MaxTalker",
-          "model": "P15"
-        },
-        {
-          "vendor": "",
-          "model": "MT-5RM"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K5-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RM Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-5RH"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "UV-5G Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17R-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "BF-F8HP-PRO"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RH"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K6"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5R Mini"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5G Mini"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
       "availableVersions": []
     },
     {
@@ -7058,14 +6904,14 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1690:chirp/drivers/uvk5.py",
+      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/uvk5.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
-      "pullRequest": 1690,
-      "pullRequestTitle": "uvk5: Add setting descriptions and value fixes from the UV-K5 manual",
+      "pullRequest": 1688,
+      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
       "path": "chirp/drivers/uvk5.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1690",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5b5cf362cc87a1167634150d07ee71ec64bbcdc3/chirp%2Fdrivers%2Fuvk5.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fuvk5.py",
       "sha256": "5fe80621f673d26d4688375810c6c0a916b2a9cf0246e200f96fac67214b1c11",
       "vendors": [
         "MaxTalker",
@@ -7334,6 +7180,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Radtel RT-580G",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/radtel_rt880g.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1688,
+      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
+      "path": "chirp/drivers/radtel_rt880g.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fradtel_rt880g.py",
+      "sha256": "dd89577720b77c3c30be6afe8886c679dbd63c863ff3d9209f112a31ffeccc1b",
+      "vendors": [
+        "Radtel"
+      ],
+      "models": [
+        "RT-880G"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-880G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::radtel::rt-880g::radtel_rt880g",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Radtel RT-880G",
       "availableVersions": []
     },
     {
@@ -7769,14 +7658,14 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
+      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
-      "pullRequest": 1691,
-      "pullRequestTitle": "kguv9dplus: Add setting descriptions and fix values from the KG-UV9PX manual",
+      "pullRequest": 1688,
+      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
       "path": "chirp/drivers/kguv9dplus.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1691",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/b59078df771b3c4842f88c1b5eb73a348e7a2331/chirp%2Fdrivers%2Fkguv9dplus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fkguv9dplus.py",
       "sha256": "94968958fcaf8a0e7659b6a76d978d4d137e801604449ddd8b464a7b887179a5",
       "vendors": [
         "Wouxun"
@@ -7829,52 +7718,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1679:chirp/drivers/ft8000r.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1679,
-      "pullRequestTitle": "ft8000r: Add driver for the Yaesu FT-8000R",
-      "path": "chirp/drivers/ft8000r.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1679",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/aa9ffa7a2ca94b9ecccb6bd3490e28a6ef9af5d6/chirp%2Fdrivers%2Fft8000r.py",
-      "sha256": "5cffb50032c15061d6a8b772189111ca0ddc36f6b35d9db4e856d13e012774b1",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FT-8000R"
-      ],
-      "variants": [
-        "Left",
-        "Right"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FT-8000R"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ft-8000r::ft8000r",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FT-8000R",
       "availableVersions": []
     },
     {
@@ -8169,7 +8012,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 47,
+  "currentCount": 46,
   "historicalCount": 90,
   "versionedCount": 74
 }
