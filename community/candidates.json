@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-24T14:02:27.295491Z",
+  "generatedAt": "2026-10-25T14:24:19.924437Z",
   "candidateCount": 136,
   "candidates": [
     {
@@ -5236,12 +5236,71 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v3.2.0/Gogufw_3.2.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v3.2.0/Gogufw_3.2.0_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "path": "GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "sha256": "1450773196f2abc29097095adc3369969b663580b2af715e9b2f301311b7a9d5",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "3.3.1"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "3.3.1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "3.3.1",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.3.1",
+      "availableVersions": [
+        "3.3.1",
+        "3.2.0",
+        "3.1.1",
+        "3.1.0",
+        "3.0.0",
+        "2.3.3",
+        "2.3.0",
+        "2.1.0",
+        "2.0.5",
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.2.0/Gogufw_3.2.0_chirp_module.py",
       "sha256": "eba62fd0db43ecf699c755a1541844ea1e7489885c754f3cb1a6771c1dd7daa5",
       "vendors": [
         "Quansheng"
@@ -5271,13 +5330,14 @@
       ],
       "status": "needs-review",
       "version": "3.2.0",
-      "historical": false,
-      "releaseTier": "current",
+      "historical": true,
+      "releaseTier": "historical",
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
-      "latestInFamily": true,
-      "recommended": true,
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.2.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5336,6 +5396,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.1.1",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5394,6 +5455,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.1.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5452,6 +5514,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.0.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5510,6 +5573,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.3.3",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5576,6 +5640,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.3.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5634,6 +5699,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.1.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5692,6 +5758,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.5",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5750,6 +5817,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.3",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5808,6 +5876,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.2",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5866,6 +5935,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.1",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5924,6 +5994,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -5982,6 +6053,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
       "availableVersions": [
+        "3.3.1",
         "3.2.0",
         "3.1.1",
         "3.1.0",
@@ -6143,52 +6215,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Community 5RH Pro, UV-5RH Plus, UV-5RM Plus",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/ft450d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1688,
-      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
-      "path": "chirp/drivers/ft450d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fft450d.py",
-      "sha256": "a7c6bbf38fb1fb8d59c1a811b1ac33a837f77c4a2abc338fbb1cf1b5e5dc16b6",
-      "vendors": [],
-      "models": [
-        "FT-450",
-        "FT-450D"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "FT-450D"
-        },
-        {
-          "vendor": "",
-          "model": "FT-450"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::ft-450|ft-450d::ft450d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community FT-450, FT-450D",
       "availableVersions": []
     },
     {
@@ -6543,7 +6569,7 @@
       "pullRequestTitle": "hyt_f3: Add support for the HYT F3 P32073 clone of the Kenwood TK-3207",
       "path": "chirp/drivers/hyt_f3.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1676",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/249c266d83b7568a595f7c281ee18300a2b9b961/chirp%2Fdrivers%2Fhyt_f3.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/de4ed40b6bd886162e2f75ba33359dbffe9f07f9/chirp%2Fdrivers%2Fhyt_f3.py",
       "sha256": "d895b98265a2b330bd6a2cd8c2d5cc5c2d67ad6ff7c6c6121a5479492aac6a90",
       "vendors": [
         "HYT"
@@ -6705,6 +6731,54 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Iradio DM-UV4R",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1699:chirp/drivers/thd74.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1699,
+      "pullRequestTitle": "Fix strings that never reach translation catalog",
+      "path": "chirp/drivers/thd74.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1699",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ed0e455e2d8fd739813e35d8a6f35b9ac0e5b456/chirp%2Fdrivers%2Fthd74.py",
+      "sha256": "021a5d514b8b26e93cf524a7417ae76f0f20f31a221d89bea4598d8b25883120",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TH-D74 (clone mode)",
+        "TH-D75"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TH-D74 (clone mode)"
+        },
+        {
+          "vendor": "",
+          "model": "TH-D75"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::th-d74 (clone mode)|th-d75::thd74",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TH-D74 (clone mode), TH-D75",
       "availableVersions": []
     },
     {
@@ -6900,69 +6974,6 @@
       "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
       "latestInFamily": true,
       "recommended": true,
-      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/uvk5.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1688,
-      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
-      "path": "chirp/drivers/uvk5.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fuvk5.py",
-      "sha256": "5fe80621f673d26d4688375810c6c0a916b2a9cf0246e200f96fac67214b1c11",
-      "vendors": [
-        "MaxTalker",
-        "Quansheng",
-        "Retevis"
-      ],
-      "models": [
-        "RA79",
-        "TK-6",
-        "UV-K1",
-        "UV-K5"
-      ],
-      "variants": [
-        "OSFW",
-        "unsupported"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K5"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RA79"
-        },
-        {
-          "vendor": "MaxTalker",
-          "model": "TK-6"
-        },
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K1"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
-      "latestInFamily": false,
-      "recommended": false,
       "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
       "availableVersions": []
     },
@@ -7183,14 +7194,14 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/radtel_rt880g.py",
+      "candidateKey": "pr:kk7ds/chirp#1695:chirp/drivers/radtel_rt880g.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
-      "pullRequest": 1688,
-      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
+      "pullRequest": 1695,
+      "pullRequestTitle": "radtel_rt880g: Add setting descriptions from the RT-880G manual",
       "path": "chirp/drivers/radtel_rt880g.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fradtel_rt880g.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1695",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/47dec5eb78378ed68b4d2a5272a3440aeb20bf57/chirp%2Fdrivers%2Fradtel_rt880g.py",
       "sha256": "dd89577720b77c3c30be6afe8886c679dbd63c863ff3d9209f112a31ffeccc1b",
       "vendors": [
         "Radtel"
@@ -7367,64 +7378,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Retevis RA89R",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1694:chirp/drivers/retevis_rb28.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1694,
-      "pullRequestTitle": "Add retevis rb48 series models",
-      "path": "chirp/drivers/retevis_rb28.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1694",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/bd28391fadf752334ee50b7ed3256afa8974dd39/chirp%2Fdrivers%2Fretevis_rb28.py",
-      "sha256": "eadd45fdea7b9bc6558f2e6948757e1f87633d8246c29531af361f85cb1f602c",
-      "vendors": [
-        "Retevis"
-      ],
-      "models": [
-        "RB28",
-        "RB48",
-        "RB628",
-        "RB648"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Retevis",
-          "model": "RB28"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB628"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB48"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RB648"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::retevis::rb28|rb48|rb628|rb648::retevis_rb28",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Retevis RB28, RB48, RB628, RB648",
       "availableVersions": []
     },
     {
@@ -7658,69 +7611,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/kguv9dplus.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1688,
-      "pullRequestTitle": "Add setting descriptions and fix values from the FT-450D, UV-K5, KG-UV9PX and RT-880G manuals",
-      "path": "chirp/drivers/kguv9dplus.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/72912006c7e29ba510c5aaa1ccff3e899464d64e/chirp%2Fdrivers%2Fkguv9dplus.py",
-      "sha256": "94968958fcaf8a0e7659b6a76d978d4d137e801604449ddd8b464a7b887179a5",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-UV9D Plus",
-        "KG-UV9G Pro",
-        "KG-UV9GX",
-        "KG-UV9K",
-        "KG-UV9PX"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV9D Plus"
-        },
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV9PX"
-        },
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV9GX"
-        },
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV9K"
-        },
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV9G Pro"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-uv9d plus|kg-uv9g pro|kg-uv9gx|kg-uv9k|kg-uv9px::kguv9dplus",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1673:chirp/drivers/ft991a.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7758,6 +7648,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FT-991A",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1700:chirp/drivers/ftm150.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1700,
+      "pullRequestTitle": "ftm150: Added driver for Yaesu FTM-150E",
+      "path": "chirp/drivers/ftm150.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1700",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8d962f76d17bed6a742bc86a223b65dbba3b0ac2/chirp%2Fdrivers%2Fftm150.py",
+      "sha256": "afa80dee65a55b4490e45c4dfd790e8a75baba940ad919e77d5b407f3d2d491b",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FTM-150E"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FTM-150E"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::yaesu::ftm-150e::ftm150",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Yaesu FTM-150E",
       "availableVersions": []
     },
     {
@@ -7806,6 +7739,57 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1697:chirp/drivers/vx8.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1697,
+      "pullRequestTitle": "vx8: Fix crash on memories stored in AUTO mode",
+      "path": "chirp/drivers/vx8.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1697",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cd8965e1ff16be077451a182ec86ccd26ba05631/chirp%2Fdrivers%2Fvx8.py",
+      "sha256": "2544901d721af06bd33eb6b7d788c184da20844bba5237d8c17078de6c06e852",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "VX-8DR",
+        "VX-8GE",
+        "VX-8R"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "VX-8R"
+        },
+        {
+          "vendor": "",
+          "model": "VX-8DR"
+        },
+        {
+          "vendor": "",
+          "model": "VX-8GE"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::yaesu::vx-8dr|vx-8ge|vx-8r::vx8",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Yaesu VX-8DR, VX-8GE, VX-8R",
       "availableVersions": []
     },
     {
@@ -8012,7 +7996,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 46,
-  "historicalCount": 90,
-  "versionedCount": 74
+  "currentCount": 45,
+  "historicalCount": 91,
+  "versionedCount": 75
 }
