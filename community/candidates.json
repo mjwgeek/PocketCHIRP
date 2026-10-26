@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-25T14:24:19.924437Z",
+  "generatedAt": "2026-10-26T16:49:57.181527Z",
   "candidateCount": 136,
   "candidates": [
     {
@@ -5236,12 +5236,72 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/v3.3.2/Gogufw_3.3.2_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "path": "GOGU/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "sha256": "ad05bf74f074ddf1b258b8212c5e0d911182c2a0f2b85330d88b1ff4d97d82a1",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 GOGUFW Messenger"
+      ],
+      "variants": [
+        "3.3.2"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 GOGUFW Messenger",
+          "variant": "3.3.2"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": "3.3.2",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.3.2",
+      "availableVersions": [
+        "3.3.2",
+        "3.3.1",
+        "3.2.0",
+        "3.1.1",
+        "3.1.0",
+        "3.0.0",
+        "2.3.3",
+        "2.3.0",
+        "2.1.0",
+        "2.0.5",
+        "2.0.3",
+        "2.0.2",
+        "2.0.1",
+        "2.0.0",
+        "1.3.0"
+      ]
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.3.1/Gogufw_3.3.1_chirp_module.py",
       "sha256": "1450773196f2abc29097095adc3369969b663580b2af715e9b2f301311b7a9d5",
       "vendors": [
         "Quansheng"
@@ -5271,13 +5331,14 @@
       ],
       "status": "needs-review",
       "version": "3.3.1",
-      "historical": false,
-      "releaseTier": "current",
+      "historical": true,
+      "releaseTier": "historical",
       "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 gogufw messenger::gogufw_chirp_module",
-      "latestInFamily": true,
-      "recommended": true,
+      "latestInFamily": false,
+      "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.3.1",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5337,6 +5398,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.2.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5396,6 +5458,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.1.1",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5455,6 +5518,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.1.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5514,6 +5578,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v3.0.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5573,6 +5638,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.3.3",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5640,6 +5706,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.3.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5699,6 +5766,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.1.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5758,6 +5826,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.5",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5817,6 +5886,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.3",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5876,6 +5946,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.2",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5935,6 +6006,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.1",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -5994,6 +6066,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v2.0.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -6053,6 +6126,7 @@
       "recommended": false,
       "displayName": "Quansheng UV-K1 / UV-K5 V3 GOGUFW Messenger v1.3.0",
       "availableVersions": [
+        "3.3.2",
         "3.3.1",
         "3.2.0",
         "3.1.1",
@@ -6922,8 +6996,8 @@
       "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
       "path": "chirp/drivers/uvk5.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2dc63a34f73e4bd6a9e4d5960a5320f0b8d83385/chirp%2Fdrivers%2Fuvk5.py",
-      "sha256": "1d74a2c6def22a14f71dd3bdc5485b612d45b8d3b047d95affeeb894204b77d5",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1f0192aac76d34378225c23bde5ff69b35daa6a0/chirp%2Fdrivers%2Fuvk5.py",
+      "sha256": "a01586f5fb247498c6100951075e3ec3580fd295e5ad4cc2bbbe63a95a2584fc",
       "vendors": [
         "MaxTalker",
         "Quansheng",
@@ -7017,51 +7091,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN Fusion)",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1674:chirp/drivers/uvk5_cn.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1674,
-      "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
-      "path": "chirp/drivers/uvk5_cn.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/2dc63a34f73e4bd6a9e4d5960a5320f0b8d83385/chirp%2Fdrivers%2Fuvk5_cn.py",
-      "sha256": "e135e6c7f2f2396be0fc86764fd675d5ccb1c14e9228834becca0b2b9582aa62",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K5"
-      ],
-      "variants": [
-        "losehu"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K5",
-          "variant": "losehu"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::quansheng::uv-k5::uvk5_cn",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Quansheng UV-K5",
       "availableVersions": []
     },
     {
@@ -7339,6 +7368,52 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1537:chirp/drivers/retevis_h777d_pmr.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1537,
+      "pullRequestTitle": "Add driver for Retevis H777D PMR variant",
+      "path": "chirp/drivers/retevis_h777d_pmr.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1537",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0cdd9a72f143c4b3f52bc6ef6341e02e64ce146e/chirp%2Fdrivers%2Fretevis_h777d_pmr.py",
+      "sha256": "57d360fa0e3028721942d1a609d384795f867dea33b45685b470c30a061a532f",
+      "vendors": [
+        "Retevis"
+      ],
+      "models": [
+        "H777D"
+      ],
+      "variants": [
+        "PMR"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "H777D",
+          "variant": "PMR"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::retevis::h777d::retevis_h777d_pmr",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Retevis H777D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/retevis_ra89r.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7517,7 +7592,7 @@
       "pullRequestTitle": "tyt_uvl15w: Add TYT UVL-15W driver",
       "path": "chirp/drivers/tyt_uvl15w.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1693",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6675c6c36f6ba6021bbfc69a97fd0f7132fbcbbd/chirp%2Fdrivers%2Ftyt_uvl15w.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/17150a52ed6ba80e834465c895005f34d8491af1/chirp%2Fdrivers%2Ftyt_uvl15w.py",
       "sha256": "d82939ad1b0f4fbc201b7ce21c45a1e6e92ef68de7baa61dfad86252ab85d191",
       "vendors": [
         "TYT"
@@ -7658,8 +7733,8 @@
       "pullRequestTitle": "ftm150: Added driver for Yaesu FTM-150E",
       "path": "chirp/drivers/ftm150.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1700",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8d962f76d17bed6a742bc86a223b65dbba3b0ac2/chirp%2Fdrivers%2Fftm150.py",
-      "sha256": "afa80dee65a55b4490e45c4dfd790e8a75baba940ad919e77d5b407f3d2d491b",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ff553562bec0f1fc978f2d2cdc9c5e7753066d05/chirp%2Fdrivers%2Fftm150.py",
+      "sha256": "84e4af7b3ffb6385d4695951c6d8ce799e06a8909f31a1ac01453bf9ba0a747b",
       "vendors": [
         "Yaesu"
       ],
@@ -7739,57 +7814,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1697:chirp/drivers/vx8.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1697,
-      "pullRequestTitle": "vx8: Fix crash on memories stored in AUTO mode",
-      "path": "chirp/drivers/vx8.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1697",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cd8965e1ff16be077451a182ec86ccd26ba05631/chirp%2Fdrivers%2Fvx8.py",
-      "sha256": "2544901d721af06bd33eb6b7d788c184da20844bba5237d8c17078de6c06e852",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "VX-8DR",
-        "VX-8GE",
-        "VX-8R"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "VX-8R"
-        },
-        {
-          "vendor": "",
-          "model": "VX-8DR"
-        },
-        {
-          "vendor": "",
-          "model": "VX-8GE"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::vx-8dr|vx-8ge|vx-8r::vx8",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu VX-8DR, VX-8GE, VX-8R",
       "availableVersions": []
     },
     {
@@ -7996,7 +8020,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 45,
-  "historicalCount": 91,
-  "versionedCount": 75
+  "currentCount": 44,
+  "historicalCount": 92,
+  "versionedCount": 76
 }
