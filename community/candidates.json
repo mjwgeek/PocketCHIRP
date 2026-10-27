@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-26T16:49:57.181527Z",
-  "candidateCount": 136,
+  "generatedAt": "2026-10-27T15:55:25.149230Z",
+  "candidateCount": 133,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6727,7 +6727,7 @@
       "pullRequestTitle": "id880: Fix cloning over the RS-232 [DATA] jack",
       "path": "chirp/drivers/id880.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1671",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8009bf45e4d5b7c894b30954e89dc732a3eef593/chirp%2Fdrivers%2Fid880.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f4f78845884497d8699cfe09726221b44e4c422e/chirp%2Fdrivers%2Fid880.py",
       "sha256": "7ce52b4ccd9ca68d39690c5dff58f73c5bb1c9e44231fb7c514930818ec9b24c",
       "vendors": [
         "Icom"
@@ -6986,69 +6986,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "KSUN M6",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1674:chirp/drivers/uvk5.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1674,
-      "pullRequestTitle": "Add Quansheng UV-K5/K6 Chinese firmware driver",
-      "path": "chirp/drivers/uvk5.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1674",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1f0192aac76d34378225c23bde5ff69b35daa6a0/chirp%2Fdrivers%2Fuvk5.py",
-      "sha256": "a01586f5fb247498c6100951075e3ec3580fd295e5ad4cc2bbbe63a95a2584fc",
-      "vendors": [
-        "MaxTalker",
-        "Quansheng",
-        "Retevis"
-      ],
-      "models": [
-        "RA79",
-        "TK-6",
-        "UV-K1",
-        "UV-K5"
-      ],
-      "variants": [
-        "OSFW",
-        "unsupported"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K5"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RA79"
-        },
-        {
-          "vendor": "MaxTalker",
-          "model": "TK-6"
-        },
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K1"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
       "availableVersions": []
     },
     {
@@ -7585,49 +7522,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1693:chirp/drivers/tyt_uvl15w.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1693,
-      "pullRequestTitle": "tyt_uvl15w: Add TYT UVL-15W driver",
-      "path": "chirp/drivers/tyt_uvl15w.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1693",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/17150a52ed6ba80e834465c895005f34d8491af1/chirp%2Fdrivers%2Ftyt_uvl15w.py",
-      "sha256": "d82939ad1b0f4fbc201b7ce21c45a1e6e92ef68de7baa61dfad86252ab85d191",
-      "vendors": [
-        "TYT"
-      ],
-      "models": [
-        "UVL-15W"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "TYT",
-          "model": "UVL-15W"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::tyt::uvl-15w::tyt_uvl15w",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "TYT UVL-15W",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#832:chirp/drivers/kguv980p.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7723,49 +7617,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FT-991A",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1700:chirp/drivers/ftm150.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1700,
-      "pullRequestTitle": "ftm150: Added driver for Yaesu FTM-150E",
-      "path": "chirp/drivers/ftm150.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1700",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ff553562bec0f1fc978f2d2cdc9c5e7753066d05/chirp%2Fdrivers%2Fftm150.py",
-      "sha256": "84e4af7b3ffb6385d4695951c6d8ce799e06a8909f31a1ac01453bf9ba0a747b",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FTM-150E"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FTM-150E"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ftm-150e::ftm150",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FTM-150E",
       "availableVersions": []
     },
     {
@@ -8020,7 +7871,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 44,
+  "currentCount": 41,
   "historicalCount": 92,
   "versionedCount": 76
 }
