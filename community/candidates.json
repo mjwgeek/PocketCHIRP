@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-28T16:40:51.158626Z",
-  "candidateCount": 133,
+  "generatedAt": "2026-10-29T16:57:59.852923Z",
+  "candidateCount": 136,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6292,6 +6292,52 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/ft450d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1688,
+      "pullRequestTitle": "ft450d: Match setting values to the FT-450D manual",
+      "path": "chirp/drivers/ft450d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c0e00380d4deaa2c8c21b5b2dc6c2684a1ba72d6/chirp%2Fdrivers%2Fft450d.py",
+      "sha256": "a7c6bbf38fb1fb8d59c1a811b1ac33a837f77c4a2abc338fbb1cf1b5e5dc16b6",
+      "vendors": [],
+      "models": [
+        "FT-450",
+        "FT-450D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "FT-450D"
+        },
+        {
+          "vendor": "",
+          "model": "FT-450"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::ft-450|ft-450d::ft450d",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community FT-450, FT-450D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6989,6 +7035,69 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1690:chirp/drivers/uvk5.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1690,
+      "pullRequestTitle": "uvk5: Add setting descriptions and value fixes from the UV-K5 manual",
+      "path": "chirp/drivers/uvk5.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1690",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/85db32b100a20d03202f7f7ec7ccb70f4c27a6d2/chirp%2Fdrivers%2Fuvk5.py",
+      "sha256": "aa23ff5e831e07881ba81b87af5d439cd9310bc3b6430ca058f1c54738977a19",
+      "vendors": [
+        "MaxTalker",
+        "Quansheng",
+        "Retevis"
+      ],
+      "models": [
+        "RA79",
+        "TK-6",
+        "UV-K1",
+        "UV-K5"
+      ],
+      "variants": [
+        "OSFW",
+        "unsupported"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA79"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "TK-6"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1596:chirp/drivers/uvk5_f4hwn.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7167,7 +7276,7 @@
       "pullRequestTitle": "radtel_rt880g: Add setting descriptions from the RT-880G manual",
       "path": "chirp/drivers/radtel_rt880g.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1695",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/47dec5eb78378ed68b4d2a5272a3440aeb20bf57/chirp%2Fdrivers%2Fradtel_rt880g.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c8b601bb9f8592b0a72077e8bcc1a006a998d40e/chirp%2Fdrivers%2Fradtel_rt880g.py",
       "sha256": "dd89577720b77c3c30be6afe8886c679dbd63c863ff3d9209f112a31ffeccc1b",
       "vendors": [
         "Radtel"
@@ -7580,6 +7689,69 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1691,
+      "pullRequestTitle": "kguv9dplus: Add setting descriptions and fix values from the KG-UV9PX manual",
+      "path": "chirp/drivers/kguv9dplus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1691",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d67e8324abda4f94b7d781b9100bbb978970f0b2/chirp%2Fdrivers%2Fkguv9dplus.py",
+      "sha256": "94968958fcaf8a0e7659b6a76d978d4d137e801604449ddd8b464a7b887179a5",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV9D Plus",
+        "KG-UV9G Pro",
+        "KG-UV9GX",
+        "KG-UV9K",
+        "KG-UV9PX"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9D Plus"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9PX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9GX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9K"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9G Pro"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv9d plus|kg-uv9g pro|kg-uv9gx|kg-uv9k|kg-uv9px::kguv9dplus",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1673:chirp/drivers/ft991a.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7871,7 +8043,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 41,
+  "currentCount": 44,
   "historicalCount": 92,
   "versionedCount": 76
 }
