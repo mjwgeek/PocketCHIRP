@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-29T16:57:59.852923Z",
-  "candidateCount": 136,
+  "generatedAt": "2026-10-30T16:43:27.182911Z",
+  "candidateCount": 139,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -3994,7 +3994,7 @@
       "path": "driver/baofeng_dm32uv.py",
       "sourceUrl": "https://github.com/chaffed/CHiRP-DM32UV-Support/blob/main/driver/baofeng_dm32uv.py",
       "downloadUrl": "https://raw.githubusercontent.com/chaffed/CHiRP-DM32UV-Support/main/driver/baofeng_dm32uv.py",
-      "sha256": "b2f78dc36bde2d9088786e473773055ff1d325994a2ff4ae45d7bc373c1efea7",
+      "sha256": "4466f0408cb9a862d4e65eb0d5519d28f94e2ddee36f369334a43abb883dbe18",
       "vendors": [
         "Baofeng"
       ],
@@ -4327,9 +4327,17 @@
         "sync_out"
       ],
       "reasons": [
+        "collapsed 1 byte-identical duplicate source(s)",
         "explicit repository source"
       ],
       "status": "needs-review",
+      "duplicateSources": [
+        {
+          "repository": "srdego/transceiver-chirp-library",
+          "path": "chirp/drivers/f4hwn/fusion/f4hwn.fusion.chirp.v5.3.1.py",
+          "sourceUrl": "https://github.com/srdego/transceiver-chirp-library/blob/main/chirp/drivers/f4hwn/fusion/f4hwn.fusion.chirp.v5.3.1.py"
+        }
+      ],
       "version": null,
       "historical": true,
       "releaseTier": "historical",
@@ -6607,6 +6615,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1703:chirp/drivers/baofeng_dm32uv.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1703,
+      "pullRequestTitle": "dm32uv: Don't change the serial timeout before every read",
+      "path": "chirp/drivers/baofeng_dm32uv.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1703",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a3a74be253a46319d63637ff9a14114246fcccbc/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "da6c38e75b084f4d63ed957e6b60d66f80ab328125778e8dbb61bdf736d4bfdf",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "DM-32UV"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "DM-32UV"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng::dm-32uv::baofeng_dm32uv",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng DM-32UV",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7183,6 +7234,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/radtel_rt400.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1702,
+      "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
+      "path": "chirp/drivers/radtel_rt400.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/61f5e992640c40a8e4b54049e3c6e77a167620eb/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "sha256": "7718ac4ab9e4bea3723589182a9713e05a9cf9a315647f8a63595e5b7f390780",
+      "vendors": [
+        "Radtel"
+      ],
+      "models": [
+        "RT-400"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-400"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::radtel::rt-400::radtel_rt400",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Radtel RT-400",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1299:chirp/drivers/radtel_rt493.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7631,6 +7725,57 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1704:chirp/drivers/wln_kdc1.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1704,
+      "pullRequestTitle": "Add driver for WLN KD-C1S (SMP558 architecture)",
+      "path": "chirp/drivers/wln_kdc1.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1704",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/491b017dc21363f22b051437def982bd391ec725/chirp%2Fdrivers%2Fwln_kdc1.py",
+      "sha256": "5e7196a9786ba750d2b291e3680f7b19ced83c9652fb0d032fd38d96c203e845",
+      "vendors": [
+        "WLN"
+      ],
+      "models": [
+        "KD-C1 (SMP558)",
+        "KD-C1 Plus",
+        "KD-C1S"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "WLN",
+          "model": "KD-C1 Plus"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1 (SMP558)"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1S"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wln::kd-c1 (smp558)|kd-c1 plus|kd-c1s::wln_kdc1",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "WLN KD-C1 (SMP558), KD-C1 Plus, KD-C1S",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#832:chirp/drivers/kguv980p.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8043,7 +8188,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 44,
+  "currentCount": 47,
   "historicalCount": 92,
   "versionedCount": 76
 }
