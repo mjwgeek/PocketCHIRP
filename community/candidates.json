@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-30T16:43:27.182911Z",
+  "generatedAt": "2026-10-31T15:46:19.434470Z",
   "candidateCount": 139,
   "candidates": [
     {
@@ -7241,8 +7241,8 @@
       "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
       "path": "chirp/drivers/radtel_rt400.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/61f5e992640c40a8e4b54049e3c6e77a167620eb/chirp%2Fdrivers%2Fradtel_rt400.py",
-      "sha256": "7718ac4ab9e4bea3723589182a9713e05a9cf9a315647f8a63595e5b7f390780",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0a338e20a31dc5070cf9074c12d739d7cad1fce8/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "sha256": "93129c82e0a6c3ef370a942430a825a81dbaf353a9bb8f45f475a2b04a1b9fb0",
       "vendors": [
         "Radtel"
       ],
