@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-10-31T15:46:19.434470Z",
-  "candidateCount": 139,
+  "generatedAt": "2026-11-01T16:50:48.064720Z",
+  "candidateCount": 143,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4855,8 +4855,8 @@
       "duplicateSources": [
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "N7SIX/v7.6.11/f4hwn.chirp.v6.1.0.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.11/f4hwn.chirp.v6.1.0.py"
+          "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.11/f4hwn.chirp.v6.1.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.11/f4hwn.chirp.v6.1.0.py"
         }
       ],
       "version": null,
@@ -5112,6 +5112,88 @@
       "latestInFamily": true,
       "recommended": false,
       "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX ApeX)",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "sha256": "bc842b529f5ab153c9428cd57a23adf8ffaef4f2f637a4ed19fd1be6f8a8da5a",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six)::n7six_apex_k1",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX)",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/v3.0.0/falcon.chirp.v3.0.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "FALCON/v3.0.0/falcon.chirp.v3.0.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/v3.0.0/falcon.chirp.v3.0.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/v3.0.0/falcon.chirp.v3.0.0.py",
+      "sha256": "cade4e056312af5a9563ce07b86c884f917bf519dfcd033ece6882ceee2e05ac",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 Falcon v3.0.0"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 Falcon v3.0.0"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 falcon v3.0.0::falcon_chirp",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 Falcon v3.0.0",
       "availableVersions": []
     },
     {
@@ -6658,6 +6740,280 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1705:chirp/drivers/radtel_t18.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1705,
+      "pullRequestTitle": "Add Baofeng T22 FRS and T22 PMR aliases - fixes #12609",
+      "path": "chirp/drivers/radtel_t18.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1705",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1fb34a8c747920fd258a20034faeda3194d31510/chirp%2Fdrivers%2Fradtel_t18.py",
+      "sha256": "c6a5b9603d4843eb826c258dfc7f1952c5bdb66b4060cb2c3bca89e7e090749b",
+      "vendors": [
+        "BTECH",
+        "Baofeng",
+        "Radtel",
+        "Retevis"
+      ],
+      "models": [
+        "BF-T20FRS",
+        "BF-V8A",
+        "FRS-B1",
+        "H777H_FRS",
+        "H777H_PMR",
+        "RB17",
+        "RB17V",
+        "RB18",
+        "RB19",
+        "RB19P",
+        "RB29",
+        "RB617",
+        "RB618",
+        "RB619",
+        "RB629",
+        "RB75",
+        "RB85",
+        "RB87",
+        "RT15",
+        "RT20",
+        "RT22S",
+        "RT47",
+        "RT47V",
+        "RT647",
+        "RT668",
+        "RT68",
+        "T18",
+        "T22 FRS"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "T18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT20"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT22S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB18"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB618"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT68"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT668"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB617"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB85"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB75"
+        },
+        {
+          "vendor": "BTECH",
+          "model": "FRS-B1"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB19P"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB619"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT47V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT647"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-V8A"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB29"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB629"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT15"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB87"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "T22 FRS"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-T20FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "H777H_PMR"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|btech|radtel|retevis::bf-t20frs|bf-v8a|frs-b1|h777h_frs|h777h_pmr|rb17|rb17v|rb18|rb19|rb19p|rb29|rb617|rb618|rb619|rb629|rb75|rb85|rb87|rt15|rt20|rt22s|rt47|rt47v|rt647|rt668|rt68|t18|t22 frs::radtel_t18",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "BTECH, Baofeng, Radtel, Retevis BF-T20FRS, BF-V8A, FRS-B1, H777H_FRS, H777H_PMR, RB17, RB17V, RB18, RB19, RB19P, RB29, RB617, RB618, RB619, RB629, RB75, RB85, RB87, RT15, RT20, RT22S, RT47, RT47V, RT647, RT668, RT68, T18, T22 FRS",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1705:chirp/drivers/retevis_rt22.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1705,
+      "pullRequestTitle": "Add Baofeng T22 FRS and T22 PMR aliases - fixes #12609",
+      "path": "chirp/drivers/retevis_rt22.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1705",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1fb34a8c747920fd258a20034faeda3194d31510/chirp%2Fdrivers%2Fretevis_rt22.py",
+      "sha256": "e3801b0c2c72d0bffd69a5c5419a52aa37bc3f813ea25e72438158da0ce3ecbe",
+      "vendors": [
+        "Baofeng",
+        "LUITON",
+        "Retevis",
+        "TID",
+        "WLN",
+        "Zastone"
+      ],
+      "models": [
+        "BF-T20",
+        "KD-C1",
+        "LT-316",
+        "RT22",
+        "RT22FRS",
+        "RT622",
+        "T22 PMR",
+        "TD-M8",
+        "W31E",
+        "ZT-X6"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RT22"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1"
+        },
+        {
+          "vendor": "Zastone",
+          "model": "ZT-X6"
+        },
+        {
+          "vendor": "LUITON",
+          "model": "LT-316"
+        },
+        {
+          "vendor": "TID",
+          "model": "TD-M8"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT22FRS"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT622"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "W31E"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "T22 PMR"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-T20"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|luiton|retevis|tid|wln|zastone::bf-t20|kd-c1|lt-316|rt22|rt22frs|rt622|t22 pmr|td-m8|w31e|zt-x6::retevis_rt22",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, LUITON, Retevis, TID, WLN, Zastone BF-T20, KD-C1, LT-316, RT22, RT22FRS, RT622, T22 PMR, TD-M8, W31E, ZT-X6",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8188,7 +8544,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 47,
+  "currentCount": 51,
   "historicalCount": 92,
   "versionedCount": 76
 }
