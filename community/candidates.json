@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-02T20:24:03.102232Z",
-  "candidateCount": 145,
+  "generatedAt": "2026-11-03T17:53:01.769186Z",
+  "candidateCount": 143,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6458,52 +6458,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1688:chirp/drivers/ft450d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1688,
-      "pullRequestTitle": "ft450d: Match setting values to the FT-450D manual",
-      "path": "chirp/drivers/ft450d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1688",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c0e00380d4deaa2c8c21b5b2dc6c2684a1ba72d6/chirp%2Fdrivers%2Fft450d.py",
-      "sha256": "a7c6bbf38fb1fb8d59c1a811b1ac33a837f77c4a2abc338fbb1cf1b5e5dc16b6",
-      "vendors": [],
-      "models": [
-        "FT-450",
-        "FT-450D"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "FT-450D"
-        },
-        {
-          "vendor": "",
-          "model": "FT-450"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::ft-450|ft-450d::ft450d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community FT-450, FT-450D",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -6547,6 +6501,145 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Abbree AR-7600",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1707:chirp/drivers/retevis_rt21.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1707,
+      "pullRequestTitle": "retevis_rt21: Add Retevis RT97L GMRS repeater",
+      "path": "chirp/drivers/retevis_rt21.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1707",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c244457bb03b70ca97644a96bb99e70f78681415/chirp%2Fdrivers%2Fretevis_rt21.py",
+      "sha256": "5a9637b24dead7cef78e046e15781bbbacab0f7bafbeddfaf11e64362e3e73f0",
+      "vendors": [
+        "Abbree",
+        "Retevis"
+      ],
+      "models": [
+        "AR-63",
+        "RB17A",
+        "RB23",
+        "RB26",
+        "RB28B",
+        "RB626",
+        "RB628B",
+        "RB89",
+        "RT19",
+        "RT21",
+        "RT21V",
+        "RT29_UHF",
+        "RT29_VHF",
+        "RT40B",
+        "RT619",
+        "RT76",
+        "RT86",
+        "RT86A",
+        "RT86S",
+        "RT97L"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Retevis",
+          "model": "RT21"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB17A"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT21V"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB26"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB626"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT76"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT29_UHF"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT29_VHF"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB23"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT19"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT619"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-63"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT40B"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB28B"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB628B"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT86"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RB89"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT86S"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT86A"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT97L"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::abbree|retevis::ar-63|rb17a|rb23|rb26|rb28b|rb626|rb628b|rb89|rt19|rt21|rt21v|rt29_uhf|rt29_vhf|rt40b|rt619|rt76|rt86|rt86a|rt86s|rt97l::retevis_rt21",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Abbree, Retevis AR-63, RB17A, RB23, RB26, RB28B, RB626, RB628B, RB89, RT19, RT21, RT21V, RT29_UHF, RT29_VHF, RT40B, RT619, RT76, RT86, RT86A, RT86S, RT97L",
       "availableVersions": []
     },
     {
@@ -7054,7 +7147,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c9fd7cb72f2f67bfc06e480ad001f0984fb2b9c9/chirp%2Fdrivers%2Fth_uv88.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a22b3b8bd5559c8b1b0517f5823b6e3966a40d51/chirp%2Fdrivers%2Fth_uv88.py",
       "sha256": "9cb96b26c3a2537a1b24a1a7aa74f502b375aa49522d5bb104e58677a402e3a1",
       "vendors": [
         "Explorer",
@@ -7630,7 +7723,7 @@
       "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
       "path": "chirp/drivers/radtel_rt400.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/073f82b6aebf3cd1f8edade0b450a31455f2abcf/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d9a1a81c834383686f973441a32cf4818b84f500/chirp%2Fdrivers%2Fradtel_rt400.py",
       "sha256": "93129c82e0a6c3ef370a942430a825a81dbaf353a9bb8f45f475a2b04a1b9fb0",
       "vendors": [
         "Radtel"
@@ -7950,7 +8043,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c9fd7cb72f2f67bfc06e480ad001f0984fb2b9c9/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a22b3b8bd5559c8b1b0517f5823b6e3966a40d51/chirp%2Fdrivers%2Fretevis_ra89r.py",
       "sha256": "ed6eedc6cd8bd2a053bd2362e6ea78990f2536a4c88cd36752df3421b2947d63",
       "vendors": [
         "Retevis"
@@ -8326,49 +8419,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1706:chirp/drivers/ftm150.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1706,
-      "pullRequestTitle": "ftm300d: Decode frequencies as BCD and share with ftm150",
-      "path": "chirp/drivers/ftm150.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1706",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/492d39cb0ff0d2804287e1118015c5f91f8e661b/chirp%2Fdrivers%2Fftm150.py",
-      "sha256": "33f0faeaf78e22bb0377b8b1e971adeecf973fbb0f3886d7e88d001e9352176f",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FTM-150E"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FTM-150E"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ftm-150e::ftm150",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FTM-150E",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1025:chirp/drivers/ftm6000.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8414,49 +8464,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1706:chirp/drivers/ftm300d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1706,
-      "pullRequestTitle": "ftm300d: Decode frequencies as BCD and share with ftm150",
-      "path": "chirp/drivers/ftm300d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1706",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/492d39cb0ff0d2804287e1118015c5f91f8e661b/chirp%2Fdrivers%2Fftm300d.py",
-      "sha256": "153ec4f3529e7e004dd3f4acc4959c638b538e36de48812b29104740f3947281",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FTM-300DR"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FTM-300DR"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ftm-300dr::ftm300d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FTM-300DR",
       "availableVersions": []
     },
     {
@@ -8663,7 +8670,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 52,
+  "currentCount": 50,
   "historicalCount": 93,
   "versionedCount": 77
 }
