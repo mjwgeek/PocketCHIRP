@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-03T17:53:01.769186Z",
-  "candidateCount": 143,
+  "generatedAt": "2026-11-04T18:01:10.633147Z",
+  "candidateCount": 145,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7723,8 +7723,8 @@
       "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
       "path": "chirp/drivers/radtel_rt400.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d9a1a81c834383686f973441a32cf4818b84f500/chirp%2Fdrivers%2Fradtel_rt400.py",
-      "sha256": "93129c82e0a6c3ef370a942430a825a81dbaf353a9bb8f45f475a2b04a1b9fb0",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/bed523faaa46c20d26eab3fc18c345e74041a9ad/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "sha256": "66d6d74c5f1b759bf5bad53c48b31c0904dbdc9849f43420bba092baa5c7182b",
       "vendors": [
         "Radtel"
       ],
@@ -8121,6 +8121,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1709:chirp/drivers/samcom_fpcn30a.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1709,
+      "pullRequestTitle": "Related to #8717: Samcom FPCN30A",
+      "path": "chirp/drivers/samcom_fpcn30a.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1709",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/67e9ba2b95da0a74bea364d502a8264cf23009ba/chirp%2Fdrivers%2Fsamcom_fpcn30a.py",
+      "sha256": "37cd965cdb847ad44a07228d50afdff040c84a1d24892966f43a54873e296fff",
+      "vendors": [
+        "Samcom"
+      ],
+      "models": [
+        "FPCN30A"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Samcom",
+          "model": "FPCN30A"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::samcom::fpcn30a::samcom_fpcn30a",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Samcom FPCN30A",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8204,6 +8247,48 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "TYT TH-8600",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1711:chirp/drivers/v8plus.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1711,
+      "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
+      "path": "chirp/drivers/v8plus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0416e95d4874995d6a1e2b124726dea3926004e2/chirp%2Fdrivers%2Fv8plus.py",
+      "sha256": "d2a242e75943abeb3bae6154091a64d27a32ab94a83ef800bcf37809447ec4e5",
+      "vendors": [
+        "Weierwei"
+      ],
+      "models": [
+        "VEV-V8 Plus"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Weierwei",
+          "model": "VEV-V8 Plus"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::weierwei::vev-v8 plus::v8plus",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Weierwei VEV-V8 Plus",
       "availableVersions": []
     },
     {
@@ -8379,6 +8464,48 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1710:chirp/drivers/kgwv50.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1710,
+      "pullRequestTitle": "Add Wouxun KG-WV50 driver",
+      "path": "chirp/drivers/kgwv50.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1710",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e282f5d4e7559d8d91f832dc20d6d810b04b97c9/chirp%2Fdrivers%2Fkgwv50.py",
+      "sha256": "c77d94f26e70baa9342c0900d00fb7b3d26ef175a1a190540b979a4d65643f03",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-WV50"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-WV50"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-wv50::kgwv50",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-WV50",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1673:chirp/drivers/ft991a.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8464,48 +8591,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1672:chirp/drivers/d9000.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1672,
-      "pullRequestTitle": "Add Zastone ZT-D9000 driver",
-      "path": "chirp/drivers/d9000.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1672",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/de372ad68d840db7e7c13787df8ebefe79237e97/chirp%2Fdrivers%2Fd9000.py",
-      "sha256": "c84afa236683f468ac1a9c2c49db12c6f5b333c0d7ee8466c9c159af8649687c",
-      "vendors": [
-        "Zastone"
-      ],
-      "models": [
-        "ZT-D9000"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Zastone",
-          "model": "ZT-D9000"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::zastone::zt-d9000::d9000",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Zastone ZT-D9000",
       "availableVersions": []
     },
     {
@@ -8670,7 +8755,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 50,
+  "currentCount": 52,
   "historicalCount": 93,
   "versionedCount": 77
 }
