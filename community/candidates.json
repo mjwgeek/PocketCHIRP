@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-05T18:03:49.930308Z",
-  "candidateCount": 149,
+  "generatedAt": "2026-11-06T17:32:39.447580Z",
+  "candidateCount": 151,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5156,6 +5156,47 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "FALCON/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "sha256": "6251f209b990536b65dd4f431b572a9d4919e4eb6bdbcf7977150d8f578d4c98",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 / UV-K5 V3 Falcon 1K v3.1.1"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 / UV-K5 V3 Falcon 1K v3.1.1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 / uv-k5 v3 falcon 1k v3.1.1::falcon1k_chirp",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Quansheng UV-K1 / UV-K5 V3 Falcon 1K v3.1.1",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/falcon.chirp.v3.0.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -6589,11 +6630,11 @@
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1713,
-      "pullRequestTitle": "ft8900: Add hyper memory settings and HOME/PMS channels",
+      "pullRequestTitle": "ft8900: Add partial hyper memory and HOME/PMS support",
       "path": "chirp/drivers/ft7800.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1713",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3a579127ef953e53de62cd641ff8af04ada8babf/chirp%2Fdrivers%2Fft7800.py",
-      "sha256": "722f7799743f5001041ffda017249165f518068d0f0f5534ee4eca570b072a90",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8d154ae00ed240c4110c63caf67cf59032992f01/chirp%2Fdrivers%2Fft7800.py",
+      "sha256": "4b276915547669f1f2e1f6bafc3833fd9b45c53251d7562424ca32b6432c6ec8",
       "vendors": [],
       "models": [
         "FT-7800/7900",
@@ -6636,6 +6677,67 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Community FT-7800/7900, FT-8800, FT-8900",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1719:chirp/drivers/tk8160.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1719,
+      "pullRequestTitle": "Skip fixes",
+      "path": "chirp/drivers/tk8160.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1719",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/511899108aeabf6904c7d864852e1a515191a53b/chirp%2Fdrivers%2Ftk8160.py",
+      "sha256": "65c03110d8bea2214220ce65204504326ebec117a98ffa691046f67c32aaf96c",
+      "vendors": [],
+      "models": [
+        "TK-7160K",
+        "TK-7160M",
+        "TK-7162",
+        "TK-8160K",
+        "TK-8160M"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TK-7160M"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7160K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8160K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8160M"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7162"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::tk-7160k|tk-7160m|tk-7162|tk-8160k|tk-8160m::tk8160",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community TK-7160K, TK-7160M, TK-7162, TK-8160K, TK-8160M",
       "availableVersions": []
     },
     {
@@ -7054,8 +7156,8 @@
       "pullRequestTitle": "Add Baofeng T22 FRS and T22 PMR aliases - fixes #12609",
       "path": "chirp/drivers/radtel_t18.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1705",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1fb34a8c747920fd258a20034faeda3194d31510/chirp%2Fdrivers%2Fradtel_t18.py",
-      "sha256": "c6a5b9603d4843eb826c258dfc7f1952c5bdb66b4060cb2c3bca89e7e090749b",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f794ec707a9ca1226211f86268e532206d7bf9b7/chirp%2Fdrivers%2Fradtel_t18.py",
+      "sha256": "387ef3307a557d1aedf18037de0c4d98b66d23abb73fe94e8f6eb702a42d077b",
       "vendors": [
         "BTECH",
         "Baofeng",
@@ -7192,11 +7294,11 @@
         },
         {
           "vendor": "Baofeng",
-          "model": "T22 FRS"
+          "model": "BF-T20FRS"
         },
         {
           "vendor": "Baofeng",
-          "model": "BF-T20FRS"
+          "model": "T22 FRS"
         },
         {
           "vendor": "Retevis",
@@ -7235,8 +7337,8 @@
       "pullRequestTitle": "Add Baofeng T22 FRS and T22 PMR aliases - fixes #12609",
       "path": "chirp/drivers/retevis_rt22.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1705",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1fb34a8c747920fd258a20034faeda3194d31510/chirp%2Fdrivers%2Fretevis_rt22.py",
-      "sha256": "e3801b0c2c72d0bffd69a5c5419a52aa37bc3f813ea25e72438158da0ce3ecbe",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f794ec707a9ca1226211f86268e532206d7bf9b7/chirp%2Fdrivers%2Fretevis_rt22.py",
+      "sha256": "446e67e45fe5b199bffd00180b5a88ad70e1ffd9ff6c87d56d7a143144c5e99c",
       "vendors": [
         "Baofeng",
         "LUITON",
@@ -7293,11 +7395,11 @@
         },
         {
           "vendor": "Baofeng",
-          "model": "T22 PMR"
+          "model": "BF-T20"
         },
         {
           "vendor": "Baofeng",
-          "model": "BF-T20"
+          "model": "T22 PMR"
         }
       ],
       "hintsMatched": [
@@ -7328,8 +7430,8 @@
       "pullRequestTitle": "uvpro: Add BTECH UV-PRO Bluetooth live driver",
       "path": "chirp/drivers/btech_uvpro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1714",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/24c6c0a4693ce3066935800ff372c05a02f45669/chirp%2Fdrivers%2Fbtech_uvpro.py",
-      "sha256": "8baf48c22e6f14ace6ca7eb4ce737928b02ae5f714a6f2ee6fded0958862cedb",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/037229da446894677b0aae1d49da619cc110fcdb/chirp%2Fdrivers%2Fbtech_uvpro.py",
+      "sha256": "585a01f8d42699c9c7a5bf127fef151f1748115db1c9822b082849846d40316c",
       "vendors": [
         "BTECH"
       ],
@@ -7520,6 +7622,47 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1719:chirp/drivers/icv80.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1719,
+      "pullRequestTitle": "Skip fixes",
+      "path": "chirp/drivers/icv80.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1719",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/511899108aeabf6904c7d864852e1a515191a53b/chirp%2Fdrivers%2Ficv80.py",
+      "sha256": "a3609920f7ff9b8a5052958465f08bd77a10aeeaf646eef3ba28b96e9ff18985",
+      "vendors": [
+        "Icom"
+      ],
+      "models": [
+        "IC-V80"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Icom",
+          "model": "IC-V80"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::icom::ic-v80::icv80",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Icom IC-V80",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1671:chirp/drivers/id880.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7605,54 +7748,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Iradio DM-UV4R",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1699:chirp/drivers/thd74.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1699,
-      "pullRequestTitle": "Fix strings that never reach translation catalog",
-      "path": "chirp/drivers/thd74.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1699",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ed0e455e2d8fd739813e35d8a6f35b9ac0e5b456/chirp%2Fdrivers%2Fthd74.py",
-      "sha256": "021a5d514b8b26e93cf524a7417ae76f0f20f31a221d89bea4598d8b25883120",
-      "vendors": [
-        "Kenwood"
-      ],
-      "models": [
-        "TH-D74 (clone mode)",
-        "TH-D75"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Kenwood",
-          "model": "TH-D74 (clone mode)"
-        },
-        {
-          "vendor": "",
-          "model": "TH-D75"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::kenwood::th-d74 (clone mode)|th-d75::thd74",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Kenwood TH-D74 (clone mode), TH-D75",
       "availableVersions": []
     },
     {
@@ -8622,6 +8717,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1710:chirp/drivers/kguv8d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1710,
+      "pullRequestTitle": "Add Wouxun KG-WV50 driver",
+      "path": "chirp/drivers/kguv8d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1710",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4fc47796d53fa6574e8897e87d926debcc430848/chirp%2Fdrivers%2Fkguv8d.py",
+      "sha256": "81b30494e19aeda3f3a20d04f59aed9afd887294b189e21cc288d9fa8e998c9a",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV8D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV8D"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv8d::kguv8d",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV8D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8682,48 +8820,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1710:chirp/drivers/kgwv50.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1710,
-      "pullRequestTitle": "Add Wouxun KG-WV50 driver",
-      "path": "chirp/drivers/kgwv50.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1710",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f7a409d579bcb340316fa1f189095ea1bf17e930/chirp%2Fdrivers%2Fkgwv50.py",
-      "sha256": "b4705e196f2f04e05aa3dad262f32f55dbbe6ad29a75799b51d0932050668534",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-WV50"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-WV50"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-wv50::kgwv50",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-WV50",
       "availableVersions": []
     },
     {
@@ -8976,7 +9072,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 54,
+  "currentCount": 56,
   "historicalCount": 95,
   "versionedCount": 78
 }
