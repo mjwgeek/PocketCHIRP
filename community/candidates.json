@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-06T17:32:39.447580Z",
-  "candidateCount": 151,
+  "generatedAt": "2026-11-07T16:29:38.107037Z",
+  "candidateCount": 148,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6626,121 +6626,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1713:chirp/drivers/ft7800.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1713,
-      "pullRequestTitle": "ft8900: Add partial hyper memory and HOME/PMS support",
-      "path": "chirp/drivers/ft7800.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1713",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8d154ae00ed240c4110c63caf67cf59032992f01/chirp%2Fdrivers%2Fft7800.py",
-      "sha256": "4b276915547669f1f2e1f6bafc3833fd9b45c53251d7562424ca32b6432c6ec8",
-      "vendors": [],
-      "models": [
-        "FT-7800/7900",
-        "FT-8800",
-        "FT-8900"
-      ],
-      "variants": [
-        "Left",
-        "Right"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "FT-7800/7900"
-        },
-        {
-          "vendor": "",
-          "model": "FT-8800"
-        },
-        {
-          "vendor": "",
-          "model": "FT-8900"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::ft-7800/7900|ft-8800|ft-8900::ft7800",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community FT-7800/7900, FT-8800, FT-8900",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1719:chirp/drivers/tk8160.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1719,
-      "pullRequestTitle": "Skip fixes",
-      "path": "chirp/drivers/tk8160.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1719",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/511899108aeabf6904c7d864852e1a515191a53b/chirp%2Fdrivers%2Ftk8160.py",
-      "sha256": "65c03110d8bea2214220ce65204504326ebec117a98ffa691046f67c32aaf96c",
-      "vendors": [],
-      "models": [
-        "TK-7160K",
-        "TK-7160M",
-        "TK-7162",
-        "TK-8160K",
-        "TK-8160M"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "TK-7160M"
-        },
-        {
-          "vendor": "",
-          "model": "TK-7160K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-8160K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-8160M"
-        },
-        {
-          "vendor": "",
-          "model": "TK-7162"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::tk-7160k|tk-7160m|tk-7162|tk-8160k|tk-8160m::tk8160",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community TK-7160K, TK-7160M, TK-7162, TK-8160K, TK-8160M",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7430,8 +7315,8 @@
       "pullRequestTitle": "uvpro: Add BTECH UV-PRO Bluetooth live driver",
       "path": "chirp/drivers/btech_uvpro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1714",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/037229da446894677b0aae1d49da619cc110fcdb/chirp%2Fdrivers%2Fbtech_uvpro.py",
-      "sha256": "585a01f8d42699c9c7a5bf127fef151f1748115db1c9822b082849846d40316c",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6a1306c0d29a0ea2d81d493ccf9dade0e59b4456/chirp%2Fdrivers%2Fbtech_uvpro.py",
+      "sha256": "29e6d80a950b6dd9dcf4a1ceb972b0d05447fab61faa115bb14b3c877bf1664c",
       "vendors": [
         "BTECH"
       ],
@@ -7619,47 +7504,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Icom IC-R6",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1719:chirp/drivers/icv80.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1719,
-      "pullRequestTitle": "Skip fixes",
-      "path": "chirp/drivers/icv80.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1719",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/511899108aeabf6904c7d864852e1a515191a53b/chirp%2Fdrivers%2Ficv80.py",
-      "sha256": "a3609920f7ff9b8a5052958465f08bd77a10aeeaf646eef3ba28b96e9ff18985",
-      "vendors": [
-        "Icom"
-      ],
-      "models": [
-        "IC-V80"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Icom",
-          "model": "IC-V80"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::icom::ic-v80::icv80",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Icom IC-V80",
       "availableVersions": []
     },
     {
@@ -8444,8 +8288,8 @@
       "pullRequestTitle": "Related to #8717: Samcom FPCN30A",
       "path": "chirp/drivers/samcom_fpcn30a.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1709",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/67e9ba2b95da0a74bea364d502a8264cf23009ba/chirp%2Fdrivers%2Fsamcom_fpcn30a.py",
-      "sha256": "37cd965cdb847ad44a07228d50afdff040c84a1d24892966f43a54873e296fff",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d56361ab26135b31146efdff122b550e30b702ab/chirp%2Fdrivers%2Fsamcom_fpcn30a.py",
+      "sha256": "5690399cb3559a107346650497297a2d98cd51e5b65dff1e9844362bc44aa372",
       "vendors": [
         "Samcom"
       ],
@@ -9072,7 +8916,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 56,
+  "currentCount": 53,
   "historicalCount": 95,
   "versionedCount": 78
 }
