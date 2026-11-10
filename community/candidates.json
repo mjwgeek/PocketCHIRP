@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-09T20:48:06.762989Z",
-  "candidateCount": 152,
+  "generatedAt": "2026-11-10T17:53:30.210629Z",
+  "candidateCount": 153,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4029,55 +4029,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:KA50/Chirp_KA50_KA52.py",
-      "type": "repository-file",
-      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "KA50/Chirp_KA50_KA52.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/KA50/Chirp_KA50_KA52.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/KA50/Chirp_KA50_KA52.py",
-      "sha256": "e66ac481fc6e6cc6b76c53ea68d2a10732729bc7c72593d5ce4baf29eb566ab4",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "CHIRP_KA-50/52"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Quansheng",
-          "model": "CHIRP_KA-50/52"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "collapsed 1 byte-identical duplicate source(s)",
-        "explicit repository source"
-      ],
-      "status": "needs-review",
-      "duplicateSources": [
-        {
-          "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "KA52/Chirp_KA50_KA52.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/KA52/Chirp_KA50_KA52.py"
-        }
-      ],
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::chirp_ka-50/52::chirp_ka50_ka52",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Quansheng CHIRP_KA-50/52",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:IJV/chirp/IJV V5.0 Memory.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -4168,12 +4119,12 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/v2.0/brass.k1-k5v3.chirp.v2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/v2.0/brass.k1-k5v3.chirp.v2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "NR7Y/v2.0/brass.k1-k5v3.chirp.v2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/v2.0/brass.k1-k5v3.chirp.v2.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/v2.0/brass.k1-k5v3.chirp.v2.0.py",
+      "path": "Brass/v2.0/brass.k1-k5v3.chirp.v2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/v2.0/brass.k1-k5v3.chirp.v2.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/v2.0/brass.k1-k5v3.chirp.v2.0.py",
       "sha256": "dbc87d3a44baaa39b472f33e46ce1eb15dc3ab7d1a0f385934dd7b924e9d62a4",
       "vendors": [
         "Quansheng"
@@ -4648,12 +4599,12 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
       "sha256": "76b6227413ccfeea9a52d3646147bdee7a3c6f8826e8a7d1cbad8c44633abbd7",
       "vendors": [
         "Quansheng"
@@ -4696,12 +4647,12 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
       "sha256": "fb344ce66390ec7e6439e66f8774a3c09f006c2e63c8eb513aad223cb485403e",
       "vendors": [
         "Quansheng"
@@ -4744,12 +4695,12 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/NR7Y/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/NR7Y/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
       "sha256": "ec7523e8adf895832565a1f125a587c331855e1e3e38b1f436db9e8e49c51f21",
       "vendors": [
         "Quansheng"
@@ -7332,6 +7283,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1729:chirp/drivers/baofeng_uv5rm_pro_gps.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1729,
+      "pullRequestTitle": "baofeng_uv5rm_pro_gps: Add support for Baofeng UV-5RM Pro GPS",
+      "path": "chirp/drivers/baofeng_uv5rm_pro_gps.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1729",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/173de959d821e9bb479e908574526d19aaeaf416/chirp%2Fdrivers%2Fbaofeng_uv5rm_pro_gps.py",
+      "sha256": "1fc72f1e49352d4536d2890e17e3163881db325c11b933fb8169681884fb0433",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "UV-5RM Pro GPS"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RM Pro GPS"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng::uv-5rm pro gps::baofeng_uv5rm_pro_gps",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng UV-5RM Pro GPS",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1705:chirp/drivers/radtel_t18.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8803,6 +8797,64 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#832:chirp/drivers/kguv980p.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 832,
+      "pullRequestTitle": "Add Wouxun KG-UV950P support",
+      "path": "chirp/drivers/kguv980p.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/832",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cac8c88b4c04c775902e62c592dbc169b022ff9f/chirp%2Fdrivers%2Fkguv980p.py",
+      "sha256": "9a6a4abbd708e116f6b5e09bff319790b313fcfee5005b75f9948113657c5f7f",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-1000G",
+        "KG-1000G Plus",
+        "KG-UV950P",
+        "KG-UV980P"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV980P"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-1000G"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-1000G Plus"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV950P"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-1000g|kg-1000g plus|kg-uv950p|kg-uv980p::kguv980p",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9157,7 +9209,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 52,
+  "currentCount": 53,
   "historicalCount": 100,
   "versionedCount": 80
 }
