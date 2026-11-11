@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-10T17:53:30.210629Z",
-  "candidateCount": 153,
+  "generatedAt": "2026-11-11T17:56:04.563854Z",
+  "candidateCount": 157,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6828,8 +6828,8 @@
       "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
       "path": "chirp/drivers/baofeng_5rh_pro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5a9398231b580e2125f0f2b8fa9ffa612f586b6e/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
-      "sha256": "bb8fcd7027e7b9cd03e673b0fa96c45f35e01bed70a3e0ee9c3477abc768b818",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
+      "sha256": "3e6c4609968f4ce92cf338d703f590477b8076d8ce7dc129a8258bae89aea35f",
       "vendors": [],
       "models": [
         "5RH Pro",
@@ -6918,6 +6918,205 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Abbree AR-7600",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/ga510.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1625,
+      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
+      "path": "chirp/drivers/ga510.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fga510.py",
+      "sha256": "2eea9c3a91b1071fcd526b8bea883c3e02a4bb6904cfa17b321047ce25db0912",
+      "vendors": [
+        "Abbree",
+        "Anysecu",
+        "Cignus",
+        "Radioddity",
+        "Retevis",
+        "SenhaiX",
+        "TIDRADIO"
+      ],
+      "models": [
+        "8800",
+        "AC-580",
+        "AR-F5",
+        "GA-510",
+        "GS-5B",
+        "RA685",
+        "RA85",
+        "TD-H6",
+        "XTR-5"
+      ],
+      "variants": [
+        "V2"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Radioddity",
+          "model": "GA-510"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA685"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA85"
+        },
+        {
+          "vendor": "TIDRADIO",
+          "model": "TD-H6"
+        },
+        {
+          "vendor": "SenhaiX",
+          "model": "8800"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GS-5B"
+        },
+        {
+          "vendor": "Cignus",
+          "model": "XTR-5"
+        },
+        {
+          "vendor": "Anysecu",
+          "model": "AC-580"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-F5"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GA-510",
+          "variant": "V2"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::abbree|anysecu|cignus|radioddity|retevis|senhaix|tidradio::8800|ac-580|ar-f5|ga-510|gs-5b|ra685|ra85|td-h6|xtr-5::ga510",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Abbree, Anysecu, Cignus, Radioddity, Retevis, SenhaiX, TIDRADIO 8800, AC-580, AR-F5, GA-510, GS-5B, RA685, RA85, TD-H6, XTR-5",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/mml_jc8810.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1702,
+      "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
+      "path": "chirp/drivers/mml_jc8810.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0056d19e4402cc889bd9726c88f114ed057aac1e/chirp%2Fdrivers%2Fmml_jc8810.py",
+      "sha256": "c4df8a755d5d8320daab9d77349e0a46d019ee78b3e92f712df40fad9c9b04bc",
+      "vendors": [
+        "Abbree",
+        "Anysecu",
+        "Hiroyasu",
+        "MML",
+        "Radtel",
+        "Talkpod"
+      ],
+      "models": [
+        "A36plus",
+        "A36plus_8w",
+        "AR-730",
+        "HI-8811",
+        "JC-8810base",
+        "RT-470",
+        "RT-470L",
+        "RT-470X",
+        "RT-470X_BT",
+        "RT-495",
+        "RT-630",
+        "UV-A37"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "MML",
+          "model": "JC-8810base"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-470"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-470L"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-470X"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-470X_BT"
+        },
+        {
+          "vendor": "Hiroyasu",
+          "model": "HI-8811"
+        },
+        {
+          "vendor": "Anysecu",
+          "model": "UV-A37"
+        },
+        {
+          "vendor": "Talkpod",
+          "model": "A36plus"
+        },
+        {
+          "vendor": "Talkpod",
+          "model": "A36plus_8w"
+        },
+        {
+          "vendor": "Abbree",
+          "model": "AR-730"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-630"
+        },
+        {
+          "vendor": "Radtel",
+          "model": "RT-495"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::abbree|anysecu|hiroyasu|mml|radtel|talkpod::a36plus|a36plus_8w|ar-730|hi-8811|jc-8810base|rt-470|rt-470l|rt-470x|rt-470x_bt|rt-495|rt-630|uv-a37::mml_jc8810",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Abbree, Anysecu, Hiroyasu, MML, Radtel, Talkpod A36plus, A36plus_8w, AR-730, HI-8811, JC-8810base, RT-470, RT-470L, RT-470X, RT-470X_BT, RT-495, RT-630, UV-A37",
       "availableVersions": []
     },
     {
@@ -7290,8 +7489,8 @@
       "pullRequestTitle": "baofeng_uv5rm_pro_gps: Add support for Baofeng UV-5RM Pro GPS",
       "path": "chirp/drivers/baofeng_uv5rm_pro_gps.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1729",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/173de959d821e9bb479e908574526d19aaeaf416/chirp%2Fdrivers%2Fbaofeng_uv5rm_pro_gps.py",
-      "sha256": "1fc72f1e49352d4536d2890e17e3163881db325c11b933fb8169681884fb0433",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1497bc3b2136fd28e75e920cb435f36bfdb3202f/chirp%2Fdrivers%2Fbaofeng_uv5rm_pro_gps.py",
+      "sha256": "2aae5866c26fc68526ca5b614150a224874c4be0f3fbe6b7382e6190a5f4953b",
       "vendors": [
         "Baofeng"
       ],
@@ -7597,6 +7796,160 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Baofeng, LUITON, Retevis, TID, WLN, Zastone BF-T20, KD-C1, LT-316, RT22, RT22FRS, RT622, T22 PMR, TD-M8, W31E, ZT-X6",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/baofeng_uv17Pro.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1625,
+      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
+      "path": "chirp/drivers/baofeng_uv17Pro.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
+      "sha256": "75cfe2ec579eb980470cca9dd0793029a3036a89220dfff49fecf9d09e0a5e2d",
+      "vendors": [
+        "Baofeng",
+        "MaxTalker",
+        "Radioddity"
+      ],
+      "models": [
+        "5RM",
+        "BF-F8HP-PRO",
+        "GM-21",
+        "GM-30 Plus",
+        "GM-30 Pro",
+        "GM-5RH",
+        "K5-Plus",
+        "K6",
+        "MT-5RM",
+        "P15",
+        "UV-17Pro",
+        "UV-17ProGPS",
+        "UV-17R-Plus",
+        "UV-21ProGPS",
+        "UV-21ProV2",
+        "UV-25",
+        "UV-28Plus",
+        "UV-32",
+        "UV-5G Mini",
+        "UV-5G Plus",
+        "UV-5R Mini",
+        "UV-5RH",
+        "UV-5RM Plus"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProV2"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-25"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17ProGPS"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Plus"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-21"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-32"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProGPS"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-28Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "5RM"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "P15"
+        },
+        {
+          "vendor": "",
+          "model": "MT-5RM"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K5-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RM Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-5RH"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17R-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP-PRO"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RH"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K6"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R Mini"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5G Mini"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
       "availableVersions": []
     },
     {
@@ -8170,6 +8523,52 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1731:chirp/drivers/radioddity_ub15g.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1731,
+      "pullRequestTitle": "Add Radioddity UB15-G driver",
+      "path": "chirp/drivers/radioddity_ub15g.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1731",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/edbfb586416bc9af65d5f8a9b245e940891cb6f7/chirp%2Fdrivers%2Fradioddity_ub15g.py",
+      "sha256": "4360603daa0730efb3d68a2046f82e0a8b547baf28417eeae20b37422cb862b8",
+      "vendors": [
+        "Radioddity"
+      ],
+      "models": [
+        "UB15-G"
+      ],
+      "variants": [
+        "V1.2"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Radioddity",
+          "model": "UB15-G"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": "1.2",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::radioddity::ub15-g::radioddity_ub15g",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Radioddity UB15-G v1.2",
+      "availableVersions": [
+        "1.2"
+      ]
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/radtel_rt400.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8177,8 +8576,8 @@
       "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
       "path": "chirp/drivers/radtel_rt400.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/bed523faaa46c20d26eab3fc18c345e74041a9ad/chirp%2Fdrivers%2Fradtel_rt400.py",
-      "sha256": "66d6d74c5f1b759bf5bad53c48b31c0904dbdc9849f43420bba092baa5c7182b",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0056d19e4402cc889bd9726c88f114ed057aac1e/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "sha256": "e560c736c7c19432c82fe06e968f249dbd09618d9cbb7bfb22b117af93d42448",
       "vendors": [
         "Radtel"
       ],
@@ -9209,7 +9608,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 53,
+  "currentCount": 57,
   "historicalCount": 100,
-  "versionedCount": 80
+  "versionedCount": 81
 }
