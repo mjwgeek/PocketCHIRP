@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-11T17:56:04.563854Z",
+  "generatedAt": "2026-11-12T18:22:19.211258Z",
   "candidateCount": 157,
   "candidates": [
     {
@@ -7017,109 +7017,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/mml_jc8810.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1702,
-      "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
-      "path": "chirp/drivers/mml_jc8810.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0056d19e4402cc889bd9726c88f114ed057aac1e/chirp%2Fdrivers%2Fmml_jc8810.py",
-      "sha256": "c4df8a755d5d8320daab9d77349e0a46d019ee78b3e92f712df40fad9c9b04bc",
-      "vendors": [
-        "Abbree",
-        "Anysecu",
-        "Hiroyasu",
-        "MML",
-        "Radtel",
-        "Talkpod"
-      ],
-      "models": [
-        "A36plus",
-        "A36plus_8w",
-        "AR-730",
-        "HI-8811",
-        "JC-8810base",
-        "RT-470",
-        "RT-470L",
-        "RT-470X",
-        "RT-470X_BT",
-        "RT-495",
-        "RT-630",
-        "UV-A37"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "MML",
-          "model": "JC-8810base"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-470"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-470L"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-470X"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-470X_BT"
-        },
-        {
-          "vendor": "Hiroyasu",
-          "model": "HI-8811"
-        },
-        {
-          "vendor": "Anysecu",
-          "model": "UV-A37"
-        },
-        {
-          "vendor": "Talkpod",
-          "model": "A36plus"
-        },
-        {
-          "vendor": "Talkpod",
-          "model": "A36plus_8w"
-        },
-        {
-          "vendor": "Abbree",
-          "model": "AR-730"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-630"
-        },
-        {
-          "vendor": "Radtel",
-          "model": "RT-495"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::abbree|anysecu|hiroyasu|mml|radtel|talkpod::a36plus|a36plus_8w|ar-730|hi-8811|jc-8810base|rt-470|rt-470l|rt-470x|rt-470x_bt|rt-495|rt-630|uv-a37::mml_jc8810",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Abbree, Anysecu, Hiroyasu, MML, Radtel, Talkpod A36plus, A36plus_8w, AR-730, HI-8811, JC-8810base, RT-470, RT-470L, RT-470X, RT-470X_BT, RT-495, RT-630, UV-A37",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1707:chirp/drivers/retevis_rt21.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7298,6 +7195,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Alinco DJ-VX50",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1732:chirp/drivers/alinco_dr735t.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1732,
+      "pullRequestTitle": "dr735t: Use current_index for list settings",
+      "path": "chirp/drivers/alinco_dr735t.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1732",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/822702dc1271c3ae64547458d8a2145fbd6fa9af/chirp%2Fdrivers%2Falinco_dr735t.py",
+      "sha256": "6213a9c0b1a0c0f18eaf41b8db61faa648a79dabd38c6a3f01e6eff9eb55d9e7",
+      "vendors": [
+        "Alinco"
+      ],
+      "models": [
+        "DR735T"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Alinco",
+          "model": "DR735T"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::alinco::dr735t::alinco_dr735t",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Alinco DR735T",
       "availableVersions": []
     },
     {
@@ -8530,8 +8470,8 @@
       "pullRequestTitle": "Add Radioddity UB15-G driver",
       "path": "chirp/drivers/radioddity_ub15g.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1731",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/edbfb586416bc9af65d5f8a9b245e940891cb6f7/chirp%2Fdrivers%2Fradioddity_ub15g.py",
-      "sha256": "4360603daa0730efb3d68a2046f82e0a8b547baf28417eeae20b37422cb862b8",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6782e5038df48436d394c84089a70e57498ecaf5/chirp%2Fdrivers%2Fradioddity_ub15g.py",
+      "sha256": "93dec2e3cffecd5a7cd03a33c7820bc6f600ceea00da4f3c7452f8959f2f2fda",
       "vendors": [
         "Radioddity"
       ],
@@ -8576,8 +8516,8 @@
       "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
       "path": "chirp/drivers/radtel_rt400.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0056d19e4402cc889bd9726c88f114ed057aac1e/chirp%2Fdrivers%2Fradtel_rt400.py",
-      "sha256": "e560c736c7c19432c82fe06e968f249dbd09618d9cbb7bfb22b117af93d42448",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7efb23f6aa6ee4296090b44b94706facc26ea87c/chirp%2Fdrivers%2Fradtel_rt400.py",
+      "sha256": "7a165b3b0df1d983dabd7e179691343d817dc623f379b8af0bb371386b9cb021",
       "vendors": [
         "Radtel"
       ],
@@ -8594,9 +8534,7 @@
       "hintsMatched": [
         "CloneModeRadio",
         "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
+        "RadioSetting"
       ],
       "reasons": [
         "open pull request in watched repository"
