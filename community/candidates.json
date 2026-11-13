@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-12T18:22:19.211258Z",
-  "candidateCount": 157,
+  "generatedAt": "2026-11-13T17:47:33.167871Z",
+  "candidateCount": 160,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6875,6 +6875,62 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/tk3140.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1734,
+      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
+      "path": "chirp/drivers/tk3140.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Ftk3140.py",
+      "sha256": "1b39347c69146dd8f5038b6d01a6d5b20afae8675f542e025c18e36f43a1350b",
+      "vendors": [],
+      "models": [
+        "TK-2140K",
+        "TK-3140K",
+        "TK-3140K2",
+        "TK-3140K3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TK-2140K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3140K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3140K2"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3140K3"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::tk-2140k|tk-3140k|tk-3140k2|tk-3140k3::tk3140",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community TK-2140K, TK-3140K, TK-3140K2, TK-3140K3",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7198,49 +7254,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1732:chirp/drivers/alinco_dr735t.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1732,
-      "pullRequestTitle": "dr735t: Use current_index for list settings",
-      "path": "chirp/drivers/alinco_dr735t.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1732",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/822702dc1271c3ae64547458d8a2145fbd6fa9af/chirp%2Fdrivers%2Falinco_dr735t.py",
-      "sha256": "6213a9c0b1a0c0f18eaf41b8db61faa648a79dabd38c6a3f01e6eff9eb55d9e7",
-      "vendors": [
-        "Alinco"
-      ],
-      "models": [
-        "DR735T"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Alinco",
-          "model": "DR735T"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::alinco::dr735t::alinco_dr735t",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Alinco DR735T",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1677:chirp/drivers/uv5r.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7419,6 +7432,67 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/anytone.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1734,
+      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
+      "path": "chirp/drivers/anytone.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Fanytone.py",
+      "sha256": "bea4aeed74807e747b83cb12d56b912ea02d7078e699add2ec35c72baa9de567",
+      "vendors": [
+        "AnyTone",
+        "Intek",
+        "Polmar",
+        "Powerwerx"
+      ],
+      "models": [
+        "5888UV",
+        "DB-50M",
+        "DB-750X",
+        "HR-2040"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "AnyTone",
+          "model": "5888UV"
+        },
+        {
+          "vendor": "Intek",
+          "model": "HR-2040"
+        },
+        {
+          "vendor": "Polmar",
+          "model": "DB-50M"
+        },
+        {
+          "vendor": "Powerwerx",
+          "model": "DB-750X"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::anytone|intek|polmar|powerwerx::5888uv|db-50m|db-750x|hr-2040::anytone",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "AnyTone, Intek, Polmar, Powerwerx 5888UV, DB-50M, DB-750X, HR-2040",
       "availableVersions": []
     },
     {
@@ -7900,7 +7974,7 @@
       "pullRequestTitle": "Add Baolisitong BR-3 driver",
       "path": "chirp/drivers/br3.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1725",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/82ef5495b6f4ffc05ec30b434e9d94c644f0c9ff/chirp%2Fdrivers%2Fbr3.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/479c10e8d71c4d38d39fd96c3aab30f87d1ab3bd/chirp%2Fdrivers%2Fbr3.py",
       "sha256": "490c952cd8b54d04f258d92ed74de0bca28f83525fb39e4826788b1af81cc1d4",
       "vendors": [
         "Baolisitong"
@@ -8179,6 +8253,90 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Iradio DM-UV4R",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1711:chirp/drivers/leixen.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1711,
+      "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
+      "path": "chirp/drivers/leixen.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a6308f7ef69bc73108583860fa5368afd025bec6/chirp%2Fdrivers%2Fleixen.py",
+      "sha256": "8146b37327e8492bedaa82def79669404b7baadbbc907aafea91868bd1dfef92",
+      "vendors": [
+        "Jetstream",
+        "LUITON",
+        "Leixen"
+      ],
+      "models": [
+        "JT270M",
+        "JT270MH",
+        "LT-898UV",
+        "VV-898",
+        "VV-898E",
+        "VV-898S"
+      ],
+      "variants": [
+        "A Band",
+        "B Band",
+        "Dual Bank"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Leixen",
+          "model": "VV-898"
+        },
+        {
+          "vendor": "Jetstream",
+          "model": "JT270M"
+        },
+        {
+          "vendor": "LUITON",
+          "model": "LT-898UV"
+        },
+        {
+          "vendor": "Jetstream",
+          "model": "JT270MH"
+        },
+        {
+          "vendor": "Leixen",
+          "model": "VV-898S"
+        },
+        {
+          "vendor": "Leixen",
+          "model": "VV-898E"
+        },
+        {
+          "vendor": "Leixen",
+          "model": "VV-898S",
+          "variant": "Dual Bank"
+        },
+        {
+          "vendor": "Leixen",
+          "model": "VV-898E",
+          "variant": "Dual Bank"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::jetstream|leixen|luiton::jt270m|jt270mh|lt-898uv|vv-898|vv-898e|vv-898s::leixen",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Jetstream, LUITON, Leixen JT270M, JT270MH, LT-898UV, VV-898, VV-898E, VV-898S",
       "availableVersions": []
     },
     {
@@ -9041,6 +9199,48 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1733:chirp/drivers/v6.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1733,
+      "pullRequestTitle": "Add Weierwei VEV-V6 driver",
+      "path": "chirp/drivers/v6.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1733",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/eb8dc297b184b04faa40a8e42e1ef2c7d2d37b3f/chirp%2Fdrivers%2Fv6.py",
+      "sha256": "1279a7c998cb11695b161b35f1a2d6525afc0cf07694daba64731f31d1fed835",
+      "vendors": [
+        "Weierwei"
+      ],
+      "models": [
+        "VEV-V6"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Weierwei",
+          "model": "VEV-V6"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::weierwei::vev-v6::v6",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Weierwei VEV-V6",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1711:chirp/drivers/v8plus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9048,8 +9248,8 @@
       "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
       "path": "chirp/drivers/v8plus.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/0b7d8ff8b477168b974cb862d57d14bf35878a2d/chirp%2Fdrivers%2Fv8plus.py",
-      "sha256": "dbadc24b5e8c0c266f37e5151ca799603e21de5eb22bd1141af252d4d7b15d81",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a6308f7ef69bc73108583860fa5368afd025bec6/chirp%2Fdrivers%2Fv8plus.py",
+      "sha256": "6624bfa991f568374425fdd3ee4e1634d91e967b11ed383af31f3b4bf7ace7ee",
       "vendors": [
         "Weierwei"
       ],
@@ -9189,6 +9389,69 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/wouxun.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1734,
+      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
+      "path": "chirp/drivers/wouxun.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Fwouxun.py",
+      "sha256": "97080905f234e4a3e23e217f406c8f6978bfd3b1fb9a923fb7ba74386a8180c5",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-805G",
+        "KG-816",
+        "KG-818",
+        "KG-UV6",
+        "KG-UVD1P"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UVD1P"
+        },
+        {
+          "vendor": "",
+          "model": "KG-UV6"
+        },
+        {
+          "vendor": "",
+          "model": "KG-816"
+        },
+        {
+          "vendor": "",
+          "model": "KG-818"
+        },
+        {
+          "vendor": "",
+          "model": "KG-805G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-805g|kg-816|kg-818|kg-uv6|kg-uvd1p::wouxun",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-805G, KG-816, KG-818, KG-UV6, KG-UVD1P",
       "availableVersions": []
     },
     {
@@ -9340,48 +9603,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTM-200, FTM-6000",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1724:chirp/drivers/d9000.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1724,
-      "pullRequestTitle": "d9000: report clone progress to the UI",
-      "path": "chirp/drivers/d9000.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1724",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5ccafab13e169d676ce6d38713b0ef3ba4179f5e/chirp%2Fdrivers%2Fd9000.py",
-      "sha256": "14f27d1297d8ae07fb5ae5e477192fe1eb7a761f550549d4e7a997eac71c008a",
-      "vendors": [
-        "Zastone"
-      ],
-      "models": [
-        "ZT-D9000"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Zastone",
-          "model": "ZT-D9000"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::zastone::zt-d9000::d9000",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Zastone ZT-D9000",
       "availableVersions": []
     },
     {
@@ -9546,7 +9767,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 57,
+  "currentCount": 60,
   "historicalCount": 100,
   "versionedCount": 81
 }
