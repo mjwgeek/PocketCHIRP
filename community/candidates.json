@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-13T17:47:33.167871Z",
-  "candidateCount": 160,
+  "generatedAt": "2026-11-14T16:38:28.454233Z",
+  "candidateCount": 157,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -5120,13 +5120,54 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
       "sha256": "bc842b529f5ab153c9428cd57a23adf8ffaef4f2f637a4ed19fd1be6f8a8da5a",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (N7SIX)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (N7SIX)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": true,
+      "releaseTier": "historical",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six)::n7six_apex_k1",
+      "latestInFamily": true,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX)",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/v7.6.13/n7six.ApeXLabs-k1.v7.6.13.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "N7SIX/v7.6.13/n7six.ApeXLabs-k1.v7.6.13.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/v7.6.13/n7six.ApeXLabs-k1.v7.6.13.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/v7.6.13/n7six.ApeXLabs-k1.v7.6.13.py",
+      "sha256": "b891d93291ac65be81eef0ba8450ff9e8c8697da1935842bcee4a0b6e24e436b",
       "vendors": [
         "Quansheng"
       ],
@@ -5154,7 +5195,7 @@
       "version": null,
       "historical": false,
       "releaseTier": "current",
-      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six)::n7six_apex_k1",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (n7six)::n7six_apexlabs_k1",
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Quansheng UV-K1 & UV-K5 V3 (N7SIX)",
@@ -6875,62 +6916,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/tk3140.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1734,
-      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
-      "path": "chirp/drivers/tk3140.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Ftk3140.py",
-      "sha256": "1b39347c69146dd8f5038b6d01a6d5b20afae8675f542e025c18e36f43a1350b",
-      "vendors": [],
-      "models": [
-        "TK-2140K",
-        "TK-3140K",
-        "TK-3140K2",
-        "TK-3140K3"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "",
-          "model": "TK-2140K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-3140K"
-        },
-        {
-          "vendor": "",
-          "model": "TK-3140K2"
-        },
-        {
-          "vendor": "",
-          "model": "TK-3140K3"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::tk-2140k|tk-3140k|tk-3140k2|tk-3140k3::tk3140",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Community TK-2140K, TK-3140K, TK-3140K2, TK-3140K3",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7432,67 +7417,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/anytone.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1734,
-      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
-      "path": "chirp/drivers/anytone.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Fanytone.py",
-      "sha256": "bea4aeed74807e747b83cb12d56b912ea02d7078e699add2ec35c72baa9de567",
-      "vendors": [
-        "AnyTone",
-        "Intek",
-        "Polmar",
-        "Powerwerx"
-      ],
-      "models": [
-        "5888UV",
-        "DB-50M",
-        "DB-750X",
-        "HR-2040"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "AnyTone",
-          "model": "5888UV"
-        },
-        {
-          "vendor": "Intek",
-          "model": "HR-2040"
-        },
-        {
-          "vendor": "Polmar",
-          "model": "DB-50M"
-        },
-        {
-          "vendor": "Powerwerx",
-          "model": "DB-750X"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::anytone|intek|polmar|powerwerx::5888uv|db-50m|db-750x|hr-2040::anytone",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "AnyTone, Intek, Polmar, Powerwerx 5888UV, DB-50M, DB-750X, HR-2040",
       "availableVersions": []
     },
     {
@@ -8621,52 +8545,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1731:chirp/drivers/radioddity_ub15g.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1731,
-      "pullRequestTitle": "Add Radioddity UB15-G driver",
-      "path": "chirp/drivers/radioddity_ub15g.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1731",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6782e5038df48436d394c84089a70e57498ecaf5/chirp%2Fdrivers%2Fradioddity_ub15g.py",
-      "sha256": "93dec2e3cffecd5a7cd03a33c7820bc6f600ceea00da4f3c7452f8959f2f2fda",
-      "vendors": [
-        "Radioddity"
-      ],
-      "models": [
-        "UB15-G"
-      ],
-      "variants": [
-        "V1.2"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Radioddity",
-          "model": "UB15-G"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": "1.2",
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::radioddity::ub15-g::radioddity_ub15g",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Radioddity UB15-G v1.2",
-      "availableVersions": [
-        "1.2"
-      ]
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/radtel_rt400.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9392,69 +9270,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1734:chirp/drivers/wouxun.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1734,
-      "pullRequestTitle": "Use current_index in wouxun, anytone and tk3140",
-      "path": "chirp/drivers/wouxun.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1734",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/276129bc7bb759ab4454a09999edb92555e6650c/chirp%2Fdrivers%2Fwouxun.py",
-      "sha256": "97080905f234e4a3e23e217f406c8f6978bfd3b1fb9a923fb7ba74386a8180c5",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-805G",
-        "KG-816",
-        "KG-818",
-        "KG-UV6",
-        "KG-UVD1P"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UVD1P"
-        },
-        {
-          "vendor": "",
-          "model": "KG-UV6"
-        },
-        {
-          "vendor": "",
-          "model": "KG-816"
-        },
-        {
-          "vendor": "",
-          "model": "KG-818"
-        },
-        {
-          "vendor": "",
-          "model": "KG-805G"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-805g|kg-816|kg-818|kg-uv6|kg-uvd1p::wouxun",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-805G, KG-816, KG-818, KG-UV6, KG-UVD1P",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9767,7 +9582,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 60,
-  "historicalCount": 100,
-  "versionedCount": 81
+  "currentCount": 56,
+  "historicalCount": 101,
+  "versionedCount": 80
 }
