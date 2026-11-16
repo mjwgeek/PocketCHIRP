@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-15T17:14:40.875561Z",
-  "candidateCount": 157,
+  "generatedAt": "2026-11-16T20:32:07.095075Z",
+  "candidateCount": 159,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7895,13 +7895,13 @@
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1725,
-      "pullRequestTitle": "Add Baolisitong BR-3 driver",
+      "pullRequestTitle": "Add Boristone BR-3 driver",
       "path": "chirp/drivers/br3.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1725",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/479c10e8d71c4d38d39fd96c3aab30f87d1ab3bd/chirp%2Fdrivers%2Fbr3.py",
-      "sha256": "490c952cd8b54d04f258d92ed74de0bca28f83525fb39e4826788b1af81cc1d4",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cf171218d12a90bcde4926ce44c6eb2fc1892fd2/chirp%2Fdrivers%2Fbr3.py",
+      "sha256": "161dfff2cfcfec74fc8a09c5a8391ae285f8c52fe98d9bd9411f86b8674bf1fa",
       "vendors": [
-        "Baolisitong"
+        "Boristone"
       ],
       "models": [
         "BR-3"
@@ -7909,13 +7909,12 @@
       "variants": [],
       "modelEntries": [
         {
-          "vendor": "Baolisitong",
+          "vendor": "Boristone",
           "model": "BR-3"
         }
       ],
       "hintsMatched": [
         "directory.register",
-        "RadioSetting",
         "sync_in",
         "sync_out"
       ],
@@ -7926,10 +7925,10 @@
       "version": null,
       "historical": false,
       "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baolisitong::br-3::br3",
+      "versionFamily": "kk7ds/chirp::boristone::br-3::br3",
       "latestInFamily": true,
       "recommended": true,
-      "displayName": "Baolisitong BR-3",
+      "displayName": "Boristone BR-3",
       "availableVersions": []
     },
     {
@@ -7940,7 +7939,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/th_uv88.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a22b3b8bd5559c8b1b0517f5823b6e3966a40d51/chirp%2Fdrivers%2Fth_uv88.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8f48a099a44dfb303018fcca9e8fe05824369e2f/chirp%2Fdrivers%2Fth_uv88.py",
       "sha256": "9cb96b26c3a2537a1b24a1a7aa74f502b375aa49522d5bb104e58677a402e3a1",
       "vendors": [
         "Explorer",
@@ -8187,8 +8186,8 @@
       "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
       "path": "chirp/drivers/leixen.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a6308f7ef69bc73108583860fa5368afd025bec6/chirp%2Fdrivers%2Fleixen.py",
-      "sha256": "8146b37327e8492bedaa82def79669404b7baadbbc907aafea91868bd1dfef92",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/89ad8313c13e37396dba00c48e92911c6a8c33df/chirp%2Fdrivers%2Fleixen.py",
+      "sha256": "11eddd91651f928fc057e68db2b9e41dcbc6b776ebc3082e615487aceddda6e8",
       "vendors": [
         "Jetstream",
         "LUITON",
@@ -8261,6 +8260,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Jetstream, LUITON, Leixen JT270M, JT270MH, LT-898UV, VV-898, VV-898E, VV-898S",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1740:chirp/drivers/thk20.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1740,
+      "pullRequestTitle": "thk20: Add Kenwood TH-K20 support",
+      "path": "chirp/drivers/thk20.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1740",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cc31234cbf2b7e00fdcd2ddfb860d7a77b8df76f/chirp%2Fdrivers%2Fthk20.py",
+      "sha256": "52af1b396fade059061f313f42923f552831f875edaf9a0b4351a69cf880be50",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TH-K20"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TH-K20"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::th-k20::thk20",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TH-K20",
       "availableVersions": []
     },
     {
@@ -8467,7 +8509,7 @@
       "pullRequestTitle": "drivers: Add Quansheng UV-K1 / UV-K5 V3 F4HWN Fusion driver",
       "path": "chirp/drivers/uvk5_f4hwn.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1596",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7e779483050f604bf50320b1580fcf37461e25c4/chirp%2Fdrivers%2Fuvk5_f4hwn.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/717d47d483f59d1329fe1f99c10d8abba8f4022b/chirp%2Fdrivers%2Fuvk5_f4hwn.py",
       "sha256": "94634ef636ba9b3124185682f566948f011cde42adbda5e2af4d9bdd6b3dbbaf",
       "vendors": [
         "Quansheng"
@@ -8870,7 +8912,7 @@
       "pullRequestTitle": "Add support for RA89R/RA89G model",
       "path": "chirp/drivers/retevis_ra89r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1598",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a22b3b8bd5559c8b1b0517f5823b6e3966a40d51/chirp%2Fdrivers%2Fretevis_ra89r.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8f48a099a44dfb303018fcca9e8fe05824369e2f/chirp%2Fdrivers%2Fretevis_ra89r.py",
       "sha256": "ed6eedc6cd8bd2a053bd2362e6ea78990f2536a4c88cd36752df3421b2947d63",
       "vendors": [
         "Retevis"
@@ -8988,6 +9030,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Samcom FPCN30A",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1725:chirp/drivers/tdxone_tdq8a.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1725,
+      "pullRequestTitle": "Add Boristone BR-3 driver",
+      "path": "chirp/drivers/tdxone_tdq8a.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1725",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cf171218d12a90bcde4926ce44c6eb2fc1892fd2/chirp%2Fdrivers%2Ftdxone_tdq8a.py",
+      "sha256": "1787a3838a20b0f84283a5c31d9524462fb0b23dd54f3f7c8cce1706f203bdaf",
+      "vendors": [
+        "TDXone"
+      ],
+      "models": [
+        "TD-Q8A"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TDXone",
+          "model": "TD-Q8A"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::tdxone::td-q8a::tdxone_tdq8a",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "TDXone TD-Q8A",
       "availableVersions": []
     },
     {
@@ -9126,8 +9211,8 @@
       "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
       "path": "chirp/drivers/v8plus.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/a6308f7ef69bc73108583860fa5368afd025bec6/chirp%2Fdrivers%2Fv8plus.py",
-      "sha256": "6624bfa991f568374425fdd3ee4e1634d91e967b11ed383af31f3b4bf7ace7ee",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/89ad8313c13e37396dba00c48e92911c6a8c33df/chirp%2Fdrivers%2Fv8plus.py",
+      "sha256": "657891a0f4e370d83b5fcbce1edaee45ff4bfb55665c36ec375b9bc9cd2a73a3",
       "vendors": [
         "Weierwei"
       ],
@@ -9582,7 +9667,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 56,
+  "currentCount": 58,
   "historicalCount": 101,
   "versionedCount": 80
 }
