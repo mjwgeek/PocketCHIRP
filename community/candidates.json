@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-16T20:32:07.095075Z",
-  "candidateCount": 159,
+  "generatedAt": "2026-11-17T19:12:42.832113Z",
+  "candidateCount": 156,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7891,47 +7891,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1725:chirp/drivers/br3.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1725,
-      "pullRequestTitle": "Add Boristone BR-3 driver",
-      "path": "chirp/drivers/br3.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1725",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cf171218d12a90bcde4926ce44c6eb2fc1892fd2/chirp%2Fdrivers%2Fbr3.py",
-      "sha256": "161dfff2cfcfec74fc8a09c5a8391ae285f8c52fe98d9bd9411f86b8674bf1fa",
-      "vendors": [
-        "Boristone"
-      ],
-      "models": [
-        "BR-3"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Boristone",
-          "model": "BR-3"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::boristone::br-3::br3",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Boristone BR-3",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8260,49 +8219,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Jetstream, LUITON, Leixen JT270M, JT270MH, LT-898UV, VV-898, VV-898E, VV-898S",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1740:chirp/drivers/thk20.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1740,
-      "pullRequestTitle": "thk20: Add Kenwood TH-K20 support",
-      "path": "chirp/drivers/thk20.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1740",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cc31234cbf2b7e00fdcd2ddfb860d7a77b8df76f/chirp%2Fdrivers%2Fthk20.py",
-      "sha256": "52af1b396fade059061f313f42923f552831f875edaf9a0b4351a69cf880be50",
-      "vendors": [
-        "Kenwood"
-      ],
-      "models": [
-        "TH-K20"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Kenwood",
-          "model": "TH-K20"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::kenwood::th-k20::thk20",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Kenwood TH-K20",
       "availableVersions": []
     },
     {
@@ -9033,49 +8949,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1725:chirp/drivers/tdxone_tdq8a.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1725,
-      "pullRequestTitle": "Add Boristone BR-3 driver",
-      "path": "chirp/drivers/tdxone_tdq8a.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1725",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/cf171218d12a90bcde4926ce44c6eb2fc1892fd2/chirp%2Fdrivers%2Ftdxone_tdq8a.py",
-      "sha256": "1787a3838a20b0f84283a5c31d9524462fb0b23dd54f3f7c8cce1706f203bdaf",
-      "vendors": [
-        "TDXone"
-      ],
-      "models": [
-        "TD-Q8A"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "TDXone",
-          "model": "TD-Q8A"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::tdxone::td-q8a::tdxone_tdq8a",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "TDXone TD-Q8A",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9253,8 +9126,8 @@
       "pullRequestTitle": "Add driver for WLN KD-C1S (SMP558 architecture)",
       "path": "chirp/drivers/wln_kdc1.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1704",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/491b017dc21363f22b051437def982bd391ec725/chirp%2Fdrivers%2Fwln_kdc1.py",
-      "sha256": "5e7196a9786ba750d2b291e3680f7b19ced83c9652fb0d032fd38d96c203e845",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d07b6cec79474be0e4ff88f2f0a3e0e00bfa0654/chirp%2Fdrivers%2Fwln_kdc1.py",
+      "sha256": "9e13f50bda9f1c309de9300f512f02ecdb042aea531038a61ac11ed47225a73f",
       "vendors": [
         "WLN"
       ],
@@ -9267,15 +9140,15 @@
       "modelEntries": [
         {
           "vendor": "WLN",
+          "model": "KD-C1S"
+        },
+        {
+          "vendor": "WLN",
           "model": "KD-C1 Plus"
         },
         {
           "vendor": "WLN",
           "model": "KD-C1 (SMP558)"
-        },
-        {
-          "vendor": "WLN",
-          "model": "KD-C1S"
         }
       ],
       "hintsMatched": [
@@ -9667,7 +9540,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 58,
+  "currentCount": 55,
   "historicalCount": 101,
   "versionedCount": 80
 }
