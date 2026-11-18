@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-17T19:12:42.832113Z",
-  "candidateCount": 156,
+  "generatedAt": "2026-11-18T18:53:57.597670Z",
+  "candidateCount": 158,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -4743,13 +4743,13 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v7.0.0/f4hwn.chirp.v7.0.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "sha256": "a307886d90b6481b441c2cd34b622c8dacfc2080a34fc1e0ea2377054ee4ef96",
+      "path": "F4HWN/v7.0.0/f4hwn.chirp.v7.0.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v7.0.0/f4hwn.chirp.v7.0.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v7.0.0/f4hwn.chirp.v7.0.0.py",
+      "sha256": "8eb622ec4a4eeaa26cf77ef878022e066b3d674d9fa214bf99c889571b9f4f41",
       "vendors": [
         "Quansheng"
       ],
@@ -7891,6 +7891,268 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1747:chirp/drivers/baofeng_uv17Pro.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1747,
+      "pullRequestTitle": "Add native bluetooth programming support via ble-serial",
+      "path": "chirp/drivers/baofeng_uv17Pro.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1747",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/02df7b00fed627a2c4715f0064a04922c89f8a3d/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
+      "sha256": "e72b926876daf306cd5d678b7fe6c324dcb518da43235ce0e9b134110a1734bf",
+      "vendors": [
+        "Baofeng",
+        "MaxTalker",
+        "Radioddity"
+      ],
+      "models": [
+        "5RM",
+        "BF-F8HP-PRO",
+        "GM-21",
+        "GM-30 Plus",
+        "GM-30 Pro",
+        "GM-5RH",
+        "K5-Plus",
+        "K6",
+        "MT-5RM",
+        "P15",
+        "UV-17Pro",
+        "UV-17ProGPS",
+        "UV-17R-Plus",
+        "UV-21ProGPS",
+        "UV-21ProV2",
+        "UV-25",
+        "UV-28Plus",
+        "UV-32",
+        "UV-5G Mini",
+        "UV-5G Plus",
+        "UV-5R Mini",
+        "UV-5RH",
+        "UV-5RM Plus"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProV2"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-25"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17ProGPS"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Plus"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "GM-30 Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-21"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-32"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-21ProGPS"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-28Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "5RM"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "P15"
+        },
+        {
+          "vendor": "",
+          "model": "MT-5RM"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K5-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RM Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GM-5RH"
+        },
+        {
+          "vendor": "Radioddity",
+          "model": "UV-5G Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-17R-Plus"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-F8HP-PRO"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RH"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "K6"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5R Mini"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5G Mini"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1744:chirp/drivers/baofeng_wp970i.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1744,
+      "pullRequestTitle": "baofeng_wp970i: Add Baofeng UV-9R Pro V2 driver (Bug #12590)",
+      "path": "chirp/drivers/baofeng_wp970i.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1744",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5de884a07fe22122cd3b950dc6e9c486e0fdb7c7/chirp%2Fdrivers%2Fbaofeng_wp970i.py",
+      "sha256": "10e6d1948c9ad818c53b47729d8f325fc083ead1d920b9d6ddb04498f22667d4",
+      "vendors": [
+        "Baofeng",
+        "Retevis",
+        "Rugged"
+      ],
+      "models": [
+        "5RX",
+        "BF-A58",
+        "BF-A58S",
+        "GT-3WP",
+        "RH5X",
+        "RT6",
+        "UV-82III",
+        "UV-82WP",
+        "UV-9G",
+        "UV-9R",
+        "UV-9R Pro",
+        "UV-9R Pro V2",
+        "UV-S9X3",
+        "WP970I"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "WP970I"
+        },
+        {
+          "vendor": "Rugged",
+          "model": "RH5X"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82III"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-A58"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R Pro V2"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82WP"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GT-3WP"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT6"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-A58S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-S9X3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "5RX"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9G"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|retevis|rugged::5rx|bf-a58|bf-a58s|gt-3wp|rh5x|rt6|uv-82iii|uv-82wp|uv-9g|uv-9r|uv-9r pro|uv-9r pro v2|uv-s9x3|wp970i::baofeng_wp970i",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-9R Pro V2, UV-S9X3, WP970I",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9540,7 +9802,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 55,
+  "currentCount": 57,
   "historicalCount": 101,
   "versionedCount": 80
 }
