@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-20T18:39:10.457745Z",
-  "candidateCount": 162,
+  "generatedAt": "2026-11-21T17:36:00.376843Z",
+  "candidateCount": 163,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -8014,160 +8014,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1747:chirp/drivers/baofeng_uv17Pro.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1747,
-      "pullRequestTitle": "Add native bluetooth programming support via ble-serial",
-      "path": "chirp/drivers/baofeng_uv17Pro.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1747",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1364d6a0c717f372dbe35dc168ecc99d8240b37b/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
-      "sha256": "e369d3643bdec1af5918a5da7edebc22293df1a5e49e189b94dc8d7caab7d32a",
-      "vendors": [
-        "Baofeng",
-        "MaxTalker",
-        "Radioddity"
-      ],
-      "models": [
-        "5RM",
-        "BF-F8HP-PRO",
-        "GM-21",
-        "GM-30 Plus",
-        "GM-30 Pro",
-        "GM-5RH",
-        "K5-Plus",
-        "K6",
-        "MT-5RM",
-        "P15",
-        "UV-17Pro",
-        "UV-17ProGPS",
-        "UV-17R-Plus",
-        "UV-21ProGPS",
-        "UV-21ProV2",
-        "UV-25",
-        "UV-28Plus",
-        "UV-32",
-        "UV-5G Mini",
-        "UV-5G Plus",
-        "UV-5R Mini",
-        "UV-5RH",
-        "UV-5RM Plus"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProV2"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-25"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17ProGPS"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Plus"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-21"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-32"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProGPS"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-28Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "5RM"
-        },
-        {
-          "vendor": "MaxTalker",
-          "model": "P15"
-        },
-        {
-          "vendor": "",
-          "model": "MT-5RM"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K5-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RM Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-5RH"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "UV-5G Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17R-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "BF-F8HP-PRO"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RH"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K6"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5R Mini"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5G Mini"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
-      "latestInFamily": false,
-      "recommended": false,
-      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1744:chirp/drivers/baofeng_wp970i.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8273,6 +8119,49 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-9R Pro V2, UV-S9X3, WP970I",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1750:chirp/drivers/bridgecom_bcm.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1750,
+      "pullRequestTitle": "bridgecom_bcm: Add BridgeCom BCM-220 support",
+      "path": "chirp/drivers/bridgecom_bcm.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1750",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1ed416449724c32887cbf538f4c75d5d7abb3ff3/chirp%2Fdrivers%2Fbridgecom_bcm.py",
+      "sha256": "a1fa399150984a537d8aca122edfbb006eb7af88a6c182d626bd34c4784fa980",
+      "vendors": [
+        "BridgeCom"
+      ],
+      "models": [
+        "BCM-220"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "BridgeCom",
+          "model": "BCM-220"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::bridgecom::bcm-220::bridgecom_bcm",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "BridgeCom BCM-220",
       "availableVersions": []
     },
     {
@@ -8391,6 +8280,50 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "HYT F3",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1752:chirp/drivers/ic2800.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1752,
+      "pullRequestTitle": "Added Icom ic2800h",
+      "path": "chirp/drivers/ic2800.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1752",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/8c0c9632d0c5d106dd35fe93bceacf8554c8c287/chirp%2Fdrivers%2Fic2800.py",
+      "sha256": "7faa5f72cff0012bac313721c825cbaf01bfb4cb2bd2d78dcb3fbef5f32eca34",
+      "vendors": [
+        "Icom"
+      ],
+      "models": [
+        "IC-2800H"
+      ],
+      "variants": [
+        "UHF",
+        "VHF"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Icom",
+          "model": "IC-2800H"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::icom::ic-2800h::ic2800",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Icom IC-2800H",
       "availableVersions": []
     },
     {
@@ -9968,7 +9901,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 58,
+  "currentCount": 59,
   "historicalCount": 104,
   "versionedCount": 80
 }
