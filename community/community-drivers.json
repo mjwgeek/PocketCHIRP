@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 10,
+  "catalogRevision": 11,
   "updated": "2026-11-22",
   "drivers": [
     {
@@ -145,6 +145,56 @@
       "approved": true,
       "approvedAt": "2026-11-22T04:50:14.382Z",
       "approvalNote": "PocketCHIRP review: RT97L support PR snapshot; upstream author reports hardware read/write validation."
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1637,
+      "pullRequestTitle": "Add ABBREE AR-7600 driver",
+      "path": "chirp/drivers/abbree_ar7600.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1637",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/b21cabc48637519a02a73995b0eafebd837cd827/chirp/drivers/abbree_ar7600.py",
+      "sha256": "5095965f2d5321c74046781a287ba050578383efe0545e1d4ed57ae122cbd70f",
+      "vendors": [
+        "Abbree"
+      ],
+      "models": [
+        "AR-7600"
+      ],
+      "variants": [
+        "Group A",
+        "Group B"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Abbree",
+          "model": "AR-7600"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::abbree::ar-7600::abbree_ar7600",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Abbree AR-7600",
+      "availableVersions": [],
+      "id": "abbree-ar-7600-1c0ae07319",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:55:59.197Z",
+      "approvalNote": "PocketCHIRP selected approval: AR-7600 new driver; upstream author reports real-radio read/write test."
     },
     {
       "candidateKey": "repo:mjwgeek/Radtel-RT830-Custom-Firmware:chirp/radtel_rt830.py",
@@ -689,6 +739,118 @@
       "approvalNote": "PocketCHIRP review: GPS and UV-17Pro-family PR snapshot; overlapping models require hardware validation."
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1744:chirp/drivers/baofeng_wp970i.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1744,
+      "pullRequestTitle": "baofeng_wp970i: Add Baofeng UV-9R Pro V2 driver (Bug #12590)",
+      "path": "chirp/drivers/baofeng_wp970i.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1744",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/5de884a07fe22122cd3b950dc6e9c486e0fdb7c7/chirp/drivers/baofeng_wp970i.py",
+      "sha256": "10e6d1948c9ad818c53b47729d8f325fc083ead1d920b9d6ddb04498f22667d4",
+      "vendors": [
+        "Baofeng",
+        "Retevis",
+        "Rugged"
+      ],
+      "models": [
+        "5RX",
+        "BF-A58",
+        "BF-A58S",
+        "GT-3WP",
+        "RH5X",
+        "RT6",
+        "UV-82III",
+        "UV-82WP",
+        "UV-9G",
+        "UV-9R",
+        "UV-9R Pro",
+        "UV-9R Pro V2",
+        "UV-S9X3",
+        "WP970I"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "WP970I"
+        },
+        {
+          "vendor": "Rugged",
+          "model": "RH5X"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82III"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R Pro"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-A58"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R Pro V2"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-82WP"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "GT-3WP"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RT6"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "BF-A58S"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-S9X3"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "5RX"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9R"
+        },
+        {
+          "vendor": "Baofeng",
+          "model": "UV-9G"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng|retevis|rugged::5rx|bf-a58|bf-a58s|gt-3wp|rh5x|rt6|uv-82iii|uv-82wp|uv-9g|uv-9r|uv-9r pro|uv-9r pro v2|uv-s9x3|wp970i::baofeng_wp970i",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-9R Pro V2, UV-S9X3, WP970I",
+      "availableVersions": [],
+      "id": "baofeng-retevis-rugged-5rx-bf-a58-bf-a58s-gt-3wp-rh5x-rt6-uv-82iii-uv-82-35c1edf5e3",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:55:59.197Z",
+      "approvalNote": "PocketCHIRP selected approval: UV-9R Pro V2 upload fix; shares module with existing WP970I-family models; hardware validation advised."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1753:chirp/drivers/baofeng_dm32uv.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -734,6 +896,53 @@
       "approved": true,
       "approvedAt": "2026-11-22T04:50:14.382Z",
       "approvalNote": "PocketCHIRP review: DM-32UV non-Latin zone rename fix; use after validation with primary official CHIRP driver."
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1750:chirp/drivers/bridgecom_bcm.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1750,
+      "pullRequestTitle": "bridgecom_bcm: Add BridgeCom BCM-220 support",
+      "path": "chirp/drivers/bridgecom_bcm.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1750",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/1ed416449724c32887cbf538f4c75d5d7abb3ff3/chirp/drivers/bridgecom_bcm.py",
+      "sha256": "a1fa399150984a537d8aca122edfbb006eb7af88a6c182d626bd34c4784fa980",
+      "vendors": [
+        "BridgeCom"
+      ],
+      "models": [
+        "BCM-220"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "BridgeCom",
+          "model": "BCM-220"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::bridgecom::bcm-220::bridgecom_bcm",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "BridgeCom BCM-220",
+      "availableVersions": [],
+      "id": "bridgecom-bcm-220-a044100f63",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:55:59.197Z",
+      "approvalNote": "PocketCHIRP selected approval: BCM-220 new driver; upstream author reports hardware protocol verification."
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1598:chirp/drivers/th_uv88.py",
@@ -6973,6 +7182,51 @@
       "approvalNote": "Bulk-approved/refreshed current installable discovery baseline"
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1702:chirp/drivers/radtel_rt400.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1702,
+      "pullRequestTitle": "radtel_rt400: Add Radtel RT-400 support",
+      "path": "chirp/drivers/radtel_rt400.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1702",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/7efb23f6aa6ee4296090b44b94706facc26ea87c/chirp/drivers/radtel_rt400.py",
+      "sha256": "7a165b3b0df1d983dabd7e179691343d817dc623f379b8af0bb371386b9cb021",
+      "vendors": [
+        "Radtel"
+      ],
+      "models": [
+        "RT-400"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Radtel",
+          "model": "RT-400"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::radtel::rt-400::radtel_rt400",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Radtel RT-400",
+      "availableVersions": [],
+      "id": "radtel-rt-400-9c224a5c5d",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:55:59.197Z",
+      "approvalNote": "PocketCHIRP selected approval: RT-400 new driver; upstream reports RX-only upload and original configuration restored."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1299:chirp/drivers/radtel_rt493.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7534,5 +7788,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 122
+  "approvedCount": 126
 }
