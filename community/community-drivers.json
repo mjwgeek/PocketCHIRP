@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 11,
+  "catalogRevision": 12,
   "updated": "2026-11-22",
   "drivers": [
     {
@@ -898,6 +898,53 @@
       "approvalNote": "PocketCHIRP review: DM-32UV non-Latin zone rename fix; use after validation with primary official CHIRP driver."
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1729:chirp/drivers/baofeng_uv5rm_pro_gps.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1729,
+      "pullRequestTitle": "baofeng_uv5rm_pro_gps: Add support for Baofeng UV-5RM Pro GPS",
+      "path": "chirp/drivers/baofeng_uv5rm_pro_gps.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1729",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/1497bc3b2136fd28e75e920cb435f36bfdb3202f/chirp/drivers/baofeng_uv5rm_pro_gps.py",
+      "sha256": "2aae5866c26fc68526ca5b614150a224874c4be0f3fbe6b7382e6190a5f4953b",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "UV-5RM Pro GPS"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "UV-5RM Pro GPS"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng::uv-5rm pro gps::baofeng_uv5rm_pro_gps",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng UV-5RM Pro GPS",
+      "availableVersions": [],
+      "id": "baofeng-uv-5rm-pro-gps-9d463bff11",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:58:30.892Z",
+      "approvalNote": "PocketCHIRP community approval: dedicated UV-5RM Pro GPS driver; hardware read/write verification still advised."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1750:chirp/drivers/bridgecom_bcm.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -992,6 +1039,53 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005472Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1676:chirp/drivers/hyt_f3.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1676,
+      "pullRequestTitle": "hyt_f3: Add support for the HYT F3 P32073 clone of the Kenwood TK-3207",
+      "path": "chirp/drivers/hyt_f3.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1676",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/de4ed40b6bd886162e2f75ba33359dbffe9f07f9/chirp/drivers/hyt_f3.py",
+      "sha256": "d895b98265a2b330bd6a2cd8c2d5cc5c2d67ad6ff7c6c6121a5479492aac6a90",
+      "vendors": [
+        "HYT"
+      ],
+      "models": [
+        "F3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "HYT",
+          "model": "F3"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::hyt::f3::hyt_f3",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "HYT F3",
+      "availableVersions": [],
+      "id": "hyt-f3-ed2711efa6",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:58:30.892Z",
+      "approvalNote": "PocketCHIRP community approval: HYT F3 / Kenwood TK-3207-family model support; hardware verification still advised."
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1752:chirp/drivers/ic2800.py",
@@ -7568,6 +7662,107 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1733:chirp/drivers/v6.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1733,
+      "pullRequestTitle": "Add Weierwei VEV-V6 driver",
+      "path": "chirp/drivers/v6.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1733",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/eb8dc297b184b04faa40a8e42e1ef2c7d2d37b3f/chirp/drivers/v6.py",
+      "sha256": "1279a7c998cb11695b161b35f1a2d6525afc0cf07694daba64731f31d1fed835",
+      "vendors": [
+        "Weierwei"
+      ],
+      "models": [
+        "VEV-V6"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Weierwei",
+          "model": "VEV-V6"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::weierwei::vev-v6::v6",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Weierwei VEV-V6",
+      "availableVersions": [],
+      "id": "weierwei-vev-v6-593a81470d",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:58:30.892Z",
+      "approvalNote": "PocketCHIRP community approval: VEV-V6 clone protocol driver; test image and unit tests provided upstream."
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1704:chirp/drivers/wln_kdc1.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1704,
+      "pullRequestTitle": "Add driver for WLN KD-C1S (SMP558 architecture)",
+      "path": "chirp/drivers/wln_kdc1.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1704",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/d07b6cec79474be0e4ff88f2f0a3e0e00bfa0654/chirp/drivers/wln_kdc1.py",
+      "sha256": "9e13f50bda9f1c309de9300f512f02ecdb042aea531038a61ac11ed47225a73f",
+      "vendors": [
+        "WLN"
+      ],
+      "models": [
+        "KD-C1 (SMP558)",
+        "KD-C1 Plus",
+        "KD-C1S"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "WLN",
+          "model": "KD-C1S"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1 Plus"
+        },
+        {
+          "vendor": "WLN",
+          "model": "KD-C1 (SMP558)"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wln::kd-c1 (smp558)|kd-c1 plus|kd-c1s::wln_kdc1",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "WLN KD-C1 (SMP558), KD-C1 Plus, KD-C1S",
+      "availableVersions": [],
+      "id": "wln-kd-c1-smp558-kd-c1-plus-kd-c1s-dda5ae4199",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:58:30.892Z",
+      "approvalNote": "PocketCHIRP community approval: SMP558 KD-C1S-family radio support; experimental pending independent hardware verification."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#832:chirp/drivers/kguv980p.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7781,6 +7976,53 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.006040Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1748:chirp/drivers/ftx1.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1748,
+      "pullRequestTitle": "ftx1: Add Yaesu FTX-1 over USB, more channel settings",
+      "path": "chirp/drivers/ftx1.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1748",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/ec84b7272aa3a8e90d38f86b3f876528bacd0b4d/chirp/drivers/ftx1.py",
+      "sha256": "b30c4409d37f1af9a0272dd150875fd569713282e7013a71b131c0e5e050f0ad",
+      "vendors": [
+        "Yaesu"
+      ],
+      "models": [
+        "FTX-1"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Yaesu",
+          "model": "FTX-1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::yaesu::ftx-1::ftx1",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Yaesu FTX-1",
+      "availableVersions": [],
+      "id": "yaesu-ftx-1-34a50a7aad",
+      "approved": true,
+      "approvedAt": "2026-11-22T04:58:30.892Z",
+      "approvalNote": "PocketCHIRP community approval: FTX-1 USB clone and SD-card support; upstream reports hardware testing; verify PocketCHIRP workflows separately."
     }
   ],
   "policy": {
@@ -7788,5 +8030,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 126
+  "approvedCount": 131
 }
