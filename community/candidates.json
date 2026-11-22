@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-22T04:44:44.348954Z",
+  "generatedAt": "2026-11-22T17:52:33.739213Z",
   "candidateCount": 164,
   "candidates": [
     {
@@ -4784,6 +4784,47 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "type": "repository-file",
+      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
+      "path": "F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/v6.3.0/f4hwn.chirp.v6.3.0.py",
+      "sha256": "a307886d90b6481b441c2cd34b622c8dacfc2080a34fc1e0ea2377054ee4ef96",
+      "vendors": [
+        "Quansheng"
+      ],
+      "models": [
+        "UV-K1 & UV-K5 V3 (F4HWN)"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1 & UV-K5 V3 (F4HWN)"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit repository source"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn)::f4hwn_chirp",
+      "latestInFamily": false,
+      "recommended": false,
+      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN)",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
@@ -4881,47 +4922,6 @@
       "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.2.0/f4hwn.chirp.v6.2.0.py",
       "sha256": "89334fcc60d1730bf41f35664609540896889100a7d90cc855c0450311a26008",
-      "vendors": [
-        "Quansheng"
-      ],
-      "models": [
-        "UV-K1 & UV-K5 V3 (F4HWN)"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Quansheng",
-          "model": "UV-K1 & UV-K5 V3 (F4HWN)"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "explicit repository source"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": true,
-      "releaseTier": "historical",
-      "versionFamily": "dim0s/quansheng-uv-k5v3-k1-firmware-pack::quansheng::uv-k1 & uv-k5 v3 (f4hwn)::f4hwn_chirp",
-      "latestInFamily": false,
-      "recommended": false,
-      "displayName": "Quansheng UV-K1 & UV-K5 V3 (F4HWN)",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "type": "repository-file",
-      "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.3.0/f4hwn.chirp.v6.3.0.py",
-      "sha256": "a307886d90b6481b441c2cd34b622c8dacfc2080a34fc1e0ea2377054ee4ef96",
       "vendors": [
         "Quansheng"
       ],
@@ -8064,8 +8064,8 @@
       "pullRequestTitle": "baofeng_wp970i: Add Baofeng UV-9R Pro V2 driver (Bug #12590)",
       "path": "chirp/drivers/baofeng_wp970i.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1744",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/5de884a07fe22122cd3b950dc6e9c486e0fdb7c7/chirp%2Fdrivers%2Fbaofeng_wp970i.py",
-      "sha256": "10e6d1948c9ad818c53b47729d8f325fc083ead1d920b9d6ddb04498f22667d4",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c89d4506ab91d301f2e0b7269d8c7bda9fde1a15/chirp%2Fdrivers%2Fbaofeng_wp970i.py",
+      "sha256": "1820b09a5865f026d9e9d7a532f2e0e2af063be6d507d90b1990a47539f247c5",
       "vendors": [
         "Baofeng",
         "Retevis",
@@ -8083,11 +8083,12 @@
         "UV-9G",
         "UV-9R",
         "UV-9R Pro",
-        "UV-9R Pro V2",
         "UV-S9X3",
         "WP970I"
       ],
-      "variants": [],
+      "variants": [
+        "V2"
+      ],
       "modelEntries": [
         {
           "vendor": "Baofeng",
@@ -8111,7 +8112,8 @@
         },
         {
           "vendor": "Baofeng",
-          "model": "UV-9R Pro V2"
+          "model": "UV-9R Pro",
+          "variant": "V2"
         },
         {
           "vendor": "Baofeng",
@@ -8158,10 +8160,10 @@
       "version": null,
       "historical": false,
       "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng|retevis|rugged::5rx|bf-a58|bf-a58s|gt-3wp|rh5x|rt6|uv-82iii|uv-82wp|uv-9g|uv-9r|uv-9r pro|uv-9r pro v2|uv-s9x3|wp970i::baofeng_wp970i",
+      "versionFamily": "kk7ds/chirp::baofeng|retevis|rugged::5rx|bf-a58|bf-a58s|gt-3wp|rh5x|rt6|uv-82iii|uv-82wp|uv-9g|uv-9r|uv-9r pro|uv-s9x3|wp970i::baofeng_wp970i",
       "latestInFamily": true,
       "recommended": true,
-      "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-9R Pro V2, UV-S9X3, WP970I",
+      "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-S9X3, WP970I",
       "availableVersions": []
     },
     {
@@ -9944,7 +9946,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 60,
-  "historicalCount": 104,
+  "currentCount": 61,
+  "historicalCount": 103,
   "versionedCount": 80
 }
