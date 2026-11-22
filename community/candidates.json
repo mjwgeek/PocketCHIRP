@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-21T17:36:00.376843Z",
-  "candidateCount": 163,
+  "generatedAt": "2026-11-22T04:44:44.348954Z",
+  "candidateCount": 164,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7543,6 +7543,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1753:chirp/drivers/baofeng_dm32uv.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1753,
+      "pullRequestTitle": "dm32uv: Fix zone renames with non-Latin-1 characters",
+      "path": "chirp/drivers/baofeng_dm32uv.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1753",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1ff8110330f909f0a051f063be88abfd2f587e37/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
+      "sha256": "51257793539a7d124bcb7c9888bd1c2a1167ed8e6ed275248b1ccebdeb8a108c",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "DM-32UV"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "DM-32UV"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::baofeng::dm-32uv::baofeng_dm32uv",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng DM-32UV",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1729:chirp/drivers/baofeng_uv5rm_pro_gps.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9901,7 +9944,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 59,
+  "currentCount": 60,
   "historicalCount": 104,
   "versionedCount": 80
 }
