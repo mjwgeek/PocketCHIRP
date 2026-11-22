@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 12,
+  "catalogRevision": 13,
   "updated": "2026-11-22",
   "drivers": [
     {
@@ -1216,6 +1216,93 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1669:chirp/drivers/tk8180.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1669,
+      "pullRequestTitle": "tk8180: Show and keep each key's hold time, including none",
+      "path": "chirp/drivers/tk8180.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1669",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/dc714ea4cdf3c8f707baa5886e38c29b4af8d5ef/chirp/drivers/tk8180.py",
+      "sha256": "14b5df7a3555550ae0ff3ca1a451782cb3e52b1de5ade68ac039115effacb936",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TK-2180",
+        "TK-3180E",
+        "TK-3180K",
+        "TK-3180K2",
+        "TK-7180",
+        "TK-7180E",
+        "TK-8180",
+        "TK-8180E",
+        "TK-x180"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TK-x180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-2180"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180K"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180K2"
+        },
+        {
+          "vendor": "",
+          "model": "TK-8180E"
+        },
+        {
+          "vendor": "",
+          "model": "TK-7180E"
+        },
+        {
+          "vendor": "",
+          "model": "TK-3180E"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::tk-2180|tk-3180e|tk-3180k|tk-3180k2|tk-7180|tk-7180e|tk-8180|tk-8180e|tk-x180::tk8180",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TK-2180, TK-3180E, TK-3180K, TK-3180K2, TK-7180, TK-7180E, TK-8180, TK-8180E, TK-x180",
+      "availableVersions": [],
+      "id": "kenwood-tk-2180-tk-3180e-tk-3180k-tk-3180k2-tk-7180-tk-7180e-tk-8180-tk--cc0bb8e2be",
+      "approved": true,
+      "approvedAt": "2026-11-22T05:00:34.379Z",
+      "approvalNote": "Reviewed community approval: Kenwood TK-x180 key hold-time preservation settings fix."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1455:chirp/drivers/ksun_m6.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -1257,6 +1344,73 @@
       "approved": true,
       "approvedAt": "2026-08-20T22:35:03.005567Z",
       "approvalNote": "Bulk-approved current discovery baseline"
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1690:chirp/drivers/uvk5.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1690,
+      "pullRequestTitle": "uvk5: Add setting descriptions and value fixes from the UV-K5 manual",
+      "path": "chirp/drivers/uvk5.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1690",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/85db32b100a20d03202f7f7ec7ccb70f4c27a6d2/chirp/drivers/uvk5.py",
+      "sha256": "aa23ff5e831e07881ba81b87af5d439cd9310bc3b6430ca058f1c54738977a19",
+      "vendors": [
+        "MaxTalker",
+        "Quansheng",
+        "Retevis"
+      ],
+      "models": [
+        "RA79",
+        "TK-6",
+        "UV-K1",
+        "UV-K5"
+      ],
+      "variants": [
+        "OSFW",
+        "unsupported"
+      ],
+      "modelEntries": [
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K5"
+        },
+        {
+          "vendor": "Retevis",
+          "model": "RA79"
+        },
+        {
+          "vendor": "MaxTalker",
+          "model": "TK-6"
+        },
+        {
+          "vendor": "Quansheng",
+          "model": "UV-K1"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::maxtalker|quansheng|retevis::ra79|tk-6|uv-k1|uv-k5::uvk5",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "MaxTalker, Quansheng, Retevis RA79, TK-6, UV-K1, UV-K5",
+      "availableVersions": [],
+      "id": "maxtalker-quansheng-retevis-ra79-tk-6-uv-k1-uv-k5-cb6c5f7772",
+      "approved": true,
+      "approvedAt": "2026-11-22T05:00:34.379Z",
+      "approvalNote": "Reviewed community approval: Quansheng UV-K5 settings descriptions and value corrections."
     },
     {
       "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:KA50/Chirp_KA50_KA52.py",
@@ -7807,6 +7961,73 @@
       "approvalNote": "Bulk-approved current discovery baseline"
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1691,
+      "pullRequestTitle": "kguv9dplus: Add setting descriptions and fix values from the KG-UV9PX manual",
+      "path": "chirp/drivers/kguv9dplus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1691",
+      "downloadUrl": "https://raw.githubusercontent.com/kk7ds/chirp/d67e8324abda4f94b7d781b9100bbb978970f0b2/chirp/drivers/kguv9dplus.py",
+      "sha256": "94968958fcaf8a0e7659b6a76d978d4d137e801604449ddd8b464a7b887179a5",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV9D Plus",
+        "KG-UV9G Pro",
+        "KG-UV9GX",
+        "KG-UV9K",
+        "KG-UV9PX"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9D Plus"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9PX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9GX"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9K"
+        },
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV9G Pro"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "approved",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv9d plus|kg-uv9g pro|kg-uv9gx|kg-uv9k|kg-uv9px::kguv9dplus",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV9D Plus, KG-UV9G Pro, KG-UV9GX, KG-UV9K, KG-UV9PX",
+      "availableVersions": [],
+      "id": "wouxun-kg-uv9d-plus-kg-uv9g-pro-kg-uv9gx-kg-uv9k-kg-uv9px-6875d94ca7",
+      "approved": true,
+      "approvedAt": "2026-11-22T05:00:34.379Z",
+      "approvalNote": "Reviewed community approval: Wouxun KG-UV9 family settings documentation and value corrections."
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1621:chirp/drivers/ft1d.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8030,5 +8251,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 131
+  "approvedCount": 134
 }
