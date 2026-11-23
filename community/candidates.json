@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-22T17:52:33.739213Z",
-  "candidateCount": 164,
+  "generatedAt": "2026-11-23T22:04:47.485754Z",
+  "candidateCount": 169,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7039,6 +7039,44 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1758:chirp/drivers/lab599_radio.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1758,
+      "pullRequestTitle": "Add support for Lab599 TX-500MP",
+      "path": "chirp/drivers/lab599_radio.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1758",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/69b51ffb1f9ae37f1a05c6239282f9be1ed3b4b6/chirp%2Fdrivers%2Flab599_radio.py",
+      "sha256": "a05f2eaf2e82dbb1a8cbda15001f24b225a5ffa7c557ce3614540821c02ba146",
+      "vendors": [],
+      "models": [
+        "TX-500MP"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TX-500MP"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::tx-500mp::lab599_radio",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community TX-500MP",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1637:chirp/drivers/abbree_ar7600.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -7369,8 +7407,8 @@
       "pullRequestTitle": "uv5r: Stop reporting Range Override uploads as errors",
       "path": "chirp/drivers/uv5r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1677",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/21f5791a78cac3c66c92044f2894035451259618/chirp%2Fdrivers%2Fuv5r.py",
-      "sha256": "c03f1d846097a685f1b252b12fc2d44c1dfbd0ef73e3006cd1ba0959e5a7ce94",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3a0be7a940928ac5a6ca04a0587dc049b2ea1052/chirp%2Fdrivers%2Fuv5r.py",
+      "sha256": "938bb982f172df4803929d211dd2cdc4f2f33b0542d6b1261e885dc1eb552855",
       "vendors": [
         "Ansoko",
         "Baofeng",
@@ -7540,49 +7578,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Ansoko, Baofeng, Intek, Radioddity, Retevis, Rugged, TIDRADIO, TechSide, Tenway A-5R, BF-F8HP, F-11, GA-5S, GT-5R, KT-980HP, RH5R, RT5, RT5(tri-power), RT5R, RT5RV, TD-UV5R TriPower, TI-F8+, TS-T9+, UV-5G, UV-5G Pro, UV-5R, UV-5R EX, UV-5R Pro, UV-5RX3, UV-5X, UV-5XP, UV-6, UV-82, UV-82 Pro, UV-82HP, UV-82X3",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1753:chirp/drivers/baofeng_dm32uv.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1753,
-      "pullRequestTitle": "dm32uv: Fix zone renames with non-Latin-1 characters",
-      "path": "chirp/drivers/baofeng_dm32uv.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1753",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1ff8110330f909f0a051f063be88abfd2f587e37/chirp%2Fdrivers%2Fbaofeng_dm32uv.py",
-      "sha256": "51257793539a7d124bcb7c9888bd1c2a1167ed8e6ed275248b1ccebdeb8a108c",
-      "vendors": [
-        "Baofeng"
-      ],
-      "models": [
-        "DM-32UV"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Baofeng",
-          "model": "DM-32UV"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng::dm-32uv::baofeng_dm32uv",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Baofeng DM-32UV",
       "availableVersions": []
     },
     {
@@ -8167,6 +8162,47 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1755:chirp/drivers/br3.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1755,
+      "pullRequestTitle": "br3: write CTCSS tones without the flag bit",
+      "path": "chirp/drivers/br3.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1755",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e5f7559cd16d26df048f2a74ab36555e8d27e704/chirp%2Fdrivers%2Fbr3.py",
+      "sha256": "1cba0141131f3106629ab672f21a66ef6e923377b6b4048d2bc8f81122811ea7",
+      "vendors": [
+        "Boristone"
+      ],
+      "models": [
+        "BR-3"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Boristone",
+          "model": "BR-3"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::boristone::br-3::br3",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Boristone BR-3",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1750:chirp/drivers/bridgecom_bcm.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8174,8 +8210,8 @@
       "pullRequestTitle": "bridgecom_bcm: Add BridgeCom BCM-220 support",
       "path": "chirp/drivers/bridgecom_bcm.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1750",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/1ed416449724c32887cbf538f4c75d5d7abb3ff3/chirp%2Fdrivers%2Fbridgecom_bcm.py",
-      "sha256": "a1fa399150984a537d8aca122edfbb006eb7af88a6c182d626bd34c4784fa980",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7d275a955618d7d5f732ea310196952ad298d905/chirp%2Fdrivers%2Fbridgecom_bcm.py",
+      "sha256": "3908144e96ba9eaa4635d2533173cb5b128a7b068ca73993b89170db0b3e3d77",
       "vendors": [
         "BridgeCom"
       ],
@@ -9312,6 +9348,49 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1755:chirp/drivers/tdxone_tdq8a.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1755,
+      "pullRequestTitle": "br3: write CTCSS tones without the flag bit",
+      "path": "chirp/drivers/tdxone_tdq8a.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1755",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e5f7559cd16d26df048f2a74ab36555e8d27e704/chirp%2Fdrivers%2Ftdxone_tdq8a.py",
+      "sha256": "26b1158d0bc734b6e6e49aa2aaadd075d37be1050feef6692f78f685aa9f436f",
+      "vendors": [
+        "TDXone"
+      ],
+      "models": [
+        "TD-Q8A"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "TDXone",
+          "model": "TD-Q8A"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::tdxone::td-q8a::tdxone_tdq8a",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "TDXone TD-Q8A",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9591,6 +9670,92 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1756:chirp/drivers/kguv8dplus.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1756,
+      "pullRequestTitle": "kguv8: clear unused channels to 0xff like the vendor codeplugs",
+      "path": "chirp/drivers/kguv8dplus.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1756",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fa9bbceb437154379eeaea0c83629fa2cc5840a3/chirp%2Fdrivers%2Fkguv8dplus.py",
+      "sha256": "24387349bda74b91e07e22ce5f2b991b81dad0c7842681c140069db0652b8c25",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV8D Plus"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV8D Plus"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv8d plus::kguv8dplus",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV8D Plus",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1756:chirp/drivers/kguv8d.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1756,
+      "pullRequestTitle": "kguv8: clear unused channels to 0xff like the vendor codeplugs",
+      "path": "chirp/drivers/kguv8d.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1756",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fa9bbceb437154379eeaea0c83629fa2cc5840a3/chirp%2Fdrivers%2Fkguv8d.py",
+      "sha256": "39cf1c5d37da19be2d541bc8ed6e88c6773852fbab87cf649960e024370bbaed",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV8D"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV8D"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv8d::kguv8d",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV8D",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9749,8 +9914,8 @@
       "pullRequestTitle": "ftx1: Add Yaesu FTX-1 over USB, more channel settings",
       "path": "chirp/drivers/ftx1.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1748",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ec84b7272aa3a8e90d38f86b3f876528bacd0b4d/chirp%2Fdrivers%2Fftx1.py",
-      "sha256": "b30c4409d37f1af9a0272dd150875fd569713282e7013a71b131c0e5e050f0ad",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6a5a9258e8b335accb60197c2f63017c5e9e93c1/chirp%2Fdrivers%2Fftx1.py",
+      "sha256": "04739fe834f4716b98d71827b77a1b28578ae5cfd6f5107913795be89112c44a",
       "vendors": [
         "Yaesu"
       ],
@@ -9782,6 +9947,48 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTX-1",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1757:chirp/drivers/d9000.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1757,
+      "pullRequestTitle": "d9000: keep the scan list flags when writing a channel",
+      "path": "chirp/drivers/d9000.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1757",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/9f1c569c486aeeafb35c293d69b54a62853f677e/chirp%2Fdrivers%2Fd9000.py",
+      "sha256": "7e4523166c2797f464fec0ba617646834474c95b16ceebafe654fb5073025f57",
+      "vendors": [
+        "Zastone"
+      ],
+      "models": [
+        "ZT-D9000"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Zastone",
+          "model": "ZT-D9000"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::zastone::zt-d9000::d9000",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Zastone ZT-D9000",
       "availableVersions": []
     },
     {
@@ -9946,7 +10153,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 61,
+  "currentCount": 66,
   "historicalCount": 103,
   "versionedCount": 80
 }
