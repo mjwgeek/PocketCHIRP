@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-23T22:04:47.485754Z",
-  "candidateCount": 169,
+  "generatedAt": "2026-11-24T20:41:56.989937Z",
+  "candidateCount": 165,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7046,8 +7046,8 @@
       "pullRequestTitle": "Add support for Lab599 TX-500MP",
       "path": "chirp/drivers/lab599_radio.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1758",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/69b51ffb1f9ae37f1a05c6239282f9be1ed3b4b6/chirp%2Fdrivers%2Flab599_radio.py",
-      "sha256": "a05f2eaf2e82dbb1a8cbda15001f24b225a5ffa7c557ce3614540821c02ba146",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/57a5446723c74397544f12824ee87da53711177f/chirp%2Fdrivers%2Flab599_radio.py",
+      "sha256": "6995ba92e2c411197a180db5ea2508e72880d35ee2faaf0ff5770f2b6df3b81a",
       "vendors": [],
       "models": [
         "TX-500MP"
@@ -8059,7 +8059,7 @@
       "pullRequestTitle": "baofeng_wp970i: Add Baofeng UV-9R Pro V2 driver (Bug #12590)",
       "path": "chirp/drivers/baofeng_wp970i.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1744",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/c89d4506ab91d301f2e0b7269d8c7bda9fde1a15/chirp%2Fdrivers%2Fbaofeng_wp970i.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f87a97361a60a178662b1560667e2ca341cb6fd1/chirp%2Fdrivers%2Fbaofeng_wp970i.py",
       "sha256": "1820b09a5865f026d9e9d7a532f2e0e2af063be6d507d90b1990a47539f247c5",
       "vendors": [
         "Baofeng",
@@ -8159,90 +8159,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Baofeng, Retevis, Rugged 5RX, BF-A58, BF-A58S, GT-3WP, RH5X, RT6, UV-82III, UV-82WP, UV-9G, UV-9R, UV-9R Pro, UV-S9X3, WP970I",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1755:chirp/drivers/br3.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1755,
-      "pullRequestTitle": "br3: write CTCSS tones without the flag bit",
-      "path": "chirp/drivers/br3.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1755",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e5f7559cd16d26df048f2a74ab36555e8d27e704/chirp%2Fdrivers%2Fbr3.py",
-      "sha256": "1cba0141131f3106629ab672f21a66ef6e923377b6b4048d2bc8f81122811ea7",
-      "vendors": [
-        "Boristone"
-      ],
-      "models": [
-        "BR-3"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Boristone",
-          "model": "BR-3"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::boristone::br-3::br3",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Boristone BR-3",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1750:chirp/drivers/bridgecom_bcm.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1750,
-      "pullRequestTitle": "bridgecom_bcm: Add BridgeCom BCM-220 support",
-      "path": "chirp/drivers/bridgecom_bcm.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1750",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/7d275a955618d7d5f732ea310196952ad298d905/chirp%2Fdrivers%2Fbridgecom_bcm.py",
-      "sha256": "3908144e96ba9eaa4635d2533173cb5b128a7b068ca73993b89170db0b3e3d77",
-      "vendors": [
-        "BridgeCom"
-      ],
-      "models": [
-        "BCM-220"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "BridgeCom",
-          "model": "BCM-220"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::bridgecom::bcm-220::bridgecom_bcm",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "BridgeCom BCM-220",
       "availableVersions": []
     },
     {
@@ -8621,6 +8537,54 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1760:chirp/drivers/thd74.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1760,
+      "pullRequestTitle": "tmd750: Fix PTT for 2m FM repeater memories",
+      "path": "chirp/drivers/thd74.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1760",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e9302243cd399229ad3d19d2a66e3ea82ed0f93b/chirp%2Fdrivers%2Fthd74.py",
+      "sha256": "bc1c9796122a775b0f913ed96e3ce8ec04616b8055ab1b91c17b12415844bf29",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TH-D74 (clone mode)",
+        "TH-D75"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TH-D74 (clone mode)"
+        },
+        {
+          "vendor": "",
+          "model": "TH-D75"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::th-d74 (clone mode)|th-d75::thd74",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TH-D74 (clone mode), TH-D75",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1669:chirp/drivers/tk8180.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8701,6 +8665,47 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Kenwood TK-2180, TK-3180E, TK-3180K, TK-3180K2, TK-7180, TK-7180E, TK-8180, TK-8180E, TK-x180",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1760:chirp/drivers/tmd750.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1760,
+      "pullRequestTitle": "tmd750: Fix PTT for 2m FM repeater memories",
+      "path": "chirp/drivers/tmd750.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1760",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e9302243cd399229ad3d19d2a66e3ea82ed0f93b/chirp%2Fdrivers%2Ftmd750.py",
+      "sha256": "814f76244326806379c36d9411f9d13f17923186209d5aa8666d2951818d2d7f",
+      "vendors": [
+        "Kenwood"
+      ],
+      "models": [
+        "TM-D750"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Kenwood",
+          "model": "TM-D750"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::kenwood::tm-d750::tmd750",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Kenwood TM-D750",
       "availableVersions": []
     },
     {
@@ -9348,49 +9353,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1755:chirp/drivers/tdxone_tdq8a.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1755,
-      "pullRequestTitle": "br3: write CTCSS tones without the flag bit",
-      "path": "chirp/drivers/tdxone_tdq8a.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1755",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e5f7559cd16d26df048f2a74ab36555e8d27e704/chirp%2Fdrivers%2Ftdxone_tdq8a.py",
-      "sha256": "26b1158d0bc734b6e6e49aa2aaadd075d37be1050feef6692f78f685aa9f436f",
-      "vendors": [
-        "TDXone"
-      ],
-      "models": [
-        "TD-Q8A"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "TDXone",
-          "model": "TD-Q8A"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::tdxone::td-q8a::tdxone_tdq8a",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "TDXone TD-Q8A",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1521:chirp/drivers/tidradio_h3_nicfw25.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9484,8 +9446,8 @@
       "pullRequestTitle": "Add Weierwei VEV-V6 driver",
       "path": "chirp/drivers/v6.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1733",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/eb8dc297b184b04faa40a8e42e1ef2c7d2d37b3f/chirp%2Fdrivers%2Fv6.py",
-      "sha256": "1279a7c998cb11695b161b35f1a2d6525afc0cf07694daba64731f31d1fed835",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3c2ccacd918e27822a91c3c61d0aec669319797f/chirp%2Fdrivers%2Fv6.py",
+      "sha256": "5fbae0d6efdb91ee9f67acaa32919bef898465c4a78ae2b3eebd95c63d59e4b8",
       "vendors": [
         "Weierwei"
       ],
@@ -9670,92 +9632,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1756:chirp/drivers/kguv8dplus.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1756,
-      "pullRequestTitle": "kguv8: clear unused channels to 0xff like the vendor codeplugs",
-      "path": "chirp/drivers/kguv8dplus.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1756",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fa9bbceb437154379eeaea0c83629fa2cc5840a3/chirp%2Fdrivers%2Fkguv8dplus.py",
-      "sha256": "24387349bda74b91e07e22ce5f2b991b81dad0c7842681c140069db0652b8c25",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-UV8D Plus"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV8D Plus"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-uv8d plus::kguv8dplus",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-UV8D Plus",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1756:chirp/drivers/kguv8d.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1756,
-      "pullRequestTitle": "kguv8: clear unused channels to 0xff like the vendor codeplugs",
-      "path": "chirp/drivers/kguv8d.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1756",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/fa9bbceb437154379eeaea0c83629fa2cc5840a3/chirp%2Fdrivers%2Fkguv8d.py",
-      "sha256": "39cf1c5d37da19be2d541bc8ed6e88c6773852fbab87cf649960e024370bbaed",
-      "vendors": [
-        "Wouxun"
-      ],
-      "models": [
-        "KG-UV8D"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Wouxun",
-          "model": "KG-UV8D"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::wouxun::kg-uv8d::kguv8d",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Wouxun KG-UV8D",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1691:chirp/drivers/kguv9dplus.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9914,7 +9790,7 @@
       "pullRequestTitle": "ftx1: Add Yaesu FTX-1 over USB, more channel settings",
       "path": "chirp/drivers/ftx1.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1748",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/6a5a9258e8b335accb60197c2f63017c5e9e93c1/chirp%2Fdrivers%2Fftx1.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/17cbc05bd8dd2c7c11c8ce2304dd827be8f686c3/chirp%2Fdrivers%2Fftx1.py",
       "sha256": "04739fe834f4716b98d71827b77a1b28578ae5cfd6f5107913795be89112c44a",
       "vendors": [
         "Yaesu"
@@ -9947,48 +9823,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Yaesu FTX-1",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1757:chirp/drivers/d9000.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1757,
-      "pullRequestTitle": "d9000: keep the scan list flags when writing a channel",
-      "path": "chirp/drivers/d9000.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1757",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/9f1c569c486aeeafb35c293d69b54a62853f677e/chirp%2Fdrivers%2Fd9000.py",
-      "sha256": "7e4523166c2797f464fec0ba617646834474c95b16ceebafe654fb5073025f57",
-      "vendors": [
-        "Zastone"
-      ],
-      "models": [
-        "ZT-D9000"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Zastone",
-          "model": "ZT-D9000"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::zastone::zt-d9000::d9000",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Zastone ZT-D9000",
       "availableVersions": []
     },
     {
@@ -10153,7 +9987,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 66,
+  "currentCount": 62,
   "historicalCount": 103,
   "versionedCount": 80
 }
