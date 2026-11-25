@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-24T20:41:56.989937Z",
-  "candidateCount": 165,
+  "generatedAt": "2026-11-25T19:59:44.183575Z",
+  "candidateCount": 162,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -7039,21 +7039,26 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1758:chirp/drivers/lab599_radio.py",
+      "candidateKey": "pr:kk7ds/chirp#1758:chirp/drivers/lab599.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1758,
       "pullRequestTitle": "Add support for Lab599 TX-500MP",
-      "path": "chirp/drivers/lab599_radio.py",
+      "path": "chirp/drivers/lab599.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1758",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/57a5446723c74397544f12824ee87da53711177f/chirp%2Fdrivers%2Flab599_radio.py",
-      "sha256": "6995ba92e2c411197a180db5ea2508e72880d35ee2faaf0ff5770f2b6df3b81a",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/63bc419a275a3efdff1b726cc221475757d2b59d/chirp%2Fdrivers%2Flab599.py",
+      "sha256": "5303113caabb4db3ebb3b9ac4d2cb6e550e4c2887dbba157a2ab6e919ffb7adb",
       "vendors": [],
       "models": [
+        "TX-500",
         "TX-500MP"
       ],
       "variants": [],
       "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TX-500"
+        },
         {
           "vendor": "",
           "model": "TX-500MP"
@@ -7070,10 +7075,10 @@
       "version": null,
       "historical": false,
       "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::::tx-500mp::lab599_radio",
+      "versionFamily": "kk7ds/chirp::::tx-500|tx-500mp::lab599",
       "latestInFamily": true,
       "recommended": true,
-      "displayName": "Community TX-500MP",
+      "displayName": "Community TX-500, TX-500MP",
       "availableVersions": []
     },
     {
@@ -8453,138 +8458,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1711:chirp/drivers/leixen.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1711,
-      "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
-      "path": "chirp/drivers/leixen.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/89ad8313c13e37396dba00c48e92911c6a8c33df/chirp%2Fdrivers%2Fleixen.py",
-      "sha256": "11eddd91651f928fc057e68db2b9e41dcbc6b776ebc3082e615487aceddda6e8",
-      "vendors": [
-        "Jetstream",
-        "LUITON",
-        "Leixen"
-      ],
-      "models": [
-        "JT270M",
-        "JT270MH",
-        "LT-898UV",
-        "VV-898",
-        "VV-898E",
-        "VV-898S"
-      ],
-      "variants": [
-        "A Band",
-        "B Band",
-        "Dual Bank"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Leixen",
-          "model": "VV-898"
-        },
-        {
-          "vendor": "Jetstream",
-          "model": "JT270M"
-        },
-        {
-          "vendor": "LUITON",
-          "model": "LT-898UV"
-        },
-        {
-          "vendor": "Jetstream",
-          "model": "JT270MH"
-        },
-        {
-          "vendor": "Leixen",
-          "model": "VV-898S"
-        },
-        {
-          "vendor": "Leixen",
-          "model": "VV-898E"
-        },
-        {
-          "vendor": "Leixen",
-          "model": "VV-898S",
-          "variant": "Dual Bank"
-        },
-        {
-          "vendor": "Leixen",
-          "model": "VV-898E",
-          "variant": "Dual Bank"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::jetstream|leixen|luiton::jt270m|jt270mh|lt-898uv|vv-898|vv-898e|vv-898s::leixen",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Jetstream, LUITON, Leixen JT270M, JT270MH, LT-898UV, VV-898, VV-898E, VV-898S",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1760:chirp/drivers/thd74.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1760,
-      "pullRequestTitle": "tmd750: Fix PTT for 2m FM repeater memories",
-      "path": "chirp/drivers/thd74.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1760",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e9302243cd399229ad3d19d2a66e3ea82ed0f93b/chirp%2Fdrivers%2Fthd74.py",
-      "sha256": "bc1c9796122a775b0f913ed96e3ce8ec04616b8055ab1b91c17b12415844bf29",
-      "vendors": [
-        "Kenwood"
-      ],
-      "models": [
-        "TH-D74 (clone mode)",
-        "TH-D75"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Kenwood",
-          "model": "TH-D74 (clone mode)"
-        },
-        {
-          "vendor": "",
-          "model": "TH-D75"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::kenwood::th-d74 (clone mode)|th-d75::thd74",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Kenwood TH-D74 (clone mode), TH-D75",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1669:chirp/drivers/tk8180.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -8665,47 +8538,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Kenwood TK-2180, TK-3180E, TK-3180K, TK-3180K2, TK-7180, TK-7180E, TK-8180, TK-8180E, TK-x180",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1760:chirp/drivers/tmd750.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1760,
-      "pullRequestTitle": "tmd750: Fix PTT for 2m FM repeater memories",
-      "path": "chirp/drivers/tmd750.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1760",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/e9302243cd399229ad3d19d2a66e3ea82ed0f93b/chirp%2Fdrivers%2Ftmd750.py",
-      "sha256": "814f76244326806379c36d9411f9d13f17923186209d5aa8666d2951818d2d7f",
-      "vendors": [
-        "Kenwood"
-      ],
-      "models": [
-        "TM-D750"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Kenwood",
-          "model": "TM-D750"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::kenwood::tm-d750::tmd750",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Kenwood TM-D750",
       "availableVersions": []
     },
     {
@@ -9439,90 +9271,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1733:chirp/drivers/v6.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1733,
-      "pullRequestTitle": "Add Weierwei VEV-V6 driver",
-      "path": "chirp/drivers/v6.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1733",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3c2ccacd918e27822a91c3c61d0aec669319797f/chirp%2Fdrivers%2Fv6.py",
-      "sha256": "5fbae0d6efdb91ee9f67acaa32919bef898465c4a78ae2b3eebd95c63d59e4b8",
-      "vendors": [
-        "Weierwei"
-      ],
-      "models": [
-        "VEV-V6"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Weierwei",
-          "model": "VEV-V6"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::weierwei::vev-v6::v6",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Weierwei VEV-V6",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1711:chirp/drivers/v8plus.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1711,
-      "pullRequestTitle": "Add Weierwei VEV-V8 Plus driver",
-      "path": "chirp/drivers/v8plus.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1711",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/89ad8313c13e37396dba00c48e92911c6a8c33df/chirp%2Fdrivers%2Fv8plus.py",
-      "sha256": "657891a0f4e370d83b5fcbce1edaee45ff4bfb55665c36ec375b9bc9cd2a73a3",
-      "vendors": [
-        "Weierwei"
-      ],
-      "models": [
-        "VEV-V8 Plus"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Weierwei",
-          "model": "VEV-V8 Plus"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::weierwei::vev-v8 plus::v8plus",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Weierwei VEV-V8 Plus",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "pr:kk7ds/chirp#1704:chirp/drivers/wln_kdc1.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
@@ -9629,6 +9377,91 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Wouxun KG-1000G, KG-1000G Plus, KG-UV950P, KG-UV980P",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1765:chirp/drivers/kg989g.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1765,
+      "pullRequestTitle": "Add Wouxun KG-989G driver",
+      "path": "chirp/drivers/kg989g.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1765",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d75b44980ceb1aa6d2fcc638a1947aa60130899a/chirp%2Fdrivers%2Fkg989g.py",
+      "sha256": "5e8584e827e23db181a91c6b88ca3c95ff61b50887e10d7a2d7025a45bda0e5c",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-989G"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-989G"
+        }
+      ],
+      "hintsMatched": [
+        "CloneModeRadio",
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-989g::kg989g",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-989G",
+      "availableVersions": []
+    },
+    {
+      "candidateKey": "pr:kk7ds/chirp#1763:chirp/drivers/kguv96g.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1763,
+      "pullRequestTitle": "Add Wouxun KG-UV96G driver",
+      "path": "chirp/drivers/kguv96g.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1763",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/863af3798c8a5d55debfda9e428ccbcb10d66ade/chirp%2Fdrivers%2Fkguv96g.py",
+      "sha256": "88048ad20d94d22ff1dae2c38c2e5dfbfa7ae52bf5d479227b24095cdd4ea3c4",
+      "vendors": [
+        "Wouxun"
+      ],
+      "models": [
+        "KG-UV96G"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Wouxun",
+          "model": "KG-UV96G"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::wouxun::kg-uv96g::kguv96g",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Wouxun KG-UV96G",
       "availableVersions": []
     },
     {
@@ -9790,8 +9623,8 @@
       "pullRequestTitle": "ftx1: Add Yaesu FTX-1 over USB, more channel settings",
       "path": "chirp/drivers/ftx1.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1748",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/17cbc05bd8dd2c7c11c8ce2304dd827be8f686c3/chirp%2Fdrivers%2Fftx1.py",
-      "sha256": "04739fe834f4716b98d71827b77a1b28578ae5cfd6f5107913795be89112c44a",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d45a2a383a3afa27375f2ebf276f6d76a78bade1/chirp%2Fdrivers%2Fftx1.py",
+      "sha256": "6e524017072f7e2c405486f2cdbcddf718acf6c821b5c62da6858743dd9637af",
       "vendors": [
         "Yaesu"
       ],
@@ -9987,7 +9820,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 62,
+  "currentCount": 59,
   "historicalCount": 103,
   "versionedCount": 80
 }
