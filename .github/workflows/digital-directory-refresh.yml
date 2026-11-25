@@ -1,6 +1,10 @@
 name: Refresh approved digital directories
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'community/digital-directories/manifest.json'
   schedule:
     - cron: '27 9 * * *'
 permissions:
@@ -17,6 +21,7 @@ jobs:
       - name: Refresh approved snapshots
         run: python3 community/digital-directories/refresh.py
       - name: Publish changed snapshots
+        if: success() || failure()
         run: |
           git config user.name "PocketCHIRP Directory Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
