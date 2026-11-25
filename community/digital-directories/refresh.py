@@ -4,7 +4,7 @@ import csv, datetime, io, json, os, pathlib, re, tempfile, urllib.request
 from urllib.parse import urlsplit
 ROOT = pathlib.Path(__file__).resolve().parent
 LIMIT = 8 * 1024 * 1024
-HOSTS = {"api.brandmeister.network", "tgif.network", "tg.freedmr.uk", "amcomm.network", "api.freestar.network"}
+HOSTS = {"api.brandmeister.network", "tgif.network", "tg.freedmr.uk", "amcomm.network", "api.freestar.network", "dvref.com"}
 MAX = {"DMR": 16777214, "P25": 65534, "NXDN": 65519}
 def allowed(url):
     u = urlsplit(url)
@@ -16,6 +16,10 @@ def download(url):
     if not allowed(url):
         raise ValueError("Unapproved upstream hostname")
     req = urllib.request.Request(url, headers={"User-Agent": "PocketCHIRP Directory Cache (+https://pocketchirp.com)", "Accept": "application/json,text/csv"})
+    if urlsplit(url).hostname == "dvref.com":
+        req.add_header("User-Agent", "PocketCHIRP/2.11.1")
+        req.add_header("X-DVRef-Callsign", "WG5EEK")
+        req.add_header("X-DVRef-Contact", "https://pocketchirp.com/")
     with urllib.request.build_opener(NoRedirect).open(req, timeout=30) as resp:
         data = resp.read(LIMIT + 1)
         if len(data) > LIMIT:
@@ -50,6 +54,25 @@ def normalize(text, fmt, mode):
         for row in csv.DictReader(io.StringIO(text)):
             norm = {re.sub(r"[^a-z0-9]", "", k.lower()): v for k,v in row.items() if k}
             add(next((norm[k] for k in ("tgid","talkgroup","id","tg") if k in norm),None),next((norm[k] for k in ("name","talkgroupname","description","callsign") if k in norm),None))
+    elif fmt == "dvref":
+        envelope = json.loads(text)
+        metadata = envelope.get("_dvref_metadata", {})
+        if envelope.get("status") != "success" or metadata.get("license", {}).get("spdx_id") != "CC-BY-4.0" or metadata.get("aup_url") != "https://dvref.com/aup/":
+            raise ValueError("DVRef response missing expected license or status")
+        items = envelope["data"]["reflectors"]
+        if not isinstance(items, list) or not items:
+            raise ValueError("DVRef reflector list missing")
+        for item in items:
+            if not isinstance(item, dict): raise ValueError("Invalid reflector record")
+            # Only explicit talkgroup/designator fields, never database PK, port or slug.
+            value = item.get("talkgroup", item.get("designator"))
+            match = re.fullmatch(r"(?:" + mode + r"[- ]?)?([0-9]{1,8})", str(value), re.I)
+            if not match:
+                raise ValueError("Unrecognized DVRef " + mode + " talkgroup designator")
+            n = int(match.group(1))
+            if not 1 <= n <= MAX[mode]: continue
+            name = item.get("name") or item.get("description") or f"{mode} {n}"
+            add(n, name)
     elif fmt == "bm-map":
         for k,v in json.loads(text).items(): add(k,v)
     elif fmt in ("objects","freestar"):
@@ -78,6 +101,8 @@ def main():
                 if len(rows)<len(old["rows"])*0.5: raise ValueError("Unexpected directory shrink; retain prior snapshot")
                 if old["rows"]==rows and old.get("approval")==a: print(ident,"unchanged"); continue
             payload={"schema":1,"id":ident,"mode":s["mode"],"type":"Group","source":s["name"],"upstream":s["endpoint"],"approval":a,"updated":datetime.datetime.now(datetime.timezone.utc).isoformat(),"rows":rows}
+            if s["format"] == "dvref":
+                payload.update({"attribution": "Reflector data provided by DVRef — https://dvref.com/", "license": "CC-BY-4.0", "license_url": "https://creativecommons.org/licenses/by/4.0/", "changes": "Normalized numeric reflector IDs and names; omitted unsupported IDs and other fields."})
             target.parent.mkdir(exist_ok=True)
             with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=target.parent, delete=False) as f:
                 json.dump(payload,f,ensure_ascii=False,indent=2); f.write("\n")
