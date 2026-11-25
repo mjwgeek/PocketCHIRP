@@ -338,5 +338,14 @@
         "changes": "Normalized numeric reflector IDs and names."
       }
     }
+  ],
+  "dvref_catalog": [
+    "dmr",
+    "m17",
+    "nxdn",
+    "p25",
+    "urfd",
+    "vex",
+    "ysf"
   ]
 }
