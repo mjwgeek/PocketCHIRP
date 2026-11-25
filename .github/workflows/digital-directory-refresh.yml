@@ -1,0 +1,27 @@
+name: Refresh approved digital directories
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '27 9 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: digital-directory-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh approved snapshots
+        run: python3 community/digital-directories/refresh.py
+      - name: Publish changed snapshots
+        run: |
+          git config user.name "PocketCHIRP Directory Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A community/digital-directories
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh approved digital directory snapshots"
+            git push
+          fi
