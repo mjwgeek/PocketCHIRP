@@ -11,3 +11,10 @@ Independent provider registry and permission-gated snapshot updater. This is not
 - BrandMeister and TGIF endpoint candidates must be verified on-device before release; public access is not proof of mirror permission.
 
 Run `python3 community/digital-directories/refresh.py` after approving sources. It does not fetch pending or direct-only providers. It validates output, refuses redirects and suspiciously truncated results, keeps prior good snapshots, and avoids changing unchanged files. An approved source will be fetched once per refresh run, not once per app installation. DMR/P25/NXDN contact IDs share one radio table; different networks can conflict. This is a group-call directory, not a caller-ID database.
+
+## DVRef snapshots
+
+Reflector data provided by DVRef — https://dvref.com/  
+License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). [DVRef AUP, effective 4 August 2026](https://dvref.com/aup/). DVRef does not endorse PocketCHIRP.
+
+P25 and NXDN public reflector lists are normalized to numeric group contacts; names and IDs are extracted, other fields and out-of-range IDs omitted. The GitHub workflow fetches each approved resource once daily at 09:27 UTC, using the documented software, callsign and contact headers. No authentication token, HTML scraping, rapid retries or client-side requests to DVRef. Failed or malformed responses leave the last valid snapshot intact. App clients download from this repository. Manual runs must respect the six-hour upstream retrieval interval; do not rerun repeatedly after a 429. DMR network listings are not talkgroup directories; YSF, M17, URFD and VEX need distinct protocol-aware models and are not imported as numeric group contacts. Other provider entries retain their existing licensing status.
