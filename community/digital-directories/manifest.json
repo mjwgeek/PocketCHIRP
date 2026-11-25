@@ -301,6 +301,42 @@
       "redistribution": "unverified",
       "snapshot": null,
       "approval": null
+    },
+    {
+      "id": "dvref-p25",
+      "mode": "P25",
+      "name": "DVRef P25 reflectors (CC BY 4.0)",
+      "delivery": "mirror",
+      "endpoint": "https://dvref.com/api/v2/p25/reflectors/",
+      "format": "dvref",
+      "reference": "https://dvref.com/",
+      "redistribution": "approved",
+      "snapshot": "snapshots/dvref-p25.json",
+      "approval": {
+        "evidence": "https://dvref.com/aup/",
+        "license": "CC-BY-4.0",
+        "commercial_use": true,
+        "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+        "changes": "Normalized numeric reflector IDs and names."
+      }
+    },
+    {
+      "id": "dvref-nxdn",
+      "mode": "NXDN",
+      "name": "DVRef NXDN reflectors (CC BY 4.0)",
+      "delivery": "mirror",
+      "endpoint": "https://dvref.com/api/v2/nxdn/reflectors/",
+      "format": "dvref",
+      "reference": "https://dvref.com/",
+      "redistribution": "approved",
+      "snapshot": "snapshots/dvref-nxdn.json",
+      "approval": {
+        "evidence": "https://dvref.com/aup/",
+        "license": "CC-BY-4.0",
+        "commercial_use": true,
+        "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+        "changes": "Normalized numeric reflector IDs and names."
+      }
     }
   ]
 }
