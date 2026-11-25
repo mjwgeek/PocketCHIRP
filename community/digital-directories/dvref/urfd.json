@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-11-25T01:31:50.211614Z",
+  "generated_at": "2026-11-25T19:29:11.204161Z",
   "_dvref_metadata": {
     "license": {
       "name": "Creative Commons Attribution 4.0 International",
@@ -27,7 +27,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.690268Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.792091Z",
         "network_type": "business"
       },
       {
@@ -81,7 +81,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.694960Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.847672Z",
         "network_type": "hosting"
       },
       {
@@ -139,7 +139,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.791814Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.901568Z",
         "network_type": "business"
       },
       {
@@ -213,7 +213,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.692870Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.816708Z",
         "network_type": "residential"
       },
       {
@@ -249,7 +249,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.947583Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.056153Z",
         "network_type": "business"
       },
       {
@@ -409,7 +409,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.925443Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.000428Z",
         "network_type": "business"
       },
       {
@@ -438,7 +438,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.715729Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.837380Z",
         "network_type": "hosting"
       },
       {
@@ -496,7 +496,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.855339Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.977489Z",
         "network_type": "residential"
       },
       {
@@ -535,7 +535,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.616228Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.789910Z",
         "network_type": "hosting"
       },
       {
@@ -621,7 +621,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.769934Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.886394Z",
         "network_type": "residential"
       },
       {
@@ -651,7 +651,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.851572Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.268248Z",
         "network_type": "hosting"
       },
       {
@@ -731,7 +731,7 @@
         "slug": "urf121",
         "url": "http://xlx121.ddns.net",
         "dns": "xlx121.ddns.net",
-        "ipv4": "95.247.3.166",
+        "ipv4": "87.9.251.1",
         "ipv6": null,
         "sponsor": "VERONA NETWORK",
         "country": "IT",
@@ -752,7 +752,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.662644Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.753814Z",
         "network_type": "business"
       },
       {
@@ -780,7 +780,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.999707Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.061182Z",
         "network_type": "hosting"
       },
       {
@@ -814,6 +814,36 @@
         "ip_source": "static",
         "dns_cache_updated_at": null,
         "network_type": "hosting"
+      },
+      {
+        "designator": "155",
+        "name": "TheDive 155",
+        "slug": "urf155",
+        "url": "https://thedive155.com/index.php",
+        "dns": "thedive155.com",
+        "ipv4": "104.21.34.234",
+        "ipv6": "2606:4700:3034::6815:22ea",
+        "sponsor": "NC1D",
+        "country": "US",
+        "enabled_modes": [
+          "DMR",
+          "M17",
+          "D-Star (DPlus)",
+          "D-Star (DExtra)",
+          "D-Star (DCS)"
+        ],
+        "modules": [
+          {
+            "module": "A",
+            "slug": "155-module-a",
+            "mode": "All",
+            "description": "The Dive 155 Multimode YSF 00155 = D-Star DCS 155A = DMR XLX 155A = TGIF 9155 = BM 314137 = M17 155",
+            "transcode": true
+          }
+        ],
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.757666Z",
+        "network_type": "business"
       },
       {
         "designator": "162",
@@ -891,7 +921,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.870447Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.993503Z",
         "network_type": "hosting"
       },
       {
@@ -912,7 +942,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.975675Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.799532Z",
         "network_type": "hosting"
       },
       {
@@ -945,7 +975,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.661983Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.827270Z",
         "network_type": "business"
       },
       {
@@ -975,7 +1005,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.962342Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.094979Z",
         "network_type": "hosting"
       },
       {
@@ -1033,7 +1063,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.607693Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.757086Z",
         "network_type": "hosting"
       },
       {
@@ -1068,7 +1098,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.740418Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.889182Z",
         "network_type": "hosting"
       },
       {
@@ -1084,55 +1114,66 @@
         "enabled_modes": [
           "DMR",
           "M17",
+          "D-Star (DPlus)",
+          "D-Star (DExtra)",
           "D-Star (DCS)",
+          "NXDN",
+          "P25",
           "YSF"
         ],
         "modules": [
           {
             "module": "A",
             "slug": "217-module-a",
+            "mode": "All",
+            "description": "Multimode, Transcoding",
+            "transcode": true
+          },
+          {
+            "module": "D",
+            "slug": "217-module-d",
             "mode": "DMR",
             "description": "DMR",
             "transcode": false
           },
           {
-            "module": "B",
-            "slug": "217-module-b",
-            "mode": "DMR",
-            "description": "Chaverim TAC2 (DMR)",
-            "transcode": false
-          },
-          {
-            "module": "C",
-            "slug": "217-module-c",
-            "mode": "YSF",
-            "description": "YSF",
-            "transcode": false
-          },
-          {
-            "module": "D",
-            "slug": "217-module-d",
+            "module": "M",
+            "slug": "217-module-m",
             "mode": "M17",
-            "description": "M17",
+            "description": null,
             "transcode": false
           },
           {
-            "module": "E",
-            "slug": "217-module-e",
+            "module": "N",
+            "slug": "217-module-n",
             "mode": "NXDN",
             "description": "NXDN",
             "transcode": false
           },
           {
-            "module": "F",
-            "slug": "217-module-f",
+            "module": "P",
+            "slug": "217-module-p",
             "mode": "P25",
             "description": "P25",
             "transcode": false
+          },
+          {
+            "module": "S",
+            "slug": "217-module-s",
+            "mode": "D-Star (DCS)",
+            "description": "All D-Star Moves",
+            "transcode": false
+          },
+          {
+            "module": "Z",
+            "slug": "217-module-z",
+            "mode": "All",
+            "description": "Echo",
+            "transcode": true
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.735158Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.978787Z",
         "network_type": "business"
       },
       {
@@ -1190,7 +1231,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.941715Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.045125Z",
         "network_type": "hosting"
       },
       {
@@ -1219,7 +1260,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.217341Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.401753Z",
         "network_type": "business"
       },
       {
@@ -1241,7 +1282,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.213922Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.380876Z",
         "network_type": "business"
       },
       {
@@ -1284,7 +1325,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.929197Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.939522Z",
         "network_type": "business"
       },
       {
@@ -1341,7 +1382,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.636786Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.763034Z",
         "network_type": "hosting"
       },
       {
@@ -1362,7 +1403,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.691431Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.775840Z",
         "network_type": "hosting"
       },
       {
@@ -1380,7 +1421,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.626401Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.772248Z",
         "network_type": "hosting"
       },
       {
@@ -1454,7 +1495,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:05.444097Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.453560Z",
         "network_type": "business"
       },
       {
@@ -1501,7 +1542,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.684154Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.806068Z",
         "network_type": "residential"
       },
       {
@@ -1598,7 +1639,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.743444Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.857597Z",
         "network_type": "hosting"
       },
       {
@@ -1708,7 +1749,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.610987Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.758287Z",
         "network_type": "business"
       },
       {
@@ -1717,7 +1758,7 @@
         "slug": "urf288",
         "url": "http://ic8uoh.ddns.net",
         "dns": "ic8uoh.ddns.net",
-        "ipv4": "79.27.149.152",
+        "ipv4": "95.250.142.70",
         "ipv6": null,
         "sponsor": "IC8UOH",
         "country": "IT",
@@ -1773,7 +1814,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.799056Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.917459Z",
         "network_type": "business"
       },
       {
@@ -1795,7 +1836,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.035580Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.155812Z",
         "network_type": "hosting"
       },
       {
@@ -1851,7 +1892,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:04.212950Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.865700Z",
         "network_type": "hosting"
       },
       {
@@ -1874,7 +1915,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.617220Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.761852Z",
         "network_type": "business"
       },
       {
@@ -1981,7 +2022,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.682466Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.838436Z",
         "network_type": "residential"
       },
       {
@@ -2006,7 +2047,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.147262Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.213015Z",
         "network_type": "residential"
       },
       {
@@ -2075,7 +2116,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.619827Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.751831Z",
         "network_type": "residential"
       },
       {
@@ -2100,7 +2141,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.659960Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.839886Z",
         "network_type": "hosting"
       },
       {
@@ -2142,7 +2183,7 @@
         "slug": "urf331",
         "url": "http://wp4nnz.ddns.net/index.php",
         "dns": null,
-        "ipv4": "67.224.140.59",
+        "ipv4": "64.237.221.215",
         "ipv6": "2606:5f00:9440:4998:fd66:1219:bdb1:2e61",
         "sponsor": null,
         "country": "PR",
@@ -2344,7 +2385,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.784771Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.899921Z",
         "network_type": "business"
       },
       {
@@ -2365,7 +2406,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.613950Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.788274Z",
         "network_type": "residential"
       },
       {
@@ -2394,7 +2435,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.774183Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.913285Z",
         "network_type": "residential"
       },
       {
@@ -2422,7 +2463,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.039465Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.093790Z",
         "network_type": "hosting"
       },
       {
@@ -2441,7 +2482,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.656917Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.823376Z",
         "network_type": "business"
       },
       {
@@ -2450,7 +2491,7 @@
         "slug": "urf420",
         "url": "https://xlx.ve2sus.com",
         "dns": "ref.ve2sus.com",
-        "ipv4": "204.244.207.109",
+        "ipv4": "173.206.227.186",
         "ipv6": null,
         "sponsor": "VE2SUS",
         "country": "CA",
@@ -2471,7 +2512,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.751845Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.884287Z",
         "network_type": "business"
       },
       {
@@ -2513,7 +2554,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.618261Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.755671Z",
         "network_type": "business"
       },
       {
@@ -2562,7 +2603,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.706579Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.824026Z",
         "network_type": "hosting"
       },
       {
@@ -2588,7 +2629,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.768434Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.873964Z",
         "network_type": "residential"
       },
       {
@@ -2614,7 +2655,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.742800Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.849665Z",
         "network_type": "hosting"
       },
       {
@@ -2643,7 +2684,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.693537Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.809785Z",
         "network_type": "business"
       },
       {
@@ -2672,7 +2713,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.812023Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.930573Z",
         "network_type": "residential"
       },
       {
@@ -2716,7 +2757,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.955365Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.076524Z",
         "network_type": "hosting"
       },
       {
@@ -2738,7 +2779,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.749564Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.866517Z",
         "network_type": "business"
       },
       {
@@ -2793,7 +2834,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.655276Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.807881Z",
         "network_type": "residential"
       },
       {
@@ -2941,7 +2982,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.625670Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.779517Z",
         "network_type": "residential"
       },
       {
@@ -2963,7 +3004,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.620497Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.771632Z",
         "network_type": "hosting"
       },
       {
@@ -3014,7 +3055,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.709843Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.825914Z",
         "network_type": "business"
       },
       {
@@ -3074,7 +3115,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.705006Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.770221Z",
         "network_type": "hosting"
       },
       {
@@ -3107,7 +3148,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.739254Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.864586Z",
         "network_type": "business"
       },
       {
@@ -3175,7 +3216,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.644023Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.792846Z",
         "network_type": "hosting"
       },
       {
@@ -3236,7 +3277,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.683320Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.790911Z",
         "network_type": "residential"
       },
       {
@@ -3276,7 +3317,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.883262Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.952865Z",
         "network_type": "hosting"
       },
       {
@@ -3316,7 +3357,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.680909Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.814538Z",
         "network_type": "hosting"
       },
       {
@@ -3339,7 +3380,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.619054Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.770913Z",
         "network_type": "business"
       },
       {
@@ -3427,7 +3468,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.759907Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.891590Z",
         "network_type": "residential"
       },
       {
@@ -3449,7 +3490,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.805293Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.924868Z",
         "network_type": "hosting"
       },
       {
@@ -3475,7 +3516,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.692187Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.815324Z",
         "network_type": "hosting"
       },
       {
@@ -3507,7 +3548,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.632158Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.794913Z",
         "network_type": "business"
       },
       {
@@ -3540,7 +3581,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.741201Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.139890Z",
         "network_type": "hosting"
       },
       {
@@ -3590,7 +3631,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.974408Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.052766Z",
         "network_type": "hosting"
       },
       {
@@ -3623,7 +3664,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.775603Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.900808Z",
         "network_type": "residential"
       },
       {
@@ -3643,7 +3684,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.621869Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.756449Z",
         "network_type": "hosting"
       },
       {
@@ -3715,7 +3756,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.168254Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.395545Z",
         "network_type": "business"
       },
       {
@@ -3773,7 +3814,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.755152Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.872743Z",
         "network_type": "hosting"
       },
       {
@@ -3801,7 +3842,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.724233Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.848811Z",
         "network_type": "business"
       },
       {
@@ -3854,7 +3895,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.657798Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.777186Z",
         "network_type": "hosting"
       },
       {
@@ -4072,7 +4113,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.721864Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.796225Z",
         "network_type": "mixed"
       },
       {
@@ -4098,8 +4139,67 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.708364Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.829741Z",
         "network_type": "residential"
+      },
+      {
+        "designator": "969",
+        "name": null,
+        "slug": "urf969",
+        "url": "http://urf.k0cks.com",
+        "dns": "urf.k0cks.com",
+        "ipv4": "72.133.49.122",
+        "ipv6": null,
+        "sponsor": "K0CKS / RRARC",
+        "country": "US",
+        "enabled_modes": [
+          "DMR",
+          "M17",
+          "D-Star (DPlus)",
+          "D-Star (DExtra)",
+          "D-Star (DCS)",
+          "YSF"
+        ],
+        "modules": [
+          {
+            "module": "A",
+            "slug": "969-module-a",
+            "mode": "All",
+            "description": "Linked to 31555 Chicagoland/CLAND",
+            "transcode": true
+          },
+          {
+            "module": "D",
+            "slug": "969-module-d",
+            "mode": "DMR",
+            "description": null,
+            "transcode": false
+          },
+          {
+            "module": "M",
+            "slug": "969-module-m",
+            "mode": "M17",
+            "description": null,
+            "transcode": false
+          },
+          {
+            "module": "S",
+            "slug": "969-module-s",
+            "mode": "D-Star (DCS)",
+            "description": null,
+            "transcode": false
+          },
+          {
+            "module": "Z",
+            "slug": "969-module-z",
+            "mode": "All",
+            "description": "Temp",
+            "transcode": true
+          }
+        ],
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.811520Z",
+        "network_type": "business"
       },
       {
         "designator": "987",
@@ -4128,7 +4228,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.771640Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.893535Z",
         "network_type": "business"
       },
       {
@@ -4154,7 +4254,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.660747Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.810710Z",
         "network_type": "hosting"
       },
       {
@@ -4207,7 +4307,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.853551Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.931817Z",
         "network_type": "hosting"
       },
       {
@@ -4253,7 +4353,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.793260Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.932668Z",
         "network_type": "business"
       },
       {
@@ -4307,7 +4407,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.959344Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.037338Z",
         "network_type": "business"
       },
       {
@@ -4363,7 +4463,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.710552Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.856673Z",
         "network_type": "residential"
       },
       {
@@ -4492,7 +4592,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.663203Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.767095Z",
         "network_type": "hosting"
       },
       {
@@ -4520,7 +4620,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.881459Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.850316Z",
         "network_type": "mixed"
       },
       {
@@ -4551,7 +4651,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.930778Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.833111Z",
         "network_type": "hosting"
       },
       {
@@ -4572,7 +4672,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.604372Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.748470Z",
         "network_type": "hosting"
       },
       {
@@ -4592,7 +4692,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.746112Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.885658Z",
         "network_type": "hosting"
       },
       {
@@ -4746,7 +4846,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.083126Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.199351Z",
         "network_type": "business"
       },
       {
@@ -4989,7 +5089,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.621190Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.765988Z",
         "network_type": "residential"
       },
       {
@@ -5055,7 +5155,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.364019Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.571474Z",
         "network_type": "mobile"
       },
       {
@@ -5132,7 +5232,7 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.085317Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:04.817041Z",
         "network_type": "business"
       },
       {
@@ -5203,7 +5303,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:02.774834Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:02.894285Z",
         "network_type": "hosting"
       },
       {
@@ -5253,7 +5353,7 @@
         ],
         "modules": [],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.175979Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.280124Z",
         "network_type": "hosting"
       },
       {
@@ -5304,14 +5404,14 @@
           }
         ],
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T01:06:03.227158Z",
+        "dns_cache_updated_at": "2026-11-25T19:06:03.129185Z",
         "network_type": "business"
       }
     ]
   },
   "pocketchirp": {
     "upstream": "https://dvref.com/api/v2/urfd/reflectors/",
-    "checked_at": "2026-11-25T01:31:50.167399+00:00",
+    "checked_at": "2026-11-25T19:29:11.148571+00:00",
     "changes": "Public collection records unchanged; added PocketCHIRP cache metadata.",
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "license": "CC-BY-4.0",
