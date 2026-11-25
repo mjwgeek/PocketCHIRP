@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "generated_at": "2026-11-25T01:31:50.553324Z",
+  "_dvref_metadata": {
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "spdx_id": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+    "servers": [
+      {
+        "name": "JesusSaves Network",
+        "slug": "vex-jesussaves-network",
+        "last_verified_at": "2026-11-08T21:55:46.690800Z"
+      },
+      {
+        "name": "VEX-BEL",
+        "slug": "vex-vex-bel",
+        "last_verified_at": "2026-10-03T21:21:22.460416Z"
+      },
+      {
+        "name": "VEX-JET",
+        "slug": "vex-vex-jet",
+        "last_verified_at": "2026-11-03T04:52:38.912993Z"
+      },
+      {
+        "name": "VEX-NLD",
+        "slug": "vex-vex-nld",
+        "last_verified_at": "2026-10-29T15:32:23.187318Z"
+      },
+      {
+        "name": "Vex Development",
+        "slug": "vex-vex-development",
+        "last_verified_at": "2026-05-07T11:44:00.609017Z"
+      },
+      {
+        "name": "WPSD-VEX493",
+        "slug": "vex-wpsd-vex493",
+        "last_verified_at": "2026-09-18T09:59:31.666138Z"
+      }
+    ]
+  },
+  "pocketchirp": {
+    "upstream": "https://dvref.com/api/v2/vex/servers/",
+    "checked_at": "2026-11-25T01:31:50.395153+00:00",
+    "changes": "Public collection records unchanged; added PocketCHIRP cache metadata.",
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}

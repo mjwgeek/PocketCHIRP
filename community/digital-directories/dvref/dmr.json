@@ -1,0 +1,3450 @@
+{
+  "status": "success",
+  "generated_at": "2026-11-25T01:31:49.641930Z",
+  "_dvref_metadata": {
+    "license": {
+      "name": "Creative Commons Attribution 4.0 International",
+      "spdx_id": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "aup_url": "https://dvref.com/aup/"
+  },
+  "data": {
+    "networks": [
+      {
+        "network": "01HAMRADIODX",
+        "slug": "01hamradiodx",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/01hamradiodx/talkgroups/",
+        "url": "http://radiodigitalspain.ddns.net/dashboard",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "01HAMRADIODX",
+            "slug": "01hamradiodx-server-01hamradiodx",
+            "dns": "radiodigitalspain.ddns.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "ES"
+          }
+        ]
+      },
+      {
+        "network": "03407",
+        "slug": "03407",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/03407/talkgroups/",
+        "url": "https://74.207.225.205",
+        "sponsor": "XE2ERA",
+        "servers": [
+          {
+            "server": "BM_3341_Mexico",
+            "slug": "03407-server-bm_3341_mexico",
+            "dns": null,
+            "ipv4": "74.207.225.205",
+            "ipv6": null,
+            "port": 62030,
+            "country": "MX"
+          }
+        ]
+      },
+      {
+        "network": "2223.adn.systems",
+        "slug": "2223adnsystems",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/2223adnsystems/talkgroups/",
+        "url": "http://2223.adn-systems",
+        "sponsor": "Lisci Antioco",
+        "servers": []
+      },
+      {
+        "network": "26269.de",
+        "slug": "26269de",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/26269de/talkgroups/",
+        "url": "https://urf269.26269.de",
+        "sponsor": "DC9VQ",
+        "servers": [
+          {
+            "server": "URF269",
+            "slug": "26269de-server-urf269",
+            "dns": "urf269.26269.de",
+            "ipv4": "44.31.0.6",
+            "ipv6": null,
+            "port": 62030,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "46002",
+        "slug": "46002",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/46002/talkgroups/",
+        "url": "https://arch.hljrsa.cn/status/",
+        "sponsor": "BG2GA",
+        "servers": [
+          {
+            "server": "srv2.hljrsa.cn",
+            "slug": "46002-server-srv2hljrsacn",
+            "dns": "srv2.hljrsa.cn",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "730444 - ZONA DMR CL",
+        "slug": "730444-zona-dmr-cl",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/730444-zona-dmr-cl/talkgroups/",
+        "url": "https://chile.adn.systems/",
+        "sponsor": "ZONA DMR CHILE - CA2RDP - TELECOVIAJERO",
+        "servers": []
+      },
+      {
+        "network": "871",
+        "slug": "871",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/871/talkgroups/",
+        "url": "http://47.109.149.230:8888/",
+        "sponsor": "Rescue System",
+        "servers": [
+          {
+            "server": "871",
+            "slug": "871-server-871",
+            "dns": null,
+            "ipv4": "47.109.149.230",
+            "ipv6": null,
+            "port": 8888,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "ADN Belgium",
+        "slug": "adn-belgium",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-belgium/talkgroups/",
+        "url": "http://2061.adn.systems",
+        "sponsor": "UBA-LGE",
+        "servers": []
+      },
+      {
+        "network": "ADN France Digital",
+        "slug": "adn-france-digital",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-france-digital/talkgroups/",
+        "url": "http://2082.adn.systems/",
+        "sponsor": "F6KTM HamClub Station",
+        "servers": [
+          {
+            "server": "ADN France Digital",
+            "slug": "adn-france-digital-server-adn-france-digital",
+            "dns": "2082.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "FR"
+          }
+        ]
+      },
+      {
+        "network": "ADN Hauts de France",
+        "slug": "adn-hauts-de-france",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-hauts-de-france/talkgroups/",
+        "url": "https://2084.adn.systems",
+        "sponsor": "F4MZI",
+        "servers": [
+          {
+            "server": "ADN Hauts de France",
+            "slug": "adn-hauts-de-france-server-adn-hauts-de-france",
+            "dns": "2084.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "FR"
+          }
+        ]
+      },
+      {
+        "network": "ADN SYSTEMS ESPAÑA",
+        "slug": "adn-systems-espana",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-systems-espana/talkgroups/",
+        "url": "http://2141.adn.systems:8090",
+        "sponsor": "2141.adn.systems",
+        "servers": [
+          {
+            "server": "Server 1 España ADN-SYSTEMS",
+            "slug": "adn-systems-espana-server-server-1-espana-adn-systems",
+            "dns": "2141.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "ES"
+          },
+          {
+            "server": "Server 2 España ADN-SYSTEMS",
+            "slug": "adn-systems-espana-server-server-2-espana-adn-systems",
+            "dns": "2142.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "ES"
+          }
+        ]
+      },
+      {
+        "network": "ADN Systems Chile",
+        "slug": "adn-systems-chile",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-systems-chile/talkgroups/",
+        "url": "https://chile.adn.systems/index.php?p=systems",
+        "sponsor": "ADN Chile - RedChile EchoLink",
+        "servers": [
+          {
+            "server": "Chile.ADN",
+            "slug": "adn-systems-chile-server-chileadn",
+            "dns": "chile.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "CL"
+          }
+        ]
+      },
+      {
+        "network": "ADN Systems Colombia",
+        "slug": "adn-systems-colombia",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-systems-colombia/talkgroups/",
+        "url": "http://7321.adn.systems:8011/",
+        "sponsor": "HUBNet REM52Hz",
+        "servers": [
+          {
+            "server": "ADN_7321_Colombia",
+            "slug": "adn-systems-colombia-server-adn_7321_colombia",
+            "dns": "7321.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "CO"
+          }
+        ]
+      },
+      {
+        "network": "ADN Systems Switzerland",
+        "slug": "adn-systems-switzerland",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-systems-switzerland/talkgroups/",
+        "url": "http://2280.adn.systems",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "ADN Systems Switzerland",
+            "slug": "adn-systems-switzerland-server-adn-systems-switzerland",
+            "dns": "2280.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "CH"
+          }
+        ]
+      },
+      {
+        "network": "ADN United Kingdom",
+        "slug": "adn-united-kingdom",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-united-kingdom/talkgroups/",
+        "url": "http://2341.adn.systems",
+        "sponsor": "FreeStar UK",
+        "servers": [
+          {
+            "server": "ADN United Kingdom",
+            "slug": "adn-united-kingdom-server-adn-united-kingdom",
+            "dns": "2341.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "ADN-Systems",
+        "slug": "adn-systems",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn-systems/talkgroups/",
+        "url": "https://adn.systems/",
+        "sponsor": "Team ADN Sytems",
+        "servers": []
+      },
+      {
+        "network": "ADN_ITALY_SUD",
+        "slug": "adn_italy_sud",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/adn_italy_sud/talkgroups/",
+        "url": "http://2222.adn.systems/",
+        "sponsor": "Team adn_systems_italy",
+        "servers": []
+      },
+      {
+        "network": "AMComm - 31701 - Trek Talk",
+        "slug": "amcomm-31701-trek-talk",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/amcomm-31701-trek-talk/talkgroups/",
+        "url": "http://45.30.129.91:8182/supermon/link.php?nodes=649920",
+        "sponsor": "Starfleet Amateur Radio Group",
+        "servers": []
+      },
+      {
+        "network": "AR Norasingh",
+        "slug": "ar-norasingh",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ar-norasingh/talkgroups/",
+        "url": "http://toptech.3bbddns.com:17077",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "Server 1",
+            "slug": "ar-norasingh-server-server-1",
+            "dns": null,
+            "ipv4": "44.32.81.2",
+            "ipv6": null,
+            "port": null,
+            "country": "TH"
+          }
+        ]
+      },
+      {
+        "network": "AU-Central Qld",
+        "slug": "au-central-qld",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/au-central-qld/talkgroups/",
+        "url": "https://xlx820.com",
+        "sponsor": "John VK4UE",
+        "servers": [
+          {
+            "server": "http://172.105.180.77/",
+            "slug": "au-central-qld-server-http17210518077",
+            "dns": null,
+            "ipv4": "172.105.180.77",
+            "ipv6": null,
+            "port": 62030,
+            "country": "AU"
+          }
+        ]
+      },
+      {
+        "network": "AmComm",
+        "slug": "amcomm",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/amcomm/talkgroups/",
+        "url": "https://amcomm.network",
+        "sponsor": "Amateur Communications Network",
+        "servers": [
+          {
+            "server": "3101 - Alabama",
+            "slug": "amcomm-server-3101-alabama",
+            "dns": "3101.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "31010 - Seattle",
+            "slug": "amcomm-server-31010-seattle",
+            "dns": "31010.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "31011 - Alabama Hotspot",
+            "slug": "amcomm-server-31011-alabama-hotspot",
+            "dns": "31011.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3102 - Atlanta",
+            "slug": "amcomm-server-3102-atlanta",
+            "dns": "3102.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3103 - Chicago",
+            "slug": "amcomm-server-3103-chicago",
+            "dns": "3103.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3104 - Dallas",
+            "slug": "amcomm-server-3104-dallas",
+            "dns": "3104.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3105 - Los Angeles",
+            "slug": "amcomm-server-3105-los-angeles",
+            "dns": "3105.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "31051 - Arkansas",
+            "slug": "amcomm-server-31051-arkansas",
+            "dns": "31051.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3106 - Miami",
+            "slug": "amcomm-server-3106-miami",
+            "dns": "3106.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3108 - New Jersey",
+            "slug": "amcomm-server-3108-new-jersey",
+            "dns": "3108.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "3109 - Washington D.C.",
+            "slug": "amcomm-server-3109-washington-dc",
+            "dns": "3109.amcomm.network",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Anhui Digital-Integrated Emergency Communication",
+        "slug": "anhui-digital-integrated-emergency-communication",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/anhui-digital-integrated-emergency-communication/talkgroups/",
+        "url": "http://dmr.zper.org.cn/",
+        "sponsor": "BI6AN",
+        "servers": [
+          {
+            "server": "Anhui Digital-Integrated Emergency Communication",
+            "slug": "anhui-digital-integrated-emergency-communication-server-anhui-digital-integrated-emergency-communication",
+            "dns": null,
+            "ipv4": "60.173.209.129",
+            "ipv6": null,
+            "port": 55551,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "Azimuth Club",
+        "slug": "azimuth-club",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/azimuth-club/talkgroups/",
+        "url": "https://ur4wwr.org",
+        "sponsor": "UR4WWR team",
+        "servers": []
+      },
+      {
+        "network": "BH8UJK",
+        "slug": "bh8ujk",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/bh8ujk/talkgroups/",
+        "url": "http://47.109.149.230:8888/",
+        "sponsor": "Amateur radio of CN",
+        "servers": []
+      },
+      {
+        "network": "BM2222",
+        "slug": "bm2222",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/bm2222/talkgroups/",
+        "url": "https://bm2222.dmrbrescia.it",
+        "sponsor": "dmrbrescia.it",
+        "servers": []
+      },
+      {
+        "network": "BORICUAS",
+        "slug": "boricuas",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/boricuas/talkgroups/",
+        "url": "http://wp4vw1.ddns.net",
+        "sponsor": "WP4VW",
+        "servers": []
+      },
+      {
+        "network": "Boriken Memorial",
+        "slug": "boriken-memorial",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/boriken-memorial/talkgroups/",
+        "url": "http://ysfborikenct.ddns.net/",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "http://192.168.1.226/",
+            "slug": "boriken-memorial-server-http1921681226",
+            "dns": "192.168.1.226",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 50000,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "CQ Zone",
+        "slug": "cq-zone",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/cq-zone/talkgroups/",
+        "url": "https://cq.hamzone.org",
+        "sponsor": "CQ Zone! - Member of ( HELLAS Zone Net )",
+        "servers": [
+          {
+            "server": "CQ Zone",
+            "slug": "cq-zone-server-cq-zone",
+            "dns": "cq.hamzone.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "SE"
+          }
+        ]
+      },
+      {
+        "network": "CQ-UK DMR MASTER",
+        "slug": "cq-uk-dmr-master",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/cq-uk-dmr-master/talkgroups/",
+        "url": "https://dmr.cq-uk.uk",
+        "sponsor": "CQ-UK WORLDWIDE",
+        "servers": [
+          {
+            "server": "CQ-UK DMR MASTER",
+            "slug": "cq-uk-dmr-master-server-cq-uk-dmr-master",
+            "dns": "dmr.cq-uk.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "CRHRC",
+        "slug": "crhrc",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/crhrc/talkgroups/",
+        "url": "http://crhrc.org",
+        "sponsor": "CRHRC",
+        "servers": [
+          {
+            "server": "CRHRC HB-Link Server TG 11",
+            "slug": "crhrc-server-crhrc-hb-link-server-tg-11",
+            "dns": "vpn.crhrc.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          },
+          {
+            "server": "CRHRC HB-Link Server TG 50",
+            "slug": "crhrc-server-crhrc-hb-link-server-tg-50",
+            "dns": "vpn.crhrc.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "China Homebrew DMR Bridge",
+        "slug": "china-homebrew-dmr-bridge",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/china-homebrew-dmr-bridge/talkgroups/",
+        "url": "https://mmdvm.cc/",
+        "sponsor": "DRCC Team",
+        "servers": [
+          {
+            "server": "CNHK",
+            "slug": "china-homebrew-dmr-bridge-server-cnhk",
+            "dns": null,
+            "ipv4": "47.75.129.117",
+            "ipv6": null,
+            "port": 62031,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "CumbriaCQ DMR Master",
+        "slug": "cumbriacq-dmr-master",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/cumbriacq-dmr-master/talkgroups/",
+        "url": "https://dmr.cumbriacq.com",
+        "sponsor": "CumbriaCQ",
+        "servers": [
+          {
+            "server": "dmr.cumbriacq.com",
+            "slug": "cumbriacq-dmr-master-server-dmrcumbriacqcom",
+            "dns": "dmr.cumbriacq.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "DL-Nordwest XLX421",
+        "slug": "dl-nordwest-xlx421",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dl-nordwest-xlx421/talkgroups/",
+        "url": "https://dl-nordwest.com/xlx/",
+        "sponsor": "dl-nordwest.com",
+        "servers": []
+      },
+      {
+        "network": "DMR 070",
+        "slug": "dmr-070",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-070/talkgroups/",
+        "url": "https://xlx.dstar.com.br/",
+        "sponsor": "PY4EI",
+        "servers": [
+          {
+            "server": "070",
+            "slug": "dmr-070-server-070",
+            "dns": "xlx.dstar.com.br",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "BR"
+          }
+        ]
+      },
+      {
+        "network": "DMR Network Ham United - 1701 - Trek Talk",
+        "slug": "dmr-network-ham-united-1701-trek-talk",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-network-ham-united-1701-trek-talk/talkgroups/",
+        "url": "http://45.30.129.91:8182/supermon/link.php?nodes=649920",
+        "sponsor": "Starfleet Amateur Radio Group",
+        "servers": []
+      },
+      {
+        "network": "DMR Network WSPD-SV2SNH/Live Caller",
+        "slug": "dmr-network-wspd-sv2snhlive-caller",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-network-wspd-sv2snhlive-caller/talkgroups/",
+        "url": "http://live-dashboard.ddns.net:8086/live/",
+        "sponsor": "Digital Voice GREECE",
+        "servers": []
+      },
+      {
+        "network": "DMR XLX026",
+        "slug": "dmr-xlx026",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-xlx026/talkgroups/",
+        "url": "https://xlx026.net",
+        "sponsor": "PU2PNY",
+        "servers": [
+          {
+            "server": "DMR_XLX026",
+            "slug": "dmr-xlx026-server-dmr_xlx026",
+            "dns": "xlx026.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "BR"
+          }
+        ]
+      },
+      {
+        "network": "DMR-MARC",
+        "slug": "dmr-marc",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-marc/talkgroups/",
+        "url": "http://dmr-marc.net",
+        "sponsor": "DMR-MARC",
+        "servers": []
+      },
+      {
+        "network": "DMR-SE Network",
+        "slug": "dmr-se-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dmr-se-network/talkgroups/",
+        "url": "http://hotspot.cbridge.net",
+        "sponsor": "DMR-SE",
+        "servers": [
+          {
+            "server": "DMR-SE2",
+            "slug": "dmr-se-network-server-dmr-se2",
+            "dns": null,
+            "ipv4": "74.91.112.72",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "DS3DIF",
+        "slug": "ds3dif",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ds3dif/talkgroups/",
+        "url": "http://ds3dif.iptime.org/",
+        "sponsor": "DS3DIF DV HAM Would",
+        "servers": [
+          {
+            "server": "DMR Network",
+            "slug": "ds3dif-server-dmr-network",
+            "dns": null,
+            "ipv4": "220.123.96.162",
+            "ipv6": null,
+            "port": 50000,
+            "country": "KR"
+          }
+        ]
+      },
+      {
+        "network": "DVMIS_DMO",
+        "slug": "dvmis_dmo",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dvmis_dmo/talkgroups/",
+        "url": "https://HBLinkDVMIS.K8JTK.org",
+        "sponsor": "DVMIS Multimode ILS (K8JTK.org)",
+        "servers": []
+      },
+      {
+        "network": "DX1ARM",
+        "slug": "dx1arm",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dx1arm/talkgroups/",
+        "url": "http://armi.bolsademaria.com/",
+        "sponsor": "DV1ROY",
+        "servers": [
+          {
+            "server": "515044",
+            "slug": "dx1arm-server-515044",
+            "dns": "echolink.bolsademaria.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "PH"
+          },
+          {
+            "server": "TG51518",
+            "slug": "dx1arm-server-tg51518",
+            "dns": "armi.bolsademaria.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "PH"
+          }
+        ]
+      },
+      {
+        "network": "DX6CN",
+        "slug": "dx6cn",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/dx6cn/talkgroups/",
+        "url": "http://172.237.71.216",
+        "sponsor": "DU6PEW",
+        "servers": [
+          {
+            "server": "CENARL",
+            "slug": "dx6cn-server-cenarl",
+            "dns": null,
+            "ipv4": "172.237.71.216",
+            "ipv6": null,
+            "port": null,
+            "country": "PH"
+          }
+        ]
+      },
+      {
+        "network": "Digital Voice Down Under (DVDU)",
+        "slug": "digital-voice-down-under-dvdu",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/digital-voice-down-under-dvdu/talkgroups/",
+        "url": "https://dvdmr.org/",
+        "sponsor": "VK2WAY, VK3JED, VK5ZSH, ZL2RO",
+        "servers": [
+          {
+            "server": "DVDU DVAU",
+            "slug": "digital-voice-down-under-dvdu-server-dvdu-dvau",
+            "dns": "dmr.dvau.au",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "AU"
+          },
+          {
+            "server": "DVDU DVNZ",
+            "slug": "digital-voice-down-under-dvdu-server-dvdu-dvnz",
+            "dns": "dmr.dvnz.nz",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "NZ"
+          },
+          {
+            "server": "DVDU VKRadio",
+            "slug": "digital-voice-down-under-dvdu-server-dvdu-vkradio",
+            "dns": "dmr.vkradio.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "AU"
+          }
+        ]
+      },
+      {
+        "network": "Digital Voice GREECE",
+        "slug": "digital-voice-greece",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/digital-voice-greece/talkgroups/",
+        "url": "http://digital-voice.sv2snh.gr/",
+        "sponsor": "sv2snh.gr",
+        "servers": [
+          {
+            "server": "Digital Voice GREECE",
+            "slug": "digital-voice-greece-server-digital-voice-greece",
+            "dns": null,
+            "ipv4": "38.19.200.56",
+            "ipv6": "2001:a40:100:e:be24:11ff:feb3:b207",
+            "port": 62031,
+            "country": "GR"
+          }
+        ]
+      },
+      {
+        "network": "El Verdadero Radio Aficionado",
+        "slug": "el-verdadero-radio-aficionado",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/el-verdadero-radio-aficionado/talkgroups/",
+        "url": "http://734650.adn-systems",
+        "sponsor": "734650",
+        "servers": [
+          {
+            "server": "http://734650.adn-systems",
+            "slug": "el-verdadero-radio-aficionado-server-http734650adn-systems",
+            "dns": "8.8.8.8",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "VE"
+          },
+          {
+            "server": "http://734650.adn.systems",
+            "slug": "el-verdadero-radio-aficionado-server-http734650adnsystems",
+            "dns": "8.8.8.8",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "VE"
+          }
+        ]
+      },
+      {
+        "network": "Extended Freedom Network",
+        "slug": "extended-freedom-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/extended-freedom-network/talkgroups/",
+        "url": "https://dmr.m0xfn.radio",
+        "sponsor": "Extended Freedom Network",
+        "servers": [
+          {
+            "server": "XFreedom",
+            "slug": "extended-freedom-network-server-xfreedom",
+            "dns": "dmr.m0xfn.radio",
+            "ipv4": "217.61.17.111",
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "XFreedom-USA",
+            "slug": "extended-freedom-network-server-xfreedom-usa",
+            "dns": "DMR-USA.m0xfn.radio",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "FB DMR Network",
+        "slug": "fb-dmr-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fb-dmr-network/talkgroups/",
+        "url": "http://fbdmr.network",
+        "sponsor": "N2MRH",
+        "servers": [
+          {
+            "server": "Digital Ocean",
+            "slug": "fb-dmr-network-server-digital-ocean",
+            "dns": null,
+            "ipv4": "159.65.222.149",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "FD_2022_ADN_HELLAS_NODE",
+        "slug": "fd_2022_adn_hellas_node",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_2022_adn_hellas_node/talkgroups/",
+        "url": "http://2022.adn.systems",
+        "sponsor": "2022_ADN_SYSTEMS_HELLAS_NODE",
+        "servers": []
+      },
+      {
+        "network": "FD_ADN_2021_GREECE",
+        "slug": "fd_adn_2021_greece",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_adn_2021_greece/talkgroups/",
+        "url": "https://2021.adn.systems",
+        "sponsor": "2021_ADN_SYSTEMS_GREECE",
+        "servers": []
+      },
+      {
+        "network": "FD_ADN_22211_Italy",
+        "slug": "fd_adn_22211_italy",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_adn_22211_italy/talkgroups/",
+        "url": "http://93.90.205.46/",
+        "sponsor": "iw9gtr",
+        "servers": [
+          {
+            "server": "FD_ADN_22211_Italy",
+            "slug": "fd_adn_22211_italy-server-fd_adn_22211_italy",
+            "dns": null,
+            "ipv4": "93.90.205.46",
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "FD_ADN_22212",
+        "slug": "fd_adn_22212",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_adn_22212/talkgroups/",
+        "url": "http://185.203.216.4/",
+        "sponsor": "iw9gtr",
+        "servers": [
+          {
+            "server": "FD_ADN_22212_Italy",
+            "slug": "fd_adn_22212-server-fd_adn_22212_italy",
+            "dns": null,
+            "ipv4": "185.203.216.4",
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "FD_ADN_2221_Italy",
+        "slug": "fd_adn_2221_italy",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_adn_2221_italy/talkgroups/",
+        "url": "http://2221.adn.systems/",
+        "sponsor": "ADN SYSTEMS",
+        "servers": [
+          {
+            "server": "FD_ADN_22211_Italy",
+            "slug": "fd_adn_2221_italy-server-fd_adn_22211_italy",
+            "dns": null,
+            "ipv4": "185.201.65.165",
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "FD_ADN_2601_Poland",
+        "slug": "fd_adn_2601_poland",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fd_adn_2601_poland/talkgroups/",
+        "url": "http://2601.adn.systems/",
+        "sponsor": "SP5NAF",
+        "servers": []
+      },
+      {
+        "network": "FI-DMRLINK",
+        "slug": "fi-dmrlink",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/fi-dmrlink/talkgroups/",
+        "url": "https://5.61.88.113",
+        "sponsor": "OH7NFC",
+        "servers": [
+          {
+            "server": "FI-DMRLINK",
+            "slug": "fi-dmrlink-server-fi-dmrlink",
+            "dns": null,
+            "ipv4": "5.61.88.113",
+            "ipv6": null,
+            "port": 62031,
+            "country": "FI"
+          }
+        ]
+      },
+      {
+        "network": "FreeDMR Central America",
+        "slug": "freedmr-central-america",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/freedmr-central-america/talkgroups/",
+        "url": "http://fdmrpa.link",
+        "sponsor": "FreeDMR Central America",
+        "servers": [
+          {
+            "server": "FreeDMR Panama Network",
+            "slug": "freedmr-central-america-server-freedmr-panama-network",
+            "dns": "fdmrpa.link",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "PA"
+          }
+        ]
+      },
+      {
+        "network": "FreeDMR Network",
+        "slug": "freedmr-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/freedmr-network/talkgroups/",
+        "url": "https://www.freedmr.uk/index.php/server-status/",
+        "sponsor": "FreeDMR",
+        "servers": [
+          {
+            "server": "FreeDMR Cymru",
+            "slug": "freedmr-network-server-freedmr-cymru",
+            "dns": "cy.freedmr.cymru",
+            "ipv4": "44.31.91.234",
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "FreeDMR EU",
+            "slug": "freedmr-network-server-freedmr-eu",
+            "dns": "freedmreu.gb7fr.org.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "FR"
+          },
+          {
+            "server": "FreeDMR Greece",
+            "slug": "freedmr-network-server-freedmr-greece",
+            "dns": "dmr.freedmr.gr",
+            "ipv4": "185.243.214.85",
+            "ipv6": null,
+            "port": 62031,
+            "country": "GR"
+          },
+          {
+            "server": "FreeDMR ITALY",
+            "slug": "freedmr-network-server-freedmr-italy",
+            "dns": "hotspot.freedmr.it",
+            "ipv4": "44.31.102.137",
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          },
+          {
+            "server": "FreeDMR UK Offical",
+            "slug": "freedmr-network-server-freedmr-uk-offical",
+            "dns": "hotspots.freedmr.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "FreeDMR_Argentina",
+            "slug": "freedmr-network-server-freedmr_argentina",
+            "dns": "master.freedmr.com.ar",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "AR"
+          },
+          {
+            "server": "FreeDMR_Australia-VK44NET",
+            "slug": "freedmr-network-server-freedmr_australia-vk44net",
+            "dns": "srv-dmr1.vk44.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "AU"
+          },
+          {
+            "server": "FreeDMR_Brasil",
+            "slug": "freedmr-network-server-freedmr_brasil",
+            "dns": "freedmr.network365.com.br",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "BR"
+          },
+          {
+            "server": "FreeDMR_Colombia",
+            "slug": "freedmr-network-server-freedmr_colombia",
+            "dns": "freedmr.hk4rau.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "CO"
+          },
+          {
+            "server": "FreeDMR_Mexico",
+            "slug": "freedmr-network-server-freedmr_mexico",
+            "dns": "freedmr.xe1e.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "MX"
+          },
+          {
+            "server": "FreeDMR_NewZealand",
+            "slug": "freedmr-network-server-freedmr_newzealand",
+            "dns": "freedmr.dvnz.nz",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "NZ"
+          },
+          {
+            "server": "FreeDMR_Nicaragua",
+            "slug": "freedmr-network-server-freedmr_nicaragua",
+            "dns": "freedmr.gremnic.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "NI"
+          },
+          {
+            "server": "FreeDMR_OZ-DMR-AUSTRALIA",
+            "slug": "freedmr-network-server-freedmr_oz-dmr-australia",
+            "dns": "australia.oz-dmr.network",
+            "ipv4": "172.105.188.159",
+            "ipv6": null,
+            "port": 62031,
+            "country": "AU"
+          },
+          {
+            "server": "FreeDMR_OZ-DMR-AUSTRALIA_REPEATER",
+            "slug": "freedmr-network-server-freedmr_oz-dmr-australia_repeater",
+            "dns": "repeater.australia.oz-dmr.network",
+            "ipv4": "172.105.187.182",
+            "ipv6": null,
+            "port": 62031,
+            "country": "AU"
+          },
+          {
+            "server": "FreeDMR_OZ-DMR-UNITED-KINGDOM",
+            "slug": "freedmr-network-server-freedmr_oz-dmr-united-kingdom",
+            "dns": "england.oz-dmr.network",
+            "ipv4": "212.71.252.50",
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "FreeDMR_USA Central",
+            "slug": "freedmr-network-server-freedmr_usa-central",
+            "dns": "usacentral.ddns.net",
+            "ipv4": "161.35.6.182",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "FreeDMR_USA-Florida",
+            "slug": "freedmr-network-server-freedmr_usa-florida",
+            "dns": "freedmr.dvswitch.org",
+            "ipv4": "129.158.217.141",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "FreeDMR_UnitedKingdom-Scotland",
+            "slug": "freedmr-network-server-freedmr_unitedkingdom-scotland",
+            "dns": "scotland.freedmr.co.uk",
+            "ipv4": "44.32.96.51",
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "FreeMR_Sardinia",
+            "slug": "freedmr-network-server-freemr_sardinia",
+            "dns": null,
+            "ipv4": "87.106.152.249",
+            "ipv6": null,
+            "port": null,
+            "country": "IT"
+          },
+          {
+            "server": "Freedmr_CN_JiangXi",
+            "slug": "freedmr-network-server-freedmr_cn_jiangxi",
+            "dns": "freedmr.jxham.cn",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "Funknetz-Celle",
+        "slug": "funknetz-celle",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/funknetz-celle/talkgroups/",
+        "url": "http://85.215.198.111:8970",
+        "sponsor": "DL2OAM",
+        "servers": [
+          {
+            "server": "Funknetz-Celle",
+            "slug": "funknetz-celle-server-funknetz-celle",
+            "dns": null,
+            "ipv4": "85.215.198.111",
+            "ipv6": null,
+            "port": 62030,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "HAMclock SV2SNH",
+        "slug": "hamclock-sv2snh",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hamclock-sv2snh/talkgroups/",
+        "url": "http://hamclock.sv2snh.gr:8082/live.html",
+        "sponsor": "Digital Voice GREECE",
+        "servers": []
+      },
+      {
+        "network": "HBLink 5021 Malaysia",
+        "slug": "hblink-5021-malaysia",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hblink-5021-malaysia/talkgroups/",
+        "url": "http://hblink.lucifernet.com/",
+        "sponsor": "HBLink 5021 Malaysia",
+        "servers": [
+          {
+            "server": "HBLink 5021",
+            "slug": "hblink-5021-malaysia-server-hblink-5021",
+            "dns": "xlx.lucifernet.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "MY"
+          }
+        ]
+      },
+      {
+        "network": "HBLink-HELLAS-NODE",
+        "slug": "hblink-hellas-node",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hblink-hellas-node/talkgroups/",
+        "url": "http://hellas-node.ddns.net",
+        "sponsor": "hellas-node.net",
+        "servers": []
+      },
+      {
+        "network": "HBLink-SV2SNH",
+        "slug": "hblink-sv2snh",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hblink-sv2snh/talkgroups/",
+        "url": "http://xlx165.ddns.net:81",
+        "sponsor": "Digital Voice GREECE",
+        "servers": []
+      },
+      {
+        "network": "HB_CN_ADEC",
+        "slug": "hb_cn_adec",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_cn_adec/talkgroups/",
+        "url": "http://dmr.zper.org.cn/",
+        "sponsor": "BI6AN",
+        "servers": [
+          {
+            "server": "HB_CN_ADEC",
+            "slug": "hb_cn_adec-server-hb_cn_adec",
+            "dns": null,
+            "ipv4": "60.173.209.129",
+            "ipv6": null,
+            "port": 55552,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "HB_CN_GUANGZHOU",
+        "slug": "hb_cn_guangzhou",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_cn_guangzhou/talkgroups/",
+        "url": "http://47.109.55.52/",
+        "sponsor": "BD7PET",
+        "servers": [
+          {
+            "server": "TG46020",
+            "slug": "hb_cn_guangzhou-server-tg46020",
+            "dns": null,
+            "ipv4": "47.109.47.36",
+            "ipv6": null,
+            "port": 62031,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "HB_CN_HAM-Club",
+        "slug": "hb_cn_ham-club",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_cn_ham-club/talkgroups/",
+        "url": "https://hamclub.net/dv/",
+        "sponsor": "DRCC Team / HAMClub.net",
+        "servers": [
+          {
+            "server": "CN01",
+            "slug": "hb_cn_ham-club-server-cn01",
+            "dns": null,
+            "ipv4": "47.104.177.248",
+            "ipv6": null,
+            "port": 62031,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "HB_CN_Henan",
+        "slug": "hb_cn_henan",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_cn_henan/talkgroups/",
+        "url": "http://dmr6.cn/",
+        "sponsor": "BH6IDD",
+        "servers": [
+          {
+            "server": "HB_CN_Henan",
+            "slug": "hb_cn_henan-server-hb_cn_henan",
+            "dns": "link.dmr6.cn",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55551,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "HB_FR_HBLINK4",
+        "slug": "hb_fr_hblink4",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_fr_hblink4/talkgroups/",
+        "url": "https://hb4.f1ptl.net",
+        "sponsor": "F1PTL Bruno",
+        "servers": [
+          {
+            "server": "HB_FR_HBLINK4",
+            "slug": "hb_fr_hblink4-server-hb_fr_hblink4",
+            "dns": "hb4.f1ptl.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "FR"
+          }
+        ]
+      },
+      {
+        "network": "HB_GR_AETHER_HELLAS_NET",
+        "slug": "hb_gr_aether_hellas_net",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_gr_aether_hellas_net/talkgroups/",
+        "url": "http://svham.eu",
+        "sponsor": "AETHER HELLAS NET By SV4JYD",
+        "servers": [
+          {
+            "server": "HB_GR_AETHER_HELLAS",
+            "slug": "hb_gr_aether_hellas_net-server-hb_gr_aether_hellas",
+            "dns": null,
+            "ipv4": "157.173.36.81",
+            "ipv6": null,
+            "port": 53000,
+            "country": "GR"
+          }
+        ]
+      },
+      {
+        "network": "HB_IT_BAT",
+        "slug": "hb_it_bat",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_it_bat/talkgroups/",
+        "url": "http://hb-bat.duckdns.org:8844/",
+        "sponsor": "IT-C4FM_BAT",
+        "servers": [
+          {
+            "server": "HB_IT_BAT",
+            "slug": "hb_it_bat-server-hb_it_bat",
+            "dns": "hb-bat.duckdns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "HB_IT_LECCE",
+        "slug": "hb_it_lecce",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_it_lecce/talkgroups/",
+        "url": "http://80.211.135.179:8090",
+        "sponsor": "IZ7KYS",
+        "servers": [
+          {
+            "server": "HB_IT_LECCE",
+            "slug": "hb_it_lecce-server-hb_it_lecce",
+            "dns": null,
+            "ipv4": "80.211.135.179",
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "HB_IT_Trani_Conference",
+        "slug": "hb_it_trani_conference",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_it_trani_conference/talkgroups/",
+        "url": "http://hb-trani.ampr.org:8090/",
+        "sponsor": "Sezione A.R.I.  di Trani    -   Italy",
+        "servers": [
+          {
+            "server": "Trani Conference",
+            "slug": "hb_it_trani_conference-server-trani-conference",
+            "dns": "aritrani.is-very-good.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55554,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "HB_K9CLF",
+        "slug": "hb_k9clf",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_k9clf/talkgroups/",
+        "url": "https://projectmf.net:8080",
+        "sponsor": "K9CLF",
+        "servers": [
+          {
+            "server": "TEST",
+            "slug": "hb_k9clf-server-test",
+            "dns": "projectmf.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "HB_PL_Kadzidlo",
+        "slug": "hb_pl_kadzidlo",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hb_pl_kadzidlo/talkgroups/",
+        "url": "http://sp5naf.ddns.net:8585",
+        "sponsor": "HB_PL_Kadzidlo",
+        "servers": []
+      },
+      {
+        "network": "HELLAS Zone !",
+        "slug": "hellas-zone",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hellas-zone/talkgroups/",
+        "url": "https://hellaszone.com/index.php",
+        "sponsor": "HELLAS Zone Net!",
+        "servers": []
+      },
+      {
+        "network": "Ham Radio Crusader TGIF DMR TalkGroup",
+        "slug": "ham-radio-crusader-tgif-dmr-talkgroup",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-radio-crusader-tgif-dmr-talkgroup/talkgroups/",
+        "url": "http://kd5fmu.com:8888/supermon/link.php?nodes=58176,1776,577880,576335,57841,576337",
+        "sponsor": "Ham Radio Crusader YouTube Channel",
+        "servers": []
+      },
+      {
+        "network": "Ham United 3101",
+        "slug": "ham-united-3101",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-3101/talkgroups/",
+        "url": "http://3101.hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "3101",
+            "slug": "ham-united-3101-server-3101",
+            "dns": "3101.hamunited.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55560,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Ham United 3102",
+        "slug": "ham-united-3102",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-3102/talkgroups/",
+        "url": "http://3102.hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "3102",
+            "slug": "ham-united-3102-server-3102",
+            "dns": "3102.hamunited.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55561,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Ham United 3103",
+        "slug": "ham-united-3103",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-3103/talkgroups/",
+        "url": "http://3103.hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "3103",
+            "slug": "ham-united-3103-server-3103",
+            "dns": "3103.hamunited.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55563,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Ham United 3104",
+        "slug": "ham-united-3104",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-3104/talkgroups/",
+        "url": "http://hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "3104",
+            "slug": "ham-united-3104-server-3104",
+            "dns": null,
+            "ipv4": "104.251.223.142",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Ham United Hytera",
+        "slug": "ham-united-hytera",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-hytera/talkgroups/",
+        "url": "http://hytera.hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "Hytera",
+            "slug": "ham-united-hytera-server-hytera",
+            "dns": "hytera.hamunited.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55564,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Ham United Motorola",
+        "slug": "ham-united-motorola",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ham-united-motorola/talkgroups/",
+        "url": "http://motorola.hamunited.com",
+        "sponsor": "Ham United",
+        "servers": [
+          {
+            "server": "Motorola",
+            "slug": "ham-united-motorola-server-motorola",
+            "dns": "motorola.hamunited.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62033,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "HamThings",
+        "slug": "hamthings",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/hamthings/talkgroups/",
+        "url": "https://hamthings.it/",
+        "sponsor": "IU7MNA",
+        "servers": [
+          {
+            "server": "Master 2221",
+            "slug": "hamthings-server-master-2221",
+            "dns": "2221.master.hamthings.it",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "INDONESIA TG 51075",
+        "slug": "indonesia-tg-51075",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/indonesia-tg-51075/talkgroups/",
+        "url": "http://dvsmgl.ddns.net/",
+        "sponsor": "YG2BTP",
+        "servers": [
+          {
+            "server": "Indonesia TG 51075",
+            "slug": "indonesia-tg-51075-server-indonesia-tg-51075",
+            "dns": "dvsmgl.ddns.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "ID"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2",
+        "slug": "ipsc2",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2/talkgroups/",
+        "url": "http://bmaster-eu.xreflector.net/bmaster+",
+        "sponsor": "ÖVSV",
+        "servers": [
+          {
+            "server": "IPSC2-OE-DMO",
+            "slug": "ipsc2-server-ipsc2-oe-dmo",
+            "dns": "dmo.oevsv.at",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "AT"
+          },
+          {
+            "server": "IPSC2-OE-MASTER",
+            "slug": "ipsc2-server-ipsc2-oe-master",
+            "dns": "ipsc2.oevsv.at",
+            "ipv4": "89.185.97.36",
+            "ipv6": null,
+            "port": null,
+            "country": "AT"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 DB0FEU",
+        "slug": "ipsc2-db0feu",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-db0feu/talkgroups/",
+        "url": "http://80.152.206.180/html/ipsc/index.html",
+        "sponsor": "DC9NYC",
+        "servers": [
+          {
+            "server": "IPSC2 DB0FEU",
+            "slug": "ipsc2-db0feu-server-ipsc2-db0feu",
+            "dns": "80.152.206.180",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 DL-HOTSPOT",
+        "slug": "ipsc2-dl-hotspot",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-hotspot/talkgroups/",
+        "url": "https://ipsc2-dl-hotspot.xreflector.net/",
+        "sponsor": "DG9FFM",
+        "servers": [
+          {
+            "server": "IPSC2 DL-HOTSPOT",
+            "slug": "ipsc2-dl-hotspot-server-ipsc2-dl-hotspot",
+            "dns": "91.132.144.235",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 DMR-DL",
+        "slug": "ipsc2-dmr-dl",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dmr-dl/talkgroups/",
+        "url": "http://ipsc.dmr-dl.net/ipsc/",
+        "sponsor": "DG3JKB",
+        "servers": [
+          {
+            "server": "IPSC2 DMR-DL",
+            "slug": "ipsc2-dmr-dl-server-ipsc2-dmr-dl",
+            "dns": "5.28.41.138",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 FRANCE 3",
+        "slug": "ipsc2-france-3",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-france-3/talkgroups/",
+        "url": "http://ipsc2fr.radio-amat.fr/ipsc",
+        "sponsor": "None",
+        "servers": [
+          {
+            "server": "IPSC2 FRANCE 3",
+            "slug": "ipsc2-france-3-server-ipsc2-france-3",
+            "dns": "ipsc2fr.radio-amat.fr/ipsc",
+            "ipv4": "135.125.205.227",
+            "ipv6": null,
+            "port": null,
+            "country": "FR"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 New Zealand",
+        "slug": "ipsc2-new-zealand",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-new-zealand/talkgroups/",
+        "url": "http://ipsc2.arec.info",
+        "sponsor": "ZL4JY",
+        "servers": [
+          {
+            "server": "IPSC2 New Zealand",
+            "slug": "ipsc2-new-zealand-server-ipsc2-new-zealand",
+            "dns": "ipsc2.arec.info",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "NZ"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2 OE DMO",
+        "slug": "ipsc2-oe-dmo",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-oe-dmo/talkgroups/",
+        "url": "https://dmo.oevsv.at",
+        "sponsor": "OE1KBC",
+        "servers": []
+      },
+      {
+        "network": "IPSC2 OE Master",
+        "slug": "ipsc2-oe-master",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-oe-master/talkgroups/",
+        "url": "https://ipsc2.oevsv.at",
+        "sponsor": "OE1KBC",
+        "servers": []
+      },
+      {
+        "network": "IPSC2-DIG-ITALIA",
+        "slug": "ipsc2-dig-italia",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dig-italia/talkgroups/",
+        "url": "https://ipsc2.dig-italia.it/",
+        "sponsor": "https://www.dig-italia.it/",
+        "servers": [
+          {
+            "server": "IPSC2-DIG-ITALIA",
+            "slug": "ipsc2-dig-italia-server-ipsc2-dig-italia",
+            "dns": "ipsc2.dig-italia.it",
+            "ipv4": "209.227.237.98",
+            "ipv6": null,
+            "port": 55555,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-DK",
+        "slug": "ipsc2-dk",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dk/talkgroups/",
+        "url": "http://77.243.53.206/ipsc/index.html",
+        "sponsor": "OZ1LNI",
+        "servers": [
+          {
+            "server": "IPSC2-DK",
+            "slug": "ipsc2-dk-server-ipsc2-dk",
+            "dns": "77.243.53.206",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DK"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-DL-Hotspot",
+        "slug": "ipsc2-dl-hotspot",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-hotspot/talkgroups/",
+        "url": "https://ipsc2-dl-hotspot.xreflector.net/",
+        "sponsor": "DG9FFM",
+        "servers": []
+      },
+      {
+        "network": "IPSC2-DL-NORD",
+        "slug": "ipsc2-dl-nord",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-nord/talkgroups/",
+        "url": "http://176.10.105.252/ipsc/index.html",
+        "sponsor": "DL1BH",
+        "servers": [
+          {
+            "server": "IPSC2-DL-NORD",
+            "slug": "ipsc2-dl-nord-server-ipsc2-dl-nord",
+            "dns": "176.10.105.252",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-DL-RPTR",
+        "slug": "ipsc2-dl-rptr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dl-rptr/talkgroups/",
+        "url": "https://ipsc2-dl-rptr.xreflector.net",
+        "sponsor": "DG9FFM",
+        "servers": [
+          {
+            "server": "IPSC2-DL-RPTR",
+            "slug": "ipsc2-dl-rptr-server-ipsc2-dl-rptr",
+            "dns": "152.89.107.65",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-DVSPh",
+        "slug": "ipsc2-dvsph",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-dvsph/talkgroups/",
+        "url": "https://dvsph.net/uk-dmr-last-heard",
+        "sponsor": "DVSPh",
+        "servers": [
+          {
+            "server": "IPSC2-DVSPh-A",
+            "slug": "ipsc2-dvsph-server-ipsc2-dvsph-a",
+            "dns": "dvsph-a.dvsph.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "GB"
+          },
+          {
+            "server": "IPSC2-DVSPh-F",
+            "slug": "ipsc2-dvsph-server-ipsc2-dvsph-f",
+            "dns": "dvsph-f.dvsph.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "GB"
+          },
+          {
+            "server": "IPSC2-DVSPh-K",
+            "slug": "ipsc2-dvsph-server-ipsc2-dvsph-k",
+            "dns": "dvsph-k.dvsph.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-KOREA",
+        "slug": "ipsc2-korea",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-korea/talkgroups/",
+        "url": "http://ipsc.dvham.com/ipsc/",
+        "sponsor": "HL1RR DMR KOREA",
+        "servers": []
+      },
+      {
+        "network": "IPSC2-Moldova",
+        "slug": "ipsc2-moldova",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-moldova/talkgroups/",
+        "url": "http://91.211.48.135/ipsc/index.html",
+        "sponsor": null,
+        "servers": []
+      },
+      {
+        "network": "IPSC2-Poland",
+        "slug": "ipsc2-poland",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-poland/talkgroups/",
+        "url": "http://88.220.250.55/ipsc/",
+        "sponsor": "SP4XKB",
+        "servers": [
+          {
+            "server": "IPSC2-Poland",
+            "slug": "ipsc2-poland-server-ipsc2-poland",
+            "dns": null,
+            "ipv4": "88.220.250.55",
+            "ipv6": null,
+            "port": null,
+            "country": "PL"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-Portugal",
+        "slug": "ipsc2-portugal",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-portugal/talkgroups/",
+        "url": "http://ipsc2.from-ct.com/",
+        "sponsor": "BrandMeister PT",
+        "servers": [
+          {
+            "server": "IPSC2-Portugal",
+            "slug": "ipsc2-portugal-server-ipsc2-portugal",
+            "dns": "ipsc2.from-ct.com",
+            "ipv4": "164.68.117.231",
+            "ipv6": null,
+            "port": 55555,
+            "country": "PT"
+          }
+        ]
+      },
+      {
+        "network": "IPSC2-SWEDEN-@",
+        "slug": "ipsc2-sweden",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc2-sweden/talkgroups/",
+        "url": "https://ipsc2.org/ipsc/index.html",
+        "sponsor": "SWEDEN Zone Net!  By SA7SVR",
+        "servers": [
+          {
+            "server": "IPSC2-SWEDEN-@",
+            "slug": "ipsc2-sweden-server-ipsc2-sweden",
+            "dns": "ipsc2.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "SE"
+          }
+        ]
+      },
+      {
+        "network": "IPSC3",
+        "slug": "ipsc3",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ipsc3/talkgroups/",
+        "url": "http://wiki.ipsc3.net",
+        "sponsor": "Matt Perkins",
+        "servers": [
+          {
+            "server": "ipsc3-freedmr-uk 55555",
+            "slug": "ipsc3-server-ipsc3-freedmr-uk-55555",
+            "dns": "ipsc3.freedmr.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "GB"
+          },
+          {
+            "server": "ipsc3-freedmr-uk 62031",
+            "slug": "ipsc3-server-ipsc3-freedmr-uk-62031",
+            "dns": "ipsc3.freedmr.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "ipsc3-uk 55555",
+            "slug": "ipsc3-server-ipsc3-uk-55555",
+            "dns": "uk.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "GB"
+          },
+          {
+            "server": "ipsc3-uk 62031",
+            "slug": "ipsc3-server-ipsc3-uk-62031",
+            "dns": "uk.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          },
+          {
+            "server": "ipsc3-us 55555",
+            "slug": "ipsc3-server-ipsc3-us-55555",
+            "dns": "us.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "US"
+          },
+          {
+            "server": "ipsc3-us 62031",
+            "slug": "ipsc3-server-ipsc3-us-62031",
+            "dns": "us.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "ipsc3-vkdmr 55555",
+            "slug": "ipsc3-server-ipsc3-vkdmr-55555",
+            "dns": "ipsc3.vkdmr.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "AU"
+          },
+          {
+            "server": "ipsc3-zl 55555",
+            "slug": "ipsc3-server-ipsc3-zl-55555",
+            "dns": "zl.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "NZ"
+          },
+          {
+            "server": "ipsc3-zl 62031",
+            "slug": "ipsc3-server-ipsc3-zl-62031",
+            "dns": "zl.ipsc3.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "NZ"
+          }
+        ]
+      },
+      {
+        "network": "IR8UCW",
+        "slug": "ir8ucw",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ir8ucw/talkgroups/",
+        "url": "http://baiamurena.ddns.net/",
+        "sponsor": "IK8WEQ",
+        "servers": []
+      },
+      {
+        "network": "IT-MULTI-NET",
+        "slug": "it-multi-net",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/it-multi-net/talkgroups/",
+        "url": "http://xlx068.ircddb.it:8888/",
+        "sponsor": "ircDDB-italia",
+        "servers": []
+      },
+      {
+        "network": "IT-MULTINET-SR1-ACCESS-SYSTEMS",
+        "slug": "it-multinet-sr1-access-systems",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/it-multinet-sr1-access-systems/talkgroups/",
+        "url": "http://xlx068.ircddb.it:8888/",
+        "sponsor": "IT-MULTIPROTOCOL-NETWORK",
+        "servers": [
+          {
+            "server": "HB_IT_MULTI_NET_DMO_1",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_1",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55570,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_2",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_2",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55571,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_3",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_3",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55572,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_4",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_4",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55573,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_5",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_5",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55574,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_6",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_6",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55575,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_7",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_7",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55576,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DMO_8",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dmo_8",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55577,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_1",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_1",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55578,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_2",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_2",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55579,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_3",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_3",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55580,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_4",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_4",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55581,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_5",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_5",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55582,
+            "country": "IT"
+          },
+          {
+            "server": "HB_IT_MULTI_NET_DUP_6",
+            "slug": "it-multinet-sr1-access-systems-server-hb_it_multi_net_dup_6",
+            "dns": "it-multiprotocol-network.dyndns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55583,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "Indiana Link",
+        "slug": "indiana-link",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/indiana-link/talkgroups/",
+        "url": "http://na9vy.us:44",
+        "sponsor": "Southern Indiana Network",
+        "servers": [
+          {
+            "server": "DMR-MMDVM",
+            "slug": "indiana-link-server-dmr-mmdvm",
+            "dns": "na9vy.us:44",
+            "ipv4": "174.137.23.148",
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Indiana State Wide",
+        "slug": "indiana-state-wide",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/indiana-state-wide/talkgroups/",
+        "url": "http://na9vy.us:46",
+        "sponsor": "Southern Indiana Network",
+        "servers": []
+      },
+      {
+        "network": "Indiana-W9ILS",
+        "slug": "indiana-w9ils",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/indiana-w9ils/talkgroups/",
+        "url": "http://xlxils.w9ils.org",
+        "sponsor": "W9ILS Digital Group",
+        "servers": [
+          {
+            "server": "W9ILS - Indiana ILS",
+            "slug": "indiana-w9ils-server-w9ils-indiana-ils",
+            "dns": null,
+            "ipv4": "66.42.118.123",
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "International Radio Network",
+        "slug": "international-radio-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/international-radio-network/talkgroups/",
+        "url": "http://irn.m0xfn.radio",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "FD_US_IRN",
+            "slug": "international-radio-network-server-fd_us_irn",
+            "dns": "irn.m0xfn.radio",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "K0XM Cloud HBLink4",
+        "slug": "k0xm-cloud-hblink4",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/k0xm-cloud-hblink4/talkgroups/",
+        "url": "http://dmr.k0xm.net:8000",
+        "sponsor": "K0XM",
+        "servers": []
+      },
+      {
+        "network": "K0XM Test",
+        "slug": "k0xm-test",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/k0xm-test/talkgroups/",
+        "url": "http://reflectors.k0xm.net",
+        "sponsor": null,
+        "servers": []
+      },
+      {
+        "network": "KE7WIL TGIF TG 86753",
+        "slug": "ke7wil-tgif-tg-86753",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ke7wil-tgif-tg-86753/talkgroups/",
+        "url": "https://tgif.network/",
+        "sponsor": "KE7WIL",
+        "servers": []
+      },
+      {
+        "network": "LARK",
+        "slug": "lark",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/lark/talkgroups/",
+        "url": "http://w8lrk-xlx947.duckdns.org/",
+        "sponsor": "LIVINGSTON AMATEUR RADIO KLUB",
+        "servers": [
+          {
+            "server": "w8lrk-xlx947.ddnsfree.com",
+            "slug": "lark-server-w8lrk-xlx947ddnsfreecom",
+            "dns": "w8lrk-xlx947.duckdns.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "LARK XLX982",
+        "slug": "lark-xlx982",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/lark-xlx982/talkgroups/",
+        "url": "http://w8lrk.dnsalias.org:8181/",
+        "sponsor": "LIVINGSTON AMATEUR RADIO KLUB",
+        "servers": []
+      },
+      {
+        "network": "LORA",
+        "slug": "lora",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/lora/talkgroups/",
+        "url": "https://tinygs.com/station/SV2SNH@LqXJKQTqRNG9m7Qk",
+        "sponsor": "Digital Voice GREECE",
+        "servers": []
+      },
+      {
+        "network": "MNTRBO",
+        "slug": "mntrbo",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/mntrbo/talkgroups/",
+        "url": "http://www.mntrbo.net/",
+        "sponsor": "MNRADIO.NET",
+        "servers": [
+          {
+            "server": "IPSC2-MINNESOTA",
+            "slug": "mntrbo-server-ipsc2-minnesota",
+            "dns": "ipsc2.mntrbo.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Mi5",
+        "slug": "mi5",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/mi5/talkgroups/",
+        "url": "https://w8cmn.net/dmr/",
+        "sponsor": "W8CMN - Central Michigan Emergency Network",
+        "servers": []
+      },
+      {
+        "network": "NA0D",
+        "slug": "na0d",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/na0d/talkgroups/",
+        "url": "https://switch.na0d.com/index.php",
+        "sponsor": "AmComm",
+        "servers": []
+      },
+      {
+        "network": "NA0D TGIF Talk Group 227 Reflector",
+        "slug": "na0d-tgif-talk-group-227-reflector",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/na0d-tgif-talk-group-227-reflector/talkgroups/",
+        "url": "https://tgif.na0d.com/dvswitch/",
+        "sponsor": "TGIF",
+        "servers": []
+      },
+      {
+        "network": "NC4ES Cluster",
+        "slug": "nc4es-cluster",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/nc4es-cluster/talkgroups/",
+        "url": "https://cluster.nc4es.org",
+        "sponsor": "NC4ES",
+        "servers": [
+          {
+            "server": "NC4ES Public",
+            "slug": "nc4es-cluster-server-nc4es-public",
+            "dns": "cluster.nc4es.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "NEDMR",
+        "slug": "nedmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/nedmr/talkgroups/",
+        "url": "http://monitor.newenglanddigitalradio.com/index.php",
+        "sponsor": "New England Digital Radio",
+        "servers": [
+          {
+            "server": "MA 1",
+            "slug": "nedmr-server-ma-1",
+            "dns": "xlx097.newenglanddigitalradio.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "NRL",
+        "slug": "nrl",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/nrl/talkgroups/",
+        "url": "https://dmr.nrlptt.com",
+        "sponsor": "BH4TIH",
+        "servers": [
+          {
+            "server": "NRLDMR",
+            "slug": "nrl-server-nrldmr",
+            "dns": "dmr.nrlptt.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 60231,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "Netoholics TGIF 67498",
+        "slug": "netoholics-tgif-67498",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/netoholics-tgif-67498/talkgroups/",
+        "url": "https://netoholicsnetwork.net/index.php/live-node-status/",
+        "sponsor": "Netoholics Network",
+        "servers": []
+      },
+      {
+        "network": "New England DMR",
+        "slug": "new-england-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/new-england-dmr/talkgroups/",
+        "url": "http://monitor.newenglanddigitalradio.com/index.php",
+        "sponsor": "New England Digital Radio KC1VAX",
+        "servers": [
+          {
+            "server": "NEDMR",
+            "slug": "new-england-dmr-server-nedmr",
+            "dns": "nedmr.com",
+            "ipv4": "155.138.240.150",
+            "ipv6": null,
+            "port": 55555,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "ORLink",
+        "slug": "orlink",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/orlink/talkgroups/",
+        "url": "https://xrf256.swl.in.ua/",
+        "sponsor": "Odessa Radio Link",
+        "servers": []
+      },
+      {
+        "network": "PA7LIM DMR network",
+        "slug": "pa7lim-dmr-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/pa7lim-dmr-network/talkgroups/",
+        "url": "http://dmr.pa7lim.nl",
+        "sponsor": "David PA7LIM",
+        "servers": [
+          {
+            "server": "http://dmr.pa7lim.nl",
+            "slug": "pa7lim-dmr-network-server-httpdmrpa7limnl",
+            "dns": "dmr.pa7lim.nl",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "NL"
+          }
+        ]
+      },
+      {
+        "network": "PL-HBLink-Kutno",
+        "slug": "pl-hblink-kutno",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/pl-hblink-kutno/talkgroups/",
+        "url": "https://hblink.kutno.pl/",
+        "sponsor": "SP7LAK",
+        "servers": []
+      },
+      {
+        "network": "Poland HBLink Network",
+        "slug": "poland-hblink-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/poland-hblink-network/talkgroups/",
+        "url": "https://poland.hblink.network/",
+        "sponsor": "SP7LAK",
+        "servers": []
+      },
+      {
+        "network": "QsoBox",
+        "slug": "qsobox",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/qsobox/talkgroups/",
+        "url": "https://qsobox.com",
+        "sponsor": "microsensory",
+        "servers": []
+      },
+      {
+        "network": "QuadNet DMR Network",
+        "slug": "quadnet-dmr-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/quadnet-dmr-network/talkgroups/",
+        "url": "http://openquad.net",
+        "sponsor": "Mike-W3XPT Will-W4WWM",
+        "servers": [
+          {
+            "server": "IPSC2-QuadNet",
+            "slug": "quadnet-dmr-network-server-ipsc2-quadnet",
+            "dns": "dmr.openquad.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "US"
+          },
+          {
+            "server": "QuadNet Atlanta Georgia",
+            "slug": "quadnet-dmr-network-server-quadnet-atlanta-georgia",
+            "dns": "quadnet.ddns.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          },
+          {
+            "server": "QuadNet Cincinnati Ohio",
+            "slug": "quadnet-dmr-network-server-quadnet-cincinnati-ohio",
+            "dns": "quadnet2.ddns.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "RADIO MAKUTO ESPAÑA",
+        "slug": "radio-makuto-espana",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/radio-makuto-espana/talkgroups/",
+        "url": "https://radiomakutospain.es",
+        "sponsor": "BrandMeister",
+        "servers": [
+          {
+            "server": "master.spain-dmr.es",
+            "slug": "radio-makuto-espana-server-masterspain-dmres",
+            "dns": null,
+            "ipv4": "84.232.5.113",
+            "ipv6": null,
+            "port": 62031,
+            "country": "ES"
+          }
+        ]
+      },
+      {
+        "network": "REDOEN DMR",
+        "slug": "redoen-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/redoen-dmr/talkgroups/",
+        "url": "http://162.35.29.92/dmr/",
+        "sponsor": "HI4R",
+        "servers": []
+      },
+      {
+        "network": "REPDOM",
+        "slug": "repdom",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/repdom/talkgroups/",
+        "url": "http://192.155.88.85/configuracion.php",
+        "sponsor": "miguel jerez",
+        "servers": []
+      },
+      {
+        "network": "SVXLINK-GREECE Reflector",
+        "slug": "svxlink-greece-reflector",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/svxlink-greece-reflector/talkgroups/",
+        "url": "http://xlx165.sv2snh.gr:8096/",
+        "sponsor": "SV2SNH",
+        "servers": []
+      },
+      {
+        "network": "Scotland",
+        "slug": "scotland",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/scotland/talkgroups/",
+        "url": "https://scotland.cq-uk.uk",
+        "sponsor": "CQ-UK WORLDWIDE",
+        "servers": [
+          {
+            "server": "Scotland",
+            "slug": "scotland-server-scotland",
+            "dns": "scotland.cq-uk.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "SkyHubLink System",
+        "slug": "skyhublink-system",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/skyhublink-system/talkgroups/",
+        "url": "https://skyhublink.com/status",
+        "sponsor": "SkyHubLink System",
+        "servers": []
+      },
+      {
+        "network": "Southern Indiana Link",
+        "slug": "southern-indiana-link",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/southern-indiana-link/talkgroups/",
+        "url": "http://xlx.w9winxlx.us//",
+        "sponsor": "Southern Indiana Network",
+        "servers": [
+          {
+            "server": "DMR-MMDVM",
+            "slug": "southern-indiana-link-server-dmr-mmdvm",
+            "dns": null,
+            "ipv4": "64.112.234.163",
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "System X Guatemala",
+        "slug": "system-x-guatemala",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/system-x-guatemala/talkgroups/",
+        "url": "https://gt.freestar.network/dashboard",
+        "sponsor": "TG9AOR",
+        "servers": []
+      },
+      {
+        "network": "SystemX",
+        "slug": "systemx",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/systemx/talkgroups/",
+        "url": "https://freestar.network/systemx-dmr/",
+        "sponsor": "FreeSTAR Network",
+        "servers": [
+          {
+            "server": "SystemX Apollo",
+            "slug": "systemx-server-systemx-apollo",
+            "dns": "https://apollo.dmr.uk.pe/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "GB"
+          },
+          {
+            "server": "SystemX Calafornia",
+            "slug": "systemx-server-systemx-calafornia",
+            "dns": "http://wx6d.mw-dmr.net/dashboard/index.php",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "US"
+          },
+          {
+            "server": "SystemX Guatemala",
+            "slug": "systemx-server-systemx-guatemala",
+            "dns": "https://gt.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "GT"
+          },
+          {
+            "server": "SystemX Mexico",
+            "slug": "systemx-server-systemx-mexico",
+            "dns": "https://mx.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "MX"
+          },
+          {
+            "server": "SystemX New Zealand",
+            "slug": "systemx-server-systemx-new-zealand",
+            "dns": "https://nzdmr.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "NZ"
+          },
+          {
+            "server": "SystemX Spain",
+            "slug": "systemx-server-systemx-spain",
+            "dns": "https://es.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "ES"
+          },
+          {
+            "server": "SystemX UK",
+            "slug": "systemx-server-systemx-uk",
+            "dns": "https://dmr.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "GB"
+          },
+          {
+            "server": "SystemX USA",
+            "slug": "systemx-server-systemx-usa",
+            "dns": "https://usa.freestar.network/dashboard/",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "TDN",
+        "slug": "tdn",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tdn/talkgroups/",
+        "url": "http://192.168.9.226/",
+        "sponsor": null,
+        "servers": []
+      },
+      {
+        "network": "TG 5052779 - Ballarat Australia",
+        "slug": "tg-5052779-ballarat-australia",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tg-5052779-ballarat-australia/talkgroups/",
+        "url": "http://ballarat-australia.net/index.php",
+        "sponsor": "VK3AGK",
+        "servers": []
+      },
+      {
+        "network": "TG22267",
+        "slug": "tg22267",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tg22267/talkgroups/",
+        "url": "http://www.lhroseto.ddns.net",
+        "sponsor": "Mimmo",
+        "servers": [
+          {
+            "server": "ADN 2224",
+            "slug": "tg22267-server-adn-2224",
+            "dns": "2224.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "IT"
+          }
+        ]
+      },
+      {
+        "network": "TGIF - 31701 - Trek Talk",
+        "slug": "tgif-31701-trek-talk",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tgif-31701-trek-talk/talkgroups/",
+        "url": "http://45.30.129.91:8182/supermon/link.php?nodes=649920",
+        "sponsor": "Starfleet Amateur Radio Group",
+        "servers": []
+      },
+      {
+        "network": "TGIF Network",
+        "slug": "tgif-network",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tgif-network/talkgroups/",
+        "url": "https://tgif.network/lastheard.php",
+        "sponsor": "TGIF Network",
+        "servers": []
+      },
+      {
+        "network": "TGIF165",
+        "slug": "tgif165",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tgif165/talkgroups/",
+        "url": "https://tgif.network/tgprofile.php?id=165",
+        "sponsor": "SV2SNH",
+        "servers": []
+      },
+      {
+        "network": "TriStateDMR.org (IL-IN-WI Multimode)",
+        "slug": "tristatedmrorg-il-in-wi-multimode",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/tristatedmrorg-il-in-wi-multimode/talkgroups/",
+        "url": "http://TriStateDMR.org",
+        "sponsor": "TriStateDMR.org",
+        "servers": []
+      },
+      {
+        "network": "Türk Amatör Dijital Ağı",
+        "slug": "turk-amator-dijital-ag",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/turk-amator-dijital-ag/talkgroups/",
+        "url": "https://2861.adn.systems",
+        "sponsor": "TA2BBE",
+        "servers": [
+          {
+            "server": "Türk Amatör Dijital Ağı",
+            "slug": "turk-amator-dijital-ag-server-turk-amator-dijital-ag",
+            "dns": "2861.adn.systems",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "TR"
+          }
+        ]
+      },
+      {
+        "network": "Türkiye DMR",
+        "slug": "turkiye-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/turkiye-dmr/talkgroups/",
+        "url": "https://dvs.pistar.com.tr/",
+        "sponsor": "YM2KB / TA2BBE",
+        "servers": [
+          {
+            "server": "Turk Preppers DMR Network",
+            "slug": "turkiye-dmr-server-turk-preppers-dmr-network",
+            "dns": "tonguc.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "TR"
+          }
+        ]
+      },
+      {
+        "network": "URFARG - Bell Ville",
+        "slug": "urfarg-bell-ville",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/urfarg-bell-ville/talkgroups/",
+        "url": "https://bellville-link.tplinkdns.com/urf/",
+        "sponsor": "LW2HAH - Bell Ville",
+        "servers": [
+          {
+            "server": "Bell Ville Node",
+            "slug": "urfarg-bell-ville-server-bell-ville-node",
+            "dns": "ysf-bellville-link.cloudns.cl",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "AR"
+          }
+        ]
+      },
+      {
+        "network": "URUGUAY.NET",
+        "slug": "uruguaynet",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/uruguaynet/talkgroups/",
+        "url": "https://uruguay-net.sytes.net",
+        "sponsor": "CX3DW",
+        "servers": [
+          {
+            "server": "URUGUAY.NET",
+            "slug": "uruguaynet-server-uruguaynet",
+            "dns": "uruguay-net.sytes.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "UY"
+          }
+        ]
+      },
+      {
+        "network": "US-XLX126",
+        "slug": "us-xlx126",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/us-xlx126/talkgroups/",
+        "url": "http://jrlinden.zapto.org:8080/",
+        "sponsor": "N3IIG",
+        "servers": []
+      },
+      {
+        "network": "USA Southeast",
+        "slug": "usa-southeast",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/usa-southeast/talkgroups/",
+        "url": "http://usasoutheast.net/",
+        "sponsor": null,
+        "servers": []
+      },
+      {
+        "network": "VE2SUS DMR",
+        "slug": "ve2sus-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/ve2sus-dmr/talkgroups/",
+        "url": "https://dmr.ve2sus.com",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "VE2SUS DMR",
+            "slug": "ve2sus-dmr-server-ve2sus-dmr",
+            "dns": "ref.ve2sus.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "CA"
+          }
+        ]
+      },
+      {
+        "network": "VEX-NLD-DMR",
+        "slug": "vex-nld-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/vex-nld-dmr/talkgroups/",
+        "url": "http://vex-nld.ddns.net",
+        "sponsor": "PD2VDY",
+        "servers": [
+          {
+            "server": "VEX-NLD-DMR",
+            "slug": "vex-nld-dmr-server-vex-nld-dmr",
+            "dns": null,
+            "ipv4": "159.173.136.37",
+            "ipv6": null,
+            "port": 62031,
+            "country": "NL"
+          }
+        ]
+      },
+      {
+        "network": "W2DB",
+        "slug": "w2db",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/w2db/talkgroups/",
+        "url": "http://vm2.dyb.com:8080",
+        "sponsor": "W2DB",
+        "servers": [
+          {
+            "server": "vm2.dyb.com",
+            "slug": "w2db-server-vm2dybcom",
+            "dns": "vm2.dyb.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "WP3D Florida",
+        "slug": "wp3d-florida",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/wp3d-florida/talkgroups/",
+        "url": "http://162.35.185.221:8081/",
+        "sponsor": "WP3D",
+        "servers": [
+          {
+            "server": "WP3D Florida",
+            "slug": "wp3d-florida-server-wp3d-florida",
+            "dns": null,
+            "ipv4": "162.35.185.221",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "WPSD-SV2SNH",
+        "slug": "wpsd-sv2snh",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/wpsd-sv2snh/talkgroups/",
+        "url": "http://live-dashboard.ddns.net:8086/",
+        "sponsor": "SV2SNH",
+        "servers": []
+      },
+      {
+        "network": "WPSD-VEX493",
+        "slug": "wpsd-vex493",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/wpsd-vex493/talkgroups/",
+        "url": "https://vex.w0chp.radio",
+        "sponsor": "W0CHP",
+        "servers": [
+          {
+            "server": "VEX493",
+            "slug": "w0chpradio-network-server-vex493",
+            "dns": "vex.w0chp.radio",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "West TN DMR",
+        "slug": "west-tn-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/west-tn-dmr/talkgroups/",
+        "url": "https://dash.TN10.us",
+        "sponsor": "FALCON - KG5A.us",
+        "servers": [
+          {
+            "server": "dash.tn10.us",
+            "slug": "west-tn-dmr-server-dashtn10us",
+            "dns": "dash.tn10.us",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 63032,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "Wisconsin DMR",
+        "slug": "wisconsin-dmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/wisconsin-dmr/talkgroups/",
+        "url": "http://kr9rk.hopto.org/ipsc",
+        "sponsor": "N9OIG",
+        "servers": [
+          {
+            "server": "http://kr9rk.hopto.org/ipsc",
+            "slug": "wisconsin-dmr-server-httpkr9rkhoptoorgipsc",
+            "dns": "kr9rk.hopto.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 55555,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLX004",
+        "slug": "xlx004",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx004/talkgroups/",
+        "url": "http://xlx004.kb8zgl.net",
+        "sponsor": "W8MW",
+        "servers": [
+          {
+            "server": "xlx004",
+            "slug": "xlx004-server-xlx004",
+            "dns": "xlx004.kb8zgl.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 10002,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLX00B",
+        "slug": "xlx00b",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx00b/talkgroups/",
+        "url": "https://xlx00b.mydns.jp",
+        "sponsor": "JE4YRU",
+        "servers": []
+      },
+      {
+        "network": "XLX034",
+        "slug": "xlx034",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx034/talkgroups/",
+        "url": "https://ag5aa.com",
+        "sponsor": "AG5AA",
+        "servers": [
+          {
+            "server": "ag5aa.com",
+            "slug": "xlx034-server-ag5aacom",
+            "dns": "45.32.198.149.vultrusercontent.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLX079-KØSPY",
+        "slug": "xlx079-kspy",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx079-kspy/talkgroups/",
+        "url": "https://xlx.k0spy.com",
+        "sponsor": null,
+        "servers": []
+      },
+      {
+        "network": "XLX140 EUROPE",
+        "slug": "xlx140-europe",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx140-europe/talkgroups/",
+        "url": "https://xlx140.nix.pt/index.php",
+        "sponsor": "EA4FVB",
+        "servers": []
+      },
+      {
+        "network": "XLX165",
+        "slug": "xlx165",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx165/talkgroups/",
+        "url": "http://xlx165.sv2snh.gr",
+        "sponsor": "Digital Voice GREECE",
+        "servers": []
+      },
+      {
+        "network": "XLX193",
+        "slug": "xlx193",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx193/talkgroups/",
+        "url": "https://xlx193.my.to",
+        "sponsor": "VE3RVV",
+        "servers": []
+      },
+      {
+        "network": "XLX199",
+        "slug": "xlx199",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx199/talkgroups/",
+        "url": "https://xlx.argentinanetwork.ar",
+        "sponsor": "LW6EMN",
+        "servers": []
+      },
+      {
+        "network": "XLX205",
+        "slug": "xlx205",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx205/talkgroups/",
+        "url": "http://www.raw.usk4lls.com",
+        "sponsor": "BROWARD ENGINEERING Tm.",
+        "servers": [
+          {
+            "server": "QTHLatinos.Ham Club",
+            "slug": "xlx205-server-qthlatinosham-club",
+            "dns": null,
+            "ipv4": "167.71.95.160",
+            "ipv6": null,
+            "port": 62031,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLX245",
+        "slug": "xlx245",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx245/talkgroups/",
+        "url": "https://xlx245.sub.h-sol.jp/",
+        "sponsor": "JS1YTG",
+        "servers": []
+      },
+      {
+        "network": "XLX262",
+        "slug": "xlx262",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx262/talkgroups/",
+        "url": "https://xlx.prgm.org",
+        "sponsor": "DL5DI",
+        "servers": []
+      },
+      {
+        "network": "XLX270",
+        "slug": "xlx270",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx270/talkgroups/",
+        "url": "https://xlx270.epf.lu",
+        "sponsor": null,
+        "servers": [
+          {
+            "server": "XLX270",
+            "slug": "xlx270-server-xlx270",
+            "dns": "xlx270.epf.lu",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 8880,
+            "country": "LU"
+          }
+        ]
+      },
+      {
+        "network": "XLX278",
+        "slug": "xlx278",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx278/talkgroups/",
+        "url": "http://xlx278.linf.co.uk",
+        "sponsor": "G1INC",
+        "servers": []
+      },
+      {
+        "network": "XLX279",
+        "slug": "xlx279",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx279/talkgroups/",
+        "url": "http://xlx279.linf.co.uk",
+        "sponsor": "G1INC Derek",
+        "servers": [
+          {
+            "server": "XLX279",
+            "slug": "xlx279-server-xlx279",
+            "dns": null,
+            "ipv4": "44.27.138.145",
+            "ipv6": null,
+            "port": null,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "XLX296",
+        "slug": "xlx296",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx296/talkgroups/",
+        "url": "https://xlx296.h-sol.jp/",
+        "sponsor": "JG1XWV",
+        "servers": [
+          {
+            "server": "XLX296",
+            "slug": "xlx296-server-xlx296",
+            "dns": "xlx296.h-sol.jp",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "JP"
+          }
+        ]
+      },
+      {
+        "network": "XLX311",
+        "slug": "xlx311",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx311/talkgroups/",
+        "url": "http://ernix.de:8975",
+        "sponsor": "DL5BQ",
+        "servers": []
+      },
+      {
+        "network": "XLX431",
+        "slug": "xlx431",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx431/talkgroups/",
+        "url": "http://xrf431.xreflector-jp.org/",
+        "sponsor": "JJ2YSJ",
+        "servers": []
+      },
+      {
+        "network": "XLX444",
+        "slug": "xlx444",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx444/talkgroups/",
+        "url": "https://pd2vdy.ddns.net/",
+        "sponsor": "PD2VDY",
+        "servers": [
+          {
+            "server": "Dutch server XLX444",
+            "slug": "xlx444-server-dutch-server-xlx444",
+            "dns": null,
+            "ipv4": "51.83.46.75",
+            "ipv6": "::",
+            "port": 8880,
+            "country": "NL"
+          }
+        ]
+      },
+      {
+        "network": "XLX456-Z",
+        "slug": "xlx456-z",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx456-z/talkgroups/",
+        "url": "https://xlx456.de",
+        "sponsor": "DO5YAM",
+        "servers": [
+          {
+            "server": "XLX456-Z",
+            "slug": "xlx456-z-server-xlx456-z",
+            "dns": "54.37.205.183",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "XLX508 DMR Access",
+        "slug": "xlx508-dmr-access",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx508-dmr-access/talkgroups/",
+        "url": "https://xlx-owl.de/",
+        "sponsor": "HB9GFX",
+        "servers": [
+          {
+            "server": "XLX508",
+            "slug": "xlx508-dmr-access-server-xlx508",
+            "dns": "xlx-owl.de",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "DE"
+          }
+        ]
+      },
+      {
+        "network": "XLX555-C",
+        "slug": "xlx555-c",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx555-c/talkgroups/",
+        "url": "http://93.240.83.53:81",
+        "sponsor": "DL1JM",
+        "servers": []
+      },
+      {
+        "network": "XLX696",
+        "slug": "xlx696",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx696/talkgroups/",
+        "url": "https://lz3sam.ddns.net/",
+        "sponsor": "LZ3SAM",
+        "servers": [
+          {
+            "server": "XLX696",
+            "slug": "xlx696-server-xlx696",
+            "dns": null,
+            "ipv4": "130.204.64.244",
+            "ipv6": null,
+            "port": 4002,
+            "country": "BG"
+          }
+        ]
+      },
+      {
+        "network": "XLX776",
+        "slug": "xlx776",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx776/talkgroups/",
+        "url": "http://xrf776.mydns.jp",
+        "sponsor": "JQ1ZUY",
+        "servers": []
+      },
+      {
+        "network": "XLX781",
+        "slug": "xlx781",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx781/talkgroups/",
+        "url": "http://xrf781.xreflector-jp.org",
+        "sponsor": "JA5NUU",
+        "servers": []
+      },
+      {
+        "network": "XLX823",
+        "slug": "xlx823",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx823/talkgroups/",
+        "url": "https://kd2qqv.ddns.net",
+        "sponsor": "KD2QQV",
+        "servers": [
+          {
+            "server": "XLX823",
+            "slug": "xlx823-server-xlx823",
+            "dns": "kd2qqv.ddns.net",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLX888-A",
+        "slug": "xlx888-a",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx888-a/talkgroups/",
+        "url": "http://un1eak.svx03.kz:999/",
+        "sponsor": "UN1EAK",
+        "servers": [
+          {
+            "server": "un1eak.svx03.kz",
+            "slug": "xlx888-a-server-un1eaksvx03kz",
+            "dns": "un1eak.svx03.kz",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "KZ"
+          }
+        ]
+      },
+      {
+        "network": "XLX942",
+        "slug": "xlx942",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx942/talkgroups/",
+        "url": "http://xlx942.mb6ds.ampr.org",
+        "sponsor": "mb6ds",
+        "servers": [
+          {
+            "server": "xlx942.mb6ds.ampr.org",
+            "slug": "xlx942-server-xlx942mb6dsamprorg",
+            "dns": "xlx942.mb6ds.ampr.org",
+            "ipv4": null,
+            "ipv6": null,
+            "port": null,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "XLX976",
+        "slug": "xlx976",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlx976/talkgroups/",
+        "url": "https://xlx976.f8kgk.fr",
+        "sponsor": "F8KGK HamClub Station",
+        "servers": [
+          {
+            "server": "XLX976",
+            "slug": "xlx976-server-xlx976",
+            "dns": "xlx976.f8kgk.fr",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "FR"
+          }
+        ]
+      },
+      {
+        "network": "XLXBAT",
+        "slug": "xlxbat",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlxbat/talkgroups/",
+        "url": "http://xlxbat.duckdns.org:8191/",
+        "sponsor": "MB-BAT",
+        "servers": []
+      },
+      {
+        "network": "XLXDAM",
+        "slug": "xlxdam",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlxdam/talkgroups/",
+        "url": "https://digital-america.org/",
+        "sponsor": "KR4EMG",
+        "servers": [
+          {
+            "server": "XLXDAM",
+            "slug": "xlxdam-server-xlxdam",
+            "dns": null,
+            "ipv4": "15.204.116.55",
+            "ipv6": "2604:2dc0:202:300::310b",
+            "port": 62030,
+            "country": "US"
+          }
+        ]
+      },
+      {
+        "network": "XLXTHA",
+        "slug": "xlxtha",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlxtha/talkgroups/",
+        "url": "http://xlx.dprns.com",
+        "sponsor": "HS5TQA",
+        "servers": []
+      },
+      {
+        "network": "Yorkshire Link",
+        "slug": "yorkshire-link",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/yorkshire-link/talkgroups/",
+        "url": "https://dvhub.2e0lxy.uk/",
+        "sponsor": "2E0LXY",
+        "servers": [
+          {
+            "server": "Yorkshire Link Hub",
+            "slug": "yorkshire-link-server-yorkshire-link-hub",
+            "dns": "dvhub.2e0lxy.uk",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "YorkshireDMR",
+        "slug": "yorkshiredmr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/yorkshiredmr/talkgroups/",
+        "url": "https://dmrdash.m0xyn.radio",
+        "sponsor": "Yorkshire Net UK",
+        "servers": [
+          {
+            "server": "YorkshireDMR",
+            "slug": "yorkshiredmr-server-yorkshiredmr",
+            "dns": "dmr.m0xyn.radio",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62031,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "Yunnan TG46087",
+        "slug": "yunnan-tg46087",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/yunnan-tg46087/talkgroups/",
+        "url": "https://8.137.160.70",
+        "sponsor": "BI8SPS, BH8UOU.",
+        "servers": [
+          {
+            "server": "Yunan MMDVM",
+            "slug": "yunnan-tg46087-server-yunan-mmdvm",
+            "dns": null,
+            "ipv4": "8.137.160.70",
+            "ipv6": null,
+            "port": 62031,
+            "country": "CN"
+          }
+        ]
+      },
+      {
+        "network": "cumbriaCQ.com",
+        "slug": "cumbriacqcom",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/cumbriacqcom/talkgroups/",
+        "url": "https://urf001.cumbriacq.com",
+        "sponsor": "CUMBRIA CQ",
+        "servers": [
+          {
+            "server": "URF / XLX929",
+            "slug": "cumbriacqcom-server-urf-xlx929",
+            "dns": "urf001.cumbriacq.com",
+            "ipv4": null,
+            "ipv6": null,
+            "port": 62030,
+            "country": "GB"
+          }
+        ]
+      },
+      {
+        "network": "freedmr reunion",
+        "slug": "freedmr-reunion",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/freedmr-reunion/talkgroups/",
+        "url": "http://vmi946983.contaboserver.net",
+        "sponsor": "FR1LC",
+        "servers": [
+          {
+            "server": "freedmr reunion",
+            "slug": "freedmr-reunion-server-freedmr-reunion",
+            "dns": null,
+            "ipv4": "185.205.244.154",
+            "ipv6": null,
+            "port": 62031,
+            "country": "RE"
+          }
+        ]
+      },
+      {
+        "network": "xlxagr",
+        "slug": "xlxagr",
+        "tglist": "https://dvref.com/api/v2/dmr/networks/xlxagr/talkgroups/",
+        "url": "http://xlxagr.ddns.net",
+        "sponsor": null,
+        "servers": []
+      }
+    ]
+  },
+  "pocketchirp": {
+    "upstream": "https://dvref.com/api/v2/dmr/networks/",
+    "checked_at": "2026-11-25T01:31:49.598666+00:00",
+    "changes": "Public collection records unchanged; added PocketCHIRP cache metadata.",
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+}
