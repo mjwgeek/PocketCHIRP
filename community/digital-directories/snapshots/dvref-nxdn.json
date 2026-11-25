@@ -1,0 +1,1770 @@
+{
+  "schema": 1,
+  "id": "dvref-nxdn",
+  "mode": "NXDN",
+  "type": "Group",
+  "source": "DVRef NXDN reflectors (CC BY 4.0)",
+  "upstream": "https://dvref.com/api/v2/nxdn/reflectors/",
+  "approval": {
+    "evidence": "https://dvref.com/aup/",
+    "license": "CC-BY-4.0",
+    "commercial_use": true,
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "changes": "Normalized numeric reflector IDs and names."
+  },
+  "updated": "2026-11-25T01:28:55.182091+00:00",
+  "rows": [
+    {
+      "id": 12,
+      "name": "TG12 SPAIN LOCAL"
+    },
+    {
+      "id": 14,
+      "name": "(WWW) Spanish NXDN"
+    },
+    {
+      "id": 38,
+      "name": "XLX138 Module B"
+    },
+    {
+      "id": 49,
+      "name": "XLX049 NXDN bridged to XLX049C"
+    },
+    {
+      "id": 76,
+      "name": "XLX Californa Tennesee"
+    },
+    {
+      "id": 91,
+      "name": "World Wide"
+    },
+    {
+      "id": 97,
+      "name": "URF097"
+    },
+    {
+      "id": 100,
+      "name": "NXDN 100"
+    },
+    {
+      "id": 116,
+      "name": "116 TGIF"
+    },
+    {
+      "id": 121,
+      "name": "XLX121 NXDN TG121"
+    },
+    {
+      "id": 127,
+      "name": "NXDN EA1RKF"
+    },
+    {
+      "id": 131,
+      "name": "CenWis"
+    },
+    {
+      "id": 137,
+      "name": "NXDN 137"
+    },
+    {
+      "id": 138,
+      "name": "XLX138 XNexus"
+    },
+    {
+      "id": 139,
+      "name": "Maine 139 NXDN"
+    },
+    {
+      "id": 148,
+      "name": "NXDN 148"
+    },
+    {
+      "id": 149,
+      "name": "NXDN 149"
+    },
+    {
+      "id": 165,
+      "name": "NXDN165-Digital Voice GREECE"
+    },
+    {
+      "id": 178,
+      "name": "URF178"
+    },
+    {
+      "id": 184,
+      "name": "AARN NXDN"
+    },
+    {
+      "id": 186,
+      "name": "FLEX RADIO MULTIMODE NETWORK"
+    },
+    {
+      "id": 200,
+      "name": "VEX-NL-NXDN"
+    },
+    {
+      "id": 202,
+      "name": "HELLAS Zone"
+    },
+    {
+      "id": 204,
+      "name": "Nxdn NL"
+    },
+    {
+      "id": 205,
+      "name": "Talkgroup Almere"
+    },
+    {
+      "id": 207,
+      "name": "Talkgroup Nieuwegein"
+    },
+    {
+      "id": 213,
+      "name": "URF213"
+    },
+    {
+      "id": 214,
+      "name": "NXDN Treehouse SPAIN"
+    },
+    {
+      "id": 222,
+      "name": "IT NXDN Reflector"
+    },
+    {
+      "id": 224,
+      "name": "TG 224 NXDN"
+    },
+    {
+      "id": 226,
+      "name": "Romania NXDN YO"
+    },
+    {
+      "id": 239,
+      "name": "SW Florida NXDN Reflector"
+    },
+    {
+      "id": 244,
+      "name": "Cross-mode DMR link"
+    },
+    {
+      "id": 255,
+      "name": "URF256"
+    },
+    {
+      "id": 256,
+      "name": "WX4ALA"
+    },
+    {
+      "id": 278,
+      "name": "XLX278"
+    },
+    {
+      "id": 284,
+      "name": "URF284"
+    },
+    {
+      "id": 286,
+      "name": "NXDN TÜRKİYE"
+    },
+    {
+      "id": 293,
+      "name": "NXDN Slovenia 293"
+    },
+    {
+      "id": 306,
+      "name": "URF306"
+    },
+    {
+      "id": 320,
+      "name": "QuadNet NXDN Reflector"
+    },
+    {
+      "id": 327,
+      "name": "URF327"
+    },
+    {
+      "id": 333,
+      "name": "W2NJR Linked Repeater System"
+    },
+    {
+      "id": 337,
+      "name": "SWLA-LINK"
+    },
+    {
+      "id": 359,
+      "name": "URF359"
+    },
+    {
+      "id": 372,
+      "name": "Octane NXDN"
+    },
+    {
+      "id": 396,
+      "name": "US-KEYWORK"
+    },
+    {
+      "id": 401,
+      "name": "N1LMA DIGITAL"
+    },
+    {
+      "id": 405,
+      "name": "XLX405 - NXDN"
+    },
+    {
+      "id": 419,
+      "name": "Toledo Amateur Digital Association"
+    },
+    {
+      "id": 420,
+      "name": "VE2SUS REF420"
+    },
+    {
+      "id": 425,
+      "name": "URF425"
+    },
+    {
+      "id": 427,
+      "name": "XLX427A - NXDN TG427"
+    },
+    {
+      "id": 461,
+      "name": "URFPRC"
+    },
+    {
+      "id": 478,
+      "name": "URF478"
+    },
+    {
+      "id": 493,
+      "name": "WPSD-VEX493"
+    },
+    {
+      "id": 517,
+      "name": "URF517"
+    },
+    {
+      "id": 530,
+      "name": "NXDN 530"
+    },
+    {
+      "id": 621,
+      "name": "URF621"
+    },
+    {
+      "id": 654,
+      "name": "N2FED"
+    },
+    {
+      "id": 665,
+      "name": "NXDN 665"
+    },
+    {
+      "id": 693,
+      "name": "QQ-NET"
+    },
+    {
+      "id": 700,
+      "name": "URF700"
+    },
+    {
+      "id": 707,
+      "name": "NXDN 707"
+    },
+    {
+      "id": 711,
+      "name": "NXDN Global by David PA7LIM"
+    },
+    {
+      "id": 712,
+      "name": "NXDN Reflector 712"
+    },
+    {
+      "id": 718,
+      "name": "URF718"
+    },
+    {
+      "id": 730,
+      "name": "BM TG730 Chile"
+    },
+    {
+      "id": 732,
+      "name": "Café Digital Colombia"
+    },
+    {
+      "id": 747,
+      "name": "NXDN 747"
+    },
+    {
+      "id": 748,
+      "name": "UYURUGUAY.NET"
+    },
+    {
+      "id": 760,
+      "name": "URF760"
+    },
+    {
+      "id": 777,
+      "name": "JesusSaves"
+    },
+    {
+      "id": 801,
+      "name": "XLX-801"
+    },
+    {
+      "id": 805,
+      "name": "W4END 805"
+    },
+    {
+      "id": 822,
+      "name": "NC VA Fusion NXDN"
+    },
+    {
+      "id": 825,
+      "name": "URFLAN"
+    },
+    {
+      "id": 847,
+      "name": "URF847"
+    },
+    {
+      "id": 850,
+      "name": "US-HAMLINK"
+    },
+    {
+      "id": 865,
+      "name": "URF865"
+    },
+    {
+      "id": 902,
+      "name": "NXDN AR902MHz"
+    },
+    {
+      "id": 909,
+      "name": "XLX909 NXDN"
+    },
+    {
+      "id": 910,
+      "name": "DC - MD -VA XLX910D"
+    },
+    {
+      "id": 914,
+      "name": "NXDN 914"
+    },
+    {
+      "id": 918,
+      "name": "XLX918 NXDN"
+    },
+    {
+      "id": 921,
+      "name": "CumbriaCQ.com"
+    },
+    {
+      "id": 925,
+      "name": "URF925"
+    },
+    {
+      "id": 930,
+      "name": "Hellenic NXDN Chat"
+    },
+    {
+      "id": 933,
+      "name": "URF933"
+    },
+    {
+      "id": 936,
+      "name": "URFLKA"
+    },
+    {
+      "id": 942,
+      "name": "XLX942"
+    },
+    {
+      "id": 960,
+      "name": "NXDN Gray"
+    },
+    {
+      "id": 1200,
+      "name": "Florida"
+    },
+    {
+      "id": 1224,
+      "name": "PI1DAF Almere"
+    },
+    {
+      "id": 1337,
+      "name": "K6EF"
+    },
+    {
+      "id": 1453,
+      "name": "URFTRK"
+    },
+    {
+      "id": 1523,
+      "name": "URF276"
+    },
+    {
+      "id": 1701,
+      "name": "SFARG"
+    },
+    {
+      "id": 1923,
+      "name": "NXDN Turkiye 1923"
+    },
+    {
+      "id": 2021,
+      "name": "GR-AETHER-HELLAS-NXDN"
+    },
+    {
+      "id": 2044,
+      "name": "NXDN NL-Oost Reflector"
+    },
+    {
+      "id": 2140,
+      "name": "2140 Multi"
+    },
+    {
+      "id": 2147,
+      "name": "TG217"
+    },
+    {
+      "id": 2261,
+      "name": "NXDN 2261"
+    },
+    {
+      "id": 2262,
+      "name": "NXDN 2262"
+    },
+    {
+      "id": 2263,
+      "name": "NXDN 2263"
+    },
+    {
+      "id": 2264,
+      "name": "NXDN 2264"
+    },
+    {
+      "id": 2265,
+      "name": "NXDN 2265"
+    },
+    {
+      "id": 2266,
+      "name": "NXDN 2266"
+    },
+    {
+      "id": 2267,
+      "name": "NXDN 2267"
+    },
+    {
+      "id": 2268,
+      "name": "NXDN 2268"
+    },
+    {
+      "id": 2269,
+      "name": "NXDN 2269"
+    },
+    {
+      "id": 2301,
+      "name": "CZ-NXDN"
+    },
+    {
+      "id": 2302,
+      "name": "URF144"
+    },
+    {
+      "id": 2350,
+      "name": "ChatterBOX 2350"
+    },
+    {
+      "id": 2359,
+      "name": "Southern England 88688"
+    },
+    {
+      "id": 2567,
+      "name": "Smolensk Obl. Digital network"
+    },
+    {
+      "id": 2700,
+      "name": "Old Melbourne Repeater Association"
+    },
+    {
+      "id": 3118,
+      "name": "URF616"
+    },
+    {
+      "id": 3142,
+      "name": "NXDN 3142"
+    },
+    {
+      "id": 3175,
+      "name": "The Fog Multi mode system XLX073"
+    },
+    {
+      "id": 3241,
+      "name": "URF324"
+    },
+    {
+      "id": 3341,
+      "name": "NXDN-XE1JMB"
+    },
+    {
+      "id": 3690,
+      "name": "XLX239 Multiprotocol Reflector"
+    },
+    {
+      "id": 4014,
+      "name": "XLX NXDN REFLECTOR"
+    },
+    {
+      "id": 4302,
+      "name": "URF162"
+    },
+    {
+      "id": 4610,
+      "name": "KC6NKK NXDN"
+    },
+    {
+      "id": 4700,
+      "name": "W4YI"
+    },
+    {
+      "id": 5031,
+      "name": "KK7GKG ASL Bridge 2"
+    },
+    {
+      "id": 5055,
+      "name": "Australia - SA"
+    },
+    {
+      "id": 5383,
+      "name": "URF550"
+    },
+    {
+      "id": 6381,
+      "name": "URF045"
+    },
+    {
+      "id": 6382,
+      "name": "URF645"
+    },
+    {
+      "id": 6749,
+      "name": "Netoholics Network"
+    },
+    {
+      "id": 7144,
+      "name": "Chiriqui Link Panama"
+    },
+    {
+      "id": 7145,
+      "name": "NXDN GREMPA"
+    },
+    {
+      "id": 7146,
+      "name": "UPRA"
+    },
+    {
+      "id": 7221,
+      "name": "URFARG"
+    },
+    {
+      "id": 7223,
+      "name": "ARG-NETWORK - LINK BM TG 7223"
+    },
+    {
+      "id": 7224,
+      "name": "Conferencia NAUTICA"
+    },
+    {
+      "id": 7240,
+      "name": "NXDN 7240"
+    },
+    {
+      "id": 7245,
+      "name": "7245 Brazil - Multiprotocolo"
+    },
+    {
+      "id": 7300,
+      "name": "NXDN Reflector Dashboard TG 7300 Apeldoorn"
+    },
+    {
+      "id": 7309,
+      "name": "BM TG 73099 CHILE-LINK"
+    },
+    {
+      "id": 7344,
+      "name": "NXDN MCC-YV"
+    },
+    {
+      "id": 7486,
+      "name": "Mid South NXDN"
+    },
+    {
+      "id": 7487,
+      "name": "Uruguay Link NXDN"
+    },
+    {
+      "id": 7575,
+      "name": "ALICANTE"
+    },
+    {
+      "id": 7770,
+      "name": "JesusSaves_Linked"
+    },
+    {
+      "id": 8465,
+      "name": "ECUADOR NDXN Reflector"
+    },
+    {
+      "id": 9140,
+      "name": "ARCA"
+    },
+    {
+      "id": 9449,
+      "name": "SISAKET THAILAND"
+    },
+    {
+      "id": 9511,
+      "name": "URFJET"
+    },
+    {
+      "id": 9517,
+      "name": "NXDN 9517"
+    },
+    {
+      "id": 9774,
+      "name": "URFPAW"
+    },
+    {
+      "id": 9846,
+      "name": "URF106"
+    },
+    {
+      "id": 10200,
+      "name": "NXDN North America"
+    },
+    {
+      "id": 10201,
+      "name": "North America Tach"
+    },
+    {
+      "id": 10294,
+      "name": "SkyHubLink"
+    },
+    {
+      "id": 10301,
+      "name": "Spain OLE"
+    },
+    {
+      "id": 10350,
+      "name": "WARC"
+    },
+    {
+      "id": 10400,
+      "name": "Pacific NXDN 10400"
+    },
+    {
+      "id": 10902,
+      "name": "URF902"
+    },
+    {
+      "id": 10922,
+      "name": "NXDN 10922"
+    },
+    {
+      "id": 11053,
+      "name": "W6APX NXDN Group"
+    },
+    {
+      "id": 11069,
+      "name": "NXDN 11069"
+    },
+    {
+      "id": 11349,
+      "name": "JesusSaves"
+    },
+    {
+      "id": 11520,
+      "name": "US D Friends"
+    },
+    {
+      "id": 11710,
+      "name": "NXDN 11710"
+    },
+    {
+      "id": 12668,
+      "name": "N7MKY NXDN TG"
+    },
+    {
+      "id": 14640,
+      "name": "SaDARA XLX640"
+    },
+    {
+      "id": 15431,
+      "name": "URF587"
+    },
+    {
+      "id": 15432,
+      "name": "URF307"
+    },
+    {
+      "id": 15509,
+      "name": "London ON CA"
+    },
+    {
+      "id": 15846,
+      "name": "KE7WIL NXDN TG 15846"
+    },
+    {
+      "id": 19650,
+      "name": "YS1AHL NXDN REFLECTOR"
+    },
+    {
+      "id": 20000,
+      "name": "NXDN 20000"
+    },
+    {
+      "id": 20200,
+      "name": "GV-MULTIMODE-DV"
+    },
+    {
+      "id": 20210,
+      "name": "NXDN-2021.ADN.Systems.Greece"
+    },
+    {
+      "id": 20218,
+      "name": "NXDN-2021.ADN.Systems.Greece"
+    },
+    {
+      "id": 20222,
+      "name": "NXDN-2022.ADN.Systems.Hellas-Node"
+    },
+    {
+      "id": 20281,
+      "name": "GR-KERKYRA-DV"
+    },
+    {
+      "id": 20328,
+      "name": "DE-Pegasus-NXDN"
+    },
+    {
+      "id": 20421,
+      "name": "dl-nordwest.com"
+    },
+    {
+      "id": 20600,
+      "name": "GR GREECE NXDN"
+    },
+    {
+      "id": 20612,
+      "name": "NXDN VLAANDEREN WAASLAND ON8PMO"
+    },
+    {
+      "id": 20698,
+      "name": "URF898"
+    },
+    {
+      "id": 20899,
+      "name": "URF399"
+    },
+    {
+      "id": 21277,
+      "name": "URF277"
+    },
+    {
+      "id": 21406,
+      "name": "Radioclub-arex"
+    },
+    {
+      "id": 21413,
+      "name": "D-FRIENDS"
+    },
+    {
+      "id": 21463,
+      "name": "REM NXDNReflector"
+    },
+    {
+      "id": 21465,
+      "name": "ADER"
+    },
+    {
+      "id": 21909,
+      "name": "PRIDE"
+    },
+    {
+      "id": 22022,
+      "name": "PA Parrot - Echo with audio level report"
+    },
+    {
+      "id": 22108,
+      "name": "Savona Network NXDN"
+    },
+    {
+      "id": 22200,
+      "name": "URFITA"
+    },
+    {
+      "id": 22202,
+      "name": "Sardinia Island"
+    },
+    {
+      "id": 22206,
+      "name": "IT-AOT"
+    },
+    {
+      "id": 22208,
+      "name": "NXDN 22208"
+    },
+    {
+      "id": 22209,
+      "name": "IT Radio Group - Network"
+    },
+    {
+      "id": 22215,
+      "name": "NXDN 22215"
+    },
+    {
+      "id": 22220,
+      "name": "NXDN 22220"
+    },
+    {
+      "id": 22221,
+      "name": "Regionale Lombardia"
+    },
+    {
+      "id": 22222,
+      "name": "NXDN 22222"
+    },
+    {
+      "id": 22231,
+      "name": "NXDN 22231"
+    },
+    {
+      "id": 22232,
+      "name": "IT-XLX232 Multi-mode AMBE"
+    },
+    {
+      "id": 22233,
+      "name": "NXDN TG 22233 Veneto"
+    },
+    {
+      "id": 22234,
+      "name": "IT 22234"
+    },
+    {
+      "id": 22245,
+      "name": "NXDN Piedmont Gruppo DMR Ossola TG22245"
+    },
+    {
+      "id": 22252,
+      "name": "NXDN-REF-IT-MULTI-NET"
+    },
+    {
+      "id": 22270,
+      "name": "URFDDC"
+    },
+    {
+      "id": 22273,
+      "name": "NXDN-BAT"
+    },
+    {
+      "id": 22275,
+      "name": "IT NXDN technical group"
+    },
+    {
+      "id": 22276,
+      "name": "URFBAT"
+    },
+    {
+      "id": 22277,
+      "name": "NXDN REFLECTOR SALENTO"
+    },
+    {
+      "id": 22355,
+      "name": "MATRIX DIGI-NET"
+    },
+    {
+      "id": 22367,
+      "name": "Ham Network"
+    },
+    {
+      "id": 22456,
+      "name": "Emilia Ovest Network"
+    },
+    {
+      "id": 22633,
+      "name": "NXDN Core"
+    },
+    {
+      "id": 22825,
+      "name": "NXDN 22825"
+    },
+    {
+      "id": 22890,
+      "name": "CONF. ITALIA - Rete Multiprotocollo"
+    },
+    {
+      "id": 23416,
+      "name": "400Club"
+    },
+    {
+      "id": 23426,
+      "name": "FreeSTAR UK"
+    },
+    {
+      "id": 23450,
+      "name": "YorkshireNetUK"
+    },
+    {
+      "id": 23511,
+      "name": "NXDN 23511"
+    },
+    {
+      "id": 23525,
+      "name": "NXDN 23525"
+    },
+    {
+      "id": 23530,
+      "name": "Yorkshire Link"
+    },
+    {
+      "id": 23534,
+      "name": "CumbriaCQ"
+    },
+    {
+      "id": 23551,
+      "name": "NXDN Scotland"
+    },
+    {
+      "id": 23595,
+      "name": "OZ-DMR NETWORK (UK)"
+    },
+    {
+      "id": 24033,
+      "name": "Arkansas Radio Heads"
+    },
+    {
+      "id": 24601,
+      "name": "Lithuania MultiMode"
+    },
+    {
+      "id": 24622,
+      "name": "LT HAM talks"
+    },
+    {
+      "id": 24706,
+      "name": "MultiMode"
+    },
+    {
+      "id": 25000,
+      "name": "New England 25000"
+    },
+    {
+      "id": 25504,
+      "name": "UA-Dnipro"
+    },
+    {
+      "id": 25617,
+      "name": "KAVKAZ"
+    },
+    {
+      "id": 25619,
+      "name": "Volgodonsk"
+    },
+    {
+      "id": 25701,
+      "name": "BY MultiMode"
+    },
+    {
+      "id": 26000,
+      "name": "NXDN-26000 Poland"
+    },
+    {
+      "id": 26059,
+      "name": "NXDN-26059 Poland"
+    },
+    {
+      "id": 26074,
+      "name": "SP5PA NXDN Reflector"
+    },
+    {
+      "id": 26078,
+      "name": "NXDN-26078 Poland"
+    },
+    {
+      "id": 26079,
+      "name": "NXDN-26079 Poland"
+    },
+    {
+      "id": 26099,
+      "name": "NXDN-26099 Poland"
+    },
+    {
+      "id": 26200,
+      "name": "NXDN-26200 - Deutschland"
+    },
+    {
+      "id": 26221,
+      "name": "Hamburg-City"
+    },
+    {
+      "id": 26230,
+      "name": "26230 - AFU Reg Hannover"
+    },
+    {
+      "id": 26235,
+      "name": "Funknetz-Celle"
+    },
+    {
+      "id": 26269,
+      "name": "URF269"
+    },
+    {
+      "id": 26275,
+      "name": "DE-RAMSES-NXDN"
+    },
+    {
+      "id": 26363,
+      "name": "URF363"
+    },
+    {
+      "id": 26512,
+      "name": "NXDN-26512 Warszawa Poland"
+    },
+    {
+      "id": 26810,
+      "name": "NXDN 26810"
+    },
+    {
+      "id": 28299,
+      "name": "America Ragchew"
+    },
+    {
+      "id": 28600,
+      "name": "NXDN Turkiye Genel"
+    },
+    {
+      "id": 28601,
+      "name": "NXDN Adana"
+    },
+    {
+      "id": 28602,
+      "name": "NXDN Adiyaman"
+    },
+    {
+      "id": 28603,
+      "name": "NXDN Afyon"
+    },
+    {
+      "id": 28604,
+      "name": "NXDN Agri"
+    },
+    {
+      "id": 28605,
+      "name": "NXDN Amasya"
+    },
+    {
+      "id": 28606,
+      "name": "NXDN Ankara"
+    },
+    {
+      "id": 28607,
+      "name": "NXDN Antalya"
+    },
+    {
+      "id": 28608,
+      "name": "NXDN Artvin"
+    },
+    {
+      "id": 28609,
+      "name": "NXDN Aydin"
+    },
+    {
+      "id": 28610,
+      "name": "NXDN Balikesir"
+    },
+    {
+      "id": 28611,
+      "name": "NXDN Bilecik"
+    },
+    {
+      "id": 28612,
+      "name": "NXDN Bingol"
+    },
+    {
+      "id": 28613,
+      "name": "NXDN Bitlis"
+    },
+    {
+      "id": 28614,
+      "name": "NXDN Bolu"
+    },
+    {
+      "id": 28615,
+      "name": "NXDN Burdur"
+    },
+    {
+      "id": 28616,
+      "name": "NXDN Bursa"
+    },
+    {
+      "id": 28617,
+      "name": "NXDN Canakkale"
+    },
+    {
+      "id": 28618,
+      "name": "NXDN Cankiri"
+    },
+    {
+      "id": 28619,
+      "name": "NXDN Corum"
+    },
+    {
+      "id": 28620,
+      "name": "NXDN Denizli"
+    },
+    {
+      "id": 28621,
+      "name": "NXDN Diyarbakir"
+    },
+    {
+      "id": 28622,
+      "name": "NXDN Edirne"
+    },
+    {
+      "id": 28623,
+      "name": "NXDN Elazig"
+    },
+    {
+      "id": 28624,
+      "name": "NXDN Erzincan"
+    },
+    {
+      "id": 28625,
+      "name": "NXDN Erzurum"
+    },
+    {
+      "id": 28626,
+      "name": "NXDN Eskisehir"
+    },
+    {
+      "id": 28627,
+      "name": "NXDN Gaziantep"
+    },
+    {
+      "id": 28628,
+      "name": "NXDN Giresun"
+    },
+    {
+      "id": 28629,
+      "name": "NXDN Gumushane"
+    },
+    {
+      "id": 28630,
+      "name": "NXDN Hakkari"
+    },
+    {
+      "id": 28631,
+      "name": "NXDN Hatay"
+    },
+    {
+      "id": 28632,
+      "name": "NXDN Isparta"
+    },
+    {
+      "id": 28633,
+      "name": "NXDN Mersin"
+    },
+    {
+      "id": 28634,
+      "name": "NXDN Istanbul"
+    },
+    {
+      "id": 28635,
+      "name": "NXDN Izmir"
+    },
+    {
+      "id": 28636,
+      "name": "NXDN Kars"
+    },
+    {
+      "id": 28637,
+      "name": "NXDN Kastamonu"
+    },
+    {
+      "id": 28638,
+      "name": "NXDN Kayseri"
+    },
+    {
+      "id": 28639,
+      "name": "NXDN Kirklareli"
+    },
+    {
+      "id": 28640,
+      "name": "NXDN Kirsehir"
+    },
+    {
+      "id": 28641,
+      "name": "NXDN Kocaeli"
+    },
+    {
+      "id": 28642,
+      "name": "NXDN Konya"
+    },
+    {
+      "id": 28643,
+      "name": "NXDN Kutahya"
+    },
+    {
+      "id": 28644,
+      "name": "NXDN Malatya"
+    },
+    {
+      "id": 28645,
+      "name": "NXDN Manisa"
+    },
+    {
+      "id": 28646,
+      "name": "NXDN Kahramanmaras"
+    },
+    {
+      "id": 28647,
+      "name": "NXDN Mardin"
+    },
+    {
+      "id": 28648,
+      "name": "NXDN Mugla"
+    },
+    {
+      "id": 28649,
+      "name": "NXDN Mus"
+    },
+    {
+      "id": 28650,
+      "name": "NXDN Nevsehir"
+    },
+    {
+      "id": 28651,
+      "name": "NXDN Nigde"
+    },
+    {
+      "id": 28652,
+      "name": "NXDN Ordu"
+    },
+    {
+      "id": 28653,
+      "name": "NXDN Rize"
+    },
+    {
+      "id": 28654,
+      "name": "NXDN Sakarya"
+    },
+    {
+      "id": 28655,
+      "name": "NXDN Samsun"
+    },
+    {
+      "id": 28656,
+      "name": "NXDN Siirt"
+    },
+    {
+      "id": 28657,
+      "name": "NXDN Sinop"
+    },
+    {
+      "id": 28658,
+      "name": "NXDN Sivas"
+    },
+    {
+      "id": 28659,
+      "name": "NXDN Tekirdag"
+    },
+    {
+      "id": 28660,
+      "name": "NXDN Tokat"
+    },
+    {
+      "id": 28661,
+      "name": "NXDN Trabzon"
+    },
+    {
+      "id": 28662,
+      "name": "NXDN Tunceli"
+    },
+    {
+      "id": 28663,
+      "name": "NXDN Sanliurfa"
+    },
+    {
+      "id": 28664,
+      "name": "NXDN Usak"
+    },
+    {
+      "id": 28665,
+      "name": "NXDN Van"
+    },
+    {
+      "id": 28666,
+      "name": "NXDN Yozgat"
+    },
+    {
+      "id": 28667,
+      "name": "NXDN Zonguldak"
+    },
+    {
+      "id": 28668,
+      "name": "NXDN Aksaray"
+    },
+    {
+      "id": 28669,
+      "name": "NXDN Bayburt"
+    },
+    {
+      "id": 28670,
+      "name": "NXDN Karaman"
+    },
+    {
+      "id": 28671,
+      "name": "NXDN Kirikkale"
+    },
+    {
+      "id": 28672,
+      "name": "NXDN Batman"
+    },
+    {
+      "id": 28673,
+      "name": "NXDN Sirnak"
+    },
+    {
+      "id": 28675,
+      "name": "NXDN Ardahan"
+    },
+    {
+      "id": 28676,
+      "name": "NXDN Igdir"
+    },
+    {
+      "id": 28677,
+      "name": "NXDN YALOVA TÜRKİYE"
+    },
+    {
+      "id": 28678,
+      "name": "NXDN Karabuk"
+    },
+    {
+      "id": 28679,
+      "name": "NXDN Kilis"
+    },
+    {
+      "id": 28680,
+      "name": "NXDN Osmaniye"
+    },
+    {
+      "id": 28681,
+      "name": "NXDN Duzce"
+    },
+    {
+      "id": 28690,
+      "name": "NXDN-28690"
+    },
+    {
+      "id": 29314,
+      "name": "NXDN Slovenia 29314"
+    },
+    {
+      "id": 29320,
+      "name": "NXDN Slovenia 29320"
+    },
+    {
+      "id": 30252,
+      "name": "Saskwarn Parkland Radio Hub"
+    },
+    {
+      "id": 30420,
+      "name": "URFARA"
+    },
+    {
+      "id": 30444,
+      "name": "ZONA DMR CL NXDN PROJECT"
+    },
+    {
+      "id": 30639,
+      "name": "NXDN 30639"
+    },
+    {
+      "id": 31010,
+      "name": "Alabama Link"
+    },
+    {
+      "id": 31031,
+      "name": "EMA IP NETWORK"
+    },
+    {
+      "id": 31059,
+      "name": "vidalia net"
+    },
+    {
+      "id": 31068,
+      "name": "NXDN NorCal Talk Group"
+    },
+    {
+      "id": 31081,
+      "name": "Fun Machine Linked Repeater System"
+    },
+    {
+      "id": 31138,
+      "name": "KingsLand Local"
+    },
+    {
+      "id": 31171,
+      "name": "ILLINOIS LINK"
+    },
+    {
+      "id": 31188,
+      "name": "URFSIN"
+    },
+    {
+      "id": 31201,
+      "name": "BYRG"
+    },
+    {
+      "id": 31202,
+      "name": "BYRG Chat and Testing"
+    },
+    {
+      "id": 31203,
+      "name": "K0XM development"
+    },
+    {
+      "id": 31226,
+      "name": "World Wide Chat"
+    },
+    {
+      "id": 31238,
+      "name": "NXDN 31238"
+    },
+    {
+      "id": 31291,
+      "name": "Southwest Missouri"
+    },
+    {
+      "id": 31297,
+      "name": "SWMO Skywarn"
+    },
+    {
+      "id": 31313,
+      "name": "KCWide NXDN"
+    },
+    {
+      "id": 31337,
+      "name": "URF668"
+    },
+    {
+      "id": 31340,
+      "name": "CNJHAM"
+    },
+    {
+      "id": 31349,
+      "name": "HKC IRC"
+    },
+    {
+      "id": 31377,
+      "name": "Foothills Wave Whisperers"
+    },
+    {
+      "id": 31379,
+      "name": "Piedmont Triad Network"
+    },
+    {
+      "id": 31393,
+      "name": "TORCON Weather Alert Network"
+    },
+    {
+      "id": 31403,
+      "name": "NXDN 31403"
+    },
+    {
+      "id": 31444,
+      "name": "NXDN 31444"
+    },
+    {
+      "id": 31473,
+      "name": "TN TAC System"
+    },
+    {
+      "id": 31490,
+      "name": "Utah DRN 00 Bridge"
+    },
+    {
+      "id": 31491,
+      "name": "Utah DRN 01 Bridge"
+    },
+    {
+      "id": 31495,
+      "name": "Utah DRN 05 Bridge"
+    },
+    {
+      "id": 31555,
+      "name": "Wisconsin DMR(Digital Mode Reflector) The followi"
+    },
+    {
+      "id": 31611,
+      "name": "XPR Pinoy Network"
+    },
+    {
+      "id": 31672,
+      "name": "Pi-Star Multi-Mode Reflector"
+    },
+    {
+      "id": 31691,
+      "name": "TriStateDMR (IL-IN-WI Multimode)"
+    },
+    {
+      "id": 31701,
+      "name": "Starfleet Amateur Radio Group - Trek Talk - 31701"
+    },
+    {
+      "id": 31777,
+      "name": "DX-LINK SYSTEM"
+    },
+    {
+      "id": 31910,
+      "name": "LMRNET"
+    },
+    {
+      "id": 31947,
+      "name": "Missouri Digital Calling Network"
+    },
+    {
+      "id": 31983,
+      "name": "NXDN 31983"
+    },
+    {
+      "id": 32100,
+      "name": "NXDN-GMR"
+    },
+    {
+      "id": 32103,
+      "name": "CW Ops - CW Academy - CW"
+    },
+    {
+      "id": 33420,
+      "name": "Durango"
+    },
+    {
+      "id": 33581,
+      "name": "NET TALK NXDN"
+    },
+    {
+      "id": 34075,
+      "name": "URFSCP"
+    },
+    {
+      "id": 34109,
+      "name": "NXDN 34109"
+    },
+    {
+      "id": 40102,
+      "name": "KZ NXDN Reflector"
+    },
+    {
+      "id": 42021,
+      "name": "NXDN-TEST"
+    },
+    {
+      "id": 43389,
+      "name": "NXDN 43389"
+    },
+    {
+      "id": 43715,
+      "name": "Kazakhstan NXDN"
+    },
+    {
+      "id": 44000,
+      "name": "NXDN 44000"
+    },
+    {
+      "id": 44120,
+      "name": "JP-OWARI"
+    },
+    {
+      "id": 44155,
+      "name": "NXDN-NAGOYA"
+    },
+    {
+      "id": 45000,
+      "name": "450IPSC2-NXDN"
+    },
+    {
+      "id": 45001,
+      "name": "NXDN 45001"
+    },
+    {
+      "id": 45401,
+      "name": "TG-45401 Hong Kong"
+    },
+    {
+      "id": 46001,
+      "name": "NXDN 46001"
+    },
+    {
+      "id": 46002,
+      "name": "46002"
+    },
+    {
+      "id": 46008,
+      "name": "Cross To BM_TG46008"
+    },
+    {
+      "id": 46010,
+      "name": "NXDN 46010"
+    },
+    {
+      "id": 46018,
+      "name": "TG46018 Only NXDN"
+    },
+    {
+      "id": 46020,
+      "name": "Guangzhou DMR TG46020"
+    },
+    {
+      "id": 46085,
+      "name": "NXDN TO BM 46085"
+    },
+    {
+      "id": 46087,
+      "name": "YN-46087"
+    },
+    {
+      "id": 46601,
+      "name": "NXDN to DMR TG46601"
+    },
+    {
+      "id": 46666,
+      "name": "DMRISGOOD"
+    },
+    {
+      "id": 50210,
+      "name": "Malaysia NXDN Reflector"
+    },
+    {
+      "id": 50288,
+      "name": "Malaysia Canton Channel"
+    },
+    {
+      "id": 50500,
+      "name": "VK Calling Hub"
+    },
+    {
+      "id": 50505,
+      "name": "VK Calling Hub"
+    },
+    {
+      "id": 50525,
+      "name": "50525 NXDN"
+    },
+    {
+      "id": 50535,
+      "name": "NXDN 50535"
+    },
+    {
+      "id": 50595,
+      "name": "OZ-DMR"
+    },
+    {
+      "id": 50964,
+      "name": "LARK"
+    },
+    {
+      "id": 51000,
+      "name": "NXDN-51000 Poland"
+    },
+    {
+      "id": 51500,
+      "name": "NXDN 51500"
+    },
+    {
+      "id": 52032,
+      "name": "NXDN 52032"
+    },
+    {
+      "id": 52149,
+      "name": "NXDN 52149"
+    },
+    {
+      "id": 52521,
+      "name": "NXDN 52521 By HS1DMM"
+    },
+    {
+      "id": 53035,
+      "name": "NZ Calling"
+    },
+    {
+      "id": 55577,
+      "name": "FN-NXDN"
+    },
+    {
+      "id": 56420,
+      "name": "LZARC"
+    },
+    {
+      "id": 56429,
+      "name": "Wyre Forest NXDN Link"
+    },
+    {
+      "id": 58734,
+      "name": "NXDN TECH LINK"
+    },
+    {
+      "id": 60606,
+      "name": "US-W8VD"
+    },
+    {
+      "id": 60777,
+      "name": "US-WHOCARES"
+    },
+    {
+      "id": 62238,
+      "name": "KC3YGF Middle River, Maryland, USA"
+    },
+    {
+      "id": 64003,
+      "name": "ELITE NXDN"
+    },
+    {
+      "id": 64701,
+      "name": "NXDN REUNION"
+    },
+    {
+      "id": 65000,
+      "name": "World Wide"
+    },
+    {
+      "id": 65100,
+      "name": "NXDN 65100"
+    },
+    {
+      "id": 65123,
+      "name": "TEXAS-MRN NXDN"
+    },
+    {
+      "id": 65200,
+      "name": "NXDN SERVER"
+    },
+    {
+      "id": 65206,
+      "name": "NXDN Belgium"
+    },
+    {
+      "id": 65208,
+      "name": "NXDN-FRA"
+    },
+    {
+      "id": 65209,
+      "name": "NXDN 65209"
+    }
+  ],
+  "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Normalized numeric reflector IDs and names; omitted unsupported IDs and other fields."
+}

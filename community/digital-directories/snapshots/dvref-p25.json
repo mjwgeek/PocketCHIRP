@@ -1,0 +1,1954 @@
+{
+  "schema": 1,
+  "id": "dvref-p25",
+  "mode": "P25",
+  "type": "Group",
+  "source": "DVRef P25 reflectors (CC BY 4.0)",
+  "upstream": "https://dvref.com/api/v2/p25/reflectors/",
+  "approval": {
+    "evidence": "https://dvref.com/aup/",
+    "license": "CC-BY-4.0",
+    "commercial_use": true,
+    "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+    "changes": "Normalized numeric reflector IDs and names."
+  },
+  "updated": "2026-11-25T01:28:54.855525+00:00",
+  "rows": [
+    {
+      "id": 14,
+      "name": "P25 14"
+    },
+    {
+      "id": 18,
+      "name": "REF018"
+    },
+    {
+      "id": 38,
+      "name": "XLX138 Module B"
+    },
+    {
+      "id": 49,
+      "name": "P25 TG49 interlinked to XLX049C"
+    },
+    {
+      "id": 69,
+      "name": "SISAKET THAILAND"
+    },
+    {
+      "id": 70,
+      "name": "XLX070"
+    },
+    {
+      "id": 73,
+      "name": "Mid South P25"
+    },
+    {
+      "id": 76,
+      "name": "P25TNHAMS"
+    },
+    {
+      "id": 91,
+      "name": "World Wide"
+    },
+    {
+      "id": 97,
+      "name": "URF097"
+    },
+    {
+      "id": 100,
+      "name": "Motorola BatChat"
+    },
+    {
+      "id": 105,
+      "name": "REF105"
+    },
+    {
+      "id": 112,
+      "name": "EMERGENCIAS"
+    },
+    {
+      "id": 116,
+      "name": "116 TGIF"
+    },
+    {
+      "id": 131,
+      "name": "CenWis Call"
+    },
+    {
+      "id": 137,
+      "name": "P25 137"
+    },
+    {
+      "id": 138,
+      "name": "XLX138 XNexus"
+    },
+    {
+      "id": 139,
+      "name": "Maine P25 Talkgroup"
+    },
+    {
+      "id": 148,
+      "name": "P25 148"
+    },
+    {
+      "id": 149,
+      "name": "P25 149"
+    },
+    {
+      "id": 165,
+      "name": "TG165-Digital Voice GREECE"
+    },
+    {
+      "id": 178,
+      "name": "URF178"
+    },
+    {
+      "id": 184,
+      "name": "AARN P25"
+    },
+    {
+      "id": 186,
+      "name": "FLEX RADIO MULTIMODE NETWORK"
+    },
+    {
+      "id": 199,
+      "name": "Defesa Civil do Brasil"
+    },
+    {
+      "id": 202,
+      "name": "HELLAS Zone"
+    },
+    {
+      "id": 204,
+      "name": "VEX-NLD-P25"
+    },
+    {
+      "id": 210,
+      "name": "P25 PE"
+    },
+    {
+      "id": 213,
+      "name": "URF213"
+    },
+    {
+      "id": 214,
+      "name": "214"
+    },
+    {
+      "id": 222,
+      "name": "WZ5TX"
+    },
+    {
+      "id": 223,
+      "name": "W2GGI Reflector"
+    },
+    {
+      "id": 224,
+      "name": "P25 224"
+    },
+    {
+      "id": 226,
+      "name": "P25 Romania YO"
+    },
+    {
+      "id": 228,
+      "name": "Switzerland"
+    },
+    {
+      "id": 230,
+      "name": "CZ P25"
+    },
+    {
+      "id": 255,
+      "name": "URF256"
+    },
+    {
+      "id": 256,
+      "name": "WX4ALA"
+    },
+    {
+      "id": 260,
+      "name": "P25 TG-260 Poland"
+    },
+    {
+      "id": 276,
+      "name": "Amateur Radio Network"
+    },
+    {
+      "id": 278,
+      "name": "XLX278"
+    },
+    {
+      "id": 286,
+      "name": "P25 TÜRKİYE"
+    },
+    {
+      "id": 301,
+      "name": "URF301"
+    },
+    {
+      "id": 304,
+      "name": "West Virginia ARA"
+    },
+    {
+      "id": 306,
+      "name": "URF306"
+    },
+    {
+      "id": 320,
+      "name": "QuadNet P25 Reflector"
+    },
+    {
+      "id": 327,
+      "name": "URF327"
+    },
+    {
+      "id": 333,
+      "name": "W2NJR Linked Repeater System"
+    },
+    {
+      "id": 334,
+      "name": "MEXICO"
+    },
+    {
+      "id": 357,
+      "name": "P25 357"
+    },
+    {
+      "id": 396,
+      "name": "US-KEYWORK"
+    },
+    {
+      "id": 400,
+      "name": "URF401"
+    },
+    {
+      "id": 401,
+      "name": "N1JBC Reflector (Rhode Island)"
+    },
+    {
+      "id": 405,
+      "name": "XLX405A - TG405"
+    },
+    {
+      "id": 419,
+      "name": "Toledo Amateur Digital Association"
+    },
+    {
+      "id": 420,
+      "name": "VE2SUS REF420"
+    },
+    {
+      "id": 425,
+      "name": "URF425"
+    },
+    {
+      "id": 427,
+      "name": "P25 427"
+    },
+    {
+      "id": 445,
+      "name": "SuperMag"
+    },
+    {
+      "id": 461,
+      "name": "URFPRC"
+    },
+    {
+      "id": 478,
+      "name": "URF478"
+    },
+    {
+      "id": 493,
+      "name": "WPSD-VEX493"
+    },
+    {
+      "id": 517,
+      "name": "URF517"
+    },
+    {
+      "id": 530,
+      "name": "P25 530"
+    },
+    {
+      "id": 533,
+      "name": "SW Florida P25 Reflector"
+    },
+    {
+      "id": 554,
+      "name": "Georgia900 Secondary Reflector"
+    },
+    {
+      "id": 555,
+      "name": "Georgia900 Primary Reflector"
+    },
+    {
+      "id": 556,
+      "name": "ARFCOM"
+    },
+    {
+      "id": 609,
+      "name": "AREA-609 Serving SNJ and MultiMode World Wide"
+    },
+    {
+      "id": 621,
+      "name": "URF621"
+    },
+    {
+      "id": 654,
+      "name": "N2FED"
+    },
+    {
+      "id": 665,
+      "name": "P25 665"
+    },
+    {
+      "id": 666,
+      "name": "P25 666"
+    },
+    {
+      "id": 690,
+      "name": "VA3ODC - P25 Network"
+    },
+    {
+      "id": 693,
+      "name": "QQ-NET"
+    },
+    {
+      "id": 700,
+      "name": "URF700"
+    },
+    {
+      "id": 707,
+      "name": "P25 707"
+    },
+    {
+      "id": 708,
+      "name": "HONDURAS"
+    },
+    {
+      "id": 718,
+      "name": "URF718"
+    },
+    {
+      "id": 722,
+      "name": "ARGENTINA"
+    },
+    {
+      "id": 724,
+      "name": "TG Brazil"
+    },
+    {
+      "id": 732,
+      "name": "Octane Network P25"
+    },
+    {
+      "id": 747,
+      "name": "P25 747"
+    },
+    {
+      "id": 760,
+      "name": "URF760"
+    },
+    {
+      "id": 777,
+      "name": "WV Almost Heaven BLUESTONE ARC"
+    },
+    {
+      "id": 805,
+      "name": "W4END 805"
+    },
+    {
+      "id": 822,
+      "name": "NC VA Fusion P25"
+    },
+    {
+      "id": 825,
+      "name": "URFLAN"
+    },
+    {
+      "id": 847,
+      "name": "URF847"
+    },
+    {
+      "id": 850,
+      "name": "US-HAMLINK"
+    },
+    {
+      "id": 865,
+      "name": "URF865"
+    },
+    {
+      "id": 899,
+      "name": "North Carolina"
+    },
+    {
+      "id": 900,
+      "name": "NEAR900 New England Amateur Radio 900 MHz P25 Net"
+    },
+    {
+      "id": 909,
+      "name": "XLX909 P25"
+    },
+    {
+      "id": 910,
+      "name": "DC - MD -VA XLX910D"
+    },
+    {
+      "id": 914,
+      "name": "P25 HISPANO"
+    },
+    {
+      "id": 918,
+      "name": "XLX918 P25"
+    },
+    {
+      "id": 921,
+      "name": "CumbriaCQ.com"
+    },
+    {
+      "id": 925,
+      "name": "P25 925"
+    },
+    {
+      "id": 926,
+      "name": "URF925"
+    },
+    {
+      "id": 936,
+      "name": "URFLKA"
+    },
+    {
+      "id": 942,
+      "name": "XLX942"
+    },
+    {
+      "id": 960,
+      "name": "NorCal Gray Channel"
+    },
+    {
+      "id": 1005,
+      "name": "AETHER HELLAS P25 - 1005 REFLECTOR"
+    },
+    {
+      "id": 1008,
+      "name": "ARERT - Weather Related Chat"
+    },
+    {
+      "id": 1017,
+      "name": "SFARG Australian Portal"
+    },
+    {
+      "id": 1311,
+      "name": "CenWis Tac 1"
+    },
+    {
+      "id": 1312,
+      "name": "CenWis Tac 2"
+    },
+    {
+      "id": 1361,
+      "name": "MN RADIO Network Testing Node"
+    },
+    {
+      "id": 1453,
+      "name": "URFTRK"
+    },
+    {
+      "id": 1523,
+      "name": "URF276"
+    },
+    {
+      "id": 1923,
+      "name": "P25 Turkiye 1923"
+    },
+    {
+      "id": 2044,
+      "name": "P25 NL-Oost Reflector"
+    },
+    {
+      "id": 2061,
+      "name": "VEX-BEL-P25"
+    },
+    {
+      "id": 2121,
+      "name": "2121 Cambria County Multi-Mode Hub"
+    },
+    {
+      "id": 2140,
+      "name": "Multiprotocoll"
+    },
+    {
+      "id": 2147,
+      "name": "TG2147"
+    },
+    {
+      "id": 2284,
+      "name": "Basel, Switzerland"
+    },
+    {
+      "id": 2302,
+      "name": "URF144"
+    },
+    {
+      "id": 2350,
+      "name": "ChatterBOX 2350"
+    },
+    {
+      "id": 2567,
+      "name": "Smolensk Obl. P25 Reflector"
+    },
+    {
+      "id": 2700,
+      "name": "2700nxdn.ddns.net"
+    },
+    {
+      "id": 3026,
+      "name": "Alberta P25 3026"
+    },
+    {
+      "id": 3118,
+      "name": "URF616"
+    },
+    {
+      "id": 3142,
+      "name": "P25 3142"
+    },
+    {
+      "id": 3149,
+      "name": "Utah DRN P25 Standalone"
+    },
+    {
+      "id": 3155,
+      "name": "P25 3155"
+    },
+    {
+      "id": 3159,
+      "name": "UPNS SW"
+    },
+    {
+      "id": 3166,
+      "name": "DVSwitch P25 Reflector"
+    },
+    {
+      "id": 3175,
+      "name": "The Fog Multimode XLX073"
+    },
+    {
+      "id": 3241,
+      "name": "URF324"
+    },
+    {
+      "id": 3333,
+      "name": "W2NJR Linked Repeater System"
+    },
+    {
+      "id": 3341,
+      "name": "P25-XE1JMB"
+    },
+    {
+      "id": 3690,
+      "name": "P25 Dr.Parrots Office"
+    },
+    {
+      "id": 4016,
+      "name": "P25 REFLECTOR"
+    },
+    {
+      "id": 4487,
+      "name": "448.700 Repeater Aurora Denver CO"
+    },
+    {
+      "id": 4519,
+      "name": "145.190 P25 Aurora Denver CO"
+    },
+    {
+      "id": 5030,
+      "name": "KK7GKG ASL Bridge 1"
+    },
+    {
+      "id": 5031,
+      "name": "KK7GKG ASL Bridge 2"
+    },
+    {
+      "id": 5055,
+      "name": "Australia - SA"
+    },
+    {
+      "id": 5945,
+      "name": "MCRC P25 Chat"
+    },
+    {
+      "id": 6101,
+      "name": "EMF Bridge"
+    },
+    {
+      "id": 6381,
+      "name": "URF045"
+    },
+    {
+      "id": 6382,
+      "name": "URF645"
+    },
+    {
+      "id": 6453,
+      "name": "MIKE-LINK"
+    },
+    {
+      "id": 6749,
+      "name": "Netoholics Network"
+    },
+    {
+      "id": 6875,
+      "name": "W8FLH-KB8SCR Link"
+    },
+    {
+      "id": 6942,
+      "name": "NOVARS P25"
+    },
+    {
+      "id": 7000,
+      "name": "Boston 700 P25 Reflector"
+    },
+    {
+      "id": 7144,
+      "name": "Chiriqui Link Panama"
+    },
+    {
+      "id": 7145,
+      "name": "GREMPA"
+    },
+    {
+      "id": 7146,
+      "name": "UPRA"
+    },
+    {
+      "id": 7221,
+      "name": "URFARG"
+    },
+    {
+      "id": 7240,
+      "name": "P25 7240"
+    },
+    {
+      "id": 7244,
+      "name": "SAO PAULO"
+    },
+    {
+      "id": 7245,
+      "name": "7245 Brazil - Multiprotocolo"
+    },
+    {
+      "id": 7487,
+      "name": "Uruguay-Link P25"
+    },
+    {
+      "id": 7489,
+      "name": "Uruguay.Net"
+    },
+    {
+      "id": 7573,
+      "name": "docksea"
+    },
+    {
+      "id": 7620,
+      "name": "NC CrossLink"
+    },
+    {
+      "id": 7701,
+      "name": "RU_RoIP DV"
+    },
+    {
+      "id": 7702,
+      "name": "RU_RoIP MIX"
+    },
+    {
+      "id": 7703,
+      "name": "RU_RoIP AUX"
+    },
+    {
+      "id": 7770,
+      "name": "JesusSaves"
+    },
+    {
+      "id": 8206,
+      "name": "ham p25"
+    },
+    {
+      "id": 8208,
+      "name": "HAM China P25"
+    },
+    {
+      "id": 8610,
+      "name": "CRHRC-TX"
+    },
+    {
+      "id": 9101,
+      "name": "VK2ADF Main"
+    },
+    {
+      "id": 9102,
+      "name": "VK2ADF Training 1"
+    },
+    {
+      "id": 9103,
+      "name": "VK2ADF Training 2"
+    },
+    {
+      "id": 9104,
+      "name": "VK2ADF Exercise"
+    },
+    {
+      "id": 9105,
+      "name": "VK2ADF Special"
+    },
+    {
+      "id": 9106,
+      "name": "VK2ADF Public Interop"
+    },
+    {
+      "id": 9140,
+      "name": "ARCA"
+    },
+    {
+      "id": 9510,
+      "name": "IEARG"
+    },
+    {
+      "id": 9517,
+      "name": "P25 9517"
+    },
+    {
+      "id": 9846,
+      "name": "URF106"
+    },
+    {
+      "id": 10100,
+      "name": "World Wide"
+    },
+    {
+      "id": 10120,
+      "name": "P25 10120"
+    },
+    {
+      "id": 10200,
+      "name": "P25 North America"
+    },
+    {
+      "id": 10201,
+      "name": "P25 NA TAC 1"
+    },
+    {
+      "id": 10207,
+      "name": "Southwest P25"
+    },
+    {
+      "id": 10208,
+      "name": "P25 10208"
+    },
+    {
+      "id": 10209,
+      "name": "Fun Machine Linked Repeater System"
+    },
+    {
+      "id": 10253,
+      "name": "N6OCS"
+    },
+    {
+      "id": 10260,
+      "name": "P25 TG-10260 Poland"
+    },
+    {
+      "id": 10294,
+      "name": "SkyHubLink System"
+    },
+    {
+      "id": 10300,
+      "name": "Europe"
+    },
+    {
+      "id": 10301,
+      "name": "P25 ESPAÑA"
+    },
+    {
+      "id": 10320,
+      "name": "Germany Internet"
+    },
+    {
+      "id": 10328,
+      "name": "DE-Pegasus-P25"
+    },
+    {
+      "id": 10350,
+      "name": "WARC"
+    },
+    {
+      "id": 10363,
+      "name": "REM-ESP P25Reflector"
+    },
+    {
+      "id": 10365,
+      "name": "ADER P25Reflector"
+    },
+    {
+      "id": 10400,
+      "name": "Pacific p25 TG 10400"
+    },
+    {
+      "id": 10401,
+      "name": "Pacific TG 10401"
+    },
+    {
+      "id": 10402,
+      "name": "P25REF-10402"
+    },
+    {
+      "id": 10403,
+      "name": "CN-DRCC-P25NG-BJ"
+    },
+    {
+      "id": 10404,
+      "name": "BAYSIDE CHAT MULTIMODE REFLECTOR"
+    },
+    {
+      "id": 10409,
+      "name": "BI1LLM P25 bridge to 46001"
+    },
+    {
+      "id": 10411,
+      "name": "P25 Reflector bridged to DMR TG 46601"
+    },
+    {
+      "id": 10421,
+      "name": "dl-nordwest.com"
+    },
+    {
+      "id": 10428,
+      "name": "P25-LRC"
+    },
+    {
+      "id": 10473,
+      "name": "Fireside Chat Reflector"
+    },
+    {
+      "id": 10512,
+      "name": "P25 10512"
+    },
+    {
+      "id": 10700,
+      "name": "P25 10700"
+    },
+    {
+      "id": 10888,
+      "name": "P25 10888"
+    },
+    {
+      "id": 10901,
+      "name": "Ki4eki"
+    },
+    {
+      "id": 10902,
+      "name": "URF902"
+    },
+    {
+      "id": 11053,
+      "name": "W6APX P25 Group"
+    },
+    {
+      "id": 11069,
+      "name": "P25 11069"
+    },
+    {
+      "id": 11520,
+      "name": "US D Friends"
+    },
+    {
+      "id": 11710,
+      "name": "Emergency Radio Long Island"
+    },
+    {
+      "id": 12668,
+      "name": "N7MKY P25"
+    },
+    {
+      "id": 14640,
+      "name": "SaDARA XLX640"
+    },
+    {
+      "id": 14679,
+      "name": "Treaty City ARA"
+    },
+    {
+      "id": 15431,
+      "name": "URF587"
+    },
+    {
+      "id": 15432,
+      "name": "URF307"
+    },
+    {
+      "id": 19570,
+      "name": "KC3KMV Private P25 TG - ASL3 Node"
+    },
+    {
+      "id": 19650,
+      "name": "YS1AHL P25 REFLECTOR"
+    },
+    {
+      "id": 20210,
+      "name": "P25-2021.ADN.Systems.Greece"
+    },
+    {
+      "id": 20222,
+      "name": "P25-2022.ADN.Systems.Hellas-Node"
+    },
+    {
+      "id": 20899,
+      "name": "URF399"
+    },
+    {
+      "id": 21277,
+      "name": "URF277"
+    },
+    {
+      "id": 21413,
+      "name": "D-FRIENDS"
+    },
+    {
+      "id": 21909,
+      "name": "PRIDE"
+    },
+    {
+      "id": 22022,
+      "name": "US-PA Parrot"
+    },
+    {
+      "id": 22108,
+      "name": "URF025"
+    },
+    {
+      "id": 22200,
+      "name": "URFITA"
+    },
+    {
+      "id": 22202,
+      "name": "Sardinia Island"
+    },
+    {
+      "id": 22208,
+      "name": "Italy Centro Digiland"
+    },
+    {
+      "id": 22212,
+      "name": "P25 Reflector Gruppo DMR Ossola TG 22212"
+    },
+    {
+      "id": 22252,
+      "name": "P25-REF-IT-MULTI-NET"
+    },
+    {
+      "id": 22270,
+      "name": "URFDDC"
+    },
+    {
+      "id": 22273,
+      "name": "P25-BAT"
+    },
+    {
+      "id": 22276,
+      "name": "URFBAT"
+    },
+    {
+      "id": 22625,
+      "name": "P25 22625"
+    },
+    {
+      "id": 22633,
+      "name": "P25Core TG22633"
+    },
+    {
+      "id": 23225,
+      "name": "Austria P25 Group"
+    },
+    {
+      "id": 23426,
+      "name": "FreeSTAR UK"
+    },
+    {
+      "id": 23456,
+      "name": "DNET_P25_VPS"
+    },
+    {
+      "id": 23511,
+      "name": "P25 23511"
+    },
+    {
+      "id": 23530,
+      "name": "Yorkshire Link P25"
+    },
+    {
+      "id": 23534,
+      "name": "CumbriaCQ.com"
+    },
+    {
+      "id": 24033,
+      "name": "Arkansas Radio Heads"
+    },
+    {
+      "id": 24601,
+      "name": "Lithuania MultiMode"
+    },
+    {
+      "id": 24706,
+      "name": "MultiMode"
+    },
+    {
+      "id": 25096,
+      "name": "Ekaterinburg"
+    },
+    {
+      "id": 25508,
+      "name": "New England 25508"
+    },
+    {
+      "id": 25617,
+      "name": "KAVKAZ"
+    },
+    {
+      "id": 25619,
+      "name": "Volgodonsk"
+    },
+    {
+      "id": 25701,
+      "name": "BY MultiMode"
+    },
+    {
+      "id": 26230,
+      "name": "DL-AFURegH"
+    },
+    {
+      "id": 26231,
+      "name": "DL-NI-Mitte"
+    },
+    {
+      "id": 26269,
+      "name": "URF269"
+    },
+    {
+      "id": 26334,
+      "name": "Funknetz-Celle"
+    },
+    {
+      "id": 26447,
+      "name": "Bridge to XLX508"
+    },
+    {
+      "id": 26512,
+      "name": "P25-26512 Warszawa Poland"
+    },
+    {
+      "id": 28299,
+      "name": "America Ragchew"
+    },
+    {
+      "id": 28600,
+      "name": "P25 Turkiye"
+    },
+    {
+      "id": 28601,
+      "name": "P25 Adana"
+    },
+    {
+      "id": 28602,
+      "name": "P25 Adiyaman"
+    },
+    {
+      "id": 28603,
+      "name": "P25 Afyon"
+    },
+    {
+      "id": 28604,
+      "name": "P25 Agri"
+    },
+    {
+      "id": 28605,
+      "name": "P25 Amasya"
+    },
+    {
+      "id": 28606,
+      "name": "P25 Ankara"
+    },
+    {
+      "id": 28607,
+      "name": "P25 Antalya"
+    },
+    {
+      "id": 28608,
+      "name": "P25 Artvin"
+    },
+    {
+      "id": 28609,
+      "name": "P25 Aydin"
+    },
+    {
+      "id": 28610,
+      "name": "P25 Balikesir"
+    },
+    {
+      "id": 28611,
+      "name": "P25 Bilecik"
+    },
+    {
+      "id": 28612,
+      "name": "P25 Bingol"
+    },
+    {
+      "id": 28613,
+      "name": "P25 Bitlis"
+    },
+    {
+      "id": 28614,
+      "name": "P25 Bolu"
+    },
+    {
+      "id": 28615,
+      "name": "P25 Burdur"
+    },
+    {
+      "id": 28616,
+      "name": "P25 Bursa"
+    },
+    {
+      "id": 28617,
+      "name": "P25 Canakkale"
+    },
+    {
+      "id": 28618,
+      "name": "P25 Cankiri"
+    },
+    {
+      "id": 28619,
+      "name": "P25 Corum"
+    },
+    {
+      "id": 28620,
+      "name": "P25 Denizli"
+    },
+    {
+      "id": 28621,
+      "name": "P25 Diyarbakir"
+    },
+    {
+      "id": 28622,
+      "name": "P25 Edirne"
+    },
+    {
+      "id": 28623,
+      "name": "P25 Elazig"
+    },
+    {
+      "id": 28624,
+      "name": "P25 Erzincan"
+    },
+    {
+      "id": 28625,
+      "name": "P25 Erzurum"
+    },
+    {
+      "id": 28626,
+      "name": "P25 Eskisehir"
+    },
+    {
+      "id": 28627,
+      "name": "P25 Gaziantep"
+    },
+    {
+      "id": 28628,
+      "name": "P25 Giresun"
+    },
+    {
+      "id": 28629,
+      "name": "P25 Gumushane"
+    },
+    {
+      "id": 28630,
+      "name": "P25 Hakkari"
+    },
+    {
+      "id": 28631,
+      "name": "P25 Hatay"
+    },
+    {
+      "id": 28632,
+      "name": "P25 Isparta"
+    },
+    {
+      "id": 28633,
+      "name": "P25 Mersin"
+    },
+    {
+      "id": 28634,
+      "name": "P25 Istanbul"
+    },
+    {
+      "id": 28635,
+      "name": "P25 Izmir"
+    },
+    {
+      "id": 28636,
+      "name": "P25 Kars"
+    },
+    {
+      "id": 28637,
+      "name": "P25 Kastamonu"
+    },
+    {
+      "id": 28638,
+      "name": "P25 Kayseri"
+    },
+    {
+      "id": 28639,
+      "name": "P25 Kirklareli"
+    },
+    {
+      "id": 28640,
+      "name": "P25 Kirsehir"
+    },
+    {
+      "id": 28641,
+      "name": "P25 Kocaeli"
+    },
+    {
+      "id": 28642,
+      "name": "P25 Konya"
+    },
+    {
+      "id": 28643,
+      "name": "P25 Kutahya"
+    },
+    {
+      "id": 28644,
+      "name": "P25 Malatya"
+    },
+    {
+      "id": 28645,
+      "name": "P25 Manisa"
+    },
+    {
+      "id": 28646,
+      "name": "P25 Kahramanmaras"
+    },
+    {
+      "id": 28647,
+      "name": "P25 Mardin"
+    },
+    {
+      "id": 28648,
+      "name": "P25 Mugla"
+    },
+    {
+      "id": 28649,
+      "name": "P25 Mus"
+    },
+    {
+      "id": 28650,
+      "name": "P25 Nevsehir"
+    },
+    {
+      "id": 28651,
+      "name": "P25 Nigde"
+    },
+    {
+      "id": 28652,
+      "name": "P25 Ordu"
+    },
+    {
+      "id": 28653,
+      "name": "P25 Rize"
+    },
+    {
+      "id": 28654,
+      "name": "P25 Sakarya"
+    },
+    {
+      "id": 28655,
+      "name": "P25 Samsun"
+    },
+    {
+      "id": 28656,
+      "name": "P25 Siirt"
+    },
+    {
+      "id": 28657,
+      "name": "P25 Sinop"
+    },
+    {
+      "id": 28658,
+      "name": "P25 Sivas"
+    },
+    {
+      "id": 28659,
+      "name": "P25 Tekirdag"
+    },
+    {
+      "id": 28660,
+      "name": "P25 Tokat"
+    },
+    {
+      "id": 28661,
+      "name": "P25 Trabzon"
+    },
+    {
+      "id": 28662,
+      "name": "P25 Tunceli"
+    },
+    {
+      "id": 28663,
+      "name": "P25 Sanliurfa"
+    },
+    {
+      "id": 28664,
+      "name": "P25 Usak"
+    },
+    {
+      "id": 28665,
+      "name": "P25 Van"
+    },
+    {
+      "id": 28666,
+      "name": "P25 Yozgat"
+    },
+    {
+      "id": 28667,
+      "name": "P25 Zonguldak"
+    },
+    {
+      "id": 28668,
+      "name": "P25 Aksaray"
+    },
+    {
+      "id": 28669,
+      "name": "P25 Bayburt"
+    },
+    {
+      "id": 28670,
+      "name": "P25 Karaman"
+    },
+    {
+      "id": 28671,
+      "name": "P25 Kirikkale"
+    },
+    {
+      "id": 28672,
+      "name": "P25 Batman"
+    },
+    {
+      "id": 28673,
+      "name": "P25 Sirnak"
+    },
+    {
+      "id": 28674,
+      "name": "P25 Bartin"
+    },
+    {
+      "id": 28675,
+      "name": "P25 Ardahan"
+    },
+    {
+      "id": 28676,
+      "name": "P25 Igdir"
+    },
+    {
+      "id": 28677,
+      "name": "P25 YALOVA TÜRKİYE"
+    },
+    {
+      "id": 28678,
+      "name": "P25 Karabuk"
+    },
+    {
+      "id": 28679,
+      "name": "P25 Kilis"
+    },
+    {
+      "id": 28680,
+      "name": "P25 Osmaniye"
+    },
+    {
+      "id": 28681,
+      "name": "P25 Duzce"
+    },
+    {
+      "id": 30043,
+      "name": "URF043 P25"
+    },
+    {
+      "id": 30252,
+      "name": "Saskwarn Parkland Radio Hub"
+    },
+    {
+      "id": 30421,
+      "name": "URFARA"
+    },
+    {
+      "id": 30444,
+      "name": "ZONA DMR CL - LYNK25"
+    },
+    {
+      "id": 30639,
+      "name": "NorCal"
+    },
+    {
+      "id": 31000,
+      "name": "US Severe Weather"
+    },
+    {
+      "id": 31010,
+      "name": "Alabama Link"
+    },
+    {
+      "id": 31031,
+      "name": "EMA IP NETWORK"
+    },
+    {
+      "id": 31038,
+      "name": "SRG Reflector"
+    },
+    {
+      "id": 31052,
+      "name": "NA0D P25 Reflector"
+    },
+    {
+      "id": 31057,
+      "name": "P25 31057"
+    },
+    {
+      "id": 31059,
+      "name": "vidalia net"
+    },
+    {
+      "id": 31061,
+      "name": "SoCalDigiTalk"
+    },
+    {
+      "id": 31062,
+      "name": "Mountain West P25 Reflector"
+    },
+    {
+      "id": 31068,
+      "name": "P25 NorCal Talk Group"
+    },
+    {
+      "id": 31077,
+      "name": "PAPA Chat"
+    },
+    {
+      "id": 31078,
+      "name": "PAPA Bridge"
+    },
+    {
+      "id": 31088,
+      "name": "Colorado HD"
+    },
+    {
+      "id": 31128,
+      "name": "Gulf of America Radio Network"
+    },
+    {
+      "id": 31138,
+      "name": "KingsLand Local network"
+    },
+    {
+      "id": 31161,
+      "name": "Virginia"
+    },
+    {
+      "id": 31171,
+      "name": "ILLINOIS LINK"
+    },
+    {
+      "id": 31188,
+      "name": "URFSIN"
+    },
+    {
+      "id": 31201,
+      "name": "BYRG TalkGroup"
+    },
+    {
+      "id": 31202,
+      "name": "K0XM development"
+    },
+    {
+      "id": 31238,
+      "name": "P25 31238"
+    },
+    {
+      "id": 31291,
+      "name": "Southwest Missouri"
+    },
+    {
+      "id": 31297,
+      "name": "Southwest Missouri Skywarn"
+    },
+    {
+      "id": 31313,
+      "name": "P25 31313"
+    },
+    {
+      "id": 31337,
+      "name": "SWLA-LINK"
+    },
+    {
+      "id": 31340,
+      "name": "CNJHAM"
+    },
+    {
+      "id": 31349,
+      "name": "HKC IRC"
+    },
+    {
+      "id": 31377,
+      "name": "Foothills Wave Whisperers"
+    },
+    {
+      "id": 31379,
+      "name": "Piedmont Triad Network"
+    },
+    {
+      "id": 31390,
+      "name": "Torcon Weather"
+    },
+    {
+      "id": 31391,
+      "name": "TORCON Amateur Radio Club"
+    },
+    {
+      "id": 31392,
+      "name": "TORCON Weather TAC"
+    },
+    {
+      "id": 31393,
+      "name": "TORCON Weather Alerts"
+    },
+    {
+      "id": 31425,
+      "name": "P25 31425"
+    },
+    {
+      "id": 31444,
+      "name": "RI DIGITALINK"
+    },
+    {
+      "id": 31471,
+      "name": "Midsouth P25"
+    },
+    {
+      "id": 31473,
+      "name": "TN TAC System"
+    },
+    {
+      "id": 31490,
+      "name": "Utah DRN 00 Bridge"
+    },
+    {
+      "id": 31491,
+      "name": "Utah DRN 01 Bridge"
+    },
+    {
+      "id": 31495,
+      "name": "Utah DRN 05 Bridge"
+    },
+    {
+      "id": 31499,
+      "name": "Utah 900"
+    },
+    {
+      "id": 31551,
+      "name": "P25 31551"
+    },
+    {
+      "id": 31555,
+      "name": "P25 31555"
+    },
+    {
+      "id": 31590,
+      "name": "UPNS 00"
+    },
+    {
+      "id": 31591,
+      "name": "UPNS NORTH"
+    },
+    {
+      "id": 31592,
+      "name": "UPNS CENTRAL"
+    },
+    {
+      "id": 31593,
+      "name": "UPNS SOUTH"
+    },
+    {
+      "id": 31594,
+      "name": "UPNS EVENT"
+    },
+    {
+      "id": 31595,
+      "name": "UPNS IT"
+    },
+    {
+      "id": 31611,
+      "name": "Halo-Halo Network"
+    },
+    {
+      "id": 31670,
+      "name": "W9WDX P25 to XLXWDX C"
+    },
+    {
+      "id": 31672,
+      "name": "Pi-Star Multi-Mode Reflector"
+    },
+    {
+      "id": 31678,
+      "name": "Catawba Valley Reflector"
+    },
+    {
+      "id": 31691,
+      "name": "TriState DMR (IL-IN-WI multimode)"
+    },
+    {
+      "id": 31701,
+      "name": "Starfleet Amateur Radio Group - Trek Talk - 31701"
+    },
+    {
+      "id": 31777,
+      "name": "DX-LINK SYSTEM"
+    },
+    {
+      "id": 31845,
+      "name": "URFPAW"
+    },
+    {
+      "id": 31910,
+      "name": "LMRNET"
+    },
+    {
+      "id": 31947,
+      "name": "Missouri Digital Calling Network"
+    },
+    {
+      "id": 31983,
+      "name": "P25 31983"
+    },
+    {
+      "id": 31985,
+      "name": "URF550"
+    },
+    {
+      "id": 31990,
+      "name": "MNRADIO"
+    },
+    {
+      "id": 32103,
+      "name": "CW Ops - CW Academy - CW"
+    },
+    {
+      "id": 32136,
+      "name": "KN4YDL Amateur Radio Group TG32136"
+    },
+    {
+      "id": 33420,
+      "name": "DURANGO"
+    },
+    {
+      "id": 33581,
+      "name": "NET TALK - P25"
+    },
+    {
+      "id": 34075,
+      "name": "URFSCP"
+    },
+    {
+      "id": 34109,
+      "name": "P25 34109"
+    },
+    {
+      "id": 34567,
+      "name": "SKYSCRAPER"
+    },
+    {
+      "id": 37225,
+      "name": "P25 37225"
+    },
+    {
+      "id": 41120,
+      "name": "LoneStarLinkSystem"
+    },
+    {
+      "id": 42021,
+      "name": "P25-TEST"
+    },
+    {
+      "id": 42069,
+      "name": "URF668"
+    },
+    {
+      "id": 42555,
+      "name": "4X Allstar to P25 Cloud Bridge"
+    },
+    {
+      "id": 43389,
+      "name": "P25 43389"
+    },
+    {
+      "id": 43701,
+      "name": "Ohio Multimode P25"
+    },
+    {
+      "id": 43715,
+      "name": "Kazakhstan P25"
+    },
+    {
+      "id": 44000,
+      "name": "Japan"
+    },
+    {
+      "id": 44064,
+      "name": "JP-OWARI"
+    },
+    {
+      "id": 44120,
+      "name": "Japan 44120"
+    },
+    {
+      "id": 45000,
+      "name": "450IPSC2-P25"
+    },
+    {
+      "id": 45001,
+      "name": "P25 45001"
+    },
+    {
+      "id": 45401,
+      "name": "TG-45401 Hong Kong"
+    },
+    {
+      "id": 46001,
+      "name": "P25 46001"
+    },
+    {
+      "id": 46002,
+      "name": "46002"
+    },
+    {
+      "id": 46005,
+      "name": "P25-TG46005"
+    },
+    {
+      "id": 46008,
+      "name": "P25 46008"
+    },
+    {
+      "id": 46010,
+      "name": "P25 46010"
+    },
+    {
+      "id": 46020,
+      "name": "CROSS TG46020"
+    },
+    {
+      "id": 46023,
+      "name": "P25 46023"
+    },
+    {
+      "id": 46085,
+      "name": "P25 TG46085 BM46085"
+    },
+    {
+      "id": 46087,
+      "name": "P25_46087"
+    },
+    {
+      "id": 46351,
+      "name": "Cross 2 BM46351"
+    },
+    {
+      "id": 46666,
+      "name": "DMRISGOOD"
+    },
+    {
+      "id": 46888,
+      "name": "TG46888 only P25"
+    },
+    {
+      "id": 47070,
+      "name": "S21ALT P25 74070 Test"
+    },
+    {
+      "id": 47100,
+      "name": "Virginia Ops Primary TG 7A"
+    },
+    {
+      "id": 47101,
+      "name": "Virginia TAC 1 7B"
+    },
+    {
+      "id": 47102,
+      "name": "Virginia TAC 2 7C"
+    },
+    {
+      "id": 47103,
+      "name": "Virginia TAC 3 7D DMR X-MODE"
+    },
+    {
+      "id": 47366,
+      "name": "Sin City Repeater Group"
+    },
+    {
+      "id": 50210,
+      "name": "Malaysia-NET Digital P25 Room"
+    },
+    {
+      "id": 50224,
+      "name": "KG4NWE HUB"
+    },
+    {
+      "id": 50288,
+      "name": "Malaysia Canton Channel"
+    },
+    {
+      "id": 50405,
+      "name": "ALL IS WELCOME"
+    },
+    {
+      "id": 50500,
+      "name": "VK Nets Hub"
+    },
+    {
+      "id": 50505,
+      "name": "VK Calling Hub"
+    },
+    {
+      "id": 50525,
+      "name": "50525 P25 Reflector"
+    },
+    {
+      "id": 50535,
+      "name": "P25 50535"
+    },
+    {
+      "id": 50536,
+      "name": "P25 50536"
+    },
+    {
+      "id": 50592,
+      "name": "Kilowatt Amateur Radio Club p25 Reflector"
+    },
+    {
+      "id": 50964,
+      "name": "LARK"
+    },
+    {
+      "id": 51051,
+      "name": "DGI P25"
+    },
+    {
+      "id": 51075,
+      "name": "Indonesia P25 Talkgroup 51075"
+    },
+    {
+      "id": 51091,
+      "name": "DGI Reflector"
+    },
+    {
+      "id": 51547,
+      "name": "P25 51547"
+    },
+    {
+      "id": 52032,
+      "name": "P25 52032"
+    },
+    {
+      "id": 52138,
+      "name": "XLX138 Module P"
+    },
+    {
+      "id": 52149,
+      "name": "P25 52149"
+    },
+    {
+      "id": 53035,
+      "name": "NZ Calling"
+    },
+    {
+      "id": 53347,
+      "name": "Waltham P25"
+    },
+    {
+      "id": 54100,
+      "name": "THAILAND Bridge to XLX727C"
+    },
+    {
+      "id": 54159,
+      "name": "Northeast Wisconsin"
+    },
+    {
+      "id": 56169,
+      "name": "N5QP NE Oklahoma P25"
+    },
+    {
+      "id": 56429,
+      "name": "Wyre Forest P25 Link"
+    },
+    {
+      "id": 58907,
+      "name": "URF162"
+    },
+    {
+      "id": 60606,
+      "name": "W8VD"
+    },
+    {
+      "id": 60777,
+      "name": "US-WHOCARES"
+    },
+    {
+      "id": 61668,
+      "name": "All Are Welcome"
+    },
+    {
+      "id": 62238,
+      "name": "KC3YGF Middle River, Maryland, USA"
+    },
+    {
+      "id": 62437,
+      "name": "NC4ES"
+    },
+    {
+      "id": 64189,
+      "name": "KE7WIL P25 TG 64189"
+    },
+    {
+      "id": 64701,
+      "name": "64701 REUNION ISLAND"
+    },
+    {
+      "id": 65050,
+      "name": "P25 Reflector"
+    },
+    {
+      "id": 65102,
+      "name": "Utah High Desert Amateur Radio Club Bridge"
+    },
+    {
+      "id": 65123,
+      "name": "MRN P25 Reflector"
+    },
+    {
+      "id": 65300,
+      "name": "KQ4WZE Reflector"
+    }
+  ],
+  "attribution": "Reflector data provided by DVRef — https://dvref.com/",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "changes": "Normalized numeric reflector IDs and names; omitted unsupported IDs and other fields."
+}
