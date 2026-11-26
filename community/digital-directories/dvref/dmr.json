@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-11-25T19:29:10.736752Z",
+  "generated_at": "2026-11-26T19:11:20.887350Z",
   "_dvref_metadata": {
     "license": {
       "name": "Creative Commons Attribution 4.0 International",
@@ -3459,7 +3459,7 @@
   },
   "pocketchirp": {
     "upstream": "https://dvref.com/api/v2/dmr/networks/",
-    "checked_at": "2026-11-25T19:29:10.680183+00:00",
+    "checked_at": "2026-11-26T19:11:20.811093+00:00",
     "changes": "Public collection records unchanged; added PocketCHIRP cache metadata.",
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "license": "CC-BY-4.0",

@@ -1,6 +1,6 @@
 {
   "status": "success",
-  "generated_at": "2026-11-25T19:29:09.950580Z",
+  "generated_at": "2026-11-26T19:11:20.227209Z",
   "_dvref_metadata": {
     "license": {
       "name": "Creative Commons Attribution 4.0 International",
@@ -505,7 +505,7 @@
         "country": "US",
         "ip_source": "dns",
         "dns_cache_updated_at": "2026-11-25T06:48:38.007299Z",
-        "last_verified_at": "2026-11-25T06:43:15.604552Z",
+        "last_verified_at": "2026-11-25T20:11:11.649388Z",
         "network_type": "business"
       },
       {
@@ -562,13 +562,13 @@
         "slug": "p25-226",
         "url": "https://p25.145500.xyz/",
         "dns": "p25.145500.xyz",
-        "ipv4": "192.18.133.90",
+        "ipv4": "130.162.36.6",
         "ipv6": null,
         "port": 41000,
         "sponsor": "145500.xyz",
         "country": "RO",
         "ip_source": "dns",
-        "dns_cache_updated_at": "2025-04-24T12:36:40.812213Z",
+        "dns_cache_updated_at": "2026-11-26T14:18:37.627758Z",
         "last_verified_at": "2026-10-29T14:19:59.528378Z",
         "network_type": "hosting"
       },
@@ -664,7 +664,7 @@
         "sponsor": "N4TPN",
         "country": "US",
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-25T18:48:38.145493Z",
+        "dns_cache_updated_at": "2026-11-26T18:48:38.173113Z",
         "last_verified_at": "2026-07-25T16:29:41.315977Z",
         "network_type": "residential"
       },
@@ -2201,7 +2201,7 @@
         "country": "US",
         "ip_source": "dns",
         "dns_cache_updated_at": "2026-02-17T19:18:01.700915Z",
-        "last_verified_at": "2026-08-31T01:08:35.853874Z",
+        "last_verified_at": "2026-11-26T05:54:23.793289Z",
         "network_type": "business"
       },
       {
@@ -2217,7 +2217,7 @@
         "country": "US",
         "ip_source": "dns",
         "dns_cache_updated_at": "2026-02-17T18:48:02.109981Z",
-        "last_verified_at": "2026-08-31T01:08:50.376537Z",
+        "last_verified_at": "2026-11-26T14:40:01.059930Z",
         "network_type": "business"
       },
       {
@@ -2338,13 +2338,13 @@
         "slug": "p25-6453",
         "url": null,
         "dns": "p25.w9ml.com",
-        "ipv4": "98.228.251.0",
+        "ipv4": "97.242.4.158",
         "ipv6": "2600:1008:a030:5d35:be24:11ff:fe09:9c4b",
         "port": 41000,
         "sponsor": "W9ML",
         "country": "US",
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-11-22T02:48:37.067367Z",
+        "dns_cache_updated_at": "2026-11-26T15:18:37.591489Z",
         "last_verified_at": "2026-07-25T16:32:25.914607Z",
         "network_type": "business"
       },
@@ -2701,6 +2701,22 @@
         "network_type": "residential"
       },
       {
+        "designator": 9050,
+        "name": "W2ECR - East Coast Reflector",
+        "slug": "p25-9050",
+        "url": null,
+        "dns": null,
+        "ipv4": "74.196.158.133",
+        "ipv6": null,
+        "port": 41000,
+        "sponsor": "W2ECR",
+        "country": "US",
+        "ip_source": "static",
+        "dns_cache_updated_at": null,
+        "last_verified_at": "2026-11-25T19:39:32.024114Z",
+        "network_type": "business"
+      },
+      {
         "designator": 9101,
         "name": "VK2ADF Main",
         "slug": "p25-9101",
@@ -2802,13 +2818,13 @@
         "slug": "p25-9140",
         "url": "http://p25.radioarca.net/",
         "dns": "p25.radioarca.net",
-        "ipv4": "47.156.57.241",
+        "ipv4": "47.156.49.62",
         "ipv6": null,
         "port": 41000,
         "sponsor": "N6RBH",
         "country": "US",
         "ip_source": "dns",
-        "dns_cache_updated_at": "2026-10-26T04:48:33.761635Z",
+        "dns_cache_updated_at": "2026-11-25T20:48:37.851375Z",
         "last_verified_at": "2026-10-26T04:46:53.423735Z",
         "network_type": "business"
       },
@@ -3705,8 +3721,8 @@
         "country": "IT",
         "ip_source": "dns",
         "dns_cache_updated_at": "2025-04-24T12:36:40.674561Z",
-        "last_verified_at": "2026-07-25T16:26:48.826344Z",
-        "network_type": "business"
+        "last_verified_at": "2026-11-26T18:54:06.939628Z",
+        "network_type": "hosting"
       },
       {
         "designator": 22208,
@@ -7437,6 +7453,22 @@
         "network_type": "hosting"
       },
       {
+        "designator": 52012,
+        "name": "E2HUB Thailand - VRA",
+        "slug": "p25-52012",
+        "url": "https://e2hub.vra.or.th/",
+        "dns": "e2hub.vra.or.th",
+        "ipv4": "209.15.117.65",
+        "ipv6": null,
+        "port": 41000,
+        "sponsor": "Volunteer Radio Association (VRA)",
+        "country": "TH",
+        "ip_source": "dns",
+        "dns_cache_updated_at": "2026-11-26T06:18:37.881516Z",
+        "last_verified_at": "2026-11-26T06:19:29.449605Z",
+        "network_type": "hosting"
+      },
+      {
         "designator": 52032,
         "name": null,
         "slug": "p25-52032",
@@ -7776,7 +7808,7 @@
   },
   "pocketchirp": {
     "upstream": "https://dvref.com/api/v2/p25/reflectors/",
-    "checked_at": "2026-11-25T19:29:10.946138+00:00",
+    "checked_at": "2026-11-26T19:11:21.153426+00:00",
     "changes": "Public collection records unchanged; added PocketCHIRP cache metadata.",
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "license": "CC-BY-4.0",

@@ -12,7 +12,7 @@
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "changes": "Normalized numeric reflector IDs and names."
   },
-  "updated": "2026-11-25T19:29:09.953609+00:00",
+  "updated": "2026-11-26T19:11:20.209919+00:00",
   "rows": [
     {
       "id": 14,
@@ -685,6 +685,10 @@
     {
       "id": 8610,
       "name": "CRHRC-TX"
+    },
+    {
+      "id": 9050,
+      "name": "W2ECR - East Coast Reflector"
     },
     {
       "id": 9101,
@@ -1869,6 +1873,10 @@
     {
       "id": 51547,
       "name": "P25 51547"
+    },
+    {
+      "id": 52012,
+      "name": "E2HUB Thailand - VRA"
     },
     {
       "id": 52032,
