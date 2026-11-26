@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-25T19:59:44.183575Z",
-  "candidateCount": 162,
+  "generatedAt": "2026-11-26T19:39:28.444865Z",
+  "candidateCount": 160,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -6992,8 +6992,8 @@
       "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
       "path": "chirp/drivers/baofeng_5rh_pro.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
-      "sha256": "3e6c4609968f4ce92cf338d703f590477b8076d8ce7dc129a8258bae89aea35f",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/362951da5d4586b673c278a3fea860e7e583b167/chirp%2Fdrivers%2Fbaofeng_5rh_pro.py",
+      "sha256": "9a742587db214a90e3b90321f6efaa214280eb4bd72d1bf0f79c12f41821985c",
       "vendors": [],
       "models": [
         "5RH Pro",
@@ -7039,15 +7039,63 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "pr:kk7ds/chirp#1766:chirp/drivers/kenwood_d7.py",
+      "type": "pull-request-file",
+      "repository": "kk7ds/chirp",
+      "pullRequest": 1766,
+      "pullRequestTitle": "Kenwood D7 Fixes",
+      "path": "chirp/drivers/kenwood_d7.py",
+      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1766",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/ddb12c766d8610db3b32391b38234027f1e5876c/chirp%2Fdrivers%2Fkenwood_d7.py",
+      "sha256": "09f1755b0c9bc3aaa6f41565a34ecb5e1626640518bf9fd32766d92b38ce7af2",
+      "vendors": [],
+      "models": [
+        "TH-D7",
+        "TH-D7G",
+        "TM-D700"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "",
+          "model": "TH-D7"
+        },
+        {
+          "vendor": "",
+          "model": "TH-D7G"
+        },
+        {
+          "vendor": "",
+          "model": "TM-D700"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting"
+      ],
+      "reasons": [
+        "open pull request in watched repository"
+      ],
+      "status": "needs-review",
+      "version": null,
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "kk7ds/chirp::::th-d7|th-d7g|tm-d700::kenwood_d7",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Community TH-D7, TH-D7G, TM-D700",
+      "availableVersions": []
+    },
+    {
       "candidateKey": "pr:kk7ds/chirp#1758:chirp/drivers/lab599.py",
       "type": "pull-request-file",
       "repository": "kk7ds/chirp",
       "pullRequest": 1758,
-      "pullRequestTitle": "Add support for Lab599 TX-500MP",
+      "pullRequestTitle": "Add support for Lab599 TX-500 and TX-500MP",
       "path": "chirp/drivers/lab599.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1758",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/63bc419a275a3efdff1b726cc221475757d2b59d/chirp%2Fdrivers%2Flab599.py",
-      "sha256": "5303113caabb4db3ebb3b9ac4d2cb6e550e4c2887dbba157a2ab6e919ffb7adb",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/f612bd4352e44931a7c2710ac96e5583bc3cf079/chirp%2Fdrivers%2Flab599.py",
+      "sha256": "7f18cd4eddc96572f7257787316e2bbad0672f7257976e3ff31d859a0890c69d",
       "vendors": [],
       "models": [
         "TX-500",
@@ -7125,102 +7173,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Abbree AR-7600",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/ga510.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1625,
-      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
-      "path": "chirp/drivers/ga510.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fga510.py",
-      "sha256": "2eea9c3a91b1071fcd526b8bea883c3e02a4bb6904cfa17b321047ce25db0912",
-      "vendors": [
-        "Abbree",
-        "Anysecu",
-        "Cignus",
-        "Radioddity",
-        "Retevis",
-        "SenhaiX",
-        "TIDRADIO"
-      ],
-      "models": [
-        "8800",
-        "AC-580",
-        "AR-F5",
-        "GA-510",
-        "GS-5B",
-        "RA685",
-        "RA85",
-        "TD-H6",
-        "XTR-5"
-      ],
-      "variants": [
-        "V2"
-      ],
-      "modelEntries": [
-        {
-          "vendor": "Radioddity",
-          "model": "GA-510"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RA685"
-        },
-        {
-          "vendor": "Retevis",
-          "model": "RA85"
-        },
-        {
-          "vendor": "TIDRADIO",
-          "model": "TD-H6"
-        },
-        {
-          "vendor": "SenhaiX",
-          "model": "8800"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GS-5B"
-        },
-        {
-          "vendor": "Cignus",
-          "model": "XTR-5"
-        },
-        {
-          "vendor": "Anysecu",
-          "model": "AC-580"
-        },
-        {
-          "vendor": "Abbree",
-          "model": "AR-F5"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GA-510",
-          "variant": "V2"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::abbree|anysecu|cignus|radioddity|retevis|senhaix|tidradio::8800|ac-580|ar-f5|ga-510|gs-5b|ra685|ra85|td-h6|xtr-5::ga510",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Abbree, Anysecu, Cignus, Radioddity, Retevis, SenhaiX, TIDRADIO 8800, AC-580, AR-F5, GA-510, GS-5B, RA685, RA85, TD-H6, XTR-5",
       "availableVersions": []
     },
     {
@@ -7412,7 +7364,7 @@
       "pullRequestTitle": "uv5r: Stop reporting Range Override uploads as errors",
       "path": "chirp/drivers/uv5r.py",
       "sourceUrl": "https://github.com/kk7ds/chirp/pull/1677",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/3a0be7a940928ac5a6ca04a0587dc049b2ea1052/chirp%2Fdrivers%2Fuv5r.py",
+      "downloadUrl": "https://github.com/kk7ds/chirp/raw/dd021a82b8424edf2e2a27ec9cf96f8115e48532/chirp%2Fdrivers%2Fuv5r.py",
       "sha256": "938bb982f172df4803929d211dd2cdc4f2f33b0542d6b1261e885dc1eb552855",
       "vendors": [
         "Ansoko",
@@ -7900,160 +7852,6 @@
       "latestInFamily": true,
       "recommended": true,
       "displayName": "Baofeng, LUITON, Retevis, TID, WLN, Zastone BF-T20, KD-C1, LT-316, RT22, RT22FRS, RT622, T22 PMR, TD-M8, W31E, ZT-X6",
-      "availableVersions": []
-    },
-    {
-      "candidateKey": "pr:kk7ds/chirp#1625:chirp/drivers/baofeng_uv17Pro.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1625,
-      "pullRequestTitle": "baofeng_5rh_gps: Add Baofeng 5RH Pro and UV-5RM Plus with GPS",
-      "path": "chirp/drivers/baofeng_uv17Pro.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1625",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/4d691eded07b5957435bd198a354ca514f861d26/chirp%2Fdrivers%2Fbaofeng_uv17Pro.py",
-      "sha256": "75cfe2ec579eb980470cca9dd0793029a3036a89220dfff49fecf9d09e0a5e2d",
-      "vendors": [
-        "Baofeng",
-        "MaxTalker",
-        "Radioddity"
-      ],
-      "models": [
-        "5RM",
-        "BF-F8HP-PRO",
-        "GM-21",
-        "GM-30 Plus",
-        "GM-30 Pro",
-        "GM-5RH",
-        "K5-Plus",
-        "K6",
-        "MT-5RM",
-        "P15",
-        "UV-17Pro",
-        "UV-17ProGPS",
-        "UV-17R-Plus",
-        "UV-21ProGPS",
-        "UV-21ProV2",
-        "UV-25",
-        "UV-28Plus",
-        "UV-32",
-        "UV-5G Mini",
-        "UV-5G Plus",
-        "UV-5R Mini",
-        "UV-5RH",
-        "UV-5RM Plus"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProV2"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-25"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17ProGPS"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Plus"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "GM-30 Pro"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-21"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-32"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-21ProGPS"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-28Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "5RM"
-        },
-        {
-          "vendor": "MaxTalker",
-          "model": "P15"
-        },
-        {
-          "vendor": "",
-          "model": "MT-5RM"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K5-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RM Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "GM-5RH"
-        },
-        {
-          "vendor": "Radioddity",
-          "model": "UV-5G Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-17R-Plus"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "BF-F8HP-PRO"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5RH"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "K6"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5R Mini"
-        },
-        {
-          "vendor": "Baofeng",
-          "model": "UV-5G Mini"
-        }
-      ],
-      "hintsMatched": [
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::baofeng|maxtalker|radioddity::5rm|bf-f8hp-pro|gm-21|gm-30 plus|gm-30 pro|gm-5rh|k5-plus|k6|mt-5rm|p15|uv-17pro|uv-17progps|uv-17r-plus|uv-21progps|uv-21prov2|uv-25|uv-28plus|uv-32|uv-5g mini|uv-5g plus|uv-5r mini|uv-5rh|uv-5rm plus::baofeng_uv17pro",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Baofeng, MaxTalker, Radioddity 5RM, BF-F8HP-PRO, GM-21, GM-30 Plus, GM-30 Pro, GM-5RH, K5-Plus, K6, MT-5RM, P15, UV-17Pro, UV-17ProGPS, UV-17R-Plus, UV-21ProGPS, UV-21ProV2, UV-25, UV-28Plus, UV-32, UV-5G Mini, UV-5G Plus, UV-5R Mini, UV-5RH, UV-5RM Plus",
       "availableVersions": []
     },
     {
@@ -9616,49 +9414,6 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "pr:kk7ds/chirp#1748:chirp/drivers/ftx1.py",
-      "type": "pull-request-file",
-      "repository": "kk7ds/chirp",
-      "pullRequest": 1748,
-      "pullRequestTitle": "ftx1: Add Yaesu FTX-1 over USB, more channel settings",
-      "path": "chirp/drivers/ftx1.py",
-      "sourceUrl": "https://github.com/kk7ds/chirp/pull/1748",
-      "downloadUrl": "https://github.com/kk7ds/chirp/raw/d45a2a383a3afa27375f2ebf276f6d76a78bade1/chirp%2Fdrivers%2Fftx1.py",
-      "sha256": "6e524017072f7e2c405486f2cdbcddf718acf6c821b5c62da6858743dd9637af",
-      "vendors": [
-        "Yaesu"
-      ],
-      "models": [
-        "FTX-1"
-      ],
-      "variants": [],
-      "modelEntries": [
-        {
-          "vendor": "Yaesu",
-          "model": "FTX-1"
-        }
-      ],
-      "hintsMatched": [
-        "CloneModeRadio",
-        "directory.register",
-        "RadioSetting",
-        "sync_in",
-        "sync_out"
-      ],
-      "reasons": [
-        "open pull request in watched repository"
-      ],
-      "status": "needs-review",
-      "version": null,
-      "historical": false,
-      "releaseTier": "current",
-      "versionFamily": "kk7ds/chirp::yaesu::ftx-1::ftx1",
-      "latestInFamily": true,
-      "recommended": true,
-      "displayName": "Yaesu FTX-1",
-      "availableVersions": []
-    },
-    {
       "candidateKey": "repo:mjwgeek/Radioddity-GD-73a:gd73.py",
       "type": "repository-file",
       "repository": "mjwgeek/Radioddity-GD-73a",
@@ -9820,7 +9575,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 59,
+  "currentCount": 57,
   "historicalCount": 103,
   "versionedCount": 80
 }
