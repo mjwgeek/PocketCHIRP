@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-11-26T19:39:28.444865Z",
-  "candidateCount": 160,
+  "generatedAt": "2026-11-27T01:09:16.808Z",
+  "candidateCount": 161,
   "candidates": [
     {
       "candidateKey": "repo:armel/uv-k5-chirp-driver:uvk5_egzumer_f4hwn_ver_4_3_0_fr.py",
@@ -2004,18 +2004,18 @@
         },
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.1/f4hwn.chirp.v4.3.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.1/f4hwn.chirp.v4.3.py"
+          "path": "F4HWN/старые версии/4.3.1/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/4.3.1/f4hwn.chirp.v4.3.py"
         },
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.2/f4hwn.chirp.v4.3.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3.2/f4hwn.chirp.v4.3.py"
+          "path": "F4HWN/старые версии/4.3.2/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/4.3.2/f4hwn.chirp.v4.3.py"
         },
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3/f4hwn.chirp.v4.3.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/4.3/f4hwn.chirp.v4.3.py"
+          "path": "F4HWN/старые версии/4.3/f4hwn.chirp.v4.3.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/4.3/f4hwn.chirp.v4.3.py"
         }
       ],
       "version": "4.3.0",
@@ -4208,8 +4208,8 @@
       "duplicateSources": [
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.8.0/f4hwn.fusion.chirp.v5.8.0.py"
+          "path": "F4HWN/старые версии/5.8.0/f4hwn.fusion.chirp.v5.8.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.8.0/f4hwn.fusion.chirp.v5.8.0.py"
         }
       ],
       "version": null,
@@ -4222,11 +4222,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "path": "F4HWN/старые версии/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.2.0/f4hwn.fusion.chirp.v5.2.0.py",
       "sha256": "adf4aa2c02a9a9c61a5e3c4d63088064e59c091b5a16ed649e3d28d15231d121",
       "vendors": [
@@ -4263,11 +4263,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "path": "F4HWN/старые версии/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.3.0/f4hwn.fusion.chirp.v5.3.0.py",
       "sha256": "7464bc109dc051c6f8c88ccfffba9d7068bd6a0ea1ce9ff2f553b89136c0f53b",
       "vendors": [
@@ -4304,11 +4304,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "path": "F4HWN/старые версии/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.3.1/f4hwn.fusion.chirp.v5.3.1.py",
       "sha256": "052315f4d2d268995b357b7f93734ba2095578e4a02bcee605b3fc3ee7721cd2",
       "vendors": [
@@ -4353,11 +4353,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "path": "F4HWN/старые версии/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.4.0/f4hwn.fusion.chirp.v5.4.0.py",
       "sha256": "698c34470b199d42b995be46f3f144c710dcd165cd705721515836cb275f80c0",
       "vendors": [
@@ -4394,11 +4394,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "path": "F4HWN/старые версии/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.5.0/f4hwn.fusion.chirp.v5.5.0.py",
       "sha256": "df241243949a70920864b9284990287d4e7ba00280e1f36841a0b498c6cd203c",
       "vendors": [
@@ -4435,11 +4435,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "path": "F4HWN/старые версии/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.6.0/f4hwn.fusion.chirp.v5.6.0.py",
       "sha256": "3a8bde054b803f4287b03aab46a1c447d8e46d52110f5c64d979c4cad8ecf6bd",
       "vendors": [
@@ -4476,11 +4476,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "path": "F4HWN/старые версии/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.6.1/f4hwn.fusion.chirp.v5.6.1.py",
       "sha256": "2c742582237f38a4a021d72e07449543734a11aa08ce3c093c699a0ec04eb653",
       "vendors": [
@@ -4517,11 +4517,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "path": "F4HWN/старые версии/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.7.0/f4hwn.fusion.chirp.v5.7.0.py",
       "sha256": "927df9b31d1622b660da65df3c85a601d9cace371a2bced29ca4be2ff6b8b4a1",
       "vendors": [
@@ -4558,11 +4558,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "path": "F4HWN/старые версии/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/5.9.0/f4hwn.fusion.chirp.v5.9.0.py",
       "sha256": "09d23891a6dc44478cb3e8fd16e1f00fdf33673b4e2faffae765ad812b3a0ff2",
       "vendors": [
@@ -4599,11 +4599,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/старые версии/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "path": "Brass/старые версии/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/старые версии/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/1.3/nr7y.k1-k5v3.chirp.v1.3.py",
       "sha256": "76b6227413ccfeea9a52d3646147bdee7a3c6f8826e8a7d1cbad8c44633abbd7",
       "vendors": [
@@ -4647,11 +4647,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/старые версии/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "path": "Brass/старые версии/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/старые версии/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.3.1/nr7y.k1-k5v3.chirp.v1.3.1.py",
       "sha256": "fb344ce66390ec7e6439e66f8774a3c09f006c2e63c8eb513aad223cb485403e",
       "vendors": [
@@ -4695,11 +4695,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:Brass/старые версии/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "path": "Brass/старые версии/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/Brass/старые версии/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/Brass/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.4/nr7y.k1-k5v3.chirp.v1.4a.py",
       "sha256": "ec7523e8adf895832565a1f125a587c331855e1e3e38b1f436db9e8e49c51f21",
       "vendors": [
@@ -4825,11 +4825,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/v6.0.0/f4hwn.chirp.v6.0.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "path": "F4HWN/старые версии/v6.0.0/f4hwn.chirp.v6.0.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/v6.0.0/f4hwn.chirp.v6.0.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.0.0/f4hwn.chirp.v6.0.0.py",
       "sha256": "c1c560ae081a40ea7aee0cd1e71b47641e63d64aea8886412c1041bda14f5156",
       "vendors": [
@@ -4866,11 +4866,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/v6.1.0/f4hwn.chirp.v6.1.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.1.0/f4hwn.chirp.v6.1.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "path": "F4HWN/старые версии/v6.1.0/f4hwn.chirp.v6.1.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/v6.1.0/f4hwn.chirp.v6.1.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.1.0/f4hwn.chirp.v6.1.0.py",
       "sha256": "ccbf2ec24c5bfb49ab089a2ae0289a305f3ed6812f2de90a36e6186961913462",
       "vendors": [
@@ -4901,8 +4901,8 @@
       "duplicateSources": [
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.11/f4hwn.chirp.v6.1.0.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.11/f4hwn.chirp.v6.1.0.py"
+          "path": "N7SIX/старые версии/v7.6.11/f4hwn.chirp.v6.1.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.11/f4hwn.chirp.v6.1.0.py"
         }
       ],
       "version": null,
@@ -4915,11 +4915,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:F4HWN/старые версии/v6.2.0/f4hwn.chirp.v6.2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "path": "F4HWN/старые версии/v6.2.0/f4hwn.chirp.v6.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/F4HWN/старые версии/v6.2.0/f4hwn.chirp.v6.2.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/F4HWN/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v6.2.0/f4hwn.chirp.v6.2.0.py",
       "sha256": "89334fcc60d1730bf41f35664609540896889100a7d90cc855c0450311a26008",
       "vendors": [
@@ -4956,11 +4956,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "path": "N7SIX/старые версии/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10/n7six.ApeX.chirp.v7.6.10.py",
       "sha256": "b489dadf61e2504d45b456dee0cb80f05093e96dcc9328cdd56a439b040a62a9",
       "vendors": [
@@ -4997,11 +4997,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "path": "N7SIX/старые версии/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10A/n7six.ApeX.chirp.v7.6.10A.py",
       "sha256": "4bfe27852ec7af9680aceea2962f6465ca085d9e07a2c3f43894468b6e486951",
       "vendors": [
@@ -5038,11 +5038,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "path": "N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10B/n7six.ApeX.chirp.v7.6.10B.py",
       "sha256": "4e82b2c078e25d5af593a8469a400d4d3898f4c238b370b90e6776edbe8b44b2",
       "vendors": [
@@ -5079,11 +5079,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "path": "N7SIX/старые версии/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10C/n7six.ApeX.chirp.v7.6.10C.py",
       "sha256": "a93c31addb92e2c2289368e7ac7f81c8b372d960f778ad79d2362cc8c526ae55",
       "vendors": [
@@ -5120,11 +5120,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
+      "path": "N7SIX/старые версии/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.10D/n7six.ApeX.chirp.v7.6.10D.py",
       "sha256": "01a39c8efa5d5222684cfb1275bbc569ec7f2e652b5229d0afad634396a526fd",
       "vendors": [
@@ -5161,11 +5161,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:N7SIX/старые версии/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "path": "N7SIX/старые версии/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/N7SIX/старые версии/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/N7SIX/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v7.6.12/n7six.ApeX-k1.v7.6.12.py",
       "sha256": "bc842b529f5ab153c9428cd57a23adf8ffaef4f2f637a4ed19fd1be6f8a8da5a",
       "vendors": [
@@ -5243,11 +5243,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/старые версии/v3.1.1/falcon1k.chirp.v3.1.1.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/falcon1k.chirp.v3.1.1.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "path": "FALCON/старые версии/v3.1.1/falcon1k.chirp.v3.1.1.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.1.1/falcon1k.chirp.v3.1.1.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.1.1/falcon1k.chirp.v3.1.1.py",
       "sha256": "6251f209b990536b65dd4f431b572a9d4919e4eb6bdbcf7977150d8f578d4c98",
       "vendors": [
@@ -5284,11 +5284,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon1k.chirp.v3.2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/старые версии/v3.2.0/falcon1k.chirp.v3.2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon1k.chirp.v3.2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon1k.chirp.v3.2.0.py",
+      "path": "FALCON/старые версии/v3.2.0/falcon1k.chirp.v3.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.2.0/falcon1k.chirp.v3.2.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.2.0/falcon1k.chirp.v3.2.0.py",
       "sha256": "74cf1118b73e0a7d06bc2afbe2f912c8e07f189c9d3b0290363416165c68c389",
       "vendors": [
@@ -5366,11 +5366,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon4k.chirp.v3.2.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/старые версии/v3.2.0/falcon4k.chirp.v3.2.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon4k.chirp.v3.2.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/falcon4k.chirp.v3.2.0.py",
+      "path": "FALCON/старые версии/v3.2.0/falcon4k.chirp.v3.2.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.2.0/falcon4k.chirp.v3.2.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.2.0/falcon4k.chirp.v3.2.0.py",
       "sha256": "4d452a1cbd2267fab86273680a58c8d3879f25c7c79918976aade9ad336daf6f",
       "vendors": [
@@ -5448,11 +5448,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/falcon.chirp.v3.0.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/старые версии/v3.0.0/falcon.chirp.v3.0.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/falcon.chirp.v3.0.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/falcon.chirp.v3.0.0.py",
+      "path": "FALCON/старые версии/v3.0.0/falcon.chirp.v3.0.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.0.0/falcon.chirp.v3.0.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.0.0/falcon.chirp.v3.0.0.py",
       "sha256": "cade4e056312af5a9563ce07b86c884f917bf519dfcd033ece6882ceee2e05ac",
       "vendors": [
@@ -5489,11 +5489,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/falcon.chirp.v3.1.0.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:FALCON/старые версии/v3.1.0/falcon.chirp.v3.1.0.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/falcon.chirp.v3.1.0.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/falcon.chirp.v3.1.0.py",
+      "path": "FALCON/старые версии/v3.1.0/falcon.chirp.v3.1.0.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.1.0/falcon.chirp.v3.1.0.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/FALCON/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.1.0/falcon.chirp.v3.1.0.py",
       "sha256": "c7cb4008357183df26986751ed37996071dfa13a2278ec9a37d2d356ba459f0c",
       "vendors": [
@@ -5524,8 +5524,8 @@
       "duplicateSources": [
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/falcon.chirp.v3.1.0.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/falcon.chirp.v3.1.0.py"
+          "path": "FALCON/старые версии/v3.1.1/falcon.chirp.v3.1.0.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/FALCON/старые версии/v3.1.1/falcon.chirp.v3.1.0.py"
         }
       ],
       "version": null,
@@ -5538,11 +5538,11 @@
       "availableVersions": []
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.0/Gogufw_1.2.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "path": "GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.0/Gogufw_1.2.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.0/Gogufw_1.2.0_chirp_module.py",
       "sha256": "b325d87e95984090849ba9daccae22d1fb2b40bb069ad3e1d047a59378b6266c",
       "vendors": [
@@ -5581,11 +5581,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.1/Gogufw_1.2.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "path": "GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.1/Gogufw_1.2.1_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.1/Gogufw_1.2.1_chirp_module.py",
       "sha256": "52072a23cde6aad57f6a7afacce74969f6559cc37b867911d56dadd67526c1ec",
       "vendors": [
@@ -5624,11 +5624,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.2/Gogufw_1.2.2_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "path": "GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.2.2/Gogufw_1.2.2_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.2.2/Gogufw_1.2.2_chirp_module.py",
       "sha256": "cc0e9a2bc4ecc3d846eabf1c42bb54fc0019b5572fff3d35377810bd25d93ab5",
       "vendors": [
@@ -5731,11 +5731,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.2/Gogufw_3.6.2_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.6.2/Gogufw_3.6.2_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.2/Gogufw_3.6.2_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.2/Gogufw_3.6.2_chirp_module.py",
+      "path": "GOGU/старые версии/v3.6.2/Gogufw_3.6.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.6.2/Gogufw_3.6.2_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.6.2/Gogufw_3.6.2_chirp_module.py",
       "sha256": "e933f785c5e29a93c407901326bcef19b4807cf2565d7a5e06b93dd294037a10",
       "vendors": [
@@ -5795,11 +5795,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.0/Gogufw_3.6.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.6.0/Gogufw_3.6.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.0/Gogufw_3.6.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.6.0/Gogufw_3.6.0_chirp_module.py",
+      "path": "GOGU/старые версии/v3.6.0/Gogufw_3.6.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.6.0/Gogufw_3.6.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.6.0/Gogufw_3.6.0_chirp_module.py",
       "sha256": "c85f5f633acca89eec67b80af5ce5371f5b36e8ddcae13d27d28bc7d2d024728",
       "vendors": [
@@ -5859,11 +5859,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.5/Gogufw_3.3.5_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.3.5/Gogufw_3.3.5_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.5/Gogufw_3.3.5_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.5/Gogufw_3.3.5_chirp_module.py",
+      "path": "GOGU/старые версии/v3.3.5/Gogufw_3.3.5_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.3.5/Gogufw_3.3.5_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.3.5/Gogufw_3.3.5_chirp_module.py",
       "sha256": "85cf507021e8bc3669046eed411010c9dbe271f99665e117204f0715531bfc7e",
       "vendors": [
@@ -5923,11 +5923,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.3.2/Gogufw_3.3.2_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.2/Gogufw_3.3.2_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "path": "GOGU/старые версии/v3.3.2/Gogufw_3.3.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.3.2/Gogufw_3.3.2_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.3.2/Gogufw_3.3.2_chirp_module.py",
       "sha256": "ad05bf74f074ddf1b258b8212c5e0d911182c2a0f2b85330d88b1ff4d97d82a1",
       "vendors": [
@@ -5987,11 +5987,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.3.1/Gogufw_3.3.1_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "path": "GOGU/старые версии/v3.3.1/Gogufw_3.3.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.3.1/Gogufw_3.3.1_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.3.1/Gogufw_3.3.1_chirp_module.py",
       "sha256": "1450773196f2abc29097095adc3369969b663580b2af715e9b2f301311b7a9d5",
       "vendors": [
@@ -6051,11 +6051,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.2.0/Gogufw_3.2.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "path": "GOGU/старые версии/v3.2.0/Gogufw_3.2.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.2.0/Gogufw_3.2.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.2.0/Gogufw_3.2.0_chirp_module.py",
       "sha256": "eba62fd0db43ecf699c755a1541844ea1e7489885c754f3cb1a6771c1dd7daa5",
       "vendors": [
@@ -6115,11 +6115,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/Gogufw_3.1.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.1.1/Gogufw_3.1.1_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/Gogufw_3.1.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.1/Gogufw_3.1.1_chirp_module.py",
+      "path": "GOGU/старые версии/v3.1.1/Gogufw_3.1.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.1.1/Gogufw_3.1.1_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.1.1/Gogufw_3.1.1_chirp_module.py",
       "sha256": "b27181a859610b3ed24f2e3cacb09004b1dbede8faec306ac8e3b952912b1c53",
       "vendors": [
@@ -6179,11 +6179,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/Gogufw_3.1.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.1.0/Gogufw_3.1.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/Gogufw_3.1.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.1.0/Gogufw_3.1.0_chirp_module.py",
+      "path": "GOGU/старые версии/v3.1.0/Gogufw_3.1.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.1.0/Gogufw_3.1.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.1.0/Gogufw_3.1.0_chirp_module.py",
       "sha256": "72bb3d55b2d946260949ebd6c908c1b89f5e63fc6102c775fa40e621bd319444",
       "vendors": [
@@ -6243,11 +6243,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/Gogufw_3.0.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v3.0.0/Gogufw_3.0.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/Gogufw_3.0.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v3.0.0/Gogufw_3.0.0_chirp_module.py",
+      "path": "GOGU/старые версии/v3.0.0/Gogufw_3.0.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v3.0.0/Gogufw_3.0.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v3.0.0/Gogufw_3.0.0_chirp_module.py",
       "sha256": "b783c8a4e3026fbb9c37e6ef70c74e3ecef93cd2340f48a5f25a9a554cb464e0",
       "vendors": [
@@ -6307,11 +6307,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.3/Gogufw_2.3.3_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.3.3/Gogufw_2.3.3_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.3/Gogufw_2.3.3_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.3/Gogufw_2.3.3_chirp_module.py",
+      "path": "GOGU/старые версии/v2.3.3/Gogufw_2.3.3_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.3.3/Gogufw_2.3.3_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.3.3/Gogufw_2.3.3_chirp_module.py",
       "sha256": "c1982202b98b580e0fac29315c913f64b6c21b0496f99ac96404f436f12720ca",
       "vendors": [
@@ -6371,11 +6371,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.3.0/Gogufw_2.3.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.0/Gogufw_2.3.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+      "path": "GOGU/старые версии/v2.3.0/Gogufw_2.3.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.3.0/Gogufw_2.3.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.3.0/Gogufw_2.3.0_chirp_module.py",
       "sha256": "71ee0633e2aa29e7f5851aea56655e5460d5496509f5206d6221db615002d7c7",
       "vendors": [
@@ -6409,8 +6409,8 @@
       "duplicateSources": [
         {
           "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-          "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.1/Gogufw_2.3.0_chirp_module.py",
-          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.3.1/Gogufw_2.3.0_chirp_module.py"
+          "path": "GOGU/старые версии/v2.3.1/Gogufw_2.3.0_chirp_module.py",
+          "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.3.1/Gogufw_2.3.0_chirp_module.py"
         }
       ],
       "version": "2.3.0",
@@ -6443,11 +6443,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.1.0/Gogufw_2.1.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.1.0/Gogufw_2.1.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "path": "GOGU/старые версии/v2.1.0/Gogufw_2.1.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.1.0/Gogufw_2.1.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.1.0/Gogufw_2.1.0_chirp_module.py",
       "sha256": "73c9849811c5dba31e33681b150c10e6986e0d5f6b07877407d70a23bece638c",
       "vendors": [
@@ -6507,11 +6507,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.0.5/Gogufw_2.0.5_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "path": "GOGU/старые версии/v2.0.5/Gogufw_2.0.5_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.0.5/Gogufw_2.0.5_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.5/Gogufw_2.0.5_chirp_module.py",
       "sha256": "474f3ae9d3ada26bb6c3310750edb07dc20bc8591a6c4da1e1a5885c345b6ae9",
       "vendors": [
@@ -6571,11 +6571,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.0.3/Gogufw_2.0.3_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "path": "GOGU/старые версии/v2.0.3/Gogufw_2.0.3_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.0.3/Gogufw_2.0.3_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.3/Gogufw_2.0.3_chirp_module.py",
       "sha256": "c0529b4fcc19ae269bb06f30f6c004436c4c8dfb5e8b738e8b8a7137169f74aa",
       "vendors": [
@@ -6635,11 +6635,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.0.2/Gogufw_2.0.2_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "path": "GOGU/старые версии/v2.0.2/Gogufw_2.0.2_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.0.2/Gogufw_2.0.2_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.2/Gogufw_2.0.2_chirp_module.py",
       "sha256": "4c5d88bb44d930e986a1dfc83a4fc8ec7477a73e840267992afdb078fd955796",
       "vendors": [
@@ -6699,11 +6699,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.0.1/Gogufw_2.0.1_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "path": "GOGU/старые версии/v2.0.1/Gogufw_2.0.1_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.0.1/Gogufw_2.0.1_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.1/Gogufw_2.0.1_chirp_module.py",
       "sha256": "15cd1803d578248f9b20c41e334d0da4af149425adf83848435be0bdba923a43",
       "vendors": [
@@ -6763,11 +6763,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.0/Gogufw_2.0.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v2.0.0/Gogufw_2.0.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.0/Gogufw_2.0.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v2.0.0/Gogufw_2.0.0_chirp_module.py",
+      "path": "GOGU/старые версии/v2.0.0/Gogufw_2.0.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v2.0.0/Gogufw_2.0.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v2.0.0/Gogufw_2.0.0_chirp_module.py",
       "sha256": "abe63f07cd2423b30dbacf8e8111aba87d3f8dc7891bbdaee41fc8ca831a8fd7",
       "vendors": [
@@ -6827,11 +6827,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.3.0/Gogufw_1.3.0_chirp_module.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.0/Gogufw_1.3.0_chirp_module.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "path": "GOGU/старые версии/v1.3.0/Gogufw_1.3.0_chirp_module.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.3.0/Gogufw_1.3.0_chirp_module.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.3.0/Gogufw_1.3.0_chirp_module.py",
       "sha256": "38b334e8065b7e2613e0b6e628ccb57abd68c3806c3c7fae0bf17506e4e0574e",
       "vendors": [
@@ -6891,11 +6891,11 @@
       ]
     },
     {
-      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "candidateKey": "repo:Dim0s/quansheng-UV-K5v3-K1-firmware-pack:GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
       "type": "repository-file",
       "repository": "Dim0s/quansheng-UV-K5v3-K1-firmware-pack",
-      "path": "GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
-      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/\u0441\u0442\u0430\u0440\u044b\u0435 \u0432\u0435\u0440\u0441\u0438\u0438/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "path": "GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
+      "sourceUrl": "https://github.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/blob/main/GOGU/старые версии/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
       "downloadUrl": "https://raw.githubusercontent.com/Dim0s/quansheng-UV-K5v3-K1-firmware-pack/main/GOGU/%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8/v1.0.3/gogufw_uvk1_chirp_v1_0_1a.py",
       "sha256": "5402946efc79791e95700bdb11f958643111083c469f4df78f44243b0d455bbe",
       "vendors": [
@@ -9414,6 +9414,48 @@
       "availableVersions": []
     },
     {
+      "candidateKey": "repo:mjwgeek/PocketCHIRP:community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "type": "repository-file",
+      "repository": "mjwgeek/PocketCHIRP",
+      "path": "community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "sourceUrl": "https://github.com/mjwgeek/PocketCHIRP/blob/4317cb0cd6a4a4a1558e70f2819bb3833b4da666/community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/4317cb0cd6a4a4a1558e70f2819bb3833b4da666/community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "sha256": "214c6e6e1c99afc5a8972896b945aeaf283f97382be193d32833ba23fa9fea5e",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "PC-UV-5R Mini MM9PDY"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "PC-UV-5R Mini MM9PDY"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit file source"
+      ],
+      "status": "needs-review",
+      "version": "0.4.7",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "mjwgeek/pocketchirp::baofeng::pc-uv-5r mini mm9pdy::pc_uv5rmini_mm9pdy",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng PC-UV-5R Mini MM9PDY v0.4.7",
+      "availableVersions": [
+        "0.4.7"
+      ]
+    },
+    {
       "candidateKey": "repo:mjwgeek/Radioddity-GD-73a:gd73.py",
       "type": "repository-file",
       "repository": "mjwgeek/Radioddity-GD-73a",
@@ -9575,7 +9617,7 @@
   ],
   "versionAware": true,
   "catalogPolicy": "All discovered versions are retained. Current/newest entries are highlighted, while historical firmware-specific drivers remain selectable by version.",
-  "currentCount": 57,
+  "currentCount": 58,
   "historicalCount": 103,
-  "versionedCount": 80
+  "versionedCount": 81
 }

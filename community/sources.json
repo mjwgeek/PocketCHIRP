@@ -101,5 +101,13 @@
     "kk7ds/chirp#1608",
     "kk7ds/chirp#1627"
   ],
-  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Quansheng-focused searches and selected repositories receive deeper Python scanning. Full CHIRP forks/bundles and known non-driver PRs are excluded."
+  "notes": "Discovery only. Results are candidates and are never automatically promoted to the approved PocketCHIRP community driver catalog. Quansheng-focused searches and selected repositories receive deeper Python scanning. Full CHIRP forks/bundles and known non-driver PRs are excluded.",
+  "explicitFiles": [
+    {
+      "repo": "mjwgeek/PocketCHIRP",
+      "ref": "4317cb0cd6a4a4a1558e70f2819bb3833b4da666",
+      "path": "community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "notes": "PocketCHIRP-exclusive MM9PDY community driver. Scan only this pinned file, not bundled CHIRP."
+    }
+  ]
 }

@@ -197,6 +197,27 @@ def repo_meta(repo_full_name: str):
     return api_json(f"/repos/{repo_full_name}")
 
 
+def discover_explicit_files(cfg: dict, store: dict):
+    """Inspect deliberately listed driver files without scanning bundled CHIRP."""
+    hints = cfg.get("codeSearchHints") or []
+    for source in cfg.get("explicitFiles") or []:
+        repo, ref, path = (source.get(k) for k in ("repo", "ref", "path"))
+        if not repo or not ref or not path or not path.endswith(".py"):
+            raise ValueError("Invalid explicit community driver file source")
+        raw_url = f"https://raw.githubusercontent.com/{repo}/{urllib.parse.quote(ref, safe='')}/{urllib.parse.quote(path)}"
+        data = raw_bytes(raw_url)
+        text = data.decode("utf-8")
+        ok, found_hints = looks_like_driver(text, hints)
+        meta = extract_models(text)
+        if not ok or not meta["models"]:
+            raise ValueError(f"Explicit source is not a recognized CHIRP driver: {repo}:{path}")
+        add_candidate(store, {"candidateKey": f"repo:{repo}:{path}", "type": "repository-file",
+            "repository": repo, "path": path,
+            "sourceUrl": f"https://github.com/{repo}/blob/{ref}/{path}",
+            "downloadUrl": raw_url, "sha256": hashlib.sha256(data).hexdigest(), **candidate_metadata(meta),
+            "hintsMatched": found_hints, "reasons": ["explicit file source"], "status": "needs-review"})
+
+
 def discover_explicit_repositories(cfg: dict, store: dict, scanned: set[str]):
     hints = cfg.get("codeSearchHints") or []; ignored = set(cfg.get("ignoredRepositories") or [])
     for source in cfg.get("explicitRepositories") or []:
@@ -294,6 +315,7 @@ def dedupe_exact_files(candidates: list[dict]) -> list[dict]:
 
 def main():
     cfg = json.loads(SOURCES.read_text(encoding="utf-8")); found = {}; scanned: set[str] = set()
+    discover_explicit_files(cfg, found)
     discover_pull_requests(cfg, found); discover_explicit_repositories(cfg, found, scanned)
     discover_owned_repositories(cfg, found, scanned); discover_repositories(cfg, found, scanned)
     candidates = dedupe_exact_files(list(found.values()))

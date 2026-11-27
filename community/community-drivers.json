@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogRevision": 13,
-  "updated": "2026-11-22",
+  "catalogRevision": 14,
+  "updated": "2026-11-27",
   "drivers": [
     {
       "candidateKey": "pr:kk7ds/chirp#1707:chirp/drivers/retevis_rt21.py",
@@ -896,6 +896,52 @@
       "approved": true,
       "approvedAt": "2026-11-22T04:50:14.382Z",
       "approvalNote": "PocketCHIRP review: DM-32UV non-Latin zone rename fix; use after validation with primary official CHIRP driver."
+    },
+    {
+      "candidateKey": "repo:mjwgeek/PocketCHIRP:community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "type": "repository-file",
+      "repository": "mjwgeek/PocketCHIRP",
+      "path": "community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "sourceUrl": "https://github.com/mjwgeek/PocketCHIRP/blob/4317cb0cd6a4a4a1558e70f2819bb3833b4da666/community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "downloadUrl": "https://raw.githubusercontent.com/mjwgeek/PocketCHIRP/4317cb0cd6a4a4a1558e70f2819bb3833b4da666/community/drivers/pc_uv5rmini_mm9pdy_v0.4.7.py",
+      "sha256": "214c6e6e1c99afc5a8972896b945aeaf283f97382be193d32833ba23fa9fea5e",
+      "vendors": [
+        "Baofeng"
+      ],
+      "models": [
+        "PC-UV-5R Mini MM9PDY"
+      ],
+      "variants": [],
+      "modelEntries": [
+        {
+          "vendor": "Baofeng",
+          "model": "PC-UV-5R Mini MM9PDY"
+        }
+      ],
+      "hintsMatched": [
+        "directory.register",
+        "RadioSetting",
+        "sync_in",
+        "sync_out"
+      ],
+      "reasons": [
+        "explicit file source"
+      ],
+      "status": "approved",
+      "version": "0.4.7",
+      "historical": false,
+      "releaseTier": "current",
+      "versionFamily": "mjwgeek/pocketchirp::baofeng::pc-uv-5r mini mm9pdy::pc_uv5rmini_mm9pdy",
+      "latestInFamily": true,
+      "recommended": true,
+      "displayName": "Baofeng PC-UV-5R Mini MM9PDY v0.4.7",
+      "availableVersions": [
+        "0.4.7"
+      ],
+      "id": "baofeng-pc-uv-5r-mini-mm9pdy-v0-4-7-0dd2ac8576",
+      "approved": true,
+      "approvedAt": "2026-11-27T01:09:16.808Z",
+      "approvalNote": "Owner-approved v0.4.7 full BLE WRITE beta. Hardware confirmed USB READ/WRITE, native BLE READ and channel WRITE; BLE settings and zone WRITE enabled but physical validation not separately documented. No automatic pre/post-upload memory reads; MM9PDY firmware only. Use the direct BLE WRITE backend and reboot handling updates. Optional community driver, not bundled."
     },
     {
       "candidateKey": "pr:kk7ds/chirp#1729:chirp/drivers/baofeng_uv5rm_pro_gps.py",
@@ -8251,5 +8297,5 @@
     "requireManualApproval": true,
     "verifySha256BeforeInstall": true
   },
-  "approvedCount": 134
+  "approvedCount": 135
 }
