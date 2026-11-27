@@ -12,7 +12,7 @@
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "changes": "Normalized numeric reflector IDs and names."
   },
-  "updated": "2026-11-26T19:11:20.209919+00:00",
+  "updated": "2026-11-27T19:05:54.278700+00:00",
   "rows": [
     {
       "id": 14,
@@ -512,7 +512,7 @@
     },
     {
       "id": 3118,
-      "name": "URF616"
+      "name": "URFALD"
     },
     {
       "id": 3142,
@@ -613,6 +613,10 @@
     {
       "id": 7000,
       "name": "Boston 700 P25 Reflector"
+    },
+    {
+      "id": 7075,
+      "name": "147.075 Repeater in Monument, CO"
     },
     {
       "id": 7144,

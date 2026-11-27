@@ -12,7 +12,7 @@
     "attribution": "Reflector data provided by DVRef — https://dvref.com/",
     "changes": "Normalized numeric reflector IDs and names."
   },
-  "updated": "2026-11-26T19:11:20.530921+00:00",
+  "updated": "2026-11-27T19:05:54.586844+00:00",
   "rows": [
     {
       "id": 12,
@@ -488,7 +488,7 @@
     },
     {
       "id": 3118,
-      "name": "URF616"
+      "name": "URFALD"
     },
     {
       "id": 3142,
@@ -1641,6 +1641,10 @@
     {
       "id": 46087,
       "name": "YN-46087"
+    },
+    {
+      "id": 46540,
+      "name": "Northern Indiana Hams United"
     },
     {
       "id": 46601,
